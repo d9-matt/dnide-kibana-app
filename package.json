@@ -6,7 +6,7 @@
   "kibana": {
     "version": "7.10.2"
   },
-  "description": "Wazuh app",
+  "description": "Portal9 app",
   "keywords": [
     "kibana",
     "wazuh",
