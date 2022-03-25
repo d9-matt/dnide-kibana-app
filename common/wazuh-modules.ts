@@ -120,7 +120,7 @@ export const WAZUH_MODULES = {
   },
   devTools: {
     title: 'API console',
-    description: 'Test the DNIDE API endpoints.'
+    description: 'Test the Portal9 API endpoints.'
   },
   logtest: {
     title: 'Test your logs',

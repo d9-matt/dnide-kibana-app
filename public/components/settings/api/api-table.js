@@ -302,7 +302,7 @@ export class ApiTable extends Component {
                 <EuiFlexGroup>
                   <EuiFlexItem>
                     <EuiTitle>
-                      <h2>DNIDE API configuration</h2>
+                      <h2>Portal9 API configuration</h2>
                     </EuiTitle>
                   </EuiFlexItem>
                 </EuiFlexGroup>
