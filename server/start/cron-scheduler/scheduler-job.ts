@@ -20,8 +20,10 @@ export class SchedulerJob {
   constructor(jobName: string, context) {
     this.jobName = jobName;
     this.context = context;
-    this.logger = context.wazuh.logger;
-    this.apiClient = context.wazuh.api.client.asInternalUser;
+    //this.logger = context.wazuh.logger;
+    this.logger = context.portal9.logger;
+    //this.apiClient = context.wazuh.api.client.asInternalUser;
+    this.apiClient = context.portal9.api.client.asInternalUser;
     this.saveDocument = new SaveDocument(context);
   }
 

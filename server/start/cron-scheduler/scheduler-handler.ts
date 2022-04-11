@@ -103,7 +103,8 @@ const checkTemplate = async function (context) {
       'scheduler-handler:checkTemplate',
       errorMessage
     );
-    context.wazuh.logger.error(schedulerErrorLogColors, errorMessage);
+    //context.wazuh.logger.error(schedulerErrorLogColors, errorMessage);
+    context.portal9.logger.error(schedulerErrorLogColors, errorMessage);
     throw error;
   }
 }
