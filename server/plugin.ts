@@ -38,7 +38,7 @@ import { first } from 'rxjs/operators';
 
 declare module 'kibana/server' {
   interface RequestHandlerContext {
-    wazuh: {
+    portal9: {
       logger: Logger,
       plugins: PluginSetup,
       security: ISecurityFactory
@@ -71,7 +71,7 @@ export class WazuhPlugin implements Plugin<WazuhPluginSetup, WazuhPluginStart> {
     const wazuhSecurity = SecurityObj(plugins);
     const serverInfo = core.http.getServerInfo();
 
-    core.http.registerRouteHandlerContext('wazuh', (context, request) => {
+    core.http.registerRouteHandlerContext('portal9', (context, request) => {
       return {
         logger: this.logger,
         server: {
@@ -127,7 +127,7 @@ export class WazuhPlugin implements Plugin<WazuhPluginSetup, WazuhPluginStart> {
     // Initialize
     jobInitializeRun({
       core, 
-      wazuh: {
+      portal9: {
         logger: this.logger.get('initialize'),
         api: wazuhApiClient
       },
@@ -137,7 +137,7 @@ export class WazuhPlugin implements Plugin<WazuhPluginSetup, WazuhPluginStart> {
     // Monitoring
     jobMonitoringRun({
       core,
-      wazuh: {
+      portal9: {
         logger: this.logger.get('monitoring'),
         api: wazuhApiClient
       },
@@ -147,7 +147,7 @@ export class WazuhPlugin implements Plugin<WazuhPluginSetup, WazuhPluginStart> {
     // Scheduler
     jobSchedulerRun({
       core,
-      wazuh: {
+      portal9: {
         logger: this.logger.get('cron-scheduler'),
         api: wazuhApiClient
       },
@@ -157,7 +157,7 @@ export class WazuhPlugin implements Plugin<WazuhPluginSetup, WazuhPluginStart> {
     // Queue
     jobQueueRun({
       core, 
-      wazuh: {
+      portal9: {
         logger: this.logger.get('queue'),
         api: wazuhApiClient
       },

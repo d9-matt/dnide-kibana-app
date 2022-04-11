@@ -167,17 +167,17 @@ export const initialWazuhConfig: string = `---
 # ------------------------------ wazuh-logo-customization -------------------------------
 #
 #Define the name of the app logo saved in the path /plugins/wazuh/assets/
-#customization.logo.app: logotype.svg
+customization.logo.app: Portal9_tr_final_Cropboard.svg
 #
 #Define the name of the sideba logo saved in the path /plugins/wazuh/assets/
-#customization.logo.sidebar: icon_blue.png
+customization.logo.sidebar: Portal9_full_30x30_72dpiRGB.png
 #
 #Define the name of the health-check logo saved in the path /plugins/wazuh/assets/
-#customization.logo.healthcheck: icon_blue.svg
+customization.logo.healthcheck: Portal9_tr_final-02.svg
 #
 #
 #Define the name of the reports logo (.png) saved in the path /plugins/wazuh/assets/
-#customization.logo.reports: logo.png
+customization.logo.reports: Portal9_long_500x100_72dpiRGB.png
 #
 # ---------------------------- Hide manager alerts ------------------------------
 # Hide the alerts of the manager in all dashboards and discover

@@ -1,9 +1,9 @@
 export const configEquivalences = {
   pattern: 'Default index pattern to use on the app.',
-  'customization.logo.app':'Define the name of the app logo saved in the path /plugins/wazuh/assets/',
-  'customization.logo.sidebar':'Define the name of the sidebar logo saved in the path /plugins/wazuh/assets/',
-  'customization.logo.healthcheck':'Define the name of the health-check logo saved in the path /plugins/wazuh/assets/',
-  'customization.logo.reports':'Define the name of the reports logo (.png) saved in the path /plugins/wazuh/assets/',
+  'customization.logo.app':'Define the name of the app logo saved in the path /plugins/porta9/assets/',
+  'customization.logo.sidebar':'Define the name of the sidebar logo saved in the path /plugins/portal9/assets/',
+  'customization.logo.healthcheck':'Define the name of the health-check logo saved in the path /plugins/portal9/assets/',
+  'customization.logo.reports':'Define the name of the reports logo (.png) saved in the path /plugins/portal9/assets/',
   'checks.pattern':
     'Enable or disable the index pattern health check when opening the app.',
   'checks.template':
@@ -44,23 +44,23 @@ export const configEquivalences = {
   'ip.ignore':
     'Disable certain index pattern names from being available in index pattern selector from the Wazuh app.',
   'wazuh.monitoring.enabled':
-    'Enable or disable the wazuh-monitoring index creation and/or visualization.',
+    'Enable or disable the portal9-monitoring index creation and/or visualization.',
   'wazuh.monitoring.frequency':
-    'Define in seconds the frequency the app generates a new document on the wazuh-monitoring index.',
+    'Define in seconds the frequency the app generates a new document on the portal9-monitoring index.',
   'wazuh.monitoring.shards':
-    'Define the number of shards to use for the wazuh-monitoring-* indices.',
+    'Define the number of shards to use for the portal9-monitoring-* indices.',
   'wazuh.monitoring.replicas':
-    'Define the number of replicas to use for the wazuh-monitoring-* indices.',
+    'Define the number of replicas to use for the portal9-monitoring-* indices.',
   'wazuh.monitoring.creation':
-    'Define the interval in which the wazuh-monitoring index will be created.',
+    'Define the interval in which the portal9-monitoring index will be created.',
   'wazuh.monitoring.pattern':
-    'Default index pattern to use on the app for Wazuh monitoring.',
+    'Default index pattern to use on the app for portal9 monitoring.',
   hideManagerAlerts:
     'Hide the alerts of the manager in all dashboards.',
   'logs.level':
     'Set the app logging level, allowed values are info and debug. Default is info.',
   'enrollment.dns':
-    'Set the Wazuh server address in the agent deployment.',
+    'Set the portal9 server address in the agent deployment.',
   'cron.prefix':
     'Define the index prefix of predefined jobs.',
   'cron.statistics.status':

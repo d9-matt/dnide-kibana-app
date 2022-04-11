@@ -3,7 +3,7 @@
   "version": "4.2.5-4206-1",
   "kibanaVersion": "kibana",
   "configPath": [
-    "wazuh"
+    "portal9"
   ],
   "requiredPlugins": [
     "navigation",
