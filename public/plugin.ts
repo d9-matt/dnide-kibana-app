@@ -26,7 +26,7 @@ import {
 import { Cookies } from 'react-cookie';
 import { AppState } from './react-services/app-state';
 
-const innerAngularName = 'app/wazuh';
+const innerAngularName = 'app/portal9';
 
 export class WazuhPlugin implements Plugin<WazuhSetup, WazuhStart, WazuhSetupPlugins, WazuhStartPlugins> {
   constructor(private readonly initializerContext: PluginInitializerContext) {}
@@ -37,12 +37,12 @@ export class WazuhPlugin implements Plugin<WazuhSetup, WazuhStart, WazuhSetupPlu
   
   public setup(core: CoreSetup, plugins: WazuhSetupPlugins): WazuhSetup {
     core.application.register({
-      id: `wazuh`,
-      title: 'Wazuh',
-      icon: core.http.basePath.prepend('/plugins/wazuh/assets/icon_blue.png'),
+      id: `portal9`,
+      title: 'Portal9',
+      icon: core.http.basePath.prepend('/plugins/portal9/assets/icon_blue.png'),
       mount: async (params: AppMountParameters) => {
         if (!this.initializeInnerAngular) {
-          throw Error('Wazuh plugin method initializeInnerAngular is undefined');
+          throw Error('Portal9 plugin method initializeInnerAngular is undefined');
         }
 
         // hide the telemetry banner. 
@@ -77,10 +77,10 @@ export class WazuhPlugin implements Plugin<WazuhSetup, WazuhStart, WazuhSetupPlu
           return {
             status: response.isWazuhDisabled,
             category: {
-              id: 'wazuh',
-              label: 'Wazuh',
+              id: 'portal9',
+              label: 'Portal9',
               order: 0,
-              euiIconType: core.http.basePath.prepend( `/plugins/wazuh/assets/${response.logoSidebar}`),
+              euiIconType: core.http.basePath.prepend( `/plugins/portal9/assets/${response.logoSidebar}`),
             }}
         })
         return () => {
@@ -88,10 +88,10 @@ export class WazuhPlugin implements Plugin<WazuhSetup, WazuhStart, WazuhSetupPlu
         };
       },
       category: {
-        id: 'wazuh',
-        label: 'Wazuh',
+        id: 'portal9',
+        label: 'Portal9',
         order: 0,
-        euiIconType: core.http.basePath.prepend('/plugins/wazuh/assets/icon_blue.png'),      
+        euiIconType: core.http.basePath.prepend('/plugins/portal9/assets/icon_blue.png'),      
       },
       updater$: this.stateUpdater
     });
