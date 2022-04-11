@@ -1,5 +1,5 @@
 {
-  "id": "wazuh",
+  "id": "portal9",
   "version": "4.2.5-4206-1",
   "kibanaVersion": "kibana",
   "configPath": [
