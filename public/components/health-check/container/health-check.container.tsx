@@ -125,7 +125,7 @@ function HealthCheckComponent() {
   const redirectionPassHealthcheck = () => {
     const params = $rootScope.previousParams || {};
     const queryString = Object.keys(params).map(key => key + '=' + params[key]).join('&');
-    const url = '/app/wazuh#' + ($rootScope.previousLocation || '') + '?' + queryString;
+    const url = '/app/portal9#' + ($rootScope.previousLocation || '') + '?' + queryString;
     window.location.href = getHttp().basePath.prepend(url);
   };
 
@@ -231,7 +231,7 @@ function HealthCheckComponent() {
           <EuiFlexGroup justifyContent='center'>
             {thereAreErrors && (
               <EuiFlexItem grow={false}>
-                <EuiButton fill href={getHttp().basePath.prepend('/app/wazuh#/settings')}>
+                <EuiButton fill href={getHttp().basePath.prepend('/app/portal9#/settings')}>
                   Go to Settings
                 </EuiButton>
               </EuiFlexItem>
