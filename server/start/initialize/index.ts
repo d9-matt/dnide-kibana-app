@@ -66,7 +66,7 @@ export function jobInitializeRun(context) {
       const commonDate = new Date().toISOString();
 
       const configuration = {
-        name: 'Wazuh App',
+        name: 'Portal9 App',
         'app-version': packageJSON.version,
         revision: packageJSON.revision,
         installationDate: commonDate,

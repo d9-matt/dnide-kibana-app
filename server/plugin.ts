@@ -71,7 +71,7 @@ export class WazuhPlugin implements Plugin<WazuhPluginSetup, WazuhPluginStart> {
     const wazuhSecurity = SecurityObj(plugins);
     const serverInfo = core.http.getServerInfo();
 
-    core.http.registerRouteHandlerContext('wazuh', (context, request) => {
+    core.http.registerRouteHandlerContext('portal9', (context, request) => {
       return {
         logger: this.logger,
         server: {
