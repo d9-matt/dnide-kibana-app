@@ -389,7 +389,7 @@ export const WzMenu = withWindowSize(class WzMenu extends Component {
             </EuiFlexItem>
           )}
           {this.props.state.wazuhNotReadyYet ===
-            'Wazuh could not be recovered.' && (
+            'Portal9 could not be recovered.' && (
               <EuiFlexItem grow={false}>
                 <EuiButtonEmpty
                   grow={false}
@@ -899,7 +899,7 @@ export const WzMenu = withWindowSize(class WzMenu extends Component {
       </div>
     );
 
-    const logotype_url = getHttp().basePath.prepend(`/plugins/wazuh/assets/${this.wazuhConfig.getConfig()['customization.logo.app']}`);
+    const logotype_url = getHttp().basePath.prepend(`/plugins/portal9/assets/${this.wazuhConfig.getConfig()['customization.logo.app']}`);
     const mainButton = (
       <button data-test-subj='menuWazuhButton' className="eui" onClick={() => this.switchMenuOpened()}>
         <EuiFlexGroup

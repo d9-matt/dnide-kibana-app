@@ -17,7 +17,7 @@
   "license": "GPL-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/wazuh/wazuh-kibana-app.git"
+    "url": "https://github.com/d9-matt/portal9-kibana-app.git"
   },
   "bugs": {
     "url": "https://github.com/wazuh/wazuh-kibana-app/issues"
