@@ -1,6 +1,6 @@
 {
-  "name": "wazuh",
-  "version": "4.2.5",
+  "name": "portal9",
+  "version": "0.0.1",
   "revision": "4206-1",
   "code": "4206-1",
   "kibana": {
@@ -9,7 +9,7 @@
   "description": "Portal9 app",
   "keywords": [
     "kibana",
-    "wazuh",
+    "portal9",
     "ossec"
   ],
   "node_build": "10.23.1",
@@ -49,7 +49,7 @@
     "json2csv": "^4.1.2",
     "jwt-decode": "^2.2.0",
     "needle": "^2.0.1",
-    "node-cron": "^1.1.2",
+    "node-cron": "^1.1.2",       s
     "pdfmake": "0.1.65",
     "pug-loader": "^2.4.0",
     "querystring-browser": "1.0.4",
