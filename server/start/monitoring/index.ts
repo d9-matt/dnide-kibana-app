@@ -101,7 +101,7 @@ function initMonitoringConfiguration(context){
       'monitoring:initMonitoringConfiguration',
       errorMessage
     );
-    context.wazuh.logger.error(errorMessage)
+    context.portal9.logger.error(errorMessage)
   }
 };
 
@@ -117,7 +117,7 @@ async function init(context) {
   } catch (error) {
     const errorMessage = error.message || error;
     log('monitoring:init', error.message || error);
-    context.wazuh.logger.error(errorMessage);
+    context.portal9.logger.error(errorMessage);
   }
 }
 
@@ -165,7 +165,7 @@ async function checkTemplate(context) {
       'monitoring:checkTemplate',
       errorMessage
     );
-    context.wazuh.logger.error(monitoringErrorLogColors, errorMessage);
+    context.portal9.logger.error(monitoringErrorLogColors, errorMessage);
     throw error;
   }
 }
@@ -208,7 +208,7 @@ async function insertMonitoringDataElasticsearch(context, data) {
       })();
     }catch(error){
       log('monitoring:insertMonitoringDataElasticsearch', error.message || error);
-      context.wazuh.logger.error(error.message);
+      context.portal9.logger.error(error.message);
     }
 }
 
@@ -290,7 +290,7 @@ async function createIndex(context, indexName: string) {
       'monitoring:createIndex',
       errorMessage
     );
-    context.wazuh.logger.error(errorMessage);
+    context.portal9.logger.error(errorMessage);
   }
 }
 
@@ -359,7 +359,7 @@ async function getHostsConfiguration() {
 
     log(
       'monitoring:getConfig',
-      'There are no Wazuh API entries yet',
+      'There are no Portal9 API entries yet',
       'debug'
     );
     return Promise.reject({
@@ -369,7 +369,7 @@ async function getHostsConfiguration() {
   } catch (error) {
     log('monitoring:getHostsConfiguration', error.message || error);
     return Promise.reject({
-      error: 'no wazuh hosts',
+      error: 'no Portal9 hosts',
       error_code: 2
     });
   }
@@ -416,7 +416,7 @@ async function cronTask(context) {
     // } catch (error) {} //eslint-disable-line
 
     log('monitoring:cronTask', error.message || error);
-    context.wazuh.logger.error(error.message || error);
+    context.portal9.logger.error(error.message || error);
   }
 }
 
@@ -428,10 +428,10 @@ async function cronTask(context) {
 async function getApiInfo(context, apiHost){
   try{
     log('monitoring:getApiInfo', `Getting API info for ${apiHost.id}`, 'debug');
-    const responseIsCluster = await context.wazuh.api.client.asInternalUser.request('GET', '/cluster/status', {}, { apiHostID: apiHost.id });
+    const responseIsCluster = await context.portal9.api.client.asInternalUser.request('GET', '/cluster/status', {}, { apiHostID: apiHost.id });
     const isCluster = (((responseIsCluster || {}).data || {}).data || {}).enabled === 'yes';
     if(isCluster){
-      const responseClusterInfo = await context.wazuh.api.client.asInternalUser.request('GET', `/cluster/local/info`, {},  { apiHostID: apiHost.id });
+      const responseClusterInfo = await context.portal9.api.client.asInternalUser.request('GET', `/cluster/local/info`, {},  { apiHostID: apiHost.id });
       apiHost.clusterName = responseClusterInfo.data.data.affected_items[0].cluster;
     };
     const agents = await fetchAllAgentsFromApiHost(context, apiHost);
@@ -451,7 +451,7 @@ async function fetchAllAgentsFromApiHost(context, apiHost){
   let agents = [];
   try{
     log('monitoring:fetchAllAgentsFromApiHost', `Getting all agents from ApiID: ${apiHost.id}`, 'debug');
-    const responseAgentsCount = await context.wazuh.api.client.asInternalUser.request(
+    const responseAgentsCount = await context.portal9.api.client.asInternalUser.request(
       'GET',
       '/agents',
       {
@@ -473,7 +473,7 @@ async function fetchAllAgentsFromApiHost(context, apiHost){
 
     while (agents.length < agentsCount && payload.offset < agentsCount) {
       try{
-        const responseAgents = await context.wazuh.api.client.asInternalUser.request(
+        const responseAgents = await context.portal9.api.client.asInternalUser.request(
           'GET',
           `/agents`,
           {params: payload},

@@ -44,7 +44,7 @@ export function jobInitializeRun(context) {
     //     : true;
   } catch (error) {
     log('initialize', error.message || error);
-    context.wazuh.logger.error(
+    context.portal9.logger.error(
       'Something went wrong while reading the configuration.' + (error.message || error)
     );
   }
@@ -66,7 +66,7 @@ export function jobInitializeRun(context) {
       const commonDate = new Date().toISOString();
 
       const configuration = {
-        name: 'Wazuh App',
+        name: 'Portal9 App',
         'app-version': packageJSON.version,
         revision: packageJSON.revision,
         installationDate: commonDate,
@@ -79,19 +79,19 @@ export function jobInitializeRun(context) {
         await fs.writeFileSync(WAZUH_DATA_CONFIG_REGISTRY_PATH, JSON.stringify(configuration), 'utf8');
         log(
           'initialize:saveConfiguration',
-          'Wazuh configuration registry inserted',
+          'Portal9 configuration registry inserted',
           'debug'
         );
       } catch (error) {
         log('initialize:saveConfiguration', error.message || error);
-        context.wazuh.logger.error(
-          'Could not create Wazuh configuration registry'
+        context.portal9.logger.error(
+          'Could not create Portal9 configuration registry'
         );
       }
     } catch (error) {
       log('initialize:saveConfiguration', error.message || error);
-      context.wazuh.logger.error(
-        'Error creating wazuh-version registry'
+      context.portal9.logger.error(
+        'Error creating portal9-version registry'
       );
     }
   };
@@ -204,7 +204,7 @@ export function jobInitializeRun(context) {
       if (!fs.existsSync(WAZUH_DATA_CONFIG_REGISTRY_PATH)) {
         log(
           'initialize:checkwazuhRegistry',
-          'wazuh-version registry does not exist. Initializing configuration.',
+          'portal9-version registry does not exist. Initializing configuration.',
           'debug'
         );
 
@@ -221,7 +221,7 @@ export function jobInitializeRun(context) {
         if (isUpgradedApp) { 
           log(
             'initialize:checkwazuhRegistry',
-            'Wazuh app revision or version changed, regenerating wazuh-version registry',
+            'Portal9 app revision or version changed, regenerating portal9-version registry',
             'info'
           );
           // Rebuild registry file in blank
@@ -252,7 +252,7 @@ export function jobInitializeRun(context) {
       kibanaTemplate.template = KIBANA_INDEX + '*';
     } catch (error) {
       log('initialize:createKibanaTemplate', error.message || error);
-      context.wazuh.logger.error(
+      context.portal9.logger.error(
         'Exception: ' + error.message || error
       );
     }
@@ -352,7 +352,7 @@ export function jobInitializeRun(context) {
       }
     } catch (error) {
       log('initialize:checkKibanaStatus', error.message || error);
-      context.wazuh.logger.error(error.message || error);
+      context.portal9.logger.error(error.message || error);
     }
   };
 
