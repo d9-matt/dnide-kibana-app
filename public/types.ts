@@ -25,7 +25,7 @@ export interface AppDependencies {
   params: AppMountParameters;  
 }
 
-export type Portal9SetupPlugins = {
+export type WazuhSetupPlugins = {
   uiActions: UiActionsSetup;
   visualizations: VisualizationsSetup;
   data: DataPublicPluginSetup;
@@ -33,7 +33,7 @@ export type Portal9SetupPlugins = {
   telemetry: TelemetryPluginSetup;
 }
 
-export type Portal9StartPlugins = AppPluginStartDependencies;
+export type WazuhStartPlugins = AppPluginStartDependencies;
 
-export type Portal9Setup = {}
-export type Portal9Start = {}
+export type WazuhSetup = {}
+export type WazuhStart = {}

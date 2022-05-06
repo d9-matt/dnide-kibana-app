@@ -5,11 +5,11 @@ import angular from 'angular';
  */
 export async function renderApp(moduleName: string, element: HTMLElement) {
   await import('./app');
-  const $injector = mountPortal9App(moduleName, element);
+  const $injector = mountWazuhApp(moduleName, element);
   return () => $injector.get('$rootScope').$destroy();
 }
 
-function mountPortal9App(moduleName: string, element: HTMLElement) {
+function mountWazuhApp(moduleName: string, element: HTMLElement) {
   const mountpoint = document.createElement('div');
   const appWrapper = document.createElement('div');
   mountpoint.appendChild(appWrapper);
