@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for show configuration of alerts - email alerts tab.
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - React component for show configuration of alerts - email alerts tab.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -97,7 +97,7 @@ class WzConfigurationAlertsEmailAlerts extends Component {
         ) : null}
         {portal9NotReadyYet &&
           (!currentConfig || !currentConfig['mail-alerts']) && (
-            <WzNoConfig error="Wazuh not ready yet" help={helpLinks} />
+            <WzNoConfig error="Portal9 not ready yet" help={helpLinks} />
           )}
         {currentConfig['mail-alerts'] &&
         isArray(currentConfig['mail-alerts'].email_alerts) &&

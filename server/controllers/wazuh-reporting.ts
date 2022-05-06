@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Class for Wazuh reporting controller
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Class for Portal9 reporting controller
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -40,7 +40,7 @@ import {
 import { createDirectoryIfNotExists, createDataDirectoryIfNotExists } from '../lib/filesystem';
 import moment from 'moment';
 
-export class WazuhReportingCtrl {
+export class Portal9ReportingCtrl {
   constructor() {}
 
   /**

@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Class for Wazuh-API functions
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Class for Portal9-API functions
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -28,7 +28,7 @@ import { getCookieValueByName } from '../lib/cookie';
 import { SecurityObj } from '../lib/security-factory';
 import { getConfiguration } from '../lib/get-configuration';
 
-export class WazuhApiCtrl {
+export class Portal9ApiCtrl {
   manageHosts: ManageHosts
   updateRegistry: UpdateRegistry
 
@@ -105,7 +105,7 @@ export class WazuhApiCtrl {
       const api = await this.manageHosts.getHostById(id);
       // Check Manage Hosts
       if (!Object.keys(api).length) {
-        throw new Error('Could not find Wazuh API entry on portal9.yml');
+        throw new Error('Could not find Portal9 API entry on portal9.yml');
       }
 
       log('portal9-api:checkStoredAPI', `${id} exists`, 'debug');
@@ -121,14 +121,14 @@ export class WazuhApiCtrl {
       // Look for socket-related errors
       if (this.checkResponseIsDown(responseManagerInfo)) {
         return ErrorResponse(
-          `ERROR3099 - ${responseManagerInfo.data.detail || 'Wazuh not ready yet'}`,
+          `ERROR3099 - ${responseManagerInfo.data.detail || 'Portal9 not ready yet'}`,
           3099,
           500,
           response
         );
       }
 
-      // If we have a valid response from the Wazuh API
+      // If we have a valid response from the Portal9 API
       if (responseManagerInfo.status === 200 && responseManagerInfo.data) {
         // Clear and update cluster information before being sent back to frontend
         delete api.cluster_info;
@@ -188,7 +188,7 @@ export class WazuhApiCtrl {
             // Update cluster information in the portal9-registry.json
             await this.updateRegistry.updateClusterInfo(id, api.cluster_info);
 
-            // Hide Wazuh API secret, username, password
+            // Hide Portal9 API secret, username, password
             const copied = { ...api };
             copied.secret = '****';
             copied.password = '****';
@@ -204,7 +204,7 @@ export class WazuhApiCtrl {
         }
       }
 
-      // If we have an invalid response from the Wazuh API
+      // If we have an invalid response from the Portal9 API
       throw new Error(responseManagerInfo.data.detail || `${api.url}:${api.port} is unreachable`);
     } catch (error) {
       if (error.code === 'EPROTO') {
@@ -237,7 +237,7 @@ export class WazuhApiCtrl {
 
               if (this.checkResponseIsDown(responseManagerInfo)) {
                 return ErrorResponse(
-                  `ERROR3099 - ${response.data.detail || 'Wazuh not ready yet'}`,
+                  `ERROR3099 - ${response.data.detail || 'Portal9 not ready yet'}`,
                   3099,
                   500,
                   response
@@ -301,7 +301,7 @@ export class WazuhApiCtrl {
       // const notValid = this.validateCheckApiParams(request.body);
       // if (notValid) return ErrorResponse(notValid, 3003, 500, response);
       log('portal9-api:checkAPI', `${request.body.id} is valid`, 'debug');
-      // Check if a Wazuh API id is given (already stored API)
+      // Check if a Portal9 API id is given (already stored API)
       const data = await this.manageHosts.getHostById(request.body.id);
       if (data) {
         apiAvailable = data;
@@ -323,7 +323,7 @@ export class WazuhApiCtrl {
         );
       }catch(error){
         return ErrorResponse(
-          `ERROR3099 - ${error.response?.data?.detail || 'Wazuh not ready yet'}`,
+          `ERROR3099 - ${error.response?.data?.detail || 'Portal9 not ready yet'}`,
           3099,
           500,
           response
@@ -379,7 +379,7 @@ export class WazuhApiCtrl {
           );
 
           if (responseCluster.status === 200) {
-            log('portal9-api:checkStoredAPI', `Wazuh API response is valid`, 'debug');
+            log('portal9-api:checkStoredAPI', `Portal9 API response is valid`, 'debug');
             if (responseCluster.data.data.enabled === 'yes') {
               // If cluster mode is active
               let responseClusterLocal = await context.portal9.api.client.asInternalUser.request(
@@ -435,7 +435,7 @@ export class WazuhApiCtrl {
       }
       if (error.code === 'EPROTO') {
         return ErrorResponse(
-          'Wrong protocol being used to connect to the Wazuh API',
+          'Wrong protocol being used to connect to the Portal9 API',
           3005,
           500,
           response
@@ -452,7 +452,7 @@ export class WazuhApiCtrl {
       const status = (response.data || {}).status || 1
       const isDown = socketErrorCodes.includes(status);
 
-      isDown && log('portal9-api:makeRequest', 'Wazuh API is online but Wazuh is not ready yet');
+      isDown && log('portal9-api:makeRequest', 'Portal9 API is online but Portal9 is not ready yet');
 
       return isDown;
     }
@@ -460,10 +460,10 @@ export class WazuhApiCtrl {
   }
 
   /**
-   * Check main Wazuh daemons status
+   * Check main Portal9 daemons status
    * @param {*} context Endpoint context
    * @param {*} api API entry stored in .portal9
-   * @param {*} path Optional. Wazuh API target path.
+   * @param {*} path Optional. Portal9 API target path.
    */
   async checkDaemons(context, api, path) {
     try {
@@ -488,14 +488,14 @@ export class WazuhApiCtrl {
 
       const isValid = execd && modulesd && portal9db && clusterd;
 
-      isValid && log('portal9-api:checkDaemons', `Wazuh is ready`, 'debug');
+      isValid && log('portal9-api:checkDaemons', `Portal9 is ready`, 'debug');
 
       if (path === '/ping') {
         return { isValid };
       }
 
       if (!isValid) {
-        throw new Error('Wazuh not ready yet');
+        throw new Error('Portal9 not ready yet');
       }
     } catch (error) {
       log('portal9-api:checkDaemons', error.message || error);
@@ -517,7 +517,7 @@ export class WazuhApiCtrl {
    * Since we allow the user to write the request using both comma-separated and array as well,
    * we need to check if it should be transformed or not.
    * @param {*} method The request method
-   * @param {*} path The Wazuh API path
+   * @param {*} path The Portal9 API path
    */
   shouldKeepArrayAsIt(method, path) {
     // Methods that we must respect a do not transform them
@@ -530,7 +530,7 @@ export class WazuhApiCtrl {
   }
 
   /**
-   * This performs a request over Wazuh API and returns its response
+   * This performs a request over Portal9 API and returns its response
    * @param {String} method Method: GET, PUT, POST, DELETE
    * @param {String} path API route
    * @param {Object} data data and params to perform the request
@@ -603,9 +603,9 @@ export class WazuhApiCtrl {
         } catch (error) {
           const isDown = (error || {}).code === 'ECONNREFUSED';
           if (!isDown) {
-            log('portal9-api:makeRequest', 'Wazuh API is online but Wazuh is not ready yet');
+            log('portal9-api:makeRequest', 'Portal9 API is online but Portal9 is not ready yet');
             return ErrorResponse(
-              `ERROR3099 - ${error.message || 'Wazuh not ready yet'}`,
+              `ERROR3099 - ${error.message || 'Portal9 not ready yet'}`,
               3099,
               500,
               response
@@ -633,7 +633,7 @@ export class WazuhApiCtrl {
       const responseIsDown = this.checkResponseIsDown(responseToken);
       if (responseIsDown) {
         return ErrorResponse(
-          `ERROR3099 - ${response.body.message || 'Wazuh not ready yet'}`,
+          `ERROR3099 - ${response.body.message || 'Portal9 not ready yet'}`,
           3099,
           500,
           response
@@ -663,12 +663,12 @@ export class WazuhApiCtrl {
       }
       throw responseError && responseBody.detail
         ? { message: responseBody.detail, code: responseError }
-        : new Error('Unexpected error fetching data from the Wazuh API');
+        : new Error('Unexpected error fetching data from the Portal9 API');
     } catch (error) {
       if (error && error.response && error.response.status === 401) {
         return ErrorResponse(
           error.message || error,
-          error.code ? `Wazuh API error: ${error.code}` : 3013,
+          error.code ? `Portal9 API error: ${error.code}` : 3013,
           401,
           response
         );
@@ -685,7 +685,7 @@ export class WazuhApiCtrl {
         }
         return ErrorResponse(
           errorMsg.detail || error,
-          error.code ? `Wazuh API error: ${error.code}` : 3013,
+          error.code ? `Portal9 API error: ${error.code}` : 3013,
           500,
           response
         );
@@ -736,7 +736,7 @@ export class WazuhApiCtrl {
   }
 
   /**
-   * Get full data on CSV format from a list Wazuh API endpoint
+   * Get full data on CSV format from a list Portal9 API endpoint
    * @param {Object} ctx
    * @param {Object} request
    * @param {Object} response
@@ -866,7 +866,7 @@ export class WazuhApiCtrl {
       } else if (output && output.data && output.data.data && !output.data.data.total_affected_items) {
         throw new Error('No results');
       } else {
-        throw new Error(`An error occurred fetching data from the Wazuh API${output && output.data && output.data.detail ? `: ${output.body.detail}` : ''}`);
+        throw new Error(`An error occurred fetching data from the Portal9 API${output && output.data && output.data.detail ? `: ${output.body.detail}` : ''}`);
       }
     } catch (error) {
       log('portal9-api:csv', error.message || error);
@@ -1046,13 +1046,13 @@ export class WazuhApiCtrl {
     }
   }
   /**
-   * Check if user assigned roles disable Wazuh Plugin
+   * Check if user assigned roles disable Portal9 Plugin
    * @param context 
    * @param request 
    * @param response 
-   * @returns {object} Returns { isWazuhDisabled: boolean parsed integer } 
+   * @returns {object} Returns { isPortal9Disabled: boolean parsed integer } 
    */
-  async isWazuhDisabled(context: RequestHandlerContext, request: KibanaRequest, response: KibanaResponseFactory) {
+  async isPortal9Disabled(context: RequestHandlerContext, request: KibanaRequest, response: KibanaResponseFactory) {
     try {
       
       const disabledRoles = ( await getConfiguration() )['disabled_roles'] || [];
@@ -1060,13 +1060,13 @@ export class WazuhApiCtrl {
       const portal9Security = SecurityObj(context.portal9.plugins);
       const data = (await portal9Security.getCurrentUser(request, context)).authContext;
 
-      const isWazuhDisabled = +(data.roles || []).some((role) => disabledRoles.includes(role));
+      const isPortal9Disabled = +(data.roles || []).some((role) => disabledRoles.includes(role));
 
       return response.ok({
-        body: { isWazuhDisabled, logoSidebar }
+        body: { isPortal9Disabled, logoSidebar }
       });
     } catch (error) {
-      log('portal9-api:isWazuhDisabled', error.message || error);
+      log('portal9-api:isPortal9Disabled', error.message || error);
       return ErrorResponse(error.message || error, 3035, 500, response);
     }
     

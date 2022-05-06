@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Overview visualizations
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Overview visualizations
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,12 +18,12 @@ export const visualizations = {
         vis: [
           {
             title: 'Alert level evolution',
-            id: 'Wazuh-App-Overview-General-Alert-level-evolution',
+            id: 'Portal9-App-Overview-General-Alert-level-evolution',
             width: 60
           },
           {
             title: 'Top MITRE ATT&CKS',
-            id: 'Wazuh-App-Overview-General-Alerts-Top-Mitre',
+            id: 'Portal9-App-Overview-General-Alerts-Top-Mitre',
             width: 40
           }
         ]
@@ -33,12 +33,12 @@ export const visualizations = {
         vis: [
           {
             title: 'Top 5 agents',
-            id: 'Wazuh-App-Overview-General-Top-5-agents',
+            id: 'Portal9-App-Overview-General-Top-5-agents',
             width: 30
           },
           {
             title: 'Alerts evolution - Top 5 agents',
-            id: 'Wazuh-App-Overview-General-Alerts-evolution-Top-5-agents',
+            id: 'Portal9-App-Overview-General-Alerts-evolution-Top-5-agents',
             width: 70
           },
         ]
@@ -48,7 +48,7 @@ export const visualizations = {
         vis: [
           {
             title: 'Alerts summary',
-            id: 'Wazuh-App-Overview-General-Alerts-summary'
+            id: 'Portal9-App-Overview-General-Alerts-summary'
           }
         ]
       }
@@ -61,7 +61,7 @@ export const visualizations = {
         vis: [
           {
             title: 'Alerts by action over time',
-            id: 'Wazuh-App-Agents-FIM-Alerts-by-action-over-time'
+            id: 'Portal9-App-Agents-FIM-Alerts-by-action-over-time'
           }
         ]
       },
@@ -70,12 +70,12 @@ export const visualizations = {
         vis: [
           {
             title: 'Top 5 agents',
-            id: 'Wazuh-App-Overview-FIM-Top-5-agents-pie',
+            id: 'Portal9-App-Overview-FIM-Top-5-agents-pie',
             width: 30
           },
           {
             title: 'Events summary',
-            id: 'Wazuh-App-Overview-FIM-Events-summary',
+            id: 'Portal9-App-Overview-FIM-Events-summary',
             width: 70
           }
         ]
@@ -85,17 +85,17 @@ export const visualizations = {
         vis: [
           {
             title: 'Rule distribution',
-            id: 'Wazuh-App-Overview-FIM-Top-5-rules',
+            id: 'Portal9-App-Overview-FIM-Top-5-rules',
             width: 33
           },
           {
             title: 'Actions',
-            id: 'Wazuh-App-Overview-FIM-Common-actions',
+            id: 'Portal9-App-Overview-FIM-Common-actions',
             width: 33
           },
           {
             title: 'Top 5 users',
-            id: 'Wazuh-App-Overview-FIM-top-agents-user',
+            id: 'Portal9-App-Overview-FIM-top-agents-user',
             width: 34
           }
         ]
@@ -105,7 +105,7 @@ export const visualizations = {
         vis: [
           {
             title: 'Alerts summary',
-            id: 'Wazuh-App-Overview-FIM-Alerts-summary'
+            id: 'Portal9-App-Overview-FIM-Alerts-summary'
           }
         ]
       }
@@ -118,22 +118,22 @@ export const visualizations = {
         vis: [
           {
             title: 'Sources',
-            id: 'Wazuh-App-Overview-AWS-Top-sources',
+            id: 'Portal9-App-Overview-AWS-Top-sources',
             width: 25
           },
           {
             title: 'Accounts',
-            id: 'Wazuh-App-Overview-AWS-Top-accounts',
+            id: 'Portal9-App-Overview-AWS-Top-accounts',
             width: 25
           },
           {
             title: 'S3 buckets',
-            id: 'Wazuh-App-Overview-AWS-Top-buckets',
+            id: 'Portal9-App-Overview-AWS-Top-buckets',
             width: 25
           },
           {
             title: 'Regions',
-            id: 'Wazuh-App-Overview-AWS-Top-regions',
+            id: 'Portal9-App-Overview-AWS-Top-regions',
             width: 25
           }
         ]
@@ -143,12 +143,12 @@ export const visualizations = {
         vis: [
           {
             title: 'Events by source over time',
-            id: 'Wazuh-App-Overview-AWS-Events-by-source',
+            id: 'Portal9-App-Overview-AWS-Events-by-source',
             width: 50
           },
           {
             title: 'Events by S3 bucket over time',
-            id: 'Wazuh-App-Overview-AWS-Events-by-s3-bucket',
+            id: 'Portal9-App-Overview-AWS-Events-by-s3-bucket',
             width: 50
           }
         ]
@@ -158,7 +158,7 @@ export const visualizations = {
         vis: [
           {
             title: 'Geolocation map',
-            id: 'Wazuh-App-Overview-AWS-geo'
+            id: 'Portal9-App-Overview-AWS-geo'
           }
         ]
       },
@@ -167,7 +167,7 @@ export const visualizations = {
         vis: [
           {
             title: 'Alerts summary',
-            id: 'Wazuh-App-Overview-AWS-Alerts-summary'
+            id: 'Portal9-App-Overview-AWS-Alerts-summary'
           }
         ]
       }
@@ -180,7 +180,7 @@ export const visualizations = {
         vis: [
           {
             title: 'Events over time by auth answer',
-            id: 'Wazuh-App-Overview-GCP-Alerts-Evolution-By-AuthAnswer',
+            id: 'Portal9-App-Overview-GCP-Alerts-Evolution-By-AuthAnswer',
             width: 100
           }
         ]
@@ -190,17 +190,17 @@ export const visualizations = {
         vis: [
           {
             title: 'Top instances by response code',
-            id: 'Wazuh-App-Overview-GCP-Top-vmInstances-By-ResponseCode',
+            id: 'Portal9-App-Overview-GCP-Top-vmInstances-By-ResponseCode',
             width: 25
           },
           {
             title: 'Resource type by project id',
-            id: 'Wazuh-App-Overview-GCP-Top-ResourceType-By-Project-Id',
+            id: 'Portal9-App-Overview-GCP-Top-ResourceType-By-Project-Id',
             width: 50
           },
           {
             title: 'Top project id by sourcetype',
-            id: 'Wazuh-App-Overview-GCP-Top-ProjectId-By-SourceType',
+            id: 'Portal9-App-Overview-GCP-Top-ProjectId-By-SourceType',
             width: 25
           },
         ]
@@ -210,7 +210,7 @@ export const visualizations = {
         vis: [
           {
             title: 'Top 5 Map by source ip',
-            id: 'Wazuh-App-Overview-GCP-Map-By-SourceIp',
+            id: 'Portal9-App-Overview-GCP-Map-By-SourceIp',
             width: 100
           },
         ]
@@ -220,7 +220,7 @@ export const visualizations = {
         vis: [
           {
             title: 'Alerts summary',
-            id: 'Wazuh-App-Overview-GCP-Alerts-summary'
+            id: 'Portal9-App-Overview-GCP-Alerts-summary'
           }
         ]
       }
@@ -233,12 +233,12 @@ export const visualizations = {
         vis: [
           {
             title: 'PCI DSS requirements',
-            id: 'Wazuh-App-Overview-PCI-DSS-requirements',
+            id: 'Portal9-App-Overview-PCI-DSS-requirements',
             width: 50
           },
           {
             title: 'Top 10 agents by alerts number',
-            id: 'Wazuh-App-Overview-PCI-DSS-Agents',
+            id: 'Portal9-App-Overview-PCI-DSS-Agents',
             width: 50
           }
         ]
@@ -248,7 +248,7 @@ export const visualizations = {
         vis: [
           {
             title: 'Top requirements over time',
-            id: 'Wazuh-App-Overview-PCI-DSS-Requirements-over-time'
+            id: 'Portal9-App-Overview-PCI-DSS-Requirements-over-time'
           }
         ]
       },
@@ -257,7 +257,7 @@ export const visualizations = {
         vis: [
           {
             title: 'Last alerts',
-            id: 'Wazuh-App-Overview-PCI-DSS-Requirements-Agents-heatmap'
+            id: 'Portal9-App-Overview-PCI-DSS-Requirements-Agents-heatmap'
           }
         ]
       },
@@ -266,7 +266,7 @@ export const visualizations = {
         vis: [
           {
             title: 'Requirements by agent',
-            id: 'Wazuh-App-Overview-PCI-DSS-Requirements-by-agent'
+            id: 'Portal9-App-Overview-PCI-DSS-Requirements-by-agent'
           }
         ]
       },
@@ -275,7 +275,7 @@ export const visualizations = {
         vis: [
           {
             title: 'Alerts summary',
-            id: 'Wazuh-App-Overview-PCI-DSS-Alerts-summary'
+            id: 'Portal9-App-Overview-PCI-DSS-Alerts-summary'
           }
         ]
       }
@@ -288,12 +288,12 @@ export const visualizations = {
         vis: [
           {
             title: 'Top 10 agents by alerts number',
-            id: 'Wazuh-App-Overview-GDPR-Agents',
+            id: 'Portal9-App-Overview-GDPR-Agents',
             width: 30
           },
           {
             title: 'GDPR requirements',
-            id: 'Wazuh-App-Overview-GDPR-requirements',
+            id: 'Portal9-App-Overview-GDPR-requirements',
             width: 70
           }
         ]
@@ -303,7 +303,7 @@ export const visualizations = {
         vis: [
           {
             title: 'Top requirements over time',
-            id: 'Wazuh-App-Overview-GDPR-Requirements-heatmap'
+            id: 'Portal9-App-Overview-GDPR-Requirements-heatmap'
           }
         ]
       },
@@ -312,7 +312,7 @@ export const visualizations = {
         vis: [
           {
             title: 'Last alerts',
-            id: 'Wazuh-App-Overview-GDPR-Requirements-Agents-heatmap'
+            id: 'Portal9-App-Overview-GDPR-Requirements-Agents-heatmap'
           }
         ]
       },
@@ -321,7 +321,7 @@ export const visualizations = {
         vis: [
           {
             title: 'Requirements by agent',
-            id: 'Wazuh-App-Overview-GDPR-Requirements-by-agent'
+            id: 'Portal9-App-Overview-GDPR-Requirements-by-agent'
           }
         ]
       },
@@ -330,7 +330,7 @@ export const visualizations = {
         vis: [
           {
             title: 'Alerts summary',
-            id: 'Wazuh-App-Overview-GDPR-Alerts-summary'
+            id: 'Portal9-App-Overview-GDPR-Alerts-summary'
           }
         ]
       }
@@ -343,17 +343,17 @@ export const visualizations = {
         vis: [
           {
             title: 'Most active agents',
-            id: 'Wazuh-App-Overview-NIST-Agents',
+            id: 'Portal9-App-Overview-NIST-Agents',
             width: 20
           },
           {
             title: 'Top requirements over time',
-            id: 'Wazuh-App-Overview-NIST-Requirements-over-time',
+            id: 'Portal9-App-Overview-NIST-Requirements-over-time',
             width: 50
           },
           {
             title: 'Requiments distribution by agent',
-            id: 'Wazuh-App-Overview-NIST-requirements-by-agents',
+            id: 'Portal9-App-Overview-NIST-requirements-by-agents',
             width: 30
           }
         ]
@@ -363,17 +363,17 @@ export const visualizations = {
         vis: [
           {
             title: 'Alerts volume by agent',
-            id: 'Wazuh-App-Overview-NIST-Requirements-Agents-heatmap',
+            id: 'Portal9-App-Overview-NIST-Requirements-Agents-heatmap',
             width: 50
           },
           {
             title: 'Stats',
-            id: 'Wazuh-App-Overview-NIST-Metrics',
+            id: 'Portal9-App-Overview-NIST-Metrics',
             width: 20
           },
           {
             title: 'Top 10 requirements',
-            id: 'Wazuh-App-Overview-NIST-Top-10-requirements',
+            id: 'Portal9-App-Overview-NIST-Top-10-requirements',
             width: 30
           }
         ]
@@ -383,7 +383,7 @@ export const visualizations = {
         vis: [
           {
             title: 'Alerts summary',
-            id: 'Wazuh-App-Overview-NIST-Alerts-summary'
+            id: 'Portal9-App-Overview-NIST-Alerts-summary'
           }
         ]
       }
@@ -396,12 +396,12 @@ export const visualizations = {
         vis: [
           {
             title: 'TSC requirements',
-            id: 'Wazuh-App-Overview-TSC-requirements',
+            id: 'Portal9-App-Overview-TSC-requirements',
             width: 50
           },
           {
             title: 'Top 10 agents by alerts number',
-            id: 'Wazuh-App-Overview-TSC-Agents',
+            id: 'Portal9-App-Overview-TSC-Agents',
             width: 50
           }
         ]
@@ -411,7 +411,7 @@ export const visualizations = {
         vis: [
           {
             title: 'Top requirements over time',
-            id: 'Wazuh-App-Overview-TSC-Requirements-over-time'
+            id: 'Portal9-App-Overview-TSC-Requirements-over-time'
           }
         ]
       },
@@ -420,7 +420,7 @@ export const visualizations = {
         vis: [
           {
             title: 'Last alerts',
-            id: 'Wazuh-App-Overview-TSC-Requirements-Agents-heatmap'
+            id: 'Portal9-App-Overview-TSC-Requirements-Agents-heatmap'
           }
         ]
       },
@@ -429,7 +429,7 @@ export const visualizations = {
         vis: [
           {
             title: 'Requirements by agent',
-            id: 'Wazuh-App-Overview-TSC-Requirements-by-agent'
+            id: 'Portal9-App-Overview-TSC-Requirements-by-agent'
           }
         ]
       },
@@ -438,7 +438,7 @@ export const visualizations = {
         vis: [
           {
             title: 'Alerts summary',
-            id: 'Wazuh-App-Overview-TSC-Alerts-summary'
+            id: 'Portal9-App-Overview-TSC-Alerts-summary'
           }
         ]
       }
@@ -451,7 +451,7 @@ export const visualizations = {
         vis: [
           {
             title: 'Alerts volume by agent',
-            id: 'Wazuh-App-Overview-HIPAA-Heatmap',
+            id: 'Portal9-App-Overview-HIPAA-Heatmap',
             width: 50
           },
           {
@@ -463,12 +463,12 @@ export const visualizations = {
                 vis: [
                   {
                     title: 'Most common alerts',
-                    id: 'Wazuh-App-Overview-HIPAA-Tag-cloud',
+                    id: 'Portal9-App-Overview-HIPAA-Tag-cloud',
                     width: 50
                   },
                   {
                     title: 'Top 10 requirements',
-                    id: 'Wazuh-App-Overview-HIPAA-Top-10-requirements',
+                    id: 'Portal9-App-Overview-HIPAA-Top-10-requirements',
                     width: 50
                   }
                 ]
@@ -479,12 +479,12 @@ export const visualizations = {
                 vis: [
                   {
                     title: 'Most active agents',
-                    id: 'Wazuh-App-Overview-HIPAA-Top-10-agents',
+                    id: 'Portal9-App-Overview-HIPAA-Top-10-agents',
                     width: 50
                   },
                   {
                     title: 'Stats',
-                    id: 'Wazuh-App-Overview-HIPAA-Metrics',
+                    id: 'Portal9-App-Overview-HIPAA-Metrics',
                     width: 50
                   }
                 ]
@@ -498,13 +498,13 @@ export const visualizations = {
         vis: [
           {
             title: 'Requirements evolution over time',
-            id: 'Wazuh-App-Overview-HIPAA-Top-requirements-over-time',
+            id: 'Portal9-App-Overview-HIPAA-Top-requirements-over-time',
             width: 50
           },
           {
             title: 'Requirements distribution by agent',
             id:
-              'Wazuh-App-Overview-HIPAA-Top-10-requirements-over-time-by-agent',
+              'Portal9-App-Overview-HIPAA-Top-10-requirements-over-time-by-agent',
             width: 50
           }
         ]
@@ -514,7 +514,7 @@ export const visualizations = {
         vis: [
           {
             title: 'Alerts summary',
-            id: 'Wazuh-App-Overview-HIPAA-Alerts-summary'
+            id: 'Portal9-App-Overview-HIPAA-Alerts-summary'
           }
         ]
       }
@@ -527,12 +527,12 @@ export const visualizations = {
         vis: [
           {
             title: 'Most affected agents',
-            id: 'Wazuh-App-Overview-vuls-Most-affected-agents',
+            id: 'Portal9-App-Overview-vuls-Most-affected-agents',
             width: 30
           },
           {
             title: 'Alerts severity',
-            id: 'Wazuh-App-Overview-vuls-Alerts-severity',
+            id: 'Portal9-App-Overview-vuls-Alerts-severity',
             width: 70
           }
         ]
@@ -542,17 +542,17 @@ export const visualizations = {
         vis: [
           {
             title: 'Most common CVEs',
-            id: 'Wazuh-App-Overview-vuls-Most-common-CVEs',
+            id: 'Portal9-App-Overview-vuls-Most-common-CVEs',
             width: 30
           },
           {
             title: 'TOP affected packages alerts Evolution',
-            id: 'Wazuh-App-Overview-vuls-Vulnerability-evolution-affected-packages',
+            id: 'Portal9-App-Overview-vuls-Vulnerability-evolution-affected-packages',
             width: 40
           },
           {
             title: 'Most common CWEs',
-            id: 'Wazuh-App-Overview-vuls-Most-common-CWEs',
+            id: 'Portal9-App-Overview-vuls-Most-common-CWEs',
             width: 30
           }
         ]
@@ -562,12 +562,12 @@ export const visualizations = {
         vis: [
           {
             title: 'Top affected packages by CVEs',
-            id: 'Wazuh-App-Overview-vuls-packages-CVEs',
+            id: 'Portal9-App-Overview-vuls-packages-CVEs',
             width: 50
           },
           {
             title: 'Agents by severity',
-            id: 'Wazuh-App-Overview-vuls-agents-severities',
+            id: 'Portal9-App-Overview-vuls-agents-severities',
             width: 50
           }
         ]
@@ -577,7 +577,7 @@ export const visualizations = {
         vis: [
           {
             title: 'Alert summary',
-            id: 'Wazuh-App-Overview-vuls-Alert-summary'
+            id: 'Portal9-App-Overview-vuls-Alert-summary'
           }
         ]
       }
@@ -590,12 +590,12 @@ export const visualizations = {
         vis: [
           {
             title: 'Unique malicious files per agent',
-            id: 'Wazuh-App-Overview-Virustotal-Malicious-Per-Agent',
+            id: 'Portal9-App-Overview-Virustotal-Malicious-Per-Agent',
             width: 50
           },
           {
             title: 'Last scanned files',
-            id: 'Wazuh-App-Overview-Virustotal-Last-Files-Pie',
+            id: 'Portal9-App-Overview-Virustotal-Last-Files-Pie',
             width: 50
           }
         ]
@@ -605,7 +605,7 @@ export const visualizations = {
         vis: [
           {
             title: 'Alerts evolution by agents',
-            id: 'Wazuh-App-Overview-Virustotal-Alerts-Evolution'
+            id: 'Portal9-App-Overview-Virustotal-Alerts-Evolution'
           }
         ]
       },
@@ -614,7 +614,7 @@ export const visualizations = {
         vis: [
           {
             title: 'Malicious files alerts evolution',
-            id: 'Wazuh-App-Overview-Virustotal-Malicious-Evolution'
+            id: 'Portal9-App-Overview-Virustotal-Malicious-Evolution'
           }
         ]
       },
@@ -623,7 +623,7 @@ export const visualizations = {
         vis: [
           {
             title: 'Last files',
-            id: 'Wazuh-App-Overview-Virustotal-Files-Table'
+            id: 'Portal9-App-Overview-Virustotal-Files-Table'
           }
         ]
       },
@@ -632,7 +632,7 @@ export const visualizations = {
         vis: [
           {
             title: 'Alerts summary',
-            id: 'Wazuh-App-Overview-Virustotal-Alerts-summary'
+            id: 'Portal9-App-Overview-Virustotal-Alerts-summary'
           }
         ]
       }
@@ -645,17 +645,17 @@ export const visualizations = {
         vis: [
           {
             title: 'Top 5 Osquery events added',
-            id: 'Wazuh-App-Overview-Osquery-Top-5-added',
+            id: 'Portal9-App-Overview-Osquery-Top-5-added',
             width: 25
           },
           {
             title: 'Top 5 Osquery events removed',
-            id: 'Wazuh-App-Overview-Osquery-Top-5-removed',
+            id: 'Portal9-App-Overview-Osquery-Top-5-removed',
             width: 25
           },
           {
             title: 'Evolution of Osquery events per pack over time',
-            id: 'Wazuh-App-Agents-Osquery-Evolution',
+            id: 'Portal9-App-Agents-Osquery-Evolution',
             width: 50
           }
         ]
@@ -665,12 +665,12 @@ export const visualizations = {
         vis: [
           {
             title: 'Most common packs',
-            id: 'Wazuh-App-Overview-Osquery-Most-common-packs',
+            id: 'Portal9-App-Overview-Osquery-Most-common-packs',
             width: 30
           },
           {
             title: 'Top 5 rules',
-            id: 'Wazuh-App-Overview-Osquery-Top-5-rules',
+            id: 'Portal9-App-Overview-Osquery-Top-5-rules',
             width: 70
           }
         ]
@@ -680,7 +680,7 @@ export const visualizations = {
         vis: [
           {
             title: 'Alerts summary',
-            id: 'Wazuh-App-Overview-Osquery-Alerts-summary'
+            id: 'Portal9-App-Overview-Osquery-Alerts-summary'
           }
         ]
       }
@@ -693,12 +693,12 @@ export const visualizations = {
         vis: [
           {
             title: 'Alerts evolution over time',
-            id: 'Wazuh-App-Overview-MITRE-Alerts-Evolution',
+            id: 'Portal9-App-Overview-MITRE-Alerts-Evolution',
             width: 75
           },
           {
             title: 'Top tactics',
-            id: 'Wazuh-App-Overview-MITRE-Top-Tactics',
+            id: 'Portal9-App-Overview-MITRE-Top-Tactics',
             width: 25
           }
         ]
@@ -708,17 +708,17 @@ export const visualizations = {
         vis: [
           {
             title: 'Attacks by technique',
-            id: 'Wazuh-App-Overview-MITRE-Attacks-By-Technique',
+            id: 'Portal9-App-Overview-MITRE-Attacks-By-Technique',
             width: 33
           },
           {
             title: 'Top tactics by agent',
-            id: 'Wazuh-App-Overview-MITRE-Top-Tactics-By-Agent',
+            id: 'Portal9-App-Overview-MITRE-Top-Tactics-By-Agent',
             width: 34
           },
           {
             title: 'Mitre techniques by agent',
-            id: 'Wazuh-App-Overview-MITRE-Attacks-By-Agent',
+            id: 'Portal9-App-Overview-MITRE-Attacks-By-Agent',
             width: 33
           }
         ]
@@ -728,7 +728,7 @@ export const visualizations = {
         vis: [
           {
             title: 'Alerts summary',
-            id: 'Wazuh-App-Overview-MITRE-Alerts-summary'
+            id: 'Portal9-App-Overview-MITRE-Alerts-summary'
           }
         ]
       }
@@ -741,17 +741,17 @@ export const visualizations = {
         vis: [
           {
             title: 'Top 5 images',
-            id: 'Wazuh-App-Overview-Docker-top-5-images',
+            id: 'Portal9-App-Overview-Docker-top-5-images',
             width: 25
           },
           {
             title: 'Top 5 events',
-            id: 'Wazuh-App-Overview-Docker-top-5-actions',
+            id: 'Portal9-App-Overview-Docker-top-5-actions',
             width: 25
           },
           {
             title: 'Resources usage over time',
-            id: 'Wazuh-App-Overview-Docker-Types-over-time',
+            id: 'Portal9-App-Overview-Docker-Types-over-time',
             width: 50
           }
         ]
@@ -761,7 +761,7 @@ export const visualizations = {
         vis: [
           {
             title: 'Events occurred evolution',
-            id: 'Wazuh-App-Overview-Docker-Actions-over-time'
+            id: 'Portal9-App-Overview-Docker-Actions-over-time'
           }
         ]
       },
@@ -770,7 +770,7 @@ export const visualizations = {
         vis: [
           {
             title: 'Alerts summary',
-            id: 'Wazuh-App-Overview-Docker-Events-summary'
+            id: 'Portal9-App-Overview-Docker-Events-summary'
           }
         ]
       }
@@ -783,22 +783,22 @@ export const visualizations = {
         vis: [
           {
             title: 'Top 5 Agents',
-            id: 'Wazuh-App-Overview-OSCAP-Agents',
+            id: 'Portal9-App-Overview-OSCAP-Agents',
             width: 25
           },
           {
             title: 'Top 5 Profiles',
-            id: 'Wazuh-App-Overview-OSCAP-Profiles',
+            id: 'Portal9-App-Overview-OSCAP-Profiles',
             width: 25
           },
           {
             title: 'Top 5 Content',
-            id: 'Wazuh-App-Overview-OSCAP-Content',
+            id: 'Portal9-App-Overview-OSCAP-Content',
             width: 25
           },
           {
             title: 'Top 5 Severity',
-            id: 'Wazuh-App-Overview-OSCAP-Severity',
+            id: 'Portal9-App-Overview-OSCAP-Severity',
             width: 25
           }
         ]
@@ -808,7 +808,7 @@ export const visualizations = {
         vis: [
           {
             title: 'Top 5 Agents - Severity high',
-            id: 'Wazuh-App-Overview-OSCAP-Top-5-agents-Severity-high'
+            id: 'Portal9-App-Overview-OSCAP-Top-5-agents-Severity-high'
           }
         ]
       },
@@ -817,12 +817,12 @@ export const visualizations = {
         vis: [
           {
             title: 'Top 10 - Alerts',
-            id: 'Wazuh-App-Overview-OSCAP-Top-10-alerts',
+            id: 'Portal9-App-Overview-OSCAP-Top-10-alerts',
             width: 50
           },
           {
             title: 'Top 10 - High risk alerts',
-            id: 'Wazuh-App-Overview-OSCAP-Top-10-high-risk-alerts',
+            id: 'Portal9-App-Overview-OSCAP-Top-10-high-risk-alerts',
             width: 50
           }
         ]
@@ -832,7 +832,7 @@ export const visualizations = {
         vis: [
           {
             title: 'Alerts summary',
-            id: 'Wazuh-App-Overview-OSCAP-Last-alerts'
+            id: 'Portal9-App-Overview-OSCAP-Last-alerts'
           }
         ]
       }
@@ -845,12 +845,12 @@ export const visualizations = {
         vis: [
           {
             title: 'Top 5 CIS-CAT groups',
-            id: 'Wazuh-app-Overview-CISCAT-top-5-groups',
+            id: 'Portal9-app-Overview-CISCAT-top-5-groups',
             width: 60
           },
           {
             title: 'Scan result evolution',
-            id: 'Wazuh-app-Overview-CISCAT-scan-result-evolution',
+            id: 'Portal9-app-Overview-CISCAT-scan-result-evolution',
             width: 40
           }
         ]
@@ -860,7 +860,7 @@ export const visualizations = {
         vis: [
           {
             title: 'Alerts summary',
-            id: 'Wazuh-app-Overview-CISCAT-alerts-summary'
+            id: 'Portal9-app-Overview-CISCAT-alerts-summary'
           }
         ]
       }
@@ -873,17 +873,17 @@ export const visualizations = {
         vis: [
           {
             title: 'Events over time',
-            id: 'Wazuh-App-Overview-PM-Events-over-time',
+            id: 'Portal9-App-Overview-PM-Events-over-time',
             width: 50
           },
           {
             title: 'Rule distribution',
-            id: 'Wazuh-App-Overview-PM-Top-5-rules',
+            id: 'Portal9-App-Overview-PM-Top-5-rules',
             width: 25
           },
           {
             title: 'Top 5 agents',
-            id: 'Wazuh-App-Overview-PM-Top-5-agents-pie',
+            id: 'Portal9-App-Overview-PM-Top-5-agents-pie',
             width: 25
           }
         ]
@@ -893,7 +893,7 @@ export const visualizations = {
         vis: [
           {
             title: 'Events per control type evolution',
-            id: 'Wazuh-App-Overview-PM-Events-per-agent-evolution'
+            id: 'Portal9-App-Overview-PM-Events-per-agent-evolution'
           }
         ]
       },
@@ -902,7 +902,7 @@ export const visualizations = {
         vis: [
           {
             title: 'Alerts summary',
-            id: 'Wazuh-App-Overview-PM-Alerts-summary'
+            id: 'Portal9-App-Overview-PM-Alerts-summary'
           }
         ]
       }
@@ -915,22 +915,22 @@ export const visualizations = {
         vis: [
           {
             title: 'Groups',
-            id: 'Wazuh-App-Overview-Audit-Groups',
+            id: 'Portal9-App-Overview-Audit-Groups',
             width: 25
           },
           {
             title: 'Agents',
-            id: 'Wazuh-App-Overview-Audit-Agents',
+            id: 'Portal9-App-Overview-Audit-Agents',
             width: 25
           },
           {
             title: 'Commands',
-            id: 'Wazuh-App-Overview-Audit-Commands',
+            id: 'Portal9-App-Overview-Audit-Commands',
             width: 25
           },
           {
             title: 'Files',
-            id: 'Wazuh-App-Overview-Audit-Files',
+            id: 'Portal9-App-Overview-Audit-Files',
             width: 25
           }
         ]
@@ -940,7 +940,7 @@ export const visualizations = {
         vis: [
           {
             title: 'Alerts over time',
-            id: 'Wazuh-App-Overview-Audit-Alerts-over-time'
+            id: 'Portal9-App-Overview-Audit-Alerts-over-time'
           }
         ]
       },
@@ -949,7 +949,7 @@ export const visualizations = {
         vis: [
           {
             title: 'Alerts summary',
-            id: 'Wazuh-App-Overview-Audit-Last-alerts'
+            id: 'Portal9-App-Overview-Audit-Last-alerts'
           }
         ]
       }

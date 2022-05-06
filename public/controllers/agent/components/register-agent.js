@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for registering agents.
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - React component for registering agents.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -11,7 +11,7 @@
  */
 import React, { Component, Fragment } from 'react';
 import { version, kibana } from '../../../../package.json';
-import { WazuhConfig } from '../../../react-services/portal9-config';
+import { Portal9Config } from '../../../react-services/portal9-config';
 import {
   EuiSteps,
   EuiTabs,
@@ -118,7 +118,7 @@ const pTextCheckConnectionStyle = {
 export class RegisterAgent extends Component {
   constructor(props) {
     super(props);
-    this.portal9Config = new WazuhConfig();
+    this.portal9Config = new Portal9Config();
     this.configuration = this.portal9Config.getConfig();
     this.state = {
       status: 'incomplete',
@@ -146,7 +146,7 @@ export class RegisterAgent extends Component {
   async componentDidMount() {
     try {
       this.setState({ loading: true });
-      const portal9Version = await this.props.getWazuhVersion();
+      const portal9Version = await this.props.getPortal9Version();
       let serverAddress = false;
       let portal9Password = '';
       let hidePasswordInput = false;
@@ -246,7 +246,7 @@ export class RegisterAgent extends Component {
     this.setState({ selectedVersion, selectedArchitecture: '' });
   }
 
-  setWazuhPassword(event) {
+  setPortal9Password(event) {
     this.setState({ portal9Password: event.target.value });
   }
 
@@ -386,8 +386,8 @@ export class RegisterAgent extends Component {
     const ipInput = (
       <EuiText>
         <p>
-          You can predefine the Wazuh server address with the <EuiCode>enrollment.dns</EuiCode>{' '}
-          Wazuh app setting.
+          You can predefine the Portal9 server address with the <EuiCode>enrollment.dns</EuiCode>{' '}
+          Portal9 app setting.
         </p>
         <EuiFieldText
           placeholder="Server address"
@@ -416,9 +416,9 @@ export class RegisterAgent extends Component {
 
     const passwordInput = (
       <EuiFieldText
-        placeholder="Wazuh password"
+        placeholder="Portal9 password"
         value={this.state.portal9Password}
-        onChange={(event) => this.setWazuhPassword(event)}
+        onChange={(event) => this.setPortal9Password(event)}
       />
     );
 
@@ -457,10 +457,10 @@ export class RegisterAgent extends Component {
       <div>
         {this.state.selectedOS && (
           <EuiText>
-            <p>You can use this command to install and enroll the Wazuh agent in one or more hosts.</p>
+            <p>You can use this command to install and enroll the Portal9 agent in one or more hosts.</p>
             <EuiCallOut
               color="warning"
-              title={<>Running this command on a host with an agent already installed upgrades the agent package without enrolling the agent. To enroll it, see the <EuiLink href="https://documentation.portal9.com/current/user-manual/registering/index.html">Wazuh documentation</EuiLink>.</>}
+              title={<>Running this command on a host with an agent already installed upgrades the agent package without enrolling the agent. To enroll it, see the <EuiLink href="https://documentation.portal9.com/current/user-manual/registering/index.html">Portal9 documentation</EuiLink>.</>}
               iconType="iInCircle"
             />
             <EuiSpacer />
@@ -590,13 +590,13 @@ export class RegisterAgent extends Component {
           ]
         : []),
       {
-        title: 'Wazuh server address',
+        title: 'Portal9 server address',
         children: <Fragment>{ipInput}</Fragment>,
       },
       ...(!(!this.state.needsPassword || this.state.hidePasswordInput)
         ? [
             {
-              title: 'Wazuh password',
+              title: 'Portal9 password',
               children: <Fragment>{passwordInput}</Fragment>,
             },
           ]

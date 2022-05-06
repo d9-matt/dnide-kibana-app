@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Management controller
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Management controller
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -11,7 +11,7 @@
  */
 import { TabNames } from '../../utils/tab-names';
 import { AppState } from '../../react-services/app-state';
-import { WazuhConfig } from '../../react-services/portal9-config';
+import { Portal9Config } from '../../react-services/portal9-config';
 import { WzRequest } from '../../react-services/wz-request';
 import { ErrorHandler } from '../../react-services/error-handler';
 import { ShareAgent } from '../../factories/share-agent';
@@ -35,7 +35,7 @@ export class ManagementController {
     this.$rootScope = $rootScope;
     this.$location = $location;
     this.shareAgent = new ShareAgent();
-    this.portal9Config = new WazuhConfig();
+    this.portal9Config = new Portal9Config();
     this.configHandler = configHandler;
     this.errorHandler = errorHandler;
     this.$interval = $interval;
@@ -192,7 +192,7 @@ export class ManagementController {
         agent: {
           id: '000'
         }, // TODO: get dynamically the agent?
-        updateWazuhNotReadyYet: status => {
+        updatePortal9NotReadyYet: status => {
           this.$rootScope.portal9NotReadyYet = status;
           this.$scope.$applyAsync();
         },

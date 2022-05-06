@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Initial basic configuration file
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Initial basic configuration file
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -10,10 +10,10 @@
  * Find more information about this on the LICENSE file.
  */
 
-export const initialWazuhConfig: string = `---
+export const initialPortal9Config: string = `---
 #
-# Wazuh app - App configuration file
-# Copyright (C) 2015-2021 Wazuh, Inc.
+# Portal9 app - App configuration file
+# Copyright (C) 2015-2021 Portal9, Inc.
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -22,7 +22,7 @@ export const initialWazuhConfig: string = `---
 #
 # Find more information about this on the LICENSE file.
 #
-# ======================== Wazuh app configuration file ========================
+# ======================== Portal9 app configuration file ========================
 #
 # Please check the documentation for more information on configuration options:
 # https://documentation.portal9.com/current/installation-guide/index.html
@@ -32,7 +32,7 @@ export const initialWazuhConfig: string = `---
 #
 # ------------------------------- Disable roles -------------------------------
 #
-# Defines which Elasticsearch roles disable Wazuh
+# Defines which Elasticsearch roles disable Portal9
 # disabled_roles: 
 #      - portal9_disabled
 #
@@ -44,7 +44,7 @@ export const initialWazuhConfig: string = `---
 # ----------------------------------- Checks -----------------------------------
 #
 # Defines which checks must to be consider by the healthcheck
-# step once the Wazuh app starts. Values must to be true or false.
+# step once the Portal9 app starts. Values must to be true or false.
 #checks.pattern : true
 #checks.template: true
 #checks.api     : true
@@ -56,7 +56,7 @@ export const initialWazuhConfig: string = `---
 # --------------------------------- Extensions ---------------------------------
 #
 # Defines which extensions should be activated when you add a new API entry.
-# You can change them after Wazuh app starts.
+# You can change them after Portal9 app starts.
 # Values must to be true or false.
 #extensions.pci       : true
 #extensions.gdpr      : true
@@ -74,7 +74,7 @@ export const initialWazuhConfig: string = `---
 #
 # ---------------------------------- Timeout ----------------------------------
 #
-# Defines maximum timeout to be used on the Wazuh app requests.
+# Defines maximum timeout to be used on the Portal9 app requests.
 # It will be ignored if it is bellow 1500.
 # It means milliseconds before we consider a request as failed.
 # Default: 20000
@@ -83,14 +83,14 @@ export const initialWazuhConfig: string = `---
 # -------------------------------- API selector --------------------------------
 #
 # Defines if the user is allowed to change the selected
-# API directly from the Wazuh app top menu.
+# API directly from the Portal9 app top menu.
 # Default: true
 #api.selector: true
 #
 # --------------------------- Index pattern selector ---------------------------
 #
 # Defines if the user is allowed to change the selected
-# index pattern directly from the Wazuh app top menu.
+# index pattern directly from the Portal9 app top menu.
 # Default: true
 #ip.selector: true
 #
@@ -125,7 +125,7 @@ export const initialWazuhConfig: string = `---
 # Default: w
 #portal9.monitoring.creation: w
 #
-# Default index pattern to use for Wazuh monitoring
+# Default index pattern to use for Portal9 monitoring
 #portal9.monitoring.pattern: portal9-monitoring-*
 #
 # --------------------------------- portal9-cron ----------------------------------
@@ -184,7 +184,7 @@ export const initialWazuhConfig: string = `---
 #hideManagerAlerts: false
 #
 # ------------------------------- App logging level -----------------------------
-# Set the logging level for the Wazuh App log files.
+# Set the logging level for the Portal9 App log files.
 # Default value: info
 # Allowed values: info, debug
 #logs.level: info
@@ -194,7 +194,7 @@ export const initialWazuhConfig: string = `---
 # Default value: ''
 #enrollment.dns: ''
 #
-# Wazuh registration password
+# Portal9 registration password
 # Default value: ''
 #enrollment.password: ''
 #-------------------------------- API entries -----------------------------------
@@ -221,8 +221,8 @@ export const initialWazuhConfig: string = `---
       # Run as
       # Define how the app user gets his/her app permissions.
       # Values:
-      #   - true: use his/her authentication context. Require Wazuh API user allows run_as.
-      #   - false or not defined: get same permissions of Wazuh API user.
+      #   - true: use his/her authentication context. Require Portal9 API user allows run_as.
+      #   - false or not defined: get same permissions of Portal9 API user.
       # run_as: <true|false>
 hosts:
   - default:

@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Integrity monitoring table component
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Integrity monitoring table component
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,7 +17,7 @@ import { AppState } from '../../../../react-services/app-state';
 import { AppNavigate } from '../../../../react-services/app-navigate';
 import { RowDetails } from './row-details';
 import DateMatch from '@elastic/datemath';
-import { WazuhConfig } from '../../../../react-services/portal9-config';
+import { Portal9Config } from '../../../../react-services/portal9-config';
 import { formatUIDate } from '../../../../react-services/time-service';
 import { KbnSearchBar } from '../../../kbn-search-bar';
 import { FlyoutTechnique } from '../../../../components/overview/mitre/components/techniques/components/flyout-technique';
@@ -129,7 +129,7 @@ export const Discover = compose(
       hover: ""
     }
 
-    this.portal9Config = new WazuhConfig();
+    this.portal9Config = new Portal9Config();
     this.nameEquivalences = {
       "agent.id": "Agent",
       "agent.name": "Agent name",

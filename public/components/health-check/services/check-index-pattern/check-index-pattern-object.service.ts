@@ -1,7 +1,7 @@
 /*
- * Wazuh app - Check alerts index pattern service
+ * Portal9 app - Check alerts index pattern service
  *
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -28,7 +28,7 @@ export const checkIndexPatternObjectService =  async (appConfig, checkLogger: Ch
     ...(patternId && patternId !== defaultPatternId ? [patternId] : [])
   ];
   checkLogger.info(`Getting list of valid index patterns...`);
-  let listValidIndexPatterns = await SavedObject.getListOfWazuhValidIndexPatterns(defaultIndexPatterns, HEALTH_CHECK);
+  let listValidIndexPatterns = await SavedObject.getListOfPortal9ValidIndexPatterns(defaultIndexPatterns, HEALTH_CHECK);
   checkLogger.info(`Valid index patterns found: ${listValidIndexPatterns.length || 0}`);
 
   const indexPatternDefaultFound = listValidIndexPatterns.find((indexPattern) => indexPattern.title === defaultPatternId);
@@ -48,14 +48,14 @@ export const checkIndexPatternObjectService =  async (appConfig, checkLogger: Ch
         };
       } else if(shouldCreateIndex) {
         checkLogger.info(`Creating index pattern [${defaultPatternId}]...`);
-        await SavedObject.createWazuhIndexPattern(defaultPatternId);
+        await SavedObject.createPortal9IndexPattern(defaultPatternId);
         checkLogger.action(`Created index pattern [${defaultPatternId}]`);
       }else{
         // show error
         checkLogger.error(`Default index pattern not found`);
       }
       checkLogger.info(`Getting list of valid index patterns...`);
-      listValidIndexPatterns = await SavedObject.getListOfWazuhValidIndexPatterns(defaultIndexPatterns, HEALTH_CHECK);
+      listValidIndexPatterns = await SavedObject.getListOfPortal9ValidIndexPatterns(defaultIndexPatterns, HEALTH_CHECK);
       checkLogger.info(`Valid index patterns found: ${listValidIndexPatterns.length || 0}`);
       if(!AppState.getCurrentPattern()){
         AppState.setCurrentPattern(defaultPatternId);

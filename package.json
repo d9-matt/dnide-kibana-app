@@ -6,14 +6,14 @@
   "kibana": {
     "version": "7.10.2"
   },
-  "description": "Wazuh app",
+  "description": "Portal9 app",
   "keywords": [
     "kibana",
     "portal9",
     "ossec"
   ],
   "node_build": "10.23.1",
-  "author": "Wazuh, Inc",
+  "author": "Portal9, Inc",
   "license": "GPL-2.0",
   "repository": {
     "type": "git",

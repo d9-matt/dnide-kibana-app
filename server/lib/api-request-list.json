@@ -402,7 +402,7 @@
       {
         "name": "/agents/:agent_id/stats/:component",
         "documentation": "https://documentation.portal9.com/current/user-manual/api/reference.html#operation/api.controllers.agent_controller.get_component_stats",
-        "description": "Return Wazuh's {component} statistical information from agent {agent_id}",
+        "description": "Return Portal9's {component} statistical information from agent {agent_id}",
         "summary": "Get agent's component stats",
         "tags": [
           "Agents"
@@ -1272,7 +1272,7 @@
           },
           {
             "name": "tag",
-            "description": "Wazuh component that logged the event",
+            "description": "Portal9 component that logged the event",
             "schema": {
               "type": "string",
               "enum": [
@@ -1360,7 +1360,7 @@
       {
         "name": "/cluster/:node_id/stats",
         "documentation": "https://documentation.portal9.com/current/user-manual/api/reference.html#operation/api.controllers.cluster_controller.get_stats_node",
-        "description": "Return Wazuh statistical information in node {node_id} for the current or specified date",
+        "description": "Return Portal9 statistical information in node {node_id} for the current or specified date",
         "summary": "Get node stats",
         "tags": [
           "Cluster"
@@ -1406,7 +1406,7 @@
       {
         "name": "/cluster/:node_id/stats/analysisd",
         "documentation": "https://documentation.portal9.com/current/user-manual/api/reference.html#operation/api.controllers.cluster_controller.get_stats_analysisd_node",
-        "description": "Return Wazuh analysisd statistical information in node {node_id}",
+        "description": "Return Portal9 analysisd statistical information in node {node_id}",
         "summary": "Get node stats analysisd",
         "tags": [
           "Cluster"
@@ -1444,7 +1444,7 @@
       {
         "name": "/cluster/:node_id/stats/hourly",
         "documentation": "https://documentation.portal9.com/current/user-manual/api/reference.html#operation/api.controllers.cluster_controller.get_stats_hourly_node",
-        "description": "Return Wazuh statistical information in node {node_id} per hour. Each number in the averages field represents the average of alerts per hour",
+        "description": "Return Portal9 statistical information in node {node_id} per hour. Each number in the averages field represents the average of alerts per hour",
         "summary": "Get node stats hour",
         "tags": [
           "Cluster"
@@ -1482,7 +1482,7 @@
       {
         "name": "/cluster/:node_id/stats/remoted",
         "documentation": "https://documentation.portal9.com/current/user-manual/api/reference.html#operation/api.controllers.cluster_controller.get_stats_remoted_node",
-        "description": "Return Wazuh remoted statistical information in node {node_id}",
+        "description": "Return Portal9 remoted statistical information in node {node_id}",
         "summary": "Get node stats remoted",
         "tags": [
           "Cluster"
@@ -1520,7 +1520,7 @@
       {
         "name": "/cluster/:node_id/stats/weekly",
         "documentation": "https://documentation.portal9.com/current/user-manual/api/reference.html#operation/api.controllers.cluster_controller.get_stats_weekly_node",
-        "description": "Return Wazuh statistical information in node {node_id} per week. Each number in the averages field represents the average of alerts per hour for that specific day",
+        "description": "Return Portal9 statistical information in node {node_id} per week. Each number in the averages field represents the average of alerts per hour for that specific day",
         "summary": "Get node stats week",
         "tags": [
           "Cluster"
@@ -1558,7 +1558,7 @@
       {
         "name": "/cluster/:node_id/status",
         "documentation": "https://documentation.portal9.com/current/user-manual/api/reference.html#operation/api.controllers.cluster_controller.get_status_node",
-        "description": "Return the status of all Wazuh daemons in node node_id",
+        "description": "Return the status of all Portal9 daemons in node node_id",
         "summary": "Get node status",
         "tags": [
           "Cluster"
@@ -1633,7 +1633,7 @@
       {
         "name": "/cluster/configuration/validation",
         "documentation": "https://documentation.portal9.com/current/user-manual/api/reference.html#operation/api.controllers.cluster_controller.get_conf_validation",
-        "description": "Return whether the Wazuh configuration is correct or not in all cluster nodes or a list of them",
+        "description": "Return whether the Portal9 configuration is correct or not in all cluster nodes or a list of them",
         "summary": "Check nodes config",
         "tags": [
           "Cluster"
@@ -2016,7 +2016,7 @@
       {
         "name": "/decoders/files",
         "documentation": "https://documentation.portal9.com/current/user-manual/api/reference.html#operation/api.controllers.decoder_controller.get_decoders_files",
-        "description": "Return information about all decoders files used in Wazuh. This information include decoder's file, decoder's route and decoder's status among others",
+        "description": "Return information about all decoders files used in Portal9. This information include decoder's file, decoder's route and decoder's status among others",
         "summary": "Get files",
         "tags": [
           "Decoders"
@@ -4264,7 +4264,7 @@
       {
         "name": "/lists/files",
         "documentation": "https://documentation.portal9.com/current/user-manual/api/reference.html#operation/api.controllers.cdb_list_controller.get_lists_files",
-        "description": "Return the path from all CDB lists. Use this method to know all the CDB lists and their location in the filesystem relative to Wazuh installation folder",
+        "description": "Return the path from all CDB lists. Use this method to know all the CDB lists and their location in the filesystem relative to Portal9 installation folder",
         "summary": "Get CDB lists files",
         "tags": [
           "Lists"
@@ -4590,7 +4590,7 @@
       {
         "name": "/manager/configuration/validation",
         "documentation": "https://documentation.portal9.com/current/user-manual/api/reference.html#operation/api.controllers.manager_controller.get_conf_validation",
-        "description": "Return whether the Wazuh configuration is correct",
+        "description": "Return whether the Portal9 configuration is correct",
         "summary": "Check config",
         "tags": [
           "Manager"
@@ -4719,7 +4719,7 @@
           },
           {
             "name": "tag",
-            "description": "Wazuh component that logged the event",
+            "description": "Portal9 component that logged the event",
             "schema": {
               "type": "string",
               "enum": [
@@ -4796,7 +4796,7 @@
       {
         "name": "/manager/stats",
         "documentation": "https://documentation.portal9.com/current/user-manual/api/reference.html#operation/api.controllers.manager_controller.get_stats",
-        "description": "Return Wazuh statistical information for the current or specified date",
+        "description": "Return Portal9 statistical information for the current or specified date",
         "summary": "Get stats",
         "tags": [
           "Manager"
@@ -4831,7 +4831,7 @@
       {
         "name": "/manager/stats/analysisd",
         "documentation": "https://documentation.portal9.com/current/user-manual/api/reference.html#operation/api.controllers.manager_controller.get_stats_analysisd",
-        "description": "Return Wazuh analysisd statistical information",
+        "description": "Return Portal9 analysisd statistical information",
         "summary": "Get stats analysisd",
         "tags": [
           "Manager"
@@ -4858,7 +4858,7 @@
       {
         "name": "/manager/stats/hourly",
         "documentation": "https://documentation.portal9.com/current/user-manual/api/reference.html#operation/api.controllers.manager_controller.get_stats_hourly",
-        "description": "Return Wazuh statistical information per hour. Each number in the averages field represents the average of alerts per hour",
+        "description": "Return Portal9 statistical information per hour. Each number in the averages field represents the average of alerts per hour",
         "summary": "Get stats hour",
         "tags": [
           "Manager"
@@ -4885,7 +4885,7 @@
       {
         "name": "/manager/stats/remoted",
         "documentation": "https://documentation.portal9.com/current/user-manual/api/reference.html#operation/api.controllers.manager_controller.get_stats_remoted",
-        "description": "Return Wazuh remoted statistical information",
+        "description": "Return Portal9 remoted statistical information",
         "summary": "Get stats remoted",
         "tags": [
           "Manager"
@@ -4912,7 +4912,7 @@
       {
         "name": "/manager/stats/weekly",
         "documentation": "https://documentation.portal9.com/current/user-manual/api/reference.html#operation/api.controllers.manager_controller.get_stats_weekly",
-        "description": "Return Wazuh statistical information per week. Each number in the averages field represents the average of alerts per hour for that specific day",
+        "description": "Return Portal9 statistical information per week. Each number in the averages field represents the average of alerts per hour for that specific day",
         "summary": "Get stats week",
         "tags": [
           "Manager"
@@ -4939,7 +4939,7 @@
       {
         "name": "/manager/status",
         "documentation": "https://documentation.portal9.com/current/user-manual/api/reference.html#operation/api.controllers.manager_controller.get_status",
-        "description": "Return the status of all Wazuh daemons",
+        "description": "Return the status of all Portal9 daemons",
         "summary": "Get status",
         "tags": [
           "Manager"
@@ -5670,7 +5670,7 @@
       {
         "name": "/rules/requirement/:requirement",
         "documentation": "https://documentation.portal9.com/current/user-manual/api/reference.html#operation/api.controllers.rule_controller.get_rules_requirement",
-        "description": "Return all specified requirement names defined in the Wazuh ruleset",
+        "description": "Return all specified requirement names defined in the Portal9 ruleset",
         "summary": "Get requirements",
         "tags": [
           "Rules"
@@ -8601,7 +8601,7 @@
           },
           {
             "name": "version",
-            "description": "Wazuh version to upgrade to",
+            "description": "Portal9 version to upgrade to",
             "schema": {
               "type": "string"
             }
@@ -8650,7 +8650,7 @@
           },
           {
             "name": "file_path",
-            "description": "Full path to the WPK file. The file must be on a folder on the Wazuh's installation directory (by default, <code>/var/ossec</code>)",
+            "description": "Full path to the WPK file. The file must be on a folder on the Portal9's installation directory (by default, <code>/var/ossec</code>)",
             "required": true,
             "schema": {
               "type": "string",
@@ -8947,8 +8947,8 @@
       {
         "name": "/manager/configuration",
         "documentation": "https://documentation.portal9.com/current/user-manual/api/reference.html#operation/api.controllers.manager_controller.update_configuration",
-        "description": "Replace Wazuh configuration with the data contained in the API request",
-        "summary": "Update Wazuh configuration",
+        "description": "Replace Portal9 configuration with the data contained in the API request",
+        "summary": "Update Portal9 configuration",
         "tags": [
           "Manager"
         ],

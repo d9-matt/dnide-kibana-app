@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Simple description for each App tabs
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Simple description for each App tabs
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -120,7 +120,7 @@ export const WAZUH_MODULES = {
   },
   devTools: {
     title: 'API console',
-    description: 'Test the Wazuh API endpoints.'
+    description: 'Test the Portal9 API endpoints.'
   },
   logtest: {
     title: 'Test your logs',

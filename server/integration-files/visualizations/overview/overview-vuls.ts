@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Module for Overview/Vulnerabilities visualizations
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Module for Overview/Vulnerabilities visualizations
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -11,7 +11,7 @@
  */
 export default [
   {
-    _id: 'Wazuh-App-Overview-vuls-Alerts-severity',
+    _id: 'Portal9-App-Overview-vuls-Alerts-severity',
     _type: 'visualization',
     _source: {
       title: 'Severity count',
@@ -114,7 +114,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Overview-vuls-Alert-summary',
+    _id: 'Portal9-App-Overview-vuls-Alert-summary',
     _type: 'visualization',
     _source: {
       title: 'Alert summary',
@@ -214,7 +214,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Overview-vuls-Commonly-affected-packages',
+    _id: 'Portal9-App-Overview-vuls-Commonly-affected-packages',
     _type: 'visualization',
     _source: {
       title: 'Commonly affected packages',
@@ -256,7 +256,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Overview-vuls-top-CVEs',
+    _id: 'Portal9-App-Overview-vuls-top-CVEs',
     _type: 'visualization',
     _source: {
       title: 'Top CVEs',
@@ -308,7 +308,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Overview-vuls-Most-common-CVEs',
+    _id: 'Portal9-App-Overview-vuls-Most-common-CVEs',
     _type: 'visualization',
     _source: {
       title: 'Most common CVEs',
@@ -353,7 +353,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Overview-vuls-packages-CVEs',
+    _id: 'Portal9-App-Overview-vuls-packages-CVEs',
     _type: 'visualization',
     _source: {
       title: 'Top affected packages by CVEs',
@@ -459,7 +459,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Overview-vuls-agents-severities',
+    _id: 'Portal9-App-Overview-vuls-agents-severities',
     _type: 'visualization',
     _source: {
       title: 'Agents by severity',
@@ -539,7 +539,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Overview-vuls-top-CWEs',
+    _id: 'Portal9-App-Overview-vuls-top-CWEs',
     _type: 'visualization',
     _source: {
       title: 'Top CWEs',
@@ -591,7 +591,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Overview-vuls-Most-common-CWEs',
+    _id: 'Portal9-App-Overview-vuls-Most-common-CWEs',
     _type: 'visualization',
     _source: {
       title: 'Most common CWEs',
@@ -636,7 +636,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Overview-vuls-Metric-Critical-severity',
+    _id: 'Portal9-App-Overview-vuls-Metric-Critical-severity',
     _type: 'visualization',
     _source: {
       title: 'Metric Critical severity',
@@ -708,7 +708,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Overview-vuls-Metric-High-severity',
+    _id: 'Portal9-App-Overview-vuls-Metric-High-severity',
     _type: 'visualization',
     _source: {
       title: 'Metric High severity',
@@ -780,7 +780,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Overview-vuls-Metric-Medium-severity',
+    _id: 'Portal9-App-Overview-vuls-Metric-Medium-severity',
     _type: 'visualization',
     _source: {
       title: 'Metric Medium severity',
@@ -852,7 +852,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Overview-vuls-Metric-Low-severity',
+    _id: 'Portal9-App-Overview-vuls-Metric-Low-severity',
     _type: 'visualization',
     _source: {
       title: 'Metric Low severity',
@@ -924,7 +924,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Overview-vuls-Most-affected-agents',
+    _id: 'Portal9-App-Overview-vuls-Most-affected-agents',
     _type: 'visualization',
     _source: {
       title: 'Most affected agents',
@@ -969,7 +969,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Overview-vuls-Vulnerability-severity-distribution',
+    _id: 'Portal9-App-Overview-vuls-Vulnerability-severity-distribution',
     _type: 'visualization',
     _source: {
       title: 'Severity distribution',
@@ -1014,7 +1014,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Overview-vuls-Vulnerability-evolution-affected-packages',
+    _id: 'Portal9-App-Overview-vuls-Vulnerability-evolution-affected-packages',
     _type: 'visualization',
     _source: {
       title: 'TOP affected packages alerts Evolution',

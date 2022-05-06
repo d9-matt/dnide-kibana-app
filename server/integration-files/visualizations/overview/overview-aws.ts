@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Module for Overview/AWS visualizations
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Module for Overview/AWS visualizations
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -11,7 +11,7 @@
  */
 export default [
   {
-    _id: 'Wazuh-App-Overview-AWS-Top-5-rules',
+    _id: 'Portal9-App-Overview-AWS-Top-5-rules',
     _type: 'visualization',
     _source: {
       title: 'Top rules',
@@ -80,7 +80,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Overview-AWS-geo',
+    _id: 'Portal9-App-Overview-AWS-geo',
     _type: 'visualization',
     _source: {
       title: 'Geolocation map',
@@ -148,7 +148,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Overview-AWS-Events-by-source',
+    _id: 'Portal9-App-Overview-AWS-Events-by-source',
     _type: 'visualization',
     _source: {
       title: 'Events by source over time',
@@ -251,7 +251,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Overview-AWS-Top-accounts',
+    _id: 'Portal9-App-Overview-AWS-Top-accounts',
     _type: 'visualization',
     _source: {
       title: 'Accounts',
@@ -299,7 +299,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Overview-AWS-Top-sources',
+    _id: 'Portal9-App-Overview-AWS-Top-sources',
     _type: 'visualization',
     _source: {
       title: 'Sources',
@@ -347,7 +347,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Overview-AWS-Top-buckets',
+    _id: 'Portal9-App-Overview-AWS-Top-buckets',
     _type: 'visualization',
     _source: {
       title: 'Buckets',
@@ -395,7 +395,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Overview-AWS-Top-regions',
+    _id: 'Portal9-App-Overview-AWS-Top-regions',
     _type: 'visualization',
     _source: {
       title: 'Regions',
@@ -443,7 +443,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Overview-AWS-Events-by-s3-bucket',
+    _id: 'Portal9-App-Overview-AWS-Events-by-s3-bucket',
     _type: 'visualization',
     _source: {
       title: 'Events by S3 bucket over time',
@@ -546,7 +546,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Overview-AWS-Alerts-summary',
+    _id: 'Portal9-App-Overview-AWS-Alerts-summary',
     _type: 'visualization',
     _source: {
       title: 'Alerts summary',

@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React hook for get query of Kibana searchBar
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - React hook for get query of Kibana searchBar
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -123,7 +123,7 @@ const missingPermissionsForManagerUser = [
   },
 ];
 
-describe('Wazuh User Permissions', () => {
+describe('Portal9 User Permissions', () => {
   describe('Given a Json with permissions that the user does not have', () => {
     describe('Should return a simple required permissions to show on view', () => {
       it('Should return a simple missing permissions for manager user', () => {

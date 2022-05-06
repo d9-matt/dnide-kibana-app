@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for show configuration of alerts - labels tab.
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - React component for show configuration of alerts - labels tab.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -86,7 +86,7 @@ class WzConfigurationAlertsLabels extends Component {
           (!currentConfig ||
             !currentConfig[
               agent && agent.id !== '000' ? 'agent-labels' : 'analysis-labels'
-            ]) && <WzNoConfig error="Wazuh not ready yet" />}
+            ]) && <WzNoConfig error="Portal9 not ready yet" />}
         {currentConfig[
           agent && agent.id !== '000' ? 'agent-labels' : 'analysis-labels'
         ] &&

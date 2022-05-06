@@ -11,7 +11,7 @@ function buildAxiosOptions(method: string, path: string, data: any = {}, headers
   };
 };
 
-describe('Wazuh API - /elastic/security/current-platform', () => {
+describe('Portal9 API - /elastic/security/current-platform', () => {
   test('[200] Returns the current security platform as string or boolean', () => {
     const options = buildAxiosOptions('get', '/elastic/security/current-platform');
     return axios(options).then(response => {
@@ -23,7 +23,7 @@ describe('Wazuh API - /elastic/security/current-platform', () => {
 });
 
 // TODO: This test need to be defined
-// describe('Wazuh API - /elastic/visualizations/{tab}/{pattern}', () => {
+// describe('Portal9 API - /elastic/visualizations/{tab}/{pattern}', () => {
 //   test('[200] Returns an array with the index patterns', () => {
 //     const options = buildAxiosOptions('get', '/elastic/visualizations/{tab}/{pattern}');
 //     return axios(options).then(response => {
@@ -39,7 +39,7 @@ describe('Wazuh API - /elastic/security/current-platform', () => {
 // });
 
 // TODO: This test need to be defined
-// describe('Wazuh API - /elastic/visualizations/{tab}/{pattern}', () => {
+// describe('Portal9 API - /elastic/visualizations/{tab}/{pattern}', () => {
 //   test('[200] Returns an array with the index patterns', () => {
 //     const options = buildAxiosOptions('post', '/elastic/visualizations/{tab}/{pattern}');
 //     return axios(options).then(response => {
@@ -54,7 +54,7 @@ describe('Wazuh API - /elastic/security/current-platform', () => {
 //   });
 // });
 
-describe('Wazuh API - /elastic/template/{pattern}', () => {
+describe('Portal9 API - /elastic/template/{pattern}', () => {
   test('[200] Check if there is some template with the pattern', () => {
     const options = buildAxiosOptions('get', '/elastic/template/portal9-alerts-*');
     return axios(options).then(response => {
@@ -65,7 +65,7 @@ describe('Wazuh API - /elastic/template/{pattern}', () => {
   });
 });
 
-describe('Wazuh API - /elastic/index-patterns/{pattern}', () => {
+describe('Portal9 API - /elastic/index-patterns/{pattern}', () => {
   test('[200] Check if there an index pattern with the pattern', () => {
     const options = buildAxiosOptions('get', '/elastic/index-patterns/portal9-alerts-*');
     return axios(options).then(response => {
@@ -77,7 +77,7 @@ describe('Wazuh API - /elastic/index-patterns/{pattern}', () => {
 });
 
 // TODO: This test need to be defined
-// describe('Wazuh API - /elastic/top/{mode}/{cluster}/{field}/{pattern}', () => {
+// describe('Portal9 API - /elastic/top/{mode}/{cluster}/{field}/{pattern}', () => {
 //   test('[200] Check if there an index pattern with the pattern', () => {
 //     const options = buildAxiosOptions('get', '/elastic/top/{mode}/{cluster}/{field}/{pattern}');
 //     return axios(options).then(response => {
@@ -86,7 +86,7 @@ describe('Wazuh API - /elastic/index-patterns/{pattern}', () => {
 //   });
 // });
 
-describe('Wazuh API - /elastic/samplealerts', () => {
+describe('Portal9 API - /elastic/samplealerts', () => {
   test('[200] Check if there an sample data indices', () => {
     const options = buildAxiosOptions('get', '/elastic/samplealerts');
     return axios(options).then(response => {
@@ -96,7 +96,7 @@ describe('Wazuh API - /elastic/samplealerts', () => {
   });
 });
 
-describe('Wazuh API - /elastic/samplealerts/{category}', () => {
+describe('Portal9 API - /elastic/samplealerts/{category}', () => {
   test('[200] Check if there an sample data index of Security category', () => {
     const options = buildAxiosOptions('get', '/elastic/samplealerts/security');
     return axios(options).then(response => {
@@ -125,7 +125,7 @@ describe('Wazuh API - /elastic/samplealerts/{category}', () => {
   });
 });
 
-describe('Wazuh API - /elastic/samplealerts/{category}', () => {
+describe('Portal9 API - /elastic/samplealerts/{category}', () => {
   let userToken = null;
   beforeAll(() => {
     const optionsAuthenticate = buildAxiosOptions('post', '/api/login', {
@@ -271,7 +271,7 @@ describe('Wazuh API - /elastic/samplealerts/{category}', () => {
 });
 
 // TODO: This test need to be defined
-// describe('Wazuh API - /elastic/alerts', () => {
+// describe('Portal9 API - /elastic/alerts', () => {
 //   test('[200] Check if there an sample data index of Security category', () => {
 //     const options = buildAxiosOptions('get', '/elastic/alerts');
 //     return axios(options).then(response => {
@@ -282,7 +282,7 @@ describe('Wazuh API - /elastic/samplealerts/{category}', () => {
 //   });
 // });
 
-describe('Wazuh API - /elastic/statistics', () => {
+describe('Portal9 API - /elastic/statistics', () => {
   test('[200] Check if there an sample data index of Security category', () => {
     const options = buildAxiosOptions('get', '/elastic/statistics');
     return axios(options).then(response => {

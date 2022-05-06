@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for show configuration of alerts - General tab.
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - React component for show configuration of alerts - General tab.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -64,7 +64,7 @@ class WzConfigurationAlertsGeneral extends Component {
           )}
         {portal9NotReadyYet &&
           (!currentConfig || !currentConfig['analysis-alerts']) && (
-            <WzNoConfig error="Wazuh not ready yet" help={helpLinks} />
+            <WzNoConfig error="Portal9 not ready yet" help={helpLinks} />
           )}
         {currentConfig['analysis-alerts'] &&
           !isString(currentConfig['analysis-alerts']) &&

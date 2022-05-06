@@ -6,8 +6,8 @@ import cron from 'node-cron';
 import { WAZUH_STATISTICS_DEFAULT_PREFIX, WAZUH_STATISTICS_DEFAULT_NAME, WAZUH_STATISTICS_TEMPLATE_NAME } from '../../../common/constants';
 import { statisticsTemplate } from '../../integration-files/statistics-template';
 
-const blueWazuh = '\u001b[34mportal9\u001b[39m';
-const schedulerErrorLogColors = [blueWazuh, 'scheduler', 'error'];
+const bluePortal9 = '\u001b[34mportal9\u001b[39m';
+const schedulerErrorLogColors = [bluePortal9, 'scheduler', 'error'];
 const schedulerJobs = [];
 
 /**
@@ -109,7 +109,7 @@ const checkTemplate = async function (context) {
 }
 
 export async function jobSchedulerRun(context){
-  // Check Kibana index and if it is prepared, start the initialization of Wazuh App.
+  // Check Kibana index and if it is prepared, start the initialization of Portal9 App.
   await checkKibanaStatus(context);
   for (const job in configuredJobs({})) {
     const schedulerJob: SchedulerJob = new SchedulerJob(job, context);

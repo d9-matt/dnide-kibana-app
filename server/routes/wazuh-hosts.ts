@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Module for Wazuh-API routes
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Module for Portal9-API routes
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -9,14 +9,14 @@
  *
  * Find more information about this on the LICENSE file.
  */
-import { WazuhHostsCtrl } from '../controllers';
+import { Portal9HostsCtrl } from '../controllers';
 import { IRouter } from 'kibana/server';
 import { schema } from '@kbn/config-schema';
 
-export function WazuhHostsRoutes(router: IRouter) {
-  const ctrl = new WazuhHostsCtrl();
+export function Portal9HostsRoutes(router: IRouter) {
+  const ctrl = new Portal9HostsCtrl();
 
-  // Get Wazuh-API entries list (Multimanager) from elasticsearch index
+  // Get Portal9-API entries list (Multimanager) from elasticsearch index
   router.get({
       path: '/hosts/apis',
       validate: false

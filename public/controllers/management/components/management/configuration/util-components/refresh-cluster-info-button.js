@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for render button to refresh cluster nodes info.
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - React component for render button to refresh cluster nodes info.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

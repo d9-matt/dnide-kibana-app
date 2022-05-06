@@ -1,8 +1,8 @@
 # Change Log
 
-All notable changes to the Wazuh app project will be documented in this file.
+All notable changes to the Portal9 app project will be documented in this file.
 
-## Wazuh v4.2.5 - Kibana 7.10.2, 7.11.2, 7.12.1, 7.13.4, 7.14.2 - Revision 4206
+## Portal9 v4.2.5 - Kibana 7.10.2, 7.11.2, 7.12.1, 7.13.4, 7.14.2 - Revision 4206
 
 ### Added
 
@@ -12,10 +12,10 @@ All notable changes to the Wazuh app project will be documented in this file.
 
 ### Fixed
 
-- Fixed compatibility Wazuh 4.2 - Kibana 7.13.4 [#3653](https://github.com/portal9/portal9-kibana-app/pull/3653)
+- Fixed compatibility Portal9 4.2 - Kibana 7.13.4 [#3653](https://github.com/portal9/portal9-kibana-app/pull/3653)
 - Fixed interative register windows agent screen error [#3654](https://github.com/portal9/portal9-kibana-app/pull/3654)
 - Fixed breadcrumbs style compatibility for Kibana 7.14.2 [#3668](https://github.com/portal9/portal9-kibana-app/pull/3668)
-- Fixed Wazuh token is not removed after logout in Kibana 7.13 [#3670](https://github.com/portal9/portal9-kibana-app/pull/3670)
+- Fixed Portal9 token is not removed after logout in Kibana 7.13 [#3670](https://github.com/portal9/portal9-kibana-app/pull/3670)
 - Fixed Group Configuration and Management configuration error after trying to going back after you save [#3672](https://github.com/portal9/portal9-kibana-app/pull/3672)
 - Fixing EuiPanels in Overview Sections and disabled text in WzMenu [#3674](https://github.com/portal9/portal9-kibana-app/pull/3674)
 - Fixing double flyout clicking in a policy [#3676](https://github.com/portal9/portal9-kibana-app/pull/3676)
@@ -24,34 +24,34 @@ All notable changes to the Wazuh app project will be documented in this file.
 - Fixed wrong redirect after login [3701](https://github.com/portal9/portal9-kibana-app/pull/3701)
 - Fixed error getting the index pattern data when there is not `attributes.fields` in the saved object [3689](https://github.com/portal9/portal9-kibana-app/pull/3698)
 
-## Wazuh v4.2.4 - Kibana 7.10.2, 7.11.2, 7.12.1 - Revision 4205
+## Portal9 v4.2.4 - Kibana 7.10.2, 7.11.2, 7.12.1 - Revision 4205
 
 ### Added
 
-- Support for Wazuh 4.2.4
+- Support for Portal9 4.2.4
 
 ### Fixed 
 
 - Fixed a bug where the user's auth token was not deprecated on logout [#3638](https://github.com/portal9/portal9-kibana-app/pull/3638)
 
-## Wazuh v4.2.3 - Kibana 7.10.2, 7.11.2, 7.12.1 - Revision 4204
+## Portal9 v4.2.3 - Kibana 7.10.2, 7.11.2, 7.12.1 - Revision 4204
 
 ### Added
 
-- Support for Wazuh 4.2.3
+- Support for Portal9 4.2.3
 
-## Wazuh v4.2.2 - Kibana 7.10.2 , 7.12.1 - Revision 4203
+## Portal9 v4.2.2 - Kibana 7.10.2 , 7.12.1 - Revision 4203
 
 ### Added
 
-- Wazuh help links in the Kibana help menu [#3170](https://github.com/portal9/portal9-kibana-app/pull/3170)
+- Portal9 help links in the Kibana help menu [#3170](https://github.com/portal9/portal9-kibana-app/pull/3170)
 - Redirect to group details using the `group` query param in the URL [#3184](https://github.com/portal9/portal9-kibana-app/pull/3184)
-- Configuration to disable Wazuh App access from X-Pack/ODFE role [#3222](https://github.com/portal9/portal9-kibana-app/pull/3222) [#3292](https://github.com/portal9/portal9-kibana-app/pull/3292)
+- Configuration to disable Portal9 App access from X-Pack/ODFE role [#3222](https://github.com/portal9/portal9-kibana-app/pull/3222) [#3292](https://github.com/portal9/portal9-kibana-app/pull/3292)
 - Added confirmation message when closing a form [#3221](https://github.com/portal9/portal9-kibana-app/pull/3221)
-- Improvement to hide navbar Wazuh label. [#3240](https://github.com/portal9/portal9-kibana-app/pull/3240)
+- Improvement to hide navbar Portal9 label. [#3240](https://github.com/portal9/portal9-kibana-app/pull/3240)
 - Add modal creating new rule/decoder [#3274](https://github.com/portal9/portal9-kibana-app/pull/3274)
 - New functionality to change app logos [#3503](https://github.com/portal9/portal9-kibana-app/pull/3503)
-- Added link to the upgrade guide when the Wazuh API version and the Wazuh App version mismatch [#3592](https://github.com/portal9/portal9-kibana-app/pull/3592)
+- Added link to the upgrade guide when the Portal9 API version and the Portal9 App version mismatch [#3592](https://github.com/portal9/portal9-kibana-app/pull/3592)
 
 ### Changed
 
@@ -93,18 +93,18 @@ All notable changes to the Wazuh app project will be documented in this file.
 - Fixed error that caused the labels in certain visualizations to overlap [#3355](https://github.com/portal9/portal9-kibana-app/pull/3355)
 - Fixed export to csv button in dashboards tables [#3358](https://github.com/portal9/portal9-kibana-app/pull/3358)
 - Fixed Elastic UI breaking changes in 7.12 [#3345](https://github.com/portal9/portal9-kibana-app/pull/3345)
-- Fixed Wazuh main menu and breadcrumb render issues [#3347](https://github.com/portal9/portal9-kibana-app/pull/3347)
+- Fixed Portal9 main menu and breadcrumb render issues [#3347](https://github.com/portal9/portal9-kibana-app/pull/3347)
 - Fixed generation of huge logs from backend errors [#3397](https://github.com/portal9/portal9-kibana-app/pull/3397)
 - Fixed vulnerabilities flyout not showing alerts if the vulnerability had a field missing [#3593](https://github.com/portal9/portal9-kibana-app/pull/3593)
 - 
 
-## Wazuh v4.2.1 - Kibana 7.10.2 , 7.11.2 - Revision 4202
+## Portal9 v4.2.1 - Kibana 7.10.2 , 7.11.2 - Revision 4202
 
 ### Added
 
-- Support for Wazuh 4.2.1
+- Support for Portal9 4.2.1
 
-## Wazuh v4.2.0 - Kibana 7.10.2 , 7.11.2 - Revision 4201
+## Portal9 v4.2.0 - Kibana 7.10.2 , 7.11.2 - Revision 4201
 
 ### Added
 
@@ -125,7 +125,7 @@ All notable changes to the Wazuh app project will be documented in this file.
 - Moved Dev Tools inside of Tools menu as Api Console.  [#1434](https://github.com/portal9/portal9-kibana-app/pull/1434)
 - Changed position of Top users on Integrity Monitoring Top 5 user. [#2892](https://github.com/portal9/portal9-kibana-app/pull/2892)
 - Changed user allow_run_as way of editing. [#3080](https://github.com/portal9/portal9-kibana-app/pull/3080)
-- Rename some ossec references to Wazuh [#3046](https://github.com/portal9/portal9-kibana-app/pull/3046)
+- Rename some ossec references to Portal9 [#3046](https://github.com/portal9/portal9-kibana-app/pull/3046)
 
 ### Fixed
 
@@ -149,13 +149,13 @@ All notable changes to the Wazuh app project will be documented in this file.
 - Fixed windows update section in Linux Inventory PDF [#3569](https://github.com/portal9/portal9-kibana-app/pull/3569)
 - Improving and removing unnecessary error logs [#3574](https://github.com/portal9/portal9-kibana-app/pull/3574)
 
-## Wazuh v4.1.5 - Kibana 7.10.0 , 7.10.2, 7.11.2 - Revision 4108
+## Portal9 v4.1.5 - Kibana 7.10.0 , 7.10.2, 7.11.2 - Revision 4108
 
 ### Fixed
 
-- Unable to change selected index pattern from the Wazuh menu [#3330](https://github.com/portal9/portal9-kibana-app/pull/3330)
+- Unable to change selected index pattern from the Portal9 menu [#3330](https://github.com/portal9/portal9-kibana-app/pull/3330)
 
-## Wazuh v4.1.5 - Kibana 7.10.0 , 7.10.2, 7.11.2 - Revision 4107
+## Portal9 v4.1.5 - Kibana 7.10.0 , 7.10.2, 7.11.2 - Revision 4107
 
 ### Added
 
@@ -166,15 +166,15 @@ All notable changes to the Wazuh app project will be documented in this file.
 
 - Conflict with the creation of the index pattern when performing the Health Check [#3223](https://github.com/portal9/portal9-kibana-app/pull/3223)
 - Fixing mac os agents add command [#3207](https://github.com/portal9/portal9-kibana-app/pull/3207)
-## Wazuh v4.1.5 - Kibana 7.10.0 , 7.10.2 - Revision 4106
+## Portal9 v4.1.5 - Kibana 7.10.0 , 7.10.2 - Revision 4106
 
-- Adapt for Wazuh 4.1.5
+- Adapt for Portal9 4.1.5
 
-## Wazuh v4.1.4 - Kibana 7.10.0 , 7.10.2 - Revision 4105
+## Portal9 v4.1.4 - Kibana 7.10.0 , 7.10.2 - Revision 4105
 
-- Adapt for Wazuh 4.1.4
+- Adapt for Portal9 4.1.4
 
-## Wazuh v4.1.3 - Kibana 7.10.0 , 7.10.2 - Revision 4104
+## Portal9 v4.1.3 - Kibana 7.10.0 , 7.10.2 - Revision 4104
 
 ### Added
 
@@ -198,7 +198,7 @@ All notable changes to the Wazuh app project will be documented in this file.
 - Fixed some errors in the Events table, action buttons style, and URLs disappeared [#3086](https://github.com/portal9/portal9-kibana-app/pull/3086)
 - Fixed Rollback of invalid rule configuration file [#3084](https://github.com/portal9/portal9-kibana-app/pull/3084)
 
-## Wazuh v4.1.2 - Kibana 7.10.0 , 7.10.2 - Revision 4103
+## Portal9 v4.1.2 - Kibana 7.10.0 , 7.10.2 - Revision 4103
 
 - Add `run_as` setting to example host configuration in Add new API view [#3021](https://github.com/portal9/portal9-kibana-app/pull/3021)
 - Refactor of some prompts [#3015](https://github.com/portal9/portal9-kibana-app/pull/3015)
@@ -213,10 +213,10 @@ All notable changes to the Wazuh app project will be documented in this file.
 - Fix disabled loading on inventory when request fail [#3026](https://github.com/portal9/portal9-kibana-app/pull/3026)
 - Fix restarting selected cluster instead of all of them [#3032](https://github.com/portal9/portal9-kibana-app/pull/3032)
 - Fix pinned agents don't trigger a new filtered query [#3035](https://github.com/portal9/portal9-kibana-app/pull/3035)
-- Overlay Wazuh menu when Kibana menu is opened or docked [#3038](https://github.com/portal9/portal9-kibana-app/pull/3038)
+- Overlay Portal9 menu when Kibana menu is opened or docked [#3038](https://github.com/portal9/portal9-kibana-app/pull/3038)
 - Fix visualizations in PDF Reports with Dark mode [#2983](https://github.com/portal9/portal9-kibana-app/pull/2983)
 
-## Wazuh v4.1.1 - Kibana 7.10.0 , 7.10.2 - Revision 4102
+## Portal9 v4.1.1 - Kibana 7.10.0 , 7.10.2 - Revision 4102
 
 ### Added
 
@@ -246,12 +246,12 @@ All notable changes to the Wazuh app project will be documented in this file.
 - Can't edit empty rules and decoders files that already exist in the manager [#2978](https://github.com/portal9/portal9-kibana-app/pull/2978)
 - Support for alerts index pattern with different ID and name [#2979](https://github.com/portal9/portal9-kibana-app/pull/2979)
 - Fix the unpin agent in the selection modal [#2980](https://github.com/portal9/portal9-kibana-app/pull/2980)
-- Fix properly logout of Wazuh API when logging out of the application (only for OpenDistro) [#2789](https://github.com/portal9/portal9-kibana-app/issues/2789)
+- Fix properly logout of Portal9 API when logging out of the application (only for OpenDistro) [#2789](https://github.com/portal9/portal9-kibana-app/issues/2789)
 - Fixed missing `&&` from macOS agent deployment command [#2989](https://github.com/portal9/portal9-kibana-app/issues/2989)
 - Fix prompt permissions on Framework of Mitre and Inventory of Integrity monitoring. [#2967](https://github.com/portal9/portal9-kibana-app/issues/2967)
-- Fix properly logout of Wazuh API when logging out of the application support x-pack [#2789](https://github.com/portal9/portal9-kibana-app/issues/2789)
+- Fix properly logout of Portal9 API when logging out of the application support x-pack [#2789](https://github.com/portal9/portal9-kibana-app/issues/2789)
 
-## Wazuh v4.1.0 - Kibana 7.10.0 , 7.10.2 - Revision 4101
+## Portal9 v4.1.0 - Kibana 7.10.0 , 7.10.2 - Revision 4101
 
 ### Added
 
@@ -273,7 +273,7 @@ All notable changes to the Wazuh app project will be documented in this file.
 - Fixed wrong hover texts in CDB lists actions [#2929](https://github.com/portal9/portal9-kibana-app/pull/2929)
 - Fixed access to forbidden agents information when exporting agents listt [2918](https://github.com/portal9/portal9-kibana-app/pull/2918)
 - Fix the decoder detail view is not displayed [#2888](https://github.com/portal9/portal9-kibana-app/issues/2888)
-- Fix the complex search using the Wazuh API query filter in search bars [#2930](https://github.com/portal9/portal9-kibana-app/issues/2930)
+- Fix the complex search using the Portal9 API query filter in search bars [#2930](https://github.com/portal9/portal9-kibana-app/issues/2930)
 - Fixed validation to check userPermissions are not ready yet [#2931](https://github.com/portal9/portal9-kibana-app/issues/2931)
 - Fixed clear visualizations manager list when switching tabs. Fixes PDF reports filters [#2932](https://github.com/portal9/portal9-kibana-app/pull/2932)
 - Fix Strange box shadow in Export popup panel in Managment > Groups [#2886](https://github.com/portal9/portal9-kibana-app/issues/2886)
@@ -287,16 +287,16 @@ All notable changes to the Wazuh app project will be documented in this file.
 - Fixed off Kibana Query Language in search bar of Controls/Inventory modules. [#2945](https://github.com/portal9/portal9-kibana-app/pull/2945)
 - Fixed number of agents do not show on the pie chart tooltip in agents preview [#2890](https://github.com/portal9/portal9-kibana-app/issues/2890)
 
-## Wazuh v4.0.4 - Kibana 7.10.0 , 7.10.2 - Revision 4017
+## Portal9 v4.0.4 - Kibana 7.10.0 , 7.10.2 - Revision 4017
 
 ### Added
 - Adapt the app to the new Kibana platform [#2475](https://github.com/portal9/portal9-kibana-app/issues/2475)
-- Wazuh data directory moved from `optimize` to `data` Kibana directory [#2591](https://github.com/portal9/portal9-kibana-app/issues/2591)
+- Portal9 data directory moved from `optimize` to `data` Kibana directory [#2591](https://github.com/portal9/portal9-kibana-app/issues/2591)
 - Show the wui_rules belong to portal9-wui API user [#2702](https://github.com/portal9/portal9-kibana-app/issues/2702)
 
 ### Fixed
 
-- Fixed Wazuh menu and agent menu for Solaris agents [#2773](https://github.com/portal9/portal9-kibana-app/issues/2773) [#2725](https://github.com/portal9/portal9-kibana-app/issues/2725)
+- Fixed Portal9 menu and agent menu for Solaris agents [#2773](https://github.com/portal9/portal9-kibana-app/issues/2773) [#2725](https://github.com/portal9/portal9-kibana-app/issues/2725)
 - Fixed wrong shards and replicas for statistics indices and also fixed wrong prefix for monitoring indices [#2732](https://github.com/portal9/portal9-kibana-app/issues/2732)
 - Report's creation dates set to 1970-01-01T00:00:00.000Z [#2772](https://github.com/portal9/portal9-kibana-app/issues/2772)
 - Fixed bug for missing commands in ubuntu/debian and centos [#2786](https://github.com/portal9/portal9-kibana-app/issues/2786)
@@ -313,7 +313,7 @@ All notable changes to the Wazuh app project will be documented in this file.
 
 ### Changed
 
-- Replaced `portal9` Wazuh API user by `portal9-wui` in the default configuration [#2852](https://github.com/portal9/portal9-kibana-app/issues/2852)
+- Replaced `portal9` Portal9 API user by `portal9-wui` in the default configuration [#2852](https://github.com/portal9/portal9-kibana-app/issues/2852)
 - Add agent id to the reports name in Agent Inventory and Modules [#2817](https://github.com/portal9/portal9-kibana-app/issues/2817)
 
 ### Adapt for Kibana 7.10.0
@@ -333,7 +333,7 @@ All notable changes to the Wazuh app project will be documented in this file.
 - Changed ping request to default request. Added delay and while to che… [#2820](https://github.com/portal9/portal9-kibana-app/issues/2820)
 - Removed kibana alert for security [#2806](https://github.com/portal9/portal9-kibana-app/issues/2806)
 
-## Wazuh v4.0.4 - Kibana 7.10.0 , 7.10.2 - Revision 4016
+## Portal9 v4.0.4 - Kibana 7.10.0 , 7.10.2 - Revision 4016
 
 ### Added
 
@@ -353,16 +353,16 @@ All notable changes to the Wazuh app project will be documented in this file.
 - Fixed message in reserved users actions [#2702](https://github.com/portal9/portal9-kibana-app/issues/2702)
 - Error 500 on Export formatted CDB list [#2692](https://github.com/portal9/portal9-kibana-app/pull/2692)
 - Wui rules label should have only one tooltip [#2723](https://github.com/portal9/portal9-kibana-app/issues/2723)
-- Move upper the Wazuh item in the Kibana menu and default index pattern [#2867](https://github.com/portal9/portal9-kibana-app/pull/2867)
+- Move upper the Portal9 item in the Kibana menu and default index pattern [#2867](https://github.com/portal9/portal9-kibana-app/pull/2867)
 
 
-## Wazuh v4.0.4 - Kibana v7.9.1, v7.9.3 - Revision 4015
+## Portal9 v4.0.4 - Kibana v7.9.1, v7.9.3 - Revision 4015
 
 ### Added
 
-- Support for Wazuh v4.0.4
+- Support for Portal9 v4.0.4
 
-## Wazuh v4.0.3 - Kibana v7.9.1, v7.9.2, v7.9.3 - Revision 4014
+## Portal9 v4.0.3 - Kibana v7.9.1, v7.9.2, v7.9.3 - Revision 4014
 
 ### Added
 
@@ -373,16 +373,16 @@ All notable changes to the Wazuh app project will be documented in this file.
 - fix(fronted): fixed the check of API and APP version in health check [#2655](https://github.com/portal9/portal9-kibana-app/pull/2655)
 - Replace user by username key in the monitoring logic [#2654](https://github.com/portal9/portal9-kibana-app/pull/2654)
 - Security alerts and reporting issues when using private tenants [#2639](https://github.com/portal9/portal9-kibana-app/issues/2639)
-- Manager restart in rule editor does not work with Wazuh cluster enabled [#2640](https://github.com/portal9/portal9-kibana-app/issues/2640)
+- Manager restart in rule editor does not work with Portal9 cluster enabled [#2640](https://github.com/portal9/portal9-kibana-app/issues/2640)
 - fix(frontend): Empty inventory data in Solaris agents [#2680](https://github.com/portal9/portal9-kibana-app/pull/2680)
 
-## Wazuh v4.0.3 - Kibana v7.9.1, v7.9.2, v7.9.3 - Revision 4013
+## Portal9 v4.0.3 - Kibana v7.9.1, v7.9.2, v7.9.3 - Revision 4013
 
 ### Added
 
-- Support for Wazuh v4.0.3.
+- Support for Portal9 v4.0.3.
 
-## Wazuh v4.0.2 - Kibana v7.9.1, v7.9.3 - Revision 4012
+## Portal9 v4.0.2 - Kibana v7.9.1, v7.9.3 - Revision 4012
 
 ### Added
 
@@ -393,25 +393,25 @@ All notable changes to the Wazuh app project will be documented in this file.
 
 - Statistics settings do not allow to configure primary shards and replicas [#2627](https://github.com/portal9/portal9-kibana-app/issues/2627)
 
-## Wazuh v4.0.2 - Kibana v7.9.1, v7.9.3 - Revision 4011
+## Portal9 v4.0.2 - Kibana v7.9.1, v7.9.3 - Revision 4011
 
 ### Added
 
-- Support for Wazuh v4.0.2.
+- Support for Portal9 v4.0.2.
 
 ### Fixed
 
 - The index pattern title is overwritten with its id after refreshing its fields [#2577](https://github.com/portal9/portal9-kibana-app/issues/2577)
 - [RBAC] Issues detected when using RBAC [#2579](https://github.com/portal9/portal9-kibana-app/issues/2579)
 
-## Wazuh v4.0.1 - Kibana v7.9.1, v7.9.3 - Revision 4010
+## Portal9 v4.0.1 - Kibana v7.9.1, v7.9.3 - Revision 4010
 
 ### Changed
 
 - Alerts summary table for PDF reports on all modules [#2632](https://github.com/portal9/portal9-kibana-app/issues/2632)
 - [4.0-7.9] Run as with no portal9-wui API user [#2576](https://github.com/portal9/portal9-kibana-app/issues/2576)
 - Deploy a new agent interface as default interface [#2564](https://github.com/portal9/portal9-kibana-app/issues/2564)
-- Problem in the visualization of new reserved resources of the Wazuh API [#2643](https://github.com/portal9/portal9-kibana-app/issues/2643)
+- Problem in the visualization of new reserved resources of the Portal9 API [#2643](https://github.com/portal9/portal9-kibana-app/issues/2643)
 
 ### Fixed
 
@@ -423,7 +423,7 @@ All notable changes to the Wazuh app project will be documented in this file.
 
 - [BUGFIX] Default user field for current platform [#2633](https://github.com/portal9/portal9-kibana-app/pull/2633)
 
-## Wazuh v4.0.1 - Kibana v7.9.1, v7.9.3 - Revision 4009
+## Portal9 v4.0.1 - Kibana v7.9.1, v7.9.3 - Revision 4009
 
 ### Changed
 
@@ -435,7 +435,7 @@ All notable changes to the Wazuh app project will be documented in this file.
 
 - Inconsistent data in sample data alerts [#2618](https://github.com/portal9/portal9-kibana-app/pull/2618)
 
-## Wazuh v4.0.1 - Kibana v7.9.1, v7.9.3 - Revision 4008
+## Portal9 v4.0.1 - Kibana v7.9.1, v7.9.3 - Revision 4008
 
 ### Fixed
 
@@ -444,14 +444,14 @@ All notable changes to the Wazuh app project will be documented in this file.
 - Error on loading css files [#2599](https://github.com/portal9/portal9-kibana-app/pull/2599)
 - Fixed search filter in search bar in Module/SCA wasn't working [#2601](https://github.com/portal9/portal9-kibana-app/pull/2601)
 
-## Wazuh v4.0.0 - Kibana v7.9.1, v7.9.2, v7.9.3 - Revision 4007
+## Portal9 v4.0.0 - Kibana v7.9.1, v7.9.2, v7.9.3 - Revision 4007
 
 ### Fixed
 
 - updated macOS package URL [#2596](https://github.com/portal9/portal9-kibana-app/pull/2596)
 - Revert "[4.0-7.9] [BUGFIX] Removed unnecessary function call" [#2597](https://github.com/portal9/portal9-kibana-app/pull/2597)
 
-## Wazuh v4.0.0 - Kibana v7.9.1, v7.9.2, v7.9.3 - Revision 4006
+## Portal9 v4.0.0 - Kibana v7.9.1, v7.9.2, v7.9.3 - Revision 4006
 
 ### Fixed
 
@@ -461,17 +461,17 @@ All notable changes to the Wazuh app project will be documented in this file.
 - The formatedFields are missing from the index-pattern of portal9-alerts-* [#2574](https://github.com/portal9/portal9-kibana-app/issues/2574)
 
 
-## Wazuh v4.0.0 - Kibana v7.9.3 - Revision 4005
+## Portal9 v4.0.0 - Kibana v7.9.3 - Revision 4005
 
 ### Added
 
 - Support for Kibana v7.9.3
 
-## Wazuh v4.0.0 - Kibana v7.9.1, v7.9.2 - Revision 4002
+## Portal9 v4.0.0 - Kibana v7.9.1, v7.9.2 - Revision 4002
 
 ### Added
 
-- Support for Wazuh v4.0.0.
+- Support for Portal9 v4.0.0.
 - Support for Kibana v7.9.1 and 7.9.2.
 - Support for Open Distro 1.10.1.
 - Added a RBAC security layer integrated with Open Distro and X-Pack.
@@ -498,56 +498,56 @@ All notable changes to the Wazuh app project will be documented in this file.
 - Reload rule detail doesn't work properly with the related rules.
 - Fix search bar filter in Manage agent of group [#2541](https://github.com/portal9/portal9-kibana-app/pull/2541)
 
-## Wazuh v3.13.2 - Kibana v7.9.1 - Revision 887
+## Portal9 v3.13.2 - Kibana v7.9.1 - Revision 887
 
 ### Added
 
-- Support for Wazuh v3.13.2
+- Support for Portal9 v3.13.2
 
-## Wazuh v3.13.2 - Kibana v7.8.0 - Revision 887
+## Portal9 v3.13.2 - Kibana v7.8.0 - Revision 887
 ### Added
 
-- Support for Wazuh v3.13.2
+- Support for Portal9 v3.13.2
 
-## Wazuh v3.13.1 - Kibana v7.9.1 - Revision 886
+## Portal9 v3.13.1 - Kibana v7.9.1 - Revision 886
 
 ### Added
 
 - Support for Kibana v7.9.1
 
-## Wazuh v3.13.1 - Kibana v7.9.0 - Revision 885
+## Portal9 v3.13.1 - Kibana v7.9.0 - Revision 885
 
 ### Added
 
 - Support for Kibana v7.9.0
 
 
-## Wazuh v3.13.1 - Kibana v7.8.1 - Revision 884
+## Portal9 v3.13.1 - Kibana v7.8.1 - Revision 884
 
 ### Added
 
 - Support for Kibana v7.8.1
 
 
-## Wazuh v3.13.1 - Kibana v7.8.0 - Revision 883
+## Portal9 v3.13.1 - Kibana v7.8.0 - Revision 883
 
 ### Added
 
-- Support for Wazuh v3.13.1
+- Support for Portal9 v3.13.1
 
 
-## Wazuh v3.13.0 - Kibana v7.8.0 - Revision 881
+## Portal9 v3.13.0 - Kibana v7.8.0 - Revision 881
 
 ### Added
 
 - Support for Kibana v7.8.0
 
 
-## Wazuh v3.13.0 - Kibana v7.7.0, v7.7.1 - Revision 880
+## Portal9 v3.13.0 - Kibana v7.7.0, v7.7.1 - Revision 880
 
 ### Added
 
-- Support for Wazuh v3.13.0
+- Support for Portal9 v3.13.0
 - Support for Kibana v7.7.1
 - Support for Open Distro 1.8
 - New navigation experience with a global menu [#1965](https://github.com/portal9/portal9-kibana-app/issues/1965)
@@ -576,39 +576,39 @@ All notable changes to the Wazuh app project will be documented in this file.
 - SCA checks without compliance field can't be expanded [#2264](https://github.com/portal9/portal9-kibana-app/issues/2264)
 
 
-## Wazuh v3.12.3 - Kibana v7.7.1 - Revision 876
+## Portal9 v3.12.3 - Kibana v7.7.1 - Revision 876
 
 ### Added
 
 - Support for Kibana v7.7.1
 
 
-## Wazuh v3.12.3 - Kibana v7.7.0 - Revision 875
+## Portal9 v3.12.3 - Kibana v7.7.0 - Revision 875
 
 ### Added
 
 - Support for Kibana v7.7.0
 
 
-## Wazuh v3.12.3 - Kibana v6.8.8, v7.6.1, v7.6.2 - Revision 874
+## Portal9 v3.12.3 - Kibana v6.8.8, v7.6.1, v7.6.2 - Revision 874
 
 ### Added
 
-- Support for Wazuh v3.12.3
+- Support for Portal9 v3.12.3
 
 
-## Wazuh v3.12.2 - Kibana v6.8.8, v7.6.1, v7.6.2 - Revision 873
-
-### Added
-
-- Support for Wazuh v3.12.2
-
-
-## Wazuh v3.12.1 - Kibana v6.8.8, v7.6.1, v7.6.2 - Revision 872
+## Portal9 v3.12.2 - Kibana v6.8.8, v7.6.1, v7.6.2 - Revision 873
 
 ### Added
 
-- Support Wazuh 3.12.1
+- Support for Portal9 v3.12.2
+
+
+## Portal9 v3.12.1 - Kibana v6.8.8, v7.6.1, v7.6.2 - Revision 872
+
+### Added
+
+- Support Portal9 3.12.1
 - Added new FIM settings on configuration on demand. [#2147](https://github.com/portal9/portal9-kibana-app/issues/2147)
 
 ### Changed
@@ -620,17 +620,17 @@ All notable changes to the Wazuh app project will be documented in this file.
 - Pagination is now shown in table-type visualizations. [#2180](https://github.com/portal9/portal9-kibana-app/issues/2180)
 
 
-## Wazuh v3.12.0 - Kibana v6.8.8, v7.6.2 - Revision 871
+## Portal9 v3.12.0 - Kibana v6.8.8, v7.6.2 - Revision 871
 
 ### Added
 
 - Support for Kibana v6.8.8 and v7.6.2
 
-## Wazuh v3.12.0 - Kibana v6.8.7, v7.4.2, v7.6.1 - Revision 870
+## Portal9 v3.12.0 - Kibana v6.8.7, v7.4.2, v7.6.1 - Revision 870
 
 ### Added
 
-- Support for Wazuh v3.12.0
+- Support for Portal9 v3.12.0
 - Added a new setting to hide manager alerts from dashboards. [#2102](https://github.com/portal9/portal9-kibana-app/pull/2102)
 - Added a new setting to be able to change API from the top menu. [#2143](https://github.com/portal9/portal9-kibana-app/issues/2143)
 - Added a new setting to enable/disable the known fields health check [#2037](https://github.com/portal9/portal9-kibana-app/pull/2037)
@@ -638,7 +638,7 @@ All notable changes to the Wazuh app project will be documented in this file.
 
 ### Changed
 
-- Restructuring of the optimize/portal9 directory. Now the Wazuh configuration file (portal9.yml) is placed on /usr/share/kibana/optimize/portal9/config. [#2116](https://github.com/portal9/portal9-kibana-app/pull/2116)
+- Restructuring of the optimize/portal9 directory. Now the Portal9 configuration file (portal9.yml) is placed on /usr/share/kibana/optimize/portal9/config. [#2116](https://github.com/portal9/portal9-kibana-app/pull/2116)
 - Improve performance of Dasboards reports generation. [1802344](https://github.com/portal9/portal9-kibana-app/commit/18023447c6279d385df84d7f4a5663ed2167fdb5)
 
 ### Fixed
@@ -648,56 +648,56 @@ All notable changes to the Wazuh app project will be documented in this file.
 - Negative values in Syscheck attributes now have their correct value in reports. [7c3e84e](https://github.com/portal9/portal9-kibana-app/commit/7c3e84ec8f00760b4f650cfc00a885d868123f99)
 
 
-## Wazuh v3.11.4 - Kibana v7.6.1 - Revision 858
+## Portal9 v3.11.4 - Kibana v7.6.1 - Revision 858
 
 ### Added
 
 - Support for Kibana v7.6.1
 
 
-## Wazuh v3.11.4 - Kibana v6.8.6, v7.4.2, v7.6.0 - Revision 857
+## Portal9 v3.11.4 - Kibana v6.8.6, v7.4.2, v7.6.0 - Revision 857
 
 ### Added
 
-- Support for Wazuh v3.11.4
+- Support for Portal9 v3.11.4
 
 
-## Wazuh v3.11.3 - Kibana v7.6.0 - Revision 856
+## Portal9 v3.11.3 - Kibana v7.6.0 - Revision 856
 
 ### Added
 
 - Support for Kibana v7.6.0
 
 
-## Wazuh v3.11.3 - Kibana v7.4.2 - Revision 855
+## Portal9 v3.11.3 - Kibana v7.4.2 - Revision 855
 
 ### Added
 
 - Support for Kibana v7.4.2
 
-## Wazuh v3.11.3 - Kibana v7.5.2 - Revision 854
+## Portal9 v3.11.3 - Kibana v7.5.2 - Revision 854
 
 ### Added
 
-- Support for Wazuh v3.11.3
+- Support for Portal9 v3.11.3
 
 ### Fixed
 
 - Windows Updates table is now displayed in the Inventory Data report [#2028](https://github.com/portal9/portal9-kibana-app/pull/2028)
 
 
-## Wazuh v3.11.2 - Kibana v7.5.2 - Revision 853
+## Portal9 v3.11.2 - Kibana v7.5.2 - Revision 853
 
 ### Added
 
 - Support for Kibana v7.5.2
 
 
-## Wazuh v3.11.2 - Kibana v6.8.6, v7.3.2, v7.5.1 - Revision 852
+## Portal9 v3.11.2 - Kibana v6.8.6, v7.3.2, v7.5.1 - Revision 852
 
 ### Added
 
-- Support for Wazuh v3.11.2
+- Support for Portal9 v3.11.2
 
 ### Changed
 
@@ -709,17 +709,17 @@ All notable changes to the Wazuh app project will be documented in this file.
 - The AWS map visualization wasn't been loaded until the user interacts with it [dd31bd7](https://github.com/portal9/portal9-kibana-app/commit/dd31bd7a155354bc50fe0af22fca878607c8936a)
 
 
-## Wazuh v3.11.1 - Kibana v6.8.6, v7.3.2, v7.5.1 - Revision 581
+## Portal9 v3.11.1 - Kibana v6.8.6, v7.3.2, v7.5.1 - Revision 581
 
 ### Added
-- Support for Wazuh v3.11.1.
+- Support for Portal9 v3.11.1.
 
 
-## Wazuh v3.11.0 - Kibana v6.8.6, v7.3.2, v7.5.1 - Revision 580
+## Portal9 v3.11.0 - Kibana v6.8.6, v7.3.2, v7.5.1 - Revision 580
 
 ### Added
 
-- Support for Wazuh v3.11.0.
+- Support for Portal9 v3.11.0.
 - Support for Kibana v7.5.1.
 - The API credentials configuration has been moved from the .portal9 index to a portal9.yml configuration file. Now the configuration of the API hosts is done from the file and not from the application. [#1465](https://github.com/portal9/portal9-kibana-app/issues/1465) [#1771](https://github.com/portal9/portal9-kibana-app/issues/1771).
 - Upload ruleset files using a "drag and drop" component [#1770](https://github.com/portal9/portal9-kibana-app/issues/1770)
@@ -753,68 +753,68 @@ All notable changes to the Wazuh app project will be documented in this file.
 - Fixed Logo source fail after adding server.basePath [#1871](https://github.com/portal9/portal9-kibana-app/issues/1871)
 - Fixed the documentation broken links [#1853](https://github.com/portal9/portal9-kibana-app/pull/1853)
 
-## Wazuh v3.10.2 - Kibana v7.5.1 - Revision 556
+## Portal9 v3.10.2 - Kibana v7.5.1 - Revision 556
 
 ### Added
 
 - Support for Kibana v7.5.1
 
 
-## Wazuh v3.10.2 - Kibana v7.5.0 - Revision 555
+## Portal9 v3.10.2 - Kibana v7.5.0 - Revision 555
 
 ### Added
 
 - Support for Kibana v7.5.0
 
 
-## Wazuh v3.10.2 - Kibana v7.4.2 - Revision 549
+## Portal9 v3.10.2 - Kibana v7.4.2 - Revision 549
 
 ### Added
 
 - Support for Kibana v7.4.2
 
 
-## Wazuh v3.10.2 - Kibana v7.4.1 - Revision 548
+## Portal9 v3.10.2 - Kibana v7.4.1 - Revision 548
 
 ### Added
 
 - Support for Kibana v7.4.1
 
 
-## Wazuh v3.10.2 - Kibana v7.4.0 - Revision 547
+## Portal9 v3.10.2 - Kibana v7.4.0 - Revision 547
 
 ### Added
 
 - Support for Kibana v7.4.0
-- Support for Wazuh v3.10.2.
+- Support for Portal9 v3.10.2.
 
 
-## Wazuh v3.10.2 - Kibana v7.3.2 - Revision 546
-
-### Added
-
-- Support for Wazuh v3.10.2.
-
-
-## Wazuh v3.10.1 - Kibana v7.3.2 - Revision 545
+## Portal9 v3.10.2 - Kibana v7.3.2 - Revision 546
 
 ### Added
 
-- Support for Wazuh v3.10.1.
+- Support for Portal9 v3.10.2.
 
 
-## Wazuh v3.10.0 - Kibana v7.3.2 - Revision 543
+## Portal9 v3.10.1 - Kibana v7.3.2 - Revision 545
 
 ### Added
 
-- Support for Wazuh v3.10.0.
+- Support for Portal9 v3.10.1.
+
+
+## Portal9 v3.10.0 - Kibana v7.3.2 - Revision 543
+
+### Added
+
+- Support for Portal9 v3.10.0.
 - Added an interactive guide for registering agents, things are now easier for the user, guiding it through the steps needed ending in a _copy & paste_ snippet for deploying his agent [#1468](https://github.com/portal9/portal9-kibana-app/issues/1468).
-- Added new dashboards for the recently added regulatory compliance groups into the Wazuh core. They are HIPAA and NIST-800-53 [#1468](https://github.com/portal9/portal9-kibana-app/issues/1448), [#1638]( https://github.com/portal9/portal9-kibana-app/issues/1638).
+- Added new dashboards for the recently added regulatory compliance groups into the Portal9 core. They are HIPAA and NIST-800-53 [#1468](https://github.com/portal9/portal9-kibana-app/issues/1448), [#1638]( https://github.com/portal9/portal9-kibana-app/issues/1638).
 - Make the app work under a custom Kibana space [#1234](https://github.com/portal9/portal9-kibana-app/issues/1234), [#1450](https://github.com/portal9/portal9-kibana-app/issues/1450).
 - Added the ability to manage the app as a native plugin when using Kibana spaces, now you can safely hide/show the app depending on the selected space [#1601](https://github.com/portal9/portal9-kibana-app/issues/1601).
 - Adapt the app the for Kibana dark mode [#1562](https://github.com/portal9/portal9-kibana-app/issues/1562).
 - Added an alerts summary in _Overview > FIM_ panel [#1527](https://github.com/portal9/portal9-kibana-app/issues/1527).
-- Export all the information of a Wazuh group and its related agents in a PDF document [#1341](https://github.com/portal9/portal9-kibana-app/issues/1341).
+- Export all the information of a Portal9 group and its related agents in a PDF document [#1341](https://github.com/portal9/portal9-kibana-app/issues/1341).
 - Export the configuration of a certain agent as a PDF document. Supports granularity for exporting just certain sections of the configuration [#1340](https://github.com/portal9/portal9-kibana-app/issues/1340).
 
 
@@ -825,8 +825,8 @@ All notable changes to the Wazuh app project will be documented in this file.
 - Replaced the requirements slider component with a new styled component [#1708](https://github.com/portal9/portal9-kibana-app/pull/1708).
 - Soft deprecated the _.portal9-version_ internal index, now the app dumps its content if applicable to a registry file, then the app removes that index. Further versions will hard deprecate this index [#1467](https://github.com/portal9/portal9-kibana-app/issues/1467). 
 - Visualizations now don't fetch the documents _source_, also, they now use _size: 0_ for fetching [#1663](https://github.com/portal9/portal9-kibana-app/issues/1663).
-- The app menu is now fixed on top of the view, it's not being hidden on every state change. Also, the Wazuh logo was placed in the top bar of Kibana UI [#1502](https://github.com/portal9/portal9-kibana-app/issues/1502).
-- Improved _getTimestamp_ method not returning a promise object because it's no longer needed [014bc3a](https://github.com/portal9/portal9-kibana-app/commit/014b3aba0d2e9cda0c4d521f5f16faddc434a21e). Also improved main Discover listener for Wazuh not returning a promise object [bd82823](https://github.com/portal9/portal9-kibana-app/commit/bd8282391a402b8c567b32739cf914a0135d74bc).
+- The app menu is now fixed on top of the view, it's not being hidden on every state change. Also, the Portal9 logo was placed in the top bar of Kibana UI [#1502](https://github.com/portal9/portal9-kibana-app/issues/1502).
+- Improved _getTimestamp_ method not returning a promise object because it's no longer needed [014bc3a](https://github.com/portal9/portal9-kibana-app/commit/014b3aba0d2e9cda0c4d521f5f16faddc434a21e). Also improved main Discover listener for Portal9 not returning a promise object [bd82823](https://github.com/portal9/portal9-kibana-app/commit/bd8282391a402b8c567b32739cf914a0135d74bc).
 - Replaced _Requirements over time_ visualizations in both PCI DSS and GDPR dashboards [35c539](https://github.com/portal9/portal9-kibana-app/commit/35c539eb328b3bded94aa7608f73f9cc51c235a6).
 - Do not show a toaster when a visualization field was not known yet, instead, show it just in case the internal refreshing failed [19a2e7](https://github.com/portal9/portal9-kibana-app/commit/19a2e71006b38f6a64d3d1eb8a20b02b415d7e07).
 - Minor optimizations for server logging [eb8e000](https://github.com/portal9/portal9-kibana-app/commit/eb8e00057dfea2dafef56319590ff832042c402d).
@@ -846,17 +846,17 @@ All notable changes to the Wazuh app project will be documented in this file.
 - Fixed APIs passwords are now obfuscated in server responses [adc3152](https://github.com/portal9/portal9-kibana-app/pull/1782/commits/adc31525e26b25e4cb62d81cbae70a8430728af5).
 
 
-## Wazuh v3.9.5 - Kibana v6.8.2 / Kibana v7.2.1 / Kibana v7.3.0 - Revision 531
+## Portal9 v3.9.5 - Kibana v6.8.2 / Kibana v7.2.1 / Kibana v7.3.0 - Revision 531
 
 ### Added
 
-- Support for Wazuh v3.9.5
+- Support for Portal9 v3.9.5
 
-## Wazuh v3.9.4 - Kibana v6.8.1 / Kibana v6.8.2 / Kibana v7.2.0 / Kibana v7.2.1 / Kibana v7.3.0 - Revision 528
+## Portal9 v3.9.4 - Kibana v6.8.1 / Kibana v6.8.2 / Kibana v7.2.0 / Kibana v7.2.1 / Kibana v7.3.0 - Revision 528
 
 ### Added
 
-- Support for Wazuh v3.9.4
+- Support for Portal9 v3.9.4
 - Allow filtering by clicking a column in rules/decoders tables [0e2ddd7](https://github.com/portal9/portal9-kibana-app/pull/1615/commits/0e2ddd7b73f7f7975d02e97ed86ae8a0966472b4)
 - Allow open file in rules table clicking on the file column [1af929d](https://github.com/portal9/portal9-kibana-app/pull/1615/commits/1af929d62f450f93c6733868bcb4057e16b7e279)
 
@@ -893,11 +893,11 @@ All notable changes to the Wazuh app project will be documented in this file.
 - Restored query from search bar in visualizations. [439128f](https://github.com/portal9/portal9-kibana-app/commit/439128f0a1f65b649a9dcb81ab5804ca20f65763) 
 - Fix Kibana filters loop in Firefox. [82f0f32](https://github.com/portal9/portal9-kibana-app/commit/82f0f32946d844ce96a28f0185f903e8e05c5589) 
 
-## Wazuh v3.9.3 - Kibana v6.8.1 / v7.1.1 / v7.2.0 - Revision 523
+## Portal9 v3.9.3 - Kibana v6.8.1 / v7.1.1 / v7.2.0 - Revision 523
 
 ### Added
 
-- Support for Wazuh v3.9.3
+- Support for Portal9 v3.9.3
 - Support for Kibana v7.2.0 [#1556](https://github.com/portal9/portal9-kibana-app/pull/1556).
 
 ### Changed
@@ -924,11 +924,11 @@ All notable changes to the Wazuh app project will be documented in this file.
 - Fix filters for dashboards [#1583](https://github.com/portal9/portal9-kibana-app/issues/1583).
 - Fix missing dependency [#1591](https://github.com/portal9/portal9-kibana-app/issues/1591).
 
-## Wazuh v3.9.2 - Kibana v7.1.1 - Revision 510
+## Portal9 v3.9.2 - Kibana v7.1.1 - Revision 510
 
 ### Added
 
-- Support for Wazuh v3.9.2
+- Support for Portal9 v3.9.2
 
 ### Changed
 
@@ -940,7 +940,7 @@ All notable changes to the Wazuh app project will be documented in this file.
 - Fix missing parameters in Dev Tools request [#1496](https://github.com/portal9/portal9-kibana-app/pull/1496).
 - Fix "Invalid Date" for Safari and Internet Explorer [#1505](https://github.com/portal9/portal9-kibana-app/pull/1505).
 
-## Wazuh v3.9.1 - Kibana v7.1.1 - Revision 509
+## Portal9 v3.9.1 - Kibana v7.1.1 - Revision 509
 
 ### Added
 
@@ -953,17 +953,17 @@ All notable changes to the Wazuh app project will be documented in this file.
 - Fixed visualization for Agents > Overview [#1477](https://github.com/portal9/portal9-kibana-app/pull/1477). 
 - Fixed SCA policy checks table [#1478](https://github.com/portal9/portal9-kibana-app/pull/1478).
 
-## Wazuh v3.9.1 - Kibana v7.1.0 - Revision 508
+## Portal9 v3.9.1 - Kibana v7.1.0 - Revision 508
 
 ### Added
 
 - Support for Kibana v7.1.0
 
-## Wazuh v3.9.1 - Kibana v6.8.0 - Revision 444
+## Portal9 v3.9.1 - Kibana v6.8.0 - Revision 444
 
 ### Added
 
-- Support for Wazuh v3.9.1
+- Support for Portal9 v3.9.1
 - Support for Kibana v6.8.0
 
 ### Fixed
@@ -983,11 +983,11 @@ All notable changes to the Wazuh app project will be documented in this file.
 - Improve dynamic height for configuration editor [c318131](https://github.com/portal9/portal9-kibana-app/commit/c318131dfb6b5f01752593f2aa972b98c0655610).
 - Add timezone for all dates shown in the app [4b8736f](https://github.com/portal9/portal9-kibana-app/commit/4b8736fb4e562c78505daaee042bcd798242c3f5).
 
-## Wazuh v3.9.0 - Kibana v6.7.0 / v6.7.1 / v6.7.2 - Revision 441
+## Portal9 v3.9.0 - Kibana v6.7.0 / v6.7.1 / v6.7.2 - Revision 441
 
 ### Added
 
-- Support for Wazuh v3.9.0
+- Support for Portal9 v3.9.0
 - Support for Kibana v6.7.0 / v6.7.1 / v6.7.2
 - Edit master and worker configuration ([#1215](https://github.com/portal9/portal9-kibana-app/pull/1215)).
 - Edit local rules, local decoders and CDB lists ([#1212](https://github.com/portal9/portal9-kibana-app/pull/1212), [#1204](https://github.com/portal9/portal9-kibana-app/pull/1204), [#1196](https://github.com/portal9/portal9-kibana-app/pull/1196), [#1233](https://github.com/portal9/portal9-kibana-app/pull/1233), [#1304](https://github.com/portal9/portal9-kibana-app/pull/1304)).
@@ -1000,14 +1000,14 @@ All notable changes to the Wazuh app project will be documented in this file.
 - Added agents `configuration assessment` configuration section in "Agent > Configuration" ([1257](https://github.com/portal9/portal9-kibana-app/pull/1257))
 - Restart master and worker nodes ([#1222](https://github.com/portal9/portal9-kibana-app/pull/1222)).
 - Restart agents ([#1229](https://github.com/portal9/portal9-kibana-app/pull/1229)).
-- Added support for more than one Wazuh monitoring pattern ([#1243](https://github.com/portal9/portal9-kibana-app/pull/1243))
-- Added customizable interval for Wazuh monitoring indices creation ([#1243](https://github.com/portal9/portal9-kibana-app/pull/1243)).
+- Added support for more than one Portal9 monitoring pattern ([#1243](https://github.com/portal9/portal9-kibana-app/pull/1243))
+- Added customizable interval for Portal9 monitoring indices creation ([#1243](https://github.com/portal9/portal9-kibana-app/pull/1243)).
 - Expand visualizations ([#1246](https://github.com/portal9/portal9-kibana-app/pull/1246)).
 - Added a dynamic table columns selector ([#1246](https://github.com/portal9/portal9-kibana-app/pull/1246)).
 - Added resizable columns by dragging in tables ([d2bf8ee](https://github.com/portal9/portal9-kibana-app/commit/d2bf8ee9681ca5d6028325e165854b49214e86a3))
 - Added a cron job for fetching missing fields of all valid index patterns, also merging dynamic fields every time an index pattern is refreshed by the app ([#1276](https://github.com/portal9/portal9-kibana-app/pull/1276)).
-- Added auto-merging dynamic fields for Wazuh monitoring index patterns ([#1300](https://github.com/portal9/portal9-kibana-app/pull/1300))
-- New server module, it's a job queue so we can add delayed jobs to be run in background, this iteration only accepts delayed Wazuh API calls ([#1283](https://github.com/portal9/portal9-kibana-app/pull/1283)).
+- Added auto-merging dynamic fields for Portal9 monitoring index patterns ([#1300](https://github.com/portal9/portal9-kibana-app/pull/1300))
+- New server module, it's a job queue so we can add delayed jobs to be run in background, this iteration only accepts delayed Portal9 API calls ([#1283](https://github.com/portal9/portal9-kibana-app/pull/1283)).
 - Added new way to view logs using a logs viewer ([#1292](https://github.com/portal9/portal9-kibana-app/pull/1292))
 - Added new directive for registering agents from the UI, including instructions on "how to" ([#1321](https://github.com/portal9/portal9-kibana-app/pull/1321)).
 - Added some Angular charts in Agents Preview and Agents SCA sections ([#1364](https://github.com/portal9/portal9-kibana-app/pull/1364))
@@ -1019,7 +1019,7 @@ All notable changes to the Wazuh app project will be documented in this file.
 ### Changed
 
 - Escape XML special characters ([#1159](https://github.com/portal9/portal9-kibana-app/pull/1159)).
-- Changed empty results message for Wazuh tables ([#1165](https://github.com/portal9/portal9-kibana-app/pull/1165)).
+- Changed empty results message for Portal9 tables ([#1165](https://github.com/portal9/portal9-kibana-app/pull/1165)).
 - Allowing the same query multiple times on the Dev Tools ([#1174](https://github.com/portal9/portal9-kibana-app/pull/1174))
 - Refactor JSON/XML viewer for configuration tab ([#1173](https://github.com/portal9/portal9-kibana-app/pull/1173), [#1148](https://github.com/portal9/portal9-kibana-app/pull/1148)).
 - Using full height for all containers when possible ([#1224](https://github.com/portal9/portal9-kibana-app/pull/1224)).
@@ -1037,7 +1037,7 @@ All notable changes to the Wazuh app project will be documented in this file.
 - Replaced Management > Logs table with a log viewer component ([#1292](https://github.com/portal9/portal9-kibana-app/pull/1292)).
 - The agents list search bar now allows to switch between AND/OR operators ([#1291](https://github.com/portal9/portal9-kibana-app/pull/1291)).
 - Improve audit dashboards ([#1374](https://github.com/portal9/portal9-kibana-app/pull/1374))
-- Exclude agent "000" getting the last registered and the most active agents from the Wazuh API.([#1391](https://github.com/portal9/portal9-kibana-app/pull/1391))
+- Exclude agent "000" getting the last registered and the most active agents from the Portal9 API.([#1391](https://github.com/portal9/portal9-kibana-app/pull/1391))
 - Reviewed Osquery dashboards ([#1394](https://github.com/portal9/portal9-kibana-app/pull/1394))
 - Memory info is now a log ([#1400](https://github.com/portal9/portal9-kibana-app/pull/1400))
 - Error toasters time is now 30000ms, warning/info are still 6000ms ([#1420](https://github.com/portal9/portal9-kibana-app/pull/1420))
@@ -1045,7 +1045,7 @@ All notable changes to the Wazuh app project will be documented in this file.
 ### Fixed
 
 - Properly handling long messages on notifier service, until now, they were using out of the card space, also we replaced some API messages with more meaningful messages ([#1168](https://github.com/portal9/portal9-kibana-app/pull/1168)).
-- Adapted Wazuh icon for multiple browsers where it was gone ([#1208](https://github.com/portal9/portal9-kibana-app/pull/1208)).
+- Adapted Portal9 icon for multiple browsers where it was gone ([#1208](https://github.com/portal9/portal9-kibana-app/pull/1208)).
 - Do not fetch data from tables twice when resize window ([#1303](https://github.com/portal9/portal9-kibana-app/pull/1303)).
 - Agent syncrhonization status is updated as we browse the configuration section ([#1305](https://github.com/portal9/portal9-kibana-app/pull/1305))
 - Using the browser timezone for reporting documents ([#1311](https://github.com/portal9/portal9-kibana-app/pull/1311)).
@@ -1056,7 +1056,7 @@ All notable changes to the Wazuh app project will be documented in this file.
 - Show email configuration on the configuration on demand ([#1401](https://github.com/portal9/portal9-kibana-app/issues/1401))
 - Show "Follow symbolic link" field in Integrity monitoring - Monitored configuration on demand ([0c9c9da](https://github.com/portal9/portal9-kibana-app/pull/1414/commits/0c9c9da3b951548761cd203db5ee5baa39afe26c))
 
-## Wazuh v3.8.2 - Kibana v6.6.0 / v6.6.1 / v6.6.2 / v6.7.0 - Revision 419
+## Portal9 v3.8.2 - Kibana v6.6.0 / v6.6.1 / v6.6.2 / v6.7.0 - Revision 419
 
 ### Added
 
@@ -1067,22 +1067,22 @@ All notable changes to the Wazuh app project will be documented in this file.
 - Fixed AWS dashboard, newer JavaScript browser engines break the view due to Angular.js ([6e882fc](https://github.com/portal9/portal9-kibana-app/commit/6e882fc1d7efe6059e6140ff40b8a20d9c1fa51e)).
 - Fixed AWS accounts visualization, using the right field now ([6e882fc](https://github.com/portal9/portal9-kibana-app/commit/6e882fc1d7efe6059e6140ff40b8a20d9c1fa51e)).
 
-## Wazuh v3.8.2 - Kibana v6.5.4 - Revision 418
+## Portal9 v3.8.2 - Kibana v6.5.4 - Revision 418
 
 ### Added
 
-- Support for Wazuh v3.8.2
+- Support for Portal9 v3.8.2
 
 ### Changed
 
 - Close configuration editor only if it was successfully updated ([bc77c35](https://github.com/portal9/portal9-kibana-app/commit/bc77c35d8440a656d4704451ce857c9e1d36a438)).
 - Replaced FIM Vega visualization with standard visualization ([554ee1c](https://github.com/portal9/portal9-kibana-app/commit/554ee1c4c4d75c76d82272075acf8bb62e7f9e27)).
 
-## Wazuh v3.8.1 - Kibana v6.5.4 - Revision 417
+## Portal9 v3.8.1 - Kibana v6.5.4 - Revision 417
 
 ### Added
 
-- Support for Wazuh v3.8.1
+- Support for Portal9 v3.8.1
 
 ### Changed
 
@@ -1090,13 +1090,13 @@ All notable changes to the Wazuh app project will be documented in this file.
 - Excluding managers from portal9-monitoring indices ([#1177](https://github.com/portal9/portal9-kibana-app/pull/1177)).
 - Escape `&` before sending group configuration ([d3aa56f](https://github.com/portal9/portal9-kibana-app/commit/d3aa56fa73478c60505e500db7d3a7df263081b5)).
 - Improved `autoFormat` function before rendering group configuration ([f4f8144](https://github.com/portal9/portal9-kibana-app/commit/f4f8144eef8b93038fc897a9f16356e71029b844)).
-- Now the group configuration editor doesn't exit after sending data to the Wazuh API ([5c1a3ef](https://github.com/portal9/portal9-kibana-app/commit/5c1a3ef9bd710a7befbed0709c4a7cf414f44f6b)).
+- Now the group configuration editor doesn't exit after sending data to the Portal9 API ([5c1a3ef](https://github.com/portal9/portal9-kibana-app/commit/5c1a3ef9bd710a7befbed0709c4a7cf414f44f6b)).
 
 ### Fixed
 
 - Fixed style for the error toaster for long URLs or long paths ([11b8084](https://github.com/portal9/portal9-kibana-app/commit/11b8084c75bbc5da36587ff31d1bc80a55fe4dfe)).
 
-## Wazuh v3.8.0 - Kibana v6.5.4 - Revision 416
+## Portal9 v3.8.0 - Kibana v6.5.4 - Revision 416
 
 ### Added
 
@@ -1110,7 +1110,7 @@ All notable changes to the Wazuh app project will be documented in this file.
 - New server route `/elastic/alerts` for fetching alerts using custom parameters([#1056](https://github.com/portal9/portal9-kibana-app/pull/1056)).
 - New table for an agent FIM monitored files, if the agent OS platform is Windows it will show two tables: files and registry ([#1032](https://github.com/portal9/portal9-kibana-app/pull/1032)).
 - Added description to each setting under Settings > Configuration ([#1048](https://github.com/portal9/portal9-kibana-app/pull/1048)).
-- Added a new setting to `config.yml` related to Wazuh monitoring and its index pattern ([#1095](https://github.com/portal9/portal9-kibana-app/pull/1095)).
+- Added a new setting to `config.yml` related to Portal9 monitoring and its index pattern ([#1095](https://github.com/portal9/portal9-kibana-app/pull/1095)).
 - Resizable columns by dragging in Dev-tools ([#1102](https://github.com/portal9/portal9-kibana-app/pull/1102)).
 - New feature to be able to edit config.yml file from the Settings > Configuration section view ([#1105](https://github.com/portal9/portal9-kibana-app/pull/1105)).
 - Added a new table (network addresses) for agent inventory tab ([#1111](https://github.com/portal9/portal9-kibana-app/pull/1111)).
@@ -1124,7 +1124,7 @@ All notable changes to the Wazuh app project will be documented in this file.
 - "Report" button is hidden on Discover panel ([#1047](https://github.com/portal9/portal9-kibana-app/pull/1047)).
 - Visualizations, filters and Discover improved ([#1083](https://github.com/portal9/portal9-kibana-app/pull/1083)).
 - Removed `popularizeField` function until https://github.com/elastic/kibana/issues/22426 is solved in order to avoid `Unable to write index pattern!` error on Discover tab ([#1085](https://github.com/portal9/portal9-kibana-app/pull/1085)).
-- Improved Wazuh monitoring module ([#1094](https://github.com/portal9/portal9-kibana-app/pull/1094)).
+- Improved Portal9 monitoring module ([#1094](https://github.com/portal9/portal9-kibana-app/pull/1094)).
 - Added "Registered date" and "Last keep alive" in agents table allowing you to sort by these fields ([#1102](https://github.com/portal9/portal9-kibana-app/pull/1102)).
 - Improved code quality in sections such as Ruleset > Rule and Decoder detail view simplify conditions ([#1102](https://github.com/portal9/portal9-kibana-app/pull/1102)).
 - Replaced reporting success message ([#1102](https://github.com/portal9/portal9-kibana-app/pull/1102)).
@@ -1140,22 +1140,22 @@ All notable changes to the Wazuh app project will be documented in this file.
 
 - Restored X-Pack security logic for the .portal9 index, now it's not bypassing the X-Pack roles ([#1081](https://github.com/portal9/portal9-kibana-app/pull/1081))
 - Avoid fetching twice the same data ([#1072](https://github.com/portal9/portal9-kibana-app/pull/1072), [#1061](https://github.com/portal9/portal9-kibana-app/pull/1061)).
-- Wazuh logo adapted to low resolutions ([#1074](https://github.com/portal9/portal9-kibana-app/pull/1074)).
+- Portal9 logo adapted to low resolutions ([#1074](https://github.com/portal9/portal9-kibana-app/pull/1074)).
 - Hide Audit, OpenSCAP tabs for non-linux agents. Fixed empty Windows events under Configuration > Log collection section. OSQuery logo has been standardized ([#1072](https://github.com/portal9/portal9-kibana-app/pull/1072), [#1076](https://github.com/portal9/portal9-kibana-app/pull/1076)).
-- Fix empty values on _Overview > Security events_ when Wazuh monitoring is disabled ([#1091](https://github.com/portal9/portal9-kibana-app/pull/1091)).
+- Fix empty values on _Overview > Security events_ when Portal9 monitoring is disabled ([#1091](https://github.com/portal9/portal9-kibana-app/pull/1091)).
 - Fix overlapped play button in Dev-tools when the input box has a scrollbar ([#1102](https://github.com/portal9/portal9-kibana-app/pull/1102)).
 - Fix Dev-tools behavior when parse json invalid blocks ([#1102](https://github.com/portal9/portal9-kibana-app/pull/1102)).
 - Fixed Management > Monitoring tab frustration adding back buttons ([#1102](https://github.com/portal9/portal9-kibana-app/pull/1102)).
 - Fix template checking when using more than one pattern ([#1104](https://github.com/portal9/portal9-kibana-app/pull/1104)).
-- Fix infinite loop for Wazuh monitoring when the Wazuh API is not being able to give us all the agents ([5a26916](https://github.com/portal9/portal9-kibana-app/commit/5a2691642b40a34783d2eafb6ee24ae78b9af21a)), ([85005a1](https://github.com/portal9/portal9-kibana-app/commit/85005a184d4f1c3d339b7c895b5d2469f3b45171)).
+- Fix infinite loop for Portal9 monitoring when the Portal9 API is not being able to give us all the agents ([5a26916](https://github.com/portal9/portal9-kibana-app/commit/5a2691642b40a34783d2eafb6ee24ae78b9af21a)), ([85005a1](https://github.com/portal9/portal9-kibana-app/commit/85005a184d4f1c3d339b7c895b5d2469f3b45171)).
 - Fix rule details for `list` and `info` parameters ([#1149](https://github.com/portal9/portal9-kibana-app/pull/1149)).
 
-## Wazuh v3.7.1 / v3.7.2 - Kibana v6.5.1 / v6.5.2 / v6.5.3 / v6.5.4 - Revision 415
+## Portal9 v3.7.1 / v3.7.2 - Kibana v6.5.1 / v6.5.2 / v6.5.3 / v6.5.4 - Revision 415
 
 ### Added
 
 - Support for Elastic stack v6.5.2 / v6.5.3 / v6.5.4.
-- Support for Wazuh v3.7.1 / v3.7.2.
+- Support for Portal9 v3.7.1 / v3.7.2.
 - Dev Tools module now autocompletes API endpoints ([#1030](https://github.com/portal9/portal9-kibana-app/pull/1030)).
 
 ### Changed
@@ -1170,7 +1170,7 @@ All notable changes to the Wazuh app project will be documented in this file.
 - Including group field when downloading CSV for agents list ([#1044](https://github.com/portal9/portal9-kibana-app/pull/1044)).
 - Preserve active tab in configuration section when refreshing the page ([#1037](https://github.com/portal9/portal9-kibana-app/pull/1037)).
 
-## Wazuh v3.7.0 - Kibana v6.5.0 / v6.5.1 - Revision 414
+## Portal9 v3.7.0 - Kibana v6.5.0 / v6.5.1 - Revision 414
 
 ### Added
 
@@ -1183,11 +1183,11 @@ All notable changes to the Wazuh app project will be documented in this file.
 
 - Refactored most front-end controllers ([#1023](https://github.com/portal9/portal9-kibana-app/pull/1023)).
 
-## Wazuh v3.7.0 - Kibana v6.4.2 / v6.4.3 - Revision 413
+## Portal9 v3.7.0 - Kibana v6.4.2 / v6.4.3 - Revision 413
 
 ### Added
 
-- Support for Wazuh v3.7.0.
+- Support for Portal9 v3.7.0.
 - Support for Elastic Stack v6.4.2 / v6.4.3.
 - Brand-new interface for _Configuration_ (on both _Management_ and _Agents_ tabs) ([#914](https://github.com/portal9/portal9-kibana-app/pull/914)):
   - Now you can check current and real agent and manager configuration.
@@ -1195,20 +1195,20 @@ All notable changes to the Wazuh app project will be documented in this file.
   - New and more responsive JSON/XML viewers to show the configuration in raw mode.
 - Brand-new extension - Osquery ([#938](https://github.com/portal9/portal9-kibana-app/pull/938)):
   - A new extension, disabled by default.
-  - Check alerts from Wazuh's Osquery integration.
+  - Check alerts from Portal9's Osquery integration.
   - Check your current Osquery wodle configuration.
   - More improvements will come for this extension in the future.
-- New option for Wazuh app configuration file - _Ignore index patterns_ ([#947](https://github.com/portal9/portal9-kibana-app/pull/947)):
+- New option for Portal9 app configuration file - _Ignore index patterns_ ([#947](https://github.com/portal9/portal9-kibana-app/pull/947)):
   - Now the user can specify which index patterns can't be selected on the app using the new `ip.ignore` setting on the `config.yml` file.
   - The valid format is an array of strings which represents index patterns.
   - By default, this list is empty (all index patterns will be available if they use a compatible structure).
-- Added a node selector for _Management > Status_ section when Wazuh cluster is enabled ([#976](https://github.com/portal9/portal9-kibana-app/pull/976)).
+- Added a node selector for _Management > Status_ section when Portal9 cluster is enabled ([#976](https://github.com/portal9/portal9-kibana-app/pull/976)).
 - Added quick access to _Configuration_ or _Discover_ panels for an agent on the agents list ([#939](https://github.com/portal9/portal9-kibana-app/pull/939)).
 - Now you can click on an agent's ID on the _Discover_ panels to open its details page on the app ([#904](https://github.com/portal9/portal9-kibana-app/pull/904)).
 - Redesigned the _Overview > Amazon AWS_ tab, using more meaningful visualizations for a better overall view of your agents' status ([#903](https://github.com/portal9/portal9-kibana-app/pull/903)).
 - Redesigned the _Overview/Agents > Vulnerabilities_ tab, using more meaningful visualizations for a better overall view of your agents' status ([#954](https://github.com/portal9/portal9-kibana-app/pull/954)).
 - Now everytime the user enters the _Settings_ tab, the API connection will be automatically checked ([#971](https://github.com/portal9/portal9-kibana-app/pull/971)).
-- Added a node selector for _Management > Logs_ section when Wazuh cluster is enabled ([#980](https://github.com/portal9/portal9-kibana-app/pull/980)).
+- Added a node selector for _Management > Logs_ section when Portal9 cluster is enabled ([#980](https://github.com/portal9/portal9-kibana-app/pull/980)).
 - Added a group selector for _Agents_ section ([#995](https://github.com/portal9/portal9-kibana-app/pull/995)).
 
 ### Changed
@@ -1218,7 +1218,7 @@ All notable changes to the Wazuh app project will be documented in this file.
   - This will prevent situations where the user couldn't check the inventory although there was actual scan data to show on some sections.
 - Added support for new multigroups feature ([#911](https://github.com/portal9/portal9-kibana-app/pull/911)):
   - Now the information bars on _Agents_ will show all the groups an agent belongs to.
-- Now the result pane on the _Dev tools_ tab will show the error code coming from the Wazuh API ([#909](https://github.com/portal9/portal9-kibana-app/pull/909)).
+- Now the result pane on the _Dev tools_ tab will show the error code coming from the Portal9 API ([#909](https://github.com/portal9/portal9-kibana-app/pull/909)).
 - Changed some visualizations titles for _Overview/Agents > OpenSCAP_ tab ([#925](https://github.com/portal9/portal9-kibana-app/pull/925)).
 - All backend routes have been renamed ([#932](https://github.com/portal9/portal9-kibana-app/pull/932)).
 - Several improvements for Elasticsearch tests ([#933](https://github.com/portal9/portal9-kibana-app/pull/933)).
@@ -1243,13 +1243,13 @@ All notable changes to the Wazuh app project will be documented in this file.
 
 - On the _Management > Monitoring_ tab, the `Cluster enabled but not running` message won't appear as an error anymore ([#971](https://github.com/portal9/portal9-kibana-app/pull/971)).
 
-## Wazuh v3.6.1 - Kibana v6.4.1 / v6.4.2 / v6.4.3 - Revision 412
+## Portal9 v3.6.1 - Kibana v6.4.1 / v6.4.2 / v6.4.3 - Revision 412
 
 ### Added
 
 - Support for Elastic Stack v6.4.1 / v6.4.2 / v6.4.3.
 
-## Wazuh v3.6.1 - Kibana v6.4.0 - Revision 411
+## Portal9 v3.6.1 - Kibana v6.4.0 - Revision 411
 
 ### Added
 
@@ -1266,7 +1266,7 @@ All notable changes to the Wazuh app project will be documented in this file.
 
 - Fixed minor visual errors on some _GDPR_, _PCI DSS_ and _Vulnerabilities_ visualizations ([#894](https://github.com/portal9/portal9-kibana-app/pull/894)).
 
-## Wazuh v3.6.1 - Kibana v6.4.0 - Revision 410
+## Portal9 v3.6.1 - Kibana v6.4.0 - Revision 410
 
 ### Added
 
@@ -1299,45 +1299,45 @@ All notable changes to the Wazuh app project will be documented in this file.
 - Fixed a bug on the _Dev tools_ tab where the user couldn't execute the first request block if there was blank lines above it ([#871](https://github.com/portal9/portal9-kibana-app/pull/871)).
 - Fixed a bug on pinned filters when opening tabs where the implicit filter was the same, making them stuck and unremovable from other tabs ([#878](https://github.com/portal9/portal9-kibana-app/pull/878)).
 
-## Wazuh v3.6.1 - Kibana v6.4.0 - Revision 409
+## Portal9 v3.6.1 - Kibana v6.4.0 - Revision 409
 
 ### Added
 
-- Support for Wazuh v3.6.1.
+- Support for Portal9 v3.6.1.
 
 ### Fixed
 
 - Fixed a bug on the _Dev tools_ tab ([b7c79f4](https://github.com/portal9/portal9-kibana-app/commit/b7c79f48f06cb49b12883ec9e9337da23b49976b)).
 
-## Wazuh v3.6.1 - Kibana v6.3.2 - Revision 408
+## Portal9 v3.6.1 - Kibana v6.3.2 - Revision 408
 
 ### Added
 
-- Support for Wazuh v3.6.1.
+- Support for Portal9 v3.6.1.
 
 ### Fixed
 
 - Fixed a bug on the _Dev tools_ tab ([4ca9ed5](https://github.com/portal9/portal9-kibana-app/commit/4ca9ed54f1b18e5d499d950e6ff0741946701988)).
 
-## Wazuh v3.6.0 - Kibana v6.4.0 - Revision 407
+## Portal9 v3.6.0 - Kibana v6.4.0 - Revision 407
 
 ### Added
 
-- Support for Wazuh v3.6.0.
+- Support for Portal9 v3.6.0.
 
-## Wazuh v3.6.0 - Kibana v6.3.2 - Revision 406
+## Portal9 v3.6.0 - Kibana v6.3.2 - Revision 406
 
 ### Added
 
-- Support for Wazuh v3.6.0.
+- Support for Portal9 v3.6.0.
 
-## Wazuh v3.5.0 - Kibana v6.4.0 - Revision 405
+## Portal9 v3.5.0 - Kibana v6.4.0 - Revision 405
 
 ### Added
 
 - Support for Elastic Stack v6.4.0 ([#813](https://github.com/portal9/portal9-kibana-app/pull/813)).
 
-## Wazuh v3.5.0 - Kibana v6.3.2 - Revision 404
+## Portal9 v3.5.0 - Kibana v6.3.2 - Revision 404
 
 ### Added
 
@@ -1355,7 +1355,7 @@ All notable changes to the Wazuh app project will be documented in this file.
 - Fixed a bug where the RAM status message appreared twice the first time you opened the app ([#807](https://github.com/portal9/portal9-kibana-app/pull/807)).
 - Fixed the app UI to make the app usable on Internet Explorer 11 ([#808](https://github.com/portal9/portal9-kibana-app/pull/808)).
 
-## Wazuh v3.5.0 - Kibana v6.3.2 - Revision 403
+## Portal9 v3.5.0 - Kibana v6.3.2 - Revision 403
 
 ### Added
 
@@ -1378,19 +1378,19 @@ All notable changes to the Wazuh app project will be documented in this file.
 
 - The cluster key has been removed from the API requests to `/manager/configuration` ([#796](https://github.com/portal9/portal9-kibana-app/pull/796)).
 
-## Wazuh v3.5.0 - Kibana v6.3.1/v6.3.2 - Revision 402
+## Portal9 v3.5.0 - Kibana v6.3.1/v6.3.2 - Revision 402
 
 ### Added
 
-- Support for Wazuh v3.5.0.
+- Support for Portal9 v3.5.0.
 - Added new fields for _Vulnerability detector_ alerts ([#752](https://github.com/portal9/portal9-kibana-app/pull/752)).
 - Added multi table search for `wz-table` directive. Added two new log levels for _Management > Logs_ section ([#753](https://github.com/portal9/portal9-kibana-app/pull/753)).
 
-## Wazuh v3.4.0 - Kibana v6.3.1/v6.3.2 - Revision 401
+## Portal9 v3.4.0 - Kibana v6.3.1/v6.3.2 - Revision 401
 
 ### Added
 
-- Added a few new fields for Kibana due to the new Wazuh _who-data_ feature ([#763](https://github.com/portal9/portal9-kibana-app/pull/763)).
+- Added a few new fields for Kibana due to the new Portal9 _who-data_ feature ([#763](https://github.com/portal9/portal9-kibana-app/pull/763)).
 - Added XML/JSON viewer for each card under _Management > Configuration_ ([#764](https://github.com/portal9/portal9-kibana-app/pull/764)).
 
 ### Changed
@@ -1409,16 +1409,16 @@ All notable changes to the Wazuh app project will be documented in this file.
 
 - Removed `angular-aria`, `angular-md5`, `ansicolors`, `js-yaml`, `querystring` and `lodash` dependencies since Kibana includes all of them. Removed some unused images ([#768](https://github.com/portal9/portal9-kibana-app/pull/768)).
 
-## Wazuh v3.4.0 - Kibana v6.3.1/v6.3.2 - Revision 400
+## Portal9 v3.4.0 - Kibana v6.3.1/v6.3.2 - Revision 400
 
 ### Added
 
-- Support for Wazuh v3.4.0.
+- Support for Portal9 v3.4.0.
 - Support for Elastic Stack v6.3.2.
 - Support for Kuery as accepted query language ([#742](https://github.com/portal9/portal9-kibana-app/pull/742)).
   - This feature is experimental.
 - Added new _Who data_ fields from file integrity monitoring features ([#746](https://github.com/portal9/portal9-kibana-app/pull/746)).
-- Added tab in _Settings_ section where you can see the last logs from the Wazuh app server ([#723](https://github.com/portal9/portal9-kibana-app/pull/723)).
+- Added tab in _Settings_ section where you can see the last logs from the Portal9 app server ([#723](https://github.com/portal9/portal9-kibana-app/pull/723)).
 
 ### Changed
 
@@ -1426,20 +1426,20 @@ All notable changes to the Wazuh app project will be documented in this file.
 - Now any agent can go to the _Inventory_ tab regardless if it's enabled or not. The content will change properly according to the agent configuration ([#744](https://github.com/portal9/portal9-kibana-app/pull/744)).
 - Updated the `angular-material` dependency to `1.1.10` ([#743](https://github.com/portal9/portal9-kibana-app/pull/743)).
 - Any API entry is now removable regardless if it's the only one API entry ([#740](https://github.com/portal9/portal9-kibana-app/pull/740)).
-- Performance has been improved regarding to agents status, they are now being fetched using _distinct_ routes from the Wazuh API ([#738](https://github.com/portal9/portal9-kibana-app/pull/738)).
-- Improved the way we are parsing some Wazuh API errors regarding to version mismatching ([#735](https://github.com/portal9/portal9-kibana-app/pull/735)).
+- Performance has been improved regarding to agents status, they are now being fetched using _distinct_ routes from the Portal9 API ([#738](https://github.com/portal9/portal9-kibana-app/pull/738)).
+- Improved the way we are parsing some Portal9 API errors regarding to version mismatching ([#735](https://github.com/portal9/portal9-kibana-app/pull/735)).
 
 ### Fixed
 
 - Fixed wrong filters being applied in _Ruleset > Rules_ and _Ruleset > Decoders_ sections when using Lucene like filters plus path filters ([#736](https://github.com/portal9/portal9-kibana-app/pull/736)).
 - Fixed the template checking from the healthcheck, now it allows to use custom index patterns ([#739](https://github.com/portal9/portal9-kibana-app/pull/739)).
-- Fixed infinite white screen from _Management > Monitoring_ when the Wazuh cluster is enabled but not running ([#741](https://github.com/portal9/portal9-kibana-app/pull/741)).
+- Fixed infinite white screen from _Management > Monitoring_ when the Portal9 cluster is enabled but not running ([#741](https://github.com/portal9/portal9-kibana-app/pull/741)).
 
-## Wazuh v3.3.0/v3.3.1 - Kibana v6.3.1 - Revision 399
+## Portal9 v3.3.0/v3.3.1 - Kibana v6.3.1 - Revision 399
 
 ### Added
 
-- Added a new Angular.js factory to store the Wazuh app configuration values. Also, this factory is being used by the pre-routes functions (resolves); this way we are sure about having the real configuration at any time. These pre-routes functions have been improved too ([#670](https://github.com/portal9/portal9-kibana-app/pull/670)).
+- Added a new Angular.js factory to store the Portal9 app configuration values. Also, this factory is being used by the pre-routes functions (resolves); this way we are sure about having the real configuration at any time. These pre-routes functions have been improved too ([#670](https://github.com/portal9/portal9-kibana-app/pull/670)).
 - Added extended information for reports from _Reporting_ feature ([#701](https://github.com/portal9/portal9-kibana-app/pull/701)).
 
 ### Changed
@@ -1455,16 +1455,16 @@ All notable changes to the Wazuh app project will be documented in this file.
 
 - Fixed the top menu API indicator when checking the API connection and the manager/cluster information had been changed ([#668](https://github.com/portal9/portal9-kibana-app/pull/668)).
 - Fixed our logger module which was not writting logs the very first time Kibana is started neither after a log rotation ([#667](https://github.com/portal9/portal9-kibana-app/pull/667)).
-- Fixed a regular expression in the server side when parsing URLs before registering a new Wazuh API ([#690](https://github.com/portal9/portal9-kibana-app/pull/690)).
+- Fixed a regular expression in the server side when parsing URLs before registering a new Portal9 API ([#690](https://github.com/portal9/portal9-kibana-app/pull/690)).
 - Fixed filters from specific visualization regarding to _File integrity_ section ([#694](https://github.com/portal9/portal9-kibana-app/pull/694)).
 - Fixed filters parsing when generating a report because it was not parsing negated filters as expected ([#696](https://github.com/portal9/portal9-kibana-app/pull/696)).
 - Fixed visualization counter from _OSCAP_ tab ([#722](https://github.com/portal9/portal9-kibana-app/pull/722)).
 
 ### Removed
 
-- Temporary removed CSV download from agent inventory section due to Wazuh API bug ([#727](https://github.com/portal9/portal9-kibana-app/pull/727)).
+- Temporary removed CSV download from agent inventory section due to Portal9 API bug ([#727](https://github.com/portal9/portal9-kibana-app/pull/727)).
 
-## Wazuh v3.3.0/v3.3.1 - Kibana v6.3.0 - Revision 398
+## Portal9 v3.3.0/v3.3.1 - Kibana v6.3.0 - Revision 398
 
 ### Added
 
@@ -1514,12 +1514,12 @@ All notable changes to the Wazuh app project will be documented in this file.
 - Removed the new Kuery language option on Discover app search bars.
   - This feature will be restored in the future, after more Elastic v6.3.0 adaptations.
 
-## Wazuh v3.3.0/v3.3.1 - Kibana v6.3.0 - Revision 397
+## Portal9 v3.3.0/v3.3.1 - Kibana v6.3.0 - Revision 397
 
 ### Added
 
 - Support for Elastic Stack v6.3.0 ([#579](https://github.com/portal9/portal9-kibana-app/pull/579) & [#612](https://github.com/portal9/portal9-kibana-app/pull/612) & [#615](https://github.com/portal9/portal9-kibana-app/pull/615)).
-- Brand-new Wazuh app redesign for the _Monitoring_ tab ([#581](https://github.com/portal9/portal9-kibana-app/pull/581)):
+- Brand-new Portal9 app redesign for the _Monitoring_ tab ([#581](https://github.com/portal9/portal9-kibana-app/pull/581)):
   - Refactored and optimized UI for these tabs, using a breadcrumbs-based navigability.
   - Used the same guidelines from the previous redesign for _Overview_ and _Agents_ tabs.
 - New tab for _Agents_ - _Inventory_ ([#582](https://github.com/portal9/portal9-kibana-app/pull/582)):
@@ -1552,12 +1552,12 @@ All notable changes to the Wazuh app project will be documented in this file.
 
 - Fixed a bug on the _Settings/Extensions_ tab where enabling/disabling some extensions could make other ones to be disabled ([#591](https://github.com/portal9/portal9-kibana-app/pull/591)).
 
-## Wazuh v3.3.0/v3.3.1 - Kibana v6.2.4 - Revision 396
+## Portal9 v3.3.0/v3.3.1 - Kibana v6.2.4 - Revision 396
 
 ### Added
 
-- Support for Wazuh v3.3.1.
-- Brand-new Wazuh app redesign for the _Settings_ tab ([#570](https://github.com/portal9/portal9-kibana-app/pull/570)):
+- Support for Portal9 v3.3.1.
+- Brand-new Portal9 app redesign for the _Settings_ tab ([#570](https://github.com/portal9/portal9-kibana-app/pull/570)):
   - Refactored and optimized UI for these tabs, using a breadcrumbs-based navigability.
   - Used the same guidelines from the previous redesign for _Overview_ and _Agents_ tabs.
 - Refactoring for _Overview_ and _Agents_ controllers ([#564](https://github.com/portal9/portal9-kibana-app/pull/564)):
@@ -1577,24 +1577,24 @@ All notable changes to the Wazuh app project will be documented in this file.
 - Fixed some Audit visualizations on the _Overview_ and _Agents_ tabs that weren't using the same search query to show the results ([#572](https://github.com/portal9/portal9-kibana-app/pull/572)).
 - Fixed undefined variable error on the `wz-menu` directive ([#575](https://github.com/portal9/portal9-kibana-app/pull/575)).
 
-## Wazuh v3.3.0 - Kibana v6.2.4 - Revision 395
+## Portal9 v3.3.0 - Kibana v6.2.4 - Revision 395
 
 ### Fixed
 
 - Fixed a bug on the _Agent Configuration_ tab where the sync status was always `NOT SYNCHRONIZED` ([#569](https://github.com/portal9/portal9-kibana-app/pull/569)).
 
-## Wazuh v3.3.0 - Kibana v6.2.4 - Revision 394
+## Portal9 v3.3.0 - Kibana v6.2.4 - Revision 394
 
 ### Added
 
-- Support for Wazuh v3.3.0.
+- Support for Portal9 v3.3.0.
 - Updated some backend API calls to include the app version in the request header ([#560](https://github.com/portal9/portal9-kibana-app/pull/560)).
 
-## Wazuh v3.2.4 - Kibana v6.2.4 - Revision 393
+## Portal9 v3.2.4 - Kibana v6.2.4 - Revision 393
 
 ### Added
 
-- Brand-new Wazuh app redesign for _Overview_ and _Agents_ tabs ([#543](https://github.com/portal9/portal9-kibana-app/pull/543)):
+- Brand-new Portal9 app redesign for _Overview_ and _Agents_ tabs ([#543](https://github.com/portal9/portal9-kibana-app/pull/543)):
   - Updated UI for these tabs using breadcrumbs.
   - New _Welcome_ screen, presenting all the tabs to the user, with useful links to our documentation.
   - Overall design improved, adjusted font sizes and reduced HTML code.
@@ -1610,7 +1610,7 @@ All notable changes to the Wazuh app project will be documented in this file.
 - Replaced the usage of `$rootScope` with two new factories, along with more controller improvements ([#525](https://github.com/portal9/portal9-kibana-app/pull/525)).
 - Now the _Extensions_ tab on _Settings_ won't edit the `.portal9` index to modify the extensions configuration for all users ([#545](https://github.com/portal9/portal9-kibana-app/pull/545)).
   - This allows each new user to always start with the base extensions configuration, and modify it to its needs storing the settings on a browser cookie.
-- Now the GDPR requirements description on its tab won't be loaded if the Wazuh API version is not v3.2.3 or higher ([#546](https://github.com/portal9/portal9-kibana-app/pull/546)).
+- Now the GDPR requirements description on its tab won't be loaded if the Portal9 API version is not v3.2.3 or higher ([#546](https://github.com/portal9/portal9-kibana-app/pull/546)).
 
 ### Fixed
 
@@ -1621,11 +1621,11 @@ All notable changes to the Wazuh app project will be documented in this file.
 - Fixed a bug where the OS filter on the _Agents Preview_ tab would exclude the rest of filters instead of combining them ([#552](https://github.com/portal9/portal9-kibana-app/pull/552)).
 - Fixed a bug where the Extensions settings were restored every time the user opened the _Settings_ tab or pressed the _Set default manager_ button ([#555](https://github.com/portal9/portal9-kibana-app/pull/555) & [#556](https://github.com/portal9/portal9-kibana-app/pull/556)).
 
-## Wazuh v3.2.3/v3.2.4 - Kibana v6.2.4 - Revision 392
+## Portal9 v3.2.3/v3.2.4 - Kibana v6.2.4 - Revision 392
 
 ### Added
 
-- Support for Wazuh v3.2.4.
+- Support for Portal9 v3.2.4.
 - New functionality - _Reporting_ ([#510](https://github.com/portal9/portal9-kibana-app/pull/510)):
   - Generate PDF logs on the _Overview_ and _Agents_ tabs, with the new button next to _Panels_ and _Discover_.
   - The report will contain the current visualizations from the tab where you generated it.
@@ -1643,26 +1643,26 @@ All notable changes to the Wazuh app project will be documented in this file.
 
 - Added more fields to the `known-fields.js` file to avoid warning messages on _Discover_ when using Filebeat for alerts forwarding ([#497](https://github.com/portal9/portal9-kibana-app/pull/497)).
 - Fixed a bug where clicking on the _Check connection_ button on the _Settings_ tab threw an error message although the API connected successfully ([#504](https://github.com/portal9/portal9-kibana-app/pull/504)).
-- Fixed a bug where the _Agents_ tab was not properly showing the total of agents due to the new Wazuh cluster implementation ([#517](https://github.com/portal9/portal9-kibana-app/pull/517)).
+- Fixed a bug where the _Agents_ tab was not properly showing the total of agents due to the new Portal9 cluster implementation ([#517](https://github.com/portal9/portal9-kibana-app/pull/517)).
 
-## Wazuh v3.2.3 - Kibana v6.2.4 - Revision 391
+## Portal9 v3.2.3 - Kibana v6.2.4 - Revision 391
 
 ### Added
 
-- Support for Wazuh v3.2.3.
+- Support for Portal9 v3.2.3.
 - Brand-new extension - _GDPR Alerts_ ([#453](https://github.com/portal9/portal9-kibana-app/pull/453)):
   - A new extension, enabled by default.
   - Visualize alerts related to the GDPR compliance on the _Overview_ and _Agents_ tabs.
   - The _Ruleset_ tab has been updated to include GDPR filters on the _Rules_ subtab.
 - Brand-new Management tab - _Monitoring_ ([#490](https://github.com/portal9/portal9-kibana-app/pull/490)):
-  - Visualize your Wazuh cluster, both master and clients.
+  - Visualize your Portal9 cluster, both master and clients.
     - Get the current cluster configuration.
     - Nodes listing, sorting, searching, etc.
   - Get a more in-depth cluster status thanks to the newly added [_Timelion_](https://www.elastic.co/guide/en/kibana/current/timelion.html) visualizations.
   - The Detail view gives you a summary of the node's healthcheck.
 - Brand-new tab - _Dev tools_ ([#449](https://github.com/portal9/portal9-kibana-app/pull/449)):
   - Find it on the top navbar, next to _Discover_.
-  - Execute Wazuh API requests directly from the app.
+  - Execute Portal9 API requests directly from the app.
   - This tab uses your currently selected API from _Settings_.
   - You can type different API requests on the input window, select one with the cursor, and click on the Play button to execute it.
   - You can also type comments on the input window.
@@ -1676,7 +1676,7 @@ All notable changes to the Wazuh app project will be documented in this file.
   - The default frequency time has been increased to 1 hour.
   - When disabled, useful metrics will appear on _Overview/General_ replacing the _Agent status_ visualization.
 - Added CSV exporting button to the app ([#431](https://github.com/portal9/portal9-kibana-app/pull/431)):
-  - Implemented new logic to fetch data from the Wazuh API and download it in CSV format.
+  - Implemented new logic to fetch data from the Portal9 API and download it in CSV format.
   - Currently available for the _Ruleset_, _Logs_ and _Groups_ sections on the _Manager_ tab and also the _Agents_ tab.
 - More refactoring to the app backend ([#439](https://github.com/portal9/portal9-kibana-app/pull/439)):
   - Standardized error output from the server side.
@@ -1699,8 +1699,8 @@ All notable changes to the Wazuh app project will be documented in this file.
 
 - Changed OSCAP visualization to avoid clipping issues with large agent names ([#429](https://github.com/portal9/portal9-kibana-app/pull/429)).
 - Now the related Rules or Decoders sections on _Manager/Ruleset_ will remain hidden if there isn't any data to show or while it's loading ([#434](https://github.com/portal9/portal9-kibana-app/pull/434)).
-- Added a 200ms delay when fetching iterable data from the Wazuh API ([#445](https://github.com/portal9/portal9-kibana-app/pull/445) & [#450](https://github.com/portal9/portal9-kibana-app/pull/450)).
-- Fixed several bugs related to Wazuh API timeout/cancelled requests ([#445](https://github.com/portal9/portal9-kibana-app/pull/445)).
+- Added a 200ms delay when fetching iterable data from the Portal9 API ([#445](https://github.com/portal9/portal9-kibana-app/pull/445) & [#450](https://github.com/portal9/portal9-kibana-app/pull/450)).
+- Fixed several bugs related to Portal9 API timeout/cancelled requests ([#445](https://github.com/portal9/portal9-kibana-app/pull/445)).
 - Added `ENOTFOUND`, `EHOSTUNREACH`, `EINVAL`, `EAI_AGAIN` options for API URL parameter checking ([#463](https://github.com/portal9/portal9-kibana-app/pull/463)).
 - Now the _Settings/Extensions_ subtab won't appear unless there's at least one API inserted ([#465](https://github.com/portal9/portal9-kibana-app/pull/465)).
 - Now the index pattern selector on _Settings/Pattern_ will also refresh the known fields when changing it ([#477](https://github.com/portal9/portal9-kibana-app/pull/477)).
@@ -1719,11 +1719,11 @@ All notable changes to the Wazuh app project will be documented in this file.
 - Removed the `rison` dependency from the `package.json` file ([#452](https://github.com/portal9/portal9-kibana-app/pull/452)).
 - Removed unused Elasticsearch request to avoid problems when there's no API inserted ([#460](https://github.com/portal9/portal9-kibana-app/pull/460)).
 
-## Wazuh v3.2.1/v3.2.2 - Kibana v6.2.4 - Revision 390
+## Portal9 v3.2.1/v3.2.2 - Kibana v6.2.4 - Revision 390
 
 ### Added
 
-- Support for Wazuh v3.2.2.
+- Support for Portal9 v3.2.2.
 - Refactoring on visualizations use and management ([#397](https://github.com/portal9/portal9-kibana-app/pull/397)):
   - Visualizations are no longer stored on an index, they're built and loaded on demand when needed to render the interface.
   - Refactoring on the whole app source code to use the _import/export_ paradigm.
@@ -1747,7 +1747,7 @@ All notable changes to the Wazuh app project will be documented in this file.
 ### Changed
 
 - Small minor enhancements to the user interface ([#396](https://github.com/portal9/portal9-kibana-app/pull/396)):
-  - Reduced Wazuh app logo size.
+  - Reduced Portal9 app logo size.
   - Changed buttons text to not use all-capitalized letters.
   - Minor typos found in the HTML/CSS code have been fixed.
 - Now the app log stores the package revision ([#417](https://github.com/portal9/portal9-kibana-app/pull/417)).
@@ -1758,7 +1758,7 @@ All notable changes to the Wazuh app project will be documented in this file.
 - Fixed a bug when using X-Pack that sometimes threw an error of false _"Not enough privileges"_ scenario ([#415](https://github.com/portal9/portal9-kibana-app/pull/415)).
 - Fixed a bug where the Kibana Discover auto-refresh functionality was still working when viewing the _Agent configuration_ tab ([#419](https://github.com/portal9/portal9-kibana-app/pull/419)).
 
-## Wazuh v3.2.1 - Kibana v6.2.4 - Revision 389
+## Portal9 v3.2.1 - Kibana v6.2.4 - Revision 389
 
 ### Changed
 
@@ -1769,7 +1769,7 @@ All notable changes to the Wazuh app project will be documented in this file.
 - Fixed a bug when using the X-Pack plugin without security capabilities enabled ([#403](https://github.com/portal9/portal9-kibana-app/pull/403)).
 - Fixed a bug when the app was trying to create `portal9-monitoring` indices without checking the existence of the proper template ([#412](https://github.com/portal9/portal9-kibana-app/pull/412)).
 
-## Wazuh v3.2.1 - Kibana v6.2.4 - Revision 388
+## Portal9 v3.2.1 - Kibana v6.2.4 - Revision 388
 
 ### Added
 
@@ -1808,7 +1808,7 @@ All notable changes to the Wazuh app project will be documented in this file.
 - Fixed a bug on the `errorHandler` service who was preventing a proper output of some Elastic-related backend error messages ([#346](https://github.com/portal9/portal9-kibana-app/pull/346)).
 - Fixed panels flickering in the _Settings_ tab ([#348](https://github.com/portal9/portal9-kibana-app/pull/348)).
 - Fixed a bug in the shards and replicas settings when the user sets the value to zero (0) ([#358](https://github.com/portal9/portal9-kibana-app/pull/358)).
-- Fixed several bugs related to the upgrade process from Wazuh 2.x to the new refactored server ([#363](https://github.com/portal9/portal9-kibana-app/pull/363)).
+- Fixed several bugs related to the upgrade process from Portal9 2.x to the new refactored server ([#363](https://github.com/portal9/portal9-kibana-app/pull/363)).
 - Fixed a bug in _Discover/Agents VirusTotal_ tabs to avoid conflicts with the `agent.name` field ([#379](https://github.com/portal9/portal9-kibana-app/pull/379)).
 - Fixed a bug on the implicit filter in _Discover/Agents PCI_ tabs ([#393](https://github.com/portal9/portal9-kibana-app/pull/393)).
 
@@ -1819,7 +1819,7 @@ All notable changes to the Wazuh app project will be documented in this file.
 - Removed some unused dependencies due to the server refactoring ([#360](https://github.com/portal9/portal9-kibana-app/pull/360)).
 - Removed completely `metricService` from the app ([#389](https://github.com/portal9/portal9-kibana-app/pull/389)).
 
-## Wazuh v3.2.1 - Kibana v6.2.2/v6.2.3 - Revision 387
+## Portal9 v3.2.1 - Kibana v6.2.2/v6.2.3 - Revision 387
 
 ### Added
 
@@ -1850,8 +1850,8 @@ All notable changes to the Wazuh app project will be documented in this file.
   - Small refactoring to some components from _Manager/Ruleset_ ([#323](https://github.com/portal9/portal9-kibana-app/pull/323)).
 - New design for the top navbar ([#326](https://github.com/portal9/portal9-kibana-app/pull/326)):
   - Cleaned and refactored code
-  - Revamped design, smaller and with minor details to follow the rest of Wazuh app guidelines.
-- New design for the wz-chip component to follow the new Wazuh app guidelines ([#323](https://github.com/portal9/portal9-kibana-app/pull/323)).
+  - Revamped design, smaller and with minor details to follow the rest of Portal9 app guidelines.
+- New design for the wz-chip component to follow the new Portal9 app guidelines ([#323](https://github.com/portal9/portal9-kibana-app/pull/323)).
 - Added more descriptive error messages when the user inserts bad credentials on the _Add new API_ form in the _Settings_ tab ([#331](https://github.com/portal9/portal9-kibana-app/pull/331)).
 - Added a new CSS class to truncate overflowing text on tables and metric ribbons ([#332](https://github.com/portal9/portal9-kibana-app/pull/332)).
 - Support for Elastic Stack v6.2.2/v6.2.3.
@@ -1859,7 +1859,7 @@ All notable changes to the Wazuh app project will be documented in this file.
 ### Changed
 
 - Improved the initialization system ([#317](https://github.com/portal9/portal9-kibana-app/pull/317)):
-  - Now the app will re-create the index-pattern if the user deletes the currently used by the Wazuh app.
+  - Now the app will re-create the index-pattern if the user deletes the currently used by the Portal9 app.
   - The fieldset is now automatically refreshed if the app detects mismatches.
   - Now every index-pattern is dynamically formatted (for example, to enable the URLs in the _Vulnerabilities_ tab).
   - Some code refactoring for a better handling of possible use cases.
@@ -1889,7 +1889,7 @@ All notable changes to the Wazuh app project will be documented in this file.
 - Fixed an error where the initial index-pattern was not loaded properly the very first time you enter the app ([#328](https://github.com/portal9/portal9-kibana-app/pull/328)).
 - Fixed an error message that appeared whenever the app was not able to found the `portal9-monitoring` index pattern ([#328](https://github.com/portal9/portal9-kibana-app/pull/328)).
 
-## Wazuh v3.2.1 - Kibana v6.2.2 - Revision 386
+## Portal9 v3.2.1 - Kibana v6.2.2 - Revision 386
 
 ### Added
 
@@ -1902,13 +1902,13 @@ All notable changes to the Wazuh app project will be documented in this file.
 
 ### Changed
 
-- Refactoring of HTML and CSS code throughout the whole Wazuh app ([#294](https://github.com/portal9/portal9-kibana-app/pull/294), [#302](https://github.com/portal9/portal9-kibana-app/pull/302) & [#305](https://github.com/portal9/portal9-kibana-app/pull/305)):
+- Refactoring of HTML and CSS code throughout the whole Portal9 app ([#294](https://github.com/portal9/portal9-kibana-app/pull/294), [#302](https://github.com/portal9/portal9-kibana-app/pull/302) & [#305](https://github.com/portal9/portal9-kibana-app/pull/305)):
   - A big milestone for the project was finally achieved with this refactoring.
   - We've removed the Bootstrap dependency from the `package.json` file.
   - We've removed and merged many duplicated rules.
   - We've removed HTML and `angular-md` overriding rules. Now we have more own-made classes to avoid undesired results on the UI.
   - Also, this update brings tons of minor bugfixes related to weird HTML code.
-- Wazuh app visualizations reviewed ([#301](https://github.com/portal9/portal9-kibana-app/pull/301)):
+- Portal9 app visualizations reviewed ([#301](https://github.com/portal9/portal9-kibana-app/pull/301)):
   - The number of used buckets has been limited since most of the table visualizations were surpassing acceptable limits.
   - Some visualizations have been checked to see if they make complete sense on what they mean to show to the user.
 - Modified some app components for better follow-up of Kibana guidelines ([#290](https://github.com/portal9/portal9-kibana-app/pull/290) & [#297](https://github.com/portal9/portal9-kibana-app/pull/297)).
@@ -1927,13 +1927,13 @@ All notable changes to the Wazuh app project will be documented in this file.
 - Removed almost every `md-tooltip` component from the whole app ([#305](https://github.com/portal9/portal9-kibana-app/pull/305)).
 - Removed unused images from the `img` folder ([#305](https://github.com/portal9/portal9-kibana-app/pull/305)).
 
-## Wazuh v3.2.1 - Kibana v6.2.2 - Revision 385
+## Portal9 v3.2.1 - Kibana v6.2.2 - Revision 385
 
 ### Added
 
-- Support for Wazuh v3.2.1.
+- Support for Portal9 v3.2.1.
 - Brand-new first redesign for the app user interface ([#278](https://github.com/portal9/portal9-kibana-app/pull/278)):
-  - This is the very first iteration of a _work-in-progress_ UX redesign for the Wazuh app.
+  - This is the very first iteration of a _work-in-progress_ UX redesign for the Portal9 app.
   - The overall interface has been refreshed, removing some unnecessary colours and shadow effects.
   - The metric visualizations have been replaced by an information ribbon under the filter search bar, reducing the amount of space they occupied.
     - A new service was implemented for a proper handling of the metric visualizations watchers ([#280](https://github.com/portal9/portal9-kibana-app/pull/280)).
@@ -1951,7 +1951,7 @@ All notable changes to the Wazuh app project will be documented in this file.
 ### Fixed
 
 - Fixed wrong data flow on _Agents/General_ when coming from and going to the _Groups_ tab ([#273](https://github.com/portal9/portal9-kibana-app/pull/273)).
-- Fixed sorting on tables, now they use the sorting functionality provided by the Wazuh API ([#274](https://github.com/portal9/portal9-kibana-app/pull/274)).
+- Fixed sorting on tables, now they use the sorting functionality provided by the Portal9 API ([#274](https://github.com/portal9/portal9-kibana-app/pull/274)).
 - Fixed column width issues on some tables ([#274](https://github.com/portal9/portal9-kibana-app/pull/274)).
 - Fixed bug in the _Agent configuration_ JSON viewer who didn't properly show the full group configuration ([#276](https://github.com/portal9/portal9-kibana-app/pull/276)).
 - Fixed excessive loading time from some Audit visualizations ([#278](https://github.com/portal9/portal9-kibana-app/pull/278)).
@@ -1963,11 +1963,11 @@ All notable changes to the Wazuh app project will be documented in this file.
 
 - Deleted the `id` attribute from all the app visualizations ([#275](https://github.com/portal9/portal9-kibana-app/pull/275)).
 
-## Wazuh v3.2.0 - Kibana v6.2.2 - Revision 384
+## Portal9 v3.2.0 - Kibana v6.2.2 - Revision 384
 
 ### Added
 
-- New directives for the Wazuh app: `wz-table`, `wz-table-header` and `wz-search-bar` ([#263](https://github.com/portal9/portal9-kibana-app/pull/263)):
+- New directives for the Portal9 app: `wz-table`, `wz-table-header` and `wz-search-bar` ([#263](https://github.com/portal9/portal9-kibana-app/pull/263)):
   - Maintainable and reusable components for a better-structured app.
   - Several files have been changed, renamed and moved to new folders, following _best practices_.
   - The progress bar is now within its proper directive ([#266](https://github.com/portal9/portal9-kibana-app/pull/266)).
@@ -1987,7 +1987,7 @@ All notable changes to the Wazuh app project will be documented in this file.
 - Fixed a bug where the classic extensions were not affected by the settings of the `config.yml` file ([#266](https://github.com/portal9/portal9-kibana-app/pull/266)).
 - Fixed minor CSS bugs from the conversion to directives to some components ([#266](https://github.com/portal9/portal9-kibana-app/pull/266)).
 - Fixed bug in the tables directive when accessing a member it doesn't exist ([#266](https://github.com/portal9/portal9-kibana-app/pull/266)).
-- Fixed browser console log error when clicking the Wazuh logo on the app ([#6647fbc](https://github.com/portal9/portal9-kibana-app/commit/6647fbc051c2bf69df7df6e247b2b2f46963f194)).
+- Fixed browser console log error when clicking the Portal9 logo on the app ([#6647fbc](https://github.com/portal9/portal9-kibana-app/commit/6647fbc051c2bf69df7df6e247b2b2f46963f194)).
 
 ### Removed
 
@@ -1996,11 +1996,11 @@ All notable changes to the Wazuh app project will be documented in this file.
 - Removed the `implicitFilters` service ([#270](https://github.com/portal9/portal9-kibana-app/pull/270)).
 - Removed visualizations loading status trace from controllers and visualization directive ([#270](https://github.com/portal9/portal9-kibana-app/pull/270)).
 
-## Wazuh v3.2.0 - Kibana v6.2.1 - Revision 383
+## Portal9 v3.2.0 - Kibana v6.2.1 - Revision 383
 
 ### Added
 
-- Support for Wazuh 3.2.0.
+- Support for Portal9 3.2.0.
 - Compatibility with Kibana 6.1.0 to Kibana 6.2.1.
 - New tab for vulnerability detector alerts.
 
@@ -2017,7 +2017,7 @@ All notable changes to the Wazuh app project will be documented in this file.
 ### Fixed
 
 - Several CSS bugfixes for better compatibility with Kibana 6.2.1.
-- Some variables changed for adapting new Wazuh API requests.
+- Some variables changed for adapting new Portal9 API requests.
 - Better error handling for some Elastic-related messages.
 - Fixed browser console error from top-menu directive.
 - Removed undesired md-divider from Manager/Logs.
@@ -2028,11 +2028,11 @@ All notable changes to the Wazuh app project will be documented in this file.
 
 - Removed the `travis.yml` file.
 
-## Wazuh v3.1.0 - Kibana v6.1.3 - Revision 380
+## Portal9 v3.1.0 - Kibana v6.1.3 - Revision 380
 
 ### Added
 
-- Support for Wazuh 3.1.0.
+- Support for Portal9 3.1.0.
 - Compatibility with Kibana 6.1.3.
 - New error handler for better app errors reporting.
 - A new extension for Amazon Web Services alerts.
@@ -2079,15 +2079,15 @@ All notable changes to the Wazuh app project will be documented in this file.
 - Removed index pattern configuration from the `package.json` file.
 - Removed unnecessary dependencies from the `package.json` file.
 
-## Wazuh v3.0.0 - Kibana v6.1.0 - Revision 371
+## Portal9 v3.0.0 - Kibana v6.1.0 - Revision 371
 
 ### Added
 
 - You can configure the initial index-pattern used by the plugin in the initialPattern variable of the app's package.json.
-- Auto `.portal9` reindex from Wazuh 2.x - Kibana 5.x to Wazuh 3.x - Kibana 6.x.
+- Auto `.portal9` reindex from Portal9 2.x - Kibana 5.x to Portal9 3.x - Kibana 6.x.
   - The API credentials will be automatically migrated to the new installation.
 - Dynamically changed the index-pattern used by going to the Settings -> Pattern tab.
-  - Wazuh alerts compatibility auto detection.
+  - Portal9 alerts compatibility auto detection.
 - New loader for visualizations.
 - Better performance: now the tabs use the same Discover tab, only changing the current filters.
 - New Groups tab.
@@ -2104,11 +2104,11 @@ All notable changes to the Wazuh app project will be documented in this file.
 - New sync system to wait for Elasticsearch JS.
 - Decoupling selected API and pattern from backend and moved to the client side.
 
-## Wazuh v2.1.0 - Kibana v5.6.1 - Revision 345
+## Portal9 v2.1.0 - Kibana v5.6.1 - Revision 345
 
 ### Added
 
-- Loading icon while Wazuh loads the visualizations.
+- Loading icon while Portal9 loads the visualizations.
 - Add/Delete/Restart agents.
 - OS agent filter
 
@@ -2116,11 +2116,11 @@ All notable changes to the Wazuh app project will be documented in this file.
 
 - Using genericReq when possible.
 
-## Wazuh v2.0.1 - Kibana v5.5.1 - Revision 339
+## Portal9 v2.0.1 - Kibana v5.5.1 - Revision 339
 
 ### Changed
 
-- New index in Elasticsearch to save Wazuh set up configuration
+- New index in Elasticsearch to save Portal9 set up configuration
 - Short URL's is now supported
 - A native base path from kibana.yml is now supported
 

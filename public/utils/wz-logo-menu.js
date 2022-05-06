@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Remove Wazuh name
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Remove Portal9 name
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -10,8 +10,8 @@
  * Find more information about this on the LICENSE file.
  */
 
-// Remove Kibana Wazuh name and breadcrumb
-export const changeWazuhNavLogo = () => {
+// Remove Kibana Portal9 name and breadcrumb
+export const changePortal9NavLogo = () => {
   const interval = setInterval(() => {
     const nav = document.querySelector('[data-test-subj="breadcrumbs"]  > .euiBreadcrumb');
     if (nav) {

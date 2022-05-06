@@ -1,7 +1,7 @@
 /*
- * Wazuh app - Health check services
+ * Portal9 app - Health check services
  *
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

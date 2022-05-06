@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Reporting service
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Reporting service
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -12,7 +12,7 @@
 
 import $ from 'jquery';
 import moment from 'moment';
-import { WazuhConfig } from '../react-services/portal9-config';
+import { Portal9Config } from '../react-services/portal9-config';
 import { GenericRequest } from '../react-services/generic-request';
 import { ErrorHandler } from '../react-services/error-handler';
 
@@ -30,7 +30,7 @@ export class ReportingService {
     this.visHandlers = visHandlers;
     this.genericReq = GenericRequest;
     this.errorHandler = errorHandler;
-    this.portal9Config = new WazuhConfig();
+    this.portal9Config = new Portal9Config();
   }
   removeTableVis(visList) {
     const attributes = JSON.parse(visList.attributes.visState);
@@ -43,7 +43,7 @@ export class ReportingService {
     ];
     if (!monitoringEnabled) {
       const visArray = idArray.filter(vis => {
-        return vis !== 'Wazuh-App-Overview-General-Agents-status';
+        return vis !== 'Portal9-App-Overview-General-Agents-status';
       });
       return visArray;
     }
@@ -111,7 +111,7 @@ export class ReportingService {
       this.$rootScope.reportStatus = false;
       this.$rootScope.$applyAsync();
       ErrorHandler.info(
-        'Success. Go to Wazuh > Management > Reporting',
+        'Success. Go to Portal9 > Management > Reporting',
         'Reporting'
       );
 
@@ -157,7 +157,7 @@ export class ReportingService {
       this.$rootScope.reportStatus = false;
       this.$rootScope.$applyAsync();
       ErrorHandler.info(
-        'Success. Go to Wazuh > Management > Reporting',
+        'Success. Go to Portal9 > Management > Reporting',
         'Reporting'
       );
 

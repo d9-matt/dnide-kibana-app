@@ -1,7 +1,7 @@
 /*
- * Wazuh app - Factory to store visualizations handlers
+ * Portal9 app - Factory to store visualizations handlers
  *
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,13 +17,13 @@ import { WAZUH_SECURITY_PLUGIN_XPACK_SECURITY, WAZUH_SECURITY_PLUGIN_OPEN_DISTRO
 import store from '../redux/store';
 
 
-export class WazuhSecurity {
+export class Portal9Security {
   /**
    * Class constructor
    */
   constructor() {
-    if (!!WazuhSecurity.instance) {
-      return WazuhSecurity.instance;
+    if (!!Portal9Security.instance) {
+      return Portal9Security.instance;
     }
     const platform = store.getState().appStateReducers.currentPlatform;
     if(platform === WAZUH_SECURITY_PLUGIN_XPACK_SECURITY){
@@ -34,7 +34,7 @@ export class WazuhSecurity {
       this.security = false;
     }
 
-    WazuhSecurity.instance = this;
+    Portal9Security.instance = this;
     return this;
   }
 

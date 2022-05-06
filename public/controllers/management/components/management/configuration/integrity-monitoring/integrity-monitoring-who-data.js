@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for show configuration of integrity monitoring - whodata tab.
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - React component for show configuration of integrity monitoring - whodata tab.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -46,7 +46,7 @@ class WzConfigurationIntegrityMonitoringWhoData extends Component {
           currentConfig['syscheck-syscheck'].syscheck.whodata && (
             <WzConfigurationSettingsTabSelector
               title="Who-data audit keys"
-              description="Wazuh will include in its FIM baseline those events being monitored by Audit using audit_key."
+              description="Portal9 will include in its FIM baseline those events being monitored by Audit using audit_key."
               currentConfig={currentConfig['syscheck-syscheck']}
               minusHeight={this.props.agent.id === '000' ? 320 : 415}
               helpLinks={helpLinks}

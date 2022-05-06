@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for registering agents.
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - React component for registering agents.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -13,7 +13,7 @@ import React, { Component } from 'react';
 // Redux
 import store from '../../../../../redux/store';
 import WzReduxProvider from '../../../../../redux/wz-redux-provider';
-//Wazuh ruleset tables(rules, decoder, lists)
+//Portal9 ruleset tables(rules, decoder, lists)
 import WzRulesetOverview from './ruleset-overview';
 //Information about rule or decoder
 import WzRuleInfo from './rule-info';

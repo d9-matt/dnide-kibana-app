@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Module for Agents/VirusTotal visualizations
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Module for Agents/VirusTotal visualizations
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -11,7 +11,7 @@
  */
 export default [
   {
-    _id: 'Wazuh-App-Agents-Virustotal-Last-Files-Pie',
+    _id: 'Portal9-App-Agents-Virustotal-Last-Files-Pie',
     _type: 'visualization',
     _source: {
       title: 'Last files',
@@ -56,7 +56,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Agents-Virustotal-Files-Table',
+    _id: 'Portal9-App-Agents-Virustotal-Files-Table',
     _type: 'visualization',
     _source: {
       title: 'Files',
@@ -125,7 +125,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Agents-Virustotal-Total-Malicious',
+    _id: 'Portal9-App-Agents-Virustotal-Total-Malicious',
     _type: 'visualization',
     _source: {
       title: 'Total Malicious',
@@ -197,7 +197,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Agents-Virustotal-Total-Positives',
+    _id: 'Portal9-App-Agents-Virustotal-Total-Positives',
     _type: 'visualization',
     _source: {
       title: 'Total Positives',
@@ -286,7 +286,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Agents-Virustotal-Malicious-Evolution',
+    _id: 'Portal9-App-Agents-Virustotal-Malicious-Evolution',
     _type: 'visualization',
     _source: {
       title: 'Malicious Evolution',
@@ -418,7 +418,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Agents-Virustotal-Total',
+    _id: 'Portal9-App-Agents-Virustotal-Total',
     _type: 'visualization',
     _source: {
       title: 'Total',
@@ -481,7 +481,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Agents-Virustotal-Alerts-summary',
+    _id: 'Portal9-App-Agents-Virustotal-Alerts-summary',
     _type: 'visualization',
     _source: {
       title: 'Alerts summary',

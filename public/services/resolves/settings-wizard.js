@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Module to execute some checks on most app routes
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Module to execute some checks on most app routes
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -12,7 +12,7 @@
 
 import { healthCheck } from './health-check';
 import { AppState } from '../../react-services/app-state';
-import { WazuhConfig } from '../../react-services/portal9-config';
+import { Portal9Config } from '../../react-services/portal9-config';
 import { ApiCheck } from '../../react-services/wz-api-check';
 import { ErrorHandler } from '../../react-services/error-handler';
 
@@ -28,14 +28,14 @@ export function settingsWizard(
   disableErrors = false
 ) {
   try {
-    const portal9Config = new WazuhConfig();
+    const portal9Config = new Portal9Config();
     const deferred = $q.defer();
     const checkResponse = data => {
-      let fromWazuhHosts = false;
+      let fromPortal9Hosts = false;
       if (parseInt(data.data.error) === 2) {
         !disableErrors &&
           ErrorHandler.handle(
-            'Please set up Wazuh API credentials.',
+            'Please set up Portal9 API credentials.',
             '',
             { warning: true }
           );
@@ -46,12 +46,12 @@ export function settingsWizard(
       ) {
         wzMisc.setApiIsDown(true);
       } else {
-        fromWazuhHosts = true;
+        fromPortal9Hosts = true;
         wzMisc.setBlankScr(ErrorHandler.handle(data));
         AppState.removeCurrentAPI();
       }
 
-      if (!fromWazuhHosts) {
+      if (!fromPortal9Hosts) {
         wzMisc.setWizard(true);
         if (!$location.path().includes('/settings')) {
           $location.search('_a', null);
@@ -66,7 +66,7 @@ export function settingsWizard(
         ) {
           !disableErrors &&
             ErrorHandler.handle(
-              'Wrong Wazuh API credentials, please add a new API and/or modify the existing one'
+              'Wrong Portal9 API credentials, please add a new API and/or modify the existing one'
             );
           if (!$location.path().includes('/settings')) {
             $location.search('_a', null);
@@ -211,13 +211,13 @@ export function settingsWizard(
               // Try to set some API entry as default
               const defaultApi = await tryToSetDefault(data.data);
               setUpCredentials(
-                'Wazuh App: Default API has been updated.',
+                'Portal9 App: Default API has been updated.',
                 defaultApi
               );
               $location.path('health-check');
             } else {
               setUpCredentials(
-                'Wazuh App: Please set up Wazuh API credentials.'
+                'Portal9 App: Please set up Portal9 API credentials.'
               );
             }
             deferred.resolve();
@@ -248,20 +248,20 @@ export function settingsWizard(
                 // Try to set some as default
                 const defaultApi = await tryToSetDefault(data.data);
                 setUpCredentials(
-                  'Wazuh App: Default API has been updated.',
+                  'Portal9 App: Default API has been updated.',
                   defaultApi
                 );
                 $location.path('health-check');
               } else {
                 setUpCredentials(
-                  'Wazuh App: Please set up Wazuh API credentials.',
+                  'Portal9 App: Please set up Portal9 API credentials.',
                   false
                 );
               }
             }
           })
           .catch(error => {
-            setUpCredentials('Wazuh App: Please set up Wazuh API credentials.');
+            setUpCredentials('Portal9 App: Please set up Portal9 API credentials.');
           });
       }
     }

@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Component to display the Agent stats
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Component to display the Agent stats
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -100,7 +100,7 @@ export const MainAgentStats = compose(
   ]]),
   withGuard(({agent}) => agent.status !== 'active', PromptNoActiveAgentWithoutSelect),
   withGuard(({agent}) => {
-    const [major, minor, patch] = agent.version.replace('Wazuh v','').split('.').map(value => parseInt(value));
+    const [major, minor, patch] = agent.version.replace('Portal9 v','').split('.').map(value => parseInt(value));
     return !(major >= 4 && minor >= 2 && patch >= 0)
   }, () => <PromptAgentFeatureVersion version='equal or higher version than 4.2.0'/>)
 )(AgentStats);

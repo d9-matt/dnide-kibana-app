@@ -1,6 +1,6 @@
 /*
- * Wazuh app - App State Actions
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - App State Actions
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -33,10 +33,10 @@ export const updateShowMenu = showMenu => {
 };
 
 /**
- * Updates WazuhNotReadyYet in the appState store
+ * Updates Portal9NotReadyYet in the appState store
  * @param portal9NotReadyYet
  */
-export const updateWazuhNotReadyYet = portal9NotReadyYet => {
+export const updatePortal9NotReadyYet = portal9NotReadyYet => {
   return {
     type: 'UPDATE_WAZUH_NOT_READY_YET',
     portal9NotReadyYet: portal9NotReadyYet

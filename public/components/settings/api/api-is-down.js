@@ -1,7 +1,7 @@
 /*
- * Wazuh app - React component for the adding an API entry form.
+ * Portal9 app - React component for the adding an API entry form.
  *
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -78,7 +78,7 @@ export class ApiIsDown extends Component {
           numErr = numErr + 1;
           const code = ((error || {}).data || {}).code;
           const downReason = typeof error === 'string' ? error :
-            (error || {}).message || ((error || {}).data || {}).message || 'Wazuh is not reachable';
+            (error || {}).message || ((error || {}).data || {}).message || 'Portal9 is not reachable';
           const status = code === 3099 ? 'down' : 'unknown';
           entries[idx].status = { status, downReason };
         }
@@ -105,7 +105,7 @@ export class ApiIsDown extends Component {
   }
 
   render() {
-    const apiExample = `# Example Wazuh API configuration
+    const apiExample = `# Example Portal9 API configuration
 hosts:
     - production:
         url: https://172.16.1.2
@@ -118,7 +118,7 @@ hosts:
     const checkConnectionChildren = (
       <div>
         <EuiText>
-          Check that the Kibana server can reach the configured Wazuh API(s).
+          Check that the Kibana server can reach the configured Portal9 API(s).
         </EuiText>
         <EuiSpacer />
         <EuiButton
@@ -134,7 +134,7 @@ hosts:
             </EuiButtonEmpty>
           )}
         <EuiSpacer />
-        <EuiText>Already configured Wazuh API(s)</EuiText>
+        <EuiText>Already configured Portal9 API(s)</EuiText>
         <EuiSpacer />
         {(!this.state.error && (
           <EuiBasicTable
@@ -206,7 +206,7 @@ hosts:
 
     const steps = [
       {
-        title: 'Check the Wazuh API service status',
+        title: 'Check the Portal9 API service status',
         children: (
           <div>
             <EuiText>For Systemd</EuiText>
@@ -247,7 +247,7 @@ hosts:
         <EuiFlexItem className="min-guide-width">
           <EuiPanel>
             <EuiText>
-              <h2>Wazuh API seems to be down</h2>
+              <h2>Portal9 API seems to be down</h2>
             </EuiText>
             <EuiSpacer />
             <EuiSteps firstStepNumber={1} steps={steps} />

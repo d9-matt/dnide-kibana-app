@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Module for Overview/TSC visualizations
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Module for Overview/TSC visualizations
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -11,7 +11,7 @@
  */
 export default [
   {
-    _id: 'Wazuh-App-Overview-TSC-Requirements-over-time',
+    _id: 'Portal9-App-Overview-TSC-Requirements-over-time',
     _source: {
       title: 'Requirements over time',
       visState: JSON.stringify({
@@ -114,7 +114,7 @@ export default [
     _type: 'visualization',
   },
   {
-    _id: 'Wazuh-App-Overview-TSC-Requirements-Agents-heatmap',
+    _id: 'Portal9-App-Overview-TSC-Requirements-Agents-heatmap',
     _type: 'visualization',
     _source: {
       title: 'TSC requirements heatmap',
@@ -210,7 +210,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Overview-TSC-requirements',
+    _id: 'Portal9-App-Overview-TSC-requirements',
     _source: {
       title: 'TSC requirements',
       visState: JSON.stringify({
@@ -337,7 +337,7 @@ export default [
     _type: 'visualization',
   },
   {
-    _id: 'Wazuh-App-Overview-TSC-Agents',
+    _id: 'Portal9-App-Overview-TSC-Agents',
     _source: {
       title: 'Agents',
       visState: JSON.stringify({
@@ -375,7 +375,7 @@ export default [
     _type: 'visualization',
   },
   {
-    _id: 'Wazuh-App-Overview-TSC-Requirements-by-agent',
+    _id: 'Portal9-App-Overview-TSC-Requirements-by-agent',
     _source: {
       title: 'Requirements by agent',
       visState: JSON.stringify({
@@ -465,7 +465,7 @@ export default [
     _type: 'visualization',
   },
   {
-    _id: 'Wazuh-App-Overview-TSC-Last-alerts',
+    _id: 'Portal9-App-Overview-TSC-Last-alerts',
     _type: 'visualization',
     _source: {
       title: 'Last alerts',
@@ -551,7 +551,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Overview-TSC-Alerts-summary',
+    _id: 'Portal9-App-Overview-TSC-Alerts-summary',
     _type: 'visualization',
     _source: {
       title: 'Alerts summary',

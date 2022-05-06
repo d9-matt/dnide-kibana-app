@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React HOC to fecth configuration form API.
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - React HOC to fecth configuration form API.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -15,7 +15,7 @@ import withLoading from './loading';
 import { getCurrentConfig } from '../utils/wz-fetch';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
-import { updateWazuhNotReadyYet } from '../../../../../../redux/actions/appStateActions';
+import { updatePortal9NotReadyYet } from '../../../../../../redux/actions/appStateActions';
 
 /**
  *
@@ -32,7 +32,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  updateWazuhNotReadyYet: value => dispatch(updateWazuhNotReadyYet(value))
+  updatePortal9NotReadyYet: value => dispatch(updatePortal9NotReadyYet(value))
 });
 
 const withWzConfig = sections => WrappedComponent =>
@@ -47,7 +47,7 @@ const withWzConfig = sections => WrappedComponent =>
           props.agent.id,
           sections,
           props.clusterNodeSelected,
-          props.updateWazuhNotReadyYet
+          props.updatePortal9NotReadyYet
         );
         return { ...props, currentConfig };
       } catch (error) {

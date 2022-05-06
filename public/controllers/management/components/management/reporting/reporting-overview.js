@@ -1,7 +1,7 @@
 /*
- * Wazuh app - React component for building the reporting view
+ * Portal9 app - React component for building the reporting view
  *
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,7 +20,7 @@ import {
   EuiText
 } from '@elastic/eui';
 
-// Wazuh components
+// Portal9 components
 import WzReportingTable from './reporting-table';
 import WzReportingActionButtons from './utils/actions-buttons-main';
 

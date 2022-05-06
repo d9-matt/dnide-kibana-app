@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Service which caches the API user allow run as
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Service which caches the API user allow run as
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -65,7 +65,7 @@ export const APIUserAllowRunAs = {
     const ApiUserCanUseStatus = await APIUserAllowRunAs.check(apiId);
     if(ApiUserCanUseStatus === API_USER_STATUS_RUN_AS.USER_NOT_ALLOWED){
       const api = await manageHosts.getHostById(apiId);
-      throw new Error(`API with host ID [${apiId}] misconfigured. The Wazuh API user [${api.username}] is not allowed to use [run_as]. Allow it in the user configuration or set [run_as] host setting with [false] value.`);
+      throw new Error(`API with host ID [${apiId}] misconfigured. The Portal9 API user [${api.username}] is not allowed to use [run_as]. Allow it in the user configuration or set [run_as] host setting with [false] value.`);
     }
     return ApiUserCanUseStatus;
   }
@@ -89,8 +89,8 @@ export const APIUserAllowRunAs = {
  *   binary 11 = decimal 3 ---> USER 1 y HOST 1
  */
 export enum API_USER_STATUS_RUN_AS{
-  ALL_DISABLED = 0, // Wazuh HOST and USER API user configured with run_as=false or undefined
-  USER_NOT_ALLOWED = 1, // Wazuh HOST API user configured with run_as = TRUE in portal9.yml but it has not run_as in Wazuh API
-  HOST_DISABLED = 2, // Wazuh HOST API user configured with run_as=false in portal9.yml but it has not run_as in Wazuh API
-  ENABLED = 3 // Wazuh API user configured with run_as=true and allow run_as
+  ALL_DISABLED = 0, // Portal9 HOST and USER API user configured with run_as=false or undefined
+  USER_NOT_ALLOWED = 1, // Portal9 HOST API user configured with run_as = TRUE in portal9.yml but it has not run_as in Portal9 API
+  HOST_DISABLED = 2, // Portal9 HOST API user configured with run_as=false in portal9.yml but it has not run_as in Portal9 API
+  ENABLED = 3 // Portal9 API user configured with run_as=true and allow run_as
 }

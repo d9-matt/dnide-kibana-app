@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for build q queries.
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - React component for build q queries.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -28,7 +28,7 @@ import {
 } from '@elastic/eui';
 import { AppState } from '../../react-services/app-state';
 import { PatternHandler } from '../../react-services/pattern-handler';
-import { WazuhConfig } from '../../react-services/portal9-config';
+import { Portal9Config } from '../../react-services/portal9-config';
 import { connect } from 'react-redux';
 import WzReduxProvider from '../../redux/wz-redux-provider';
 import { updateCurrentAgentData, showExploreAgentModalGlobal } from '../../redux/actions/appStateActions';
@@ -78,7 +78,7 @@ export const WzMenu = withWindowSize(class WzMenu extends Component {
     };
     this.store = store;
     this.genericReq = GenericRequest;
-    this.portal9Config = new WazuhConfig();
+    this.portal9Config = new Portal9Config();
     this.indexPatterns = getDataPlugin().indexPatterns;
     this.isLoading = false;
   }
@@ -368,7 +368,7 @@ export const WzMenu = withWindowSize(class WzMenu extends Component {
     );
   }
 
-  buildWazuhNotReadyYet() {
+  buildPortal9NotReadyYet() {
     const container = document.getElementsByClassName('portal9NotReadyYet');
     return ReactDOM.createPortal(
       <EuiCallOut title={this.props.state.portal9NotReadyYet} color="warning">
@@ -389,7 +389,7 @@ export const WzMenu = withWindowSize(class WzMenu extends Component {
             </EuiFlexItem>
           )}
           {this.props.state.portal9NotReadyYet ===
-            'Wazuh could not be recovered.' && (
+            'Portal9 could not be recovered.' && (
               <EuiFlexItem grow={false}>
                 <EuiButtonEmpty
                   grow={false}
@@ -901,7 +901,7 @@ export const WzMenu = withWindowSize(class WzMenu extends Component {
 
     const logotype_url = getHttp().basePath.prepend(`/plugins/portal9/assets/${this.portal9Config.getConfig()['customization.logo.app']}`);
     const mainButton = (
-      <button data-test-subj='menuWazuhButton' className="eui" onClick={() => this.switchMenuOpened()}>
+      <button data-test-subj='menuPortal9Button' className="eui" onClick={() => this.switchMenuOpened()}>
         <EuiFlexGroup
           direction="row"
           responsive={false}
@@ -1003,7 +1003,7 @@ export const WzMenu = withWindowSize(class WzMenu extends Component {
               </>
 
             }
-            {this.props.state.portal9NotReadyYet && this.buildWazuhNotReadyYet()}
+            {this.props.state.portal9NotReadyYet && this.buildPortal9NotReadyYet()}
           </EuiFlexGroup>
 
         )}

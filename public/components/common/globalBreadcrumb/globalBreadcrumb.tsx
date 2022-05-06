@@ -41,7 +41,7 @@ class WzGlobalBreadcrumb extends Component {
                 </EuiToolTip>
               )
             } : breadcrumb)}
-            aria-label="Wazuh global breadcrumbs"
+            aria-label="Portal9 global breadcrumbs"
           />
         )}
       </div>

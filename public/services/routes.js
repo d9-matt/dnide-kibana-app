@@ -1,6 +1,6 @@
 /*
- * Wazuh app - File for routes definition
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - File for routes definition
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -34,7 +34,7 @@ import settingsTemplate from '../templates/settings/settings.html';
 import securityTemplate from '../templates/security/security.html';
 import blankScreenTemplate from '../templates/error-handler/blank-screen.html';
 import toolsTemplate from '../templates/tools/tools.html';
-import { WazuhConfig } from '../react-services/portal9-config';
+import { Portal9Config } from '../react-services/portal9-config';
 import { GenericRequest } from '../react-services/generic-request';
 import { WzMisc } from '../factories/misc';
 import { ApiCheck } from '../react-services/wz-api-check';
@@ -66,7 +66,7 @@ function nestedResolve($q, errorHandler, $rootScope, $location, $window) {
   const wzMisc = new WzMisc();
   const healthCheckStatus = $window.sessionStorage.getItem('healthCheck');
   if (!healthCheckStatus) return;
-  const portal9Config = new WazuhConfig();
+  const portal9Config = new Portal9Config();
   assignPreviousLocation($rootScope, $location);
   const location = $location.path();
   return getWzConfig($q, GenericRequest, portal9Config).then(() =>
@@ -102,7 +102,7 @@ function savedSearch(
 
 function wzConfig($q, $rootScope, $location) {
   assignPreviousLocation($rootScope, $location);
-  const portal9Config = new WazuhConfig();
+  const portal9Config = new Portal9Config();
   return getWzConfig($q, GenericRequest, portal9Config);
 }
 

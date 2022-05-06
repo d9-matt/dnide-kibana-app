@@ -11,7 +11,7 @@ function buildAxiosOptions(method: string, path: string, data: any = {}, headers
   };
 };
 
-describe('Wazuh API - /hosts/apis', () => {
+describe('Portal9 API - /hosts/apis', () => {
   test('[200] Returns the available API hosts', () => {
     const options = buildAxiosOptions('get', '/hosts/apis');
     return axios(options).then(response => {
@@ -35,7 +35,7 @@ describe('Wazuh API - /hosts/apis', () => {
   });
 });
 
-describe('Wazuh API - /hosts/update-hostname', () => {
+describe('Portal9 API - /hosts/update-hostname', () => {
   test('[200] Update the cluster info for a API host', () => {
     const options = buildAxiosOptions('put', '/hosts/update-hostname/default', {
       cluster_info: {
@@ -52,7 +52,7 @@ describe('Wazuh API - /hosts/update-hostname', () => {
 });
 
 //TODO: Do the test to remove-orphan-entries endpoint
-// describe('Wazuh API - /hosts/remove-orphan-entries', () => {
+// describe('Portal9 API - /hosts/remove-orphan-entries', () => {
 //   test('[200] Remove orphan entries', () => {
 //     const options = buildAxiosOptions('post', '/hosts/remove-orphan-entries');
 //     return axios(options).then(response => {

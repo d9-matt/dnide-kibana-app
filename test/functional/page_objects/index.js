@@ -1,7 +1,7 @@
 import { ApiProvider } from './api_page';
-import { WazuhCommonProvider } from './portal9_common_page';
+import { Portal9CommonProvider } from './portal9_common_page';
 
 export const pageObjects = {
   api: ApiProvider,
-  portal9Common: WazuhCommonProvider
+  portal9Common: Portal9CommonProvider
 };

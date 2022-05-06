@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Cluster monitoring visualizations
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Cluster monitoring visualizations
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -11,12 +11,12 @@
  */
 export default [
   {
-    _id: 'Wazuh-App-Statistics-remoted-Recv-bytes',
+    _id: 'Portal9-App-Statistics-remoted-Recv-bytes',
     _type: 'visualization',
     _source: {
-      title: 'Wazuh App Statistics remoted Recv bytes',
+      title: 'Portal9 App Statistics remoted Recv bytes',
       visState: JSON.stringify({
-        title: 'Wazuh App Statistics remoted Recv bytes',
+        title: 'Portal9 App Statistics remoted Recv bytes',
         type: 'timelion',
         params: {
           expression:
@@ -38,12 +38,12 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Statistics-remoted-event-count',
+    _id: 'Portal9-App-Statistics-remoted-event-count',
     _type: 'visualization',
     _source: {
-      title: 'Wazuh App Statistics remoted event count',
+      title: 'Portal9 App Statistics remoted event count',
       visState: JSON.stringify({
-        title: 'Wazuh App Statistics remoted event count',
+        title: 'Portal9 App Statistics remoted event count',
         type: 'timelion',
         params: {
           expression:
@@ -65,12 +65,12 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Statistics-remoted-messages',
+    _id: 'Portal9-App-Statistics-remoted-messages',
     _type: 'visualization',
     _source: {
-      title: 'Wazuh App Statistics remoted messages',
+      title: 'Portal9 App Statistics remoted messages',
       visState: JSON.stringify({
-        title: 'Wazuh App Statistics remoted messages',
+        title: 'Portal9 App Statistics remoted messages',
         type: 'timelion',
         params: {
           expression:
@@ -92,12 +92,12 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Statistics-remoted-tcp-sessions',
+    _id: 'Portal9-App-Statistics-remoted-tcp-sessions',
     _type: 'visualization',
     _source: {
-      title: 'Wazuh App Statistics remoted tcp sessions',
+      title: 'Portal9 App Statistics remoted tcp sessions',
       visState: JSON.stringify({
-        title: 'Wazuh App Statistics remoted tcp sessions',
+        title: 'Portal9 App Statistics remoted tcp sessions',
         type: 'timelion',
         params: {
           expression:
@@ -119,12 +119,12 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Statistics-Analysisd-Overview-Events-Decoded',
+    _id: 'Portal9-App-Statistics-Analysisd-Overview-Events-Decoded',
     _type: 'visualization',
     _source: {
-      title: 'Wazuh App Statistics Overview events decoded',
+      title: 'Portal9 App Statistics Overview events decoded',
       visState: JSON.stringify({
-        title: 'Wazuh App Statistics Overview events decode',
+        title: 'Portal9 App Statistics Overview events decode',
         type: 'timelion',
         params: {
           expression:
@@ -146,12 +146,12 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Statistics-Analysisd-Syscheck',
+    _id: 'Portal9-App-Statistics-Analysisd-Syscheck',
     _type: 'visualization',
     _source: {
-      title: 'Wazuh App Statistics Syscheck',
+      title: 'Portal9 App Statistics Syscheck',
       visState: JSON.stringify({
-        title: 'Wazuh App Statistics Syscheck',
+        title: 'Portal9 App Statistics Syscheck',
         type: 'timelion',
         params: {
           expression:
@@ -173,12 +173,12 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Statistics-Analysisd-Syscollector',
+    _id: 'Portal9-App-Statistics-Analysisd-Syscollector',
     _type: 'visualization',
     _source: {
-      title: 'Wazuh App Statistics Syscollector',
+      title: 'Portal9 App Statistics Syscollector',
       visState: JSON.stringify({
-        title: 'Wazuh App Statistics Syscollector',
+        title: 'Portal9 App Statistics Syscollector',
         type: 'timelion',
         params: {
           expression:
@@ -200,12 +200,12 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Statistics-Analysisd-Rootcheck',
+    _id: 'Portal9-App-Statistics-Analysisd-Rootcheck',
     _type: 'visualization',
     _source: {
-      title: 'Wazuh App Statistics Rootcheck',
+      title: 'Portal9 App Statistics Rootcheck',
       visState: JSON.stringify({
-        title: 'Wazuh App Statistics Rootcheck',
+        title: 'Portal9 App Statistics Rootcheck',
         type: 'timelion',
         params: {
           expression:
@@ -227,12 +227,12 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Statistics-Analysisd-SCA',
+    _id: 'Portal9-App-Statistics-Analysisd-SCA',
     _type: 'visualization',
     _source: {
-      title: 'Wazuh App Statistics SCA',
+      title: 'Portal9 App Statistics SCA',
       visState: JSON.stringify({
-        title: 'Wazuh App Statistics SCA',
+        title: 'Portal9 App Statistics SCA',
         type: 'timelion',
         params: {
           expression:
@@ -254,12 +254,12 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Statistics-Analysisd-HostInfo',
+    _id: 'Portal9-App-Statistics-Analysisd-HostInfo',
     _type: 'visualization',
     _source: {
-      title: 'Wazuh App Statistics HostInfo',
+      title: 'Portal9 App Statistics HostInfo',
       visState: JSON.stringify({
-        title: 'Wazuh App Statistics HostInfo',
+        title: 'Portal9 App Statistics HostInfo',
         type: 'timelion',
         params: {
           expression:
@@ -281,12 +281,12 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Statistics-Analysisd-Other',
+    _id: 'Portal9-App-Statistics-Analysisd-Other',
     _type: 'visualization',
     _source: {
-      title: 'Wazuh App Statistics Other',
+      title: 'Portal9 App Statistics Other',
       visState: JSON.stringify({
-        title: 'Wazuh App Statistics Other',
+        title: 'Portal9 App Statistics Other',
         type: 'timelion',
         params: {
           expression:
@@ -309,12 +309,12 @@ export default [
   },
 
   {
-    _id: 'Wazuh-App-Statistics-Analysisd-Events-By-Node',
+    _id: 'Portal9-App-Statistics-Analysisd-Events-By-Node',
     _type: 'visualization',
     _source: {
-      title: 'Wazuh App Statistics Events by Node',
+      title: 'Portal9 App Statistics Events by Node',
       visState: JSON.stringify({
-        title: 'Wazuh App Statistics Events by Node',
+        title: 'Portal9 App Statistics Events by Node',
         type: 'timelion',
         params: {
           expression:
@@ -324,7 +324,7 @@ export default [
         aggs: [],
       }),
       visStateByNode: JSON.stringify({
-        title: 'Wazuh App Statistics Events by Node',
+        title: 'Portal9 App Statistics Events by Node',
         type: 'timelion',
         params: {
           expression:
@@ -346,12 +346,12 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Statistics-Analysisd-Events-Dropped-By-Node',
+    _id: 'Portal9-App-Statistics-Analysisd-Events-Dropped-By-Node',
     _type: 'visualization',
     _source: {
-      title: 'Wazuh App Statistics Events Dropped by Node',
+      title: 'Portal9 App Statistics Events Dropped by Node',
       visState: JSON.stringify({
-        title: 'Wazuh App Statistics Events Dropped by Node',
+        title: 'Portal9 App Statistics Events Dropped by Node',
         type: 'timelion',
         params: {
           expression:
@@ -361,7 +361,7 @@ export default [
         aggs: [],
       }),
       visStateByNode: JSON.stringify({
-        title: 'Wazuh App Statistics Events by Node',
+        title: 'Portal9 App Statistics Events by Node',
         type: 'timelion',
         params: {
           expression:
@@ -383,12 +383,12 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Statistics-Analysisd-Queues-Usage',
+    _id: 'Portal9-App-Statistics-Analysisd-Queues-Usage',
     _type: 'visualization',
     _source: {
-      title: 'Wazuh App Statistics Queues Usage',
+      title: 'Portal9 App Statistics Queues Usage',
       visState: JSON.stringify({
-        title: 'Wazuh App Statistics Queues Usage',
+        title: 'Portal9 App Statistics Queues Usage',
         type: 'timelion',
         params: {
           expression:

@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Module for Overview/CIS-CAT visualizations
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Module for Overview/CIS-CAT visualizations
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -11,7 +11,7 @@
  */
 export default [
   {
-    _id: 'Wazuh-app-Overview-CISCAT-alerts-summary',
+    _id: 'Portal9-app-Overview-CISCAT-alerts-summary',
     _type: 'visualization',
     _source: {
       title: 'Alerts summary',
@@ -97,7 +97,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-app-Overview-CISCAT-last-scan-not-checked',
+    _id: 'Portal9-app-Overview-CISCAT-last-scan-not-checked',
     _type: 'visualization',
     _source: {
       title: 'Last scan not checked',
@@ -148,7 +148,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-app-Overview-CISCAT-last-scan-score',
+    _id: 'Portal9-app-Overview-CISCAT-last-scan-score',
     _type: 'visualization',
     _source: {
       title: 'Last scan score',
@@ -199,7 +199,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-app-Overview-CISCAT-last-scan-pass',
+    _id: 'Portal9-app-Overview-CISCAT-last-scan-pass',
     _type: 'visualization',
     _source: {
       title: 'Last scan pass',
@@ -250,7 +250,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-app-Overview-CISCAT-last-scan-fail',
+    _id: 'Portal9-app-Overview-CISCAT-last-scan-fail',
     _type: 'visualization',
     _source: {
       title: 'Last scan fail',
@@ -301,7 +301,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-app-Overview-CISCAT-last-scan-timestamp',
+    _id: 'Portal9-app-Overview-CISCAT-last-scan-timestamp',
     _type: 'visualization',
     _source: {
       title: 'Last scan timestamp',
@@ -352,7 +352,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-app-Overview-CISCAT-last-scan-error',
+    _id: 'Portal9-app-Overview-CISCAT-last-scan-error',
     _type: 'visualization',
     _source: {
       title: 'Last scan error',
@@ -403,7 +403,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-app-Overview-CISCAT-last-scan-benchmark',
+    _id: 'Portal9-app-Overview-CISCAT-last-scan-benchmark',
     _type: 'visualization',
     _source: {
       title: 'Last scan benchmark',
@@ -454,7 +454,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-app-Overview-CISCAT-last-scan-unknown',
+    _id: 'Portal9-app-Overview-CISCAT-last-scan-unknown',
     _type: 'visualization',
     _source: {
       title: 'Last scan unknown',
@@ -505,7 +505,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-app-Overview-CISCAT-top-5-groups',
+    _id: 'Portal9-app-Overview-CISCAT-top-5-groups',
     _type: 'visualization',
     _source: {
       title: 'Top 5 groups',
@@ -591,7 +591,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-app-Overview-CISCAT-scan-result-evolution',
+    _id: 'Portal9-app-Overview-CISCAT-scan-result-evolution',
     _type: 'visualization',
     _source: {
       title: 'Scan result evolution',

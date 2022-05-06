@@ -1,6 +1,6 @@
 /*
- * Wazuh app - AWS sample data
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - AWS sample data
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -256,7 +256,7 @@ export const guarddutyPortProbe = {
     groups: ["amazon","aws","aws_guardduty"],
     id: "80305"
   },
-  location: "Wazuh-AWS",
+  location: "Portal9-AWS",
   decoder: {
     "name": "json"
   },
@@ -346,7 +346,7 @@ export const apiCall = {
     ],
     "id": "80302"
   },
-  "location": "Wazuh-AWS",
+  "location": "Portal9-AWS",
   "decoder": {
     "name": "json"
   }
@@ -438,7 +438,7 @@ export const networkConnection = {
     ],
     "id": "80302"
   },
-  "location": "Wazuh-AWS",
+  "location": "Portal9-AWS",
   "decoder": {
     "name": "json"
   },
@@ -488,7 +488,7 @@ export const iamPolicyGrantGlobal = {
     "groups": ["amazon","aws","aws_macie"],
     "id": "80355"
   },
-  "location": "Wazuh-AWS",
+  "location": "Portal9-AWS",
   "decoder": {
     "name": "json"
   }

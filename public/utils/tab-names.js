@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Tab name equivalence
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Tab name equivalence
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -44,7 +44,7 @@ export const TabNames = {
   reporting: 'Reporting',
   'registration-service': 'Registration service',
   cluster: 'Cluster',
-  'portal9-modules': 'Wazuh modules',
+  'portal9-modules': 'Portal9 modules',
   'active-response': 'Active response',
   integrations: 'Integrations',
   'database-output': 'Database output',
@@ -62,7 +62,7 @@ export const TabNames = {
   'cis-cat': 'CIS-CAT',
   'vulnerability-detector': 'Vulnerabilities',
   'aws-s3': 'Amazon S3',
-  command: 'Wazuh commands',
+  command: 'Portal9 commands',
   client: 'Client configuration',
   edition: 'Edit node configuration',
   'client-buffer': 'Anti-flooding settings',

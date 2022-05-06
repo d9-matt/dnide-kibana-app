@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Dev tools controller
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Dev tools controller
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -761,7 +761,7 @@ export class DevToolsController {
     } catch (error) {
       if ((error || {}).status === -1) {
         return this.apiOutputBox.setValue(
-          'Wazuh API is not reachable. Reason: timeout.'
+          'Portal9 API is not reachable. Reason: timeout.'
         );
       } else {
         const parsedError = ErrorHandler.handle(error, '', { silent: true });

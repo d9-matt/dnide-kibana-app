@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Add the plugin help links as extension in Kibana help menu
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Add the plugin help links as extension in Kibana help menu
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,7 +27,7 @@ const appVersionMajorDotMinor = version.split('.').slice(0, 2).join('.');
 
 export function addHelpMenuToAppChrome(){
   getChrome().setHelpExtension({
-    appName: 'Wazuh support',
+    appName: 'Portal9 support',
     links: [
       {
         linkType: 'custom',

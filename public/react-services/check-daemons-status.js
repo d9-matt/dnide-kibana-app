@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Error handler service
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Error handler service
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -10,7 +10,7 @@
  * Find more information about this on the LICENSE file.
  */
 import store from '../redux/store';
-import { updateWazuhNotReadyYet } from '../redux/actions/appStateActions';
+import { updatePortal9NotReadyYet } from '../redux/actions/appStateActions';
 import { WzRequest } from './wz-request';
 
 const delay = time => new Promise(res => setTimeout(res,time));
@@ -29,7 +29,7 @@ export class CheckDaemonsStatus {
         const result = await WzRequest.apiReq('GET', '/ping', {});
         isValid = ((result || {}).data || {}).isValid;
         if (isValid) {
-          const updateNotReadyYet = updateWazuhNotReadyYet(false);
+          const updateNotReadyYet = updatePortal9NotReadyYet(false);
           store.dispatch(updateNotReadyYet);
           break;
         }
@@ -39,7 +39,7 @@ export class CheckDaemonsStatus {
         throw new Error('Not recovered');
       }
     } catch (error) {
-      store.dispatch(updateWazuhNotReadyYet('Wazuh could not be recovered.'));
+      store.dispatch(updatePortal9NotReadyYet('Portal9 could not be recovered.'));
     }
     busy = false;
   }

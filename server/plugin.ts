@@ -26,7 +26,7 @@ import {
   SharedGlobalConfig
 } from 'kibana/server';
 
-import { WazuhPluginSetup, WazuhPluginStart, PluginSetup } from './types';
+import { Portal9PluginSetup, Portal9PluginStart, PluginSetup } from './types';
 import { SecurityObj, ISecurityFactory } from './lib/security-factory';
 import { setupRoutes } from './routes';
 import { jobInitializeRun, jobMonitoringRun, jobSchedulerRun, jobQueueRun } from './start';
@@ -58,7 +58,7 @@ declare module 'kibana/server' {
   }
 }
 
-export class WazuhPlugin implements Plugin<WazuhPluginSetup, WazuhPluginStart> {
+export class Portal9Plugin implements Plugin<Portal9PluginSetup, Portal9PluginStart> {
   private readonly logger: Logger;
 
   constructor(private readonly initializerContext: PluginInitializerContext) {
@@ -66,7 +66,7 @@ export class WazuhPlugin implements Plugin<WazuhPluginSetup, WazuhPluginStart> {
   }
 
   public async setup(core: CoreSetup, plugins: PluginSetup) {
-    this.logger.debug('Wazuh-wui: Setup');
+    this.logger.debug('Portal9-wui: Setup');
 
     const portal9Security = SecurityObj(plugins);
     const serverInfo = core.http.getServerInfo();

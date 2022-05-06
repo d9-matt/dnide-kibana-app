@@ -1,7 +1,7 @@
 /*
- * Wazuh app - React component for building Remoted dashboard
+ * Portal9 app - React component for building Remoted dashboard
  *
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -32,7 +32,7 @@ export function WzStatisticsRemoted({clusterNodeSelected,  refreshVisualizations
                   <WzReduxProvider>
                     <KibanaVis
                       visID={
-                        "Wazuh-App-Statistics-remoted-Recv-bytes"
+                        "Portal9-App-Statistics-remoted-Recv-bytes"
                       }
                       tab={"statistics"}
                     ></KibanaVis>
@@ -53,7 +53,7 @@ export function WzStatisticsRemoted({clusterNodeSelected,  refreshVisualizations
                   <WzReduxProvider>
                     <KibanaVis
                       visID={
-                        "Wazuh-App-Statistics-remoted-event-count"
+                        "Portal9-App-Statistics-remoted-event-count"
                       }
                       tab={"statistics"}
                     ></KibanaVis>
@@ -77,7 +77,7 @@ export function WzStatisticsRemoted({clusterNodeSelected,  refreshVisualizations
                   <WzReduxProvider>
                     <KibanaVis
                       visID={
-                        "Wazuh-App-Statistics-remoted-messages"
+                        "Portal9-App-Statistics-remoted-messages"
                       }
                       tab={"statistics"}
                     ></KibanaVis>
@@ -98,7 +98,7 @@ export function WzStatisticsRemoted({clusterNodeSelected,  refreshVisualizations
                   <WzReduxProvider>
                     <KibanaVis
                       visID={
-                        "Wazuh-App-Statistics-remoted-tcp-sessions"
+                        "Portal9-App-Statistics-remoted-tcp-sessions"
                       }
                       tab={"statistics"}
                     ></KibanaVis>

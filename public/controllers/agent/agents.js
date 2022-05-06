@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Agents controller
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Agents controller
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,7 +17,7 @@ import { visualizations } from '../../templates/agents/visualizations';
 
 import { ConfigurationHandler } from '../../utils/config-handler';
 import { AppState } from '../../react-services/app-state';
-import { WazuhConfig } from '../../react-services/portal9-config';
+import { Portal9Config } from '../../react-services/portal9-config';
 import { GenericRequest } from '../../react-services/generic-request';
 import { WzRequest } from '../../react-services/wz-request';
 import { getToasts }  from '../../kibana-services';
@@ -66,7 +66,7 @@ export class AgentsController {
     this.visFactoryService = visFactoryService;
     this.csvReq = csvReq;
     this.groupHandler = GroupHandler;
-    this.portal9Config = new WazuhConfig();
+    this.portal9Config = new Portal9Config();
     this.genericReq = GenericRequest;
 
     // Config on-demand
@@ -838,7 +838,7 @@ export class AgentsController {
     } catch (error) {
       if (!this.$scope.agent) {
         if ((error || {}).status === -1) {
-          this.$scope.emptyAgent = 'Wazuh API timeout.';
+          this.$scope.emptyAgent = 'Portal9 API timeout.';
         }
       }
       if (

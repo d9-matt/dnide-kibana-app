@@ -1,7 +1,7 @@
 /*
- * Wazuh app - Health Check Component
+ * Portal9 app - Health Check Component
  *
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -52,14 +52,14 @@ import { CheckLogger } from '../types/check_logger';
 
 const checks = {
   api: {    
-    title: 'Check Wazuh API connection',
+    title: 'Check Portal9 API connection',
     label: 'API connection',
     validator: checkApiService,
     awaitFor: [],
     canRetry: true,
   },
   setup: {
-    title: 'Check Wazuh API version',
+    title: 'Check Portal9 API version',
     label: 'API version',
     validator: checkSetupService,
     awaitFor: ["api"],

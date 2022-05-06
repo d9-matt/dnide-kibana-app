@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for show Edit configuration.
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - React component for show Edit configuration.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,12 +27,12 @@ import {
 } from '@elastic/eui';
 
 import WzCodeEditor from '../util-components/code-editor';
-import WzWazuhAPINotReachable from '../util-components/wz-api-not-reachable';
+import WzPortal9APINotReachable from '../util-components/wz-api-not-reachable';
 import WzConfigurationPath from '../util-components/configuration-path';
 import WzRefreshClusterInfoButton from '../util-components/refresh-cluster-info-button';
 import { WzButtonPermissions } from '../../../../../../components/common/permissions/button';
 import withLoading from '../util-hocs/loading';
-import { updateWazuhNotReadyYet } from '../../../../../../redux/actions/appStateActions';
+import { updatePortal9NotReadyYet } from '../../../../../../redux/actions/appStateActions';
 import {
   updateClusterNodes,
   updateClusterNodeSelected
@@ -157,9 +157,9 @@ class WzEditConfiguration extends Component {
       this.setState({ restarting: true, saving: true, infoChangesAfterRestart: false });
       await restartNodeSelected(
         this.props.clusterNodeSelected,
-        this.props.updateWazuhNotReadyYet
+        this.props.updatePortal9NotReadyYet
       );
-      this.props.updateWazuhNotReadyYet('');
+      this.props.updatePortal9NotReadyYet('');
       this.setState({ restart: false, saving: false, restarting: false });
       await this.checkIfClusterOrManager();
       if (this.props.clusterNodes) {
@@ -178,7 +178,7 @@ class WzEditConfiguration extends Component {
         });
       }
     } catch (error) {
-      this.props.updateWazuhNotReadyYet('');
+      this.props.updatePortal9NotReadyYet('');
       this.setState({ restart: false, saving: false, restarting: false });
     }
   }
@@ -307,12 +307,12 @@ const mapDispatchToProps = dispatch => ({
     dispatch(updateClusterNodes(clusterNodes)),
   updateClusterNodeSelected: clusterNodeSelected =>
     dispatch(updateClusterNodeSelected(clusterNodeSelected)),
-  updateWazuhNotReadyYet: value => dispatch(updateWazuhNotReadyYet(value))
+  updatePortal9NotReadyYet: value => dispatch(updatePortal9NotReadyYet(value))
 });
 
 WzEditConfiguration.propTypes = {
   portal9NotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
-  updateWazuhNotReadyYet: PropTypes.func
+  updatePortal9NotReadyYet: PropTypes.func
 };
 
 export default connect(
@@ -406,7 +406,7 @@ const WzEditorConfiguration = compose(
 
             </Fragment>
           ) : (
-            <WzWazuhAPINotReachable error={this.props.errorXMLFetched} />
+            <WzPortal9APINotReachable error={this.props.errorXMLFetched} />
           )}
         </Fragment>
       );

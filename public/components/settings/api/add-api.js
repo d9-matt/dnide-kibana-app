@@ -1,7 +1,7 @@
 /*
- * Wazuh app - React component for the adding an API entry form.
+ * Portal9 app - React component for the adding an API entry form.
  *
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -52,7 +52,7 @@ export class AddApi extends Component {
         blockClose: true,
         message:
           (error.data || error).message ||
-          'Wazuh API not reachable, please review your configuration',
+          'Portal9 API not reachable, please review your configuration',
         fetchingData: false
       });
     }
@@ -89,7 +89,7 @@ export class AddApi extends Component {
         enableClose: false,
         message:
           (error.data || error).message || error ||
-          'Wazuh API not reachable, please review your configuration',
+          'Portal9 API not reachable, please review your configuration',
         fetchingData: false
       });
     }
@@ -117,7 +117,7 @@ export class AddApi extends Component {
         {(this.state.status === 'warning' ||
           this.state.status === 'danger') && <EuiSpacer />}
         <EuiText>
-          Check that the Kibana server can reach the configured Wazuh API(s).
+          Check that the Kibana server can reach the configured Portal9 API(s).
         </EuiText>
         <EuiSpacer />
         <EuiButton
@@ -147,7 +147,7 @@ export class AddApi extends Component {
         <EuiSpacer />
         <EuiText>
           Where <EuiCode>{'<id>'}</EuiCode> is an arbitrary ID,{' '}
-          <EuiCode>{'<api_url>'}</EuiCode> is the URL of the Wazuh API,{' '}
+          <EuiCode>{'<api_url>'}</EuiCode> is the URL of the Portal9 API,{' '}
           <EuiCode>{'<api_port>'}</EuiCode> is the port,{' '}
           <EuiCode>{'<api_username>'}</EuiCode> and{' '}
           <EuiCode>{'<api_password>'}</EuiCode> are the credentials to

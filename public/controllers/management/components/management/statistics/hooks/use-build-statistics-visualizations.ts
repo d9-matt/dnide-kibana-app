@@ -1,7 +1,7 @@
 /*
- * Wazuh app - React component for building Remoted dashboard
+ * Portal9 app - React component for building Remoted dashboard
  *
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,10 +20,10 @@ import { RawVisualizations } from "../../../../../../factories/raw-visualization
 import { GenericRequest } from "../../../../../../react-services/generic-request";
 import { updateVis } from "../../../../../../redux/actions/visualizationsActions";
 import { AppState } from "../../../../../../react-services/app-state";
-import { WazuhConfig } from '../../../../../../react-services/portal9-config.js';
+import { Portal9Config } from '../../../../../../react-services/portal9-config.js';
 
 export const useBuildStatisticsVisualizations = (clusterNodeSelected, refreshVisualizations) => {
-  const { 'cron.prefix': indexPrefix, 'cron.statistics.index.name': indexName } = new WazuhConfig().getConfig();
+  const { 'cron.prefix': indexPrefix, 'cron.statistics.index.name': indexName } = new Portal9Config().getConfig();
   useEffect(() => {
     const tabVisualizations = new TabVisualizations();
     const rawVisualizations = new RawVisualizations();

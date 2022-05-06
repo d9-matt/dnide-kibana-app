@@ -17,7 +17,7 @@ import {
 
 const helpLinks = [
   {
-    text: 'Using Wazuh to monitor Google Cloud Pub/Sub',
+    text: 'Using Portal9 to monitor Google Cloud Pub/Sub',
     href: 'https://documentation.portal9.com/current/gcp/index.html'
   },
   {

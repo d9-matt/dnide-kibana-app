@@ -1,7 +1,7 @@
 /*
- * Wazuh app - React component for building the Tools sections welcome cards.
+ * Portal9 app - React component for building the Tools sections welcome cards.
  *
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -50,7 +50,7 @@ export class ToolsWelcomeCards extends Component {
     return (
       <div>
         <EuiTitle size="m">
-          <h1>Wazuh tools</h1>
+          <h1>Portal9 tools</h1>
         </EuiTitle>
         <EuiSpacer size="m" />
         <EuiFlexGroup>{this.buildToolsCards()}</EuiFlexGroup>

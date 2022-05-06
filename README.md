@@ -1,23 +1,23 @@
-# Wazuh Kibana App
+# Portal9 Kibana App
 
 [![Slack](https://img.shields.io/badge/slack-join-blue.svg)](https://portal9.com/community/join-us-on-slack/)
 [![Email](https://img.shields.io/badge/email-join-blue.svg)](https://groups.google.com/forum/#!forum/portal9)
 [![Documentation](https://img.shields.io/badge/docs-view-green.svg)](https://documentation.portal9.com)
 [![Documentation](https://img.shields.io/badge/web-view-green.svg)](https://portal9.com)
 
-This repository contains the Wazuh Kibana plugin, from which you can navigate through the Wazuh data using visualizations in a simple and understandable way. It also allows you to manage the configuration and capabilities of the Wazuh server.
+This repository contains the Portal9 Kibana plugin, from which you can navigate through the Portal9 data using visualizations in a simple and understandable way. It also allows you to manage the configuration and capabilities of the Portal9 server.
 
 This is a change
 
-Wazuh is a security detection, visibility, and compliance open source project. Wazuh helps you to gain deeper security visibility into your infrastructure by monitoring hosts at an operating system and application level.
+Portal9 is a security detection, visibility, and compliance open source project. Portal9 helps you to gain deeper security visibility into your infrastructure by monitoring hosts at an operating system and application level.
 
 You can learn more about it here [portal9.com](https://portal9.com/)
 
 ## Description
 
-This plugin for Kibana allows you to visualize and analyze Wazuh alerts stored in Elasticsearch and provides the following capabilities:
+This plugin for Kibana allows you to visualize and analyze Portal9 alerts stored in Elasticsearch and provides the following capabilities:
 
-- Search alerts classified by modules and filter them using the different views. You will be able to explore the alerts both at Wazuh cluster level, and in a particular agent. The modules, divided into the following use cases, are:
+- Search alerts classified by modules and filter them using the different views. You will be able to explore the alerts both at Portal9 cluster level, and in a particular agent. The modules, divided into the following use cases, are:
     - Security Information Management
         - Security events: Browse through your security alerts, identifying issues and threats in your environment.
         - Integrity monitoring: Alerts related to file changes, including permissions, content, ownership and attributes.
@@ -41,17 +41,17 @@ This plugin for Kibana allows you to visualize and analyze Wazuh alerts stored i
         - GDPR: General Data Protection Regulation (GDPR) sets guidelines for processing of personal data.
         - HIPAA: Health Insurance Portability and Accountability Act of 1996 (HIPAA) provides data privacy and security provisions for safeguarding medical information.
         - TSC: Trust Services Criteria for Security, Availability, Processing Integrity, Confidentiality, and Privacy.
-- View and edit the Wazuh manager configuration.
+- View and edit the Portal9 manager configuration.
 - Manage your ruleset (rules, decoders and CDB lists).
 - Manage your groups of agents.
-- Check the status and logs of your Wazuh cluster.
+- Check the status and logs of your Portal9 cluster.
 - Manage your agents, as well as see their configuration and data inventory. You can also deploy new agents.
-- Explore and interact with the Wazuh API through our Dev Tools.
+- Explore and interact with the Portal9 API through our Dev Tools.
 
 ## Documentation
 
 - [Full documentation](https://documentation.portal9.com)
-- [Wazuh installation guide](https://documentation.portal9.com/current/installation-guide/index.html)
+- [Portal9 installation guide](https://documentation.portal9.com/current/installation-guide/index.html)
 - [Screenshots](https://documentation.portal9.com/current/index.html#example-screenshots)
 
 **Modules overview**
@@ -84,12 +84,12 @@ This plugin for Kibana allows you to visualize and analyze Wazuh alerts stored i
 
 ## Branches
 
-- `stable` corresponds to the latest Wazuh app stable version.
+- `stable` corresponds to the latest Portal9 app stable version.
 - `master` branch contains the latest code, be aware of possible bugs on this branch.
 
 ## Requisites
 
-- Wazuh HIDS 4.2.2
+- Portal9 HIDS 4.2.2
 - Kibana 7.10.2
 - Elasticsearch 7.10.2
 
@@ -103,7 +103,7 @@ mkdir /usr/share/kibana/data
 chown -R kibana:kibana /usr/share/kibana/data
 ```
 
-Install the Wazuh app plugin for Kibana
+Install the Portal9 app plugin for Kibana
 
 ```
 cd /usr/share/kibana
@@ -126,9 +126,9 @@ service kibana restart
 
 ## Upgrade
 
-Note: Since Wazuh 4.0.4 release revision 4016 (regardless of the Elastic Stack version) the location of the portal9.yml has been moved from `/usr/share/kibana/optimize/portal9/config/portal9.yml` to `/usr/share/kibana/data/portal9/config/portal9.yml`.
+Note: Since Portal9 4.0.4 release revision 4016 (regardless of the Elastic Stack version) the location of the portal9.yml has been moved from `/usr/share/kibana/optimize/portal9/config/portal9.yml` to `/usr/share/kibana/data/portal9/config/portal9.yml`.
 
-Since Wazuh 3.12.0 release (regardless of the Elastic Stack version) the location of the portal9.yml has been moved from `/usr/share/kibana/plugins/portal9/portal9.yml` to `/usr/share/kibana/data/portal9/config/portal9.yml`.
+Since Portal9 3.12.0 release (regardless of the Elastic Stack version) the location of the portal9.yml has been moved from `/usr/share/kibana/plugins/portal9/portal9.yml` to `/usr/share/kibana/data/portal9/config/portal9.yml`.
 
 Stop Kibana
 
@@ -170,7 +170,7 @@ mkdir -p /usr/share/kibana/data/portal9/config
 cp /usr/share/kibana/optimize/portal9/config/portal9.yml /usr/share/kibana/data/portal9/config/portal9.yml
 ```
 
-Remove the Wazuh app using the kibana-plugin tool
+Remove the Portal9 app using the kibana-plugin tool
 
 ```
 cd /usr/share/kibana/
@@ -190,7 +190,7 @@ chown -R kibana:kibana /usr/share/kibana/data
 chown -R kibana:kibana /usr/share/kibana/plugins
 ```
 
-Install the Wazuh app
+Install the Portal9 app
 
 ```
 cd /usr/share/kibana/
@@ -219,9 +219,9 @@ service kibana restart
 ```
 
  
-## Wazuh - Kibana - Open Distro version compatibility matrix
+## Portal9 - Kibana - Open Distro version compatibility matrix
  
-| Wazuh app | Kibana  | Open Distro | Package                                                                    |
+| Portal9 app | Kibana  | Open Distro | Package                                                                    |
 | :-------: | :----:  | :---------: | :------------------------------------------------------------------------- |
 |   4.2.5   |  7.14.2 |             | <https://packages.portal9.com/4.x/ui/kibana/portal9_kibana-4.2.5_7.14.2-1.zip> |
 |   4.2.5   |  7.14.1 |             | <https://packages.portal9.com/4.x/ui/kibana/portal9_kibana-4.2.5_7.14.1-1.zip> |
@@ -381,7 +381,7 @@ If you want to contribute to our project please don't hesitate to send a pull re
 
 ## Copyright & License
 
-Copyright &copy; 2021 Wazuh, Inc.
+Copyright &copy; 2021 Portal9, Inc.
 
 This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
 

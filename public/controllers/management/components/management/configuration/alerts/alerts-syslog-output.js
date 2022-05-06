@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for show alerts - syslog output tab.
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - React component for show alerts - syslog output tab.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -72,7 +72,7 @@ class WzConfigurationAlertsReports extends Component {
           )}
         {portal9NotReadyYet &&
           (!currentConfig || !currentConfig['csyslog-csyslog']) && (
-            <WzNoConfig error="Wazuh not ready yet" help={helpLinks} />
+            <WzNoConfig error="Portal9 not ready yet" help={helpLinks} />
           )}
         {currentConfig['csyslog-csyslog'] &&
           !isString(currentConfig['csyslog-csyslog']) &&

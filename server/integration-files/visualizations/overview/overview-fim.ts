@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Module for Overview/FIM visualizations
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Module for Overview/FIM visualizations
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -11,7 +11,7 @@
  */
 export default [
   {
-    _id: 'Wazuh-App-Overview-FIM-Events-summary',
+    _id: 'Portal9-App-Overview-FIM-Events-summary',
     _type: 'visualization',
     _source: {
       title: 'Events summary',
@@ -93,7 +93,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Overview-FIM-Top-5-rules',
+    _id: 'Portal9-App-Overview-FIM-Top-5-rules',
     _type: 'visualization',
     _source: {
       title: 'Top 5 rules',
@@ -147,7 +147,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Overview-FIM-Top-5-agents-pie',
+    _id: 'Portal9-App-Overview-FIM-Top-5-agents-pie',
     _type: 'visualization',
     _source: {
       title: 'Top 5 agents pie',
@@ -195,7 +195,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Overview-FIM-Common-actions',
+    _id: 'Portal9-App-Overview-FIM-Common-actions',
     _type: 'visualization',
     _source: {
       title: 'Common actions',
@@ -243,7 +243,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Agents-FIM-Alerts-by-action-over-time',
+    _id: 'Portal9-App-Agents-FIM-Alerts-by-action-over-time',
     _source: {
       title: 'Alerts by action over time',
       visState: JSON.stringify({
@@ -346,7 +346,7 @@ export default [
     _type: 'visualization',
   },
   {
-    _id: 'Wazuh-App-Overview-FIM-top-agents-user',
+    _id: 'Portal9-App-Overview-FIM-top-agents-user',
     _type: 'visualization',
     _source: {
       title: 'Top users',
@@ -447,7 +447,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Overview-FIM-Alerts-summary',
+    _id: 'Portal9-App-Overview-FIM-Alerts-summary',
     _type: 'visualization',
     _source: {
       title: 'Alerts summary',

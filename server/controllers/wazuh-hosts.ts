@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Class for Wazuh-API functions
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Class for Portal9-API functions
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,7 +18,7 @@ import { APIUserAllowRunAs } from '../lib/cache-api-user-has-run-as';
 import { KibanaRequest, RequestHandlerContext, KibanaResponseFactory } from 'src/core/server';
 import { WAZUH_DATA_KIBANA_BASE_ABSOLUTE_PATH } from '../../common/constants';
 
-export class WazuhHostsCtrl {
+export class Portal9HostsCtrl {
   constructor() {
     this.manageHosts = new ManageHosts();
     this.updateRegistry = new UpdateRegistry();

@@ -4,7 +4,7 @@ import {
   IApi,
   jobs
 } from './index';
-import { WazuhHostsCtrl } from '../../controllers/portal9-hosts';
+import { Portal9HostsCtrl } from '../../controllers/portal9-hosts';
 jest.mock('../../controllers/portal9-hosts');
 jest.mock('./save-document');
 jest.mock('./predefined-jobs', () => ({
@@ -128,7 +128,7 @@ describe('SchedulerJob', () => {
   });
 
   it('should get API object when no specified the `apis` parameter on the job object', async () => {
-    WazuhHostsCtrl.prototype.getHostsEntries.mockResolvedValue(oneApi);
+    Portal9HostsCtrl.prototype.getHostsEntries.mockResolvedValue(oneApi);
 
 
     const apis: IApi[] = await schedulerJob.getApiObjects();
@@ -138,7 +138,7 @@ describe('SchedulerJob', () => {
   });
 
   it('should get all API objects when no specified the `apis` parameter on the job object', async () => {
-    WazuhHostsCtrl.prototype.getHostsEntries.mockResolvedValue(twoApi)
+    Portal9HostsCtrl.prototype.getHostsEntries.mockResolvedValue(twoApi)
     const apis: IApi[] = await schedulerJob.getApiObjects();
 
     expect(apis).not.toBeUndefined();
@@ -147,7 +147,7 @@ describe('SchedulerJob', () => {
   });
 
   it('should get one of two API object when specified the id in `apis` parameter on the job object', async () => {
-    WazuhHostsCtrl.prototype.getHostsEntries.mockResolvedValue(twoApi)
+    Portal9HostsCtrl.prototype.getHostsEntries.mockResolvedValue(twoApi)
     jobs[schedulerJob.jobName] = { ...jobs[schedulerJob.jobName], apis: ['internal'] };
     const apis: IApi[] = await schedulerJob.getApiObjects();
     const filteredTwoApi = twoApi.filter(item => item.id === 'internal')
@@ -158,7 +158,7 @@ describe('SchedulerJob', () => {
   });
 
   it('should get two of three API object when specified the id in `apis` parameter on the job object', async () => {
-    WazuhHostsCtrl.prototype.getHostsEntries.mockResolvedValue(threeApi)
+    Portal9HostsCtrl.prototype.getHostsEntries.mockResolvedValue(threeApi)
     const selectedApis = ['internal', 'external'];
     jobs[schedulerJob.jobName] = { ...jobs[schedulerJob.jobName], apis: selectedApis };
     const apis: IApi[] = await schedulerJob.getApiObjects();
@@ -170,14 +170,14 @@ describe('SchedulerJob', () => {
   });
 
   it('should throw an exception when no get APIs', async () => {
-    WazuhHostsCtrl.prototype.getHostsEntries.mockResolvedValue([])
+    Portal9HostsCtrl.prototype.getHostsEntries.mockResolvedValue([])
     await expect(schedulerJob.getApiObjects()).rejects.toEqual(
-      { error: 10001, message: 'No Wazuh host configured in portal9.yml' }
+      { error: 10001, message: 'No Portal9 host configured in portal9.yml' }
     );
   });
 
   it('should throw an exception when no match API', async () => {
-    WazuhHostsCtrl.prototype.getHostsEntries.mockResolvedValue(threeApi)
+    Portal9HostsCtrl.prototype.getHostsEntries.mockResolvedValue(threeApi)
     jobs[schedulerJob.jobName] = { ...jobs[schedulerJob.jobName], apis: ['unkown'] };
     await expect(schedulerJob.getApiObjects()).rejects.toEqual(
       { error: 10002, message: 'No host was found with the indicated ID' }

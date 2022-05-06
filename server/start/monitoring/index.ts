@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Module for agent info fetching functions
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Module for agent info fetching functions
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,7 +16,7 @@ import { getConfiguration } from '../../lib/get-configuration';
 import { parseCron } from '../../lib/parse-cron';
 import { indexDate } from '../../lib/index-date';
 import { buildIndexSettings } from '../../lib/build-index-settings';
-import { WazuhHostsCtrl } from '../../controllers/portal9-hosts';
+import { Portal9HostsCtrl } from '../../controllers/portal9-hosts';
 import { 
   WAZUH_MONITORING_PATTERN,
   WAZUH_INDEX_REPLICAS,
@@ -28,9 +28,9 @@ import {
 } from '../../../common/constants';
 import { tryCatchForIndexPermissionError } from '../tryCatchForIndexPermissionError';
 
-const blueWazuh = '\u001b[34mportal9\u001b[39m';
-const monitoringErrorLogColors = [blueWazuh, 'monitoring', 'error'];
-const portal9HostController = new WazuhHostsCtrl();
+const bluePortal9 = '\u001b[34mportal9\u001b[39m';
+const monitoringErrorLogColors = [bluePortal9, 'monitoring', 'error'];
+const portal9HostController = new Portal9HostsCtrl();
 
 let MONITORING_ENABLED, MONITORING_FREQUENCY, MONITORING_CRON_FREQ, MONITORING_CREATION, MONITORING_INDEX_PATTERN, MONITORING_INDEX_PREFIX;
 
@@ -359,7 +359,7 @@ async function getHostsConfiguration() {
 
     log(
       'monitoring:getConfig',
-      'There are no Wazuh API entries yet',
+      'There are no Portal9 API entries yet',
       'debug'
     );
     return Promise.reject({
@@ -498,7 +498,7 @@ async function fetchAllAgentsFromApiHost(context, apiHost){
 export async function jobMonitoringRun(context) {
   // Init the monitoring variables
   initMonitoringConfiguration(context);
-  // Check Kibana index and if it is prepared, start the initialization of Wazuh App.
+  // Check Kibana index and if it is prepared, start the initialization of Portal9 App.
   await checkKibanaStatus(context);
   // // Run the cron job only it it's enabled
   if (MONITORING_ENABLED) {

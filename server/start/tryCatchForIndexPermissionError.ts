@@ -1,6 +1,6 @@
 /*
- * Wazuh app - HOF to manage the message when elastic show a Response error / security_exception
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - HOF to manage the message when elastic show a Response error / security_exception
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

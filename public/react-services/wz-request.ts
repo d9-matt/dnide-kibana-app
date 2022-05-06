@@ -1,6 +1,6 @@
 /*
- * Wazuh app - API request service
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - API request service
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -14,7 +14,7 @@ import { AppState } from './app-state';
 import { ApiCheck } from './wz-api-check';
 import { WzAuthentication } from './wz-authentication';
 import { WzMisc } from '../factories/misc';
-import { WazuhConfig } from './portal9-config';
+import { Portal9Config } from './portal9-config';
 import { OdfeUtils } from '../utils';
 import IApiResponse from './interfaces/api-response.interface';
 import { getHttp } from '../kibana-services';
@@ -38,7 +38,7 @@ export class WzRequest {
       if (!method || !path) {
         throw new Error('Missing parameters');
       }
-      this.portal9Config = new WazuhConfig();
+      this.portal9Config = new Portal9Config();
       const configuration = this.portal9Config.getConfig();
       const timeout = configuration ? configuration.timeout : 20000;
 
@@ -95,7 +95,7 @@ export class WzRequest {
   }
 
   /**
-   * Perform a request to the Wazuh API
+   * Perform a request to the Portal9 API
    * @param {String} method Eg. GET, PUT, POST, DELETE
    * @param {String} path API route
    * @param {Object} body Request body

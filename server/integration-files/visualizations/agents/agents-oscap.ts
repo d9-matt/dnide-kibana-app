@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Module for Agents/OSCAP visualizations
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Module for Agents/OSCAP visualizations
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -11,7 +11,7 @@
  */
 export default [
   {
-    _id: 'Wazuh-App-Agents-OSCAP-Higher-score-metric',
+    _id: 'Portal9-App-Agents-OSCAP-Higher-score-metric',
     _source: {
       title: 'Higher score metric',
       visState: JSON.stringify({
@@ -64,7 +64,7 @@ export default [
     _type: 'visualization',
   },
   {
-    _id: 'Wazuh-App-Agents-OSCAP-Lower-score-metric',
+    _id: 'Portal9-App-Agents-OSCAP-Lower-score-metric',
     _source: {
       title: 'Lower score metric',
       visState: JSON.stringify({
@@ -117,7 +117,7 @@ export default [
     _type: 'visualization',
   },
   {
-    _id: 'Wazuh-App-Agents-OSCAP-Last-score',
+    _id: 'Portal9-App-Agents-OSCAP-Last-score',
     _source: {
       title: 'Last score',
       visState: JSON.stringify({
@@ -159,7 +159,7 @@ export default [
     _type: 'visualization',
   },
   {
-    _id: 'Wazuh-App-Agents-OSCAP-Last-scan-profile',
+    _id: 'Portal9-App-Agents-OSCAP-Last-scan-profile',
     _source: {
       title: 'Last scan profile',
       visState: JSON.stringify({
@@ -233,7 +233,7 @@ export default [
     _type: 'visualization',
   },
   {
-    _id: 'Wazuh-App-Agents-OSCAP-Scans',
+    _id: 'Portal9-App-Agents-OSCAP-Scans',
     _source: {
       title: 'Scans',
       visState: JSON.stringify({
@@ -271,7 +271,7 @@ export default [
     _type: 'visualization',
   },
   {
-    _id: 'Wazuh-App-Agents-OSCAP-Profiles',
+    _id: 'Portal9-App-Agents-OSCAP-Profiles',
     _source: {
       title: 'Profiles',
       visState: JSON.stringify({
@@ -367,7 +367,7 @@ export default [
     _type: 'visualization',
   },
   {
-    _id: 'Wazuh-App-Agents-OSCAP-Content',
+    _id: 'Portal9-App-Agents-OSCAP-Content',
     _source: {
       title: 'Content',
       visState: JSON.stringify({
@@ -458,7 +458,7 @@ export default [
     _type: 'visualization',
   },
   {
-    _id: 'Wazuh-App-Agents-OSCAP-Severity',
+    _id: 'Portal9-App-Agents-OSCAP-Severity',
     _source: {
       title: 'Severity',
       visState: JSON.stringify({
@@ -549,7 +549,7 @@ export default [
     _type: 'visualization',
   },
   {
-    _id: 'Wazuh-App-Agents-OSCAP-Daily-scans-evolution',
+    _id: 'Portal9-App-Agents-OSCAP-Daily-scans-evolution',
     _source: {
       title: 'Daily scans evolution',
       visState: JSON.stringify({
@@ -659,7 +659,7 @@ export default [
     _type: 'visualization',
   },
   {
-    _id: 'Wazuh-App-Agents-OSCAP-Top-5-Alerts',
+    _id: 'Portal9-App-Agents-OSCAP-Top-5-Alerts',
     _source: {
       title: 'Top 5 Alerts',
       visState: JSON.stringify({
@@ -724,7 +724,7 @@ export default [
     _type: 'visualization',
   },
   {
-    _id: 'Wazuh-App-Agents-OSCAP-Top-5-High-risk-alerts',
+    _id: 'Portal9-App-Agents-OSCAP-Top-5-High-risk-alerts',
     _source: {
       title: 'Top 5 High risk alerts',
       visState: JSON.stringify({
@@ -815,7 +815,7 @@ export default [
     _type: 'visualization',
   },
   {
-    _id: 'Wazuh-App-Agents-OSCAP-Top-alert',
+    _id: 'Portal9-App-Agents-OSCAP-Top-alert',
     _source: {
       title: 'Top alert',
       visState: JSON.stringify({
@@ -884,7 +884,7 @@ export default [
     _type: 'visualization',
   },
   {
-    _id: 'Wazuh-App-Agents-OSCAP-Last-alerts',
+    _id: 'Portal9-App-Agents-OSCAP-Last-alerts',
     _type: 'visualization',
     _source: {
       title: 'Last alerts',

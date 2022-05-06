@@ -1,7 +1,7 @@
 /*
- * Wazuh app - Check APIs service
+ * Portal9 app - Check APIs service
  *
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -71,7 +71,7 @@ export const checkApiService = (appInfo: any) => async (checkLogger: CheckLogger
       checkLogger.info(`Set current API in cookie: id [${api.id}], name [${api.name}]`);
       getToasts().add({
         color: 'warning',
-        title: 'Selected Wazuh API has been updated',
+        title: 'Selected Portal9 API has been updated',
         text: '',
         toastLifeTimeMs: 3000,
       });
@@ -83,10 +83,10 @@ export const checkApiService = (appInfo: any) => async (checkLogger: CheckLogger
       checkLogger.info(`Set cluster info in cookie`);
     }
     if (data === 3099) {
-      checkLogger.error('Wazuh not ready yet');
+      checkLogger.error('Portal9 not ready yet');
     } else if (data.data.error || data.data.data.apiIsDown) {
       const errorMessage = data.data.data.apiIsDown
-      ? 'Wazuh API is down'
+      ? 'Portal9 API is down'
       : `Error connecting to the API: ${
           data.data.error && data.data.error.message ? ` ${data.data.error.message}` : ''
         }`;

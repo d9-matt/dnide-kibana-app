@@ -19,7 +19,7 @@ import { RolesMappingTable } from './components/roles-mapping-table';
 import { RolesMappingEdit } from './components/roles-mapping-edit';
 import { RolesMappingCreate } from './components/roles-mapping-create';
 import { ErrorHandler } from '../../../react-services/error-handler';
-import { WazuhSecurity } from '../../../factories/portal9-security';
+import { Portal9Security } from '../../../factories/portal9-security';
 import { useApiService } from '../../common/hooks/useApiService';
 import { Rule } from '../rules/types/rule.type';
 import { Role } from '../roles/types/role.type';
@@ -57,7 +57,7 @@ export const RolesMapping = () => {
   
   const getInternalUsers = async () => {
     try {
-      const portal9Security = new WazuhSecurity();
+      const portal9Security = new Portal9Security();
       const users = await portal9Security.security.getUsers();
       const _users = users.map((item, idx) => {
         return {

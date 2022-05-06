@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Module to update the configuration file
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Module to update the configuration file
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,7 +20,7 @@ export class UpdateRegistry {
   }
 
   /**
-   * Reads the Wazuh registry content
+   * Reads the Portal9 registry content
    */
   async readContent() {
     try {

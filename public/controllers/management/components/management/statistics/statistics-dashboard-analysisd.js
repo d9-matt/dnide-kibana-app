@@ -1,7 +1,7 @@
 /*
- * Wazuh app - React component for building Analysisd dashboard
+ * Portal9 app - React component for building Analysisd dashboard
  *
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -33,7 +33,7 @@ export function WzStatisticsAnalysisd({clusterNodeSelected, refreshVisualization
                 <div style={{ height: "365px" }}>
                   <WzReduxProvider>
                     <KibanaVis
-                      visID={"Wazuh-App-Statistics-Analysisd-Events-By-Node"}
+                      visID={"Portal9-App-Statistics-Analysisd-Events-By-Node"}
                       tab={"statistics"}
                     ></KibanaVis>
                   </WzReduxProvider>
@@ -53,7 +53,7 @@ export function WzStatisticsAnalysisd({clusterNodeSelected, refreshVisualization
                   <WzReduxProvider>
                     <KibanaVis
                       visID={
-                        "Wazuh-App-Statistics-Analysisd-Events-Dropped-By-Node"
+                        "Portal9-App-Statistics-Analysisd-Events-Dropped-By-Node"
                       }
                       tab={"statistics"}
                     ></KibanaVis>
@@ -77,7 +77,7 @@ export function WzStatisticsAnalysisd({clusterNodeSelected, refreshVisualization
                   <WzReduxProvider>
                     <KibanaVis
                       visID={
-                        "Wazuh-App-Statistics-Analysisd-Queues-Usage"
+                        "Portal9-App-Statistics-Analysisd-Queues-Usage"
                       }
                       tab={"statistics"}
                     ></KibanaVis>
@@ -101,7 +101,7 @@ export function WzStatisticsAnalysisd({clusterNodeSelected, refreshVisualization
                   <WzReduxProvider>
                     <KibanaVis
                       visID={
-                        "Wazuh-App-Statistics-Analysisd-Overview-Events-Decoded"
+                        "Portal9-App-Statistics-Analysisd-Overview-Events-Decoded"
                       }
                       tab={"statistics"}
                     ></KibanaVis>
@@ -124,7 +124,7 @@ export function WzStatisticsAnalysisd({clusterNodeSelected, refreshVisualization
                 <div style={{ height: "365px" }}>
                   <WzReduxProvider>
                     <KibanaVis
-                      visID={"Wazuh-App-Statistics-Analysisd-Syscheck"}
+                      visID={"Portal9-App-Statistics-Analysisd-Syscheck"}
                       tab={"statistics"}
                     ></KibanaVis>
                   </WzReduxProvider>
@@ -143,7 +143,7 @@ export function WzStatisticsAnalysisd({clusterNodeSelected, refreshVisualization
                 <div style={{ height: "365px" }}>
                   <WzReduxProvider>
                     <KibanaVis
-                      visID={"Wazuh-App-Statistics-Analysisd-Syscollector"}
+                      visID={"Portal9-App-Statistics-Analysisd-Syscollector"}
                       tab={"statistics"}
                     ></KibanaVis>
                   </WzReduxProvider>
@@ -165,7 +165,7 @@ export function WzStatisticsAnalysisd({clusterNodeSelected, refreshVisualization
                 <div style={{ height: "365px" }}>
                   <WzReduxProvider>
                     <KibanaVis
-                      visID={"Wazuh-App-Statistics-Analysisd-Rootcheck"}
+                      visID={"Portal9-App-Statistics-Analysisd-Rootcheck"}
                       tab={"statistics"}
                     ></KibanaVis>
                   </WzReduxProvider>
@@ -184,7 +184,7 @@ export function WzStatisticsAnalysisd({clusterNodeSelected, refreshVisualization
                 <div style={{ height: "365px" }}>
                   <WzReduxProvider>
                     <KibanaVis
-                      visID={"Wazuh-App-Statistics-Analysisd-SCA"}
+                      visID={"Portal9-App-Statistics-Analysisd-SCA"}
                       tab={"statistics"}
                     ></KibanaVis>
                   </WzReduxProvider>
@@ -206,7 +206,7 @@ export function WzStatisticsAnalysisd({clusterNodeSelected, refreshVisualization
                 <div style={{ height: "365px" }}>
                   <WzReduxProvider>
                     <KibanaVis
-                      visID={"Wazuh-App-Statistics-Analysisd-HostInfo"}
+                      visID={"Portal9-App-Statistics-Analysisd-HostInfo"}
                       tab={"statistics"}
                     ></KibanaVis>
                   </WzReduxProvider>
@@ -225,7 +225,7 @@ export function WzStatisticsAnalysisd({clusterNodeSelected, refreshVisualization
                 <div style={{ height: "365px" }}>
                   <WzReduxProvider>
                     <KibanaVis
-                      visID={"Wazuh-App-Statistics-Analysisd-Other"}
+                      visID={"Portal9-App-Statistics-Analysisd-Other"}
                       tab={"statistics"}
                     ></KibanaVis>
                   </WzReduxProvider>

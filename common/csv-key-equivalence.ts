@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Wazuh CSV column keys
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Portal9 CSV column keys
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -121,5 +121,5 @@ export const KeyEquivalence: {[key: string]: string} = {
   reason: 'Reason',
   registerIP: 'Register IP',
   hotfix: 'Update code',
-  'scan.time': 'Registered by Wazuh at'
+  'scan.time': 'Registered by Portal9 at'
 };

@@ -261,7 +261,7 @@
     ]
   },
   "cluster:read": {
-    "description": "Read Wazuh's cluster nodes configuration",
+    "description": "Read Portal9's cluster nodes configuration",
     "resources": [
       "node:id"
     ],
@@ -319,7 +319,7 @@
     ]
   },
   "cluster:status": {
-    "description": "Check Wazuh's cluster general status",
+    "description": "Check Portal9's cluster general status",
     "resources": [
       "*:*"
     ],
@@ -337,7 +337,7 @@
     ]
   },
   "cluster:read_api_config": {
-    "description": "Check Wazuh's cluster nodes API configuration",
+    "description": "Check Portal9's cluster nodes API configuration",
     "resources": [
       "*:*"
     ],
@@ -356,7 +356,7 @@
     ]
   },
   "cluster:update_config": {
-    "description": "Change the Wazuh's cluster node configuration",
+    "description": "Change the Portal9's cluster node configuration",
     "resources": [
       "node:id"
     ],
@@ -374,7 +374,7 @@
     ]
   },
   "cluster:restart": {
-    "description": "Restart Wazuh's cluster nodes",
+    "description": "Restart Portal9's cluster nodes",
     "resources": [
       "node:id"
     ],
@@ -468,7 +468,7 @@
     ]
   },
   "manager:read": {
-    "description": "Read Wazuh manager configuration",
+    "description": "Read Portal9 manager configuration",
     "resources": [
       "*:*"
     ],
@@ -498,7 +498,7 @@
     ]
   },
   "manager:update_config": {
-    "description": "Update current Wazuh manager configuration",
+    "description": "Update current Portal9 manager configuration",
     "resources": [
       "*:*"
     ],
@@ -516,7 +516,7 @@
     ]
   },
   "manager:read_api_config": {
-    "description": "Read Wazuh manager API configuration",
+    "description": "Read Portal9 manager API configuration",
     "resources": [
       "*:*"
     ],
@@ -534,7 +534,7 @@
     ]
   },
   "manager:restart": {
-    "description": "Restart Wazuh managers",
+    "description": "Restart Portal9 managers",
     "resources": [
       "*:*"
     ],

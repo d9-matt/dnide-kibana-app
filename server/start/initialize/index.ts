@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Module for app initialization
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Module for app initialization
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -60,13 +60,13 @@ export function jobInitializeRun(context) {
     );
   }
 
-  // Save Wazuh App setup
+  // Save Portal9 App setup
   const saveConfiguration = async () => {
     try {
       const commonDate = new Date().toISOString();
 
       const configuration = {
-        name: 'Wazuh App',
+        name: 'Portal9 App',
         'app-version': packageJSON.version,
         revision: packageJSON.revision,
         installationDate: commonDate,
@@ -79,13 +79,13 @@ export function jobInitializeRun(context) {
         await fs.writeFileSync(WAZUH_DATA_CONFIG_REGISTRY_PATH, JSON.stringify(configuration), 'utf8');
         log(
           'initialize:saveConfiguration',
-          'Wazuh configuration registry inserted',
+          'Portal9 configuration registry inserted',
           'debug'
         );
       } catch (error) {
         log('initialize:saveConfiguration', error.message || error);
         context.portal9.logger.error(
-          'Could not create Wazuh configuration registry'
+          'Could not create Portal9 configuration registry'
         );
       }
     } catch (error) {
@@ -99,8 +99,8 @@ export function jobInitializeRun(context) {
   /**
    * Checks if the .portal9 index exist in order to migrate to portal9.yml
    */
-  const checkWazuhIndex = tryCatchForIndexPermissionError(WAZUH_INDEX)( async () => {
-    log('initialize:checkWazuhIndex', `Checking ${WAZUH_INDEX} index.`, 'debug');
+  const checkPortal9Index = tryCatchForIndexPermissionError(WAZUH_INDEX)( async () => {
+    log('initialize:checkPortal9Index', `Checking ${WAZUH_INDEX} index.`, 'debug');
     const result = await context.core.elasticsearch.client.asInternalUser.indices.exists({
       index: WAZUH_INDEX
     });
@@ -112,7 +112,7 @@ export function jobInitializeRun(context) {
       const apiEntries = (((data || {}).body || {}).hits || {}).hits || [];
       await manageHosts.migrateFromIndex(apiEntries);
       log(
-        'initialize:checkWazuhIndex',
+        'initialize:checkPortal9Index',
         `Index ${WAZUH_INDEX} will be removed and its content will be migrated to portal9.yml`,
         'debug'
       );
@@ -168,7 +168,7 @@ export function jobInitializeRun(context) {
   /**
    * Checks if the .portal9-version exists, in this case it will be deleted and the portal9-registry.json will be created
    */
-  const checkWazuhRegistry = async () => {
+  const checkPortal9Registry = async () => {
     try {
       log(
         'initialize:checkportal9Registry',
@@ -221,7 +221,7 @@ export function jobInitializeRun(context) {
         if (isUpgradedApp) { 
           log(
             'initialize:checkportal9Registry',
-            'Wazuh app revision or version changed, regenerating portal9-version registry',
+            'Portal9 app revision or version changed, regenerating portal9-version registry',
             'info'
           );
           // Rebuild registry file in blank
@@ -236,8 +236,8 @@ export function jobInitializeRun(context) {
   // Init function. Check for "portal9-version" document existance.
   const init = async () => {
     await Promise.all([
-      checkWazuhIndex(),
-      checkWazuhRegistry()
+      checkPortal9Index(),
+      checkPortal9Registry()
     ]);
   };
 
@@ -372,6 +372,6 @@ export function jobInitializeRun(context) {
     }
   };
 
-  // Check Kibana index and if it is prepared, start the initialization of Wazuh App.
+  // Check Kibana index and if it is prepared, start the initialization of Portal9 App.
   return checkStatus();
 }

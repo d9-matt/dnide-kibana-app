@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Overview controller
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Overview controller
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -14,7 +14,7 @@ import { TabNames } from '../../utils/tab-names';
 import { WAZUH_MODULES } from '../../../common/portal9-modules';
 
 import { AppState } from '../../react-services/app-state';
-import { WazuhConfig } from '../../react-services/portal9-config';
+import { Portal9Config } from '../../react-services/portal9-config';
 import { WzRequest } from '../../react-services/wz-request';
 import { ErrorHandler } from '../../react-services/error-handler';
 import { TabVisualizations } from '../../factories/tab-visualizations';
@@ -55,7 +55,7 @@ export class OverviewController {
     this.commonData = commonData;
     this.reportingService = reportingService;
     this.visFactoryService = visFactoryService;
-    this.portal9Config = new WazuhConfig();
+    this.portal9Config = new Portal9Config();
     this.visFactoryService = VisFactoryHandler;
     this.rawVisualizations = new RawVisualizations();
     this.wzReq = (...args) => WzRequest.apiReq(...args);
@@ -309,7 +309,7 @@ export class OverviewController {
         this.welcomeCardsProps.agentsCountTotal = total;
         this.agentsCoverity = total ? (active / total) * 100 : 0;
       } else {
-        throw new Error('Error fetching /agents/summary from Wazuh API');
+        throw new Error('Error fetching /agents/summary from Portal9 API');
       }
       return;
     } catch (error) {

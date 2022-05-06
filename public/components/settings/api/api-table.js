@@ -1,7 +1,7 @@
 /*
- * Wazuh app - React component building the API entries table.
+ * Portal9 app - React component building the API entries table.
  *
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -79,7 +79,7 @@ export class ApiTable extends Component {
           numErr = numErr + 1;
           const code = ((error || {}).data || {}).code;
           const downReason = typeof error === 'string' ? error :
-            (error || {}).message || ((error || {}).data || {}).message || 'Wazuh is not reachable';
+            (error || {}).message || ((error || {}).data || {}).message || 'Portal9 is not reachable';
           const status = code === 3099 ? 'down' : 'unknown';
           entries[idx].status = { status, downReason };
           if(entries[idx].id === this.props.currentDefault){ // if the selected API is down, we remove it so a new one will selected
@@ -121,7 +121,7 @@ export class ApiTable extends Component {
       } catch (error) {
         const code = ((error || {}).data || {}).code;
         const downReason = typeof error === 'string' ? error :
-        (error || {}).message || ((error || {}).data || {}).message || 'Wazuh is not reachable';
+        (error || {}).message || ((error || {}).data || {}).message || 'Portal9 is not reachable';
         const status = code === 3099 ? 'down' : 'unknown';
         entries[idx].status = { status, downReason }; 
       }
@@ -302,7 +302,7 @@ export class ApiTable extends Component {
                 <EuiFlexGroup>
                   <EuiFlexItem>
                     <EuiTitle>
-                      <h2>Wazuh API configuration</h2>
+                      <h2>Portal9 API configuration</h2>
                     </EuiTitle>
                   </EuiFlexItem>
                 </EuiFlexGroup>

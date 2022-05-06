@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Wazuh field search component with a delay
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Portal9 field search component with a delay
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

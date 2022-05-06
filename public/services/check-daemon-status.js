@@ -1,5 +1,5 @@
 import store from '../redux/store';
-import { updateWazuhNotReadyYet } from '../redux/actions/appStateActions';
+import { updatePortal9NotReadyYet } from '../redux/actions/appStateActions';
 import { WzRequest } from '../react-services/wz-request';
 
 export class CheckDaemonsStatus {
@@ -22,7 +22,7 @@ export class CheckDaemonsStatus {
         const result = await WzRequest.apiReq('GET', '/ping', {});
         isValid = ((result || {}).data || {}).isValid;
         if (isValid) {
-          const updateNotReadyYet = updateWazuhNotReadyYet(false);
+          const updateNotReadyYet = updatePortal9NotReadyYet(false);
           store.dispatch(updateNotReadyYet);
 
           this.$rootScope.portal9NotReadyYet = false;
@@ -39,12 +39,12 @@ export class CheckDaemonsStatus {
     } catch (error) {
       this.tries = 10;
 
-      const updateNotReadyYet = updateWazuhNotReadyYet(
-        'Wazuh could not be recovered.'
+      const updateNotReadyYet = updatePortal9NotReadyYet(
+        'Portal9 could not be recovered.'
       );
       store.dispatch(updateNotReadyYet);
 
-      this.$rootScope.portal9NotReadyYet = 'Wazuh could not be recovered.';
+      this.$rootScope.portal9NotReadyYet = 'Portal9 could not be recovered.';
       this.$rootScope.$applyAsync();
     }
 

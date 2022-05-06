@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Module to fetch API entries
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Module to fetch API entries
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -15,7 +15,7 @@
  * for adding a new API entry.
  * If there are API entries, then it continues to the health check itself.
  * @param {*} $q Promise library for Angular.js resolves.
- * @param {*} genericReq Wazuh module for doing generic requests to our backend.
+ * @param {*} genericReq Portal9 module for doing generic requests to our backend.
  * @param {*} $location Angular.js library for URL and paths manipulation.
  */
 import { AppState } from '../../react-services/app-state';

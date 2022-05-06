@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Module for Agents/Osquery visualizations
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Module for Agents/Osquery visualizations
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -11,7 +11,7 @@
  */
 export default [
   {
-    _id: 'Wazuh-App-Agents-Osquery-monst-common-rules-being-fired',
+    _id: 'Portal9-App-Agents-Osquery-monst-common-rules-being-fired',
     _type: 'visualization',
     _source: {
       title: 'Most common rules being fired',
@@ -80,7 +80,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Overview-Osquery-Top-5-added',
+    _id: 'Portal9-App-Overview-Osquery-Top-5-added',
     _type: 'visualization',
     _source: {
       title: 'Top 5 added',
@@ -143,7 +143,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Overview-Osquery-Top-5-removed',
+    _id: 'Portal9-App-Overview-Osquery-Top-5-removed',
     _type: 'visualization',
     _source: {
       title: 'Top 5 removed',
@@ -206,7 +206,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Agents-Osquery-Evolution',
+    _id: 'Portal9-App-Agents-Osquery-Evolution',
     _type: 'visualization',
     _source: {
       title: 'Evolution over time',
@@ -308,7 +308,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Agents-Osquery-top-5-packs-being-used',
+    _id: 'Portal9-App-Agents-Osquery-top-5-packs-being-used',
     _type: 'visualization',
     _source: {
       title: 'Top 5 packs being used',
@@ -356,7 +356,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Agents-Osquery-most-common-osquery-actions',
+    _id: 'Portal9-App-Agents-Osquery-most-common-osquery-actions',
     _type: 'visualization',
     _source: {
       title: 'Most common Osquery actions',
@@ -404,7 +404,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Agents-Osquery-events-per-pack-over-time',
+    _id: 'Portal9-App-Agents-Osquery-events-per-pack-over-time',
     _type: 'visualization',
     _source: {
       title: 'Events per pack over time',
@@ -502,7 +502,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Agents-Osquery-events-over-time',
+    _id: 'Portal9-App-Agents-Osquery-events-over-time',
     _type: 'visualization',
     _source: {
       title: 'Osquery events over time',
@@ -585,7 +585,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Overview-Osquery-Alerts-summary',
+    _id: 'Portal9-App-Overview-Osquery-Alerts-summary',
     _type: 'visualization',
     _source: {
       title: 'Alerts summary',

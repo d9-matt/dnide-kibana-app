@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for show configuration of global configuration - global tab.
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - React component for show configuration of global configuration - global tab.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -149,7 +149,7 @@ class WzConfigurationGlobalConfigurationGlobal extends Component {
           )}
         {portal9NotReadyYet &&
           (!currentConfig || !currentConfig['analysis-global']) && (
-            <WzNoConfig error="Wazuh not ready yet" help={this.helpLinks} />
+            <WzNoConfig error="Portal9 not ready yet" help={this.helpLinks} />
           )}
         {((currentConfig['analysis-global'] &&
           currentConfig['analysis-global'].global) ||

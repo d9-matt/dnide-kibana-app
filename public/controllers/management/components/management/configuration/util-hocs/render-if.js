@@ -1,6 +1,6 @@
 /*
- * Wazuh app - HOC, which renders a component if a condition is truthy or a wrapped component. This protects wrapped component of render if the condition returns a truthy value
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - HOC, which renders a component if a condition is truthy or a wrapped component. This protects wrapped component of render if the condition returns a truthy value
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

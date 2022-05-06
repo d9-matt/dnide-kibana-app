@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for registering agents.
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - React component for registering agents.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -38,7 +38,7 @@ import { resourceDictionary, RulesetHandler, RulesetResources } from './utils/ru
 import validateConfigAfterSent from './utils/valid-configuration';
 
 import { getToasts } from '../../../../../kibana-services';
-import { updateWazuhNotReadyYet } from '../../../../../redux/actions/appStateActions';
+import { updatePortal9NotReadyYet } from '../../../../../redux/actions/appStateActions';
 import WzRestartClusterManagerCallout from '../../../../../components/common/restart-cluster-manager-callout';
 import { validateXML } from '../configuration/utils/xml';
 import { WzButtonPermissions } from '../../../../../components/common/permissions/button';
@@ -401,7 +401,7 @@ const mapDispatchToProps = dispatch => {
   return {
     cleanInfo: () => dispatch(cleanInfo()),
     updateFileContent: content => dispatch(updateFileContent(content)),
-    updateWazuhNotReadyYet: portal9NotReadyYet => dispatch(updateWazuhNotReadyYet(portal9NotReadyYet)),
+    updatePortal9NotReadyYet: portal9NotReadyYet => dispatch(updatePortal9NotReadyYet(portal9NotReadyYet)),
     showFlyoutLogtest: showFlyout => dispatch(showFlyoutLogtest(showFlyout)),
   };
 };

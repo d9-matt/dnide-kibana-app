@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for Visualize.
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - React component for Visualize.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -26,7 +26,7 @@ import {
   EuiLink
 } from '@elastic/eui';
 import WzReduxProvider from '../../redux/wz-redux-provider';
-import { WazuhConfig } from '../../react-services/portal9-config';
+import { Portal9Config } from '../../react-services/portal9-config';
 import { WzRequest } from '../../react-services/wz-request';
 import { CommonData } from '../../services/common-data';
 import { VisHandlers } from '../../factories/vis-handlers';
@@ -57,7 +57,7 @@ export const WzVisualize = withReduxProvider(class WzVisualize extends Component
     this.metricValues = false;
     this.rawVisualizations = new RawVisualizations();
     this.wzReq = WzRequest;
-    const portal9Config = new WazuhConfig();
+    const portal9Config = new Portal9Config();
     this.commonData = new CommonData();
     const configuration = portal9Config.getConfig();
     this.monitoringEnabled = !!(configuration || {})[
@@ -222,8 +222,8 @@ export const WzVisualize = withReduxProvider(class WzVisualize extends Component
                 />
               </EuiFlexGroup>
               <div style={{ height: '100%' }}>
-                {(vis.id !== 'Wazuh-App-Overview-General-Agents-status' ||
-                  (vis.id === 'Wazuh-App-Overview-General-Agents-status' &&
+                {(vis.id !== 'Portal9-App-Overview-General-Agents-status' ||
+                  (vis.id === 'Portal9-App-Overview-General-Agents-status' &&
                     this.monitoringEnabled)) && (
                     <WzReduxProvider>
                       <KibanaVis
@@ -234,7 +234,7 @@ export const WzVisualize = withReduxProvider(class WzVisualize extends Component
                       ></KibanaVis>
                     </WzReduxProvider>
                   )}
-                {vis.id === 'Wazuh-App-Overview-General-Agents-status' &&
+                {vis.id === 'Portal9-App-Overview-General-Agents-status' &&
                   !this.monitoringEnabled && (
                     <EuiPage style={{ background: 'transparent' }}>
                       <EuiDescriptionList

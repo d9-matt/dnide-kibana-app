@@ -1,8 +1,8 @@
 /*
- * Wazuh app - React component building the welcome screen of an agent.
+ * Portal9 app - React component building the welcome screen of an agent.
  * version, OS, registration date, last keep alive.
  *
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -13,7 +13,7 @@
  */
 
 import { IFilterParams, getElasticAlerts, getIndexPattern } from '../../../../../../../overview/mitre/lib';
-import { getWazuhFilter } from '../../../../fim_events_table';
+import { getPortal9Filter } from '../../../../fim_events_table';
 import { buildPhraseFilter, buildExistsFilter } from '../../../../../../../../../../../src/plugins/data/common';
 import { getToasts }  from '../../../../../../../../kibana-services';
 
@@ -43,7 +43,7 @@ export async function getRequirementAlerts(agentId, time, requirement) {
     getToasts().add({
       color: 'warning',
       title: 'Error getting alerts from compliances',
-      text: "Your environment may not have any index with Wazuh's alerts."
+      text: "Your environment may not have any index with Portal9's alerts."
     })
   }
 
@@ -61,7 +61,7 @@ function createFilters(agentId, indexPattern) {
     "$state": { "store": "appState" }
   }
 }
-  const portal9Filter = getWazuhFilter();
+  const portal9Filter = getPortal9Filter();
   const filters = [
     portal9Filter,
     { name: 'agent.id', value: agentId },

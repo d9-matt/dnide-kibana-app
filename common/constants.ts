@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Wazuh Constants file
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Portal9 Constants file
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -11,7 +11,7 @@
  */
 import path  from 'path';
 
-// Index patterns - Wazuh alerts
+// Index patterns - Portal9 alerts
 export const WAZUH_INDEX_TYPE_ALERTS = "alerts";
 export const WAZUH_ALERTS_PREFIX = "portal9-alerts-";
 export const WAZUH_ALERTS_PATTERN = "portal9-alerts-*";
@@ -20,7 +20,7 @@ export const WAZUH_ALERTS_PATTERN = "portal9-alerts-*";
 export const WAZUH_INDEX_SHARDS = 2;
 export const WAZUH_INDEX_REPLICAS = 0;
 
-// Job - Wazuh monitoring
+// Job - Portal9 monitoring
 export const WAZUH_INDEX_TYPE_MONITORING = "monitoring";
 export const WAZUH_MONITORING_PREFIX = "portal9-monitoring-";
 export const WAZUH_MONITORING_PATTERN = "portal9-monitoring-*";
@@ -31,7 +31,7 @@ export const WAZUH_MONITORING_DEFAULT_ENABLED = true;
 export const WAZUH_MONITORING_DEFAULT_FREQUENCY = 900;
 export const WAZUH_MONITORING_DEFAULT_CRON_FREQ = '0 * * * * *';
 
-// Job - Wazuh statistics
+// Job - Portal9 statistics
 export const WAZUH_INDEX_TYPE_STATISTICS = "statistics";
 export const WAZUH_STATISTICS_DEFAULT_PREFIX = "portal9";
 export const WAZUH_STATISTICS_DEFAULT_NAME = "statistics";
@@ -43,7 +43,7 @@ export const WAZUH_STATISTICS_DEFAULT_STATUS = true;
 export const WAZUH_STATISTICS_DEFAULT_FREQUENCY = 900;
 export const WAZUH_STATISTICS_DEFAULT_CRON_FREQ = '0 */5 * * * *';
 
-// Job - Wazuh initialize
+// Job - Portal9 initialize
 export const WAZUH_INDEX = '.portal9';
 export const WAZUH_VERSION_INDEX = '.portal9-version';
 export const WAZUH_KIBANA_TEMPLATE_NAME = 'portal9-kibana';
@@ -103,22 +103,22 @@ export const WAZUH_CONFIGURATION_SETTINGS_NEED_RELOAD = [
 // Reserved ids for Users/Role mapping
 export const WAZUH_API_RESERVED_ID_LOWER_THAN = 100;
 
-// Wazuh data path
+// Portal9 data path
 const WAZUH_DATA_KIBANA_BASE_PATH = 'data';
 export const WAZUH_DATA_KIBANA_BASE_ABSOLUTE_PATH = path.join(__dirname, '../../../', WAZUH_DATA_KIBANA_BASE_PATH);
 export const WAZUH_DATA_ABSOLUTE_PATH = path.join(WAZUH_DATA_KIBANA_BASE_ABSOLUTE_PATH, 'portal9');
 
-// Wazuh data path - config
+// Portal9 data path - config
 export const WAZUH_DATA_CONFIG_DIRECTORY_PATH = path.join(WAZUH_DATA_ABSOLUTE_PATH, 'config');
 export const WAZUH_DATA_CONFIG_APP_PATH = path.join(WAZUH_DATA_CONFIG_DIRECTORY_PATH, 'portal9.yml');
 export const WAZUH_DATA_CONFIG_REGISTRY_PATH = path.join(WAZUH_DATA_CONFIG_DIRECTORY_PATH, 'portal9-registry.json');
 
-// Wazuh data path - logs
+// Portal9 data path - logs
 export const WAZUH_DATA_LOGS_DIRECTORY_PATH = path.join(WAZUH_DATA_ABSOLUTE_PATH, 'logs');
 export const WAZUH_DATA_LOGS_PLAIN_PATH = path.join(WAZUH_DATA_LOGS_DIRECTORY_PATH, 'portal9app-plain.log');
 export const WAZUH_DATA_LOGS_RAW_PATH = path.join(WAZUH_DATA_LOGS_DIRECTORY_PATH, 'portal9app.log');
 
-// Wazuh data path - downloads
+// Portal9 data path - downloads
 export const WAZUH_DATA_DOWNLOADS_DIRECTORY_PATH = path.join(WAZUH_DATA_ABSOLUTE_PATH, 'downloads');
 export const WAZUH_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH = path.join(WAZUH_DATA_DOWNLOADS_DIRECTORY_PATH, 'reports');
 
@@ -178,7 +178,7 @@ export const WAZUH_DEFAULT_APP_CONFIG = {
   'customization.logo.reports':'logo.png'
 };
 
-// Wazuh errors
+// Portal9 errors
 export const WAZUH_ERROR_DAEMONS_NOT_READY = 'ERROR3099';
 
 // Agents
@@ -254,7 +254,7 @@ export enum WAZUH_MENU_SETTINGS_SECTIONS_ID {
 
 export const AUTHORIZED_AGENTS = 'authorized-agents';
 
-// Wazuh links
+// Portal9 links
 export const WAZUH_LINK_DOCUMENTATION = 'https://documentation.portal9.com';
 export const WAZUH_LINK_GITHUB = 'https://github.com/portal9';
 export const WAZUH_LINK_GOOGLE_GROUPS = 'https://groups.google.com/forum/#!forum/portal9';

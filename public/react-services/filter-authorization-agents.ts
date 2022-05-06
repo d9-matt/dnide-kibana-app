@@ -1,6 +1,6 @@
 /*
-* Wazuh app - React component for get authorized agents.
-* Copyright (C) 2015-2021 Wazuh, Inc.
+* Portal9 app - React component for get authorized agents.
+* Copyright (C) 2015-2021 Portal9, Inc.
 *
 * This program is free software; you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -11,13 +11,13 @@
 */
 import { AppState } from '../react-services/app-state';
 import { AUTHORIZED_AGENTS } from '../../common/constants';
-import { WazuhConfig } from '../react-services/portal9-config';
+import { Portal9Config } from '../react-services/portal9-config';
 
 export function getFilterWithAuthorizedAgents(agentsIds, pattern) {
    //check for empty agents array
   if(!agentsIds || agentsIds.length == 0) return;
 
-  const portal9Config = new WazuhConfig();
+  const portal9Config = new Portal9Config();
   const config = portal9Config.getConfig();
   const statisticsPattern = `${config['cron.prefix']}-${config['cron.statistics.index.name']}-*`
   if(pattern == statisticsPattern) return;

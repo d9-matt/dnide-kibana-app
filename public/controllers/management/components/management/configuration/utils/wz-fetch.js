@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Fetch API function and utils.
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Fetch API function and utils.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -25,7 +25,7 @@ export const getCurrentConfig = async (
   agentId = '000',
   sections,
   node = false,
-  updateWazuhNotReadyYet
+  updatePortal9NotReadyYet
 ) => {
   try {
     if (
@@ -72,7 +72,7 @@ export const getCurrentConfig = async (
         result[`${component}-${configuration}`] = await handleError(
           error,
           'Fetch configuration',
-          updateWazuhNotReadyYet,
+          updatePortal9NotReadyYet,
           node
         );
       }
@@ -95,7 +95,7 @@ export const extractMessage = error => {
       origin.includes('/api/csv') ||
       origin.includes('/api/agents-unique');
     return isFromAPI ?
-      'Wazuh API is not reachable. Reason: timeout.' :
+      'Portal9 API is not reachable. Reason: timeout.' :
       'Server did not respond';
   }
   if ((((error || {}).data || {}).errorData || {}).message)
@@ -121,16 +121,16 @@ export const extractMessage = error => {
  *
  * @param {Error|string} error
  * @param {*} location
- * @param updateWazuhNotReadyYet
+ * @param updatePortal9NotReadyYet
  * @param {boolean} isCluster
  */
-export const handleError = async (error, location, updateWazuhNotReadyYet, isCluster) => {
+export const handleError = async (error, location, updatePortal9NotReadyYet, isCluster) => {
   const message = extractMessage(error);
   const messageIsString = typeof message === 'string';
   try {
     if (messageIsString && message.includes('ERROR3099')) {
-      updateWazuhNotReadyYet('Wazuh not ready yet.');
-      await makePing(updateWazuhNotReadyYet, isCluster);
+      updatePortal9NotReadyYet('Portal9 not ready yet.');
+      await makePing(updatePortal9NotReadyYet, isCluster);
       return;
     }
 
@@ -178,7 +178,7 @@ export const checkDaemons = async (isCluster) => {
     if (isValid) {
       return { isValid };
     } else {
-      console.warn('Wazuh not ready yet');
+      console.warn('Portal9 not ready yet');
     }
   } catch (error) {
     return Promise.reject(error);
@@ -186,13 +186,13 @@ export const checkDaemons = async (isCluster) => {
 };
 
 /**
- * Make ping to Wazuh API
- * @param updateWazuhNotReadyYet
+ * Make ping to Portal9 API
+ * @param updatePortal9NotReadyYet
  * @param {boolean} isCluster
  * @param {number} [tries=10] Tries
  * @return {Promise}
  */
-export const makePing = async (updateWazuhNotReadyYet, isCluster, tries = 30) => {
+export const makePing = async (updatePortal9NotReadyYet, isCluster, tries = 30) => {
   try {
     let isValid = false;
     while (tries--) {
@@ -200,7 +200,7 @@ export const makePing = async (updateWazuhNotReadyYet, isCluster, tries = 30) =>
       try {
         isValid = await checkDaemons(isCluster);
         if (isValid) {
-          updateWazuhNotReadyYet('');
+          updatePortal9NotReadyYet('');
           break;
         }
       } catch (error) {
@@ -210,14 +210,14 @@ export const makePing = async (updateWazuhNotReadyYet, isCluster, tries = 30) =>
     if (!isValid) {
       throw new Error('Not recovered');
     }
-    return Promise.resolve('Wazuh is ready');
+    return Promise.resolve('Portal9 is ready');
   } catch (error) {
-    return Promise.reject('Wazuh could not be recovered.');
+    return Promise.reject('Portal9 could not be recovered.');
   }
 };
 
 /**
- * Get Cluster status from Wazuh API
+ * Get Cluster status from Portal9 API
  * @returns {Promise}
  */
 export const clusterReq = async () => {
@@ -265,22 +265,22 @@ export const fetchFile = async selectedNode => {
 /**
  * Restart a node or manager
  * @param {} selectedNode Cluster Node
- * @param updateWazuhNotReadyYet
+ * @param updatePortal9NotReadyYet
  */
 export const restartNodeSelected = async (
   selectedNode,
-  updateWazuhNotReadyYet
+  updatePortal9NotReadyYet
 ) => {
   try {
     const clusterStatus = (((await clusterReq()) || {}).data || {}).data || {};
 
     const isCluster = clusterStatus.enabled === 'yes' && clusterStatus.running === 'yes';
     // Dispatch a Redux action
-    updateWazuhNotReadyYet(
+    updatePortal9NotReadyYet(
       `Restarting ${isCluster ? selectedNode : 'Manager'}, please wait.`
     ); //FIXME: if it enables/disables cluster, this will show Manager instead node name
     isCluster ? await restartNode(selectedNode) : await restartManager();
-    return await makePing(updateWazuhNotReadyYet, isCluster);
+    return await makePing(updatePortal9NotReadyYet, isCluster);
   } catch (error) {
     return Promise.reject(error);
   }
@@ -525,7 +525,7 @@ export const checkCurrentSecurityPlatform = async () => {
 /**
  * Restart cluster or Manager
  */
-export const restartClusterOrManager = async (updateWazuhNotReadyYet) => {
+export const restartClusterOrManager = async (updatePortal9NotReadyYet) => {
   try{
     const clusterStatus = (((await clusterReq()) || {}).data || {}).data || {};
     const isCluster =
@@ -537,11 +537,11 @@ export const restartClusterOrManager = async (updateWazuhNotReadyYet) => {
       });
     isCluster ? await restartCluster() : await restartManager();
     // Dispatch a Redux action
-    updateWazuhNotReadyYet(
+    updatePortal9NotReadyYet(
       `Restarting ${isCluster ? 'Cluster' : 'Manager'}, please wait.`
     );
     await delay(15000);
-    await makePing(updateWazuhNotReadyYet, isCluster);
+    await makePing(updatePortal9NotReadyYet, isCluster);
     return { restarted: isCluster ? 'Cluster' : 'Manager'}
   }catch (error){
     return Promise.reject(error);

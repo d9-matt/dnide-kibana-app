@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for show configuration of AWS S3 - buckets tab.
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - React component for show configuration of AWS S3 - buckets tab.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -51,7 +51,7 @@ class WzConfigurationAmazonS3Buckets extends Component {
             <WzNoConfig error="not-present" help={helpLinks} />
           )}
         {portal9NotReadyYet && (!currentConfig || !wodleConfig['aws-s3']) && (
-          <WzNoConfig error="Wazuh not ready yet" help={helpLinks} />
+          <WzNoConfig error="Portal9 not ready yet" help={helpLinks} />
         )}
         {currentConfig &&
           wodleConfig['aws-s3'] &&

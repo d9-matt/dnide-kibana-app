@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Module to update the configuration file
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Module to update the configuration file
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -13,7 +13,7 @@ import fs from 'fs';
 import yml from 'js-yaml';
 import { log } from './logger';
 import { UpdateRegistry } from './update-registry';
-import { initialWazuhConfig } from './initial-portal9-config';
+import { initialPortal9Config } from './initial-portal9-config';
 import { WAZUH_DATA_CONFIG_APP_PATH } from '../../common/constants';
 import { createDataDirectoryIfNotExists } from '../lib/filesystem';
 
@@ -22,7 +22,7 @@ export class ManageHosts {
     this.busy = false;
     this.file = WAZUH_DATA_CONFIG_APP_PATH;
     this.updateRegistry = new UpdateRegistry();
-    this.initialConfig = initialWazuhConfig;
+    this.initialConfig = initialPortal9Config;
   }
 
   /**

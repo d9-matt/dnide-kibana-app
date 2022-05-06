@@ -42,7 +42,7 @@ export const configEquivalences = {
   'ip.selector':
     'Defines if the user is allowed to change the selected index pattern directly from the top menu bar.',
   'ip.ignore':
-    'Disable certain index pattern names from being available in index pattern selector from the Wazuh app.',
+    'Disable certain index pattern names from being available in index pattern selector from the Portal9 app.',
   'portal9.monitoring.enabled':
     'Enable or disable the portal9-monitoring index creation and/or visualization.',
   'portal9.monitoring.frequency':
@@ -54,13 +54,13 @@ export const configEquivalences = {
   'portal9.monitoring.creation':
     'Define the interval in which the portal9-monitoring index will be created.',
   'portal9.monitoring.pattern':
-    'Default index pattern to use on the app for Wazuh monitoring.',
+    'Default index pattern to use on the app for Portal9 monitoring.',
   hideManagerAlerts:
     'Hide the alerts of the manager in all dashboards.',
   'logs.level':
     'Set the app logging level, allowed values are info and debug. Default is info.',
   'enrollment.dns':
-    'Set the Wazuh server address in the agent deployment.',
+    'Set the Portal9 server address in the agent deployment.',
   'cron.prefix':
     'Define the index prefix of predefined jobs.',
   'cron.statistics.status':

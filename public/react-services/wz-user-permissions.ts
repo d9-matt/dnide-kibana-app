@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React hook for get query of Kibana searchBar
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - React hook for get query of Kibana searchBar
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -65,7 +65,7 @@ export class WzUserPermissions{
         return userPermissions.rbac_mode === RBAC_MODE_WHITE;
       }
 
-      const existInWazuhPermissions = (userResource) => {
+      const existInPortal9Permissions = (userResource) => {
         return !!portal9Permissions[actionName].resources.find(function (resource) {
           return (
             resource ===
@@ -85,9 +85,9 @@ export class WzUserPermissions{
         });
       };
 
-      const notAllowInWazuhPermissions = (userResource) => {
+      const notAllowInPortal9Permissions = (userResource) => {
         if (userResource !== RESOURCE_ANY) {
-          return existInWazuhPermissions(userResource)
+          return existInPortal9Permissions(userResource)
             ? !isAllow(userPermissions[actionName][userResource])
             : true;
         } else {
@@ -100,13 +100,13 @@ export class WzUserPermissions{
       }
 
       return userPermissions[actionName][actionResource]
-        ? notAllowInWazuhPermissions(actionResource)
+        ? notAllowInPortal9Permissions(actionResource)
         : Object.keys(userPermissions[actionName]).some((resource) => {
             return resource.match(actionResourceAll.replace('*', '\\*')) !== null;
           })
         ? Object.keys(userPermissions[actionName]).some((resource) => {
             if (resource.match(actionResourceAll.replace('*', '\\*'))) {
-              return notAllowInWazuhPermissions(resource);
+              return notAllowInPortal9Permissions(resource);
             }
           })
         : (userPartialResources || []).length

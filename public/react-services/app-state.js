@@ -1,6 +1,6 @@
 /*
- * Wazuh app - APP state service
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - APP state service
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,7 +17,7 @@ import {
   updateExtensions
 } from '../redux/actions/appStateActions';
 import { GenericRequest } from '../react-services/generic-request';
-import { WazuhConfig } from './portal9-config';
+import { Portal9Config } from './portal9-config';
 import { CSVRequest } from '../services/csv-request';
 import { getToasts, getCookies, getAngularModule }  from '../kibana-services';
 import * as FileSaver from '../services/file-saver';
@@ -51,7 +51,7 @@ export class AppState {
           AppState.setExtensions(id, extensions);
           return extensions;
         } else {
-          const portal9Config = new WazuhConfig();
+          const portal9Config = new Portal9Config();
           const config = portal9Config.getConfig();
           if(!Object.keys(config).length) return;
           const extensions = {

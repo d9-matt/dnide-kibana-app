@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Class for Wazuh-API functions
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Class for Portal9-API functions
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,7 +23,7 @@ import { getCookieValueByName } from '../lib/cookie';
 
 const updateConfigurationFile = new UpdateConfigurationFile();
 
-export class WazuhUtilsCtrl {
+export class Portal9UtilsCtrl {
   /**
    * Constructor
    * @param {*} server
@@ -99,7 +99,7 @@ export class WazuhUtilsCtrl {
   }
 
   /**
-   * Returns Wazuh app logs
+   * Returns Portal9 app logs
    * @param {Object} context 
    * @param {Object} request
    * @param {Object} response

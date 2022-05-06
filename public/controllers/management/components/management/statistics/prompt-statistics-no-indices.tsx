@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Prompt when Statistics has not indices
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Prompt when Statistics has not indices
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -12,14 +12,14 @@
 
 import React, { useState, useEffect } from 'react';
 import { EuiEmptyPrompt } from '@elastic/eui';
-import { WazuhConfig } from '../../../../../react-services/portal9-config';
+import { Portal9Config } from '../../../../../react-services/portal9-config';
 
 
 export const PromptStatisticsNoIndices = () => {
   const [indexName, setIndexName] = useState("");
 
   useEffect(() => {
-    const portal9Config = new WazuhConfig();
+    const portal9Config = new Portal9Config();
     const config = portal9Config.getConfig();
     setIndexName(`${config["cron.prefix"] || 'portal9'}-${config["cron.statistics.index.name"] || 'stastistics'}-*`)
   }, []);

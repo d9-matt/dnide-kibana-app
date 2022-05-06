@@ -69,7 +69,7 @@ const pageConfiguration = (nameLogo) => ({
     return {
       columns: [
         {
-          text: 'Copyright © 2021 Wazuh, Inc.',
+          text: 'Copyright © 2021 Portal9, Inc.',
           color: COLORS.PRIMARY,
           margin: [40, 40, 0, 0]
         },

@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Module for Agents/Audit visualizations
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Module for Agents/Audit visualizations
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -11,7 +11,7 @@
  */
 export default [
   {
-    _id: 'Wazuh-App-Agents-Audit-New-files-metric',
+    _id: 'Portal9-App-Agents-Audit-New-files-metric',
     _source: {
       title: 'New files metric',
       visState: JSON.stringify({
@@ -91,7 +91,7 @@ export default [
     _type: 'visualization',
   },
   {
-    _id: 'Wazuh-App-Agents-Audit-Read-files-metric',
+    _id: 'Portal9-App-Agents-Audit-Read-files-metric',
     _source: {
       title: 'Read files metric',
       visState: JSON.stringify({
@@ -171,7 +171,7 @@ export default [
     _type: 'visualization',
   },
   {
-    _id: 'Wazuh-App-Agents-Audit-Modified-files-metric',
+    _id: 'Portal9-App-Agents-Audit-Modified-files-metric',
     _source: {
       title: 'Modified files metric',
       visState: JSON.stringify({
@@ -257,7 +257,7 @@ export default [
     _type: 'visualization',
   },
   {
-    _id: 'Wazuh-App-Agents-Audit-Removed-files-metric',
+    _id: 'Portal9-App-Agents-Audit-Removed-files-metric',
     _source: {
       title: 'Removed files metric',
       visState: JSON.stringify({
@@ -337,7 +337,7 @@ export default [
     _type: 'visualization',
   },
   {
-    _id: 'Wazuh-App-Agents-Audit-Groups',
+    _id: 'Portal9-App-Agents-Audit-Groups',
     _source: {
       title: 'Groups',
       visState: JSON.stringify({
@@ -375,7 +375,7 @@ export default [
     _type: 'visualization',
   },
   {
-    _id: 'Wazuh-App-Agents-Audit-Files',
+    _id: 'Portal9-App-Agents-Audit-Files',
     _source: {
       title: 'Files',
       visState: JSON.stringify({
@@ -413,7 +413,7 @@ export default [
     _type: 'visualization',
   },
   {
-    _id: 'Wazuh-App-Agents-Audit-Alerts-over-time',
+    _id: 'Portal9-App-Agents-Audit-Alerts-over-time',
     _source: {
       title: 'Alerts over time',
       visState: JSON.stringify({
@@ -516,7 +516,7 @@ export default [
     _type: 'visualization',
   },
   {
-    _id: 'Wazuh-App-Agents-Audit-Commands',
+    _id: 'Portal9-App-Agents-Audit-Commands',
     _source: {
       title: 'Commands',
       visState: JSON.stringify({
@@ -551,7 +551,7 @@ export default [
     _type: 'visualization',
   },
   {
-    _id: 'Wazuh-App-Agents-Audit-Last-alerts',
+    _id: 'Portal9-App-Agents-Audit-Last-alerts',
     _type: 'visualization',
     _source: {
       title: 'Last alerts',

@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Pattern Handler service
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Pattern Handler service
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -13,12 +13,12 @@
 import store from "../redux/store";
 import { updateAppConfig } from "../redux/actions/appConfigActions";
 
-export class WazuhConfig {
+export class Portal9Config {
   constructor() {
-    if (!!WazuhConfig.instance) {
-      return WazuhConfig.instance;
+    if (!!Portal9Config.instance) {
+      return Portal9Config.instance;
     }
-    WazuhConfig.instance = this;
+    Portal9Config.instance = this;
 
 
     return this;

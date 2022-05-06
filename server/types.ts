@@ -19,9 +19,9 @@
 import { SecurityPluginSetup } from 'x-pack/plugins/security/server';
 import { SpacesPluginSetup } from 'x-pack/plugins/spaces/server';
 
-export interface WazuhPluginSetup {}
+export interface Portal9PluginSetup {}
 
-export interface WazuhPluginStart {}
+export interface Portal9PluginStart {}
 
 export type PluginSetup = {
     security?: SecurityPluginSetup,

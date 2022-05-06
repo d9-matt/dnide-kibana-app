@@ -1,8 +1,8 @@
 /*
- * Wazuh app - DevTools history component
+ * Portal9 app - DevTools history component
  * version, OS, registration date, last keep alive.
  *
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

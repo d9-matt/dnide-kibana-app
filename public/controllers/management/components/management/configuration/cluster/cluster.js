@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for show configuration of cluster.
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - React component for show configuration of cluster.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -39,12 +39,12 @@ const mainSettings = [
 
 const helpLinks = [
   {
-    text: 'How to configure the Wazuh cluster',
+    text: 'How to configure the Portal9 cluster',
     href:
       'https://documentation.portal9.com/current/user-manual/configuring-cluster/index.html'
   },
   {
-    text: 'Wazuh cluster reference',
+    text: 'Portal9 cluster reference',
     href:
       'https://documentation.portal9.com/current/user-manual/reference/ossec-conf/cluster.html'
   }
@@ -69,7 +69,7 @@ class WzCluster extends Component {
           )}
         {portal9NotReadyYet &&
           (!currentConfig || !currentConfig['com-cluster']) && (
-            <WzNoConfig error="Wazuh not ready yet" help={helpLinks} />
+            <WzNoConfig error="Portal9 not ready yet" help={helpLinks} />
           )}
         {currentConfig['com-cluster'] &&
           !isString(currentConfig['com-cluster']) && (

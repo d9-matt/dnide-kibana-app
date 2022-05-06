@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Module for Wazuh-Elastic routes
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Module for Portal9-Elastic routes
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -9,13 +9,13 @@
  *
  * Find more information about this on the LICENSE file.
  */
-import { WazuhElasticCtrl } from '../controllers';
+import { Portal9ElasticCtrl } from '../controllers';
 import { IRouter } from 'kibana/server';
 import { schema } from '@kbn/config-schema';
 import { WAZUH_SAMPLE_ALERTS_CATEGORY_SECURITY, WAZUH_SAMPLE_ALERTS_CATEGORY_AUDITING_POLICY_MONITORING, WAZUH_SAMPLE_ALERTS_CATEGORY_THREAT_DETECTION } from '../../common/constants';
 
-export function WazuhElasticRoutes(router: IRouter) {
-  const ctrl = new WazuhElasticCtrl();
+export function Portal9ElasticRoutes(router: IRouter) {
+  const ctrl = new Portal9ElasticCtrl();
   const schemaSampleAlertsCategories = schema.oneOf([
     WAZUH_SAMPLE_ALERTS_CATEGORY_SECURITY,
     WAZUH_SAMPLE_ALERTS_CATEGORY_AUDITING_POLICY_MONITORING,

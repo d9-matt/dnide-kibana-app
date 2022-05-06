@@ -69,7 +69,7 @@ import { discoverResponseHandler } from './discover/application/angular/response
 
 ///WAZUH///
 import { buildServices } from './discover/build_services';
-import { WazuhConfig } from '../react-services/portal9-config';
+import { Portal9Config } from '../react-services/portal9-config';
 import { ModulesHelper } from '../components/common/modules/modules-helper';
 ///////////
 import { validateTimeRange } from './discover/application/helpers/validate_time_range';
@@ -137,7 +137,7 @@ function discoverController(
   Promise,
   localStorage,
   uiCapabilities,
-  // Wazuh requirements from here
+  // Portal9 requirements from here
   $rootScope,
   $location,
   loadedVisualizations,
@@ -197,7 +197,7 @@ function discoverController(
     visualizations
   } = getServices();
 
-  const portal9Config = new WazuhConfig();
+  const portal9Config = new Portal9Config();
   const modulesHelper = ModulesHelper;
 
   const getTimeField = () => {
@@ -382,9 +382,9 @@ function discoverController(
   $scope.searchSource.setParent(timeRangeSearchSource);
 
   const pageTitleSuffix = savedSearch.id && savedSearch.title ? `: ${savedSearch.title}` : '';
-  chrome.docTitle.change(`Wazuh${pageTitleSuffix}`);
+  chrome.docTitle.change(`Portal9${pageTitleSuffix}`);
   const discoverBreadcrumbsTitle = i18n.translate('discover.discoverBreadcrumbTitle', {
-    defaultMessage: 'Wazuh',
+    defaultMessage: 'Portal9',
   });
 
   if (savedSearch.id && savedSearch.title) {
@@ -534,7 +534,7 @@ function discoverController(
               filterManager.filters = customFilterAllowedAgents ? _.union(filterManager.filters, [customFilterAllowedAgents]) : filterManager.filters;
               $scope.filters = filterManager.filters;
 
-              // Wazuh. Hides the alerts of the '000' agent if it is in the configuration
+              // Portal9. Hides the alerts of the '000' agent if it is in the configuration
               const buildFilters = () => {
                 const { hideManagerAlerts } = portal9Config.getConfig();
                 if (hideManagerAlerts) {
@@ -630,7 +630,7 @@ function discoverController(
             if (rowsEmpty && fetchStatus === fetchStatuses.LOADING) return status.LOADING;
             else if (!rowsEmpty) return status.READY;
             else {
-              // Wazuh. If there are hits but no rows, the it's also a READY status
+              // Portal9. If there are hits but no rows, the it's also a READY status
               return $scope.hits ? status.READY : status.NO_RESULTS;
             }
           }
@@ -647,7 +647,7 @@ function discoverController(
               current.fetchStatus,
               prev.fetchStatus
             );
-            // Copying it to the rootScope to access it from the Wazuh App //
+            // Copying it to the rootScope to access it from the Portal9 App //
             $rootScope.resultState = $scope.resultState;
             /////////////////////////////////////////////////////////////////
 
@@ -669,7 +669,7 @@ function discoverController(
   });
 
   ////////////////////////////////////////////////////////////////////////
-  // Wazuh - Removed saveDataSource, it's not needed by our integration //
+  // Portal9 - Removed saveDataSource, it's not needed by our integration //
   ////////////////////////////////////////////////////////////////////////
 
   $scope.opts.fetch = $scope.fetch = function () {
@@ -709,10 +709,10 @@ function discoverController(
   };
 
   $scope.handleRefresh = function ({ query }, isUpdate = true) {
-    // Wazuh filters are not ready yet
+    // Portal9 filters are not ready yet
     if (!filtersAreReady()) return;
     if (!_.isEqual(query, appStateContainer.getState().query) || isUpdate === false) {
-       /// Wazuh 7.7.x
+       /// Portal9 7.7.x
        let q = { ...query };
        if (query && typeof query === 'object') {
          q.timestamp = new Date().getTime().toString();
@@ -869,7 +869,7 @@ function discoverController(
     //history.push('/');
   };
 
-  // Wazuh.
+  // Portal9.
   // defaultSearchSource -> Use it for Discover tabs and the Discover visualization.
   // noHitsSearchSource  -> It doesn't fetch the "hits" array and it doesn't fetch the "_source",
   //                        use it for panels.
@@ -877,28 +877,28 @@ function discoverController(
     noHitsSearchSource = null;
   $scope.updateDataSource = () => {
     const { indexPattern, searchSource } = $scope;
-    // Wazuh
+    // Portal9
     const isPanels = $scope.tabView === 'panels';
     const isClusterMonitoring = $scope.tabView === 'cluster-monitoring';
 
-    // Wazuh. Should we fetch "_source" and "hits" ?
+    // Portal9. Should we fetch "_source" and "hits" ?
     const noHits = isPanels || isClusterMonitoring;
 
-    // Wazuh. The very first time, the copies are null, just create them
+    // Portal9. The very first time, the copies are null, just create them
     if (!defaultSearchSource || !noHitsSearchSource) {
       defaultSearchSource = $scope.searchSource.createCopy();
       noHitsSearchSource = $scope.searchSource.createCopy();
       noHitsSearchSource.setField('source', false);
     }
 
-    // Wazuh. Select the proper searchSource depending on the view
+    // Portal9. Select the proper searchSource depending on the view
     $scope.searchSource = noHits ? noHitsSearchSource : defaultSearchSource;
 
-    // Wazuh. Set the size to 0 depending on the selected searchSource
+    // Portal9. Set the size to 0 depending on the selected searchSource
     const size = noHits ? 0 : $scope.opts.sampleSize;
     searchSource
       .setField('index', $scope.indexPattern)
-      .setField('size', size) // Wazuh. Use custom size
+      .setField('size', size) // Portal9. Use custom size
       .setField(
         'sort',
         getSortForSearchSource(
@@ -909,7 +909,7 @@ function discoverController(
       )
       .setField('query', data.query.queryString.getQuery() || null)
       .setField('filter', filterManager.getFilters());
-    //Wazuh update the visualizations
+    //Portal9 update the visualizations
     $rootScope.$broadcast('updateVis');
     store.dispatch(updateVis({ update: true }));
     return Promise.resolve();
@@ -965,7 +965,7 @@ function discoverController(
   };
 
   async function setupVisualization() {
-    // Wazuh. Do not setup visualization if there isn't a copy for the default searchSource
+    // Portal9. Do not setup visualization if there isn't a copy for the default searchSource
     if (!defaultSearchSource) {
       return;
     }
@@ -1128,7 +1128,7 @@ function discoverController(
   );
 
   /**
-   * Wazuh - aux function for checking filters status
+   * Portal9 - aux function for checking filters status
    */
   const filtersAreReady = () => {
     const currentUrlPath = $location.path();

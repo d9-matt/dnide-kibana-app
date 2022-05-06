@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Class for Wazuh-Elastic functions
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Class for Portal9-Elastic functions
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -26,7 +26,7 @@ import { KibanaRequest, RequestHandlerContext, KibanaResponseFactory, SavedObjec
 import { getCookieValueByName } from '../lib/cookie';
 import { WAZUH_SAMPLE_ALERTS_CATEGORIES_TYPE_ALERTS, WAZUH_SAMPLE_ALERTS_DEFAULT_NUMBER_ALERTS } from '../../common/constants'
 
-export class WazuhElasticCtrl {
+export class Portal9ElasticCtrl {
   wzSampleAlertsIndexPrefix: string
   manageHosts: ManageHosts
   constructor() {
@@ -458,26 +458,26 @@ export class WazuhElasticCtrl {
 
         if (visState.type && visState.type === 'timelion') {
           let query = '';
-          if (title === 'Wazuh App Cluster Overview') {
+          if (title === 'Portal9 App Cluster Overview') {
             for (const node of nodes) {
               query += `.es(index=${pattern_name},q="cluster.name: ${name} AND cluster.node: ${node.name}").label("${node.name}"),`;
             }
             query = query.substring(0, query.length - 1);
-          } else if (title === 'Wazuh App Cluster Overview Manager') {
+          } else if (title === 'Portal9 App Cluster Overview Manager') {
             query += `.es(index=${pattern_name},q="cluster.name: ${name}").label("${name} cluster")`;
           } else {
-            if (title.startsWith('Wazuh App Statistics')) {
+            if (title.startsWith('Portal9 App Statistics')) {
               const { searchSourceJSON } = bulk_content.visualization.kibanaSavedObjectMeta;
               bulk_content.visualization.kibanaSavedObjectMeta.searchSourceJSON = searchSourceJSON.replace('portal9-statistics-*', pattern_name);
             }
-            if (title.startsWith('Wazuh App Statistics') && name !== '-' && name !== 'all' && visState.params.expression.includes('q=')) {
+            if (title.startsWith('Portal9 App Statistics') && name !== '-' && name !== 'all' && visState.params.expression.includes('q=')) {
               const expressionRegex = /q='\*'/gi;
               const _visState = bulk_content.visualization.visStateByNode
                 ? JSON.parse(bulk_content.visualization.visStateByNode)
                 : visState;
               query += _visState.params.expression.replace(/portal9-statistics-\*/g, pattern_name).replace(expressionRegex, `q="nodeName.keyword:${name} AND apiName.keyword:${master_node}"`)
                 .replace("NODE_NAME", name)
-            } else if (title.startsWith('Wazuh App Statistics')) {
+            } else if (title.startsWith('Portal9 App Statistics')) {
               const expressionRegex = /q='\*'/gi
               query += visState.params.expression.replace(/portal9-statistics-\*/g, pattern_name).replace(expressionRegex, `q="apiName.keyword:${master_node}"`)
             } else {
@@ -756,7 +756,7 @@ export class WazuhElasticCtrl {
    * {result: "deleted", index: string} or ErrorResponse
    */
   async deleteSampleAlerts(context: RequestHandlerContext, request: KibanaRequest<{ category: string }>, response: KibanaResponseFactory) {
-    // Delete Wazuh sample alert index
+    // Delete Portal9 sample alert index
 
     const sampleAlertsIndex = this.buildSampleIndexByCategory(request.params.category);
 
@@ -783,12 +783,12 @@ export class WazuhElasticCtrl {
         return ErrorResponse('Token is not valid', 500, 500, response);
       };
 
-      // Check if Wazuh sample alerts index exists
+      // Check if Portal9 sample alerts index exists
       const existsSampleIndex = await context.core.elasticsearch.client.asCurrentUser.indices.exists({
         index: sampleAlertsIndex
       });
       if (existsSampleIndex.body) {
-        // Delete Wazuh sample alerts index
+        // Delete Portal9 sample alerts index
         await context.core.elasticsearch.client.asCurrentUser.indices.delete({ index: sampleAlertsIndex });
         log(
           'portal9-elastic:deleteSampleAlerts',

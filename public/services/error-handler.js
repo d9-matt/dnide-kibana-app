@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Error handler service
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Error handler service
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -11,7 +11,7 @@
  */
 import { getToasts }  from '../kibana-services';
 import store from '../redux/store';
-import { updateWazuhNotReadyYet } from '../redux/actions/appStateActions';
+import { updatePortal9NotReadyYet } from '../redux/actions/appStateActions';
 import { WzMisc } from '../factories/misc';
 
 export class ErrorHandler {
@@ -37,7 +37,7 @@ export class ErrorHandler {
         origin.includes('/api/csv') ||
         origin.includes('/api/agents-unique');
       return isFromAPI
-        ? 'Wazuh API is not reachable. Reason: timeout.'
+        ? 'Portal9 API is not reachable. Reason: timeout.'
         : 'Server did not respond';
     }
     if ((((error || {}).data || {}).errorData || {}).message)
@@ -99,10 +99,10 @@ export class ErrorHandler {
     const message = this.extractMessage(error);
     const messageIsString = typeof message === 'string';
     if (messageIsString && message.includes('ERROR3099')) {
-      const updateNotReadyYet = updateWazuhNotReadyYet('Wazuh not ready yet.');
+      const updateNotReadyYet = updatePortal9NotReadyYet('Portal9 not ready yet.');
       store.dispatch(updateNotReadyYet);
 
-      this.$rootScope.portal9NotReadyYet = 'Wazuh not ready yet.';
+      this.$rootScope.portal9NotReadyYet = 'Portal9 not ready yet.';
       this.$rootScope.$applyAsync();
       this.checkDaemonsStatus.makePing();
       return;

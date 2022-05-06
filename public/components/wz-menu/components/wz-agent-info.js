@@ -1,8 +1,8 @@
 /*
- * Wazuh app - React component for showing agent fields such as IP, ID, name,
+ * Portal9 app - React component for showing agent fields such as IP, ID, name,
  * version, OS, registration date, last keep alive.
  *
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -28,7 +28,7 @@ export class AgentInfo extends Component {
       id: '002',
       status: 'Active',
       ip: 'X.X.X.X',
-      version: 'Wazuh v3.12.3',
+      version: 'Portal9 v3.12.3',
       name: 'CentOS Linux 7.6'
     };
 

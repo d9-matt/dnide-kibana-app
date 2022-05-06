@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Saved Objects management service
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Saved Objects management service
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -59,7 +59,7 @@ export class SavedObject {
    * Returns the full list of index patterns that are valid
    * An index is valid if its fields contain at least these 4 fields: 'timestamp', 'rule.groups', 'agent.id' and 'manager.name'
    */
-  static async getListOfWazuhValidIndexPatterns(defaultIndexPatterns, where) {
+  static async getListOfPortal9ValidIndexPatterns(defaultIndexPatterns, where) {
     let result = [];
     if (where === HEALTH_CHECK) {
       const list = await Promise.all(
@@ -256,7 +256,7 @@ export class SavedObject {
   /**
    * Creates the 'portal9-alerts-*'  index pattern
    */
-  static async createWazuhIndexPattern(pattern) {
+  static async createPortal9IndexPattern(pattern) {
     try {
       const fields = satisfyKibanaVersion('<7.11') ? await SavedObject.getIndicesFields(pattern, WAZUH_INDEX_TYPE_ALERTS) : '';
       await this.createSavedObject(

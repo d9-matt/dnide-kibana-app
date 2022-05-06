@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Help links for AWS S3 configuration.
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Help links for AWS S3 configuration.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -12,7 +12,7 @@
 
 export default [
   {
-    text: 'Using Wazuh to monitor AWS',
+    text: 'Using Portal9 to monitor AWS',
     href: 'https://documentation.portal9.com/current/amazon/index.html'
   },
   {

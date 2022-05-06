@@ -10,7 +10,7 @@ If you are using npm script to launch it, use:
 EOF
     exit 1
   fi
-  echo "Generate Wazuh API 4.0 endpoints data and format to use in Wazuh app";
+  echo "Generate Portal9 API 4.0 endpoints data and format to use in Portal9 app";
   local API_TMP_OUTPUT_PATH="output";
   local API_OUTPUT_PATH="../../common/api-info";
 
@@ -19,7 +19,7 @@ EOF
   mv "$API_TMP_OUTPUT_PATH"/* "$API_OUTPUT_PATH" || exit_with_message "ERROR: moving the generated files";
   echo "Removing temporal directory $API_TMP_OUTPUT_PATH";
   rm -rf $API_TMP_OUTPUT_PATH || exit_with_message "ERROR: removing the temporal directory";
-  echo "Success generating Wazuh API 4.0 API info!";
+  echo "Success generating Portal9 API 4.0 API info!";
 }
 
 # Function to exit with a message

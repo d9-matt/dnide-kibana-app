@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Common data service
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Common data service
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -196,7 +196,7 @@ export class CommonData {
       }
 
       if (agent) filters.push(filterHandler.agentQuery(agent));
-      filters.push(...this.addWazuhParamFilters());
+      filters.push(...this.addPortal9ParamFilters());
       const discoverScope = await ModulesHelper.getDiscoverScope();
       discoverScope.loadFilters(filters, tab);
     } catch (error) {
@@ -228,7 +228,7 @@ export class CommonData {
   /**
     Find the `_w` parameter in the url and return a list of filters if it exists
    */
-  addWazuhParamFilters() {
+  addPortal9ParamFilters() {
     const { _w } = this.$route.current.params;
     if (!_w) return [];
     const { filters } = rison.decode(_w);

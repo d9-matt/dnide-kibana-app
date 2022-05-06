@@ -1,8 +1,8 @@
 /*
- * Wazuh app - React component building the welcome screen of an agent.
+ * Portal9 app - React component building the welcome screen of an agent.
  * version, OS, registration date, last keep alive.
  *
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -11,4 +11,4 @@
  *
  * Find more information about this on the LICENSE file.
  */
-export { getFimAlerts, getWazuhFilter } from './get_fim_alerts';
+export { getFimAlerts, getPortal9Filter } from './get_fim_alerts';

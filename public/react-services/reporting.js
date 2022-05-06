@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Reporting service
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Reporting service
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -12,7 +12,7 @@
 
 import $ from 'jquery';
 import moment from 'moment';
-import { WazuhConfig } from '../react-services/portal9-config';
+import { Portal9Config } from '../react-services/portal9-config';
 import { GenericRequest } from '../react-services/generic-request';
 import { Vis2PNG } from '../factories/vis2png';
 import { RawVisualizations } from '../factories/raw-visualizations';
@@ -27,7 +27,7 @@ export class ReportingService {
     this.vis2png = new Vis2PNG();
     this.rawVisualizations = new RawVisualizations();
     this.visHandlers = new VisHandlers();
-    this.portal9Config = new WazuhConfig();
+    this.portal9Config = new Portal9Config();
   }
 
   showToast = (color, title, text, time) => {
@@ -50,7 +50,7 @@ export class ReportingService {
     ];
     if (!monitoringEnabled) {
       const visArray = idArray.filter(vis => {
-        return vis !== 'Wazuh-App-Overview-General-Agents-status';
+        return vis !== 'Portal9-App-Overview-General-Agents-status';
       });
       return visArray;
     }
@@ -121,7 +121,7 @@ export class ReportingService {
       this.showToast(
         'success',
         'Created report',
-        'Success. Go to Wazuh > Management > Reporting',
+        'Success. Go to Portal9 > Management > Reporting',
         4000
       );
       return;
@@ -164,7 +164,7 @@ export class ReportingService {
       this.showToast(
         'success',
         'Created report',
-        'Success. Go to Wazuh > Management > Reporting',
+        'Success. Go to Portal9 > Management > Reporting',
         4000
       );
       return;
