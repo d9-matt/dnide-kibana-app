@@ -10,8 +10,8 @@
  * Find more information about this on the LICENSE file.
  */
 
-// Remove Kibana Wazuh name and breadcrumb
-export const changeWazuhNavLogo = () => {
+// Remove Kibana Portal9 name and breadcrumb
+export const changePortal9NavLogo = () => {
   const interval = setInterval(() => {
     const nav = document.querySelector('[data-test-subj="breadcrumbs"]  > .euiBreadcrumb');
     if (nav) {

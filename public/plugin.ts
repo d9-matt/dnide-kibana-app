@@ -18,31 +18,31 @@ import {
 } from './kibana-services';
 import {
   AppPluginStartDependencies,
-  WazuhSetup,
-  WazuhSetupPlugins,
-  WazuhStart,
-  WazuhStartPlugins,
+  Portal9Setup,
+  Portal9SetupPlugins,
+  Portal9Start,
+  Portal9StartPlugins,
 } from './types';
 import { Cookies } from 'react-cookie';
 import { AppState } from './react-services/app-state';
 
 const innerAngularName = 'app/wazuh';
 
-export class WazuhPlugin implements Plugin<WazuhSetup, WazuhStart, WazuhSetupPlugins, WazuhStartPlugins> {
+export class Portal9Plugin implements Plugin<Portal9Setup, Portal9Start, Portal9SetupPlugins, Portal9StartPlugins> {
   constructor(private readonly initializerContext: PluginInitializerContext) {}
   public initializeInnerAngular?: () => void;
   private innerAngularInitialized: boolean = false;
   private stateUpdater = new BehaviorSubject<AppUpdater>(() => ({}));
   private hideTelemetryBanner?: () => void;
   
-  public setup(core: CoreSetup, plugins: WazuhSetupPlugins): WazuhSetup {
+  public setup(core: CoreSetup, plugins: Portal9SetupPlugins): Portal9Setup {
     core.application.register({
       id: `portal9`,
       title: 'Portal9',
       icon: core.http.basePath.prepend('/plugins/wazuh/assets/icon_blue.png'),
       mount: async (params: AppMountParameters) => {
         if (!this.initializeInnerAngular) {
-          throw Error('Wazuh plugin method initializeInnerAngular is undefined');
+          throw Error('Portal9 plugin method initializeInnerAngular is undefined');
         }
 
         // hide the telemetry banner. 
@@ -62,13 +62,13 @@ export class WazuhPlugin implements Plugin<WazuhSetup, WazuhStart, WazuhSetupPlu
 
         await this.initializeInnerAngular();
 
-        //Check is user has Wazuh disabled
+        //Check if user has Portal9 disabled
         const response = await core.http.get(`/api/check-wazuh`);
 
         params.element.classList.add('dscAppWrapper');
         const unmount = await renderApp(innerAngularName, params.element);
 
-        //Update if user has Wazuh disabled
+        //Update if user has Portal9 disabled
         this.stateUpdater.next(() => {
           if (response.isWazuhDisabled) {
             unmount();
@@ -77,8 +77,8 @@ export class WazuhPlugin implements Plugin<WazuhSetup, WazuhStart, WazuhSetupPlu
           return {
             status: response.isWazuhDisabled,
             category: {
-              id: 'wazuh',
-              label: 'Wazuh',
+              id: 'Portal9',
+              label: 'Portal9',
               order: 0,
               euiIconType: core.http.basePath.prepend( `/plugins/wazuh/assets/${response.logoSidebar}`),
             }}
@@ -88,8 +88,8 @@ export class WazuhPlugin implements Plugin<WazuhSetup, WazuhStart, WazuhSetupPlu
         };
       },
       category: {
-        id: 'wazuh',
-        label: 'Wazuh',
+        id: 'Portal9',
+        label: 'Portal9',
         order: 0,
         euiIconType: core.http.basePath.prepend('/plugins/wazuh/assets/icon_blue.png'),      
       },
@@ -98,7 +98,7 @@ export class WazuhPlugin implements Plugin<WazuhSetup, WazuhStart, WazuhSetupPlu
     return {};
   }
 
-  public start(core: CoreStart, plugins: AppPluginStartDependencies): WazuhStart {
+  public start(core: CoreStart, plugins: AppPluginStartDependencies): Portal9Start {
     // hide security alert
     if(plugins.securityOss) {
       plugins.securityOss.insecureCluster.hideAlert(true);

@@ -24,7 +24,7 @@ import './components';
 import 'angular-chart.js';
 
 // pin-wz-menu.js
-import { changeWazuhNavLogo } from './utils/wz-logo-menu';
+import { changePortal9NavLogo } from './utils/wz-logo-menu';
 
 // Font Awesome, Kibana UI framework and others
 import './utils/fontawesome/scss/font-awesome.scss';
@@ -40,7 +40,7 @@ import 'angular-aria/angular-aria';
 import 'angular-animate/angular-animate';
 import 'angular-material/angular-material';
 
-// Set up Wazuh app
+// Set up Portal9 app
 import './setup';
 
 //App imports
@@ -77,7 +77,7 @@ app.config([
 app.run([
   '$injector',
   function (_$injector) {
-    changeWazuhNavLogo();
+    changePortal9NavLogo();
     app.$injector = _$injector;
 
     // Set currentSecurity platform in Redux when app starts.
