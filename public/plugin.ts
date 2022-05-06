@@ -26,7 +26,7 @@ import {
 import { Cookies } from 'react-cookie';
 import { AppState } from './react-services/app-state';
 
-const innerAngularName = 'app/wazuh';
+const innerAngularName = 'app/portal9';
 
 export class WazuhPlugin implements Plugin<WazuhSetup, WazuhStart, WazuhSetupPlugins, WazuhStartPlugins> {
   constructor(private readonly initializerContext: PluginInitializerContext) {}
