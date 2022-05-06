@@ -1,9 +1,9 @@
 {
-  "id": "portal9",
+  "id": "wazuh",
   "version": "4.2.5-4206-1",
   "kibanaVersion": "kibana",
   "configPath": [
-    "portal9"
+    "wazuh"
   ],
   "requiredPlugins": [
     "navigation",
