@@ -52,7 +52,7 @@ export function ApiProvider({ getService, getPageObjects }) {
       await testSubjects.click(tab);
       await PageObjects.common.sleep(1500);
       expect(await browser.getCurrentUrl()).to.contain('tab=api');
-      expect(await browser.getCurrentUrl()).to.contain('app/wazuh#/settings');
+      expect(await browser.getCurrentUrl()).to.contain('app/portal9#/settings');
     }
 
     /**

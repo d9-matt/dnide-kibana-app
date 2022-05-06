@@ -14,12 +14,12 @@ export function goToKibana($location, $window) {
   const url = $location.$$absUrl.substring(0, $location.$$absUrl.indexOf('#'));
   const lastSubUrl = $window.sessionStorage.getItem(`lastSubUrl:${url}`) || '';
   if (
-    lastSubUrl.includes('/wazuh#/visualize') ||
-    lastSubUrl.includes('/wazuh#/doc') ||
-    lastSubUrl.includes('/wazuh#/context')
+    lastSubUrl.includes('/portal9#/visualize') ||
+    lastSubUrl.includes('/portal9#/doc') ||
+    lastSubUrl.includes('/portal9#/context')
   ) {
     $window.sessionStorage.setItem(`lastSubUrl:${url}`, url);
   }
 
-  $window.location.href = $location.absUrl().replace('/wazuh#', '/kibana#');
+  $window.location.href = $location.absUrl().replace('/portal9#', '/kibana#');
 }
