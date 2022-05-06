@@ -37,8 +37,8 @@ export class WazuhPlugin implements Plugin<WazuhSetup, WazuhStart, WazuhSetupPlu
   
   public setup(core: CoreSetup, plugins: WazuhSetupPlugins): WazuhSetup {
     core.application.register({
-      id: `wazuh`,
-      title: 'Wazuh',
+      id: `portal9`,
+      title: 'Portal9',
       icon: core.http.basePath.prepend('/plugins/wazuh/assets/icon_blue.png'),
       mount: async (params: AppMountParameters) => {
         if (!this.initializeInnerAngular) {
