@@ -11,7 +11,7 @@ This is a change
 
 Portal9 is a security detection, visibility, and compliance open source project. Portal9 helps you to gain deeper security visibility into your infrastructure by monitoring hosts at an operating system and application level.
 
-You can learn more about it here [portal9.com](https://portal9.com/)
+You can learn more about it here [portal9.com](https://d9.portal9app.com/)
 
 ## Description
 
