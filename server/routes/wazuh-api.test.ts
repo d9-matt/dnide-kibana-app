@@ -1,5 +1,5 @@
 // To launch this file
-// yarn test:jest --testEnvironment node --verbose server/routes/wazuh-api
+// yarn test:jest --testEnvironment node --verbose server/routes/portal9-api
 import axios from 'axios';
 
 function buildAxiosOptions(method: string, path: string, data: any = {}, headers: any = {}){
@@ -53,7 +53,7 @@ describe('Wazuh API - /api/check-api', () => {
       expect(typeof error.response.data).toBe('object');
       expect(error.response.data.statusCode).toBe(500);
       expect(error.response.data.error).toBe('Internal Server Error');
-      expect(error.response.data.message.includes('Selected API is no longer available in wazuh.yml')).toBe(true);
+      expect(error.response.data.message.includes('Selected API is no longer available in portal9.yml')).toBe(true);
     });
   });
 });
@@ -89,7 +89,7 @@ describe('Wazuh API - /api/check-stored-api', () => {
       expect(typeof error.response.data).toBe('object');
       expect(error.response.data.statusCode).toBe(500);
       expect(error.response.data.error).toBe('Internal Server Error');
-      expect(error.response.data.message.includes('Selected API is no longer available in wazuh.yml')).toBe(true);
+      expect(error.response.data.message.includes('Selected API is no longer available in portal9.yml')).toBe(true);
     })
   });
 });

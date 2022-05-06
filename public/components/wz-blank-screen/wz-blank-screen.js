@@ -39,8 +39,8 @@ export class WzBlankScreen extends Component {
                     https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html
                   </a>
                   <br />
-                  <a href="https://documentation.wazuh.com/current/installation-guide/">
-                    https://documentation.wazuh.com/current/installation-guide/
+                  <a href="https://documentation.portal9.com/current/installation-guide/">
+                    https://documentation.portal9.com/current/installation-guide/
                   </a>
                 </p>
                 <EuiHorizontalRule margin="s" />

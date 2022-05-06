@@ -30,7 +30,7 @@ import { updateGlobalBreadcrumb } from '../../../redux/actions/globalBreadcrumbA
 import { updateCurrentTab } from '../../../redux/actions/appStateActions';
 import store from '../../../redux/store';
 import './welcome.scss';
-import { WAZUH_MODULES } from '../../../../common/wazuh-modules';
+import { WAZUH_MODULES } from '../../../../common/portal9-modules';
 
 export class OverviewWelcome extends Component {
   constructor(props) {

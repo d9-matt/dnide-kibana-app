@@ -11,10 +11,10 @@
  */
 import { FilterHandler } from '../../utils/filter-handler';
 import { TabNames } from '../../utils/tab-names';
-import { WAZUH_MODULES } from '../../../common/wazuh-modules';
+import { WAZUH_MODULES } from '../../../common/portal9-modules';
 
 import { AppState } from '../../react-services/app-state';
-import { WazuhConfig } from '../../react-services/wazuh-config';
+import { WazuhConfig } from '../../react-services/portal9-config';
 import { WzRequest } from '../../react-services/wz-request';
 import { ErrorHandler } from '../../react-services/error-handler';
 import { TabVisualizations } from '../../factories/tab-visualizations';
@@ -55,7 +55,7 @@ export class OverviewController {
     this.commonData = commonData;
     this.reportingService = reportingService;
     this.visFactoryService = visFactoryService;
-    this.wazuhConfig = new WazuhConfig();
+    this.portal9Config = new WazuhConfig();
     this.visFactoryService = VisFactoryHandler;
     this.rawVisualizations = new RawVisualizations();
     this.wzReq = (...args) => WzRequest.apiReq(...args);
@@ -322,9 +322,9 @@ export class OverviewController {
    */
   async loadConfiguration() {
     try {
-      const configuration = this.wazuhConfig.getConfig();
+      const configuration = this.portal9Config.getConfig();
 
-      this.wzMonitoringEnabled = !!configuration['wazuh.monitoring.enabled'];
+      this.wzMonitoringEnabled = !!configuration['portal9.monitoring.enabled'];
 
       return;
     } catch (error) {

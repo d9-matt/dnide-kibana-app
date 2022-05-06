@@ -1,5 +1,5 @@
 // To launch this file
-// yarn test:jest --testEnvironment node --verbose server/routes/wazuh-reporting
+// yarn test:jest --testEnvironment node --verbose server/routes/portal9-reporting
 import axios from 'axios';
 
 function buildAxiosOptions(method: string, path: string, data: any = {}, headers: any = {}){
@@ -26,7 +26,7 @@ describe('Wazuh API - /reports', () => {
 //TODO: do the test for these endpoints
 // describe('Wazuh API - /reports/{name}', () => {
 //   test('[200] Returns the available reports for user and name', () => {
-//     const options = buildAxiosOptions('get', '/reports/wazuh-report.pdf', {}, {
+//     const options = buildAxiosOptions('get', '/reports/portal9-report.pdf', {}, {
 //       cookie: 'wz-user=elastic'
 //     });
 //     return axios(options).then(response => {
@@ -36,7 +36,7 @@ describe('Wazuh API - /reports', () => {
 //   });
 
 //   test('[200] Returns the available reports for user and name', () => {
-//     const options = buildAxiosOptions('delete', '/reports/wazuh-report.pdf', {}, {
+//     const options = buildAxiosOptions('delete', '/reports/portal9-report.pdf', {}, {
 //       cookie: 'wz-user=elastic'
 //     });
 //     return axios(options).then(response => {

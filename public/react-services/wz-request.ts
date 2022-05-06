@@ -14,12 +14,12 @@ import { AppState } from './app-state';
 import { ApiCheck } from './wz-api-check';
 import { WzAuthentication } from './wz-authentication';
 import { WzMisc } from '../factories/misc';
-import { WazuhConfig } from './wazuh-config';
+import { WazuhConfig } from './portal9-config';
 import { OdfeUtils } from '../utils';
 import IApiResponse from './interfaces/api-response.interface';
 import { getHttp } from '../kibana-services';
 export class WzRequest {
-  static wazuhConfig: any;
+  static portal9Config: any;
 
   /**
    * Permorn a generic request
@@ -38,8 +38,8 @@ export class WzRequest {
       if (!method || !path) {
         throw new Error('Missing parameters');
       }
-      this.wazuhConfig = new WazuhConfig();
-      const configuration = this.wazuhConfig.getConfig();
+      this.portal9Config = new WazuhConfig();
+      const configuration = this.portal9Config.getConfig();
       const timeout = configuration ? configuration.timeout : 20000;
 
       const url = getHttp().basePath.prepend(path);
@@ -66,7 +66,7 @@ export class WzRequest {
           const wzMisc = new WzMisc();
           wzMisc.setApiIsDown(true);
           if (!window.location.hash.includes('#/settings')) {
-            window.location.href = getHttp().basePath.prepend('/app/wazuh#/health-check');
+            window.location.href = getHttp().basePath.prepend('/app/portal9#/health-check');
           }
           throw new Error(error);
         }

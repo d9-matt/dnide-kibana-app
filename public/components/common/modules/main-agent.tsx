@@ -30,7 +30,7 @@ import store from '../../../redux/store';
 import { FilterHandler } from '../../../utils/filter-handler';
 import { AppState } from '../../../react-services/app-state';
 import { ReportingService } from '../../../react-services/reporting';
-import { WAZUH_MODULES } from '../../../../common/wazuh-modules';
+import { WAZUH_MODULES } from '../../../../common/portal9-modules';
 import { Events, Dashboard, Loader, Settings } from '../../common/modules';
 import WzReduxProvider from '../../../redux/wz-redux-provider';
 import { AgentInfo } from '../../common/welcome/agents-info';

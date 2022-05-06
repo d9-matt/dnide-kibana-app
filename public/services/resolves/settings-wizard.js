@@ -12,7 +12,7 @@
 
 import { healthCheck } from './health-check';
 import { AppState } from '../../react-services/app-state';
-import { WazuhConfig } from '../../react-services/wazuh-config';
+import { WazuhConfig } from '../../react-services/portal9-config';
 import { ApiCheck } from '../../react-services/wz-api-check';
 import { ErrorHandler } from '../../react-services/error-handler';
 
@@ -28,7 +28,7 @@ export function settingsWizard(
   disableErrors = false
 ) {
   try {
-    const wazuhConfig = new WazuhConfig();
+    const portal9Config = new WazuhConfig();
     const deferred = $q.defer();
     const checkResponse = data => {
       let fromWazuhHosts = false;
@@ -102,7 +102,7 @@ export function settingsWizard(
     };
 
     const callCheckStored = async () => {
-      const config = wazuhConfig.getConfig();
+      const config = portal9Config.getConfig();
       let currentApi = false;
 
       try {
@@ -176,7 +176,7 @@ export function settingsWizard(
               AppState.setNavigation({
                 reloaded: false,
                 discoverPrevious: false,
-                discoverSections: ['/overview/', '/agents', '/wazuh-dev']
+                discoverSections: ['/overview/', '/agents', '/portal9-dev']
               });
               throw new Error('Could not select any API entry');
             }

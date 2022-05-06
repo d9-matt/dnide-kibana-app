@@ -15,7 +15,7 @@ import { FlyoutTechnique } from '../../overview/mitre/components/techniques/comp
 import { AppNavigate } from '../../../react-services/app-navigate';
 
 // Field to add to elements enchanced
-const CUSTOM_ATTRIBUTE_ENHANCED_DISCOVER_FIELD = 'data-wazuh-discover-field-enhanced';
+const CUSTOM_ATTRIBUTE_ENHANCED_DISCOVER_FIELD = 'data-portal9-discover-field-enhanced';
 
 type TGetFlyoutProps = (content: string, rowData, options) => any;
 

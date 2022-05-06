@@ -48,17 +48,17 @@ const helpLinks = [
   {
     text: 'Wazuh administration documentation',
     href:
-      'https://documentation.wazuh.com/current/user-manual/manager/index.html'
+      'https://documentation.portal9.com/current/user-manual/manager/index.html'
   },
   {
     text: 'Wazuh capabilities documentation',
     href:
-      'https://documentation.wazuh.com/current/user-manual/capabilities/index.html'
+      'https://documentation.portal9.com/current/user-manual/capabilities/index.html'
   },
   {
     text: 'Local configuration reference',
     href:
-      'https://documentation.wazuh.com/current/user-manual/reference/ossec-conf/index.html'
+      'https://documentation.portal9.com/current/user-manual/reference/ossec-conf/index.html'
   }
 ];
 

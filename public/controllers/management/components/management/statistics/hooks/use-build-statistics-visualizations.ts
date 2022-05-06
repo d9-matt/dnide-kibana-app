@@ -20,7 +20,7 @@ import { RawVisualizations } from "../../../../../../factories/raw-visualization
 import { GenericRequest } from "../../../../../../react-services/generic-request";
 import { updateVis } from "../../../../../../redux/actions/visualizationsActions";
 import { AppState } from "../../../../../../react-services/app-state";
-import { WazuhConfig } from '../../../../../../react-services/wazuh-config.js';
+import { WazuhConfig } from '../../../../../../react-services/portal9-config.js';
 
 export const useBuildStatisticsVisualizations = (clusterNodeSelected, refreshVisualizations) => {
   const { 'cron.prefix': indexPrefix, 'cron.statistics.index.name': indexName } = new WazuhConfig().getConfig();

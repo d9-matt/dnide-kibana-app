@@ -27,10 +27,10 @@ export function SyscollectorInventory({ agent }) {
           <Fragment>
             <p>The agent has been registered but has not yet connected to the manager.</p>
             <a
-              href="https://documentation.wazuh.com/current/user-manual/agents/agent-connection.html"
+              href="https://documentation.portal9.com/current/user-manual/agents/agent-connection.html"
               target="_blank"
             >
-              https://documentation.wazuh.com/current/user-manual/agents/agent-connection.html
+              https://documentation.portal9.com/current/user-manual/agents/agent-connection.html
             </a>
           </Fragment>
         }

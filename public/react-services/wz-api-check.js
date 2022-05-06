@@ -9,7 +9,7 @@
  *
  * Find more information about this on the LICENSE file.
  */
-import { WazuhConfig } from './wazuh-config';
+import { WazuhConfig } from './portal9-config';
 import axios from 'axios';
 import { AppState } from './app-state';
 import { WzMisc } from '../factories/misc';
@@ -18,8 +18,8 @@ import { getHttp } from '../kibana-services';
 export class ApiCheck {
   static async checkStored(data, idChanged = false) {
     try {
-      const wazuhConfig = new WazuhConfig();
-      const configuration = wazuhConfig.getConfig();
+      const portal9Config = new WazuhConfig();
+      const configuration = portal9Config.getConfig();
       const timeout = configuration ? configuration.timeout : 20000;
       const payload = { id: data };
       if (idChanged) {
@@ -67,8 +67,8 @@ export class ApiCheck {
    */
   static async checkApi(apiEntry, forceRefresh=false) {
     try {
-      const wazuhConfig = new WazuhConfig();
-      const { timeout } = wazuhConfig.getConfig();
+      const portal9Config = new WazuhConfig();
+      const { timeout } = portal9Config.getConfig();
       const url = getHttp().basePath.prepend('/api/check-api');
 
       const options = {

@@ -57,7 +57,7 @@ const pageConfiguration = (nameLogo) => ({
         width: 190
       },
       {
-        text: 'info@wazuh.com\nhttps://wazuh.com',
+        text: 'info@portal9.com\nhttps://portal9.com',
         alignment: 'right',
         margin: [0, 0, 40, 0],
         color: COLORS.PRIMARY

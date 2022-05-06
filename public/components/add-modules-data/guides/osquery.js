@@ -15,7 +15,7 @@ export default {
   wodle_name: 'osquery',
   description: 'Configuration options of the osquery wodle.',
   category: 'Threat detection and response',
-  documentation_link: 'https://documentation.wazuh.com/current/user-manual/reference/ossec-conf/wodle-osquery.html',
+  documentation_link: 'https://documentation.portal9.com/current/user-manual/reference/ossec-conf/wodle-osquery.html',
   icon: 'securityApp',
   callout_warning: 'Osquery is not installed by default. It is an open source software that you have to obtain for using this module.',
   avaliable_for_manager: true,

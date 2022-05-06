@@ -101,7 +101,7 @@ app.run([
 app.run(function ($rootElement) {
     $rootElement.append(`
     <div>
-      <div class="wazuhNotReadyYet"></div>
+      <div class="portal9NotReadyYet"></div>
       <div ng-view class="mainView"></div>
       <react-component name="WzMenuWrapper" props=""></react-component>
       <react-component name="WzAgentSelectorWrapper" props=""></react-component>

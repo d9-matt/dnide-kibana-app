@@ -17,7 +17,7 @@ import {
   updateExtensions
 } from '../redux/actions/appStateActions';
 import { GenericRequest } from '../react-services/generic-request';
-import { WazuhConfig } from './wazuh-config';
+import { WazuhConfig } from './portal9-config';
 import { CSVRequest } from '../services/csv-request';
 import { getToasts, getCookies, getAngularModule }  from '../kibana-services';
 import * as FileSaver from '../services/file-saver';
@@ -51,8 +51,8 @@ export class AppState {
           AppState.setExtensions(id, extensions);
           return extensions;
         } else {
-          const wazuhConfig = new WazuhConfig();
-          const config = wazuhConfig.getConfig();
+          const portal9Config = new WazuhConfig();
+          const config = portal9Config.getConfig();
           if(!Object.keys(config).length) return;
           const extensions = {
             audit: config['extensions.audit'],
@@ -408,7 +408,7 @@ export class AppState {
   }
 
   static checkCookies() {
-    getCookies().set('appName', 'wazuh', { path: window.location.pathname });
+    getCookies().set('appName', 'portal9', { path: window.location.pathname });
     return !!getCookies().get('appName')
   }
 }

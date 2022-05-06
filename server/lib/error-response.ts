@@ -12,10 +12,10 @@
 
 /**
  * Error codes:
- * wazuh-api-elastic 20XX
- * wazuh-api         30XX
- * wazuh-elastic     40XX
- * wazuh-reporting   50XX
+ * portal9-api-elastic 20XX
+ * portal9-api         30XX
+ * portal9-elastic     40XX
+ * portal9-reporting   50XX
  * unknown           1000
  */
 /**

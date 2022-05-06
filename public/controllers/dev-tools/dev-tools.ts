@@ -139,7 +139,7 @@ export class DevToolsController {
    */
   help() {
     this.$window.open(
-      'https://documentation.wazuh.com/current/user-manual/api/reference.html'
+      'https://documentation.portal9.com/current/user-manual/api/reference.html'
     );
   }
 
@@ -626,13 +626,13 @@ export class DevToolsController {
         ch: 0
       });
       if (!$('#play_button').is(':visible')) $('#play_button').show();
-      if (!$('#wazuh_dev_tools_documentation').is(':visible')) $('#wazuh_dev_tools_documentation').show();
+      if (!$('#portal9_dev_tools_documentation').is(':visible')) $('#portal9_dev_tools_documentation').show();
       const currentPlayButton = $('#play_button').offset();
       $('#play_button').offset({
         top: cords.top + 2,
         left: currentPlayButton.left
       });
-      $('#wazuh_dev_tools_documentation').offset({
+      $('#portal9_dev_tools_documentation').offset({
         top: cords.top + 2
       });
       if (firstTime) this.highlightGroup(desiredGroup[0]);
@@ -648,15 +648,15 @@ export class DevToolsController {
           .filter(endpoint => endpoint.splitURL.length === inputEndpoint.length)
           .find(endpoint => endpoint.splitURL.reduce((accum, str, index) => accum && (str.startsWith(':') ? true : str.toLowerCase() === inputEndpoint[index]), true));
         if (apiEndpoint && apiEndpoint.documentation) {
-          $('#wazuh_dev_tools_documentation').attr('href', apiEndpoint.documentation).show();
+          $('#portal9_dev_tools_documentation').attr('href', apiEndpoint.documentation).show();
         } else {
-          $('#wazuh_dev_tools_documentation').attr('href', '').hide();
+          $('#portal9_dev_tools_documentation').attr('href', '').hide();
         }
       }
       return desiredGroup[0];
     } catch (error) {
       $('#play_button').hide();
-      $('#wazuh_dev_tools_documentation').hide();
+      $('#portal9_dev_tools_documentation').hide();
       return null;
     }
   }

@@ -24,7 +24,7 @@ export default function({getService, getPageObjects, }: FtrProviderContext) {
   const esTableViz = getService('esTableViz');
   const filterBar = getService('filterBar');
   const find = getService('find');
-  const PageObjects = getPageObjects(['wazuhCommon', 'common']);
+  const PageObjects = getPageObjects(['portal9Common', 'common']);
   const pieCharts = getService('pieCharts');
   const queryBar = getService('queryBar');
   const tableViz = getService('tableViz');
@@ -33,12 +33,12 @@ export default function({getService, getPageObjects, }: FtrProviderContext) {
   describe('security_events', () => {
     let es_index: string;
     before(async () => {
-      await PageObjects.wazuhCommon.OpenSecurityEvents();
+      await PageObjects.portal9Common.OpenSecurityEvents();
       es_index = WAZUH_ALERTS_PATTERN;
     });
 
     beforeEach(async () => {
-      await PageObjects.wazuhCommon.setTodayRange();
+      await PageObjects.portal9Common.setTodayRange();
     })
 
     //#region Visualization tests

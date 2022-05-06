@@ -22,12 +22,12 @@ const helpLinks = [
   {
     text: 'How to use the registration service',
     href:
-      'https://documentation.wazuh.com/current/user-manual/registering/simple-registration-method.html'
+      'https://documentation.portal9.com/current/user-manual/registering/simple-registration-method.html'
   },
   {
     text: 'Registration service reference',
     href:
-      'https://documentation.wazuh.com/current/user-manual/reference/ossec-conf/auth.html'
+      'https://documentation.portal9.com/current/user-manual/reference/ossec-conf/auth.html'
   }
 ];
 

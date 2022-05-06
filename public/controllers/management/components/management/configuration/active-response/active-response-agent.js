@@ -28,12 +28,12 @@ const helpLinks = [
   {
     text: 'Active response documentation',
     href:
-      'https://documentation.wazuh.com/current/user-manual/capabilities/active-response/index.html'
+      'https://documentation.portal9.com/current/user-manual/capabilities/active-response/index.html'
   },
   {
     text: 'Active response reference',
     href:
-      'https://documentation.wazuh.com/current/user-manual/reference/ossec-conf/active-response.html'
+      'https://documentation.portal9.com/current/user-manual/reference/ossec-conf/active-response.html'
   }
 ];
 
@@ -59,7 +59,7 @@ class WzConfigurationActiveResponseAgent extends Component {
     super(props);
   }
   render() {
-    const { currentConfig, wazuhNotReadyYet } = this.props;
+    const { currentConfig, portal9NotReadyYet } = this.props;
     return (
       <Fragment>
         {currentConfig['com-active-response'] &&
@@ -74,7 +74,7 @@ class WzConfigurationActiveResponseAgent extends Component {
           !currentConfig['com-active-response']['active-response'] && (
             <WzNoConfig error="not-present" help={helpLinks} />
           )}
-        {wazuhNotReadyYet &&
+        {portal9NotReadyYet &&
           (!currentConfig || !currentConfig['com-active-response']) && (
             <WzNoConfig error="Wazuh not ready yet" help={helpLinks} />
           )}
@@ -100,14 +100,14 @@ class WzConfigurationActiveResponseAgent extends Component {
 }
 
 const mapStateToProps = state => ({
-  wazuhNotReadyYet: state.appStateReducers.wazuhNotReadyYet
+  portal9NotReadyYet: state.appStateReducers.portal9NotReadyYet
 });
 
 const sectionsAgent = [{ component: 'com', configuration: 'active-response' }];
 
 WzConfigurationActiveResponseAgent.propTypes = {
   // currentConfig: PropTypes.object.isRequired,
-  wazuhNotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
+  portal9NotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
 };
 
 export default compose(

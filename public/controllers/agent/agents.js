@@ -12,12 +12,12 @@
 import { FilterHandler } from '../../utils/filter-handler';
 import { TabNames } from '../../utils/tab-names';
 import * as FileSaver from '../../services/file-saver';
-import { WAZUH_MODULES } from '../../../common/wazuh-modules';
+import { WAZUH_MODULES } from '../../../common/portal9-modules';
 import { visualizations } from '../../templates/agents/visualizations';
 
 import { ConfigurationHandler } from '../../utils/config-handler';
 import { AppState } from '../../react-services/app-state';
-import { WazuhConfig } from '../../react-services/wazuh-config';
+import { WazuhConfig } from '../../react-services/portal9-config';
 import { GenericRequest } from '../../react-services/generic-request';
 import { WzRequest } from '../../react-services/wz-request';
 import { getToasts }  from '../../kibana-services';
@@ -66,7 +66,7 @@ export class AgentsController {
     this.visFactoryService = visFactoryService;
     this.csvReq = csvReq;
     this.groupHandler = GroupHandler;
-    this.wazuhConfig = new WazuhConfig();
+    this.portal9Config = new WazuhConfig();
     this.genericReq = GenericRequest;
 
     // Config on-demand
@@ -181,19 +181,19 @@ export class AgentsController {
       this.downloadCsv(path, fileName, filters);
 
     this.$scope.search = (term, specificPath) =>
-      this.$scope.$broadcast('wazuhSearch', {
+      this.$scope.$broadcast('portal9Search', {
         term,
         specificPath
       });
 
     this.$scope.searchSyscheckFile = (term, specificFilter) =>
-      this.$scope.$broadcast('wazuhSearch', {
+      this.$scope.$broadcast('portal9Search', {
         term,
         specificFilter
       });
 
     this.$scope.searchRootcheck = (term, specificFilter) =>
-      this.$scope.$broadcast('wazuhSearch', {
+      this.$scope.$broadcast('portal9Search', {
         term,
         specificFilter
       });

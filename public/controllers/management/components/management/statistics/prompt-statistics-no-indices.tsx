@@ -12,16 +12,16 @@
 
 import React, { useState, useEffect } from 'react';
 import { EuiEmptyPrompt } from '@elastic/eui';
-import { WazuhConfig } from '../../../../../react-services/wazuh-config';
+import { WazuhConfig } from '../../../../../react-services/portal9-config';
 
 
 export const PromptStatisticsNoIndices = () => {
   const [indexName, setIndexName] = useState("");
 
   useEffect(() => {
-    const wazuhConfig = new WazuhConfig();
-    const config = wazuhConfig.getConfig();
-    setIndexName(`${config["cron.prefix"] || 'wazuh'}-${config["cron.statistics.index.name"] || 'stastistics'}-*`)
+    const portal9Config = new WazuhConfig();
+    const config = portal9Config.getConfig();
+    setIndexName(`${config["cron.prefix"] || 'portal9'}-${config["cron.statistics.index.name"] || 'stastistics'}-*`)
   }, []);
 
   return (

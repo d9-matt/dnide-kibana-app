@@ -26,7 +26,7 @@ import {
 import { Cookies } from 'react-cookie';
 import { AppState } from './react-services/app-state';
 
-const innerAngularName = 'app/wazuh';
+const innerAngularName = 'app/portal9';
 
 export class WazuhPlugin implements Plugin<WazuhSetup, WazuhStart, WazuhSetupPlugins, WazuhStartPlugins> {
   constructor(private readonly initializerContext: PluginInitializerContext) {}
@@ -37,9 +37,9 @@ export class WazuhPlugin implements Plugin<WazuhSetup, WazuhStart, WazuhSetupPlu
   
   public setup(core: CoreSetup, plugins: WazuhSetupPlugins): WazuhSetup {
     core.application.register({
-      id: `wazuh`,
+      id: `portal9`,
       title: 'Wazuh',
-      icon: core.http.basePath.prepend('/plugins/wazuh/assets/icon_blue.png'),
+      icon: core.http.basePath.prepend('/plugins/portal9/assets/icon_blue.png'),
       mount: async (params: AppMountParameters) => {
         if (!this.initializeInnerAngular) {
           throw Error('Wazuh plugin method initializeInnerAngular is undefined');
@@ -63,7 +63,7 @@ export class WazuhPlugin implements Plugin<WazuhSetup, WazuhStart, WazuhSetupPlu
         await this.initializeInnerAngular();
 
         //Check is user has Wazuh disabled
-        const response = await core.http.get(`/api/check-wazuh`);
+        const response = await core.http.get(`/api/check-portal9`);
 
         params.element.classList.add('dscAppWrapper');
         const unmount = await renderApp(innerAngularName, params.element);
@@ -77,10 +77,10 @@ export class WazuhPlugin implements Plugin<WazuhSetup, WazuhStart, WazuhSetupPlu
           return {
             status: response.isWazuhDisabled,
             category: {
-              id: 'wazuh',
+              id: 'portal9',
               label: 'Wazuh',
               order: 0,
-              euiIconType: core.http.basePath.prepend( `/plugins/wazuh/assets/${response.logoSidebar}`),
+              euiIconType: core.http.basePath.prepend( `/plugins/portal9/assets/${response.logoSidebar}`),
             }}
         })
         return () => {
@@ -88,10 +88,10 @@ export class WazuhPlugin implements Plugin<WazuhSetup, WazuhStart, WazuhSetupPlu
         };
       },
       category: {
-        id: 'wazuh',
+        id: 'portal9',
         label: 'Wazuh',
         order: 0,
-        euiIconType: core.http.basePath.prepend('/plugins/wazuh/assets/icon_blue.png'),      
+        euiIconType: core.http.basePath.prepend('/plugins/portal9/assets/icon_blue.png'),      
       },
       updater$: this.stateUpdater
     });

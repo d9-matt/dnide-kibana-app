@@ -11,7 +11,7 @@ import {
   EuiSwitch,
   EuiSpacer
 } from '@elastic/eui';
-import { WAZUH_MODULES } from '../../../../common/wazuh-modules';
+import { WAZUH_MODULES } from '../../../../common/portal9-modules';
 import { AppState } from '../../../react-services/app-state';
 import WzReduxProvider from '../../../redux/wz-redux-provider';
 import store from '../../../redux/store';

@@ -23,7 +23,7 @@ const helpLinks = [
   {
     text: 'Command module reference',
     href:
-      'https://documentation.wazuh.com/current/user-manual/reference/ossec-conf/wodle-command.html'
+      'https://documentation.portal9.com/current/user-manual/reference/ossec-conf/wodle-command.html'
   }
 ];
 

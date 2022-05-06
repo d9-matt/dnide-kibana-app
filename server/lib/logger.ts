@@ -16,8 +16,8 @@ import { WAZUH_DATA_LOGS_DIRECTORY_PATH, WAZUH_DATA_LOGS_PLAIN_PATH, WAZUH_DATA_
 import { createDataDirectoryIfNotExists } from './filesystem';
 
 let allowed = false;
-let wazuhlogger = undefined;
-let wazuhPlainLogger = undefined;
+let portal9logger = undefined;
+let portal9PlainLogger = undefined;
 
 /**
  * Here we create the loggers
@@ -31,7 +31,7 @@ const initLogger = () => {
       : 'info';
 
   // JSON logger
-  wazuhlogger = winston.createLogger({
+  portal9logger = winston.createLogger({
     level,
     format: winston.format.json(),
     transports: [
@@ -42,10 +42,10 @@ const initLogger = () => {
   });
 
   // Prevents from exit on error related to the logger.
-  wazuhlogger.exitOnError = false;
+  portal9logger.exitOnError = false;
 
   // Plain text logger
-  wazuhPlainLogger = winston.createLogger({
+  portal9PlainLogger = winston.createLogger({
     level,
     format: winston.format.simple(),
     transports: [
@@ -56,19 +56,19 @@ const initLogger = () => {
   });
 
   // Prevents from exit on error related to the logger.
-  wazuhPlainLogger.exitOnError = false;
+  portal9PlainLogger.exitOnError = false;
 };
 
 /**
- * Checks if wazuh/logs exists. If it doesn't exist, it will be created.
+ * Checks if portal9/logs exists. If it doesn't exist, it will be created.
  */
 const initDirectory = async () => {
   try {
     createDataDirectoryIfNotExists();
     createDataDirectoryIfNotExists('logs');
     if (
-      typeof wazuhlogger === 'undefined' ||
-      typeof wazuhPlainLogger === 'undefined'
+      typeof portal9logger === 'undefined' ||
+      typeof portal9PlainLogger === 'undefined'
     ) {
       initLogger();
     }
@@ -97,14 +97,14 @@ const getFilesizeInMegaBytes = filename => {
 };
 
 /**
- * Checks if the wazuhapp.log file size is greater than 100MB, if so it rotates the file.
+ * Checks if the portal9app.log file size is greater than 100MB, if so it rotates the file.
  */
 const checkFiles = () => {
   if (allowed) {
     if (getFilesizeInMegaBytes(WAZUH_DATA_LOGS_RAW_PATH) >= 100) {
       fs.renameSync(
         WAZUH_DATA_LOGS_RAW_PATH,
-        `${WAZUH_DATA_LOGS_DIRECTORY_PATH}/wazuhapp.${new Date().getTime()}.log`
+        `${WAZUH_DATA_LOGS_DIRECTORY_PATH}/portal9app.${new Date().getTime()}.log`
       );
       fs.writeFileSync(
         WAZUH_DATA_LOGS_RAW_PATH,
@@ -119,7 +119,7 @@ const checkFiles = () => {
     if (getFilesizeInMegaBytes(WAZUH_DATA_LOGS_PLAIN_PATH) >= 100) {
       fs.renameSync(
         WAZUH_DATA_LOGS_PLAIN_PATH,
-        `${WAZUH_DATA_LOGS_DIRECTORY_PATH}/wazuhapp-plain.${new Date().getTime()}.log`
+        `${WAZUH_DATA_LOGS_DIRECTORY_PATH}/portal9app-plain.${new Date().getTime()}.log`
       );
     }
   }
@@ -191,9 +191,9 @@ export function log(location, data, level) {
           options.message = parsedData;
           delete options.data;
         }
-        wazuhlogger.log(options);
+        portal9logger.log(options);
         
-        wazuhPlainLogger.log({
+        portal9PlainLogger.log({
           level: level || 'error',
           message: `${yyyymmdd()}: ${location ||
             'Unknown origin'}: ${parsedData.toString() || 'An error occurred'}`

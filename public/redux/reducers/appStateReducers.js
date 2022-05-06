@@ -13,7 +13,7 @@
 const initialState = {
   currentAPI: '',
   showMenu: false,
-  wazuhNotReadyYet: '',
+  portal9NotReadyYet: '',
   currentTab: '',
   extensions: {},
   selected_settings_section: '',
@@ -51,7 +51,7 @@ const appStateReducers = (state = initialState, action) => {
   if (action.type === 'UPDATE_WAZUH_NOT_READY_YET') {
     return {
       ...state,
-      wazuhNotReadyYet: action.wazuhNotReadyYet
+      portal9NotReadyYet: action.portal9NotReadyYet
     };
   }
 

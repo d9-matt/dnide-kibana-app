@@ -24,7 +24,7 @@ import {
   EuiButtonEmpty,
   EuiButton
 } from '@elastic/eui';
-import { WazuhConfig } from '../../../../react-services/wazuh-config';
+import { WazuhConfig } from '../../../../react-services/portal9-config';
 
 
 interface IBottomBarProps {

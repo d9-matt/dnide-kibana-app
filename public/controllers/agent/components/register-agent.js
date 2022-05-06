@@ -11,7 +11,7 @@
  */
 import React, { Component, Fragment } from 'react';
 import { version, kibana } from '../../../../package.json';
-import { WazuhConfig } from '../../../react-services/wazuh-config';
+import { WazuhConfig } from '../../../react-services/portal9-config';
 import {
   EuiSteps,
   EuiTabs,
@@ -118,8 +118,8 @@ const pTextCheckConnectionStyle = {
 export class RegisterAgent extends Component {
   constructor(props) {
     super(props);
-    this.wazuhConfig = new WazuhConfig();
-    this.configuration = this.wazuhConfig.getConfig();
+    this.portal9Config = new WazuhConfig();
+    this.configuration = this.portal9Config.getConfig();
     this.state = {
       status: 'incomplete',
       selectedOS: '',
@@ -129,9 +129,9 @@ export class RegisterAgent extends Component {
       selectedVersion: '',
       kibanaVersion: (kibana || {}).version || false,
       version: '',
-      wazuhVersion: '',
+      portal9Version: '',
       serverAddress: '',
-      wazuhPassword: '',
+      portal9Password: '',
       groups: [],
       selectedGroup: [],
       udpProtocol: false,
@@ -139,16 +139,16 @@ export class RegisterAgent extends Component {
     this.restartAgentCommand = {
       rpm: this.systemSelector(),
       deb: this.systemSelector(),
-      macos: 'sudo /Library/Ossec/bin/wazuh-control start',
+      macos: 'sudo /Library/Ossec/bin/portal9-control start',
     };
   }
 
   async componentDidMount() {
     try {
       this.setState({ loading: true });
-      const wazuhVersion = await this.props.getWazuhVersion();
+      const portal9Version = await this.props.getWazuhVersion();
       let serverAddress = false;
-      let wazuhPassword = '';
+      let portal9Password = '';
       let hidePasswordInput = false;
       serverAddress = this.configuration['enrollment.dns'] || false;
       if (!serverAddress) {
@@ -157,8 +157,8 @@ export class RegisterAgent extends Component {
       let authInfo = await this.getAuthInfo();
       const needsPassword = (authInfo.auth || {}).use_password === 'yes';
       if (needsPassword) {
-        wazuhPassword = this.configuration['enrollment.password'] || authInfo['authd.pass'] || '';
-        if (wazuhPassword) {
+        portal9Password = this.configuration['enrollment.password'] || authInfo['authd.pass'] || '';
+        if (portal9Password) {
           hidePasswordInput = true;
         }
       }
@@ -172,15 +172,15 @@ export class RegisterAgent extends Component {
         versionButtonsCentos,
         architectureButtons,
         architectureCentos5,
-        wazuhPassword,
+        portal9Password,
         udpProtocol,
-        wazuhVersion,
+        portal9Version,
         groups,
         loading: false,
       });
     } catch (error) {
       this.setState({
-        wazuhVersion: version,
+        portal9Version: version,
         loading: false,
       });
     }
@@ -217,12 +217,12 @@ export class RegisterAgent extends Component {
   systemSelector() {
     if (this.state.selectedOS === 'rpm') {
       if (this.state.selectedSYS === 'systemd') {
-        return 'sudo systemctl daemon-reload\nsudo systemctl enable wazuh-agent\nsudo systemctl start wazuh-agent';
-      } else return 'sudo chkconfig --add wazuh-agent\nsudo service wazuh-agent start';
+        return 'sudo systemctl daemon-reload\nsudo systemctl enable portal9-agent\nsudo systemctl start portal9-agent';
+      } else return 'sudo chkconfig --add portal9-agent\nsudo service portal9-agent start';
     } else if (this.state.selectedOS === 'deb') {
       if (this.state.selectedSYS === 'systemd') {
-        return 'sudo systemctl daemon-reload\nsudo systemctl enable wazuh-agent\nsudo systemctl start wazuh-agent';
-      } else return 'sudo update-rc.d wazuh-agent defaults 95 10\nsudo service wazuh-agent start';
+        return 'sudo systemctl daemon-reload\nsudo systemctl enable portal9-agent\nsudo systemctl start portal9-agent';
+      } else return 'sudo update-rc.d portal9-agent defaults 95 10\nsudo service portal9-agent start';
     } else return '';
   }
 
@@ -247,7 +247,7 @@ export class RegisterAgent extends Component {
   }
 
   setWazuhPassword(event) {
-    this.setState({ wazuhPassword: event.target.value });
+    this.setState({ portal9Password: event.target.value });
   }
 
   obfuscatePassword(text) {
@@ -278,7 +278,7 @@ export class RegisterAgent extends Component {
     }
 
     if (this.state.needsPassword) {
-      deployment += `WAZUH_REGISTRATION_PASSWORD='${this.state.wazuhPassword}' `;
+      deployment += `WAZUH_REGISTRATION_PASSWORD='${this.state.portal9Password}' `;
     }
 
     if (this.state.udpProtocol) {
@@ -301,34 +301,34 @@ export class RegisterAgent extends Component {
   resolveRPMPackage() {
     switch (`${this.state.selectedVersion}-${this.state.selectedArchitecture}`) {
       case 'centos5-i386':
-        return `https://packages.wazuh.com/4.x/yum5/i386/wazuh-agent-${this.state.wazuhVersion}-1.el5.i386.rpm`;
+        return `https://packages.portal9.com/4.x/yum5/i386/portal9-agent-${this.state.portal9Version}-1.el5.i386.rpm`;
       case 'centos5-x86_64':
-        return `https://packages.wazuh.com/4.x/yum5/x86_64/wazuh-agent-${this.state.wazuhVersion}-1.el5.x86_64.rpm`;
+        return `https://packages.portal9.com/4.x/yum5/x86_64/portal9-agent-${this.state.portal9Version}-1.el5.x86_64.rpm`;
       case 'centos6-i386':
-        return `https://packages.wazuh.com/4.x/yum/wazuh-agent-${this.state.wazuhVersion}-1.i386.rpm`;
+        return `https://packages.portal9.com/4.x/yum/portal9-agent-${this.state.portal9Version}-1.i386.rpm`;
       case 'centos6-aarch64':
-        return `https://packages.wazuh.com/4.x/yum/wazuh-agent-${this.state.wazuhVersion}-1.aarch64.rpm`;
+        return `https://packages.portal9.com/4.x/yum/portal9-agent-${this.state.portal9Version}-1.aarch64.rpm`;
       case 'centos6-x86_64':
-        return `https://packages.wazuh.com/4.x/yum/wazuh-agent-${this.state.wazuhVersion}-1.x86_64.rpm`;
+        return `https://packages.portal9.com/4.x/yum/portal9-agent-${this.state.portal9Version}-1.x86_64.rpm`;
       case 'centos6-armhf':
-        return `https://packages.wazuh.com/4.x/yum/wazuh-agent-${this.state.wazuhVersion}-1.armv7hl.rpm`;
+        return `https://packages.portal9.com/4.x/yum/portal9-agent-${this.state.portal9Version}-1.armv7hl.rpm`;
       default:
-        return `https://packages.wazuh.com/4.x/yum/wazuh-agent-${this.state.wazuhVersion}-1.x86_64.rpm`;
+        return `https://packages.portal9.com/4.x/yum/portal9-agent-${this.state.portal9Version}-1.x86_64.rpm`;
     }
   }
 
   resolveDEBPackage() {
     switch (`${this.state.selectedArchitecture}`) {
       case 'i386':
-        return `https://packages.wazuh.com/4.x/apt/pool/main/w/wazuh-agent/wazuh-agent_${this.state.wazuhVersion}-1_i386.deb`;
+        return `https://packages.portal9.com/4.x/apt/pool/main/w/portal9-agent/portal9-agent_${this.state.portal9Version}-1_i386.deb`;
       case 'aarch64':
-        return `https://packages.wazuh.com/4.x/apt/pool/main/w/wazuh-agent/wazuh-agent_${this.state.wazuhVersion}-1_arm64.deb`;
+        return `https://packages.portal9.com/4.x/apt/pool/main/w/portal9-agent/portal9-agent_${this.state.portal9Version}-1_arm64.deb`;
       case 'armhf':
-        return `https://packages.wazuh.com/4.x/apt/pool/main/w/wazuh-agent/wazuh-agent_${this.state.wazuhVersion}-1_armhf.deb`;
+        return `https://packages.portal9.com/4.x/apt/pool/main/w/portal9-agent/portal9-agent_${this.state.portal9Version}-1_armhf.deb`;
       case 'x86_64':
-        return `https://packages.wazuh.com/4.x/apt/pool/main/w/wazuh-agent/wazuh-agent_${this.state.wazuhVersion}-1_amd64.deb`;
+        return `https://packages.portal9.com/4.x/apt/pool/main/w/portal9-agent/portal9-agent_${this.state.portal9Version}-1_amd64.deb`;
       default:
-        return `https://packages.wazuh.com/4.x/apt/pool/main/w/wazuh-agent/wazuh-agent_${this.state.wazuhVersion}-1_amd64.deb`;
+        return `https://packages.portal9.com/4.x/apt/pool/main/w/portal9-agent/portal9-agent_${this.state.portal9Version}-1_amd64.deb`;
     }
   }
 
@@ -339,7 +339,7 @@ export class RegisterAgent extends Component {
       case 'deb':
         return this.resolveDEBPackage();
       default:
-        return `https://packages.wazuh.com/4.x/yum5/x86_64/wazuh-agent-${this.state.wazuhVersion}-1.x86_64.rpm`;
+        return `https://packages.portal9.com/4.x/yum5/x86_64/portal9-agent-${this.state.portal9Version}-1.x86_64.rpm`;
     }
   }
 
@@ -372,8 +372,8 @@ export class RegisterAgent extends Component {
   }
 
   render() {
-    const appVersionMajorDotMinor = this.state.wazuhVersion.split('.').slice(0, 2).join('.'); 
-    const urlCheckConnectionDocumentation = `https://documentation.wazuh.com/${appVersionMajorDotMinor}/user-manual/agents/agent-connection.html`;
+    const appVersionMajorDotMinor = this.state.portal9Version.split('.').slice(0, 2).join('.'); 
+    const urlCheckConnectionDocumentation = `https://documentation.portal9.com/${appVersionMajorDotMinor}/user-manual/agents/agent-connection.html`;
     const textAndLinkToCheckConnectionDocumentation = (
       <p style={pTextCheckConnectionStyle}>
         To verify the connection with the Manager, please follow this{' '}
@@ -417,7 +417,7 @@ export class RegisterAgent extends Component {
     const passwordInput = (
       <EuiFieldText
         placeholder="Wazuh password"
-        value={this.state.wazuhPassword}
+        value={this.state.portal9Password}
         onChange={(event) => this.setWazuhPassword(event)}
       />
     );
@@ -427,13 +427,13 @@ export class RegisterAgent extends Component {
     };
     const customTexts = {
       rpmText: `sudo ${this.optionalDeploymentVariables()}yum install ${this.optionalPackages()}`,
-      debText: `curl -so wazuh-agent-${this.state.wazuhVersion}.deb ${this.optionalPackages()} && sudo ${this.optionalDeploymentVariables()}dpkg -i ./wazuh-agent-${this.state.wazuhVersion}.deb`,
-      macosText: `curl -so wazuh-agent-${this.state.wazuhVersion}.pkg https://packages.wazuh.com/4.x/macos/wazuh-agent-${
-        this.state.wazuhVersion
-      }-1.pkg && sudo launchctl setenv ${this.optionalDeploymentVariables()}&& sudo installer -pkg ./wazuh-agent-${this.state.wazuhVersion}.pkg -target /`,
-      winText: `Invoke-WebRequest -Uri https://packages.wazuh.com/4.x/windows/wazuh-agent-${
-        this.state.wazuhVersion
-      }-1.msi -OutFile wazuh-agent-${this.state.wazuhVersion}.msi; ./wazuh-agent-${this.state.wazuhVersion}.msi /q ${this.optionalDeploymentVariables()}`,
+      debText: `curl -so portal9-agent-${this.state.portal9Version}.deb ${this.optionalPackages()} && sudo ${this.optionalDeploymentVariables()}dpkg -i ./portal9-agent-${this.state.portal9Version}.deb`,
+      macosText: `curl -so portal9-agent-${this.state.portal9Version}.pkg https://packages.portal9.com/4.x/macos/portal9-agent-${
+        this.state.portal9Version
+      }-1.pkg && sudo launchctl setenv ${this.optionalDeploymentVariables()}&& sudo installer -pkg ./portal9-agent-${this.state.portal9Version}.pkg -target /`,
+      winText: `Invoke-WebRequest -Uri https://packages.portal9.com/4.x/windows/portal9-agent-${
+        this.state.portal9Version
+      }-1.msi -OutFile portal9-agent-${this.state.portal9Version}.msi; ./portal9-agent-${this.state.portal9Version}.msi /q ${this.optionalDeploymentVariables()}`,
     };
 
     const field = `${this.state.selectedOS}Text`;
@@ -460,12 +460,12 @@ export class RegisterAgent extends Component {
             <p>You can use this command to install and enroll the Wazuh agent in one or more hosts.</p>
             <EuiCallOut
               color="warning"
-              title={<>Running this command on a host with an agent already installed upgrades the agent package without enrolling the agent. To enroll it, see the <EuiLink href="https://documentation.wazuh.com/current/user-manual/registering/index.html">Wazuh documentation</EuiLink>.</>}
+              title={<>Running this command on a host with an agent already installed upgrades the agent package without enrolling the agent. To enroll it, see the <EuiLink href="https://documentation.portal9.com/current/user-manual/registering/index.html">Wazuh documentation</EuiLink>.</>}
               iconType="iInCircle"
             />
             <EuiSpacer />
             <EuiCodeBlock style={codeBlock} language={language}>
-              {this.state.wazuhPassword ? this.obfuscatePassword(text) : text}
+              {this.state.portal9Password ? this.obfuscatePassword(text) : text}
             </EuiCodeBlock>
             {windowsAdvice}
             <EuiCopy textToCopy={text}>

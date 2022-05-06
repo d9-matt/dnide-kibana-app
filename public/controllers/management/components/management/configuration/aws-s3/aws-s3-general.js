@@ -81,7 +81,7 @@ class WzConfigurationAmazonS3General extends Component {
 
 WzConfigurationAmazonS3General.propTypes = {
   // currentConfig: PropTypes.object.isRequired,
-  wazuhNotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
+  portal9NotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
 };
 
 export default WzConfigurationAmazonS3General;

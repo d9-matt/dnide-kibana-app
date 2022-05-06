@@ -34,7 +34,7 @@ import settingsTemplate from '../templates/settings/settings.html';
 import securityTemplate from '../templates/security/security.html';
 import blankScreenTemplate from '../templates/error-handler/blank-screen.html';
 import toolsTemplate from '../templates/tools/tools.html';
-import { WazuhConfig } from '../react-services/wazuh-config';
+import { WazuhConfig } from '../react-services/portal9-config';
 import { GenericRequest } from '../react-services/generic-request';
 import { WzMisc } from '../factories/misc';
 import { ApiCheck } from '../react-services/wz-api-check';
@@ -66,10 +66,10 @@ function nestedResolve($q, errorHandler, $rootScope, $location, $window) {
   const wzMisc = new WzMisc();
   const healthCheckStatus = $window.sessionStorage.getItem('healthCheck');
   if (!healthCheckStatus) return;
-  const wazuhConfig = new WazuhConfig();
+  const portal9Config = new WazuhConfig();
   assignPreviousLocation($rootScope, $location);
   const location = $location.path();
-  return getWzConfig($q, GenericRequest, wazuhConfig).then(() =>
+  return getWzConfig($q, GenericRequest, portal9Config).then(() =>
     settingsWizard(
       $location,
       $q,
@@ -102,8 +102,8 @@ function savedSearch(
 
 function wzConfig($q, $rootScope, $location) {
   assignPreviousLocation($rootScope, $location);
-  const wazuhConfig = new WazuhConfig();
-  return getWzConfig($q, GenericRequest, wazuhConfig);
+  const portal9Config = new WazuhConfig();
+  return getWzConfig($q, GenericRequest, portal9Config);
 }
 
 function wzKibana($location, $window, $rootScope) {
@@ -195,7 +195,7 @@ app.config(($routeProvider) => {
     resolve: { wzKibana },
     outerAngularWrapperRoute: true
   })
-  .when('/wazuh-dev', {
+  .when('/portal9-dev', {
     template: toolsTemplate,
     resolve: { enableWzMenu, nestedResolve, ip, savedSearch },
     outerAngularWrapperRoute: true

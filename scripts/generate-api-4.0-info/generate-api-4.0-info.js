@@ -26,7 +26,7 @@ const reEndpointPathArgs = /\{([^}]+)\}/g; // Regular expresion to get the endpo
 const reFormatter = /--full/
 
 const OUTPUT_MODE_FULL = consoleInput.match(reFormatter) && true;
-const WAZUH_DOCUMENTATION_API_REFERENCE_URL = 'https://documentation.wazuh.com/current/user-manual/api/reference.html'
+const WAZUH_DOCUMENTATION_API_REFERENCE_URL = 'https://documentation.portal9.com/current/user-manual/api/reference.html'
 const OUTPUT_ENDPOINTS_FILENAME = `${(consoleInput.match(reFilename) || [])[1] || 'endpoints'}.json`;
 const OUTPUT_SECURITY_ACTIONS_FILENAME = 'security-actions.json';
 const OUTPUT_DIRECTORY = path.join(__dirname, 'output');
@@ -107,8 +107,8 @@ const generateAPISecurityActionsInformation = async () => {
   if(!WAZUH_API_URL.startsWith('http') ){
     exitWithMessage(`Wazuh API url is not valid. It should start with "http". Example: https://172.16.1.2:55000`);
   };
-  const username = 'wazuh';
-  const password = 'wazuh';
+  const username = 'portal9';
+  const password = 'portal9';
   try{
     const authenticationResponse = await request(`${WAZUH_API_URL}/security/user/authenticate`, {
       headers: {

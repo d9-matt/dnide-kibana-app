@@ -64,12 +64,12 @@ const sections = [
 ];
 
 const mapStateToProps = state => ({
-  wazuhNotReadyYet: state.appStateReducers.wazuhNotReadyYet
+  portal9NotReadyYet: state.appStateReducers.portal9NotReadyYet
 });
 
 WzConfigurationAlerts.propTypes = {
   // currentConfig: PropTypes.object.isRequired,
-  wazuhNotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
+  portal9NotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
 };
 
 export default compose(

@@ -13,6 +13,6 @@
 /* eslint-disable no-undef */
 const newSS = document.createElement('link');
 newSS.rel = 'stylesheet';
-newSS.href = '../plugins/wazuh/less/icon-style.css';
+newSS.href = '../plugins/portal9/less/icon-style.css';
 document.getElementsByTagName('head')[0].appendChild(newSS);
 /* eslint-enable no-undef */

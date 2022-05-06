@@ -14,7 +14,7 @@ import { healthCheck } from './health-check';
 import { AppState } from '../../react-services/app-state';
 import { ErrorHandler } from '../../react-services/error-handler';
 import { getDataPlugin, getSavedObjects } from '../../kibana-services';
-import { WazuhConfig } from '../../react-services/wazuh-config';
+import { WazuhConfig } from '../../react-services/portal9-config';
 import { GenericRequest } from '../../react-services/generic-request';
 import { getWzConfig } from './get-config';
 
@@ -27,13 +27,13 @@ export function getIp(
   const deferred = $q.defer();
 
   const checkWazuhPatterns = async (indexPatterns) => {
-    const wazuhConfig = new WazuhConfig();
-    const configuration = await getWzConfig($q, GenericRequest, wazuhConfig);
-    const wazuhPatterns = [
-      `${configuration['wazuh.monitoring.pattern']}`,
+    const portal9Config = new WazuhConfig();
+    const configuration = await getWzConfig($q, GenericRequest, portal9Config);
+    const portal9Patterns = [
+      `${configuration['portal9.monitoring.pattern']}`,
       `${configuration['cron.prefix']}-${configuration['cron.statistics.index.name']}-*`
     ];
-    return wazuhPatterns.every(pattern => {
+    return portal9Patterns.every(pattern => {
       return indexPatterns.find(
         element => element.id === pattern
       );

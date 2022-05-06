@@ -26,17 +26,17 @@ const helpLinks = [
   {
     text: 'How to integrate Wazuh with external APIs',
     href:
-      'https://documentation.wazuh.com/current/user-manual/manager/manual-integration.html'
+      'https://documentation.portal9.com/current/user-manual/manager/manual-integration.html'
   },
   {
     text: 'VirusTotal integration documentation',
     href:
-      'https://documentation.wazuh.com/current/user-manual/capabilities/virustotal-scan/index.html'
+      'https://documentation.portal9.com/current/user-manual/capabilities/virustotal-scan/index.html'
   },
   {
     text: 'Integration reference',
     href:
-      'https://documentation.wazuh.com/current/user-manual/reference/ossec-conf/integration.html'
+      'https://documentation.portal9.com/current/user-manual/reference/ossec-conf/integration.html'
   }
 ];
 

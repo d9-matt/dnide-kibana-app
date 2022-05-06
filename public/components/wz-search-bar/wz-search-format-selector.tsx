@@ -45,7 +45,7 @@ export class WzSearchFormatSelector extends Component {
         The ?Q filter offers a simplified query syntax to get 
         data of the Wazuh
       </p>
-      <a href="https://documentation.wazuh.com/current/user-manual/api/queries.html"
+      <a href="https://documentation.portal9.com/current/user-manual/api/queries.html"
         target="_blank" >
         ?Q filter documentation
       </a>
@@ -57,7 +57,7 @@ export class WzSearchFormatSelector extends Component {
         Use the parameters of the Wazuh API to filter the data output, 
         check our documentation for more info
       </p>
-      <a href="https://documentation.wazuh.com/current/user-manual/api/reference.html"
+      <a href="https://documentation.portal9.com/current/user-manual/api/reference.html"
         target="_blank" >
         API Reference
       </a>

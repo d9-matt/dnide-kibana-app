@@ -11,7 +11,7 @@
  */
 import { log } from '../lib/logger';
 
-export const tryCatchForIndexPermissionError = (wazuhIndex: string) => (functionToTryCatch) => async () => {
+export const tryCatchForIndexPermissionError = (portal9Index: string) => (functionToTryCatch) => async () => {
     try {
         await functionToTryCatch();
     }
@@ -26,7 +26,7 @@ export const tryCatchForIndexPermissionError = (wazuhIndex: string) => (function
               break;
             case errorTypes.RESPONSE_ERROR:
               error.message = `Could not check if the index ${
-                wazuhIndex
+                portal9Index
               } exists due to no permissions for create, delete or check`;
               break;
         }

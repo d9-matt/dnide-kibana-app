@@ -21,7 +21,7 @@ import {
   EuiSpacer
 } from '@elastic/eui';
 
-import { WAZUH_MODULES } from '../../../../common/wazuh-modules';
+import { WAZUH_MODULES } from '../../../../common/portal9-modules';
 
 export class ToolsWelcomeCards extends Component {
   constructor(props) {

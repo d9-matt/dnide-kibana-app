@@ -34,12 +34,12 @@ export const updateShowMenu = showMenu => {
 
 /**
  * Updates WazuhNotReadyYet in the appState store
- * @param wazuhNotReadyYet
+ * @param portal9NotReadyYet
  */
-export const updateWazuhNotReadyYet = wazuhNotReadyYet => {
+export const updateWazuhNotReadyYet = portal9NotReadyYet => {
   return {
     type: 'UPDATE_WAZUH_NOT_READY_YET',
-    wazuhNotReadyYet: wazuhNotReadyYet
+    portal9NotReadyYet: portal9NotReadyYet
   };
 };
 

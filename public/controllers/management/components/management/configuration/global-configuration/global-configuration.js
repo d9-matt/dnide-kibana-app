@@ -59,7 +59,7 @@ const sectionsManager = [
 const sectionsAgent = [{ component: 'com', configuration: 'logging' }];
 
 const mapStateToProps = state => ({
-  wazuhNotReadyYet: state.appStateReducers.wazuhNotReadyYet,
+  portal9NotReadyYet: state.appStateReducers.portal9NotReadyYet,
   clusterNodeSelected: state.configurationReducers.clusterNodeSelected
 });
 

@@ -37,7 +37,7 @@ import {
 } from '@elastic/eui';
 import { FimEventsTable, ScaScan, MitreTopTactics, RequirementVis } from './components';
 import { AgentInfo } from './agents-info';
-import { WAZUH_MODULES } from '../../../../common/wazuh-modules';
+import { WAZUH_MODULES } from '../../../../common/portal9-modules';
 import store from '../../../redux/store';
 import { updateGlobalBreadcrumb } from '../../../redux/actions/globalBreadcrumbActions';
 import { ActionAgents } from '../../../react-services/action-agents';
@@ -518,8 +518,8 @@ export class AgentsWelcome extends Component {
               <p>
                 The agent has been registered but has not yet connected to the manager.
             </p>
-              <a href="https://documentation.wazuh.com/current/user-manual/agents/agent-connection.html" target="_blank">
-                https://documentation.wazuh.com/current/user-manual/agents/agent-connection.html
+              <a href="https://documentation.portal9.com/current/user-manual/agents/agent-connection.html" target="_blank">
+                https://documentation.portal9.com/current/user-manual/agents/agent-connection.html
             </a>
             </Fragment>
           }

@@ -32,7 +32,7 @@ export function addHelpMenuToAppChrome(){
       {
         linkType: 'custom',
         href: `${WAZUH_LINK_DOCUMENTATION}/${appVersionMajorDotMinor}`,
-        content: <span><EuiIcon type={getHttp().basePath.prepend('/plugins/wazuh/assets/icon_blue.svg')}></EuiIcon> Documentation</span>
+        content: <span><EuiIcon type={getHttp().basePath.prepend('/plugins/portal9/assets/icon_blue.svg')}></EuiIcon> Documentation</span>
       },
       {
         linkType: 'custom',
@@ -47,7 +47,7 @@ export function addHelpMenuToAppChrome(){
       {
         linkType: 'custom',
         href: WAZUH_LINK_GOOGLE_GROUPS,
-        content: <span><EuiIcon type={getHttp().basePath.prepend('/plugins/wazuh/assets/icon_google_groups.svg')}></EuiIcon> Google Group</span>
+        content: <span><EuiIcon type={getHttp().basePath.prepend('/plugins/portal9/assets/icon_google_groups.svg')}></EuiIcon> Google Group</span>
       }
     ]
   });

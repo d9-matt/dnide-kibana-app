@@ -139,7 +139,7 @@ export class AddApi extends Component {
       <div>
         <EuiText>
           Modify{' '}
-          <EuiCode>/usr/share/kibana/data/wazuh/config/wazuh.yml</EuiCode>{' '}
+          <EuiCode>/usr/share/kibana/data/portal9/config/portal9.yml</EuiCode>{' '}
           to set the connection information.
         </EuiText>
         <EuiSpacer />

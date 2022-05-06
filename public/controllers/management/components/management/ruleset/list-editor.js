@@ -645,7 +645,7 @@ const mapDispatchToProps = dispatch => {
   return {
     cleanInfo: () => dispatch(cleanInfo()),
     updateListContent: content => dispatch(updateListContent(content)),
-    updateWazuhNotReadyYet: wazuhNotReadyYet => dispatch(updateWazuhNotReadyYet(wazuhNotReadyYet))
+    updateWazuhNotReadyYet: portal9NotReadyYet => dispatch(updateWazuhNotReadyYet(portal9NotReadyYet))
   };
 };
 

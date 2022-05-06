@@ -33,7 +33,7 @@ export class WazuhUtilsCtrl {
   }
 
   /**
-   * Returns the wazuh.yml file parsed
+   * Returns the portal9.yml file parsed
    * @param {Object} context
    * @param {Object} request
    * @param {Object} response
@@ -56,7 +56,7 @@ export class WazuhUtilsCtrl {
   }
 
   /**
-   * Returns the wazuh.yml file in raw
+   * Returns the portal9.yml file in raw
    * @param {Object} context
    * @param {Object} request
    * @param {Object} response
@@ -81,7 +81,7 @@ export class WazuhUtilsCtrl {
       if( !apiHostID ){
         return ErrorResponse('No API id provided', 401, 401, response);
       };
-      const responseTokenIsWorking = await context.wazuh.api.client.asCurrentUser.request('GET', '//', {}, {apiHostID});
+      const responseTokenIsWorking = await context.portal9.api.client.asCurrentUser.request('GET', '//', {}, {apiHostID});
       if(responseTokenIsWorking.status !== 200){
         return ErrorResponse('Token is not valid', 401, 401, response);
       };

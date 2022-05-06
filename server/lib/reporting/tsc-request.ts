@@ -17,7 +17,7 @@ import { WAZUH_ALERTS_PATTERN } from '../../../common/constants';
    * @param {Number} context Endpoint context
    * @param {Number} gte Timestamp (ms) from
    * @param {Number} lte Timestamp (ms) to
-   * @param {String} filters E.g: cluster.name: wazuh AND rule.groups: vulnerability
+   * @param {String} filters E.g: cluster.name: portal9 AND rule.groups: vulnerability
    * @returns {Array<String>}
    */
 export const topTSCRequirements = async (
@@ -87,7 +87,7 @@ export const topTSCRequirements = async (
  * @param {Number} gte Timestamp (ms) from
  * @param {Number} lte Timestamp (ms) to
  * @param {String} requirement TSCrequirement. E.g: 'CC7.2'
- * @param {String} filters E.g: cluster.name: wazuh AND rule.groups: vulnerability
+ * @param {String} filters E.g: cluster.name: portal9 AND rule.groups: vulnerability
  * @returns {Array<String>}
  */
 export const getRulesByRequirement = async (

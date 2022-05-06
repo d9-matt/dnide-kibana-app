@@ -18,7 +18,7 @@ import { WAZUH_ALERTS_PATTERN } from '../../../common/constants';
    * @param {*} context Endpoint context
    * @param {Number} gte Timestamp (ms) from
    * @param {Number} lte Timestamp (ms) to
-   * @param {String} filters E.g: cluster.name: wazuh AND rule.groups: vulnerability
+   * @param {String} filters E.g: cluster.name: portal9 AND rule.groups: vulnerability
    * @returns {Array<String>}
    */
 export const top3agents = async (
@@ -70,7 +70,7 @@ export const top3agents = async (
    * Returns top 3 rules
    * @param {Number} gte Timestamp (ms) from
    * @param {Number} lte Timestamp (ms) to
-   * @param {String} filters E.g: cluster.name: wazuh AND rule.groups: vulnerability
+   * @param {String} filters E.g: cluster.name: portal9 AND rule.groups: vulnerability
    * @returns {Array<String>}
    */
 export const top3Rules = async (

@@ -15,7 +15,7 @@ export default {
   wodle_name: 'open-scap',
   description: 'Configuration options of the OpenSCAP wodle.',
   category: 'Auditing and policy monitoring',
-  documentation_link: 'https://documentation.wazuh.com/current/user-manual/reference/ossec-conf/wodle-openscap.html',
+  documentation_link: 'https://documentation.portal9.com/current/user-manual/reference/ossec-conf/wodle-openscap.html',
   icon: 'securityApp',
   avaliable_for_manager: true,
   avaliable_for_agent: true,

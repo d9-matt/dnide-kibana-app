@@ -9,8 +9,8 @@
  *
  * Find more information about this on the LICENSE file.
  */
-export { WazuhElasticCtrl } from './wazuh-elastic';
-export { WazuhApiCtrl } from './wazuh-api';
-export { WazuhUtilsCtrl } from './wazuh-utils';
-export { WazuhReportingCtrl } from './wazuh-reporting';
-export { WazuhHostsCtrl } from './wazuh-hosts'
+export { WazuhElasticCtrl } from './portal9-elastic';
+export { WazuhApiCtrl } from './portal9-api';
+export { WazuhUtilsCtrl } from './portal9-utils';
+export { WazuhReportingCtrl } from './portal9-reporting';
+export { WazuhHostsCtrl } from './portal9-hosts'

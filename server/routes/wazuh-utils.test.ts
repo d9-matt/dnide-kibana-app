@@ -1,5 +1,5 @@
 // To launch this file
-// yarn test:jest --testEnvironment node --verbose server/routes/wazuh-utils
+// yarn test:jest --testEnvironment node --verbose server/routes/portal9-utils
 import axios from 'axios';
 
 function buildAxiosOptions(method: string, path: string, data: any = {}, headers: any = {}){

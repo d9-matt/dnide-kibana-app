@@ -28,12 +28,12 @@ const helpLinks = [
   {
     text: 'Anti-flooding mechanism',
     href:
-      'https://documentation.wazuh.com/current/user-manual/capabilities/antiflooding.html'
+      'https://documentation.portal9.com/current/user-manual/capabilities/antiflooding.html'
   },
   {
     text: 'Client buffer reference',
     href:
-      'https://documentation.wazuh.com/current/user-manual/reference/ossec-conf/agent_buffer.html'
+      'https://documentation.portal9.com/current/user-manual/reference/ossec-conf/agent_buffer.html'
   }
 ];
 

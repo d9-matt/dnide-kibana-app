@@ -180,7 +180,7 @@ class WzRulesetEditor extends Component {
 
   render() {
     const { section, addingRulesetFile, fileContent } = this.props.state;
-    const { wazuhNotReadyYet } = this.props;
+    const { portal9NotReadyYet } = this.props;
     const { name, content, path, showWarningRestart } = this.state;
     const isRules = path.includes('rules') ? 'Ruleset Test' : 'Decoders Test';
 
@@ -357,7 +357,7 @@ class WzRulesetEditor extends Component {
                           theme="textmate"
                           width="100%"
                           height={`calc(100vh - ${
-                            (showWarningRestart && !xmlError) || wazuhNotReadyYet
+                            (showWarningRestart && !xmlError) || portal9NotReadyYet
                               ? 300
                               : xmlError
                               ? !showWarningRestart
@@ -392,7 +392,7 @@ class WzRulesetEditor extends Component {
 const mapStateToProps = state => {
   return {
     state: state.rulesetReducers,
-    wazuhNotReadyYet: state.appStateReducers.wazuhNotReadyYet,
+    portal9NotReadyYet: state.appStateReducers.portal9NotReadyYet,
     showFlyout: state.appStateReducers.showFlyoutLogtest,
   };
 };
@@ -401,7 +401,7 @@ const mapDispatchToProps = dispatch => {
   return {
     cleanInfo: () => dispatch(cleanInfo()),
     updateFileContent: content => dispatch(updateFileContent(content)),
-    updateWazuhNotReadyYet: wazuhNotReadyYet => dispatch(updateWazuhNotReadyYet(wazuhNotReadyYet)),
+    updateWazuhNotReadyYet: portal9NotReadyYet => dispatch(updateWazuhNotReadyYet(portal9NotReadyYet)),
     showFlyoutLogtest: showFlyout => dispatch(showFlyoutLogtest(showFlyout)),
   };
 };

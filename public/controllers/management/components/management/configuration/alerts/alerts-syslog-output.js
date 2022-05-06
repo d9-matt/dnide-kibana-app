@@ -30,12 +30,12 @@ const helpLinks = [
   {
     text: 'How to configure the syslog output',
     href:
-      'https://documentation.wazuh.com/current/user-manual/manager/manual-syslog-output.html'
+      'https://documentation.portal9.com/current/user-manual/manager/manual-syslog-output.html'
   },
   {
     text: 'Syslog output reference',
     href:
-      'https://documentation.wazuh.com/current/user-manual/reference/ossec-conf/syslog-output.html'
+      'https://documentation.portal9.com/current/user-manual/reference/ossec-conf/syslog-output.html'
   }
 ];
 
@@ -54,7 +54,7 @@ class WzConfigurationAlertsReports extends Component {
     super(props);
   }
   render() {
-    const { currentConfig, wazuhNotReadyYet } = this.props;
+    const { currentConfig, portal9NotReadyYet } = this.props;
     return (
       <Fragment>
         {currentConfig['csyslog-csyslog'] &&
@@ -70,7 +70,7 @@ class WzConfigurationAlertsReports extends Component {
             !currentConfig['csyslog-csyslog'].syslog_output.length) && (
             <WzNoConfig error="not-present" help={helpLinks} />
           )}
-        {wazuhNotReadyYet &&
+        {portal9NotReadyYet &&
           (!currentConfig || !currentConfig['csyslog-csyslog']) && (
             <WzNoConfig error="Wazuh not ready yet" help={helpLinks} />
           )}
@@ -97,12 +97,12 @@ class WzConfigurationAlertsReports extends Component {
 }
 
 const mapStateToProps = state => ({
-  wazuhNotReadyYet: state.appStateReducers.wazuhNotReadyYet
+  portal9NotReadyYet: state.appStateReducers.portal9NotReadyYet
 });
 
 WzConfigurationAlertsReports.propTypes = {
   // currentConfig: PropTypes.object.isRequired,
-  wazuhNotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
+  portal9NotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
 };
 
 export default connect(mapStateToProps)(WzConfigurationAlertsReports);

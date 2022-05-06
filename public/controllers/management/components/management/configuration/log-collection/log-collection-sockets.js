@@ -27,12 +27,12 @@ const helpLinks = [
   {
     text: 'Using multiple outputs',
     href:
-      'https://documentation.wazuh.com/current/user-manual/capabilities/log-data-collection/log-data-configuration.html#using-multiple-outputs'
+      'https://documentation.portal9.com/current/user-manual/capabilities/log-data-collection/log-data-configuration.html#using-multiple-outputs'
   },
   {
     text: 'Socket reference',
     href:
-      'https://documentation.wazuh.com/current/user-manual/reference/ossec-conf/socket.html'
+      'https://documentation.portal9.com/current/user-manual/reference/ossec-conf/socket.html'
   }
 ];
 

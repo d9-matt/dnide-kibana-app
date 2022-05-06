@@ -12,7 +12,7 @@
 
 import axios from 'axios';
 import { AppState } from './app-state';
-import { WazuhConfig } from './wazuh-config';
+import { WazuhConfig } from './portal9-config';
 import { ApiCheck } from './wz-api-check';
 import { WzMisc } from '../factories/misc';
 import { OdfeUtils } from '../utils';
@@ -24,8 +24,8 @@ export class GenericRequest {
       if (!method || !path) {
         throw new Error('Missing parameters');
       }
-      const wazuhConfig = new WazuhConfig();
-      const { timeout } = wazuhConfig.getConfig();
+      const portal9Config = new WazuhConfig();
+      const { timeout } = portal9Config.getConfig();
       const requestHeaders = {
         'Content-Type': 'application/json',
         'kbn-xsrf': 'kibana'
@@ -100,7 +100,7 @@ export class GenericRequest {
           wzMisc.setApiIsDown(true);
 
           if (!window.location.hash.includes('#/settings')) {
-            window.location.href = getHttp().basePath.prepend('/app/wazuh#/health-check');
+            window.location.href = getHttp().basePath.prepend('/app/portal9#/health-check');
           }
         }
       }

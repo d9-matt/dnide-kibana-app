@@ -36,7 +36,7 @@ export function ClusterController(
   const tabVisualizations = new TabVisualizations();
   getDataPlugin().query.timefilter.timefilter.setRefreshInterval({ pause: true, value: 0 });
   $scope.search = term => {
-    $scope.$broadcast('wazuhSearch', { term });
+    $scope.$broadcast('portal9Search', { term });
   };
 
   const clusterEnabled =
@@ -118,7 +118,7 @@ export function ClusterController(
   };
 
   //listeners
-  $scope.$on('wazuhShowClusterNode', async (event, parameters) => {
+  $scope.$on('portal9ShowClusterNode', async (event, parameters) => {
     try {
       tabVisualizations.assign({
         monitoring: 1

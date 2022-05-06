@@ -28,7 +28,7 @@ const helpLinks = [
   {
     text: 'Docker listener module reference',
     href:
-      'https://documentation.wazuh.com/current/user-manual/reference/ossec-conf/wodle-docker.html'
+      'https://documentation.portal9.com/current/user-manual/reference/ossec-conf/wodle-docker.html'
   }
 ];
 

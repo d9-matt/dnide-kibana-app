@@ -59,7 +59,7 @@ class WzConfigurationOpenSCAP extends Component {
 }
 
 const mapStateToProps = state => ({
-  wazuhNotReadyYet: state.appStateReducers.wazuhNotReadyYet
+  portal9NotReadyYet: state.appStateReducers.portal9NotReadyYet
 });
 
 const sections = [{ component: 'wmodules', configuration: 'wmodules' }];

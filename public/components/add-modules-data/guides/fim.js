@@ -15,7 +15,7 @@ export default {
   name: 'Integrity monitoring',
   description: 'Configuration options for file integrity monitoring.',
   category: 'Security information management',
-  documentation_link: 'https://documentation.wazuh.com/current/user-manual/reference/ossec-conf/syscheck.html',
+  documentation_link: 'https://documentation.portal9.com/current/user-manual/reference/ossec-conf/syscheck.html',
   icon: 'filebeatApp',
   avaliable_for_manager: true,
   avaliable_for_agent: true,

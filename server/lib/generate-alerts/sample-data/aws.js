@@ -276,7 +276,7 @@ export const apiCall = {
         "resourceType": "AccessKey"
       },
       "log_info": {
-        "s3bucket": "wazuh-aws-wodle",
+        "s3bucket": "portal9-aws-wodle",
         "log_file": "guardduty/2020/04/22/10/firehose_guardduty-1-2020-04-22-10-36-02-d67c99dc-800a-486a-8339-59a7a8254ab2.zip"
       },
       "description": "Unusual console login seen from principal {data.aws.resource.accessKeyDetails.userName}. Login activity using this client application, from the specific location has not been seen before from this principal.",
@@ -448,20 +448,20 @@ export const iamPolicyGrantGlobal = {
   "data": {
     "aws": {
       "severity": "CRITICAL",
-      "actor": "resources.wazuh.sample.com",
+      "actor": "resources.portal9.sample.com",
       "summary": {
         "Timestamps": "2020-04-22T00:11:44.617597Z,",
         "Description": "S3 Bucket uses IAM policy to grant read rights to Everyone. Your IAM policy contains a clause that effectively grants read access to any user. Please audit this bucket, and data contained within and confirm that this is intentional. If intentional, please use the alert whitelist feature to prevent future alerts",
-        "Bucket": "resources.wazuh.sample.com,",
+        "Bucket": "resources.portal9.sample.com,",
         "Record Count": "1",
         "Event Count": "1",
         "recipientAccountId": "166157441400",
         "ACL": {
           "resources": {
-            "wazuh": {
+            "portal9": {
               "com": {
                 "Owner": {
-                  "DisplayName": "wazuh",
+                  "DisplayName": "portal9",
                   "ID": "3ab1235e25ea9e94ff9b7e4e379ba6b0c872cd36c096e1ac8cce7df433b48700"
                 }
               }

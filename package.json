@@ -1,5 +1,5 @@
 {
-  "name": "wazuh",
+  "name": "portal9",
   "version": "4.2.5",
   "revision": "4206-1",
   "code": "4206-1",
@@ -9,7 +9,7 @@
   "description": "Wazuh app",
   "keywords": [
     "kibana",
-    "wazuh",
+    "portal9",
     "ossec"
   ],
   "node_build": "10.23.1",
@@ -17,12 +17,12 @@
   "license": "GPL-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/wazuh/wazuh-kibana-app.git"
+    "url": "https://github.com/portal9/portal9-kibana-app.git"
   },
   "bugs": {
-    "url": "https://github.com/wazuh/wazuh-kibana-app/issues"
+    "url": "https://github.com/portal9/portal9-kibana-app/issues"
   },
-  "homepage": "https://www.wazuh.com/",
+  "homepage": "https://www.portal9.com/",
   "scripts": {
     "pretty": "prettier --single-quote \"{,!(node_modules)/**/}*.js\" --write",
     "tslint": "tslint -c .tslint.yml server/**/*.ts server/**/*.tsx public/**/*.ts public/**/*.tsx",

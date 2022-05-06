@@ -12,7 +12,7 @@
 import { TabNames } from '../../utils/tab-names';
 import { kibana } from '../../../package.json';
 import { AppState } from '../../react-services/app-state';
-import { WazuhConfig } from '../../react-services/wazuh-config';
+import { WazuhConfig } from '../../react-services/portal9-config';
 import { GenericRequest } from '../../react-services/generic-request';
 import { WzMisc } from '../../factories/misc';
 import { ApiCheck } from '../../react-services/wz-api-check';
@@ -38,7 +38,7 @@ export class SettingsController {
     this.genericReq = GenericRequest;
     this.errorHandler = errorHandler;
     this.wzMisc = new WzMisc();
-    this.wazuhConfig = new WazuhConfig();
+    this.portal9Config = new WazuhConfig();
 
     if (this.wzMisc.getWizard()) {
       $window.sessionStorage.removeItem('healthCheck');
@@ -138,7 +138,7 @@ export class SettingsController {
       },
       selectedTab: this.tab || 'api',
       tabs,
-      wazuhConfig: this.wazuhConfig
+      portal9Config: this.portal9Config
     };
 
     this.settingsLogsProps = {
@@ -395,7 +395,7 @@ export class SettingsController {
       };
 
       this.load = false;
-      const config = this.wazuhConfig.getConfig();
+      const config = this.portal9Config.getConfig();
       AppState.setPatternSelector(config['ip.selector']);
       const pattern = AppState.getCurrentPattern();
       this.selectedIndexPattern = pattern || config['pattern'];
@@ -423,24 +423,24 @@ export class SettingsController {
   }
 
   /**
-   * This ask again for wazuh logs
+   * This ask again for portal9 logs
    */
   refreshLogs() {
     return this.getAppLogs();
   }
 
   /**
-   * Checks if there are new APIs entries in the wazuh.yml
+   * Checks if there are new APIs entries in the portal9.yml
    */
   async checkForNewApis() {
     try {
       this.addingApi = true;
       this.addApiProps.errorsAtInit = false;
       const hosts = await this.getHosts();
-      //Tries to check if there are new APIs entries in the wazuh.yml also, checks if some of them have connection
+      //Tries to check if there are new APIs entries in the portal9.yml also, checks if some of them have connection
       if (!hosts.length)
         throw {
-          message: 'There were not found any API entry in the wazuh.yml',
+          message: 'There were not found any API entry in the portal9.yml',
           type: 'warning',
           closedEnabled: false
         };
@@ -468,7 +468,7 @@ export class SettingsController {
   }
 
   /**
-   * Get the hosts in the wazuh.yml
+   * Get the hosts in the portal9.yml
    */
   async getHosts() {
     try {

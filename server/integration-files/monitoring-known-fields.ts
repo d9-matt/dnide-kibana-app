@@ -1,5 +1,5 @@
 /*
- * Wazuh app - Module for wazuh-monitoring index pattern known fields
+ * Wazuh app - Module for portal9-monitoring index pattern known fields
  * Copyright (C) 2015-2021 Wazuh, Inc.
  *
  * This program is free software; you can redistribute it and/or modify

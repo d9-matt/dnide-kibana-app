@@ -24,7 +24,7 @@ export class UpdateRegistry {
    */
   async readContent() {
     try {
-      log('update-registry:readContent', 'Reading wazuh-registry.json content', 'debug');
+      log('update-registry:readContent', 'Reading portal9-registry.json content', 'debug');
       const content = await fs.readFileSync(this.file, { encoding: 'utf-8' });
       return JSON.parse(content);
     } catch (error) {
@@ -63,12 +63,12 @@ export class UpdateRegistry {
   }
 
   /**
-   * Writes the wazuh-registry.json
+   * Writes the portal9-registry.json
    * @param {Object} content
    */
   async writeContent(content) {
     try {
-      log('update-registry:writeContent', 'Writting wazuh-registry.json content', 'debug');
+      log('update-registry:writeContent', 'Writting portal9-registry.json content', 'debug');
       if (this.busy) {
         throw new Error('Another process is updating the registry file');
       }
@@ -179,7 +179,7 @@ export class UpdateRegistry {
   }
 
   /**
-   * Compare the hosts from wazuh.yml and the host in the wazuh-registry.json file in order to remove the orphan registry register
+   * Compare the hosts from portal9.yml and the host in the portal9-registry.json file in order to remove the orphan registry register
    * @param {Array} hosts
    */
   async removeOrphanEntries(hosts) {

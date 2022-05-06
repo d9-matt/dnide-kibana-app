@@ -15,7 +15,7 @@ export default {
   wodle_name: 'cis-cat',
   description: 'Configuration options of the CIS-CAT wodle.',
   category: 'Auditing and policy monitoring',
-  documentation_link: 'https://documentation.wazuh.com/current/user-manual/reference/ossec-conf/wodle-ciscat.html',
+  documentation_link: 'https://documentation.portal9.com/current/user-manual/reference/ossec-conf/wodle-ciscat.html',
   icon: 'securityApp',
   callout_warning: `CIS-CAT is not installed by default. It is a proprietary software that you have to obtain for using this module.`,
   avaliable_for_manager: true,

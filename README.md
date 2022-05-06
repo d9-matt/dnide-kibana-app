@@ -1,9 +1,9 @@
 # Wazuh Kibana App
 
-[![Slack](https://img.shields.io/badge/slack-join-blue.svg)](https://wazuh.com/community/join-us-on-slack/)
-[![Email](https://img.shields.io/badge/email-join-blue.svg)](https://groups.google.com/forum/#!forum/wazuh)
-[![Documentation](https://img.shields.io/badge/docs-view-green.svg)](https://documentation.wazuh.com)
-[![Documentation](https://img.shields.io/badge/web-view-green.svg)](https://wazuh.com)
+[![Slack](https://img.shields.io/badge/slack-join-blue.svg)](https://portal9.com/community/join-us-on-slack/)
+[![Email](https://img.shields.io/badge/email-join-blue.svg)](https://groups.google.com/forum/#!forum/portal9)
+[![Documentation](https://img.shields.io/badge/docs-view-green.svg)](https://documentation.portal9.com)
+[![Documentation](https://img.shields.io/badge/web-view-green.svg)](https://portal9.com)
 
 This repository contains the Wazuh Kibana plugin, from which you can navigate through the Wazuh data using visualizations in a simple and understandable way. It also allows you to manage the configuration and capabilities of the Wazuh server.
 
@@ -11,7 +11,7 @@ This is a change
 
 Wazuh is a security detection, visibility, and compliance open source project. Wazuh helps you to gain deeper security visibility into your infrastructure by monitoring hosts at an operating system and application level.
 
-You can learn more about it here [wazuh.com](https://wazuh.com/)
+You can learn more about it here [portal9.com](https://portal9.com/)
 
 ## Description
 
@@ -50,9 +50,9 @@ This plugin for Kibana allows you to visualize and analyze Wazuh alerts stored i
 
 ## Documentation
 
-- [Full documentation](https://documentation.wazuh.com)
-- [Wazuh installation guide](https://documentation.wazuh.com/current/installation-guide/index.html)
-- [Screenshots](https://documentation.wazuh.com/current/index.html#example-screenshots)
+- [Full documentation](https://documentation.portal9.com)
+- [Wazuh installation guide](https://documentation.portal9.com/current/installation-guide/index.html)
+- [Screenshots](https://documentation.portal9.com/current/index.html#example-screenshots)
 
 **Modules overview**
 
@@ -107,7 +107,7 @@ Install the Wazuh app plugin for Kibana
 
 ```
 cd /usr/share/kibana
-sudo -u kibana bin/kibana-plugin install https://packages.wazuh.com/4.x/ui/kibana/wazuh_kibana-4.2.5_7.10.2-1.zip
+sudo -u kibana bin/kibana-plugin install https://packages.portal9.com/4.x/ui/kibana/portal9_kibana-4.2.5_7.10.2-1.zip
 ```
 
 Restart Kibana
@@ -126,9 +126,9 @@ service kibana restart
 
 ## Upgrade
 
-Note: Since Wazuh 4.0.4 release revision 4016 (regardless of the Elastic Stack version) the location of the wazuh.yml has been moved from `/usr/share/kibana/optimize/wazuh/config/wazuh.yml` to `/usr/share/kibana/data/wazuh/config/wazuh.yml`.
+Note: Since Wazuh 4.0.4 release revision 4016 (regardless of the Elastic Stack version) the location of the portal9.yml has been moved from `/usr/share/kibana/optimize/portal9/config/portal9.yml` to `/usr/share/kibana/data/portal9/config/portal9.yml`.
 
-Since Wazuh 3.12.0 release (regardless of the Elastic Stack version) the location of the wazuh.yml has been moved from `/usr/share/kibana/plugins/wazuh/wazuh.yml` to `/usr/share/kibana/data/wazuh/config/wazuh.yml`.
+Since Wazuh 3.12.0 release (regardless of the Elastic Stack version) the location of the portal9.yml has been moved from `/usr/share/kibana/plugins/portal9/portal9.yml` to `/usr/share/kibana/data/portal9/config/portal9.yml`.
 
 Stop Kibana
 
@@ -151,30 +151,30 @@ mkdir /usr/share/kibana/data
 ```
 
 ### From 3.11.x
-Copy the `wazuh.yml` to its new location.
+Copy the `portal9.yml` to its new location.
 
 ```
-mkdir -p /usr/share/kibana/data/wazuh/config
-cp /usr/share/kibana/plugins/wazuh/wazuh.yml /usr/share/kibana/optimize/wazuh/config/wazuh.yml
+mkdir -p /usr/share/kibana/data/portal9/config
+cp /usr/share/kibana/plugins/portal9/portal9.yml /usr/share/kibana/optimize/portal9/config/portal9.yml
 ```
 ### From 4.0.4 - 4016
-Copy the `wazuh.yml` to its new location.
+Copy the `portal9.yml` to its new location.
 
 ```
-mkdir -p /usr/share/kibana/data/wazuh/config
-cp /usr/share/kibana/optimize/wazuh/config/wazuh.yml /usr/share/kibana/data/wazuh/config/wazuh.yml
+mkdir -p /usr/share/kibana/data/portal9/config
+cp /usr/share/kibana/optimize/portal9/config/portal9.yml /usr/share/kibana/data/portal9/config/portal9.yml
 ```
 
 ```
-mkdir -p /usr/share/kibana/data/wazuh/config
-cp /usr/share/kibana/optimize/wazuh/config/wazuh.yml /usr/share/kibana/data/wazuh/config/wazuh.yml
+mkdir -p /usr/share/kibana/data/portal9/config
+cp /usr/share/kibana/optimize/portal9/config/portal9.yml /usr/share/kibana/data/portal9/config/portal9.yml
 ```
 
 Remove the Wazuh app using the kibana-plugin tool
 
 ```
 cd /usr/share/kibana/
-sudo -u kibana bin/kibana-plugin remove wazuh
+sudo -u kibana bin/kibana-plugin remove portal9
 ```
 
 Remove generated bundles
@@ -194,14 +194,14 @@ Install the Wazuh app
 
 ```
 cd /usr/share/kibana/
-sudo -u kibana bin/kibana-plugin install https://packages.wazuh.com/4.x/ui/kibana/wazuh_kibana-4.2.5_7.10.2-1.zip
+sudo -u kibana bin/kibana-plugin install https://packages.portal9.com/4.x/ui/kibana/portal9_kibana-4.2.5_7.10.2-1.zip
 ```
 
 Update configuration file permissions.
 
 ```
-sudo chown kibana:kibana /usr/share/kibana/data/wazuh/config/wazuh.yml
-sudo chmod 600 /usr/share/kibana/data/wazuh/config/wazuh.yml
+sudo chown kibana:kibana /usr/share/kibana/data/portal9/config/portal9.yml
+sudo chmod 600 /usr/share/kibana/data/portal9/config/portal9.yml
 ```
 
 Restart Kibana
@@ -223,150 +223,150 @@ service kibana restart
  
 | Wazuh app | Kibana  | Open Distro | Package                                                                    |
 | :-------: | :----:  | :---------: | :------------------------------------------------------------------------- |
-|   4.2.5   |  7.14.2 |             | <https://packages.wazuh.com/4.x/ui/kibana/wazuh_kibana-4.2.5_7.14.2-1.zip> |
-|   4.2.5   |  7.14.1 |             | <https://packages.wazuh.com/4.x/ui/kibana/wazuh_kibana-4.2.5_7.14.1-1.zip> |
-|   4.2.5   |  7.14.0 |             | <https://packages.wazuh.com/4.x/ui/kibana/wazuh_kibana-4.2.5_7.14.0-1.zip> |
-|   4.2.5   |  7.13.4 |             | <https://packages.wazuh.com/4.x/ui/kibana/wazuh_kibana-4.2.5_7.13.4-1.zip> |
-|   4.2.5   |  7.13.3 |             | <https://packages.wazuh.com/4.x/ui/kibana/wazuh_kibana-4.2.5_7.13.3-1.zip> |
-|   4.2.5   |  7.13.2 |             | <https://packages.wazuh.com/4.x/ui/kibana/wazuh_kibana-4.2.5_7.13.2-1.zip> |
-|   4.2.5   |  7.13.1 |             | <https://packages.wazuh.com/4.x/ui/kibana/wazuh_kibana-4.2.5_7.13.1-1.zip> |
-|   4.2.5   |  7.13.0 |             | <https://packages.wazuh.com/4.x/ui/kibana/wazuh_kibana-4.2.5_7.13.0-1.zip> |
-|   4.2.5   |  7.12.1 |             | <https://packages.wazuh.com/4.x/ui/kibana/wazuh_kibana-4.2.5_7.12.1-1.zip> |
-|   4.2.5   |  7.11.2 |             | <https://packages.wazuh.com/4.x/ui/kibana/wazuh_kibana-4.2.5_7.11.2-1.zip> |
-|   4.2.5   |  7.10.2 |   1.13.2    | <https://packages.wazuh.com/4.x/ui/kibana/wazuh_kibana-4.2.5_7.10.2-1.zip> |
-|   4.2.4   |  7.12.1 |             | <https://packages.wazuh.com/4.x/ui/kibana/wazuh_kibana-4.2.4_7.12.1-1.zip> |
-|   4.2.4   |  7.11.2 |             | <https://packages.wazuh.com/4.x/ui/kibana/wazuh_kibana-4.2.4_7.11.2-1.zip> |
-|   4.2.4   |  7.10.2 |   1.13.2    | <https://packages.wazuh.com/4.x/ui/kibana/wazuh_kibana-4.2.4_7.10.2-1.zip> |
-|   4.2.3   |  7.12.1 |             | <https://packages.wazuh.com/4.x/ui/kibana/wazuh_kibana-4.2.3_7.12.1-1.zip> |
-|   4.2.3   |  7.11.2 |             | <https://packages.wazuh.com/4.x/ui/kibana/wazuh_kibana-4.2.3_7.11.2-1.zip> |
-|   4.2.3   |  7.10.2 |   1.13.2    | <https://packages.wazuh.com/4.x/ui/kibana/wazuh_kibana-4.2.3_7.10.2-1.zip> |
-|   4.2.2   |  7.12.1 |             | <https://packages.wazuh.com/4.x/ui/kibana/wazuh_kibana-4.2.2_7.12.1-1.zip> |
-|   4.2.2   |  7.11.2 |             | <https://packages.wazuh.com/4.x/ui/kibana/wazuh_kibana-4.2.2_7.11.2-1.zip> |
-|   4.2.2   |  7.10.2 |   1.13.2    | <https://packages.wazuh.com/4.x/ui/kibana/wazuh_kibana-4.2.2_7.10.2-1.zip> |
-|   4.2.1   |  7.11.2 |             | <https://packages.wazuh.com/4.x/ui/kibana/wazuh_kibana-4.2.1_7.11.2-1.zip> |
-|   4.2.1   |  7.10.2 |   1.13.2    | <https://packages.wazuh.com/4.x/ui/kibana/wazuh_kibana-4.2.1_7.10.2-1.zip> |
-|   4.2.0   |  7.11.2 |             | <https://packages.wazuh.com/4.x/ui/kibana/wazuh_kibana-4.2.0_7.11.2-1.zip> |
-|   4.2.0   |  7.10.2 |   1.13.2    | <https://packages.wazuh.com/4.x/ui/kibana/wazuh_kibana-4.2.0_7.10.2-1.zip> |
-|   4.1.5   |  7.11.2 |             | <https://packages.wazuh.com/4.x/ui/kibana/wazuh_kibana-4.1.5_7.11.2-1.zip> |
-|   4.1.5   |  7.10.2 |   1.13.0    | <https://packages.wazuh.com/4.x/ui/kibana/wazuh_kibana-4.1.5_7.10.2-1.zip> |
-|   4.1.5   |  7.10.0 |   1.12.0    | <https://packages.wazuh.com/4.x/ui/kibana/wazuh_kibana-4.1.5_7.10.0-1.zip> |
-|   4.1.4   |  7.10.2 |             | <https://packages.wazuh.com/4.x/ui/kibana/wazuh_kibana-4.1.4_7.10.2-1.zip> |
-|   4.1.4   |  7.10.0 |   1.12.0    | <https://packages.wazuh.com/4.x/ui/kibana/wazuh_kibana-4.1.4_7.10.0-1.zip> |
-|   4.1.3   |  7.10.2 |             | <https://packages.wazuh.com/4.x/ui/kibana/wazuh_kibana-4.1.3_7.10.2-1.zip> |
-|   4.1.3   |  7.10.0 |   1.12.0    | <https://packages.wazuh.com/4.x/ui/kibana/wazuh_kibana-4.1.3_7.10.0-1.zip> |
-|   4.1.2   |  7.10.2 |             | <https://packages.wazuh.com/4.x/ui/kibana/wazuh_kibana-4.1.2_7.10.2-1.zip> |
-|   4.1.2   |  7.10.0 |   1.12.0    | <https://packages.wazuh.com/4.x/ui/kibana/wazuh_kibana-4.1.2_7.10.0-1.zip> |
-|   4.1.1   |  7.10.2 |             | <https://packages.wazuh.com/4.x/ui/kibana/wazuh_kibana-4.1.1_7.10.2-1.zip> |
-|   4.1.1   |  7.10.0 |   1.12.0    | <https://packages.wazuh.com/4.x/ui/kibana/wazuh_kibana-4.1.1_7.10.0-1.zip> |
-|   4.1.0   |  7.10.2 |             | <https://packages.wazuh.com/4.x/ui/kibana/wazuh_kibana-4.1.0_7.10.2-1.zip> |
-|   4.1.0   |  7.10.0 |   1.12.0    | <https://packages.wazuh.com/4.x/ui/kibana/wazuh_kibana-4.1.0_7.10.0-1.zip> |
-|   4.0.4   |  7.9.3  |             | <https://packages.wazuh.com/4.x/ui/kibana/wazuh_kibana-4.0.4_7.9.3-1.zip>  |
-|   4.0.4   |  7.9.1  |   1.11.0    | <https://packages.wazuh.com/4.x/ui/kibana/wazuh_kibana-4.0.4_7.9.1-1.zip>  |
-|   4.0.3   |  7.9.3  |             | <https://packages.wazuh.com/4.x/ui/kibana/wazuh_kibana-4.0.3_7.9.3-1.zip>  |
-|   4.0.3   |  7.9.2  |             | <https://packages.wazuh.com/4.x/ui/kibana/wazuh_kibana-4.0.3_7.9.2-1.zip>  |
-|   4.0.3   |  7.9.1  |   1.11.0    | <https://packages.wazuh.com/4.x/ui/kibana/wazuh_kibana-4.0.3_7.9.1-1.zip>  |
-|   4.0.2   |  7.9.3  |             | <https://packages.wazuh.com/4.x/ui/kibana/wazuh_kibana-4.0.2_7.9.3-1.zip>  |
-|   4.0.2   |  7.9.1  |   1.11.0    | <https://packages.wazuh.com/4.x/ui/kibana/wazuh_kibana-4.0.2_7.9.1-1.zip>  |
-|   4.0.1   |  7.9.3  |             | <https://packages.wazuh.com/4.x/ui/kibana/wazuh_kibana-4.0.1_7.9.3-1.zip>  |
-|   4.0.1   |  7.9.1  |   1.11.0    | <https://packages.wazuh.com/4.x/ui/kibana/wazuh_kibana-4.0.1_7.9.1-1.zip>  |
-|   4.0.0   |  7.9.3  |             | <https://packages.wazuh.com/4.x/ui/kibana/wazuh_kibana-4.0.0_7.9.3-1.zip>  |
-|   4.0.0   |  7.9.2  |             | <https://packages.wazuh.com/4.x/ui/kibana/wazuh_kibana-4.0.0_7.9.2-1.zip>  |
-|   4.0.0   |  7.9.1  |   1.10.1    | <https://packages.wazuh.com/4.x/ui/kibana/wazuh_kibana-4.0.0_7.9.1-1.zip>  |
-|   3.13.2  |  7.9.1  |   1.10.1    | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.13.2_7.9.1.zip>            |
-|   3.13.2  |  7.8.0  |    1.9.0    | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.13.2_7.8.0.zip>            |
-|   3.13.1  |  7.9.1  |             | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.13.1_7.9.1.zip>            |
-|   3.13.1  |  7.9.0  |             | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.13.1_7.9.0.zip>            |
-|   3.13.1  |  7.8.1  |             | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.13.1_7.8.1.zip>            |
-|   3.13.1  |  7.8.0  |    1.9.0    | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.13.1_7.8.0.zip>            |
-|   3.13.0  |  7.8.0  |    1.9.0    | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.13.0_7.8.0.zip>            |
-|   3.13.0  |  7.7.1  |             | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.13.0_7.7.1.zip>            |
-|   3.13.0  |  7.7.0  |    1.8.0    | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.13.0_7.7.0.zip>            |
-|   3.12.3  |  7.7.1  |             | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.12.3_7.7.1.zip>            |
-|   3.12.3  |  7.7.0  |    1.8.0    | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.12.3_7.7.0.zip>            |
-|   3.12.3  |  7.6.2  |             | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.12.3_7.6.2.zip>            |
-|   3.12.3  |  7.6.1  |1.6.0 - 1.7.0| <https://packages.wazuh.com/wazuhapp/wazuhapp-3.12.3_7.6.1.zip>            |
-|   3.12.3  |  7.3.1  |             | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.12.3_7.3.1.zip>            |
-|   3.12.3  |  6.8.10 |             | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.12.3_6.8.10.zip>           |
-|   3.12.3  |  6.8.9  |             | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.12.3_6.8.9.zip>            |
-|   3.12.3  |  6.8.8  |             | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.12.3_6.8.8.zip>            |
-|   3.12.2  |  7.6.2  |             | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.12.2_7.6.2.zip>            |
-|   3.12.2  |  7.6.1  |1.6.0 - 1.7.0| <https://packages.wazuh.com/wazuhapp/wazuhapp-3.12.2_7.6.1.zip>            |
-|   3.12.2  |  6.8.8  |             | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.12.2_6.8.8.zip>            |
-|   3.12.1  |  7.6.2  |             | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.12.1_7.6.2.zip>            |
-|   3.12.1  |  7.6.1  |1.6.0 - 1.7.0| <https://packages.wazuh.com/wazuhapp/wazuhapp-3.12.1_7.6.1.zip>            |
-|   3.12.1  |  6.8.8  |             | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.12.1_6.8.8.zip>            |
-|   3.12.0  |  7.6.2  |             | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.12.0_7.6.2.zip>            |
-|   3.12.0  |  7.6.1  |1.6.0 - 1.7.0| <https://packages.wazuh.com/wazuhapp/wazuhapp-3.12.0_7.6.1.zip>            |
-|   3.12.0  |  7.4.2  |    1.4.0    | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.12.0_7.4.2.zip>            |
-|   3.12.0  |  6.8.8  |             | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.12.0_6.8.8.zip>            |
-|   3.12.0  |  6.8.7  |             | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.12.0_6.8.7.zip>            |
-|   3.11.4  |  7.6.1  |1.6.0 - 1.7.0| <https://packages.wazuh.com/wazuhapp/wazuhapp-3.11.4_7.6.1.zip>            |
-|   3.11.4  |  7.6.0  |             | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.11.4_7.6.0.zip>            |
-|   3.11.4  |  7.4.2  |    1.4.0    | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.11.4_7.4.2.zip>            |
-|   3.11.4  |  6.8.7  |             | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.11.4_6.8.7.zip>            |
-|   3.11.4  |  6.8.6  |             | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.11.4_6.8.6.zip>            |
-|   3.11.3  |  7.6.0  |             | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.11.3_7.6.0.zip>            |
-|   3.11.3  |  7.5.2  |             | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.11.3_7.5.2.zip>            |
-|   3.11.3  |  7.4.2  |    1.4.0    | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.11.3_7.4.2.zip>            |
-|   3.11.3  |  7.3.2  |    1.3.0    | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.11.3_7.3.2.zip>            |
-|   3.11.3  |  6.8.6  |             | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.11.3_6.8.6.zip>            |
-|   3.11.2  |  7.5.2  |             | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.11.2_7.5.2.zip>            |
-|   3.11.2  |  7.5.1  |             | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.11.2_7.5.1.zip>            |
-|   3.11.2  |  7.3.2  |    1.3.0    | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.11.2_7.3.2.zip>            |
-|   3.11.2  |  6.8.6  |             | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.11.2_6.8.6.zip>            |
-|   3.11.1  |  7.5.1  |             | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.11.1_7.5.1.zip>            |
-|   3.11.1  |  7.3.2  |    1.3.0    | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.11.1_7.3.2.zip>            |
-|   3.11.1  |  6.8.6  |             | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.11.1_6.8.6.zip>            |
-|   3.11.0  |  7.5.1  |             | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.11.0_7.5.1.zip>            |
-|   3.11.0  |  7.3.2  |    1.3.0    | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.11.0_7.3.2.zip>            |
-|   3.11.0  |  6.8.6  |             | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.11.0_6.8.6.zip>            |
-|   3.10.2  |  7.5.1  |             | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.10.2_7.5.1.zip>            |
-|   3.10.2  |  7.5.0  |             | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.10.2_7.5.0.zip>            |
-|   3.10.2  |  7.4.2  |    1.4.0    | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.10.2_7.4.2.zip>            |
-|   3.10.2  |  7.4.1  |             | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.10.2_7.4.1.zip>            |
-|   3.10.2  |  7.4.0  |             | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.10.2_7.4.0.zip>            |
-|   3.10.2  |  7.3.2  |    1.3.0    | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.10.2_7.3.2.zip>            |
-|   3.10.2  |  6.8.6  |             | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.10.2_6.8.6.zip>            |
-|   3.10.2  |  6.8.5  |             | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.10.2_6.8.5.zip>            |
-|   3.10.2  |  6.8.4  |             | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.10.2_6.8.4.zip>            |
-|   3.10.2  |  6.8.3  |             | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.10.2_6.8.3.zip>            |
-|   3.10.1  |  7.3.2  |    1.3.0    | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.10.1_7.3.2.zip>            |
-|   3.10.1  |  7.3.1  |             | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.10.1_7.3.1.zip>            |
-|   3.10.1  |  6.8.2  |             | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.10.1_6.8.2.zip>            |
-|   3.10.0  |  7.3.2  |    1.3.0    | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.10.0_7.3.2.zip>            |
-|   3.10.0  |  7.3.1  |             | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.10.0_7.3.1.zip>            |
-|   3.10.0  |  6.8.2  |             | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.10.0_6.8.2.zip>            |
-|   3.9.5   |  7.3.0  |             | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.9.5_7.3.0.zip>             |
-|   3.9.5   |  7.2.1  |    1.2.1    | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.9.5_7.2.1.zip>             |
-|   3.9.5   |  6.8.2  |             | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.9.5_6.8.2.zip>             |
-|   3.9.4   |  7.3.0  |             | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.9.4_7.3.0.zip>             |
-|   3.9.4   |  7.2.1  |    1.2.1    | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.9.4_7.2.1.zip>             |
-|   3.9.4   |  7.2.0  |    1.2.0    | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.9.4_7.2.0.zip>             |
-|   3.9.4   |  6.8.2  |             | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.9.4_6.8.2.zip>             |
-|   3.9.4   |  6.8.1  |    0.10.0   | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.9.4_6.8.1.zip>             |
-|   3.9.3   |  7.2.0  |    1.2.0    | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.9.3_7.2.0.zip>             |
-|   3.9.3   |  7.1.1  |    1.1.0    | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.9.3_7.1.1.zip>             |
-|   3.9.3   |  7.0.1  |1.0.0 - 1.0.2| <https://packages.wazuh.com/wazuhapp/wazuhapp-3.9.3_7.0.1.zip>             |
-|   3.9.3   |  6.8.1  |    0.10.0   | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.9.3_6.8.1.zip>             |
-|   3.9.2   |  7.1.1  |    1.1.0    | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.9.2_7.1.1.zip>             |
-|   3.9.1   |  7.1.1  |    1.1.0    | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.9.1_7.1.1.zip>             |
-|   3.9.1   |  7.1.0  |             | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.9.1_7.1.0.zip>             |
-|   3.9.1   |  6.8.0  |             | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.9.1_6.8.0.zip>             |
-|   3.9.0   |  6.7.2  |             | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.9.0_6.7.2.zip>             |
-|   3.9.0   |  6.7.1  |    0.9.0    | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.9.0_6.7.1.zip>             |
-|   3.8.2   |  6.7.1  |    0.9.0    | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.8.2_6.7.1.zip>             |
-|   3.8.2   |  6.7.0  |             | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.8.2_6.7.0.zip>             |
-|   3.8.2   |  6.6.2  |    0.8.0    | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.8.2_6.6.2.zip>             |
-|   3.8.2   |  6.6.1  |             | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.8.2_6.6.1.zip>             |
-|   3.8.2   |  6.6.0  |             | <https://packages.wazuh.com/wazuhapp/wazuhapp-3.8.2_6.6.0.zip>             |
-|   3.8.2   |  6.5.4  |0.7.0 - 0.7.1| <https://packages.wazuh.com/wazuhapp/wazuhapp-3.8.2_6.5.4.zip>             |
-|   3.8.1   |  6.5.4  |0.7.0 - 0.7.1| <https://packages.wazuh.com/wazuhapp/wazuhapp-3.8.1_6.5.4.zip>             |
-|   3.8.0   |  6.5.4  |0.7.0 - 0.7.1| <https://packages.wazuh.com/wazuhapp/wazuhapp-3.8.0_6.5.4.zip>             |
+|   4.2.5   |  7.14.2 |             | <https://packages.portal9.com/4.x/ui/kibana/portal9_kibana-4.2.5_7.14.2-1.zip> |
+|   4.2.5   |  7.14.1 |             | <https://packages.portal9.com/4.x/ui/kibana/portal9_kibana-4.2.5_7.14.1-1.zip> |
+|   4.2.5   |  7.14.0 |             | <https://packages.portal9.com/4.x/ui/kibana/portal9_kibana-4.2.5_7.14.0-1.zip> |
+|   4.2.5   |  7.13.4 |             | <https://packages.portal9.com/4.x/ui/kibana/portal9_kibana-4.2.5_7.13.4-1.zip> |
+|   4.2.5   |  7.13.3 |             | <https://packages.portal9.com/4.x/ui/kibana/portal9_kibana-4.2.5_7.13.3-1.zip> |
+|   4.2.5   |  7.13.2 |             | <https://packages.portal9.com/4.x/ui/kibana/portal9_kibana-4.2.5_7.13.2-1.zip> |
+|   4.2.5   |  7.13.1 |             | <https://packages.portal9.com/4.x/ui/kibana/portal9_kibana-4.2.5_7.13.1-1.zip> |
+|   4.2.5   |  7.13.0 |             | <https://packages.portal9.com/4.x/ui/kibana/portal9_kibana-4.2.5_7.13.0-1.zip> |
+|   4.2.5   |  7.12.1 |             | <https://packages.portal9.com/4.x/ui/kibana/portal9_kibana-4.2.5_7.12.1-1.zip> |
+|   4.2.5   |  7.11.2 |             | <https://packages.portal9.com/4.x/ui/kibana/portal9_kibana-4.2.5_7.11.2-1.zip> |
+|   4.2.5   |  7.10.2 |   1.13.2    | <https://packages.portal9.com/4.x/ui/kibana/portal9_kibana-4.2.5_7.10.2-1.zip> |
+|   4.2.4   |  7.12.1 |             | <https://packages.portal9.com/4.x/ui/kibana/portal9_kibana-4.2.4_7.12.1-1.zip> |
+|   4.2.4   |  7.11.2 |             | <https://packages.portal9.com/4.x/ui/kibana/portal9_kibana-4.2.4_7.11.2-1.zip> |
+|   4.2.4   |  7.10.2 |   1.13.2    | <https://packages.portal9.com/4.x/ui/kibana/portal9_kibana-4.2.4_7.10.2-1.zip> |
+|   4.2.3   |  7.12.1 |             | <https://packages.portal9.com/4.x/ui/kibana/portal9_kibana-4.2.3_7.12.1-1.zip> |
+|   4.2.3   |  7.11.2 |             | <https://packages.portal9.com/4.x/ui/kibana/portal9_kibana-4.2.3_7.11.2-1.zip> |
+|   4.2.3   |  7.10.2 |   1.13.2    | <https://packages.portal9.com/4.x/ui/kibana/portal9_kibana-4.2.3_7.10.2-1.zip> |
+|   4.2.2   |  7.12.1 |             | <https://packages.portal9.com/4.x/ui/kibana/portal9_kibana-4.2.2_7.12.1-1.zip> |
+|   4.2.2   |  7.11.2 |             | <https://packages.portal9.com/4.x/ui/kibana/portal9_kibana-4.2.2_7.11.2-1.zip> |
+|   4.2.2   |  7.10.2 |   1.13.2    | <https://packages.portal9.com/4.x/ui/kibana/portal9_kibana-4.2.2_7.10.2-1.zip> |
+|   4.2.1   |  7.11.2 |             | <https://packages.portal9.com/4.x/ui/kibana/portal9_kibana-4.2.1_7.11.2-1.zip> |
+|   4.2.1   |  7.10.2 |   1.13.2    | <https://packages.portal9.com/4.x/ui/kibana/portal9_kibana-4.2.1_7.10.2-1.zip> |
+|   4.2.0   |  7.11.2 |             | <https://packages.portal9.com/4.x/ui/kibana/portal9_kibana-4.2.0_7.11.2-1.zip> |
+|   4.2.0   |  7.10.2 |   1.13.2    | <https://packages.portal9.com/4.x/ui/kibana/portal9_kibana-4.2.0_7.10.2-1.zip> |
+|   4.1.5   |  7.11.2 |             | <https://packages.portal9.com/4.x/ui/kibana/portal9_kibana-4.1.5_7.11.2-1.zip> |
+|   4.1.5   |  7.10.2 |   1.13.0    | <https://packages.portal9.com/4.x/ui/kibana/portal9_kibana-4.1.5_7.10.2-1.zip> |
+|   4.1.5   |  7.10.0 |   1.12.0    | <https://packages.portal9.com/4.x/ui/kibana/portal9_kibana-4.1.5_7.10.0-1.zip> |
+|   4.1.4   |  7.10.2 |             | <https://packages.portal9.com/4.x/ui/kibana/portal9_kibana-4.1.4_7.10.2-1.zip> |
+|   4.1.4   |  7.10.0 |   1.12.0    | <https://packages.portal9.com/4.x/ui/kibana/portal9_kibana-4.1.4_7.10.0-1.zip> |
+|   4.1.3   |  7.10.2 |             | <https://packages.portal9.com/4.x/ui/kibana/portal9_kibana-4.1.3_7.10.2-1.zip> |
+|   4.1.3   |  7.10.0 |   1.12.0    | <https://packages.portal9.com/4.x/ui/kibana/portal9_kibana-4.1.3_7.10.0-1.zip> |
+|   4.1.2   |  7.10.2 |             | <https://packages.portal9.com/4.x/ui/kibana/portal9_kibana-4.1.2_7.10.2-1.zip> |
+|   4.1.2   |  7.10.0 |   1.12.0    | <https://packages.portal9.com/4.x/ui/kibana/portal9_kibana-4.1.2_7.10.0-1.zip> |
+|   4.1.1   |  7.10.2 |             | <https://packages.portal9.com/4.x/ui/kibana/portal9_kibana-4.1.1_7.10.2-1.zip> |
+|   4.1.1   |  7.10.0 |   1.12.0    | <https://packages.portal9.com/4.x/ui/kibana/portal9_kibana-4.1.1_7.10.0-1.zip> |
+|   4.1.0   |  7.10.2 |             | <https://packages.portal9.com/4.x/ui/kibana/portal9_kibana-4.1.0_7.10.2-1.zip> |
+|   4.1.0   |  7.10.0 |   1.12.0    | <https://packages.portal9.com/4.x/ui/kibana/portal9_kibana-4.1.0_7.10.0-1.zip> |
+|   4.0.4   |  7.9.3  |             | <https://packages.portal9.com/4.x/ui/kibana/portal9_kibana-4.0.4_7.9.3-1.zip>  |
+|   4.0.4   |  7.9.1  |   1.11.0    | <https://packages.portal9.com/4.x/ui/kibana/portal9_kibana-4.0.4_7.9.1-1.zip>  |
+|   4.0.3   |  7.9.3  |             | <https://packages.portal9.com/4.x/ui/kibana/portal9_kibana-4.0.3_7.9.3-1.zip>  |
+|   4.0.3   |  7.9.2  |             | <https://packages.portal9.com/4.x/ui/kibana/portal9_kibana-4.0.3_7.9.2-1.zip>  |
+|   4.0.3   |  7.9.1  |   1.11.0    | <https://packages.portal9.com/4.x/ui/kibana/portal9_kibana-4.0.3_7.9.1-1.zip>  |
+|   4.0.2   |  7.9.3  |             | <https://packages.portal9.com/4.x/ui/kibana/portal9_kibana-4.0.2_7.9.3-1.zip>  |
+|   4.0.2   |  7.9.1  |   1.11.0    | <https://packages.portal9.com/4.x/ui/kibana/portal9_kibana-4.0.2_7.9.1-1.zip>  |
+|   4.0.1   |  7.9.3  |             | <https://packages.portal9.com/4.x/ui/kibana/portal9_kibana-4.0.1_7.9.3-1.zip>  |
+|   4.0.1   |  7.9.1  |   1.11.0    | <https://packages.portal9.com/4.x/ui/kibana/portal9_kibana-4.0.1_7.9.1-1.zip>  |
+|   4.0.0   |  7.9.3  |             | <https://packages.portal9.com/4.x/ui/kibana/portal9_kibana-4.0.0_7.9.3-1.zip>  |
+|   4.0.0   |  7.9.2  |             | <https://packages.portal9.com/4.x/ui/kibana/portal9_kibana-4.0.0_7.9.2-1.zip>  |
+|   4.0.0   |  7.9.1  |   1.10.1    | <https://packages.portal9.com/4.x/ui/kibana/portal9_kibana-4.0.0_7.9.1-1.zip>  |
+|   3.13.2  |  7.9.1  |   1.10.1    | <https://packages.portal9.com/portal9app/portal9app-3.13.2_7.9.1.zip>            |
+|   3.13.2  |  7.8.0  |    1.9.0    | <https://packages.portal9.com/portal9app/portal9app-3.13.2_7.8.0.zip>            |
+|   3.13.1  |  7.9.1  |             | <https://packages.portal9.com/portal9app/portal9app-3.13.1_7.9.1.zip>            |
+|   3.13.1  |  7.9.0  |             | <https://packages.portal9.com/portal9app/portal9app-3.13.1_7.9.0.zip>            |
+|   3.13.1  |  7.8.1  |             | <https://packages.portal9.com/portal9app/portal9app-3.13.1_7.8.1.zip>            |
+|   3.13.1  |  7.8.0  |    1.9.0    | <https://packages.portal9.com/portal9app/portal9app-3.13.1_7.8.0.zip>            |
+|   3.13.0  |  7.8.0  |    1.9.0    | <https://packages.portal9.com/portal9app/portal9app-3.13.0_7.8.0.zip>            |
+|   3.13.0  |  7.7.1  |             | <https://packages.portal9.com/portal9app/portal9app-3.13.0_7.7.1.zip>            |
+|   3.13.0  |  7.7.0  |    1.8.0    | <https://packages.portal9.com/portal9app/portal9app-3.13.0_7.7.0.zip>            |
+|   3.12.3  |  7.7.1  |             | <https://packages.portal9.com/portal9app/portal9app-3.12.3_7.7.1.zip>            |
+|   3.12.3  |  7.7.0  |    1.8.0    | <https://packages.portal9.com/portal9app/portal9app-3.12.3_7.7.0.zip>            |
+|   3.12.3  |  7.6.2  |             | <https://packages.portal9.com/portal9app/portal9app-3.12.3_7.6.2.zip>            |
+|   3.12.3  |  7.6.1  |1.6.0 - 1.7.0| <https://packages.portal9.com/portal9app/portal9app-3.12.3_7.6.1.zip>            |
+|   3.12.3  |  7.3.1  |             | <https://packages.portal9.com/portal9app/portal9app-3.12.3_7.3.1.zip>            |
+|   3.12.3  |  6.8.10 |             | <https://packages.portal9.com/portal9app/portal9app-3.12.3_6.8.10.zip>           |
+|   3.12.3  |  6.8.9  |             | <https://packages.portal9.com/portal9app/portal9app-3.12.3_6.8.9.zip>            |
+|   3.12.3  |  6.8.8  |             | <https://packages.portal9.com/portal9app/portal9app-3.12.3_6.8.8.zip>            |
+|   3.12.2  |  7.6.2  |             | <https://packages.portal9.com/portal9app/portal9app-3.12.2_7.6.2.zip>            |
+|   3.12.2  |  7.6.1  |1.6.0 - 1.7.0| <https://packages.portal9.com/portal9app/portal9app-3.12.2_7.6.1.zip>            |
+|   3.12.2  |  6.8.8  |             | <https://packages.portal9.com/portal9app/portal9app-3.12.2_6.8.8.zip>            |
+|   3.12.1  |  7.6.2  |             | <https://packages.portal9.com/portal9app/portal9app-3.12.1_7.6.2.zip>            |
+|   3.12.1  |  7.6.1  |1.6.0 - 1.7.0| <https://packages.portal9.com/portal9app/portal9app-3.12.1_7.6.1.zip>            |
+|   3.12.1  |  6.8.8  |             | <https://packages.portal9.com/portal9app/portal9app-3.12.1_6.8.8.zip>            |
+|   3.12.0  |  7.6.2  |             | <https://packages.portal9.com/portal9app/portal9app-3.12.0_7.6.2.zip>            |
+|   3.12.0  |  7.6.1  |1.6.0 - 1.7.0| <https://packages.portal9.com/portal9app/portal9app-3.12.0_7.6.1.zip>            |
+|   3.12.0  |  7.4.2  |    1.4.0    | <https://packages.portal9.com/portal9app/portal9app-3.12.0_7.4.2.zip>            |
+|   3.12.0  |  6.8.8  |             | <https://packages.portal9.com/portal9app/portal9app-3.12.0_6.8.8.zip>            |
+|   3.12.0  |  6.8.7  |             | <https://packages.portal9.com/portal9app/portal9app-3.12.0_6.8.7.zip>            |
+|   3.11.4  |  7.6.1  |1.6.0 - 1.7.0| <https://packages.portal9.com/portal9app/portal9app-3.11.4_7.6.1.zip>            |
+|   3.11.4  |  7.6.0  |             | <https://packages.portal9.com/portal9app/portal9app-3.11.4_7.6.0.zip>            |
+|   3.11.4  |  7.4.2  |    1.4.0    | <https://packages.portal9.com/portal9app/portal9app-3.11.4_7.4.2.zip>            |
+|   3.11.4  |  6.8.7  |             | <https://packages.portal9.com/portal9app/portal9app-3.11.4_6.8.7.zip>            |
+|   3.11.4  |  6.8.6  |             | <https://packages.portal9.com/portal9app/portal9app-3.11.4_6.8.6.zip>            |
+|   3.11.3  |  7.6.0  |             | <https://packages.portal9.com/portal9app/portal9app-3.11.3_7.6.0.zip>            |
+|   3.11.3  |  7.5.2  |             | <https://packages.portal9.com/portal9app/portal9app-3.11.3_7.5.2.zip>            |
+|   3.11.3  |  7.4.2  |    1.4.0    | <https://packages.portal9.com/portal9app/portal9app-3.11.3_7.4.2.zip>            |
+|   3.11.3  |  7.3.2  |    1.3.0    | <https://packages.portal9.com/portal9app/portal9app-3.11.3_7.3.2.zip>            |
+|   3.11.3  |  6.8.6  |             | <https://packages.portal9.com/portal9app/portal9app-3.11.3_6.8.6.zip>            |
+|   3.11.2  |  7.5.2  |             | <https://packages.portal9.com/portal9app/portal9app-3.11.2_7.5.2.zip>            |
+|   3.11.2  |  7.5.1  |             | <https://packages.portal9.com/portal9app/portal9app-3.11.2_7.5.1.zip>            |
+|   3.11.2  |  7.3.2  |    1.3.0    | <https://packages.portal9.com/portal9app/portal9app-3.11.2_7.3.2.zip>            |
+|   3.11.2  |  6.8.6  |             | <https://packages.portal9.com/portal9app/portal9app-3.11.2_6.8.6.zip>            |
+|   3.11.1  |  7.5.1  |             | <https://packages.portal9.com/portal9app/portal9app-3.11.1_7.5.1.zip>            |
+|   3.11.1  |  7.3.2  |    1.3.0    | <https://packages.portal9.com/portal9app/portal9app-3.11.1_7.3.2.zip>            |
+|   3.11.1  |  6.8.6  |             | <https://packages.portal9.com/portal9app/portal9app-3.11.1_6.8.6.zip>            |
+|   3.11.0  |  7.5.1  |             | <https://packages.portal9.com/portal9app/portal9app-3.11.0_7.5.1.zip>            |
+|   3.11.0  |  7.3.2  |    1.3.0    | <https://packages.portal9.com/portal9app/portal9app-3.11.0_7.3.2.zip>            |
+|   3.11.0  |  6.8.6  |             | <https://packages.portal9.com/portal9app/portal9app-3.11.0_6.8.6.zip>            |
+|   3.10.2  |  7.5.1  |             | <https://packages.portal9.com/portal9app/portal9app-3.10.2_7.5.1.zip>            |
+|   3.10.2  |  7.5.0  |             | <https://packages.portal9.com/portal9app/portal9app-3.10.2_7.5.0.zip>            |
+|   3.10.2  |  7.4.2  |    1.4.0    | <https://packages.portal9.com/portal9app/portal9app-3.10.2_7.4.2.zip>            |
+|   3.10.2  |  7.4.1  |             | <https://packages.portal9.com/portal9app/portal9app-3.10.2_7.4.1.zip>            |
+|   3.10.2  |  7.4.0  |             | <https://packages.portal9.com/portal9app/portal9app-3.10.2_7.4.0.zip>            |
+|   3.10.2  |  7.3.2  |    1.3.0    | <https://packages.portal9.com/portal9app/portal9app-3.10.2_7.3.2.zip>            |
+|   3.10.2  |  6.8.6  |             | <https://packages.portal9.com/portal9app/portal9app-3.10.2_6.8.6.zip>            |
+|   3.10.2  |  6.8.5  |             | <https://packages.portal9.com/portal9app/portal9app-3.10.2_6.8.5.zip>            |
+|   3.10.2  |  6.8.4  |             | <https://packages.portal9.com/portal9app/portal9app-3.10.2_6.8.4.zip>            |
+|   3.10.2  |  6.8.3  |             | <https://packages.portal9.com/portal9app/portal9app-3.10.2_6.8.3.zip>            |
+|   3.10.1  |  7.3.2  |    1.3.0    | <https://packages.portal9.com/portal9app/portal9app-3.10.1_7.3.2.zip>            |
+|   3.10.1  |  7.3.1  |             | <https://packages.portal9.com/portal9app/portal9app-3.10.1_7.3.1.zip>            |
+|   3.10.1  |  6.8.2  |             | <https://packages.portal9.com/portal9app/portal9app-3.10.1_6.8.2.zip>            |
+|   3.10.0  |  7.3.2  |    1.3.0    | <https://packages.portal9.com/portal9app/portal9app-3.10.0_7.3.2.zip>            |
+|   3.10.0  |  7.3.1  |             | <https://packages.portal9.com/portal9app/portal9app-3.10.0_7.3.1.zip>            |
+|   3.10.0  |  6.8.2  |             | <https://packages.portal9.com/portal9app/portal9app-3.10.0_6.8.2.zip>            |
+|   3.9.5   |  7.3.0  |             | <https://packages.portal9.com/portal9app/portal9app-3.9.5_7.3.0.zip>             |
+|   3.9.5   |  7.2.1  |    1.2.1    | <https://packages.portal9.com/portal9app/portal9app-3.9.5_7.2.1.zip>             |
+|   3.9.5   |  6.8.2  |             | <https://packages.portal9.com/portal9app/portal9app-3.9.5_6.8.2.zip>             |
+|   3.9.4   |  7.3.0  |             | <https://packages.portal9.com/portal9app/portal9app-3.9.4_7.3.0.zip>             |
+|   3.9.4   |  7.2.1  |    1.2.1    | <https://packages.portal9.com/portal9app/portal9app-3.9.4_7.2.1.zip>             |
+|   3.9.4   |  7.2.0  |    1.2.0    | <https://packages.portal9.com/portal9app/portal9app-3.9.4_7.2.0.zip>             |
+|   3.9.4   |  6.8.2  |             | <https://packages.portal9.com/portal9app/portal9app-3.9.4_6.8.2.zip>             |
+|   3.9.4   |  6.8.1  |    0.10.0   | <https://packages.portal9.com/portal9app/portal9app-3.9.4_6.8.1.zip>             |
+|   3.9.3   |  7.2.0  |    1.2.0    | <https://packages.portal9.com/portal9app/portal9app-3.9.3_7.2.0.zip>             |
+|   3.9.3   |  7.1.1  |    1.1.0    | <https://packages.portal9.com/portal9app/portal9app-3.9.3_7.1.1.zip>             |
+|   3.9.3   |  7.0.1  |1.0.0 - 1.0.2| <https://packages.portal9.com/portal9app/portal9app-3.9.3_7.0.1.zip>             |
+|   3.9.3   |  6.8.1  |    0.10.0   | <https://packages.portal9.com/portal9app/portal9app-3.9.3_6.8.1.zip>             |
+|   3.9.2   |  7.1.1  |    1.1.0    | <https://packages.portal9.com/portal9app/portal9app-3.9.2_7.1.1.zip>             |
+|   3.9.1   |  7.1.1  |    1.1.0    | <https://packages.portal9.com/portal9app/portal9app-3.9.1_7.1.1.zip>             |
+|   3.9.1   |  7.1.0  |             | <https://packages.portal9.com/portal9app/portal9app-3.9.1_7.1.0.zip>             |
+|   3.9.1   |  6.8.0  |             | <https://packages.portal9.com/portal9app/portal9app-3.9.1_6.8.0.zip>             |
+|   3.9.0   |  6.7.2  |             | <https://packages.portal9.com/portal9app/portal9app-3.9.0_6.7.2.zip>             |
+|   3.9.0   |  6.7.1  |    0.9.0    | <https://packages.portal9.com/portal9app/portal9app-3.9.0_6.7.1.zip>             |
+|   3.8.2   |  6.7.1  |    0.9.0    | <https://packages.portal9.com/portal9app/portal9app-3.8.2_6.7.1.zip>             |
+|   3.8.2   |  6.7.0  |             | <https://packages.portal9.com/portal9app/portal9app-3.8.2_6.7.0.zip>             |
+|   3.8.2   |  6.6.2  |    0.8.0    | <https://packages.portal9.com/portal9app/portal9app-3.8.2_6.6.2.zip>             |
+|   3.8.2   |  6.6.1  |             | <https://packages.portal9.com/portal9app/portal9app-3.8.2_6.6.1.zip>             |
+|   3.8.2   |  6.6.0  |             | <https://packages.portal9.com/portal9app/portal9app-3.8.2_6.6.0.zip>             |
+|   3.8.2   |  6.5.4  |0.7.0 - 0.7.1| <https://packages.portal9.com/portal9app/portal9app-3.8.2_6.5.4.zip>             |
+|   3.8.1   |  6.5.4  |0.7.0 - 0.7.1| <https://packages.portal9.com/portal9app/portal9app-3.8.1_6.5.4.zip>             |
+|   3.8.0   |  6.5.4  |0.7.0 - 0.7.1| <https://packages.portal9.com/portal9app/portal9app-3.8.0_6.5.4.zip>             |
 
 
 ## Contribute
 
-If you want to contribute to our project please don't hesitate to send a pull request. You can also join our users [mailing list](https://groups.google.com/d/forum/wazuh), by sending an email to [wazuh+subscribe@googlegroups.com](mailto:wazuh+subscribe@googlegroups.com), to ask questions and participate in discussions.
+If you want to contribute to our project please don't hesitate to send a pull request. You can also join our users [mailing list](https://groups.google.com/d/forum/portal9), by sending an email to [portal9+subscribe@googlegroups.com](mailto:portal9+subscribe@googlegroups.com), to ask questions and participate in discussions.
 
 ## Software and libraries used
 

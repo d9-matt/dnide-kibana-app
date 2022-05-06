@@ -366,7 +366,7 @@ export default compose(
       await exportCsv(
         this.state.selectedNode ? `/cluster/${this.state.selectedNode}/logs` : '/manager/logs',
         Object.keys(filters).map(filter => ({name: filter, value: filters[filter]})),
-        `wazuh-${this.state.selectedNode ? `${this.state.selectedNode}-` : ''}ossec-log`
+        `portal9-${this.state.selectedNode ? `${this.state.selectedNode}-` : ''}ossec-log`
         );
         return;
     } catch (error) {

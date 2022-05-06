@@ -21,7 +21,7 @@ export class UpdateConfigurationFile {
   }
 
   /**
-   * Add or replace specific setting from wazuh.yml
+   * Add or replace specific setting from portal9.yml
    * @param {String} key The setting name.
    * @param {String} value New value for the setting.
    * @param {Boolean} exists If true, it just replaces the value for that key.
@@ -53,7 +53,7 @@ export class UpdateConfigurationFile {
     ? isNaN(Number(value)) ? value : Number(value)
     : value;
   /**
-   * Updates wazuh.yml file. If it fails, it throws the error to the next function.
+   * Updates portal9.yml file. If it fails, it throws the error to the next function.
    * @param {Object} input
    */
   updateConfiguration(input) {

@@ -50,7 +50,7 @@ const WzConfigurationSettingsProvider = (props) => {
   const [updatedConfig, setUpdateConfig] = useState({});
   useEffect(() => {
     store.dispatch(updateSelectedSettingsSection('configuration'));
-    const rawConfig = props.wazuhConfig.getConfig();
+    const rawConfig = props.portal9Config.getConfig();
     const formatedConfig = Object.keys(rawConfig).reduce<ISetting[]>((acc, conf) => [
       ...acc,
       {

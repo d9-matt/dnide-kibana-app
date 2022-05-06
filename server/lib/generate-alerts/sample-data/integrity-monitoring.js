@@ -24,7 +24,7 @@ export const pathsLinux = [
   "/etc/elasticsearch/elasticsearch.yml",
   "/etc/elasticsearch/users",
   "/etc/elasticsearch/config",
-  "/tmp/wazuh-config",
+  "/tmp/portal9-config",
   "/run/utmp",
   "/etc/resolv.conf",
   "/var/ossec/queue/fim/db/fim.db",

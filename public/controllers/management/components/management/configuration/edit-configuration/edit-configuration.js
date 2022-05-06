@@ -297,7 +297,7 @@ class WzEditConfiguration extends Component {
 }
 
 const mapStateToProps = state => ({
-  wazuhNotReadyYet: state.appStateReducers.wazuhNotReadyYet,
+  portal9NotReadyYet: state.appStateReducers.portal9NotReadyYet,
   clusterNodes: state.configurationReducers.clusterNodes,
   clusterNodeSelected: state.configurationReducers.clusterNodeSelected
 });
@@ -311,7 +311,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 WzEditConfiguration.propTypes = {
-  wazuhNotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+  portal9NotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
   updateWazuhNotReadyYet: PropTypes.func
 };
 
@@ -324,7 +324,7 @@ const mapStateToPropsEditor = state => ({
   clusterNodeSelected: state.configurationReducers.clusterNodeSelected,
   clusterNodes: state.configurationReducers.clusterNodes,
   refreshTime: state.configurationReducers.refreshTime,
-  wazuhNotReadyYet: state.appStateReducers.wazuhNotReadyYet
+  portal9NotReadyYet: state.appStateReducers.portal9NotReadyYet
 });
 
 const WzEditorConfiguration = compose(
@@ -358,7 +358,7 @@ const WzEditorConfiguration = compose(
         infoChangesAfterRestart,
         editorValue,
         onChange,
-        wazuhNotReadyYet
+        portal9NotReadyYet
       } = this.props;
       const existsClusterCurrentNodeSelected =
         this.props.clusterNodes &&
@@ -399,7 +399,7 @@ const WzEditorConfiguration = compose(
                   value={editorValue}
                   onChange={value => onChange(value)}
                   minusHeight={
-                    wazuhNotReadyYet || infoChangesAfterRestart ? 320 : 270
+                    portal9NotReadyYet || infoChangesAfterRestart ? 320 : 270
                   }
                 />
               )}

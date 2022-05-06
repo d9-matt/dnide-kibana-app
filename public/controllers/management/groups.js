@@ -9,7 +9,7 @@
  *
  * Find more information about this on the LICENSE file.
  */
-import { WazuhConfig } from '../../react-services/wazuh-config';
+import { WazuhConfig } from '../../react-services/portal9-config';
 import { WzRequest } from '../../react-services/wz-request';
 import { ShareAgent } from '../../factories/share-agent';
 import { GroupHandler } from '../../react-services/group-handler';
@@ -23,7 +23,7 @@ export class GroupsController {
     this.errorHandler = errorHandler;
     this.shareAgent = new ShareAgent();
     this.groupHandler = GroupHandler;
-    this.wazuhConfig = new WazuhConfig();
+    this.portal9Config = new WazuhConfig();
     this.reportingService = new ReportingService();
   }
 

@@ -30,12 +30,12 @@ const helpLinks = [
   {
     text: 'Checking connection with manager',
     href:
-      'https://documentation.wazuh.com/current/user-manual/agents/agent-connection.html'
+      'https://documentation.portal9.com/current/user-manual/agents/agent-connection.html'
   },
   {
     text: 'Client reference',
     href:
-      'https://documentation.wazuh.com/current/user-manual/reference/ossec-conf/client.html'
+      'https://documentation.portal9.com/current/user-manual/reference/ossec-conf/client.html'
   }
 ];
 

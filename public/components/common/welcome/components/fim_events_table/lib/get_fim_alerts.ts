@@ -25,9 +25,9 @@ function createFilters(agentId, indexPattern) {
     "$state": { "store": "appState" }
   }
 }
-  const wazuhFilter = getWazuhFilter();
+  const portal9Filter = getWazuhFilter();
   const filters = [
-    wazuhFilter,
+    portal9Filter,
     { name: 'agent.id', value: agentId },
     { name: 'rule.groups', value: 'syscheck' },
   ]
@@ -36,11 +36,11 @@ function createFilters(agentId, indexPattern) {
 
 export function getWazuhFilter() {
   const clusterInfo = AppState.getClusterInfo();
-  const wazuhFilter = {
+  const portal9Filter = {
     name: clusterInfo.status === 'enabled' ? 'cluster.name' : 'manager.name',
     value: clusterInfo.status === 'enabled' ? clusterInfo.cluster : clusterInfo.manager
   }
-  return wazuhFilter;
+  return portal9Filter;
 }
 
 export async function getFimAlerts(agentId, time, sortObj) {

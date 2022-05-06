@@ -17,7 +17,7 @@ import { WAZUH_ALERTS_PATTERN } from '../../../common/constants';
  * @param {*} context Endpoint context
  * @param {Number} gte Timestamp (ms) from
  * @param {Number} lte Timestamp (ms) to
- * @param {String} filters E.g: cluster.name: wazuh AND rule.groups: vulnerability
+ * @param {String} filters E.g: cluster.name: portal9 AND rule.groups: vulnerability
  * @returns {Array<String>}
  */
 export const top5RootkitsDetected = async (
@@ -72,7 +72,7 @@ export const top5RootkitsDetected = async (
  * @param {*} context Endpoint context
  * @param {Number} gte Timestamp (ms) from
  * @param {Number} lte Timestamp (ms) to
- * @param {String} filters E.g: cluster.name: wazuh AND rule.groups: vulnerability
+ * @param {String} filters E.g: cluster.name: portal9 AND rule.groups: vulnerability
  * @returns {Array<String>}
  */
 export const agentsWithHiddenPids = async (
@@ -121,7 +121,7 @@ export const agentsWithHiddenPids = async (
  * @param {*} context Endpoint context
  * @param {Number} gte Timestamp (ms) from
  * @param {Number} lte Timestamp (ms) to
- * @param {String} filters E.g: cluster.name: wazuh AND rule.groups: vulnerability
+ * @param {String} filters E.g: cluster.name: portal9 AND rule.groups: vulnerability
  * @returns {Array<String>}
  */
 export const agentsWithHiddenPorts = async(

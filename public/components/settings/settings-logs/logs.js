@@ -116,7 +116,7 @@ export default class SettingsLogs extends Component {
           </EuiFlexGroup>
           <EuiText color="subdued" style={{ paddingBottom: '15px' }}>
             Log file located at
-            /usr/share/kibana/data/wazuh/logs/wazuhapp.log
+            /usr/share/kibana/data/portal9/logs/portal9app.log
           </EuiText>
           {this.state.refreshingEntries && (
             <EuiProgress size="xs" color="primary" />

@@ -1,5 +1,5 @@
 // To launch this file
-// yarn test:jest --testEnvironment node --verbose server/routes/wazuh-hosts
+// yarn test:jest --testEnvironment node --verbose server/routes/portal9-hosts
 import axios from 'axios';
 
 function buildAxiosOptions(method: string, path: string, data: any = {}, headers: any = {}){
@@ -40,7 +40,7 @@ describe('Wazuh API - /hosts/update-hostname', () => {
     const options = buildAxiosOptions('put', '/hosts/update-hostname/default', {
       cluster_info: {
         status: 'enabled',
-        manager: 'wazuh-test',
+        manager: 'portal9-test',
         node: 'node-test',
         cluster: 'cluster-test'
       }

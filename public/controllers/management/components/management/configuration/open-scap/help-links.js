@@ -14,11 +14,11 @@ export default [
   {
     text: 'OpenSCAP module documentation',
     href:
-      'https://documentation.wazuh.com/current/user-manual/capabilities/policy-monitoring/openscap/index.html'
+      'https://documentation.portal9.com/current/user-manual/capabilities/policy-monitoring/openscap/index.html'
   },
   {
     text: 'OpenSCAP module reference',
     href:
-      'https://documentation.wazuh.com/current/user-manual/reference/ossec-conf/wodle-openscap.html'
+      'https://documentation.portal9.com/current/user-manual/reference/ossec-conf/wodle-openscap.html'
   }
 ];

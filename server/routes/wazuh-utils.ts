@@ -16,7 +16,7 @@ import { schema } from '@kbn/config-schema';
 export function WazuhUtilsRoutes(router: IRouter) {
   const ctrl = new WazuhUtilsCtrl();
 
-  // Returns the wazuh.yml file parsed
+  // Returns the portal9.yml file parsed
   router.get(
     {
       path: '/utils/configuration',
@@ -25,7 +25,7 @@ export function WazuhUtilsRoutes(router: IRouter) {
     async (context, request, response) => ctrl.getConfigurationFile(context, request, response)
   );
 
-  // Returns the wazuh.yml file in raw
+  // Returns the portal9.yml file in raw
   router.put(
     {
       path: '/utils/configuration',

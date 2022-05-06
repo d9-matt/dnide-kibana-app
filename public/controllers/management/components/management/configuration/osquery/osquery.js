@@ -39,12 +39,12 @@ const helpLinks = [
   {
     text: 'Osquery module documentation',
     href:
-      'https://documentation.wazuh.com/current/user-manual/capabilities/osquery.html'
+      'https://documentation.portal9.com/current/user-manual/capabilities/osquery.html'
   },
   {
     text: 'Osquery module reference',
     href:
-      'https://documentation.wazuh.com/current/user-manual/reference/ossec-conf/wodle-osquery.html'
+      'https://documentation.portal9.com/current/user-manual/reference/ossec-conf/wodle-osquery.html'
   }
 ];
 

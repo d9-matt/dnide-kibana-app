@@ -25,7 +25,7 @@ export class CheckDaemonsStatus {
           const updateNotReadyYet = updateWazuhNotReadyYet(false);
           store.dispatch(updateNotReadyYet);
 
-          this.$rootScope.wazuhNotReadyYet = false;
+          this.$rootScope.portal9NotReadyYet = false;
           this.$rootScope.$applyAsync();
           break;
         }
@@ -44,7 +44,7 @@ export class CheckDaemonsStatus {
       );
       store.dispatch(updateNotReadyYet);
 
-      this.$rootScope.wazuhNotReadyYet = 'Wazuh could not be recovered.';
+      this.$rootScope.portal9NotReadyYet = 'Wazuh could not be recovered.';
       this.$rootScope.$applyAsync();
     }
 

@@ -51,7 +51,7 @@ class WzMenuTools extends Component {
 
   clickMenuItem = async (ev, section) => {
     this.props.closePopover();
-    AppNavigate.navigateToModule(ev, 'wazuh-dev', { tab: section });
+    AppNavigate.navigateToModule(ev, 'portal9-dev', { tab: section });
   };
 
   createItem = (item, data = {}) => {
@@ -61,7 +61,7 @@ class WzMenuTools extends Component {
       id: item.id,
       name: item.text,
       'data-test-subj': item.cyTestId,
-      isSelected: window.location.href.includes('/wazuh-dev') && this.props.state.selected_tools_section === item.id,
+      isSelected: window.location.href.includes('/portal9-dev') && this.props.state.selected_tools_section === item.id,
       onClick: () => { },
       onMouseDown: (ev) => this.clickMenuItem(ev, item.id)
     };

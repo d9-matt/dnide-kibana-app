@@ -25,7 +25,7 @@ export class WazuhHostsCtrl {
   }
 
   /**
-   * This get all hosts entries in the wazuh.yml and the related info in the wazuh-registry.json
+   * This get all hosts entries in the portal9.yml and the related info in the portal9-registry.json
    * @param {Object} context
    * @param {Object} request
    * @param {Object} response
@@ -49,7 +49,7 @@ export class WazuhHostsCtrl {
           }
         })
       }
-      log('wazuh-hosts:getHostsEntries', error.message || error);
+      log('portal9-hosts:getHostsEntries', error.message || error);
       return ErrorResponse(error.message || error, 2001, 500, response);
     }
   }
@@ -63,7 +63,7 @@ export class WazuhHostsCtrl {
   async joinHostRegistry(hosts: any, registry: any, removePassword: boolean = true) {
     try {
       if (!Array.isArray(hosts)) {
-        throw new Error('Hosts configuration error in wazuh.yml');
+        throw new Error('Hosts configuration error in portal9.yml');
       }
 
       return await Promise.all(hosts.map(async h => {
@@ -95,7 +95,7 @@ export class WazuhHostsCtrl {
       const { cluster_info } = request.body;
       await this.updateRegistry.updateClusterInfo(id, cluster_info);
       log(
-        'wazuh-hosts:updateClusterInfo',
+        'portal9-hosts:updateClusterInfo',
         `API entry ${id} hostname updated`,
         'debug'
       );
@@ -103,9 +103,9 @@ export class WazuhHostsCtrl {
         body: { statusCode: 200, message: 'ok' }
       });
     } catch (error) {
-      log('wazuh-hosts:updateClusterInfo', error.message || error);
+      log('portal9-hosts:updateClusterInfo', error.message || error);
       return ErrorResponse(
-        `Could not update data in wazuh-registry.json due to ${error.message || error}`,
+        `Could not update data in portal9-registry.json due to ${error.message || error}`,
         2012,
         500,
         response
@@ -122,15 +122,15 @@ export class WazuhHostsCtrl {
   async removeOrphanEntries(context: RequestHandlerContext, request: KibanaRequest, response: KibanaResponseFactory) {
     try {
       const { entries } = request.body;
-      log('wazuh-hosts:cleanRegistry', 'Cleaning registry', 'debug');
+      log('portal9-hosts:cleanRegistry', 'Cleaning registry', 'debug');
       await this.updateRegistry.removeOrphanEntries(entries);
       return response.ok({
         body: { statusCode: 200, message: 'ok' }
       });
     } catch (error) {
-      log('wazuh-hosts:cleanRegistry', error.message || error);
+      log('portal9-hosts:cleanRegistry', error.message || error);
       return ErrorResponse(
-        `Could not clean entries in the wazuh-registry.json due to ${error.message || error}`,
+        `Could not clean entries in the portal9-registry.json due to ${error.message || error}`,
         2013,
         500,
         response

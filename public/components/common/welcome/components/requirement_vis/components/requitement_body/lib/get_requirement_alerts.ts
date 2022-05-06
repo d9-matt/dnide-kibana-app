@@ -61,9 +61,9 @@ function createFilters(agentId, indexPattern) {
     "$state": { "store": "appState" }
   }
 }
-  const wazuhFilter = getWazuhFilter();
+  const portal9Filter = getWazuhFilter();
   const filters = [
-    wazuhFilter,
+    portal9Filter,
     { name: 'agent.id', value: agentId },
   ];
   return filters.map(filter);

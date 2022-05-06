@@ -41,12 +41,12 @@ const helpLinks = [
   {
     text: 'How to configure the Wazuh cluster',
     href:
-      'https://documentation.wazuh.com/current/user-manual/configuring-cluster/index.html'
+      'https://documentation.portal9.com/current/user-manual/configuring-cluster/index.html'
   },
   {
     text: 'Wazuh cluster reference',
     href:
-      'https://documentation.wazuh.com/current/user-manual/reference/ossec-conf/cluster.html'
+      'https://documentation.portal9.com/current/user-manual/reference/ossec-conf/cluster.html'
   }
 ];
 
@@ -55,7 +55,7 @@ class WzCluster extends Component {
     super(props);
   }
   render() {
-    const { currentConfig, wazuhNotReadyYet } = this.props;
+    const { currentConfig, portal9NotReadyYet } = this.props;
     let mainSettingsConfig = {
       ...currentConfig['com-cluster'],
       disabled:
@@ -67,7 +67,7 @@ class WzCluster extends Component {
           isString(currentConfig['com-cluster']) && (
             <WzNoConfig error={currentConfig['com-cluster']} help={helpLinks} />
           )}
-        {wazuhNotReadyYet &&
+        {portal9NotReadyYet &&
           (!currentConfig || !currentConfig['com-cluster']) && (
             <WzNoConfig error="Wazuh not ready yet" help={helpLinks} />
           )}
@@ -93,12 +93,12 @@ class WzCluster extends Component {
 const sections = [{ component: 'com', configuration: 'cluster' }];
 
 const mapStateToProps = state => ({
-  wazuhNotReadyYet: state.appStateReducers.wazuhNotReadyYet
+  portal9NotReadyYet: state.appStateReducers.portal9NotReadyYet
 });
 
 WzCluster.propTypes = {
   // currentConfig: PropTypes.object.isRequired
-  wazuhNotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
+  portal9NotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
 };
 
 export default compose(

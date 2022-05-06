@@ -21,7 +21,7 @@ export const withUserLogged = (WrappedComponent) => (props) => {
     const withUserLogged = useSelector((state)=> state.appStateReducers.withUserLogged);
     return withUserLogged ? <WrappedComponent {...props}/> : (
       <div className="withUserLogged">
-        <img src={getHttp().basePath.prepend('/plugins/wazuh/assets/icon_blue.svg')} className="withUserLogged-logo" alt=""></img>
+        <img src={getHttp().basePath.prepend('/plugins/portal9/assets/icon_blue.svg')} className="withUserLogged-logo" alt=""></img>
         <EuiSpacer size="s" />
         <EuiText className="subdued-color">Loading ...</EuiText>
         <EuiSpacer size="s" />

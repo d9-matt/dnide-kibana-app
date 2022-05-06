@@ -24,9 +24,9 @@ function createFilters(indexPattern, agentId, tactic: string | undefined) {
       "$state": { "store": "appState" }
     }
 }
-  const wazuhFilter = getWazuhFilter();
+  const portal9Filter = getWazuhFilter();
   const filters = [
-    wazuhFilter,
+    portal9Filter,
     { name: 'agent.id', value: agentId },
     ...(tactic ? [{ name: 'rule.mitre.tactic', value: tactic }] : []),
   ]
@@ -39,11 +39,11 @@ function createExistsFilter(indexPattern) {
 
 function getWazuhFilter() {
   const clusterInfo = AppState.getClusterInfo();
-  const wazuhFilter = {
+  const portal9Filter = {
     name: clusterInfo.status === 'enabled' ? 'cluster.name' : 'manager.name',
     value: clusterInfo.status === 'enabled' ? clusterInfo.cluster : clusterInfo.manager
   }
-  return wazuhFilter;
+  return portal9Filter;
 }
 
 export async function getMitreCount(agentId, time, tactic: string | undefined) {

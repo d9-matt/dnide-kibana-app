@@ -11,7 +11,7 @@
  */
 
  // Data extrated of /security/actions endpoint
-import wazuhPermissions from '../../common/api-info/security-actions';
+import portal9Permissions from '../../common/api-info/security-actions';
 
 export class WzUserPermissions{
   // Check the missing permissions of the required ones that the user does not have
@@ -25,7 +25,7 @@ export class WzUserPermissions{
       const isGenericResource = (permission.resource.match(':\\*') || []).index === permission.resource.length - 2
 
       const actionName = typeof permission === 'string' ? permission : permission.action;
-      let actionResource = (typeof permission === 'string' && wazuhPermissions[actionName].resources.length === 1) ? (wazuhPermissions[actionName].resources[0] + ':*') : permission.resource;
+      let actionResource = (typeof permission === 'string' && portal9Permissions[actionName].resources.length === 1) ? (portal9Permissions[actionName].resources[0] + ':*') : permission.resource;
       const actionResourceAll = actionResource
         .split('&')
         .map(function (str) {
@@ -66,7 +66,7 @@ export class WzUserPermissions{
       }
 
       const existInWazuhPermissions = (userResource) => {
-        return !!wazuhPermissions[actionName].resources.find(function (resource) {
+        return !!portal9Permissions[actionName].resources.find(function (resource) {
           return (
             resource ===
             userResource
@@ -111,7 +111,7 @@ export class WzUserPermissions{
           })
         : (userPartialResources || []).length
         ? userPartialResources.some((resource) => partialResourceIsAllow(resource))
-        : wazuhPermissions[actionName].resources.find(
+        : portal9Permissions[actionName].resources.find(
             (resource) => resource === RESOURCE_ANY_SHORT
           ) && userPermissions[actionName][RESOURCE_ANY]
         ? !isAllow(userPermissions[actionName][RESOURCE_ANY])

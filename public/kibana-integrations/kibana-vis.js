@@ -219,7 +219,7 @@ class KibanaVis extends Component {
         ? [
             {
               meta: {
-                index: 'wazuh-monitoring-*',
+                index: 'portal9-monitoring-*',
                 alias: null,
                 negate: false,
                 disabled: false,

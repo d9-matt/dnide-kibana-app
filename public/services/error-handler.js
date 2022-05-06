@@ -102,7 +102,7 @@ export class ErrorHandler {
       const updateNotReadyYet = updateWazuhNotReadyYet('Wazuh not ready yet.');
       store.dispatch(updateNotReadyYet);
 
-      this.$rootScope.wazuhNotReadyYet = 'Wazuh not ready yet.';
+      this.$rootScope.portal9NotReadyYet = 'Wazuh not ready yet.';
       this.$rootScope.$applyAsync();
       this.checkDaemonsStatus.makePing();
       return;

@@ -11,14 +11,14 @@
 */
 import { AppState } from '../react-services/app-state';
 import { AUTHORIZED_AGENTS } from '../../common/constants';
-import { WazuhConfig } from '../react-services/wazuh-config';
+import { WazuhConfig } from '../react-services/portal9-config';
 
 export function getFilterWithAuthorizedAgents(agentsIds, pattern) {
    //check for empty agents array
   if(!agentsIds || agentsIds.length == 0) return;
 
-  const wazuhConfig = new WazuhConfig();
-  const config = wazuhConfig.getConfig();
+  const portal9Config = new WazuhConfig();
+  const config = portal9Config.getConfig();
   const statisticsPattern = `${config['cron.prefix']}-${config['cron.statistics.index.name']}-*`
   if(pattern == statisticsPattern) return;
   

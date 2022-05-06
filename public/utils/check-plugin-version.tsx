@@ -49,7 +49,7 @@ const checkClientAppVersion = (appInfo: TAppInfo) => {
       toastMessage: `The version of the Wazuh app in your browser does not correspond with the app version installed in Kibana. Please, clear your browser cache. For more info check the full error.`,
     };
 
-    const troubleshootingUrl = `https://documentation.wazuh.com/${appInfo['app-version']
+    const troubleshootingUrl = `https://documentation.portal9.com/${appInfo['app-version']
       .split('.')
       .slice(0, 2)
       .join('.')}/user-manual/kibana-app/troubleshooting.html`;
@@ -118,7 +118,7 @@ This message should not be displayed again.`;
     clearBrowserInfo(appInfo);
   } else {
     if (window.history.state == 'refreshed') {
-      window.history.replaceState('', 'wazuh');
+      window.history.replaceState('', 'portal9');
     }
     const storeAppInfo = localStorage.getItem('appInfo');
     !storeAppInfo && updateAppInfo(appInfo);

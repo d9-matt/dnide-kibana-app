@@ -25,21 +25,21 @@ export const initialWazuhConfig: string = `---
 # ======================== Wazuh app configuration file ========================
 #
 # Please check the documentation for more information on configuration options:
-# https://documentation.wazuh.com/current/installation-guide/index.html
+# https://documentation.portal9.com/current/installation-guide/index.html
 #
 # Also, you can check our repository:
-# https://github.com/wazuh/wazuh-kibana-app
+# https://github.com/portal9/portal9-kibana-app
 #
 # ------------------------------- Disable roles -------------------------------
 #
 # Defines which Elasticsearch roles disable Wazuh
 # disabled_roles: 
-#      - wazuh_disabled
+#      - portal9_disabled
 #
 # ------------------------------- Index patterns -------------------------------
 #
 # Default index pattern to use.
-#pattern: wazuh-alerts-*
+#pattern: portal9-alerts-*
 #
 # ----------------------------------- Checks -----------------------------------
 #
@@ -103,46 +103,46 @@ export const initialWazuhConfig: string = `---
 # Default: enabled
 #xpack.rbac.enabled: true
 #
-# ------------------------------ wazuh-monitoring ------------------------------
+# ------------------------------ portal9-monitoring ------------------------------
 #
-# Custom setting to enable/disable wazuh-monitoring indices.
+# Custom setting to enable/disable portal9-monitoring indices.
 # Values: true, false, worker
 # If worker is given as value, the app will show the Agents status
-# visualization but won't insert data on wazuh-monitoring indices.
+# visualization but won't insert data on portal9-monitoring indices.
 # Default: true
-#wazuh.monitoring.enabled: true
+#portal9.monitoring.enabled: true
 #
-# Custom setting to set the frequency for wazuh-monitoring indices cron task.
+# Custom setting to set the frequency for portal9-monitoring indices cron task.
 # Default: 900 (s)
-#wazuh.monitoring.frequency: 900
+#portal9.monitoring.frequency: 900
 #
-# Configure wazuh-monitoring-* indices shards and replicas.
-#wazuh.monitoring.shards: 1
-#wazuh.monitoring.replicas: 0
+# Configure portal9-monitoring-* indices shards and replicas.
+#portal9.monitoring.shards: 1
+#portal9.monitoring.replicas: 0
 #
-# Configure wazuh-monitoring-* indices custom creation interval.
+# Configure portal9-monitoring-* indices custom creation interval.
 # Values: h (hourly), d (daily), w (weekly), m (monthly)
 # Default: w
-#wazuh.monitoring.creation: w
+#portal9.monitoring.creation: w
 #
 # Default index pattern to use for Wazuh monitoring
-#wazuh.monitoring.pattern: wazuh-monitoring-*
+#portal9.monitoring.pattern: portal9-monitoring-*
 #
-# --------------------------------- wazuh-cron ----------------------------------
+# --------------------------------- portal9-cron ----------------------------------
 #
 # Customize the index prefix of predefined jobs
 # This change is not retroactive, if you change it new indexes will be created
-# cron.prefix: wazuh
+# cron.prefix: portal9
 #
-# --------------------------------- wazuh-sample-alerts -------------------------
+# --------------------------------- portal9-sample-alerts -------------------------
 #
 # Customize the index name prefix of sample alerts
 # This change is not retroactive, if you change it new indexes will be created
 # It should match with a valid index template to avoid unknown fields on
 # dashboards
-#alerts.sample.prefix: wazuh-alerts-4.x-
+#alerts.sample.prefix: portal9-alerts-4.x-
 #
-# ------------------------------ wazuh-statistics -------------------------------
+# ------------------------------ portal9-statistics -------------------------------
 #
 # Custom setting to enable/disable statistics tasks.
 #cron.statistics.status: true
@@ -164,19 +164,19 @@ export const initialWazuhConfig: string = `---
 #cron.statistics.shards: 2
 #cron.statistics.replicas: 0
 #
-# ------------------------------ wazuh-logo-customization -------------------------------
+# ------------------------------ portal9-logo-customization -------------------------------
 #
-#Define the name of the app logo saved in the path /plugins/wazuh/assets/
+#Define the name of the app logo saved in the path /plugins/portal9/assets/
 #customization.logo.app: logotype.svg
 #
-#Define the name of the sideba logo saved in the path /plugins/wazuh/assets/
+#Define the name of the sideba logo saved in the path /plugins/portal9/assets/
 #customization.logo.sidebar: icon_blue.png
 #
-#Define the name of the health-check logo saved in the path /plugins/wazuh/assets/
+#Define the name of the health-check logo saved in the path /plugins/portal9/assets/
 #customization.logo.healthcheck: icon_blue.svg
 #
 #
-#Define the name of the reports logo (.png) saved in the path /plugins/wazuh/assets/
+#Define the name of the reports logo (.png) saved in the path /plugins/portal9/assets/
 #customization.logo.reports: logo.png
 #
 # ---------------------------- Hide manager alerts ------------------------------
@@ -228,7 +228,7 @@ hosts:
   - default:
      url: https://localhost
      port: 55000
-     username: wazuh-wui
-     password: wazuh-wui
+     username: portal9-wui
+     password: portal9-wui
      run_as: false
 `

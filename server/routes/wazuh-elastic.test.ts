@@ -1,5 +1,5 @@
 // To launch this file
-// yarn test:jest --testEnvironment node --verbose server/routes/wazuh-elastic
+// yarn test:jest --testEnvironment node --verbose server/routes/portal9-elastic
 import axios from 'axios';
 
 function buildAxiosOptions(method: string, path: string, data: any = {}, headers: any = {}){
@@ -56,7 +56,7 @@ describe('Wazuh API - /elastic/security/current-platform', () => {
 
 describe('Wazuh API - /elastic/template/{pattern}', () => {
   test('[200] Check if there is some template with the pattern', () => {
-    const options = buildAxiosOptions('get', '/elastic/template/wazuh-alerts-*');
+    const options = buildAxiosOptions('get', '/elastic/template/portal9-alerts-*');
     return axios(options).then(response => {
       expect(response.status).toBe(200);
       expect(typeof response.data.status).toBe('boolean');
@@ -67,7 +67,7 @@ describe('Wazuh API - /elastic/template/{pattern}', () => {
 
 describe('Wazuh API - /elastic/index-patterns/{pattern}', () => {
   test('[200] Check if there an index pattern with the pattern', () => {
-    const options = buildAxiosOptions('get', '/elastic/index-patterns/wazuh-alerts-*');
+    const options = buildAxiosOptions('get', '/elastic/index-patterns/portal9-alerts-*');
     return axios(options).then(response => {
       expect(response.status).toBe(200);
       expect(typeof response.data.status).toBe('boolean');

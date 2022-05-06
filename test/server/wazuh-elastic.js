@@ -10,7 +10,7 @@ const headers = {
   headers: { 'kbn-xsrf': 'kibana', 'Content-Type': 'application/json' }
 };
 
-describe('wazuh-elastic', () => {
+describe('portal9-elastic', () => {
   describe('Checking index patterns', () => {
     it('GET /elastic/known-fields/{pattern}', async () => {
       const res = await needle(

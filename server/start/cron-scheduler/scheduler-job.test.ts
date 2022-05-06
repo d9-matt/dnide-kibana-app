@@ -4,8 +4,8 @@ import {
   IApi,
   jobs
 } from './index';
-import { WazuhHostsCtrl } from '../../controllers/wazuh-hosts';
-jest.mock('../../controllers/wazuh-hosts');
+import { WazuhHostsCtrl } from '../../controllers/portal9-hosts';
+jest.mock('../../controllers/portal9-hosts');
 jest.mock('./save-document');
 jest.mock('./predefined-jobs', () => ({
   jobs: {
@@ -32,8 +32,8 @@ describe('SchedulerJob', () => {
   const oneApi = [{
     url: 'https://localhost',
     port: 55000,
-    username: 'wazuh',
-    password: 'wazuh',
+    username: 'portal9',
+    password: 'portal9',
     id: 'default',
     cluster_info: {
       status: 'disabled',
@@ -46,8 +46,8 @@ describe('SchedulerJob', () => {
     {
       url: 'https://localhost',
       port: 55000,
-      username: 'wazuh',
-      password: 'wazuh',
+      username: 'portal9',
+      password: 'portal9',
       id: 'internal',
       cluster_info: {
         status: 'disabled',
@@ -59,8 +59,8 @@ describe('SchedulerJob', () => {
     {
       url: 'https://externalhost',
       port: 55000,
-      username: 'wazuh',
-      password: 'wazuh',
+      username: 'portal9',
+      password: 'portal9',
       id: 'external',
       cluster_info: {
         status: 'disabled',
@@ -74,8 +74,8 @@ describe('SchedulerJob', () => {
     {
       url: 'https://localhost',
       port: 55000,
-      username: 'wazuh',
-      password: 'wazuh',
+      username: 'portal9',
+      password: 'portal9',
       id: 'internal',
       cluster_info: {
         status: 'disabled',
@@ -87,8 +87,8 @@ describe('SchedulerJob', () => {
     {
       url: 'https://externalhost',
       port: 55000,
-      username: 'wazuh',
-      password: 'wazuh',
+      username: 'portal9',
+      password: 'portal9',
       id: 'external',
       cluster_info: {
         status: 'disabled',
@@ -100,8 +100,8 @@ describe('SchedulerJob', () => {
     {
       url: 'https://externalhost',
       port: 55000,
-      username: 'wazuh',
-      password: 'wazuh',
+      username: 'portal9',
+      password: 'portal9',
       id: 'experimental',
       cluster_info: {
         status: 'disabled',
@@ -172,7 +172,7 @@ describe('SchedulerJob', () => {
   it('should throw an exception when no get APIs', async () => {
     WazuhHostsCtrl.prototype.getHostsEntries.mockResolvedValue([])
     await expect(schedulerJob.getApiObjects()).rejects.toEqual(
-      { error: 10001, message: 'No Wazuh host configured in wazuh.yml' }
+      { error: 10001, message: 'No Wazuh host configured in portal9.yml' }
     );
   });
 

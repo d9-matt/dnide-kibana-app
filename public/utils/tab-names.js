@@ -44,7 +44,7 @@ export const TabNames = {
   reporting: 'Reporting',
   'registration-service': 'Registration service',
   cluster: 'Cluster',
-  'wazuh-modules': 'Wazuh modules',
+  'portal9-modules': 'Wazuh modules',
   'active-response': 'Active response',
   integrations: 'Integrations',
   'database-output': 'Database output',

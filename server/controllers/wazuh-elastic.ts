@@ -100,7 +100,7 @@ export class WazuhElasticCtrl {
         return item.includes(pattern) || pattern.includes(item);
       });
       log(
-        'wazuh-elastic:getTemplate',
+        'portal9-elastic:getTemplate',
         `Template is valid: ${isIncluded && Array.isArray(isIncluded) && isIncluded.length
           ? 'yes'
           : 'no'
@@ -123,7 +123,7 @@ export class WazuhElasticCtrl {
           }
         });
     } catch (error) {
-      log('wazuh-elastic:getTemplate', error.message || error);
+      log('portal9-elastic:getTemplate', error.message || error);
       return ErrorResponse(
         `Could not retrieve templates from Elasticsearch due to ${error.message ||
         error}`,
@@ -149,7 +149,7 @@ export class WazuhElasticCtrl {
         item => item.attributes.title === request.params.pattern
       );
       log(
-        'wazuh-elastic:checkPattern',
+        'portal9-elastic:checkPattern',
         `Index pattern found: ${existsIndexPattern ? existsIndexPattern.attributes.title : 'no'}`,
         'debug'
       );
@@ -166,7 +166,7 @@ export class WazuhElasticCtrl {
           }
         });
     } catch (error) {
-      log('wazuh-elastic:checkPattern', error.message || error);
+      log('portal9-elastic:checkPattern', error.message || error);
       return ErrorResponse(
         `Something went wrong retrieving index-patterns from Elasticsearch due to ${error.message ||
         error}`,
@@ -256,7 +256,7 @@ export class WazuhElasticCtrl {
           }
         });
     } catch (error) {
-      log('wazuh-elastic:getFieldTop', error.message || error);
+      log('portal9-elastic:getFieldTop', error.message || error);
       return ErrorResponse(error.message || error, 4004, 500, response);
     }
   }
@@ -327,11 +327,11 @@ export class WazuhElasticCtrl {
     try {
       return response.ok({
         body: {
-          platform: context.wazuh.security.platform
+          platform: context.portal9.security.platform
         }
       });
     } catch (error) {
-      log('wazuh-elastic:getCurrentPlatform', error.message || error);
+      log('portal9-elastic:getCurrentPlatform', error.message || error);
       return ErrorResponse(error.message || error, 4011, 500, response);
     }
   }
@@ -339,20 +339,20 @@ export class WazuhElasticCtrl {
   /**
    * Replaces visualizations main fields to fit a certain pattern.
    * @param {Array<Object>} app_objects Object containing raw visualizations.
-   * @param {String} id Index-pattern id to use in the visualizations. Eg: 'wazuh-alerts'
+   * @param {String} id Index-pattern id to use in the visualizations. Eg: 'portal9-alerts'
    */
   async buildVisualizationsRaw(app_objects, id, namespace = false) {
     try {
       const config = getConfiguration();
       let monitoringPattern =
-        (config || {})['wazuh.monitoring.pattern'] || WAZUH_MONITORING_PATTERN;
+        (config || {})['portal9.monitoring.pattern'] || WAZUH_MONITORING_PATTERN;
       log(
-        'wazuh-elastic:buildVisualizationsRaw',
+        'portal9-elastic:buildVisualizationsRaw',
         `Building ${app_objects.length} visualizations`,
         'debug'
       );
       log(
-        'wazuh-elastic:buildVisualizationsRaw',
+        'portal9-elastic:buildVisualizationsRaw',
         `Index pattern ID: ${id}`,
         'debug'
       );
@@ -370,7 +370,7 @@ export class WazuhElasticCtrl {
         ) {
           const defaultStr = aux_source.kibanaSavedObjectMeta.searchSourceJSON;
 
-          const isMonitoring = defaultStr.includes('wazuh-monitoring');
+          const isMonitoring = defaultStr.includes('portal9-monitoring');
           if (isMonitoring) {
             if (namespace && namespace !== 'default') {
               if (
@@ -383,7 +383,7 @@ export class WazuhElasticCtrl {
               }
             }
             aux_source.kibanaSavedObjectMeta.searchSourceJSON = defaultStr.replace(
-              /wazuh-monitoring/g,
+              /portal9-monitoring/g,
               monitoringPattern[monitoringPattern.length - 1] === '*' ||
                 (namespace && namespace !== 'default')
                 ? monitoringPattern
@@ -391,7 +391,7 @@ export class WazuhElasticCtrl {
             );
           } else {
             aux_source.kibanaSavedObjectMeta.searchSourceJSON = defaultStr.replace(
-              /wazuh-alerts/g,
+              /portal9-alerts/g,
               id
             );
           }
@@ -400,7 +400,7 @@ export class WazuhElasticCtrl {
         // Replace index-pattern for selector visualizations
         if (typeof (aux_source || {}).visState === 'string') {
           aux_source.visState = aux_source.visState.replace(
-            /wazuh-alerts/g,
+            /portal9-alerts/g,
             id
           );
         }
@@ -418,7 +418,7 @@ export class WazuhElasticCtrl {
       }
       return visArray;
     } catch (error) {
-      log('wazuh-elastic:buildVisualizationsRaw', error.message || error);
+      log('portal9-elastic:buildVisualizationsRaw', error.message || error);
       return Promise.reject(error);
     }
   }
@@ -426,9 +426,9 @@ export class WazuhElasticCtrl {
   /**
    * Replaces cluster visualizations main fields.
    * @param {Array<Object>} app_objects Object containing raw visualizations.
-   * @param {String} id Index-pattern id to use in the visualizations. Eg: 'wazuh-alerts'
+   * @param {String} id Index-pattern id to use in the visualizations. Eg: 'portal9-alerts'
    * @param {Array<String>} nodes Array of node names. Eg: ['node01', 'node02']
-   * @param {String} name Cluster name. Eg: 'wazuh'
+   * @param {String} name Cluster name. Eg: 'portal9'
    * @param {String} master_node Master node name. Eg: 'node01'
    */
   buildClusterVisualizationsRaw(
@@ -446,7 +446,7 @@ export class WazuhElasticCtrl {
       for (const element of app_objects) {
         // Stringify and replace index-pattern for visualizations
         aux_source = JSON.stringify(element._source);
-        aux_source = aux_source.replace(/wazuh-alerts/g, id);
+        aux_source = aux_source.replace(/portal9-alerts/g, id);
         aux_source = JSON.parse(aux_source);
 
         // Bulk source
@@ -468,18 +468,18 @@ export class WazuhElasticCtrl {
           } else {
             if (title.startsWith('Wazuh App Statistics')) {
               const { searchSourceJSON } = bulk_content.visualization.kibanaSavedObjectMeta;
-              bulk_content.visualization.kibanaSavedObjectMeta.searchSourceJSON = searchSourceJSON.replace('wazuh-statistics-*', pattern_name);
+              bulk_content.visualization.kibanaSavedObjectMeta.searchSourceJSON = searchSourceJSON.replace('portal9-statistics-*', pattern_name);
             }
             if (title.startsWith('Wazuh App Statistics') && name !== '-' && name !== 'all' && visState.params.expression.includes('q=')) {
               const expressionRegex = /q='\*'/gi;
               const _visState = bulk_content.visualization.visStateByNode
                 ? JSON.parse(bulk_content.visualization.visStateByNode)
                 : visState;
-              query += _visState.params.expression.replace(/wazuh-statistics-\*/g, pattern_name).replace(expressionRegex, `q="nodeName.keyword:${name} AND apiName.keyword:${master_node}"`)
+              query += _visState.params.expression.replace(/portal9-statistics-\*/g, pattern_name).replace(expressionRegex, `q="nodeName.keyword:${name} AND apiName.keyword:${master_node}"`)
                 .replace("NODE_NAME", name)
             } else if (title.startsWith('Wazuh App Statistics')) {
               const expressionRegex = /q='\*'/gi
-              query += visState.params.expression.replace(/wazuh-statistics-\*/g, pattern_name).replace(expressionRegex, `q="apiName.keyword:${master_node}"`)
+              query += visState.params.expression.replace(/portal9-statistics-\*/g, pattern_name).replace(expressionRegex, `q="apiName.keyword:${master_node}"`)
             } else {
               query = visState.params.expression;
             }
@@ -500,7 +500,7 @@ export class WazuhElasticCtrl {
       return visArray;
     } catch (error) {
       log(
-        'wazuh-elastic:buildClusterVisualizationsRaw',
+        'portal9-elastic:buildClusterVisualizationsRaw',
         error.message || error
       );
       return Promise.reject(error);
@@ -534,8 +534,8 @@ export class WazuhElasticCtrl {
         tabPrefix === 'overview'
           ? OverviewVisualizations[tabSufix]
           : AgentsVisualizations[tabSufix];
-      log('wazuh-elastic:createVis', `${tabPrefix}[${tabSufix}] with index pattern ${request.params.pattern}`, 'debug');
-      const namespace = context.wazuh.plugins.spaces && context.wazuh.plugins.spaces.spacesService && context.wazuh.plugins.spaces.spacesService.getSpaceId(request);
+      log('portal9-elastic:createVis', `${tabPrefix}[${tabSufix}] with index pattern ${request.params.pattern}`, 'debug');
+      const namespace = context.portal9.plugins.spaces && context.portal9.plugins.spaces.spacesService && context.portal9.plugins.spaces.spacesService.getSpaceId(request);
       const raw = await this.buildVisualizationsRaw(
         file,
         request.params.pattern,
@@ -545,7 +545,7 @@ export class WazuhElasticCtrl {
         body: { acknowledge: true, raw: raw }
       });
     } catch (error) {
-      log('wazuh-elastic:createVis', error.message || error);
+      log('portal9-elastic:createVis', error.message || error);
       return ErrorResponse(error.message || error, 4007, 500, response);
     }
   }
@@ -593,7 +593,7 @@ export class WazuhElasticCtrl {
         body: { acknowledge: true, raw: raw }
       });
     } catch (error) {
-      log('wazuh-elastic:createClusterVis', error.message || error);
+      log('portal9-elastic:createClusterVis', error.message || error);
       return ErrorResponse(error.message || error, 4009, 500, response);
     }
   }
@@ -608,7 +608,7 @@ export class WazuhElasticCtrl {
    */
   async haveSampleAlerts(context: RequestHandlerContext, request: KibanaRequest, response: KibanaResponseFactory) {
     try {
-      // Check if wazuh sample alerts index exists
+      // Check if portal9 sample alerts index exists
       const results = await Promise.all(Object.keys(WAZUH_SAMPLE_ALERTS_CATEGORIES_TYPE_ALERTS)
         .map((category) => context.core.elasticsearch.client.asCurrentUser.indices.exists({
           index: this.buildSampleIndexByCategory(category)
@@ -621,7 +621,7 @@ export class WazuhElasticCtrl {
     }
   }
   /**
-   * This creates sample alerts in wazuh-sample-alerts
+   * This creates sample alerts in portal9-sample-alerts
    * GET /elastic/samplealerts/{category}
    * @param {*} context
    * @param {*} request
@@ -631,7 +631,7 @@ export class WazuhElasticCtrl {
   async haveSampleAlertsOfCategory(context: RequestHandlerContext, request: KibanaRequest<{ category: string }>, response: KibanaResponseFactory) {
     try {
       const sampleAlertsIndex = this.buildSampleIndexByCategory(request.params.category);
-      // Check if wazuh sample alerts index exists
+      // Check if portal9 sample alerts index exists
       const existsSampleIndex = await context.core.elasticsearch.client.asCurrentUser.indices.exists({
         index: sampleAlertsIndex
       });
@@ -640,14 +640,14 @@ export class WazuhElasticCtrl {
       })
     } catch (error) {
       log(
-        'wazuh-elastic:haveSampleAlertsOfCategory',
+        'portal9-elastic:haveSampleAlertsOfCategory',
         `Error checking if there are sample alerts indices: ${error.message || error}`
       );
       return ErrorResponse(`Error checking if there are sample alerts indices: ${error.message || error}`, 1000, 500, response);
     }
   }
   /**
-   * This creates sample alerts in wazuh-sample-alerts
+   * This creates sample alerts in portal9-sample-alerts
    * POST /elastic/samplealerts/{category}
    * {
    *   "manager": {
@@ -684,7 +684,7 @@ export class WazuhElasticCtrl {
       if (!apiHostID) {
         return ErrorResponse('No API id provided', 401, 401, response);
       };
-      const responseTokenIsWorking = await context.wazuh.api.client.asCurrentUser.request('GET', `//`, {}, { apiHostID });
+      const responseTokenIsWorking = await context.portal9.api.client.asCurrentUser.request('GET', `//`, {}, { apiHostID });
       if (responseTokenIsWorking.status !== 200) {
         return ErrorResponse('Token is not valid', 500, 500, response);
       };
@@ -701,12 +701,12 @@ export class WazuhElasticCtrl {
 
       // Index alerts
 
-      // Check if wazuh sample alerts index exists
+      // Check if portal9 sample alerts index exists
       const existsSampleIndex = await context.core.elasticsearch.client.asInternalUser.indices.exists({
         index: sampleAlertsIndex
       });
       if (!existsSampleIndex.body) {
-        // Create wazuh sample alerts index
+        // Create portal9 sample alerts index
 
         const configuration = {
           settings: {
@@ -722,7 +722,7 @@ export class WazuhElasticCtrl {
           body: configuration
         });
         log(
-          'wazuh-elastic:createSampleAlerts',
+          'portal9-elastic:createSampleAlerts',
           `Created ${sampleAlertsIndex} index`,
           'debug'
         );
@@ -733,7 +733,7 @@ export class WazuhElasticCtrl {
         body: bulk
       });
       log(
-        'wazuh-elastic:createSampleAlerts',
+        'portal9-elastic:createSampleAlerts',
         `Added sample alerts to ${sampleAlertsIndex} index`,
         'debug'
       );
@@ -742,7 +742,7 @@ export class WazuhElasticCtrl {
       });
     } catch (error) {
       log(
-        'wazuh-elastic:createSampleAlerts',
+        'portal9-elastic:createSampleAlerts',
         `Error adding sample alerts to ${sampleAlertsIndex} index: ${error.message || error}`
       );
       return ErrorResponse(error.message || error, 1000, 500, response);
@@ -778,7 +778,7 @@ export class WazuhElasticCtrl {
       if (!apiHostID) {
         return ErrorResponse('No API id provided', 401, 401, response);
       };
-      const responseTokenIsWorking = await context.wazuh.api.client.asCurrentUser.request('GET', `//`, {}, { apiHostID });
+      const responseTokenIsWorking = await context.portal9.api.client.asCurrentUser.request('GET', `//`, {}, { apiHostID });
       if (responseTokenIsWorking.status !== 200) {
         return ErrorResponse('Token is not valid', 500, 500, response);
       };
@@ -791,7 +791,7 @@ export class WazuhElasticCtrl {
         // Delete Wazuh sample alerts index
         await context.core.elasticsearch.client.asCurrentUser.indices.delete({ index: sampleAlertsIndex });
         log(
-          'wazuh-elastic:deleteSampleAlerts',
+          'portal9-elastic:deleteSampleAlerts',
           `Deleted ${sampleAlertsIndex} index`,
           'debug'
         );
@@ -803,7 +803,7 @@ export class WazuhElasticCtrl {
       }
     } catch (error) {
       log(
-        'wazuh-elastic:deleteSampleAlerts',
+        'portal9-elastic:deleteSampleAlerts',
         `Error deleting sample alerts of ${sampleAlertsIndex} index: ${error.message || error}`
       );
       return ErrorResponse(error.message || error, 1000, 500, response);
@@ -817,7 +817,7 @@ export class WazuhElasticCtrl {
         body: data.body
       });
     } catch (error) {
-      log('wazuh-elastic:alerts', error.message || error);
+      log('portal9-elastic:alerts', error.message || error);
       return ErrorResponse(error.message || error, 4010, 500, response);
     }
   }
@@ -826,7 +826,7 @@ export class WazuhElasticCtrl {
   async existStatisticsIndices(context: RequestHandlerContext, request: KibanaRequest, response: KibanaResponseFactory) {
     try {
       const config = getConfiguration();
-      const statisticsPattern = `${config['cron.prefix'] || 'wazuh'}-${config['cron.statistics.index.name'] || 'statistics'}*`; //TODO: replace by default as constants instead hardcoded ('wazuh' and 'statistics')
+      const statisticsPattern = `${config['cron.prefix'] || 'portal9'}-${config['cron.statistics.index.name'] || 'statistics'}*`; //TODO: replace by default as constants instead hardcoded ('portal9' and 'statistics')
       const existIndex = await context.core.elasticsearch.client.asCurrentUser.indices.exists({
         index: statisticsPattern,
         allow_no_indices: false
@@ -835,7 +835,7 @@ export class WazuhElasticCtrl {
         body: existIndex.body
       });
     } catch (error) {
-      log('wazuh-elastic:existsStatisticsIndices', error.message || error);
+      log('portal9-elastic:existsStatisticsIndices', error.message || error);
       return ErrorResponse(error.message || error, 1000, 500, response);
     }
   }

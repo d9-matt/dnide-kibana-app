@@ -38,7 +38,7 @@ import { first } from 'rxjs/operators';
 
 declare module 'kibana/server' {
   interface RequestHandlerContext {
-    wazuh: {
+    portal9: {
       logger: Logger,
       plugins: PluginSetup,
       security: ISecurityFactory
@@ -68,17 +68,17 @@ export class WazuhPlugin implements Plugin<WazuhPluginSetup, WazuhPluginStart> {
   public async setup(core: CoreSetup, plugins: PluginSetup) {
     this.logger.debug('Wazuh-wui: Setup');
 
-    const wazuhSecurity = SecurityObj(plugins);
+    const portal9Security = SecurityObj(plugins);
     const serverInfo = core.http.getServerInfo();
 
-    core.http.registerRouteHandlerContext('wazuh', (context, request) => {
+    core.http.registerRouteHandlerContext('portal9', (context, request) => {
       return {
         logger: this.logger,
         server: {
           info: serverInfo, 
         },
         plugins,
-        security: wazuhSecurity,
+        security: portal9Security,
         api: {
           client: {
             asInternalUser: {
@@ -86,7 +86,7 @@ export class WazuhPlugin implements Plugin<WazuhPluginSetup, WazuhPluginStart> {
               request: async (method, path, data, options) => await ApiInterceptor.requestAsInternalUser(method, path, data, options),
             },
             asCurrentUser: {
-              authenticate: async (apiHostID) => await ApiInterceptor.authenticate(apiHostID, (await wazuhSecurity.getCurrentUser(request, context)).authContext),
+              authenticate: async (apiHostID) => await ApiInterceptor.authenticate(apiHostID, (await portal9Security.getCurrentUser(request, context)).authContext),
               request: async (method, path, data, options) => await ApiInterceptor.requestAsCurrentUser(method, path, data, {...options, token: getCookieValueByName(request.headers.cookie, 'wz-token')}),
             }
           }
@@ -111,7 +111,7 @@ export class WazuhPlugin implements Plugin<WazuhPluginSetup, WazuhPluginStart> {
 
   public async start(core: CoreStart) {
     const globalConfiguration: SharedGlobalConfig = await this.initializerContext.config.legacy.globalConfig$.pipe(first()).toPromise();
-    const wazuhApiClient = {
+    const portal9ApiClient = {
       client: {
         asInternalUser: {
           authenticate: async (apiHostID) => await ApiInterceptor.authenticate(apiHostID),
@@ -127,9 +127,9 @@ export class WazuhPlugin implements Plugin<WazuhPluginSetup, WazuhPluginStart> {
     // Initialize
     jobInitializeRun({
       core, 
-      wazuh: {
+      portal9: {
         logger: this.logger.get('initialize'),
-        api: wazuhApiClient
+        api: portal9ApiClient
       },
       server: contextServer
     });
@@ -137,9 +137,9 @@ export class WazuhPlugin implements Plugin<WazuhPluginSetup, WazuhPluginStart> {
     // Monitoring
     jobMonitoringRun({
       core,
-      wazuh: {
+      portal9: {
         logger: this.logger.get('monitoring'),
-        api: wazuhApiClient
+        api: portal9ApiClient
       },
       server: contextServer
     });
@@ -147,9 +147,9 @@ export class WazuhPlugin implements Plugin<WazuhPluginSetup, WazuhPluginStart> {
     // Scheduler
     jobSchedulerRun({
       core,
-      wazuh: {
+      portal9: {
         logger: this.logger.get('cron-scheduler'),
-        api: wazuhApiClient
+        api: portal9ApiClient
       },
       server: contextServer
     });
@@ -157,9 +157,9 @@ export class WazuhPlugin implements Plugin<WazuhPluginSetup, WazuhPluginStart> {
     // Queue
     jobQueueRun({
       core, 
-      wazuh: {
+      portal9: {
         logger: this.logger.get('queue'),
-        api: wazuhApiClient
+        api: portal9ApiClient
       },
       server: contextServer
     });

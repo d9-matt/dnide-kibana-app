@@ -30,7 +30,7 @@
 // export function DevTools({ initialTextValue }) {
 //   const editorRef = useRef(null);
 //   const editorInstanceRef = useRef(null);
-//   const wazuhDevTools = useRef(null);
+//   const portal9DevTools = useRef(null);
 //   const [tabsState, setTabs] = useState([""])
 //   const [statusBadges, setStatusBadges] = useState([false])
 //   const [loading, setLoading] = useState(false)
@@ -68,7 +68,7 @@
 
 //   useEffect(() => {
 //     editorInstanceRef.current = senseEditor.create(editorRef.current!);
-//     wazuhDevTools.current = { tabs: tabsState, selectedTab, statusBadges };
+//     portal9DevTools.current = { tabs: tabsState, selectedTab, statusBadges };
 //     const editor = editorInstanceRef.current;
 //     editor.coreEditor.editor.commands.addCommand({
 //       name: "sendRequest",
@@ -179,7 +179,7 @@
 //   }, [initialTextValue, history]);
 
 //   useEffect(() => {
-//     wazuhDevTools.current = { tabs: tabsState, selectedTab, statusBadges };
+//     portal9DevTools.current = { tabs: tabsState, selectedTab, statusBadges };
 //   }, [tabsState, selectedTab, statusBadges])
 
 //   const abs = {
@@ -190,12 +190,12 @@
 //   };
 
 //   const addNewTab = () => {
-//     const tabsLength = wazuhDevTools.current.tabs.length;
+//     const tabsLength = portal9DevTools.current.tabs.length;
 //     if (tabsLength < 5) {
-//       const newTabs = [...wazuhDevTools.current.tabs];
+//       const newTabs = [...portal9DevTools.current.tabs];
 //       newTabs[tabsLength] = '';
 //       setTabs(newTabs);
-//       const newBadges = [...wazuhDevTools.current.statusBadges];
+//       const newBadges = [...portal9DevTools.current.statusBadges];
 //       newBadges[tabsLength] = false;
 //       setStatusBadges(newBadges);
 //       setSelectedTab(newTabs.length - 1)
@@ -214,10 +214,10 @@
 
 
 //   const closeTab = (tabId) => {
-//     const newTabs = [...wazuhDevTools.current.tabs];
+//     const newTabs = [...portal9DevTools.current.tabs];
 //     newTabs.splice(tabId, 1);
 //     setTabs(newTabs);
-//     const newBadges = [...wazuhDevTools.current.statusBadges];
+//     const newBadges = [...portal9DevTools.current.statusBadges];
 //     newBadges.splice(tabId, 1);
 //     setStatusBadges(newBadges);
 //     if (tabId <= selectedTab) {
@@ -253,7 +253,7 @@
 //     var d = new Date();
 //     var time = d.getTime();
 //     const newReq = { "time": time, "endpoint": req.url.toLowerCase(), "method": req.method, "data": req.data }
-//     window.localStorage.setItem(`wazuh:history.elem_${time}`, JSON.stringify(newReq));
+//     window.localStorage.setItem(`portal9:history.elem_${time}`, JSON.stringify(newReq));
 //   }
 
 //   const getBadge = () => {
@@ -292,11 +292,11 @@
 //           formattedResponse = 'This method is not allowed without admin mode';
 //         }
 
-//         const newTabs = [...wazuhDevTools.current.tabs];
-//         newTabs[wazuhDevTools.current.selectedTab] = `#${currentReq.method} ${currentReq.url}\n${JSON.stringify(formattedResponse, null, 1)} \n\n`;
+//         const newTabs = [...portal9DevTools.current.tabs];
+//         newTabs[portal9DevTools.current.selectedTab] = `#${currentReq.method} ${currentReq.url}\n${JSON.stringify(formattedResponse, null, 1)} \n\n`;
 //         setTabs(newTabs);
-//         const newBadges = [...wazuhDevTools.current.statusBadges];
-//         newBadges[wazuhDevTools.current.selectedTab] = badgeStatus;
+//         const newBadges = [...portal9DevTools.current.statusBadges];
+//         newBadges[portal9DevTools.current.selectedTab] = badgeStatus;
 //         setStatusBadges(newBadges);
 //         setLoading(false);
 //         return;
@@ -307,11 +307,11 @@
 //         result += JSON.stringify(formattedResponse, null, 1)
 //       }
 //     };
-//     const newTabs = [...wazuhDevTools.current.tabs];
-//     newTabs[wazuhDevTools.current.selectedTab] = result;
+//     const newTabs = [...portal9DevTools.current.tabs];
+//     newTabs[portal9DevTools.current.selectedTab] = result;
 //     setTabs(newTabs);
-//     const newBadges = [...wazuhDevTools.current.statusBadges];
-//     newBadges[wazuhDevTools.current.selectedTab] = { statusCode: 200, statusText: 'OK' };
+//     const newBadges = [...portal9DevTools.current.statusBadges];
+//     newBadges[portal9DevTools.current.selectedTab] = { statusCode: 200, statusText: 'OK' };
 //     setStatusBadges(newBadges);
 //     setLoading(false);
 //   }
@@ -598,7 +598,7 @@
 //             <EuiButtonIcon
 //               color={'subdued'}
 //               onClick={() => window.open(
-//                 'https://documentation.wazuh.com/current/user-manual/api/reference.html'
+//                 'https://documentation.portal9.com/current/user-manual/api/reference.html'
 //               )}
 //               iconType="questionInCircle"
 //               aria-label="Reference"

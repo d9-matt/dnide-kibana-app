@@ -125,7 +125,7 @@ export class SaveDocument {
 
   private addIndexPrefix(index): string {
     const configFile = getConfiguration();
-    const prefix = configFile['cron.prefix'] || 'wazuh';
+    const prefix = configFile['cron.prefix'] || 'portal9';
     return `${prefix}-${index}`;
   }
 

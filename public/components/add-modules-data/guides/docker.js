@@ -15,7 +15,7 @@ export default {
   wodle_name: 'docker-listener',
   description: 'Configuration options of the Docker wodle.',
   category: 'Threat detection and response',
-  documentation_link: 'https://documentation.wazuh.com/current/user-manual/reference/ossec-conf/wodle-docker.html',
+  documentation_link: 'https://documentation.portal9.com/current/user-manual/reference/ossec-conf/wodle-docker.html',
   icon: 'logoDocker',
   avaliable_for_manager: true,
   avaliable_for_agent: true,

@@ -22,7 +22,7 @@ export default function({getService, getPageObjects, }: FtrProviderContext) {
   const esPieChart = getService('esPieChart');
   const esTableViz = getService('esTableViz');
   const filterBar = getService('filterBar');
-  const PageObjects = getPageObjects(['wazuhCommon', 'common']);
+  const PageObjects = getPageObjects(['portal9Common', 'common']);
   const pieCharts = getService('pieCharts');
   const queryBar = getService('queryBar');
   const tableViz = getService('tableViz');
@@ -32,12 +32,12 @@ export default function({getService, getPageObjects, }: FtrProviderContext) {
   describe('integrity_monitoring', () => {
     let es_index: string;
     before(async () => {
-      await PageObjects.wazuhCommon.OpenIntegrityMonitoring();
+      await PageObjects.portal9Common.OpenIntegrityMonitoring();
       es_index = WAZUH_ALERTS_PATTERN;
     });
 
     beforeEach(async () => {
-      await PageObjects.wazuhCommon.setTodayRange();
+      await PageObjects.portal9Common.setTodayRange();
     })
 
     //#region Visualization tests

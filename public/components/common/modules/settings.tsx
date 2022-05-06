@@ -49,7 +49,7 @@ export class Settings extends Component<SettingsPropTypes, SettingsState> {
         <EuiPage>
           <EuiPanel>
             <EuiTitle>
-              <span>{i18n.translate('wazuh.configuration', { defaultMessage: 'Configuration' })} {typeof badge === 'boolean' ?
+              <span>{i18n.translate('portal9.configuration', { defaultMessage: 'Configuration' })} {typeof badge === 'boolean' ?
                 <WzBadge enabled={badge} /> : null}
               </span>
             </EuiTitle>

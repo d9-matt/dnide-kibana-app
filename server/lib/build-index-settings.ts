@@ -12,7 +12,7 @@
 
 /**
  * Returns well formatted object to set shards and replicas when creating/updating indices.
- * @param {*} file Parsed content from wazuh.yml file
+ * @param {*} file Parsed content from portal9.yml file
  * @param {string} indexName Target index name
  * @param {number} defaultShards Default shards value if missing in configuration
  * @param {number} defaulReplicas Default replicas value if missing in configuration

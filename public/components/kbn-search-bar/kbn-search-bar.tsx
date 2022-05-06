@@ -92,7 +92,7 @@ const onFiltersUpdate = (filters, props) => {
 };
 
 KbnSearchBar.defaultProps = {
-  appName: 'wazuh',
+  appName: 'portal9',
 };
 
 const hoc = withKibanaContext(KbnSearchBar);

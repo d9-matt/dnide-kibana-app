@@ -17,7 +17,7 @@ import { WAZUH_ALERTS_PATTERN } from '../../../common/constants';
  * @param {*} context Endpoint context
  * @param {Number} gte Timestamp (ms) from
  * @param {Number} lte Timestamp (ms) to
- * @param {String} filters E.g: cluster.name: wazuh AND rule.groups: vulnerability
+ * @param {String} filters E.g: cluster.name: portal9 AND rule.groups: vulnerability
  * @returns {Array<String>}
  */
 export const topGDPRRequirements = async (
@@ -73,7 +73,7 @@ export const topGDPRRequirements = async (
  * @param {Number} gte Timestamp (ms) from
  * @param {Number} lte Timestamp (ms) to
  * @param {String} requirement GDPR requirement. E.g: 'II_5.1.F'
- * @param {String} filters E.g: cluster.name: wazuh AND rule.groups: vulnerability
+ * @param {String} filters E.g: cluster.name: portal9 AND rule.groups: vulnerability
  * @returns {Array<String>}
  */
 export const getRulesByRequirement= async (

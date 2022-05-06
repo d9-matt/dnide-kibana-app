@@ -159,21 +159,21 @@ export const checkDaemons = async (isCluster) => {
   try {
     const response = await WzRequest.apiReq('GET', '/manager/status', {});
     const daemons = ((((response || {}).data || {}).data || {}).affected_items || [])[0] || {};
-    const wazuhdbExists = typeof daemons['wazuh-db'] !== 'undefined';
+    const portal9dbExists = typeof daemons['portal9-db'] !== 'undefined';
 
-    const execd = daemons['wazuh-execd'] === 'running';
-    const modulesd = daemons['wazuh-modulesd'] === 'running';
-    const wazuhdb = wazuhdbExists ? daemons['wazuh-db'] === 'running' : true;
+    const execd = daemons['portal9-execd'] === 'running';
+    const modulesd = daemons['portal9-modulesd'] === 'running';
+    const portal9db = portal9dbExists ? daemons['portal9-db'] === 'running' : true;
 
     let clusterd = true;
     if (isCluster) {
       const clusterStatus = (((await clusterReq()) || {}).data || {}).data || {};
       clusterd = clusterStatus.enabled === 'yes' && clusterStatus.running === 'yes'
-        ? daemons['wazuh-clusterd'] === 'running'
+        ? daemons['portal9-clusterd'] === 'running'
         : false;
     }
 
-    const isValid = execd && modulesd && wazuhdb && (isCluster ? clusterd : true);
+    const isValid = execd && modulesd && portal9db && (isCluster ? clusterd : true);
 
     if (isValid) {
       return { isValid };

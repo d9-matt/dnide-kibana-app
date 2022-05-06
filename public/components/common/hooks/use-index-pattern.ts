@@ -1,5 +1,5 @@
 /*
- * Wazuh app - React hook for get wazuh-alert index pattern
+ * Wazuh app - React hook for get portal9-alert index pattern
  * Copyright (C) 2015-2021 Wazuh, Inc.
  *
  * This program is free software; you can redistribute it and/or modify

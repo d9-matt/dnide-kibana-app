@@ -80,13 +80,13 @@ export class Inventory extends Component {
 
   getStoreFilters(props) {
     const { section, selectView, agent } = props;
-    const filters = JSON.parse(window.localStorage.getItem(`wazuh-${section}-${selectView}-vulnerability-${agent['id']}`) || '{}');
+    const filters = JSON.parse(window.localStorage.getItem(`portal9-${section}-${selectView}-vulnerability-${agent['id']}`) || '{}');
     return filters;
   }
 
   setStoreFilters(filters) {
     const { section, selectView, agent } = this.props;
-    window.localStorage.setItem(`wazuh-${section}-${selectView}-vulnerability-${agent['id']}`, JSON.stringify(filters))
+    window.localStorage.setItem(`portal9-${section}-${selectView}-vulnerability-${agent['id']}`, JSON.stringify(filters))
   }
 
   onFiltersChange = (filters) => {

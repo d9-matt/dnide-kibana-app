@@ -39,7 +39,7 @@ class WzConfigurationAmazonS3Buckets extends Component {
     super(props);
   }
   render() {
-    const { currentConfig, wodleConfig, wazuhNotReadyYet } = this.props;
+    const { currentConfig, wodleConfig, portal9NotReadyYet } = this.props;
     const items =
       wodleConfig && wodleConfig['aws-s3'] && wodleConfig['aws-s3'].buckets
         ? settingsListBuilder(wodleConfig['aws-s3'].buckets, 'name')
@@ -50,7 +50,7 @@ class WzConfigurationAmazonS3Buckets extends Component {
         (!wodleConfig['aws-s3'] || (wodleConfig['aws-s3'] && !wodleConfig['aws-s3'].buckets)) && (
             <WzNoConfig error="not-present" help={helpLinks} />
           )}
-        {wazuhNotReadyYet && (!currentConfig || !wodleConfig['aws-s3']) && (
+        {portal9NotReadyYet && (!currentConfig || !wodleConfig['aws-s3']) && (
           <WzNoConfig error="Wazuh not ready yet" help={helpLinks} />
         )}
         {currentConfig &&
@@ -75,12 +75,12 @@ class WzConfigurationAmazonS3Buckets extends Component {
 }
 
 const mapStateToProps = state => ({
-  wazuhNotReadyYet: state.appStateReducers.wazuhNotReadyYet
+  portal9NotReadyYet: state.appStateReducers.portal9NotReadyYet
 });
 
 WzConfigurationAmazonS3Buckets.propTypes = {
   // currentConfig: PropTypes.object.isRequired,
-  wazuhNotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
+  portal9NotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
 };
 
 export default connect(mapStateToProps)(WzConfigurationAmazonS3Buckets);

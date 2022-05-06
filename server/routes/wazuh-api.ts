@@ -6,7 +6,7 @@ import { schema } from '@kbn/config-schema';
 export function WazuhApiRoutes(router: IRouter) {
   const ctrl = new WazuhApiCtrl();
 
-  // Returns if the wazuh-api configuration is working
+  // Returns if the portal9-api configuration is working
   router.post({
     path: '/api/check-stored-api',
     validate: {
@@ -20,7 +20,7 @@ export function WazuhApiRoutes(router: IRouter) {
   );
 
   // Check if credentials on POST connect to Wazuh API. Not storing them!
-  // Returns if the wazuh-api configuration received in the POST body will work
+  // Returns if the portal9-api configuration received in the POST body will work
   router.post({
     path: '/api/check-api',
     validate: {
@@ -146,9 +146,9 @@ export function WazuhApiRoutes(router: IRouter) {
     async (context, request, response) => ctrl.getSyscollector(context, request, response)
   );
 
-  // Return logged in user has wazuh disabled by role
+  // Return logged in user has portal9 disabled by role
   router.get({
-    path: '/api/check-wazuh',
+    path: '/api/check-portal9',
     validate: false
   },
     async (context, request, response) => ctrl.isWazuhDisabled(context, request, response)

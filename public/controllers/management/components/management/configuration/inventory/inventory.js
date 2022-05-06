@@ -43,12 +43,12 @@ const helpLinks = [
   {
     text: 'Syscollector module documentation',
     href:
-      'https://documentation.wazuh.com/current/user-manual/capabilities/syscollector.html'
+      'https://documentation.portal9.com/current/user-manual/capabilities/syscollector.html'
   },
   {
     text: 'Syscollector module reference',
     href:
-      'https://documentation.wazuh.com/current/user-manual/reference/ossec-conf/wodle-syscollector.html'
+      'https://documentation.portal9.com/current/user-manual/reference/ossec-conf/wodle-syscollector.html'
   }
 ];
 

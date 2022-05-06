@@ -31,7 +31,7 @@ import WzModuleGuide from './module-guide';
 import WzSampleData from './sample-data';
 import modeGuides from './guides';
 
-import { WAZUH_MODULES } from '../../../common/wazuh-modules';
+import { WAZUH_MODULES } from '../../../common/portal9-modules';
 import { updateGlobalBreadcrumb } from '../../redux/actions/globalBreadcrumbActions';
 import store from '../../redux/store';
 

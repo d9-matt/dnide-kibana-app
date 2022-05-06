@@ -22,12 +22,12 @@ import { wodleBuilder } from '../utils/builders';
 const helpLinks = [
   {
     text: 'Using Wazuh to monitor Azure',
-    href: 'https://documentation.wazuh.com/current/azure/index.html'
+    href: 'https://documentation.portal9.com/current/azure/index.html'
   },
   {
     text: 'Azure reference',
     href:
-      'https://documentation.wazuh.com/current/user-manual/reference/ossec-conf/wodle-azure-logs.html'
+      'https://documentation.portal9.com/current/user-manual/reference/ossec-conf/wodle-azure-logs.html'
   }
 ];
 

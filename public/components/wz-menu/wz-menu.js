@@ -28,7 +28,7 @@ import {
 } from '@elastic/eui';
 import { AppState } from '../../react-services/app-state';
 import { PatternHandler } from '../../react-services/pattern-handler';
-import { WazuhConfig } from '../../react-services/wazuh-config';
+import { WazuhConfig } from '../../react-services/portal9-config';
 import { connect } from 'react-redux';
 import WzReduxProvider from '../../redux/wz-redux-provider';
 import { updateCurrentAgentData, showExploreAgentModalGlobal } from '../../redux/actions/appStateActions';
@@ -54,7 +54,7 @@ const sections = {
   'agents-preview': 'agents-preview',
   'agents': 'agents-preview',
   'settings': 'settings',
-  'wazuh-dev': 'wazuh-dev',
+  'portal9-dev': 'portal9-dev',
   'health-check': 'health-check',
   'security': 'security'
 };
@@ -78,7 +78,7 @@ export const WzMenu = withWindowSize(class WzMenu extends Component {
     };
     this.store = store;
     this.genericReq = GenericRequest;
-    this.wazuhConfig = new WazuhConfig();
+    this.portal9Config = new WazuhConfig();
     this.indexPatterns = getDataPlugin().indexPatterns;
     this.isLoading = false;
   }
@@ -264,7 +264,7 @@ export const WzMenu = withWindowSize(class WzMenu extends Component {
       if (!AppState.getPatternSelector()) return;
       await PatternHandler.changePattern(newPattern.value);
       this.setState({ currentSelectedPattern: newPattern.value });
-      if (this.state.currentMenuTab !== 'wazuh-dev') {
+      if (this.state.currentMenuTab !== 'portal9-dev') {
         this.router.reload();
       }
 
@@ -288,7 +288,7 @@ export const WzMenu = withWindowSize(class WzMenu extends Component {
   /**
    * @param {String} id
    * @param {Object} clusterInfo
-   * Updates the wazuh registry of an specific api id
+   * Updates the portal9 registry of an specific api id
    */
   updateClusterInfoInRegistry = async (id, clusterInfo) => {
     try {
@@ -324,7 +324,7 @@ export const WzMenu = withWindowSize(class WzMenu extends Component {
         this.switchMenuOpened();
       }
 
-      if (this.state.currentMenuTab !== 'wazuh-dev') {
+      if (this.state.currentMenuTab !== 'portal9-dev') {
         this.router.reload();
       }
     } catch (error) {
@@ -369,9 +369,9 @@ export const WzMenu = withWindowSize(class WzMenu extends Component {
   }
 
   buildWazuhNotReadyYet() {
-    const container = document.getElementsByClassName('wazuhNotReadyYet');
+    const container = document.getElementsByClassName('portal9NotReadyYet');
     return ReactDOM.createPortal(
-      <EuiCallOut title={this.props.state.wazuhNotReadyYet} color="warning">
+      <EuiCallOut title={this.props.state.portal9NotReadyYet} color="warning">
         <EuiFlexGroup
           responsive={false}
           direction="row"
@@ -380,7 +380,7 @@ export const WzMenu = withWindowSize(class WzMenu extends Component {
           <EuiFlexItem>
             <p></p>
           </EuiFlexItem>
-          {typeof this.props.state.wazuhNotReadyYet === "string" && this.props.state.wazuhNotReadyYet.includes('Restarting') && (
+          {typeof this.props.state.portal9NotReadyYet === "string" && this.props.state.portal9NotReadyYet.includes('Restarting') && (
             <EuiFlexItem grow={false}>
               <p>
                 {' '}
@@ -388,7 +388,7 @@ export const WzMenu = withWindowSize(class WzMenu extends Component {
               </p>
             </EuiFlexItem>
           )}
-          {this.props.state.wazuhNotReadyYet ===
+          {this.props.state.portal9NotReadyYet ===
             'Wazuh could not be recovered.' && (
               <EuiFlexItem grow={false}>
                 <EuiButtonEmpty
@@ -415,7 +415,7 @@ export const WzMenu = withWindowSize(class WzMenu extends Component {
       this.setState(() => {
         return {
           isToolsPopoverOpen: true,
-          currentMenuTab: 'wazuh-dev',
+          currentMenuTab: 'portal9-dev',
           isOverviewPopoverOpen: false,
           isManagementPopoverOpen: false,
           isSecurityPopoverOpen: false,
@@ -491,7 +491,7 @@ export const WzMenu = withWindowSize(class WzMenu extends Component {
   }
 
   onClickToolsButton() {
-    this.setMenuItem('wazuh-dev');
+    this.setMenuItem('portal9-dev');
     this.toolsPopoverToggle();
   }
 
@@ -548,7 +548,7 @@ export const WzMenu = withWindowSize(class WzMenu extends Component {
       this.managementPopoverToggle();
     } else if (this.state.currentMenuTab === 'overview') {
       this.overviewPopoverToggle();
-    } else if (this.state.currentMenuTab === 'wazuh-dev') {
+    } else if (this.state.currentMenuTab === 'portal9-dev') {
       this.toolsPopoverToggle();
     } else if (this.state.currentMenuTab === 'settings') {
       this.settingsPopoverToggle();
@@ -767,7 +767,7 @@ export const WzMenu = withWindowSize(class WzMenu extends Component {
             <EuiButtonEmpty data-test-subj='menuToolsButton'
               className={
                 'wz-menu-button ' +
-                (this.state.currentMenuTab === "wazuh-dev" && !this.isAnyPopoverOpen() || (this.state.isToolsPopoverOpen)
+                (this.state.currentMenuTab === "portal9-dev" && !this.isAnyPopoverOpen() || (this.state.isToolsPopoverOpen)
                   ? 'wz-menu-active'
                   : '')}
               color="text"
@@ -899,7 +899,7 @@ export const WzMenu = withWindowSize(class WzMenu extends Component {
       </div>
     );
 
-    const logotype_url = getHttp().basePath.prepend(`/plugins/wazuh/assets/${this.wazuhConfig.getConfig()['customization.logo.app']}`);
+    const logotype_url = getHttp().basePath.prepend(`/plugins/portal9/assets/${this.portal9Config.getConfig()['customization.logo.app']}`);
     const mainButton = (
       <button data-test-subj='menuWazuhButton' className="eui" onClick={() => this.switchMenuOpened()}>
         <EuiFlexGroup
@@ -1003,7 +1003,7 @@ export const WzMenu = withWindowSize(class WzMenu extends Component {
               </>
 
             }
-            {this.props.state.wazuhNotReadyYet && this.buildWazuhNotReadyYet()}
+            {this.props.state.portal9NotReadyYet && this.buildWazuhNotReadyYet()}
           </EuiFlexGroup>
 
         )}

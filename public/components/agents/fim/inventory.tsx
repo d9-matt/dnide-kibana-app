@@ -124,13 +124,13 @@ export class Inventory extends Component {
 
   getStoreFilters(props) {
     const { section, selectView, agent } = props;
-    const filters = JSON.parse(window.localStorage.getItem(`wazuh-${section}-${selectView}-${((this.state || {}).selectedTabId || 'files')}-${agent['id']}`) || '{}');
+    const filters = JSON.parse(window.localStorage.getItem(`portal9-${section}-${selectView}-${((this.state || {}).selectedTabId || 'files')}-${agent['id']}`) || '{}');
     return filters;
   }
 
   setStoreFilters(filters) {
     const { section, selectView, agent } = this.props;
-    window.localStorage.setItem(`wazuh-${section}-${selectView}-${(this.state || {}).selectedTabId || 'files'}-${agent['id']}`, JSON.stringify(filters))
+    window.localStorage.setItem(`portal9-${section}-${selectView}-${(this.state || {}).selectedTabId || 'files'}-${agent['id']}`, JSON.stringify(filters))
   }
 
   onFiltersChange = (filters) => {
@@ -286,11 +286,11 @@ export class Inventory extends Component {
         body={<Fragment>
           <EuiHorizontalRule margin='s' />
           <EuiLink
-            href='https://documentation.wazuh.com/current/user-manual/capabilities/file-integrity/index.html'
+            href='https://documentation.portal9.com/current/user-manual/capabilities/file-integrity/index.html'
             target="_blank"
             style={{ textAlign: "center" }}
           >
-            https://documentation.wazuh.com/current/user-manual/capabilities/file-integrity/index.html
+            https://documentation.portal9.com/current/user-manual/capabilities/file-integrity/index.html
           </EuiLink>
           <EuiHorizontalRule margin='s' />
         </Fragment>}

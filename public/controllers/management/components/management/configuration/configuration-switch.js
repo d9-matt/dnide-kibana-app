@@ -404,7 +404,7 @@ class WzConfigurationSwitch extends Component {
 const mapStateToProps = state => ({
   clusterNodes: state.configurationReducers.clusterNodes,
   clusterNodeSelected: state.configurationReducers.clusterNodeSelected,
-  wazuhNotReadyYet: state.appStateReducers.wazuhNotReadyYet
+  portal9NotReadyYet: state.appStateReducers.portal9NotReadyYet
 });
 
 const mapDispatchToProps = dispatch => ({

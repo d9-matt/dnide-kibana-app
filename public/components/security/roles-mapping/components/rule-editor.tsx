@@ -57,7 +57,7 @@ export const RuleEditor = ({ save, initialRule, isLoading, isReserved, internalU
     { value: 'MATCH$', text: 'MATCH$' },
   ];
   const default_user_field = currentPlatform === WAZUH_SECURITY_PLUGIN_OPEN_DISTRO_FOR_ELASTICSEARCH ? 'user_name' : 'username';
-  const default_rule = { user_field: default_user_field, searchOperation: 'FIND', value: 'wazuh' };
+  const default_rule = { user_field: default_user_field, searchOperation: 'FIND', value: 'portal9' };
 
   useEffect(() => {
     if (initialRule) {
@@ -298,7 +298,7 @@ export const RuleEditor = ({ save, initialRule, isLoading, isReserved, internalU
             <EuiText>
               <span>Assign roles to users who match these rules. </span>
               <EuiLink
-                href="https://documentation.wazuh.com/current/user-manual/api/rbac/auth_context.html"
+                href="https://documentation.portal9.com/current/user-manual/api/rbac/auth_context.html"
                 external
                 target="_blank"
               >

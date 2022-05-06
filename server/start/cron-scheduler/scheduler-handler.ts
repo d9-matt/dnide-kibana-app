@@ -6,7 +6,7 @@ import cron from 'node-cron';
 import { WAZUH_STATISTICS_DEFAULT_PREFIX, WAZUH_STATISTICS_DEFAULT_NAME, WAZUH_STATISTICS_TEMPLATE_NAME } from '../../../common/constants';
 import { statisticsTemplate } from '../../integration-files/statistics-template';
 
-const blueWazuh = '\u001b[34mwazuh\u001b[39m';
+const blueWazuh = '\u001b[34mportal9\u001b[39m';
 const schedulerErrorLogColors = [blueWazuh, 'scheduler', 'error'];
 const schedulerJobs = [];
 
@@ -55,7 +55,7 @@ const checkKibanaStatus = async function (context) {
 
 
  /**
- * Verify wazuh-statistics template
+ * Verify portal9-statistics template
  */
 const checkTemplate = async function (context) {
   try {
@@ -103,7 +103,7 @@ const checkTemplate = async function (context) {
       'scheduler-handler:checkTemplate',
       errorMessage
     );
-    context.wazuh.logger.error(schedulerErrorLogColors, errorMessage);
+    context.portal9.logger.error(schedulerErrorLogColors, errorMessage);
     throw error;
   }
 }

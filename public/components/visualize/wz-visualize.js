@@ -26,7 +26,7 @@ import {
   EuiLink
 } from '@elastic/eui';
 import WzReduxProvider from '../../redux/wz-redux-provider';
-import { WazuhConfig } from '../../react-services/wazuh-config';
+import { WazuhConfig } from '../../react-services/portal9-config';
 import { WzRequest } from '../../react-services/wz-request';
 import { CommonData } from '../../services/common-data';
 import { VisHandlers } from '../../factories/vis-handlers';
@@ -57,11 +57,11 @@ export const WzVisualize = withReduxProvider(class WzVisualize extends Component
     this.metricValues = false;
     this.rawVisualizations = new RawVisualizations();
     this.wzReq = WzRequest;
-    const wazuhConfig = new WazuhConfig();
+    const portal9Config = new WazuhConfig();
     this.commonData = new CommonData();
-    const configuration = wazuhConfig.getConfig();
+    const configuration = portal9Config.getConfig();
     this.monitoringEnabled = !!(configuration || {})[
-      'wazuh.monitoring.enabled'
+      'portal9.monitoring.enabled'
     ];
     this.newFields={};
   }

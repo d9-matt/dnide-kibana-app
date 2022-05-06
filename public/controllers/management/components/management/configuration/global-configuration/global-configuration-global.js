@@ -23,12 +23,12 @@ const helpLinks = [
   {
     text: 'Global reference',
     href:
-      'https://documentation.wazuh.com/current/user-manual/reference/ossec-conf/global.html'
+      'https://documentation.portal9.com/current/user-manual/reference/ossec-conf/global.html'
   },
   {
     text: 'Logging reference',
     href:
-      'https://documentation.wazuh.com/current/user-manual/reference/ossec-conf/logging.html'
+      'https://documentation.portal9.com/current/user-manual/reference/ossec-conf/logging.html'
   }
 ];
 
@@ -99,7 +99,7 @@ class WzConfigurationGlobalConfigurationGlobal extends Component {
     this.helpLinks = buildHelpLinks(this.props.agent);
   }
   render() {
-    const { currentConfig, agent, wazuhNotReadyYet } = this.props;
+    const { currentConfig, agent, portal9NotReadyYet } = this.props;
     const mainSettingsConfig =
       agent.id === '000' &&
       currentConfig['analysis-global'] &&
@@ -147,7 +147,7 @@ class WzConfigurationGlobalConfigurationGlobal extends Component {
           !currentConfig['analysis-global'].global && (
             <WzNoConfig error="not-present" help={this.helpLinks} />
           )}
-        {wazuhNotReadyYet &&
+        {portal9NotReadyYet &&
           (!currentConfig || !currentConfig['analysis-global']) && (
             <WzNoConfig error="Wazuh not ready yet" help={this.helpLinks} />
           )}
@@ -197,7 +197,7 @@ class WzConfigurationGlobalConfigurationGlobal extends Component {
 WzConfigurationGlobalConfigurationGlobal.propTypes = {
   // currentConfig: PropTypes.object.isRequired,
   agent: PropTypes.object,
-  wazuhNotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
+  portal9NotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
 };
 
 export default WzConfigurationGlobalConfigurationGlobal;

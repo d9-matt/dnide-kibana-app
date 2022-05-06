@@ -12,7 +12,7 @@
 
 import $ from 'jquery';
 import moment from 'moment';
-import { WazuhConfig } from '../react-services/wazuh-config';
+import { WazuhConfig } from '../react-services/portal9-config';
 import { GenericRequest } from '../react-services/generic-request';
 import { Vis2PNG } from '../factories/vis2png';
 import { RawVisualizations } from '../factories/raw-visualizations';
@@ -27,7 +27,7 @@ export class ReportingService {
     this.vis2png = new Vis2PNG();
     this.rawVisualizations = new RawVisualizations();
     this.visHandlers = new VisHandlers();
-    this.wazuhConfig = new WazuhConfig();
+    this.portal9Config = new WazuhConfig();
   }
 
   showToast = (color, title, text, time) => {
@@ -45,8 +45,8 @@ export class ReportingService {
   }
 
   removeAgentStatusVis(idArray) {
-    const monitoringEnabled = this.wazuhConfig.getConfig()[
-      'wazuh.monitoring.enabled'
+    const monitoringEnabled = this.portal9Config.getConfig()[
+      'portal9.monitoring.enabled'
     ];
     if (!monitoringEnabled) {
       const visArray = idArray.filter(vis => {
@@ -92,7 +92,7 @@ export class ReportingService {
       );
 
       const array = await this.vis2png.checkArray(idArray);
-      const name = `wazuh-${
+      const name = `portal9-${
         agents ?  `agent-${agents}` : 'overview'
       }-${tab}-${(Date.now() / 1000) | 0}.pdf`;
 
@@ -140,8 +140,8 @@ export class ReportingService {
 
       const docType =
         type === 'agentConfig'
-          ? `wazuh-agent-${obj.id}`
-          : `wazuh-group-${obj.name}`;
+          ? `portal9-agent-${obj.id}`
+          : `portal9-group-${obj.name}`;
 
       const name = `${docType}-configuration-${(Date.now() / 1000) | 0}.pdf`;
       const browserTimezone = moment.tz.guess(true);

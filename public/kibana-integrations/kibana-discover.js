@@ -69,7 +69,7 @@ import { discoverResponseHandler } from './discover/application/angular/response
 
 ///WAZUH///
 import { buildServices } from './discover/build_services';
-import { WazuhConfig } from '../react-services/wazuh-config';
+import { WazuhConfig } from '../react-services/portal9-config';
 import { ModulesHelper } from '../components/common/modules/modules-helper';
 ///////////
 import { validateTimeRange } from './discover/application/helpers/validate_time_range';
@@ -118,7 +118,7 @@ appDiscover.run(async () => {
   setUiActions(getPlugins().uiActions);
 });
 
-const wazuhApp = getAngularModule();
+const portal9App = getAngularModule();
 
 appDiscover.directive('discoverApp', function () {
   return {
@@ -154,9 +154,9 @@ function discoverController(
   $scope.fetchCounter = 0;
 
   //WAZUH
-  wazuhApp.discoverScope = $scope;
-  if (!wazuhApp.globalFilters) {
-    wazuhApp.globalFilters = {};
+  portal9App.discoverScope = $scope;
+  if (!portal9App.globalFilters) {
+    portal9App.globalFilters = {};
   }
 
   (async () => {
@@ -197,7 +197,7 @@ function discoverController(
     visualizations
   } = getServices();
 
-  const wazuhConfig = new WazuhConfig();
+  const portal9Config = new WazuhConfig();
   const modulesHelper = ModulesHelper;
 
   const getTimeField = () => {
@@ -355,7 +355,7 @@ function discoverController(
     //WAZUH
     //unlistenHistoryBasePath();
     if (tabListener) tabListener();
-    delete wazuhApp.discoverScope;
+    delete portal9App.discoverScope;
   });
 
   // WAZUH MODIFIED
@@ -536,7 +536,7 @@ function discoverController(
 
               // Wazuh. Hides the alerts of the '000' agent if it is in the configuration
               const buildFilters = () => {
-                const { hideManagerAlerts } = wazuhConfig.getConfig();
+                const { hideManagerAlerts } = portal9Config.getConfig();
                 if (hideManagerAlerts) {
                   return [
                     {
@@ -557,8 +557,8 @@ function discoverController(
                 return [];
               };
               ///////////////////////////////  WAZUH   ///////////////////////////////////
-              if (wazuhApp.globalFilters && wazuhApp.globalFilters.tab === $location.search().tab) {
-                wazuhApp.globalFilters = {
+              if (portal9App.globalFilters && portal9App.globalFilters.tab === $location.search().tab) {
+                portal9App.globalFilters = {
                   tab: $location.search().tab,
                   filters: (filterManager.filters || []).filter(x => x.$state.store === "globalState")
                 };
@@ -1092,8 +1092,8 @@ function discoverController(
         if (x.$state.isImplicit != false)
           x.$state.isImplicit = true
       });
-      wazuhApp.globalFilters.tab = tab;
-      const globalFilters = wazuhApp.globalFilters.filters || [];
+      portal9App.globalFilters.tab = tab;
+      const globalFilters = portal9App.globalFilters.filters || [];
       if (tab && $scope.tab !== tab) {
         filterManager.removeAll();
       }

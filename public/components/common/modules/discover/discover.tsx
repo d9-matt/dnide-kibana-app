@@ -17,7 +17,7 @@ import { AppState } from '../../../../react-services/app-state';
 import { AppNavigate } from '../../../../react-services/app-navigate';
 import { RowDetails } from './row-details';
 import DateMatch from '@elastic/datemath';
-import { WazuhConfig } from '../../../../react-services/wazuh-config';
+import { WazuhConfig } from '../../../../react-services/portal9-config';
 import { formatUIDate } from '../../../../react-services/time-service';
 import { KbnSearchBar } from '../../../kbn-search-bar';
 import { FlyoutTechnique } from '../../../../components/overview/mitre/components/techniques/components/flyout-technique';
@@ -129,7 +129,7 @@ export const Discover = compose(
       hover: ""
     }
 
-    this.wazuhConfig = new WazuhConfig();
+    this.portal9Config = new WazuhConfig();
     this.nameEquivalences = {
       "agent.id": "Agent",
       "agent.name": "Agent name",
@@ -272,7 +272,7 @@ export const Discover = compose(
   buildFilter() {
     const dateParse = ds => /\d+-\d+-\d+T\d+:\d+:\d+.\d+Z/.test(ds) ? DateMatch.parse(ds).toDate().getTime() : ds;
     const { query } = this.state;
-    const { hideManagerAlerts } = this.wazuhConfig.getConfig();
+    const { hideManagerAlerts } = this.portal9Config.getConfig();
     const extraFilters = [];
     if (hideManagerAlerts) extraFilters.push({
       meta: {

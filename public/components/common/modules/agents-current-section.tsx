@@ -18,7 +18,7 @@ import { updateGlobalBreadcrumb } from '../../../redux/actions/globalBreadcrumbA
 import { updateCurrentTab } from '../../../redux/actions/appStateActions';
 import store from '../../../redux/store';
 import { connect } from 'react-redux';
-import { WAZUH_MODULES } from '../../../../common/wazuh-modules';
+import { WAZUH_MODULES } from '../../../../common/portal9-modules';
 import { getAngularModule } from '../../../kibana-services';
 
 class WzCurrentAgentsSection extends Component {

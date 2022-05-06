@@ -60,7 +60,7 @@ class WzRulesetActionButtons extends Component {
       const mapFilters = filters.map(filter => ({
         name: filter.field,
         value: filter.value
-      })); // adapt to shape used in /api/csv file: server/controllers/wazuh-api.js
+      })); // adapt to shape used in /api/csv file: server/controllers/portal9-api.js
       await this.exportCsv(`/${section}${this.props.state.showingFiles ? '/files' : ''}`, mapFilters, section);
     } catch (error) {
       this.showToast('Error exporting as CSV', error.message || error, 'danger');

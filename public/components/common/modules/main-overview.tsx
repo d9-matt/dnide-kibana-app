@@ -29,7 +29,7 @@ import { updateGlobalBreadcrumb } from '../../../redux/actions/globalBreadcrumbA
 import store from '../../../redux/store';
 import { ReportingService } from '../../../react-services/reporting';
 import { AppNavigate } from '../../../react-services/app-navigate';
-import { WAZUH_MODULES } from '../../../../common/wazuh-modules';
+import { WAZUH_MODULES } from '../../../../common/portal9-modules';
 import { Events, Dashboard, Loader, Settings } from '../../common/modules';
 import OverviewActions from '../../../controllers/overview/components/overview-actions/overview-actions';
 import { MainFim } from '../../agents/fim';
