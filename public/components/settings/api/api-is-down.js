@@ -211,11 +211,11 @@ hosts:
           <div>
             <EuiText>For Systemd</EuiText>
             <EuiSpacer />
-            <EuiCode>$ sudo systemctl status wazuh-manager</EuiCode>
+            <EuiCode>$ sudo systemctl status portal9-manager</EuiCode>
             <EuiSpacer />
             <EuiText>For SysV Init</EuiText>
             <EuiSpacer />
-            <EuiCode>$ sudo service wazuh-manager status</EuiCode>
+            <EuiCode>$ sudo service portal9-manager status</EuiCode>
           </div>
         )
       },

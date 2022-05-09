@@ -56,7 +56,7 @@ describe('Portal9 API - /elastic/security/current-platform', () => {
 
 describe('Portal9 API - /elastic/template/{pattern}', () => {
   test('[200] Check if there is some template with the pattern', () => {
-    const options = buildAxiosOptions('get', '/elastic/template/portal9-alerts-*');
+    const options = buildAxiosOptions('get', '/elastic/template/wazuh-alerts-*');
     return axios(options).then(response => {
       expect(response.status).toBe(200);
       expect(typeof response.data.status).toBe('boolean');
@@ -67,7 +67,7 @@ describe('Portal9 API - /elastic/template/{pattern}', () => {
 
 describe('Portal9 API - /elastic/index-patterns/{pattern}', () => {
   test('[200] Check if there an index pattern with the pattern', () => {
-    const options = buildAxiosOptions('get', '/elastic/index-patterns/portal9-alerts-*');
+    const options = buildAxiosOptions('get', '/elastic/index-patterns/wazuh-alerts-*');
     return axios(options).then(response => {
       expect(response.status).toBe(200);
       expect(typeof response.data.status).toBe('boolean');
