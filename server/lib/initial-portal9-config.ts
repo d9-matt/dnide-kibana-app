@@ -228,7 +228,7 @@ hosts:
   - default:
      url: https://localhost
      port: 55000
-     username: wazuh-wui
-     password: wazuh-wui
+     username: portal9-wui
+     password: portal9-wui
      run_as: false
 `

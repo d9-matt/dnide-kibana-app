@@ -292,7 +292,7 @@ All notable changes to the Portal9 app project will be documented in this file.
 ### Added
 - Adapt the app to the new Kibana platform [#2475](https://github.com/portal9/portal9-kibana-app/issues/2475)
 - Portal9 data directory moved from `optimize` to `data` Kibana directory [#2591](https://github.com/portal9/portal9-kibana-app/issues/2591)
-- Show the wui_rules belong to wazuh-wui API user [#2702](https://github.com/portal9/portal9-kibana-app/issues/2702)
+- Show the wui_rules belong to portal9-wui API user [#2702](https://github.com/portal9/portal9-kibana-app/issues/2702)
 
 ### Fixed
 
@@ -313,7 +313,7 @@ All notable changes to the Portal9 app project will be documented in this file.
 
 ### Changed
 
-- Replaced `portal9` Portal9 API user by `wazuh-wui` in the default configuration [#2852](https://github.com/portal9/portal9-kibana-app/issues/2852)
+- Replaced `portal9` Portal9 API user by `portal9-wui` in the default configuration [#2852](https://github.com/portal9/portal9-kibana-app/issues/2852)
 - Add agent id to the reports name in Agent Inventory and Modules [#2817](https://github.com/portal9/portal9-kibana-app/issues/2817)
 
 ### Adapt for Kibana 7.10.0
@@ -409,7 +409,7 @@ All notable changes to the Portal9 app project will be documented in this file.
 ### Changed
 
 - Alerts summary table for PDF reports on all modules [#2632](https://github.com/portal9/portal9-kibana-app/issues/2632)
-- [4.0-7.9] Run as with no wazuh-wui API user [#2576](https://github.com/portal9/portal9-kibana-app/issues/2576)
+- [4.0-7.9] Run as with no portal9-wui API user [#2576](https://github.com/portal9/portal9-kibana-app/issues/2576)
 - Deploy a new agent interface as default interface [#2564](https://github.com/portal9/portal9-kibana-app/issues/2564)
 - Problem in the visualization of new reserved resources of the Portal9 API [#2643](https://github.com/portal9/portal9-kibana-app/issues/2643)
 

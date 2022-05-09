@@ -110,8 +110,8 @@ hosts:
     - production:
         url: https://172.16.1.2
         port: 55000
-        username: wazuh-wui
-        password: wazuh-wui
+        username: portal9-wui
+        password: portal9-wui
         run_as: false
 `;
 
@@ -211,11 +211,11 @@ hosts:
           <div>
             <EuiText>For Systemd</EuiText>
             <EuiSpacer />
-            <EuiCode>$ sudo systemctl status portal9-manager</EuiCode>
+            <EuiCode>$ sudo systemctl status wazuh-manager</EuiCode>
             <EuiSpacer />
             <EuiText>For SysV Init</EuiText>
             <EuiSpacer />
-            <EuiCode>$ sudo service portal9-manager status</EuiCode>
+            <EuiCode>$ sudo service wazuh-manager status</EuiCode>
           </div>
         )
       },
