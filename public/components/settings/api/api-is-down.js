@@ -110,8 +110,8 @@ hosts:
     - production:
         url: https://172.16.1.2
         port: 55000
-        username: portal9-wui
-        password: portal9-wui
+        username: wazuh-wui
+        password: wazuh-wui
         run_as: false
 `;
 
