@@ -339,7 +339,7 @@ export class Portal9ElasticCtrl {
   /**
    * Replaces visualizations main fields to fit a certain pattern.
    * @param {Array<Object>} app_objects Object containing raw visualizations.
-   * @param {String} id Index-pattern id to use in the visualizations. Eg: 'wazuh-alerts'
+   * @param {String} id Index-pattern id to use in the visualizations. Eg: 'portal9-alerts'
    */
   async buildVisualizationsRaw(app_objects, id, namespace = false) {
     try {
@@ -391,7 +391,7 @@ export class Portal9ElasticCtrl {
             );
           } else {
             aux_source.kibanaSavedObjectMeta.searchSourceJSON = defaultStr.replace(
-              /wazuh-alerts/g,
+              /portal9-alerts/g,
               id
             );
           }
@@ -400,7 +400,7 @@ export class Portal9ElasticCtrl {
         // Replace index-pattern for selector visualizations
         if (typeof (aux_source || {}).visState === 'string') {
           aux_source.visState = aux_source.visState.replace(
-            /wazuh-alerts/g,
+            /portal9-alerts/g,
             id
           );
         }
@@ -426,7 +426,7 @@ export class Portal9ElasticCtrl {
   /**
    * Replaces cluster visualizations main fields.
    * @param {Array<Object>} app_objects Object containing raw visualizations.
-   * @param {String} id Index-pattern id to use in the visualizations. Eg: 'wazuh-alerts'
+   * @param {String} id Index-pattern id to use in the visualizations. Eg: 'portal9-alerts'
    * @param {Array<String>} nodes Array of node names. Eg: ['node01', 'node02']
    * @param {String} name Cluster name. Eg: 'portal9'
    * @param {String} master_node Master node name. Eg: 'node01'
@@ -446,7 +446,7 @@ export class Portal9ElasticCtrl {
       for (const element of app_objects) {
         // Stringify and replace index-pattern for visualizations
         aux_source = JSON.stringify(element._source);
-        aux_source = aux_source.replace(/wazuh-alerts/g, id);
+        aux_source = aux_source.replace(/portal9-alerts/g, id);
         aux_source = JSON.parse(aux_source);
 
         // Bulk source
