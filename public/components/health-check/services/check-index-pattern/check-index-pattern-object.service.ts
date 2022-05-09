@@ -35,7 +35,7 @@ export const checkIndexPatternObjectService =  async (appConfig, checkLogger: Ch
   checkLogger.info(`Found default index pattern with title [${defaultPatternId}]: ${indexPatternDefaultFound ? 'yes' : 'no'}`);
 
   if (!indexPatternDefaultFound && defaultPatternId) {
-    // if no valid index patterns are found we try to create the portal9-alerts-*
+    // if no valid index patterns are found we try to create the wazuh-alerts-*
     try {
       checkLogger.info(`Checking if index pattern [${defaultPatternId}] exists...`);
       const existDefaultIndexPattern = await SavedObject.getExistingIndexPattern(defaultPatternId);
