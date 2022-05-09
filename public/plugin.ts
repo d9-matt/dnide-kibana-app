@@ -62,13 +62,8 @@ export class Portal9Plugin implements Plugin<Portal9Setup, Portal9Start, Portal9
 
         await this.initializeInnerAngular();
 
-<<<<<<< HEAD
         //Check is user has Portal9 disabled
         const response = await core.http.get(`/api/check-portal9`);
-=======
-        //Check if user has Wazuh disabled
-        const response = await core.http.get(`/api/check-portal9`);
->>>>>>> e5960b47d186ce9f0cc6406d887ea06b76140aa4
 
         params.element.classList.add('dscAppWrapper');
         const unmount = await renderApp(innerAngularName, params.element);
