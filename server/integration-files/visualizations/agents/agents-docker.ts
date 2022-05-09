@@ -51,7 +51,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           query: { query: '', language: 'lucene' },
           filter: [],
         }),
@@ -99,7 +99,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           query: { query: '', language: 'lucene' },
           filter: [],
         }),
@@ -185,7 +185,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           query: { query: '', language: 'lucene' },
           filter: [],
         }),
@@ -287,7 +287,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           query: { query: '', language: 'lucene' },
           filter: [],
         }),
@@ -398,7 +398,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           query: { query: '', language: 'lucene' },
           filter: [],
         }),
