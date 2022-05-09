@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for Settings submenu.
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - React component for Settings submenu.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -14,8 +14,8 @@ import { EuiFlexItem, EuiFlexGroup, EuiSideNav, EuiIcon } from '@elastic/eui';
 import { WzRequest } from '../../react-services/wz-request';
 import { connect } from 'react-redux';
 import { AppNavigate } from '../../react-services/app-navigate';
-import { WAZUH_MENU_SECURITY_SECTIONS_ID } from '../../../common/constants';
-import { WAZUH_MENU_SECURITY_SECTIONS_CY_TEST_ID } from '../../../common/wazu-menu/wz-menu-security.cy';
+import { PORTAL9_MENU_SECURITY_SECTIONS_ID } from '../../../common/constants';
+import { PORTAL9_MENU_SECURITY_SECTIONS_CY_TEST_ID } from '../../../common/wazu-menu/wz-menu-security.cy';
 
 class WzMenuSecurity extends Component {
   constructor(props) {
@@ -37,23 +37,23 @@ class WzMenuSecurity extends Component {
   avaibleRenderSettings() {
     return [
       this.createItem({
-        id: WAZUH_MENU_SECURITY_SECTIONS_ID.USERS,
-        cyTestId: WAZUH_MENU_SECURITY_SECTIONS_CY_TEST_ID.USERS,
+        id: PORTAL9_MENU_SECURITY_SECTIONS_ID.USERS,
+        cyTestId: PORTAL9_MENU_SECURITY_SECTIONS_CY_TEST_ID.USERS,
         text: 'Users',
       }),
       this.createItem({
-        id: WAZUH_MENU_SECURITY_SECTIONS_ID.ROLES,
-        cyTestId: WAZUH_MENU_SECURITY_SECTIONS_CY_TEST_ID.ROLES,
+        id: PORTAL9_MENU_SECURITY_SECTIONS_ID.ROLES,
+        cyTestId: PORTAL9_MENU_SECURITY_SECTIONS_CY_TEST_ID.ROLES,
         text: 'Roles',
       }),
       this.createItem({
-        id: WAZUH_MENU_SECURITY_SECTIONS_ID.POLICIES,
-        cyTestId: WAZUH_MENU_SECURITY_SECTIONS_CY_TEST_ID.POLICIES,
+        id: PORTAL9_MENU_SECURITY_SECTIONS_ID.POLICIES,
+        cyTestId: PORTAL9_MENU_SECURITY_SECTIONS_CY_TEST_ID.POLICIES,
         text: 'Policies',
       }),
       this.createItem({
-        id: WAZUH_MENU_SECURITY_SECTIONS_ID.ROLES_MAPPING,
-        cyTestId: WAZUH_MENU_SECURITY_SECTIONS_CY_TEST_ID.ROLES_MAPPING,
+        id: PORTAL9_MENU_SECURITY_SECTIONS_ID.ROLES_MAPPING,
+        cyTestId: PORTAL9_MENU_SECURITY_SECTIONS_CY_TEST_ID.ROLES_MAPPING,
         text: 'Roles mapping',
       }),
     ];

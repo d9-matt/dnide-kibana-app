@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Integrity monitoring components
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Integrity monitoring components
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -30,7 +30,7 @@ import store from '../../../redux/store';
 import { FilterHandler } from '../../../utils/filter-handler';
 import { AppState } from '../../../react-services/app-state';
 import { ReportingService } from '../../../react-services/reporting';
-import { WAZUH_MODULES } from '../../../../common/wazuh-modules';
+import { PORTAL9_MODULES } from '../../../../common/portal9-modules';
 import { Events, Dashboard, Loader, Settings } from '../../common/modules';
 import WzReduxProvider from '../../../redux/wz-redux-provider';
 import { AgentInfo } from '../../common/welcome/agents-info';
@@ -93,7 +93,7 @@ export class MainModuleAgent extends Component {
         },
         { agent: this.props.agent },
         {
-          text: WAZUH_MODULES[this.props.section].title,
+          text: PORTAL9_MODULES[this.props.section].title,
           className: 'wz-global-breadcrumb-popover'
         },
       ];

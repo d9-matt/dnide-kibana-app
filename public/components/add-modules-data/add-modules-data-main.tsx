@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for render add modules data
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - React component for render add modules data
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -31,7 +31,7 @@ import WzModuleGuide from './module-guide';
 import WzSampleData from './sample-data';
 import modeGuides from './guides';
 
-import { WAZUH_MODULES } from '../../../common/wazuh-modules';
+import { PORTAL9_MODULES } from '../../../common/portal9-modules';
 import { updateGlobalBreadcrumb } from '../../redux/actions/globalBreadcrumbActions';
 import store from '../../redux/store';
 
@@ -70,7 +70,7 @@ export default class WzAddModulesData extends Component<IPropsWzAddModulesData, 
 		// 								layout='horizontal'
 		// 								icon={(<EuiIcon size='xl' type={extension.icon} />) }
 		// 								title={extension.name}
-		// 								description={(WAZUH_MODULES[extension.id] && WAZUH_MODULES[extension.id].description) || extension.description}
+		// 								description={(PORTAL9_MODULES[extension.id] && PORTAL9_MODULES[extension.id].description) || extension.description}
 		// 								onClick={() => this.changeGuide(extension.id) }
 		// 							/>
 		// 						</EuiFlexItem>

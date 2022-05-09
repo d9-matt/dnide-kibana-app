@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Module for Agents/Docker visualizations
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Module for Agents/Docker visualizations
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -11,7 +11,7 @@
  */
 export default [
   {
-    _id: 'Wazuh-App-Agents-Docker-top-5-actions',
+    _id: 'Portal9-App-Agents-Docker-top-5-actions',
     _type: 'visualization',
     _source: {
       title: 'Top 5 actions',
@@ -51,7 +51,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           query: { query: '', language: 'lucene' },
           filter: [],
         }),
@@ -59,7 +59,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Agents-Docker-top-5-images',
+    _id: 'Portal9-App-Agents-Docker-top-5-images',
     _type: 'visualization',
     _source: {
       title: 'Top 5 images',
@@ -99,7 +99,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           query: { query: '', language: 'lucene' },
           filter: [],
         }),
@@ -107,7 +107,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Agents-Docker-Events-summary',
+    _id: 'Portal9-App-Agents-Docker-Events-summary',
     _type: 'visualization',
     _source: {
       title: 'Events summary',
@@ -185,7 +185,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           query: { query: '', language: 'lucene' },
           filter: [],
         }),
@@ -193,7 +193,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Agents-Docker-Types-over-time',
+    _id: 'Portal9-App-Agents-Docker-Types-over-time',
     _type: 'visualization',
     _source: {
       title: 'Types over time',
@@ -287,7 +287,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           query: { query: '', language: 'lucene' },
           filter: [],
         }),
@@ -295,7 +295,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Agents-Docker-Actions-over-time',
+    _id: 'Portal9-App-Agents-Docker-Actions-over-time',
     _type: 'visualization',
     _source: {
       title: 'Actions over time',
@@ -398,7 +398,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           query: { query: '', language: 'lucene' },
           filter: [],
         }),

@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React HOC to manage if the user is logged in
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - React HOC to manage if the user is logged in
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,7 +21,7 @@ export const withUserLogged = (WrappedComponent) => (props) => {
     const withUserLogged = useSelector((state)=> state.appStateReducers.withUserLogged);
     return withUserLogged ? <WrappedComponent {...props}/> : (
       <div className="withUserLogged">
-        <img src={getHttp().basePath.prepend('/plugins/wazuh/assets/icon_blue.svg')} className="withUserLogged-logo" alt=""></img>
+        <img src={getHttp().basePath.prepend('/plugins/portal9/assets/icon_blue.svg')} className="withUserLogged-logo" alt=""></img>
         <EuiSpacer size="s" />
         <EuiText className="subdued-color">Loading ...</EuiText>
         <EuiSpacer size="s" />

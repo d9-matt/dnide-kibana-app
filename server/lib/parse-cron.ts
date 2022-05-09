@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Module to transform seconds interval to cron readable format
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Module to transform seconds interval to cron readable format
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -11,7 +11,7 @@
  */
 import { log } from './logger';
 import cron from 'node-cron';
-import { WAZUH_MONITORING_DEFAULT_CRON_FREQ } from '../../common/constants';
+import { PORTAL9_MONITORING_DEFAULT_CRON_FREQ } from '../../common/constants';
 
 export function parseCron(interval: string) {
   try {
@@ -43,8 +43,8 @@ export function parseCron(interval: string) {
   } catch (error) {
     log(
       'cron:parse-interval',
-      `Using default value ${WAZUH_MONITORING_DEFAULT_CRON_FREQ} due to: ${error.message || error}`
+      `Using default value ${PORTAL9_MONITORING_DEFAULT_CRON_FREQ} due to: ${error.message || error}`
     );
-    return WAZUH_MONITORING_DEFAULT_CRON_FREQ;
+    return PORTAL9_MONITORING_DEFAULT_CRON_FREQ;
   }
 }

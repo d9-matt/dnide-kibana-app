@@ -1,6 +1,6 @@
 /*
-* Wazuh app - Amazon Web Services interactive extension guide
-* Copyright (C) 2015-2021 Wazuh, Inc.
+* Portal9 app - Amazon Web Services interactive extension guide
+* Copyright (C) 2015-2021 Portal9, Inc.
 *
 * This program is free software; you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -15,7 +15,7 @@ export default {
   wodle_name: 'aws-s3',
   description: 'Configuration options of the AWS-S3 wodle.',
   category: 'Security information management',
-  documentation_link: 'https://documentation.wazuh.com/current/user-manual/reference/ossec-conf/wodle-s3.html',
+  documentation_link: 'https://documentation.portal9.com/current/user-manual/reference/ossec-conf/wodle-s3.html',
   icon: 'logoAWSMono',
   avaliable_for_manager: true,
   avaliable_for_agent: true,

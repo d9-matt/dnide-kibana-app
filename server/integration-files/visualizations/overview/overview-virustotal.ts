@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Module for Overview/VirusTotal visualizations
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Module for Overview/VirusTotal visualizations
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -11,7 +11,7 @@
  */
 export default [
   {
-    _id: 'Wazuh-App-Overview-Virustotal-Last-Files-Pie',
+    _id: 'Portal9-App-Overview-Virustotal-Last-Files-Pie',
     _type: 'visualization',
     _source: {
       title: 'Last files',
@@ -48,7 +48,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [],
           query: { query: '', language: 'lucene' },
         }),
@@ -56,7 +56,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Overview-Virustotal-Files-Table',
+    _id: 'Portal9-App-Overview-Virustotal-Files-Table',
     _type: 'visualization',
     _source: {
       title: 'Files',
@@ -115,12 +115,12 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON:
-          '{"index":"wazuh-alerts","filter":[],"query":{"query":"","language":"lucene"}}',
+          '{"index":"portal9-alerts","filter":[],"query":{"query":"","language":"lucene"}}',
       },
     },
   },
   {
-    _id: 'Wazuh-App-Overview-Virustotal-Total-Malicious',
+    _id: 'Portal9-App-Overview-Virustotal-Total-Malicious',
     _type: 'visualization',
     _source: {
       title: 'Total Malicious',
@@ -157,11 +157,11 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [
             {
               meta: {
-                index: 'wazuh-alerts',
+                index: 'portal9-alerts',
                 negate: false,
                 disabled: false,
                 alias: null,
@@ -192,7 +192,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Overview-Virustotal-Total-Positives',
+    _id: 'Portal9-App-Overview-Virustotal-Total-Positives',
     _type: 'visualization',
     _source: {
       title: 'Total Positives',
@@ -229,11 +229,11 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [
             {
               meta: {
-                index: 'wazuh-alerts',
+                index: 'portal9-alerts',
                 negate: false,
                 disabled: false,
                 alias: null,
@@ -250,7 +250,7 @@ export default [
             },
             {
               meta: {
-                index: 'wazuh-alerts',
+                index: 'portal9-alerts',
                 negate: true,
                 disabled: false,
                 alias: null,
@@ -281,7 +281,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Overview-Virustotal-Malicious-Evolution',
+    _id: 'Portal9-App-Overview-Virustotal-Malicious-Evolution',
     _type: 'visualization',
     _source: {
       title: 'Malicious Evolution',
@@ -361,11 +361,11 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [
             {
               meta: {
-                index: 'wazuh-alerts',
+                index: 'portal9-alerts',
                 negate: false,
                 disabled: false,
                 alias: null,
@@ -382,7 +382,7 @@ export default [
             },
             {
               meta: {
-                index: 'wazuh-alerts',
+                index: 'portal9-alerts',
                 negate: true,
                 disabled: false,
                 alias: null,
@@ -413,7 +413,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Overview-Virustotal-Total',
+    _id: 'Portal9-App-Overview-Virustotal-Total',
     _type: 'visualization',
     _source: {
       title: 'Total',
@@ -450,11 +450,11 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [
             {
               meta: {
-                index: 'wazuh-alerts',
+                index: 'portal9-alerts',
                 negate: false,
                 disabled: false,
                 alias: null,
@@ -476,7 +476,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Overview-Virustotal-Malicious-Per-Agent-Table',
+    _id: 'Portal9-App-Overview-Virustotal-Malicious-Per-Agent-Table',
     _type: 'visualization',
     _source: {
       title: 'Malicious Per Agent Table',
@@ -525,11 +525,11 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [
             {
               meta: {
-                index: 'wazuh-alerts',
+                index: 'portal9-alerts',
                 negate: true,
                 disabled: false,
                 alias: null,
@@ -560,7 +560,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Overview-Virustotal-Malicious-Per-Agent',
+    _id: 'Portal9-App-Overview-Virustotal-Malicious-Per-Agent',
     _type: 'visualization',
     _source: {
       title: 'Top 5 agents with unique malicious files',
@@ -597,11 +597,11 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [
             {
               meta: {
-                index: 'wazuh-alerts',
+                index: 'portal9-alerts',
                 negate: true,
                 disabled: false,
                 alias: null,
@@ -632,7 +632,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Overview-Virustotal-Alerts-Evolution',
+    _id: 'Portal9-App-Overview-Virustotal-Alerts-Evolution',
     _type: 'visualization',
     _source: {
       title: 'Positives Heatmap',
@@ -785,11 +785,11 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [
             {
               meta: {
-                index: 'wazuh-alerts',
+                index: 'portal9-alerts',
                 negate: false,
                 disabled: false,
                 alias: null,
@@ -806,7 +806,7 @@ export default [
             },
             {
               meta: {
-                index: 'wazuh-alerts',
+                index: 'portal9-alerts',
                 negate: true,
                 disabled: false,
                 alias: null,
@@ -837,7 +837,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Overview-Virustotal-Alerts-summary',
+    _id: 'Portal9-App-Overview-Virustotal-Alerts-summary',
     _type: 'visualization',
     _source: {
       title: 'Alerts summary',
@@ -915,7 +915,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [],
           query: { query: '', language: 'lucene' },
         }),

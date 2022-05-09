@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Module for Agents/Vulnerabilities visualizations
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Module for Agents/Vulnerabilities visualizations
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -11,7 +11,7 @@
  */
 export default [
   {
-    _id: 'Wazuh-App-Agents-vuls-Alerts-severity-over-time',
+    _id: 'Portal9-App-Agents-vuls-Alerts-severity-over-time',
     _type: 'visualization',
     _source: {
       title: 'Alerts severity over time',
@@ -106,7 +106,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [],
           query: { query: '', language: 'lucene' },
         }),
@@ -114,7 +114,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Agents-vuls-Alert-summary',
+    _id: 'Portal9-App-Agents-vuls-Alert-summary',
     _type: 'visualization',
     _source: {
       title: 'Alerts summary',
@@ -209,7 +209,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [],
           query: { query: '', language: 'lucene' },
         }),
@@ -217,7 +217,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Agents-vuls-Commonly-affected-packages',
+    _id: 'Portal9-App-Agents-vuls-Commonly-affected-packages',
     _type: 'visualization',
     _source: {
       title: 'Top 5 affected packages',
@@ -254,7 +254,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [],
           query: { query: '', language: 'lucene' },
         }),
@@ -262,7 +262,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Agents-vuls-Metric-Critical-severity',
+    _id: 'Portal9-App-Agents-vuls-Metric-Critical-severity',
     _type: 'visualization',
     _source: {
       title: 'Metric Critical severity',
@@ -299,11 +299,11 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [
             {
               meta: {
-                index: 'wazuh-alerts',
+                index: 'portal9-alerts',
                 negate: false,
                 disabled: false,
                 alias: null,
@@ -334,7 +334,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Agents-vuls-Metric-High-severity',
+    _id: 'Portal9-App-Agents-vuls-Metric-High-severity',
     _type: 'visualization',
     _source: {
       title: 'Metric High severity',
@@ -371,11 +371,11 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [
             {
               meta: {
-                index: 'wazuh-alerts',
+                index: 'portal9-alerts',
                 negate: false,
                 disabled: false,
                 alias: null,
@@ -406,7 +406,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Agents-vuls-Metric-Medium-severity',
+    _id: 'Portal9-App-Agents-vuls-Metric-Medium-severity',
     _type: 'visualization',
     _source: {
       title: 'Metric Medium severity',
@@ -443,11 +443,11 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [
             {
               meta: {
-                index: 'wazuh-alerts',
+                index: 'portal9-alerts',
                 negate: false,
                 disabled: false,
                 alias: null,
@@ -478,7 +478,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Agents-vuls-Metric-Low-severity',
+    _id: 'Portal9-App-Agents-vuls-Metric-Low-severity',
     _type: 'visualization',
     _source: {
       title: 'Metric Low severity',
@@ -515,11 +515,11 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [
             {
               meta: {
-                index: 'wazuh-alerts',
+                index: 'portal9-alerts',
                 negate: false,
                 disabled: false,
                 alias: null,
@@ -550,7 +550,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Agents-vuls-Top-Agents-severity',
+    _id: 'Portal9-App-Agents-vuls-Top-Agents-severity',
     _type: 'visualization',
     _source: {
       title: 'Top Agents severity',
@@ -637,7 +637,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [],
           query: { query: '', language: 'lucene' },
         }),
@@ -645,7 +645,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Agents-vuls-Most-common-rules',
+    _id: 'Portal9-App-Agents-vuls-Most-common-rules',
     _type: 'visualization',
     _source: {
       title: 'Most common rules',
@@ -707,7 +707,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [],
           query: { query: '', language: 'lucene' },
         }),
@@ -715,7 +715,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Agents-vuls-Vulnerability-severity-distribution',
+    _id: 'Portal9-App-Agents-vuls-Vulnerability-severity-distribution',
     _type: 'visualization',
     _source: {
       title: 'Severity distribution',
@@ -752,7 +752,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [],
           query: { query: '', language: 'lucene' },
         }),
@@ -760,7 +760,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Agents-vuls-Vulnerability-Most-common-CVEs',
+    _id: 'Portal9-App-Agents-vuls-Vulnerability-Most-common-CVEs',
     _type: 'visualization',
     _source: {
       title: 'Most common CVEs',
@@ -797,7 +797,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [],
           query: { query: '', language: 'lucene' },
         }),
@@ -805,7 +805,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Agents-vuls-top-CWEs',
+    _id: 'Portal9-App-Agents-vuls-top-CWEs',
     _type: 'visualization',
     _source: {
       title: 'Top CWEs',
@@ -849,7 +849,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [],
           query: { query: '', language: 'lucene' },
         }),
@@ -857,7 +857,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Agents-vuls-evolution-affected-packages',
+    _id: 'Portal9-App-Agents-vuls-evolution-affected-packages',
     _type: 'visualization',
     _source: {
       title: 'Alerts evolution: Commonly affected packages',
@@ -943,7 +943,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [],
           query: { query: '', language: 'lucene' },
         }),
@@ -951,7 +951,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Agents-vuls-Most-common-CWEs',
+    _id: 'Portal9-App-Agents-vuls-Most-common-CWEs',
     _type: 'visualization',
     _source: {
       title: 'Most common CWEs',
@@ -988,7 +988,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [],
           query: { query: '', language: 'lucene' },
         }),
@@ -996,7 +996,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Agents-vuls-packages-CVEs',
+    _id: 'Portal9-App-Agents-vuls-packages-CVEs',
     _type: 'visualization',
     _source: {
       title: 'Top affected packages by CVEs',
@@ -1094,7 +1094,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [],
           query: { query: '', language: 'lucene' },
         }),

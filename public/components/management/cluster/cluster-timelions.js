@@ -22,12 +22,12 @@ export class ClusterTimelions extends Component {
     return (
       <WzReduxProvider>
         <EuiFlexGroup style={{ height: '450px' }}>
-          <EuiFlexItem key={'Wazuh-App-Cluster-monitoring-Overview-Manager'}>
+          <EuiFlexItem key={'Portal9-App-Cluster-monitoring-Overview-Manager'}>
             <EuiPanel 
               paddingSize="none" 
               className={
                 this.state.expandedVis ===
-                'Wazuh-App-Cluster-monitoring-Overview-Manager'
+                'Portal9-App-Cluster-monitoring-Overview-Manager'
                   ? 'fullscreen h-100'
                   : 'h-100'}
             >
@@ -44,7 +44,7 @@ export class ClusterTimelions extends Component {
                     style={{ padding: '0px 6px', height: 30 }}
                     onClick={() =>
                       this.expand(
-                        'Wazuh-App-Cluster-monitoring-Overview-Manager'
+                        'Portal9-App-Cluster-monitoring-Overview-Manager'
                       )
                     }
                     iconType="expand"
@@ -54,7 +54,7 @@ export class ClusterTimelions extends Component {
                 <div style={{ height: '100%' }}>
                   <WzReduxProvider>
                     <KibanaVis
-                      visID={'Wazuh-App-Cluster-monitoring-Overview-Manager'}
+                      visID={'Portal9-App-Cluster-monitoring-Overview-Manager'}
                       tab={'monitoring'}
                     ></KibanaVis>
                   </WzReduxProvider>
@@ -62,12 +62,12 @@ export class ClusterTimelions extends Component {
               </EuiFlexItem>
             </EuiPanel>
           </EuiFlexItem>
-          <EuiFlexItem key={'Wazuh-App-Cluster-monitoring-Overview'}>
+          <EuiFlexItem key={'Portal9-App-Cluster-monitoring-Overview'}>
             <EuiPanel
               paddingSize="none"
               className={
                 this.state.expandedVis ===
-                'Wazuh-App-Cluster-monitoring-Overview'
+                'Portal9-App-Cluster-monitoring-Overview'
                   ? 'fullscreen h-100'
                   : 'h-100'}
             >
@@ -83,7 +83,7 @@ export class ClusterTimelions extends Component {
                     color="text"
                     style={{ padding: '0px 6px', height: 30 }}
                     onClick={() =>
-                      this.expand('Wazuh-App-Cluster-monitoring-Overview')
+                      this.expand('Portal9-App-Cluster-monitoring-Overview')
                     }
                     iconType="expand"
                     aria-label="Expand"
@@ -92,7 +92,7 @@ export class ClusterTimelions extends Component {
                 <div style={{ height: '100%' }}>
                   <WzReduxProvider>
                     <KibanaVis
-                      visID={'Wazuh-App-Cluster-monitoring-Overview'}
+                      visID={'Portal9-App-Cluster-monitoring-Overview'}
                       tab={'monitoring'}
                     ></KibanaVis>
                   </WzReduxProvider>

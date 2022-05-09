@@ -1,5 +1,5 @@
 // To launch this file
-// yarn test:jest --testEnvironment node --verbose server/routes/wazuh-utils
+// yarn test:jest --testEnvironment node --verbose server/routes/portal9-utils
 import axios from 'axios';
 
 function buildAxiosOptions(method: string, path: string, data: any = {}, headers: any = {}){
@@ -11,7 +11,7 @@ function buildAxiosOptions(method: string, path: string, data: any = {}, headers
   };
 };
 
-describe('Wazuh API - /utils/configuration', () => {
+describe('Portal9 API - /utils/configuration', () => {
   test('[200] Returns the app configuration', () => {
     const options = buildAxiosOptions('get', '/utils/configuration');
     return axios(options).then(response => {
@@ -22,7 +22,7 @@ describe('Wazuh API - /utils/configuration', () => {
   });
 });
 
-describe('Wazuh API - /utils/configuration', () => {
+describe('Portal9 API - /utils/configuration', () => {
   let userToken = null;
   beforeAll(() => {
     const optionsAuthenticate = buildAxiosOptions('post', '/api/login', {
@@ -47,7 +47,7 @@ describe('Wazuh API - /utils/configuration', () => {
   });
 });
 
-describe('Wazuh API - /utils/logs', () => {
+describe('Portal9 API - /utils/logs', () => {
   test('[200] Get the app logs', () => {
     const options = buildAxiosOptions('get', '/utils/logs');
     return axios(options).then(response => {

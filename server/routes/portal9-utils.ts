@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Module for Wazuh utils routes
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Module for Portal9 utils routes
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -9,14 +9,14 @@
  *
  * Find more information about this on the LICENSE file.
  */
-import { WazuhUtilsCtrl } from '../controllers';
+import { Portal9UtilsCtrl } from '../controllers';
 import { IRouter } from 'kibana/server';
 import { schema } from '@kbn/config-schema';
 
-export function WazuhUtilsRoutes(router: IRouter) {
-  const ctrl = new WazuhUtilsCtrl();
+export function Portal9UtilsRoutes(router: IRouter) {
+  const ctrl = new Portal9UtilsCtrl();
 
-  // Returns the wazuh.yml file parsed
+  // Returns the portal9.yml file parsed
   router.get(
     {
       path: '/utils/configuration',
@@ -25,7 +25,7 @@ export function WazuhUtilsRoutes(router: IRouter) {
     async (context, request, response) => ctrl.getConfigurationFile(context, request, response)
   );
 
-  // Returns the wazuh.yml file in raw
+  // Returns the portal9.yml file in raw
   router.put(
     {
       path: '/utils/configuration',
@@ -39,7 +39,7 @@ export function WazuhUtilsRoutes(router: IRouter) {
     async (context, request, response) => ctrl.updateConfigurationFile(context, request, response)
   );
 
-  // Returns Wazuh app logs
+  // Returns Portal9 app logs
   router.get(
     {
       path: '/utils/logs',

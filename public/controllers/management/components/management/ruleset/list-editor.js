@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for registering agents.
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - React component for registering agents.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -40,7 +40,7 @@ import { getToasts }  from '../../../../../kibana-services';
 
 import exportCsv from '../../../../../react-services/wz-csv';
 
-import { updateWazuhNotReadyYet } from '../../../../../redux/actions/appStateActions';
+import { updatePortal9NotReadyYet } from '../../../../../redux/actions/appStateActions';
 import WzRestartClusterManagerCallout from '../../../../../components/common/restart-cluster-manager-callout';
 import { WzButtonPermissions } from '../../../../../components/common/permissions/button';
 
@@ -645,7 +645,7 @@ const mapDispatchToProps = dispatch => {
   return {
     cleanInfo: () => dispatch(cleanInfo()),
     updateListContent: content => dispatch(updateListContent(content)),
-    updateWazuhNotReadyYet: wazuhNotReadyYet => dispatch(updateWazuhNotReadyYet(wazuhNotReadyYet))
+    updatePortal9NotReadyYet: portal9NotReadyYet => dispatch(updatePortal9NotReadyYet(portal9NotReadyYet))
   };
 };
 

@@ -1,9 +1,9 @@
 export const configEquivalences = {
   pattern: 'Default index pattern to use on the app.',
-  'customization.logo.app':'Define the name of the app logo saved in the path /plugins/wazuh/assets/',
-  'customization.logo.sidebar':'Define the name of the sidebar logo saved in the path /plugins/wazuh/assets/',
-  'customization.logo.healthcheck':'Define the name of the health-check logo saved in the path /plugins/wazuh/assets/',
-  'customization.logo.reports':'Define the name of the reports logo (.png) saved in the path /plugins/wazuh/assets/',
+  'customization.logo.app':'Define the name of the app logo saved in the path /plugins/portal9/assets/',
+  'customization.logo.sidebar':'Define the name of the sidebar logo saved in the path /plugins/portal9/assets/',
+  'customization.logo.healthcheck':'Define the name of the health-check logo saved in the path /plugins/portal9/assets/',
+  'customization.logo.reports':'Define the name of the reports logo (.png) saved in the path /plugins/portal9/assets/',
   'checks.pattern':
     'Enable or disable the index pattern health check when opening the app.',
   'checks.template':
@@ -42,25 +42,25 @@ export const configEquivalences = {
   'ip.selector':
     'Defines if the user is allowed to change the selected index pattern directly from the top menu bar.',
   'ip.ignore':
-    'Disable certain index pattern names from being available in index pattern selector from the Wazuh app.',
-  'wazuh.monitoring.enabled':
-    'Enable or disable the wazuh-monitoring index creation and/or visualization.',
-  'wazuh.monitoring.frequency':
-    'Define in seconds the frequency the app generates a new document on the wazuh-monitoring index.',
-  'wazuh.monitoring.shards':
-    'Define the number of shards to use for the wazuh-monitoring-* indices.',
-  'wazuh.monitoring.replicas':
-    'Define the number of replicas to use for the wazuh-monitoring-* indices.',
-  'wazuh.monitoring.creation':
-    'Define the interval in which the wazuh-monitoring index will be created.',
-  'wazuh.monitoring.pattern':
-    'Default index pattern to use on the app for Wazuh monitoring.',
+    'Disable certain index pattern names from being available in index pattern selector from the Portal9 app.',
+  'portal9.monitoring.enabled':
+    'Enable or disable the portal9-monitoring index creation and/or visualization.',
+  'portal9.monitoring.frequency':
+    'Define in seconds the frequency the app generates a new document on the portal9-monitoring index.',
+  'portal9.monitoring.shards':
+    'Define the number of shards to use for the portal9-monitoring-* indices.',
+  'portal9.monitoring.replicas':
+    'Define the number of replicas to use for the portal9-monitoring-* indices.',
+  'portal9.monitoring.creation':
+    'Define the interval in which the portal9-monitoring index will be created.',
+  'portal9.monitoring.pattern':
+    'Default index pattern to use on the app for Portal9 monitoring.',
   hideManagerAlerts:
     'Hide the alerts of the manager in all dashboards.',
   'logs.level':
     'Set the app logging level, allowed values are info and debug. Default is info.',
   'enrollment.dns':
-    'Set the Wazuh server address in the agent deployment.',
+    'Set the Portal9 server address in the agent deployment.',
   'cron.prefix':
     'Define the index prefix of predefined jobs.',
   'cron.statistics.status':
@@ -94,12 +94,12 @@ export const nameEquivalence = {
   'ip.selector': 'IP selector',
   'ip.ignore': 'IP ignore',
   'xpack.rbac.enabled': 'X-Pack RBAC',
-  'wazuh.monitoring.enabled': 'Status',
-  'wazuh.monitoring.frequency': 'Frequency',
-  'wazuh.monitoring.shards': 'Index shards',
-  'wazuh.monitoring.replicas': 'Index replicas',
-  'wazuh.monitoring.creation': 'Index creation',
-  'wazuh.monitoring.pattern': 'Index pattern',
+  'portal9.monitoring.enabled': 'Status',
+  'portal9.monitoring.frequency': 'Frequency',
+  'portal9.monitoring.shards': 'Index shards',
+  'portal9.monitoring.replicas': 'Index replicas',
+  'portal9.monitoring.creation': 'Index creation',
+  'portal9.monitoring.pattern': 'Index pattern',
   hideManagerAlerts: 'Hide manager alerts',
   'logs.level': 'Log level',
   'enrollment.dns': 'Enrollment DNS',
@@ -140,12 +140,12 @@ export const categoriesEquivalence = {
   'api.selector': GENERAL,
   'ip.selector': GENERAL,
   'ip.ignore': GENERAL,
-  'wazuh.monitoring.enabled': MONITORING,
-  'wazuh.monitoring.frequency': MONITORING,
-  'wazuh.monitoring.shards': MONITORING,
-  'wazuh.monitoring.replicas': MONITORING,
-  'wazuh.monitoring.creation': MONITORING,
-  'wazuh.monitoring.pattern': MONITORING,
+  'portal9.monitoring.enabled': MONITORING,
+  'portal9.monitoring.frequency': MONITORING,
+  'portal9.monitoring.shards': MONITORING,
+  'portal9.monitoring.replicas': MONITORING,
+  'portal9.monitoring.creation': MONITORING,
+  'portal9.monitoring.pattern': MONITORING,
   hideManagerAlerts: GENERAL,
   'logs.level': GENERAL,
   'enrollment.dns': GENERAL,
@@ -186,11 +186,11 @@ export const formEquivalence = {
   'ip.selector': { type: BOOLEAN },
   'ip.ignore': { type: ARRAY },
   'xpack.rbac.enabled': { type: BOOLEAN },
-  'wazuh.monitoring.enabled': { type: BOOLEAN },
-  'wazuh.monitoring.frequency': { type: NUMBER },
-  'wazuh.monitoring.shards': { type: NUMBER },
-  'wazuh.monitoring.replicas': { type: NUMBER },
-  'wazuh.monitoring.creation': {
+  'portal9.monitoring.enabled': { type: BOOLEAN },
+  'portal9.monitoring.frequency': { type: NUMBER },
+  'portal9.monitoring.shards': { type: NUMBER },
+  'portal9.monitoring.replicas': { type: NUMBER },
+  'portal9.monitoring.creation': {
     type: LIST, params: {
       options: [
         { text: 'Hourly', value: 'h' },
@@ -200,7 +200,7 @@ export const formEquivalence = {
       ]
     }
   },
-  'wazuh.monitoring.pattern': { type: TEXT },
+  'portal9.monitoring.pattern': { type: TEXT },
   hideManagerAlerts: { type: BOOLEAN },
   'logs.level': {
     type: LIST, params: {

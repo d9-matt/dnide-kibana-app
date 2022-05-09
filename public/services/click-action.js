@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Wazuh table directive click wrapper
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Portal9 table directive click wrapper
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -46,23 +46,23 @@ export function clickAction(
 
     $location.path('/agents');
   } else if (instance.path === '/agents/groups') {
-    $scope.$emit('wazuhShowGroup', { group: item });
+    $scope.$emit('portal9ShowGroup', { group: item });
   } else if (
     new RegExp(/^\/agents\/groups\/[a-zA-Z0-9_\-.]*\/files$/).test(
       instance.path
     )
   ) {
-    $scope.$emit('wazuhShowGroupFile', {
+    $scope.$emit('portal9ShowGroupFile', {
       groupName: instance.path.split('groups/')[1].split('/files')[0],
       fileName: item.filename
     });
   } else if (instance.path === '/rules') {
-    $scope.$emit('wazuhShowRule', { rule: item });
+    $scope.$emit('portal9ShowRule', { rule: item });
   } else if (instance.path.includes('/decoders')) {
-    $scope.$emit('wazuhShowDecoder', { decoder: item });
+    $scope.$emit('portal9ShowDecoder', { decoder: item });
   } else if (instance.path.includes('/lists/files')) {
-    $scope.$emit('wazuhShowCdbList', { cdblist: item });
+    $scope.$emit('portal9ShowCdbList', { cdblist: item });
   } else if (instance.path === '/cluster/nodes') {
-    $scope.$emit('wazuhShowClusterNode', { node: item });
+    $scope.$emit('portal9ShowClusterNode', { node: item });
   }
 }

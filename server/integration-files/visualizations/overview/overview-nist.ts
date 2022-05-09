@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Module for Overview/NIST visualizations
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Module for Overview/NIST visualizations
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -11,7 +11,7 @@
  */
 export default [
   {
-    _id: 'Wazuh-App-Overview-NIST-Requirements-over-time',
+    _id: 'Portal9-App-Overview-NIST-Requirements-over-time',
     _source: {
       title: 'Requirements over time',
       visState: JSON.stringify({
@@ -134,7 +134,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [],
           query: { language: 'lucene', query: '' },
         }),
@@ -143,7 +143,7 @@ export default [
     _type: 'visualization',
   },
   {
-    _id: 'Wazuh-App-Overview-NIST-Requirements-Agents-heatmap',
+    _id: 'Portal9-App-Overview-NIST-Requirements-Agents-heatmap',
     _type: 'visualization',
     _source: {
       title: 'Alerts volume by agent',
@@ -258,7 +258,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           query: { query: '', language: 'lucene' },
           filter: [],
         }),
@@ -266,7 +266,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Overview-NIST-requirements-by-agents',
+    _id: 'Portal9-App-Overview-NIST-requirements-by-agents',
     _source: {
       title: 'Requiments distribution by agent',
       visState: JSON.stringify({
@@ -388,7 +388,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [],
           query: { query: '', language: 'lucene' },
         }),
@@ -397,7 +397,7 @@ export default [
     _type: 'visualization',
   },
   {
-    _id: 'Wazuh-App-Overview-NIST-Metrics',
+    _id: 'Portal9-App-Overview-NIST-Metrics',
     _source: {
       title: 'Stats',
       visState: JSON.stringify({
@@ -446,7 +446,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [],
           query: { query: '', language: 'lucene' },
         }),
@@ -455,7 +455,7 @@ export default [
     _type: 'visualization',
   },
   {
-    _id: 'Wazuh-App-Overview-NIST-Top-10-requirements',
+    _id: 'Portal9-App-Overview-NIST-Top-10-requirements',
     _source: {
       title: 'Top 10 requirements',
       visState: JSON.stringify({
@@ -513,7 +513,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [],
           query: { query: '', language: 'lucene' },
         }),
@@ -522,7 +522,7 @@ export default [
     _type: 'visualization',
   },
   {
-    _id: 'Wazuh-App-Overview-NIST-Agents',
+    _id: 'Portal9-App-Overview-NIST-Agents',
     _source: {
       title: 'Most active agents',
       visState: JSON.stringify({
@@ -580,7 +580,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [],
           query: { query: '', language: 'lucene' },
         }),
@@ -589,7 +589,7 @@ export default [
     _type: 'visualization',
   },
   {
-    _id: 'Wazuh-App-Overview-NIST-Alerts-summary',
+    _id: 'Portal9-App-Overview-NIST-Alerts-summary',
     _type: 'visualization',
     _source: {
       title: 'Alerts summary',
@@ -711,7 +711,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [],
           query: { query: '', language: 'lucene' },
         }),

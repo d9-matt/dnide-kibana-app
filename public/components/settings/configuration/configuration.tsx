@@ -1,7 +1,7 @@
 /*
- * Wazuh app - React component building the configuration component.
+ * Portal9 app - React component building the configuration component.
  *
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -31,7 +31,7 @@ import WzReduxProvider from '../../../redux/wz-redux-provider'
 import store from '../../../redux/store'
 import { updateSelectedSettingsSection } from '../../../redux/actions/appStateActions';
 import { withUserAuthorizationPrompt } from '../../common/hocs/withUserAuthorization'
-import { WAZUH_ROLE_ADMINISTRATOR_NAME } from '../../../../common/constants';
+import { PORTAL9_ROLE_ADMINISTRATOR_NAME } from '../../../../common/constants';
 
 export type ISetting = {
   setting: string
@@ -50,7 +50,7 @@ const WzConfigurationSettingsProvider = (props) => {
   const [updatedConfig, setUpdateConfig] = useState({});
   useEffect(() => {
     store.dispatch(updateSelectedSettingsSection('configuration'));
-    const rawConfig = props.wazuhConfig.getConfig();
+    const rawConfig = props.portal9Config.getConfig();
     const formatedConfig = Object.keys(rawConfig).reduce<ISetting[]>((acc, conf) => [
       ...acc,
       {
@@ -81,7 +81,7 @@ const WzConfigurationSettingsProvider = (props) => {
     </EuiPage>
   );
 }
-const WzConfigurationSettingsWrapper = withUserAuthorizationPrompt(null, [WAZUH_ROLE_ADMINISTRATOR_NAME])(WzConfigurationSettingsProvider);
+const WzConfigurationSettingsWrapper = withUserAuthorizationPrompt(null, [PORTAL9_ROLE_ADMINISTRATOR_NAME])(WzConfigurationSettingsProvider);
 export function WzConfigurationSettings(props) {
   return(
     <WzReduxProvider>

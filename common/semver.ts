@@ -1,7 +1,7 @@
 /*
- * Wazuh app - Utils related to Kibana and app versions
+ * Portal9 app - Utils related to Kibana and app versions
  *
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

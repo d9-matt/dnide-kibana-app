@@ -1,6 +1,6 @@
 /*
-* Wazuh app - Vulnerabilities interactive extension guide
-* Copyright (C) 2015-2021 Wazuh, Inc.
+* Portal9 app - Vulnerabilities interactive extension guide
+* Copyright (C) 2015-2021 Portal9, Inc.
 *
 * This program is free software; you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -15,7 +15,7 @@ export default {
   name: 'Integrity monitoring',
   description: 'Configuration options for file integrity monitoring.',
   category: 'Security information management',
-  documentation_link: 'https://documentation.wazuh.com/current/user-manual/reference/ossec-conf/syscheck.html',
+  documentation_link: 'https://documentation.portal9.com/current/user-manual/reference/ossec-conf/syscheck.html',
   icon: 'filebeatApp',
   avaliable_for_manager: true,
   avaliable_for_agent: true,
@@ -534,7 +534,7 @@ export default {
               },
               {
                 name: 'audit_key',
-                description: 'Set up the FIM engine to collect the Audit events using keys with audit_key. Wazuh will include in its FIM baseline those events being monitored by Audit using audit_key. For those systems where Audit is already set to monitor folders for other purposes, Wazuh can collect events generated as a key from audit_key. This option is only available for Linux systems with Audit.',
+                description: 'Set up the FIM engine to collect the Audit events using keys with audit_key. Portal9 will include in its FIM baseline those events being monitored by Audit using audit_key. For those systems where Audit is already set to monitor folders for other purposes, Portal9 can collect events generated as a key from audit_key. This option is only available for Linux systems with Audit.',
                 info: 'Audit allow inserting spaces inside the keys, so the spaces inserted inside the field <audit_key> will be part of the key.',
                 type: 'input',
                 placeholder: 'Any string separated by commas',

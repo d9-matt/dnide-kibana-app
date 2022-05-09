@@ -1,7 +1,7 @@
 /*
- * Wazuh app - React component for building the agents table.
+ * Portal9 app - React component for building the agents table.
  *
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -441,7 +441,7 @@ export class AgentsTable extends Component {
       selectedItems.length > 0 &&
       avaibleAgents.filter(
         agent =>
-          agent.version !== 'Wazuh ' + managerVersion &&
+          agent.version !== 'Portal9 ' + managerVersion &&
           agent.status === 'Active'
       ).length === 0
     ) {

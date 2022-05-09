@@ -1,7 +1,7 @@
 /*
- * Wazuh app - Check setup service
+ * Portal9 app - Check setup service
  *
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -32,7 +32,7 @@ export const checkSetupService = appInfo => async (checkLogger: CheckLogger) => 
     };
 
     if (!apiVersion) {
-      checkLogger.info('Error fetching Wazuh API version');
+      checkLogger.info('Error fetching Portal9 API version');
     } else {
       const api = /v?(?<version>\d+)\.(?<minor>\d+)\.(?<path>\d+)/.exec(apiVersion);
       const appSplit = setupData.data.data['app-version'].split('.');
@@ -42,7 +42,7 @@ export const checkSetupService = appInfo => async (checkLogger: CheckLogger) => 
         api.groups.version !== appSplit[0] ||
         api.groups.minor !== appSplit[1]
       ) {
-        checkLogger.error(`Wazuh API and Wazuh App version mismatch. API version: ${apiVersion}. App version: ${setupData.data.data['app-version']}. At least, major and minor should match. Check more info about upgrading Wazuh App <a target='_blank' href='https://documentation.wazuh.com/current/upgrade-guide/elasticsearch-kibana-filebeat/index.html#upgrade-elasticsearch-filebeat-kibana'>here</a>.`);
+        checkLogger.error(`Portal9 API and Portal9 App version mismatch. API version: ${apiVersion}. App version: ${setupData.data.data['app-version']}. At least, major and minor should match. Check more info about upgrading Portal9 App <a target='_blank' href='https://documentation.portal9.com/current/upgrade-guide/elasticsearch-kibana-filebeat/index.html#upgrade-elasticsearch-filebeat-kibana'>here</a>.`);
       }
     }
   }

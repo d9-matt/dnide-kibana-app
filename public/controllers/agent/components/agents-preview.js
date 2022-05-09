@@ -1,7 +1,7 @@
 /*
- * Wazuh app - React component for building the agents preview section.
+ * Portal9 app - React component for building the agents preview section.
  *
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -36,7 +36,7 @@ import { VisFactoryHandler } from '../../../react-services/vis-factory-handler';
 import { AppState } from '../../../react-services/app-state';
 import { FilterHandler } from '../../../utils/filter-handler';
 import { TabVisualizations } from '../../../factories/tab-visualizations';
-import { WazuhConfig } from './../../../react-services/wazuh-config.js';
+import { Portal9Config } from './../../../react-services/portal9-config.js';
 import { WzDatePicker } from '../../../components/wz-date-picker/wz-date-picker';
 import { withReduxProvider, withGlobalBreadcrumb, withUserAuthorizationPrompt } from '../../../components/common/hocs';
 import { formatUIDate } from '../../../../public/react-services/time-service';
@@ -56,7 +56,7 @@ export const AgentsPreview = compose(
   constructor(props) {
     super(props);
     this.state = { data: [], loading: false, showAgentsEvolutionVisualization: false, agentTableFilters: [] };
-    this.wazuhConfig = new WazuhConfig();
+    this.portal9Config = new Portal9Config();
     this.agentStatusLabelToIDMap = {
       'Active': 'active',
       'Disconnected': 'disconnected',
@@ -67,7 +67,7 @@ export const AgentsPreview = compose(
   async componentDidMount() {
     this._isMount = true;
     this.getSummary();
-    if( this.wazuhConfig.getConfig()['wazuh.monitoring.enabled'] ){
+    if( this.portal9Config.getConfig()['portal9.monitoring.enabled'] ){
       this._isMount && this.setState({ showAgentsEvolutionVisualization: true });
       const tabVisualizations = new TabVisualizations();
       tabVisualizations.removeAll();
@@ -297,7 +297,7 @@ export const AgentsPreview = compose(
                     <div style={{height: this.props.resultState === 'ready' ? '180px' : 0}}>
                       <WzReduxProvider>
                         <KibanaVis
-                          visID={'Wazuh-App-Overview-General-Agents-status'}
+                          visID={'Portal9-App-Overview-General-Agents-status'}
                           tab={'general'}
                         />
                       </WzReduxProvider>

@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for show configuration of AWS S3.
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - React component for show configuration of AWS S3.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -68,7 +68,7 @@ const sections = [{ component: 'wmodules', configuration: 'wmodules' }];
 
 WzConfigurationAmazonS3.propTypes = {
   // currentConfig: PropTypes.object.isRequired,
-  wazuhNotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
+  portal9NotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
 };
 
 export default withWzConfig(sections)(WzConfigurationAmazonS3);

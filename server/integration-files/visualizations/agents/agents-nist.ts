@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Module for Agents/NIST-800-53 visualizations
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Module for Agents/NIST-800-53 visualizations
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -11,7 +11,7 @@
  */
 export default [
   {
-    _id: 'Wazuh-App-Agents-NIST-Stats',
+    _id: 'Portal9-App-Agents-NIST-Stats',
     _source: {
       title: 'Stats',
       visState: JSON.stringify({
@@ -60,7 +60,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [],
           query: { query: '', language: 'lucene' },
         }),
@@ -69,7 +69,7 @@ export default [
     _type: 'visualization',
   },
   {
-    _id: 'Wazuh-App-Agents-NIST-top-10-requirements',
+    _id: 'Portal9-App-Agents-NIST-top-10-requirements',
     _source: {
       title: 'Top 10 requirements',
       visState: JSON.stringify({
@@ -112,7 +112,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [],
           query: { query: '', language: 'lucene' },
         }),
@@ -121,7 +121,7 @@ export default [
     _type: 'visualization',
   },
   {
-    _id: 'Wazuh-App-Agents-NIST-Requirement-by-level',
+    _id: 'Portal9-App-Agents-NIST-Requirement-by-level',
     _source: {
       title: 'Requirements distributed by level',
       visState: JSON.stringify({
@@ -243,7 +243,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [],
           query: { query: '', language: 'lucene' },
         }),
@@ -252,7 +252,7 @@ export default [
     _type: 'visualization',
   },
   {
-    _id: 'Wazuh-App-Agents-NIST-Rule-level-distribution',
+    _id: 'Portal9-App-Agents-NIST-Rule-level-distribution',
     _source: {
       title: 'Rule level distribution',
       visState: JSON.stringify({
@@ -291,7 +291,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [],
           query: { query: '', language: 'lucene' },
         }),
@@ -300,7 +300,7 @@ export default [
     _type: 'visualization',
   },
   {
-    _id: 'Wazuh-App-Agents-NIST-Requirements-stacked-overtime',
+    _id: 'Portal9-App-Agents-NIST-Requirements-stacked-overtime',
     _source: {
       title: 'Requirements over time',
       visState: JSON.stringify({
@@ -423,7 +423,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [],
           query: { query: '', language: 'lucene' },
         }),
@@ -432,7 +432,7 @@ export default [
     _type: 'visualization',
   },
   {
-    _id: 'Wazuh-App-Agents-NIST-Last-alerts',
+    _id: 'Portal9-App-Agents-NIST-Last-alerts',
     _type: 'visualization',
     _source: {
       title: 'Alerts summary',
@@ -554,7 +554,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [],
           query: { query: '', language: 'lucene' },
         }),

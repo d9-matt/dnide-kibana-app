@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Settings controller
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Settings controller
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -12,7 +12,7 @@
 import { TabNames } from '../../utils/tab-names';
 import { kibana } from '../../../package.json';
 import { AppState } from '../../react-services/app-state';
-import { WazuhConfig } from '../../react-services/wazuh-config';
+import { Portal9Config } from '../../react-services/portal9-config';
 import { GenericRequest } from '../../react-services/generic-request';
 import { WzMisc } from '../../factories/misc';
 import { ApiCheck } from '../../react-services/wz-api-check';
@@ -38,7 +38,7 @@ export class SettingsController {
     this.genericReq = GenericRequest;
     this.errorHandler = errorHandler;
     this.wzMisc = new WzMisc();
-    this.wazuhConfig = new WazuhConfig();
+    this.portal9Config = new Portal9Config();
 
     if (this.wzMisc.getWizard()) {
       $window.sessionStorage.removeItem('healthCheck');
@@ -138,7 +138,7 @@ export class SettingsController {
       },
       selectedTab: this.tab || 'api',
       tabs,
-      wazuhConfig: this.wazuhConfig
+      portal9Config: this.portal9Config
     };
 
     this.settingsLogsProps = {
@@ -189,7 +189,7 @@ export class SettingsController {
         } catch (error) {
           const code = ((error || {}).data || {}).code;
           const downReason = typeof error === 'string' ? error :
-            (error || {}).message || ((error || {}).data || {}).message || 'Wazuh is not reachable';
+            (error || {}).message || ((error || {}).data || {}).message || 'Portal9 is not reachable';
           const status = code === 3099 ? 'down' : 'unknown';
           this.apiEntries[idx].status = { status, downReason };
           numError = numError + 1;
@@ -249,7 +249,7 @@ export class SettingsController {
   async getSettings() {
     try {
       try{
-        this.indexPatterns = await SavedObject.getListOfWazuhValidIndexPatterns();
+        this.indexPatterns = await SavedObject.getListOfPortal9ValidIndexPatterns();
       }catch(error){
         this.wzMisc.setBlankScr('Sorry but no valid index patterns were found');
         this.$location.search('tab', null);
@@ -363,7 +363,7 @@ export class SettingsController {
   }
 
   /**
-   * Returns Wazuh app logs
+   * Returns Portal9 app logs
    */
   async getAppLogs() {
     try {
@@ -375,14 +375,14 @@ export class SettingsController {
         {
           date: new Date(),
           level: 'error',
-          message: 'Error when loading Wazuh app logs'
+          message: 'Error when loading Portal9 app logs'
         }
       ];
     }
   }
 
   /**
-   * Returns Wazuh app info
+   * Returns Portal9 app info
    */
   async getAppInfo() {
     try {
@@ -395,7 +395,7 @@ export class SettingsController {
       };
 
       this.load = false;
-      const config = this.wazuhConfig.getConfig();
+      const config = this.portal9Config.getConfig();
       AppState.setPatternSelector(config['ip.selector']);
       const pattern = AppState.getCurrentPattern();
       this.selectedIndexPattern = pattern || config['pattern'];
@@ -423,24 +423,24 @@ export class SettingsController {
   }
 
   /**
-   * This ask again for wazuh logs
+   * This ask again for portal9 logs
    */
   refreshLogs() {
     return this.getAppLogs();
   }
 
   /**
-   * Checks if there are new APIs entries in the wazuh.yml
+   * Checks if there are new APIs entries in the portal9.yml
    */
   async checkForNewApis() {
     try {
       this.addingApi = true;
       this.addApiProps.errorsAtInit = false;
       const hosts = await this.getHosts();
-      //Tries to check if there are new APIs entries in the wazuh.yml also, checks if some of them have connection
+      //Tries to check if there are new APIs entries in the portal9.yml also, checks if some of them have connection
       if (!hosts.length)
         throw {
-          message: 'There were not found any API entry in the wazuh.yml',
+          message: 'There were not found any API entry in the portal9.yml',
           type: 'warning',
           closedEnabled: false
         };
@@ -450,13 +450,13 @@ export class SettingsController {
           this.apiIsDown = true;
           throw {
             message:
-              'Wazuh API not recheable, please review your configuration',
+              'Portal9 API not recheable, please review your configuration',
             type: 'danger',
             closedEnabled: true
           };
         }
         throw {
-          message: `Some of the API entries are not reachable. You can still use the Wazuh APP but please, review your hosts configuration.`,
+          message: `Some of the API entries are not reachable. You can still use the Portal9 APP but please, review your hosts configuration.`,
           type: 'warning',
           closedEnabled: true
         };
@@ -468,7 +468,7 @@ export class SettingsController {
   }
 
   /**
-   * Get the hosts in the wazuh.yml
+   * Get the hosts in the portal9.yml
    */
   async getHosts() {
     try {

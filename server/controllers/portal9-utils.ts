@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Class for Wazuh-API functions
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Class for Portal9-API functions
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,14 +16,14 @@ import { getConfiguration } from '../lib/get-configuration';
 import { read } from 'read-last-lines';
 import { UpdateConfigurationFile } from '../lib/update-configuration';
 import jwtDecode from 'jwt-decode';
-import { WAZUH_ROLE_ADMINISTRATOR_ID, WAZUH_DATA_LOGS_RAW_PATH } from '../../common/constants';
+import { PORTAL9_ROLE_ADMINISTRATOR_ID, PORTAL9_DATA_LOGS_RAW_PATH } from '../../common/constants';
 import { ManageHosts } from '../lib/manage-hosts';
 import { KibanaRequest, RequestHandlerContext, KibanaResponseFactory } from 'src/core/server';
 import { getCookieValueByName } from '../lib/cookie';
 
 const updateConfigurationFile = new UpdateConfigurationFile();
 
-export class WazuhUtilsCtrl {
+export class Portal9UtilsCtrl {
   /**
    * Constructor
    * @param {*} server
@@ -33,7 +33,7 @@ export class WazuhUtilsCtrl {
   }
 
   /**
-   * Returns the wazuh.yml file parsed
+   * Returns the portal9.yml file parsed
    * @param {Object} context
    * @param {Object} request
    * @param {Object} response
@@ -56,7 +56,7 @@ export class WazuhUtilsCtrl {
   }
 
   /**
-   * Returns the wazuh.yml file in raw
+   * Returns the portal9.yml file in raw
    * @param {Object} context
    * @param {Object} request
    * @param {Object} response
@@ -73,7 +73,7 @@ export class WazuhUtilsCtrl {
       if(!decodedToken){
         return ErrorResponse('No permissions in token', 401, 401, response);
       };
-      if(!decodedToken.rbac_roles || !decodedToken.rbac_roles.includes(WAZUH_ROLE_ADMINISTRATOR_ID)){
+      if(!decodedToken.rbac_roles || !decodedToken.rbac_roles.includes(PORTAL9_ROLE_ADMINISTRATOR_ID)){
         return ErrorResponse('No administrator role', 401, 401, response);
       };response
       // Check the provided token is valid
@@ -81,7 +81,7 @@ export class WazuhUtilsCtrl {
       if( !apiHostID ){
         return ErrorResponse('No API id provided', 401, 401, response);
       };
-      const responseTokenIsWorking = await context.wazuh.api.client.asCurrentUser.request('GET', '//', {}, {apiHostID});
+      const responseTokenIsWorking = await context.portal9.api.client.asCurrentUser.request('GET', '//', {}, {apiHostID});
       if(responseTokenIsWorking.status !== 200){
         return ErrorResponse('Token is not valid', 401, 401, response);
       };
@@ -99,7 +99,7 @@ export class WazuhUtilsCtrl {
   }
 
   /**
-   * Returns Wazuh app logs
+   * Returns Portal9 app logs
    * @param {Object} context 
    * @param {Object} request
    * @param {Object} response
@@ -108,7 +108,7 @@ export class WazuhUtilsCtrl {
   async getAppLogs(context: RequestHandlerContext, request: KibanaRequest, response: KibanaResponseFactory) {
     try {
       const lastLogs = await read(
-        WAZUH_DATA_LOGS_RAW_PATH,
+        PORTAL9_DATA_LOGS_RAW_PATH,
         50
       );
       const spliterLog = lastLogs.split('\n');

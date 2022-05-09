@@ -1,6 +1,6 @@
 /*
-* Wazuh app - Osquery interactive extension guide
-* Copyright (C) 2015-2021 Wazuh, Inc.
+* Portal9 app - Osquery interactive extension guide
+* Copyright (C) 2015-2021 Portal9, Inc.
 *
 * This program is free software; you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -15,7 +15,7 @@ export default {
   wodle_name: 'osquery',
   description: 'Configuration options of the osquery wodle.',
   category: 'Threat detection and response',
-  documentation_link: 'https://documentation.wazuh.com/current/user-manual/reference/ossec-conf/wodle-osquery.html',
+  documentation_link: 'https://documentation.portal9.com/current/user-manual/reference/ossec-conf/wodle-osquery.html',
   icon: 'securityApp',
   callout_warning: 'Osquery is not installed by default. It is an open source software that you have to obtain for using this module.',
   avaliable_for_manager: true,
@@ -59,7 +59,7 @@ export default {
         },
         {
           name: 'config_path',
-          description: 'Path to the Osquery configuration file. This path can be relative to the folder where the Wazuh agent is running.',
+          description: 'Path to the Osquery configuration file. This path can be relative to the folder where the Portal9 agent is running.',
           type: 'input',
           required: true,
           placeholder: 'Path to the Osquery configuration file',

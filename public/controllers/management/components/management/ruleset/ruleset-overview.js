@@ -13,7 +13,7 @@ import {
 
 import { connect } from 'react-redux';
 
-// Wazuh components
+// Portal9 components
 import WzRulesetTable from './ruleset-table';
 import WzRulesetSearchBar from './ruleset-search-bar';
 import WzRulesetActionButtons from './actions-buttons';

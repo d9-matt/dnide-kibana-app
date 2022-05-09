@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for add sample data
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - React component for add sample data
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -29,7 +29,7 @@ import {
 import { getToasts } from '../../kibana-services';
 import { WzRequest } from '../../react-services/wz-request';
 import { AppState } from '../../react-services/app-state';
-import { WAZUH_ROLE_ADMINISTRATOR_NAME } from '../../../common/constants';
+import { PORTAL9_ROLE_ADMINISTRATOR_NAME } from '../../../common/constants';
 
 export default class WzSampleData extends Component {
   categories: { title: string, description: string, image: string, categorySampleAlertsIndex: string }[]
@@ -184,7 +184,7 @@ export default class WzSampleData extends Component {
                 {exists && (
                   <WzButtonPermissions
                     color='danger'
-                    roles={[WAZUH_ROLE_ADMINISTRATOR_NAME]}
+                    roles={[PORTAL9_ROLE_ADMINISTRATOR_NAME]}
                     onClick={() => this.removeSampleData(category)}
                   >
                     {removeDataLoading && 'Removing data' || 'Remove data'}
@@ -192,7 +192,7 @@ export default class WzSampleData extends Component {
                 ) || (
                     <WzButtonPermissions
                       isLoading={addDataLoading}
-                      roles={[WAZUH_ROLE_ADMINISTRATOR_NAME]}
+                      roles={[PORTAL9_ROLE_ADMINISTRATOR_NAME]}
                       onClick={() => this.addSampleData(category)}
                     >
                       {addDataLoading && 'Adding data' || 'Add data'}

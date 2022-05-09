@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Mitre alerts components
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Mitre alerts components
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -30,7 +30,7 @@ import {
 import { AppNavigate } from '../../../../../react-services/app-navigate';
 import { AppState } from '../../../../../react-services/app-state';
 import { RequirementFlyout } from '../requirement-flyout/requirement-flyout'
-import { WAZUH_ALERTS_PATTERN } from '../../../../../../common/constants';
+import { PORTAL9_ALERTS_PATTERN } from '../../../../../../common/constants';
 import { getDataPlugin } from '../../../../../kibana-services';
 
 export class ComplianceSubrequirements extends Component {
@@ -72,7 +72,7 @@ export class ComplianceSubrequirements extends Component {
         "params": { "query": filter.value },
         "type": "phrase",
         "negate": filter.negate || false,
-        "index": AppState.getCurrentPattern() || WAZUH_ALERTS_PATTERN
+        "index": AppState.getCurrentPattern() || PORTAL9_ALERTS_PATTERN
       },
       "query": { "match_phrase": matchPhrase },
       "$state": { "store": "appState" }

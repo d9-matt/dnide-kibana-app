@@ -1,10 +1,10 @@
 import { jobs } from './predefined-jobs';
-import { WazuhHostsCtrl } from '../../controllers/wazuh-hosts';
+import { Portal9HostsCtrl } from '../../controllers/portal9-hosts';
 import { IApi, SaveDocument } from './index';
 import { ErrorHandler } from './error-handler';
 import { configuredJobs } from './configured-jobs';
 
-const wazuhHostsController = new WazuhHostsCtrl();
+const portal9HostsController = new Portal9HostsCtrl();
 
 const fakeResponseEndpoint = {
   ok: (body: any) => body,
@@ -20,8 +20,8 @@ export class SchedulerJob {
   constructor(jobName: string, context) {
     this.jobName = jobName;
     this.context = context;
-    this.logger = context.wazuh.logger;
-    this.apiClient = context.wazuh.api.client.asInternalUser;
+    this.logger = context.portal9.logger;
+    this.apiClient = context.portal9.api.client.asInternalUser;
     this.saveDocument = new SaveDocument(context);
   }
 
@@ -48,8 +48,8 @@ export class SchedulerJob {
 
   private async getApiObjects() {
     const { apis } = jobs[this.jobName];
-    const hostsResponse: {body: IApi[]} = await wazuhHostsController.getHostsEntries(false, false, fakeResponseEndpoint);
-    if (!hostsResponse.body.length) throw {error: 10001, message: 'No Wazuh host configured in wazuh.yml' }
+    const hostsResponse: {body: IApi[]} = await portal9HostsController.getHostsEntries(false, false, fakeResponseEndpoint);
+    if (!hostsResponse.body.length) throw {error: 10001, message: 'No Portal9 host configured in portal9.yml' }
     if(apis && apis.length){
       return this.filterHosts(hostsResponse.body, apis);
     }

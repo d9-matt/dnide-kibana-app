@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for registering agents.
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - React component for registering agents.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,7 +18,7 @@ import { AppState } from '../../react-services/app-state';
 import { hasAgentSupportModule } from '../../react-services/wz-agents';
 import { AgentInfo } from './../common/welcome/agents-info';
 import { getAngularModule } from '../../kibana-services';
-import { WAZUH_MODULES_ID } from '../../../common/constants';
+import { PORTAL9_MODULES_ID } from '../../../common/constants';
 
 class WzMenuAgent extends Component {
   constructor(props) {
@@ -44,25 +44,25 @@ class WzMenuAgent extends Component {
         id: 'regulatoryCompliance',
         text: 'Regulatory Compliance'
       },
-      general: { id: WAZUH_MODULES_ID.SECURITY_EVENTS, text: 'Security Events' },
-      fim: { id: WAZUH_MODULES_ID.INTEGRITY_MONITORING, text: 'Integrity Monitoring' },
-      aws: { id: WAZUH_MODULES_ID.AMAZON_WEB_SERVICES, text: 'Amazon AWS' },
-      gcp: { id: WAZUH_MODULES_ID.GOOGLE_CLOUD_PLATFORM, text: 'Google Cloud Platform' },
-      pm: { id: WAZUH_MODULES_ID.POLICY_MONITORING, text: 'Policy Monitoring' },
-      sca: { id: WAZUH_MODULES_ID.SECURITY_CONFIGURATION_ASSESSMENT, text: 'Security configuration assessment' },
-      audit: { id: WAZUH_MODULES_ID.AUDITING, text: 'System Auditing' },
-      oscap: { id: WAZUH_MODULES_ID.OPEN_SCAP, text: 'OpenSCAP' },
-      ciscat: { id: WAZUH_MODULES_ID.CIS_CAT, text: 'CIS-CAT' },
-      vuls: { id: WAZUH_MODULES_ID.VULNERABILITIES, text: 'Vulnerabilities' },
-      virustotal: { id: WAZUH_MODULES_ID.VIRUSTOTAL, text: 'VirusTotal' },
-      osquery: { id: WAZUH_MODULES_ID.OSQUERY, text: 'Osquery' },
-      docker: { id: WAZUH_MODULES_ID.DOCKER, text: 'Docker Listener' },
-      mitre: { id: WAZUH_MODULES_ID.MITRE_ATTACK, text: 'MITRE ATT&CK' },
-      pci: { id: WAZUH_MODULES_ID.PCI_DSS, text: 'PCI DSS' },
-      gdpr: { id: WAZUH_MODULES_ID.GDPR, text: 'GDPR' },
-      hipaa: { id: WAZUH_MODULES_ID.HIPAA, text: 'HIPAA' },
-      nist: { id: WAZUH_MODULES_ID.NIST_800_53, text: 'NIST 800-53' },
-      tsc: { id: WAZUH_MODULES_ID.TSC, text: 'TSC' }
+      general: { id: PORTAL9_MODULES_ID.SECURITY_EVENTS, text: 'Security Events' },
+      fim: { id: PORTAL9_MODULES_ID.INTEGRITY_MONITORING, text: 'Integrity Monitoring' },
+      aws: { id: PORTAL9_MODULES_ID.AMAZON_WEB_SERVICES, text: 'Amazon AWS' },
+      gcp: { id: PORTAL9_MODULES_ID.GOOGLE_CLOUD_PLATFORM, text: 'Google Cloud Platform' },
+      pm: { id: PORTAL9_MODULES_ID.POLICY_MONITORING, text: 'Policy Monitoring' },
+      sca: { id: PORTAL9_MODULES_ID.SECURITY_CONFIGURATION_ASSESSMENT, text: 'Security configuration assessment' },
+      audit: { id: PORTAL9_MODULES_ID.AUDITING, text: 'System Auditing' },
+      oscap: { id: PORTAL9_MODULES_ID.OPEN_SCAP, text: 'OpenSCAP' },
+      ciscat: { id: PORTAL9_MODULES_ID.CIS_CAT, text: 'CIS-CAT' },
+      vuls: { id: PORTAL9_MODULES_ID.VULNERABILITIES, text: 'Vulnerabilities' },
+      virustotal: { id: PORTAL9_MODULES_ID.VIRUSTOTAL, text: 'VirusTotal' },
+      osquery: { id: PORTAL9_MODULES_ID.OSQUERY, text: 'Osquery' },
+      docker: { id: PORTAL9_MODULES_ID.DOCKER, text: 'Docker Listener' },
+      mitre: { id: PORTAL9_MODULES_ID.MITRE_ATTACK, text: 'MITRE ATT&CK' },
+      pci: { id: PORTAL9_MODULES_ID.PCI_DSS, text: 'PCI DSS' },
+      gdpr: { id: PORTAL9_MODULES_ID.GDPR, text: 'GDPR' },
+      hipaa: { id: PORTAL9_MODULES_ID.HIPAA, text: 'HIPAA' },
+      nist: { id: PORTAL9_MODULES_ID.NIST_800_53, text: 'NIST 800-53' },
+      tsc: { id: PORTAL9_MODULES_ID.TSC, text: 'TSC' }
     };
 
     this.securityInformationItems = [

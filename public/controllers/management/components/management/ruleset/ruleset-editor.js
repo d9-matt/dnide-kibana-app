@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for registering agents.
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - React component for registering agents.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -38,7 +38,7 @@ import { resourceDictionary, RulesetHandler, RulesetResources } from './utils/ru
 import validateConfigAfterSent from './utils/valid-configuration';
 
 import { getToasts } from '../../../../../kibana-services';
-import { updateWazuhNotReadyYet } from '../../../../../redux/actions/appStateActions';
+import { updatePortal9NotReadyYet } from '../../../../../redux/actions/appStateActions';
 import WzRestartClusterManagerCallout from '../../../../../components/common/restart-cluster-manager-callout';
 import { validateXML } from '../configuration/utils/xml';
 import { WzButtonPermissions } from '../../../../../components/common/permissions/button';
@@ -180,7 +180,7 @@ class WzRulesetEditor extends Component {
 
   render() {
     const { section, addingRulesetFile, fileContent } = this.props.state;
-    const { wazuhNotReadyYet } = this.props;
+    const { portal9NotReadyYet } = this.props;
     const { name, content, path, showWarningRestart } = this.state;
     const isRules = path.includes('rules') ? 'Ruleset Test' : 'Decoders Test';
 
@@ -357,7 +357,7 @@ class WzRulesetEditor extends Component {
                           theme="textmate"
                           width="100%"
                           height={`calc(100vh - ${
-                            (showWarningRestart && !xmlError) || wazuhNotReadyYet
+                            (showWarningRestart && !xmlError) || portal9NotReadyYet
                               ? 300
                               : xmlError
                               ? !showWarningRestart
@@ -392,7 +392,7 @@ class WzRulesetEditor extends Component {
 const mapStateToProps = state => {
   return {
     state: state.rulesetReducers,
-    wazuhNotReadyYet: state.appStateReducers.wazuhNotReadyYet,
+    portal9NotReadyYet: state.appStateReducers.portal9NotReadyYet,
     showFlyout: state.appStateReducers.showFlyoutLogtest,
   };
 };
@@ -401,7 +401,7 @@ const mapDispatchToProps = dispatch => {
   return {
     cleanInfo: () => dispatch(cleanInfo()),
     updateFileContent: content => dispatch(updateFileContent(content)),
-    updateWazuhNotReadyYet: wazuhNotReadyYet => dispatch(updateWazuhNotReadyYet(wazuhNotReadyYet)),
+    updatePortal9NotReadyYet: portal9NotReadyYet => dispatch(updatePortal9NotReadyYet(portal9NotReadyYet)),
     showFlyoutLogtest: showFlyout => dispatch(showFlyoutLogtest(showFlyout)),
   };
 };

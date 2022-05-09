@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for show search and filter
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - React component for show search and filter
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -43,9 +43,9 @@ export class WzSearchFormatSelector extends Component {
     <div>
       <p>
         The ?Q filter offers a simplified query syntax to get 
-        data of the Wazuh
+        data of the Portal9
       </p>
-      <a href="https://documentation.wazuh.com/current/user-manual/api/queries.html"
+      <a href="https://documentation.portal9.com/current/user-manual/api/queries.html"
         target="_blank" >
         ?Q filter documentation
       </a>
@@ -54,10 +54,10 @@ export class WzSearchFormatSelector extends Component {
   apiLegend = (
     <div>
       <p>
-        Use the parameters of the Wazuh API to filter the data output, 
+        Use the parameters of the Portal9 API to filter the data output, 
         check our documentation for more info
       </p>
-      <a href="https://documentation.wazuh.com/current/user-manual/api/reference.html"
+      <a href="https://documentation.portal9.com/current/user-manual/api/reference.html"
         target="_blank" >
         API Reference
       </a>

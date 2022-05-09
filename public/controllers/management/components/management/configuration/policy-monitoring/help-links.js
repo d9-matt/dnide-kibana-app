@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Help links of policy monitoring.
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Help links of policy monitoring.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -14,16 +14,16 @@ export default [
   {
     text: 'Anomaly and malware detection documentation',
     href:
-      'https://documentation.wazuh.com/current/user-manual/capabilities/anomalies-detection/index.html'
+      'https://documentation.portal9.com/current/user-manual/capabilities/anomalies-detection/index.html'
   },
   {
     text: 'Policy monitoring documentation',
     href:
-      'https://documentation.wazuh.com/current/user-manual/capabilities/policy-monitoring/index.html'
+      'https://documentation.portal9.com/current/user-manual/capabilities/policy-monitoring/index.html'
   },
   {
     text: 'Rootcheck reference',
     href:
-      'https://documentation.wazuh.com/current/user-manual/reference/ossec-conf/rootcheck.html'
+      'https://documentation.portal9.com/current/user-manual/reference/ossec-conf/rootcheck.html'
   }
 ];

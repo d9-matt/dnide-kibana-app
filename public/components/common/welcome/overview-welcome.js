@@ -1,7 +1,7 @@
 /*
- * Wazuh app - React component for building the Overview welcome screen.
+ * Portal9 app - React component for building the Overview welcome screen.
  *
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -30,7 +30,7 @@ import { updateGlobalBreadcrumb } from '../../../redux/actions/globalBreadcrumbA
 import { updateCurrentTab } from '../../../redux/actions/appStateActions';
 import store from '../../../redux/store';
 import './welcome.scss';
-import { WAZUH_MODULES } from '../../../../common/wazuh-modules';
+import { PORTAL9_MODULES } from '../../../../common/portal9-modules';
 
 export class OverviewWelcome extends Component {
   constructor(props) {
@@ -58,10 +58,10 @@ export class OverviewWelcome extends Component {
           layout="horizontal"
           icon={<EuiIcon size="xl" type={icon} color="primary" />}
           className="homSynopsis__card"
-          title={WAZUH_MODULES[tab].title}
+          title={PORTAL9_MODULES[tab].title}
           onClick={() => store.dispatch(updateCurrentTab(tab))}
           data-test-subj={`overviewWelcome${this.strtools.capitalize(tab)}`}
-          description={WAZUH_MODULES[tab].description}
+          description={PORTAL9_MODULES[tab].description}
         />
       </EuiFlexItem>
     );

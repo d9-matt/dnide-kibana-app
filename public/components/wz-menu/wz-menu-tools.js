@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for Settings submenu.
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - React component for Settings submenu.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -14,8 +14,8 @@ import { EuiFlexItem, EuiFlexGroup, EuiSideNav, EuiIcon } from '@elastic/eui';
 import { WzRequest } from '../../react-services/wz-request';
 import { connect } from 'react-redux';
 import { AppNavigate } from '../../react-services/app-navigate';
-import { WAZUH_MENU_TOOLS_SECTIONS_ID } from '../../../common/constants';
-import { WAZUH_MENU_TOOLS_SECTIONS_CY_TEST_ID } from '../../../common/wazu-menu/wz-menu-tools.cy';
+import { PORTAL9_MENU_TOOLS_SECTIONS_ID } from '../../../common/constants';
+import { PORTAL9_MENU_TOOLS_SECTIONS_CY_TEST_ID } from '../../../common/wazu-menu/wz-menu-tools.cy';
 
 class WzMenuTools extends Component {
   constructor(props) {
@@ -37,13 +37,13 @@ class WzMenuTools extends Component {
   avaibleRenderSettings() {
     return [
       this.createItem({
-        id: WAZUH_MENU_TOOLS_SECTIONS_ID.API_CONSOLE,
-        cyTestId: WAZUH_MENU_TOOLS_SECTIONS_CY_TEST_ID.API_CONSOLE,
+        id: PORTAL9_MENU_TOOLS_SECTIONS_ID.API_CONSOLE,
+        cyTestId: PORTAL9_MENU_TOOLS_SECTIONS_CY_TEST_ID.API_CONSOLE,
         text: 'API Console',
       }),
       this.createItem({
-        id: WAZUH_MENU_TOOLS_SECTIONS_ID.RULESET_TEST,
-        cyTestId: WAZUH_MENU_TOOLS_SECTIONS_CY_TEST_ID.RULESET_TEST,
+        id: PORTAL9_MENU_TOOLS_SECTIONS_ID.RULESET_TEST,
+        cyTestId: PORTAL9_MENU_TOOLS_SECTIONS_CY_TEST_ID.RULESET_TEST,
         text: 'Ruleset Test',
       }),
     ];
@@ -51,7 +51,7 @@ class WzMenuTools extends Component {
 
   clickMenuItem = async (ev, section) => {
     this.props.closePopover();
-    AppNavigate.navigateToModule(ev, 'wazuh-dev', { tab: section });
+    AppNavigate.navigateToModule(ev, 'portal9-dev', { tab: section });
   };
 
   createItem = (item, data = {}) => {
@@ -61,7 +61,7 @@ class WzMenuTools extends Component {
       id: item.id,
       name: item.text,
       'data-test-subj': item.cyTestId,
-      isSelected: window.location.href.includes('/wazuh-dev') && this.props.state.selected_tools_section === item.id,
+      isSelected: window.location.href.includes('/portal9-dev') && this.props.state.selected_tools_section === item.id,
       onClick: () => { },
       onMouseDown: (ev) => this.clickMenuItem(ev, item.id)
     };

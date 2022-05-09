@@ -1,7 +1,7 @@
 /*
- * Wazuh app - React component for alerts stats.
+ * Portal9 app - React component for alerts stats.
  *
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,7 +19,7 @@ import { buildPhrasesFilter, buildRangeFilter } from '../../../../../../src/plug
 import { esFilters } from '../../../../../../src/plugins/data/common';
 import { getIndexPattern } from '../../../../public/components/overview/mitre/lib';
 //import '../../../../public/less/loader';
-import { WAZUH_ALERTS_PATTERN } from '../../../../common/constants';
+import { PORTAL9_ALERTS_PATTERN } from '../../../../common/constants';
 import { AppState } from '../../../react-services/app-state';
 import { getDataPlugin } from '../../../kibana-services';
 
@@ -92,7 +92,7 @@ class AlertsStats extends Component {
         "params": { "query": filter.value },
         "type": "phrase",
         "negate": filter.negate || false,
-        "index": AppState.getCurrentPattern() || WAZUH_ALERTS_PATTERN
+        "index": AppState.getCurrentPattern() || PORTAL9_ALERTS_PATTERN
       },
       "query": { "match_phrase": matchPhrase },
       "$state": { "store": "appState" }

@@ -1,7 +1,7 @@
 /*
- * Wazuh app - React component information about MITRE top tactics.
+ * Portal9 app - React component information about MITRE top tactics.
  *
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,9 +24,9 @@ function createFilters(indexPattern, agentId, tactic: string | undefined) {
       "$state": { "store": "appState" }
     }
 }
-  const wazuhFilter = getWazuhFilter();
+  const portal9Filter = getPortal9Filter();
   const filters = [
-    wazuhFilter,
+    portal9Filter,
     { name: 'agent.id', value: agentId },
     ...(tactic ? [{ name: 'rule.mitre.tactic', value: tactic }] : []),
   ]
@@ -37,13 +37,13 @@ function createExistsFilter(indexPattern) {
   return buildExistsFilter({ name: `rule.mitre.id`, type: 'nested' }, indexPattern)
 }
 
-function getWazuhFilter() {
+function getPortal9Filter() {
   const clusterInfo = AppState.getClusterInfo();
-  const wazuhFilter = {
+  const portal9Filter = {
     name: clusterInfo.status === 'enabled' ? 'cluster.name' : 'manager.name',
     value: clusterInfo.status === 'enabled' ? clusterInfo.cluster : clusterInfo.manager
   }
-  return wazuhFilter;
+  return portal9Filter;
 }
 
 export async function getMitreCount(agentId, time, tactic: string | undefined) {

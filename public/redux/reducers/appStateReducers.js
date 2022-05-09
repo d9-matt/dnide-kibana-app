@@ -1,6 +1,6 @@
 /*
- * Wazuh app - App State Reducers
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - App State Reducers
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -13,7 +13,7 @@
 const initialState = {
   currentAPI: '',
   showMenu: false,
-  wazuhNotReadyYet: '',
+  portal9NotReadyYet: '',
   currentTab: '',
   extensions: {},
   selected_settings_section: '',
@@ -48,14 +48,14 @@ const appStateReducers = (state = initialState, action) => {
     };
   }
 
-  if (action.type === 'UPDATE_WAZUH_NOT_READY_YET') {
+  if (action.type === 'UPDATE_PORTAL9_NOT_READY_YET') {
     return {
       ...state,
-      wazuhNotReadyYet: action.wazuhNotReadyYet
+      portal9NotReadyYet: action.portal9NotReadyYet
     };
   }
 
-  if (action.type === 'UPDATE_WAZUH_CURRENT_TAB') {
+  if (action.type === 'UPDATE_PORTAL9_CURRENT_TAB') {
     return {
       ...state,
       currentTab: action.currentTab

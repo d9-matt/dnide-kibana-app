@@ -55,7 +55,7 @@
         .then(function(node) {
           return cloneNode(node, options.filter, true);
         })
-        // WAZUH NOT DOWNLOAD FONTS
+        // PORTAL9 NOT DOWNLOAD FONTS
         //.then(embedFonts)
         .then(inlineImages)
         .then(applyOptions)

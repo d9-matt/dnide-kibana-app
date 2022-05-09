@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Module for Overview/General visualizations
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Module for Overview/General visualizations
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -11,7 +11,7 @@
  */
 export default [
   {
-    _id: 'Wazuh-App-Overview-General-Agents-status',
+    _id: 'Portal9-App-Overview-General-Agents-status',
     _source: {
       title: 'Agents status',
       visState: JSON.stringify({
@@ -102,7 +102,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-monitoring',
+          index: 'portal9-monitoring',
           filter: [],
           query: { query: '', language: 'lucene' },
         }),
@@ -111,7 +111,7 @@ export default [
     _type: 'visualization',
   },
   {
-    _id: 'Wazuh-App-Overview-General-Metric-alerts',
+    _id: 'Portal9-App-Overview-General-Metric-alerts',
     _source: {
       title: 'Metric alerts',
       visState: JSON.stringify({
@@ -155,13 +155,13 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON:
-          '{"index":"wazuh-alerts","filter":[],"query":{"query":"","language":"lucene"}}',
+          '{"index":"portal9-alerts","filter":[],"query":{"query":"","language":"lucene"}}',
       },
     },
     _type: 'visualization',
   },
   {
-    _id: 'Wazuh-App-Overview-General-Level-12-alerts',
+    _id: 'Portal9-App-Overview-General-Level-12-alerts',
     _source: {
       title: 'Level 12 alerts',
       visState: JSON.stringify({
@@ -205,7 +205,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [
             {
               $state: {
@@ -214,7 +214,7 @@ export default [
               meta: {
                 alias: null,
                 disabled: false,
-                index: 'wazuh-alerts',
+                index: 'portal9-alerts',
                 key: 'rule.level',
                 negate: false,
                 params: {
@@ -239,7 +239,7 @@ export default [
     _type: 'visualization',
   },
   {
-    _id: 'Wazuh-App-Overview-General-Authentication-failure',
+    _id: 'Portal9-App-Overview-General-Authentication-failure',
     _source: {
       title: 'Authentication failure',
       visState: JSON.stringify({
@@ -283,11 +283,11 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [
             {
               meta: {
-                index: 'wazuh-alerts',
+                index: 'portal9-alerts',
                 type: 'phrases',
                 key: 'rule.groups',
                 value: 'win_authentication_failed, authentication_failed, authentication_failures',
@@ -334,7 +334,7 @@ export default [
     _type: 'visualization',
   },
   {
-    _id: 'Wazuh-App-Overview-General-Authentication-success',
+    _id: 'Portal9-App-Overview-General-Authentication-success',
     _source: {
       title: 'Authentication success',
       visState: JSON.stringify({
@@ -378,11 +378,11 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [
             {
               meta: {
-                index: 'wazuh-alerts',
+                index: 'portal9-alerts',
                 negate: false,
                 disabled: false,
                 alias: null,
@@ -414,7 +414,7 @@ export default [
     _type: 'visualization',
   },
   {
-    _id: 'Wazuh-App-Overview-General-Alert-level-evolution',
+    _id: 'Portal9-App-Overview-General-Alert-level-evolution',
     _source: {
       title: 'Alert level evolution',
       visState: JSON.stringify({
@@ -508,7 +508,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [],
           query: { query: '', language: 'lucene' },
         }),
@@ -517,7 +517,7 @@ export default [
     _type: 'visualization',
   },
   {
-    _id: 'Wazuh-App-Overview-General-Alerts-Top-Mitre',
+    _id: 'Portal9-App-Overview-General-Alerts-Top-Mitre',
     _source: {
       title: 'Alerts',
       visState: JSON.stringify({
@@ -556,7 +556,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [],
           query: { query: '', language: 'lucene' },
         }),
@@ -565,7 +565,7 @@ export default [
     _type: 'visualization',
   },
   {
-    _id: 'Wazuh-App-Overview-General-Top-5-agents',
+    _id: 'Portal9-App-Overview-General-Top-5-agents',
     _source: {
       title: 'Top 5 agents',
       visState: JSON.stringify({
@@ -604,7 +604,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [],
           query: { query: '', language: 'lucene' },
         }),
@@ -613,7 +613,7 @@ export default [
     _type: 'visualization',
   },
   {
-    _id: 'Wazuh-App-Overview-General-Top-5-agents-Evolution',
+    _id: 'Portal9-App-Overview-General-Top-5-agents-Evolution',
     _source: {
       title: 'Top 5 rule groups',
       visState: JSON.stringify({
@@ -709,7 +709,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [],
           query: { query: '', language: 'lucene' },
         }),
@@ -718,7 +718,7 @@ export default [
     _type: 'visualization',
   },
   {
-    _id: 'Wazuh-App-Overview-General-Alerts-summary',
+    _id: 'Portal9-App-Overview-General-Alerts-summary',
     _type: 'visualization',
     _source: {
       title: 'Alerts summary',
@@ -796,7 +796,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [],
           query: { query: '', language: 'lucene' },
         }),
@@ -804,7 +804,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Overview-General-Alerts-evolution-Top-5-agents',
+    _id: 'Portal9-App-Overview-General-Alerts-evolution-Top-5-agents',
     _type: 'visualization',
     _source: {
       title: 'Alerts evolution Top 5 agents',
@@ -885,7 +885,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [],
           query: { query: '', language: 'lucene' },
         }),

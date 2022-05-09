@@ -57,7 +57,7 @@ const pageConfiguration = (nameLogo) => ({
         width: 190
       },
       {
-        text: 'info@wazuh.com\nhttps://wazuh.com',
+        text: 'info@portal9.com\nhttps://portal9.com',
         alignment: 'right',
         margin: [0, 0, 40, 0],
         color: COLORS.PRIMARY
@@ -69,7 +69,7 @@ const pageConfiguration = (nameLogo) => ({
     return {
       columns: [
         {
-          text: 'Copyright © 2021 Wazuh, Inc.',
+          text: 'Copyright © 2021 Portal9, Inc.',
           color: COLORS.PRIMARY,
           margin: [40, 40, 0, 0]
         },

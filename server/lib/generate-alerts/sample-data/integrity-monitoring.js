@@ -1,6 +1,6 @@
 /*
- * Wazuh app - FIM sample alerts
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - FIM sample alerts
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,7 +24,7 @@ export const pathsLinux = [
   "/etc/elasticsearch/elasticsearch.yml",
   "/etc/elasticsearch/users",
   "/etc/elasticsearch/config",
-  "/tmp/wazuh-config",
+  "/tmp/portal9-config",
   "/run/utmp",
   "/etc/resolv.conf",
   "/var/ossec/queue/fim/db/fim.db",

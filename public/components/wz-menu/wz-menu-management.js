@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for registering agents.
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - React component for registering agents.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -14,8 +14,8 @@ import { EuiFlexItem, EuiFlexGroup, EuiSideNav, EuiIcon, EuiButtonEmpty, EuiTool
 import { WzRequest } from '../../react-services/wz-request';
 import { connect } from 'react-redux';
 import { AppNavigate } from '../../react-services/app-navigate'
-import { WAZUH_MENU_MANAGEMENT_SECTIONS_ID } from '../../../common/constants';
-import { WAZUH_MENU_MANAGEMENT_SECTIONS_CY_TEST_ID } from '../../../common/wazu-menu/wz-menu-management.cy';
+import { PORTAL9_MENU_MANAGEMENT_SECTIONS_ID } from '../../../common/constants';
+import { PORTAL9_MENU_MANAGEMENT_SECTIONS_CY_TEST_ID } from '../../../common/wazu-menu/wz-menu-management.cy';
 
 class WzMenuManagement extends Component {
   constructor(props) {
@@ -27,73 +27,73 @@ class WzMenuManagement extends Component {
 
     this.managementSections = {
       management: {
-        id: WAZUH_MENU_MANAGEMENT_SECTIONS_ID.MANAGEMENT,
-        cyTestId: WAZUH_MENU_MANAGEMENT_SECTIONS_CY_TEST_ID.MANAGEMENT,
+        id: PORTAL9_MENU_MANAGEMENT_SECTIONS_ID.MANAGEMENT,
+        cyTestId: PORTAL9_MENU_MANAGEMENT_SECTIONS_CY_TEST_ID.MANAGEMENT,
         text: 'Management',
       },
       administration: {
-        id: WAZUH_MENU_MANAGEMENT_SECTIONS_ID.ADMINISTRATION,
-        cyTestId: WAZUH_MENU_MANAGEMENT_SECTIONS_CY_TEST_ID.ADMINISTRATION,
+        id: PORTAL9_MENU_MANAGEMENT_SECTIONS_ID.ADMINISTRATION,
+        cyTestId: PORTAL9_MENU_MANAGEMENT_SECTIONS_CY_TEST_ID.ADMINISTRATION,
         text: 'Administration',
       },
       ruleset: {
-        id: WAZUH_MENU_MANAGEMENT_SECTIONS_ID.RULESET,
-        cyTestId: WAZUH_MENU_MANAGEMENT_SECTIONS_CY_TEST_ID.RULESET,
+        id: PORTAL9_MENU_MANAGEMENT_SECTIONS_ID.RULESET,
+        cyTestId: PORTAL9_MENU_MANAGEMENT_SECTIONS_CY_TEST_ID.RULESET,
         text: 'Ruleset',
       },
       rules: {
-        id: WAZUH_MENU_MANAGEMENT_SECTIONS_ID.RULES,
-        cyTestId: WAZUH_MENU_MANAGEMENT_SECTIONS_CY_TEST_ID.RULES,
+        id: PORTAL9_MENU_MANAGEMENT_SECTIONS_ID.RULES,
+        cyTestId: PORTAL9_MENU_MANAGEMENT_SECTIONS_CY_TEST_ID.RULES,
         text: 'Rules',
       },
       decoders: {
-        id: WAZUH_MENU_MANAGEMENT_SECTIONS_ID.DECODERS,
-        cyTestId: WAZUH_MENU_MANAGEMENT_SECTIONS_CY_TEST_ID.DECODERS,
+        id: PORTAL9_MENU_MANAGEMENT_SECTIONS_ID.DECODERS,
+        cyTestId: PORTAL9_MENU_MANAGEMENT_SECTIONS_CY_TEST_ID.DECODERS,
         text: 'Decoders',
       },
       lists: {
-        id: WAZUH_MENU_MANAGEMENT_SECTIONS_ID.CDB_LISTS,
-        cyTestId: WAZUH_MENU_MANAGEMENT_SECTIONS_CY_TEST_ID.CDB_LISTS,
+        id: PORTAL9_MENU_MANAGEMENT_SECTIONS_ID.CDB_LISTS,
+        cyTestId: PORTAL9_MENU_MANAGEMENT_SECTIONS_CY_TEST_ID.CDB_LISTS,
         text: 'CDB lists',
       },
       groups: {
-        id: WAZUH_MENU_MANAGEMENT_SECTIONS_ID.GROUPS,
-        cyTestId: WAZUH_MENU_MANAGEMENT_SECTIONS_CY_TEST_ID.GROUPS,
+        id: PORTAL9_MENU_MANAGEMENT_SECTIONS_ID.GROUPS,
+        cyTestId: PORTAL9_MENU_MANAGEMENT_SECTIONS_CY_TEST_ID.GROUPS,
         text: 'Groups',
       },
       configuration: {
-        id: WAZUH_MENU_MANAGEMENT_SECTIONS_ID.CONFIGURATION,
-        cyTestId: WAZUH_MENU_MANAGEMENT_SECTIONS_CY_TEST_ID.CONFIGURATION,
+        id: PORTAL9_MENU_MANAGEMENT_SECTIONS_ID.CONFIGURATION,
+        cyTestId: PORTAL9_MENU_MANAGEMENT_SECTIONS_CY_TEST_ID.CONFIGURATION,
         text: 'Configuration',
       },
       statusReports: {
-        id: WAZUH_MENU_MANAGEMENT_SECTIONS_ID.STATUS_AND_REPORTS,
-        cyTestId: WAZUH_MENU_MANAGEMENT_SECTIONS_CY_TEST_ID.STATUS_AND_REPORTS,
+        id: PORTAL9_MENU_MANAGEMENT_SECTIONS_ID.STATUS_AND_REPORTS,
+        cyTestId: PORTAL9_MENU_MANAGEMENT_SECTIONS_CY_TEST_ID.STATUS_AND_REPORTS,
         text: 'Status and reports',
       },
       status: {
-        id: WAZUH_MENU_MANAGEMENT_SECTIONS_ID.STATUS,
-        cyTestId: WAZUH_MENU_MANAGEMENT_SECTIONS_CY_TEST_ID.STATUS,
+        id: PORTAL9_MENU_MANAGEMENT_SECTIONS_ID.STATUS,
+        cyTestId: PORTAL9_MENU_MANAGEMENT_SECTIONS_CY_TEST_ID.STATUS,
         text: 'Status',
       },
       cluster: {
-        id: WAZUH_MENU_MANAGEMENT_SECTIONS_ID.CLUSTER,
-        cyTestId: WAZUH_MENU_MANAGEMENT_SECTIONS_CY_TEST_ID.CLUSTER,
+        id: PORTAL9_MENU_MANAGEMENT_SECTIONS_ID.CLUSTER,
+        cyTestId: PORTAL9_MENU_MANAGEMENT_SECTIONS_CY_TEST_ID.CLUSTER,
         text: 'Cluster',
       },
       logs: {
-        id: WAZUH_MENU_MANAGEMENT_SECTIONS_ID.LOGS,
-        cyTestId: WAZUH_MENU_MANAGEMENT_SECTIONS_CY_TEST_ID.LOGS,
+        id: PORTAL9_MENU_MANAGEMENT_SECTIONS_ID.LOGS,
+        cyTestId: PORTAL9_MENU_MANAGEMENT_SECTIONS_CY_TEST_ID.LOGS,
         text: 'Logs',
       },
       reporting: {
-        id: WAZUH_MENU_MANAGEMENT_SECTIONS_ID.REPORTING,
-        cyTestId: WAZUH_MENU_MANAGEMENT_SECTIONS_CY_TEST_ID.REPORTING,
+        id: PORTAL9_MENU_MANAGEMENT_SECTIONS_ID.REPORTING,
+        cyTestId: PORTAL9_MENU_MANAGEMENT_SECTIONS_CY_TEST_ID.REPORTING,
         text: 'Reporting',
       },
       statistics: {
-        id: WAZUH_MENU_MANAGEMENT_SECTIONS_ID.STATISTICS,
-        cyTestId: WAZUH_MENU_MANAGEMENT_SECTIONS_CY_TEST_ID.STATISTICS,
+        id: PORTAL9_MENU_MANAGEMENT_SECTIONS_ID.STATISTICS,
+        cyTestId: PORTAL9_MENU_MANAGEMENT_SECTIONS_CY_TEST_ID.STATISTICS,
         text: 'Statistics',
       },
     };

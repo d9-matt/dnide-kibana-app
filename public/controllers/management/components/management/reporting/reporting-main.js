@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for reporting
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - React component for reporting
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -12,7 +12,7 @@
 import React, { Component } from 'react';
 
 import WzReduxProvider from '../../../../../redux/wz-redux-provider';
-//Wazuh groups overview
+//Portal9 groups overview
 import WzReportingOverview from './reporting-overview';
 import { updateGlobalBreadcrumb } from '../../../../../redux/actions/globalBreadcrumbActions';
 import store from '../../../../../redux/store';

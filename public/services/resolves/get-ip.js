@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Module to fetch index patterns
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Module to fetch index patterns
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -14,7 +14,7 @@ import { healthCheck } from './health-check';
 import { AppState } from '../../react-services/app-state';
 import { ErrorHandler } from '../../react-services/error-handler';
 import { getDataPlugin, getSavedObjects } from '../../kibana-services';
-import { WazuhConfig } from '../../react-services/wazuh-config';
+import { Portal9Config } from '../../react-services/portal9-config';
 import { GenericRequest } from '../../react-services/generic-request';
 import { getWzConfig } from './get-config';
 
@@ -26,14 +26,14 @@ export function getIp(
 ) {
   const deferred = $q.defer();
 
-  const checkWazuhPatterns = async (indexPatterns) => {
-    const wazuhConfig = new WazuhConfig();
-    const configuration = await getWzConfig($q, GenericRequest, wazuhConfig);
-    const wazuhPatterns = [
-      `${configuration['wazuh.monitoring.pattern']}`,
+  const checkPortal9Patterns = async (indexPatterns) => {
+    const portal9Config = new Portal9Config();
+    const configuration = await getWzConfig($q, GenericRequest, portal9Config);
+    const portal9Patterns = [
+      `${configuration['portal9.monitoring.pattern']}`,
       `${configuration['cron.prefix']}-${configuration['cron.statistics.index.name']}-*`
     ];
-    return wazuhPatterns.every(pattern => {
+    return portal9Patterns.every(pattern => {
       return indexPatterns.find(
         element => element.id === pattern
       );
@@ -59,7 +59,7 @@ export function getIp(
         !savedObjects.find(
           element => element.id === currentPattern
         ) ||
-        !(await checkWazuhPatterns(savedObjects))
+        !(await checkPortal9Patterns(savedObjects))
       ) {
         if (!$location.path().includes('/health-check')) {
           $location.search('tab', null);
@@ -67,11 +67,11 @@ export function getIp(
         }
       }
 
-      const onlyWazuhAlerts = savedObjects.filter(
+      const onlyPortal9Alerts = savedObjects.filter(
         element => element.id === currentPattern
       );
 
-      if (!onlyWazuhAlerts || !onlyWazuhAlerts.length) {
+      if (!onlyPortal9Alerts || !onlyPortal9Alerts.length) {
         // There's now selected ip
         AppState.removeCurrentPattern();
         deferred.resolve('No ip');
@@ -81,7 +81,7 @@ export function getIp(
       const courierData = await getDataPlugin().indexPatterns.get(currentPattern);
 
       deferred.resolve({
-        list: onlyWazuhAlerts,
+        list: onlyPortal9Alerts,
         loaded: courierData,
         stateVal: null,
         stateValFound: false

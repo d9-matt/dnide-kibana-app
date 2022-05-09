@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for Overview actions.
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - React component for Overview actions.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -29,7 +29,7 @@ import {
 } from '@elastic/eui';
 import './agents-selector.scss';
 import { AgentSelectionTable } from './agents-selection-table';
-import { WAZUH_ALERTS_PATTERN } from '../../../../../common/constants';
+import { PORTAL9_ALERTS_PATTERN } from '../../../../../common/constants';
 import { AppState } from '../../../../react-services/app-state';
 import { getDataPlugin } from '../../../../kibana-services';
 class OverviewActions extends Component {
@@ -114,7 +114,7 @@ class OverviewActions extends Component {
             "negate": false,
             "params": { "query": agentIdList[0] },
             "type": "phrase",
-            "index": AppState.getCurrentPattern() || WAZUH_ALERTS_PATTERN
+            "index": AppState.getCurrentPattern() || PORTAL9_ALERTS_PATTERN
           },
           "query": {
             "match": {

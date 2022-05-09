@@ -1,10 +1,10 @@
 /*
-  Description: this script generates a file with the extrated data of Wazuh API 4.0, formatted to use in Wazuh app.
+  Description: this script generates a file with the extrated data of Portal9 API 4.0, formatted to use in Portal9 app.
 
   Requirements:
-    - Wazuh manager 4.0 up
+    - Portal9 manager 4.0 up
 
-  Use: node generate-api-4.0-info.js WAZUH_API_URL [-f filename]
+  Use: node generate-api-4.0-info.js PORTAL9_API_URL [-f filename]
 
   The generated files will be saved in OUTPUT_ENDPOINTS_PATH.
 
@@ -17,7 +17,7 @@ const fs = require('fs');
 const path = require('path');
 
 // Constants
-const WAZUH_API_URL = process.argv[2]; // Wazuh API url is a required argument
+const PORTAL9_API_URL = process.argv[2]; // Portal9 API url is a required argument
 // Get console input as string
 const consoleInput = [...process.argv].slice(2).join(' ');
 // Regular expressions
@@ -26,7 +26,7 @@ const reEndpointPathArgs = /\{([^}]+)\}/g; // Regular expresion to get the endpo
 const reFormatter = /--full/
 
 const OUTPUT_MODE_FULL = consoleInput.match(reFormatter) && true;
-const WAZUH_DOCUMENTATION_API_REFERENCE_URL = 'https://documentation.wazuh.com/current/user-manual/api/reference.html'
+const PORTAL9_DOCUMENTATION_API_REFERENCE_URL = 'https://documentation.portal9.com/current/user-manual/api/reference.html'
 const OUTPUT_ENDPOINTS_FILENAME = `${(consoleInput.match(reFilename) || [])[1] || 'endpoints'}.json`;
 const OUTPUT_SECURITY_ACTIONS_FILENAME = 'security-actions.json';
 const OUTPUT_DIRECTORY = path.join(__dirname, 'output');
@@ -45,18 +45,18 @@ const CONSOLE_COLORS_CODES = {
 
 // Main method
 const main = () => {
-  // Check Wazuh API url argument is defined
-  if(!WAZUH_API_URL){
-    exitWithMessage('Wazuh API url is not defined.');
+  // Check Portal9 API url argument is defined
+  if(!PORTAL9_API_URL){
+    exitWithMessage('Portal9 API url is not defined.');
   };
-  // Check Wazuh API url argument is valid
-  if(!WAZUH_API_URL.startsWith('http') ){
-    exitWithMessage(`Wazuh API url is not valid. It should start with "http". Example: https://172.16.1.2:55000`);
+  // Check Portal9 API url argument is valid
+  if(!PORTAL9_API_URL.startsWith('http') ){
+    exitWithMessage(`Portal9 API url is not valid. It should start with "http". Example: https://172.16.1.2:55000`);
   };
   
   // Log the configuration:
   console.log('--------------- Configuration ---------------');
-  console.log(`Wazuh API url: ${WAZUH_API_URL}`);
+  console.log(`Portal9 API url: ${PORTAL9_API_URL}`);
   console.log(`Output directory: ${OUTPUT_DIRECTORY}`);
   console.log(`Output endpoints mode: ${OUTPUT_MODE_FULL ? 'Full': 'Simple'}`);
   console.log('----------------------------------------------')
@@ -74,7 +74,7 @@ const main = () => {
 const generateAPIEndpointsInformation = async () => {
   try{
     // Request to API swagger.json file
-    const apiData = await request(`${WAZUH_API_URL}/openapi.json`);
+    const apiData = await request(`${PORTAL9_API_URL}/openapi.json`);
     // Parse response to JSON
     const jsonData = JSON.parse(apiData);
     // Extract the endpoints, mapped as { [httpMethod: ('GET' | 'PUT' | 'POST' | 'DELETE' | 'HEAD')]: endpoint[]}
@@ -99,25 +99,25 @@ const generateAPIEndpointsInformation = async () => {
 
 // Generates security actions information
 const generateAPISecurityActionsInformation = async () => {
-  // Check Wazuh API url argument is defined
-  if(!WAZUH_API_URL){
-    exitWithMessage('Wazuh API url is not defined.');
+  // Check Portal9 API url argument is defined
+  if(!PORTAL9_API_URL){
+    exitWithMessage('Portal9 API url is not defined.');
   };
-  // Check Wazuh API url argument is valid
-  if(!WAZUH_API_URL.startsWith('http') ){
-    exitWithMessage(`Wazuh API url is not valid. It should start with "http". Example: https://172.16.1.2:55000`);
+  // Check Portal9 API url argument is valid
+  if(!PORTAL9_API_URL.startsWith('http') ){
+    exitWithMessage(`Portal9 API url is not valid. It should start with "http". Example: https://172.16.1.2:55000`);
   };
-  const username = 'wazuh';
-  const password = 'wazuh';
+  const username = 'portal9';
+  const password = 'portal9';
   try{
-    const authenticationResponse = await request(`${WAZUH_API_URL}/security/user/authenticate`, {
+    const authenticationResponse = await request(`${PORTAL9_API_URL}/security/user/authenticate`, {
       headers: {
         'Authorization': 'Basic ' + Buffer.from(username + ':' + password).toString('base64')
       }
     });
     // console.log(authenticationResponse, typeof authenticationResponse, JSON.parse(authenticationResponse), JSON.parse(authenticationResponse).data.token)
     const { token } = JSON.parse(authenticationResponse).data;
-    const securityActionsResponse = await request(`${WAZUH_API_URL}/security/actions`, {
+    const securityActionsResponse = await request(`${PORTAL9_API_URL}/security/actions`, {
       headers: {
         'Authorization': `Bearer ${token}` 
       }
@@ -162,7 +162,7 @@ const request = (apiEndpoint, options = {}) => {
   })
 }
 // Formatters
-// Format the endpoint to use in the Wazuh app
+// Format the endpoint to use in the Portal9 app
 const formatEndpoint = (endpointData, jsonData) => {
   const formattedParameters = endpointData.parameters && endpointData.parameters
     .filter(parameter => parameter.$ref)
@@ -274,7 +274,7 @@ const exitWithMessage = message => {
 };
 
 // Generate the endpoint documentation link
-const generateEndpointDocumentationLink = endpointData => `${WAZUH_DOCUMENTATION_API_REFERENCE_URL}#operation/${endpointData.operationId}`;
+const generateEndpointDocumentationLink = endpointData => `${PORTAL9_DOCUMENTATION_API_REFERENCE_URL}#operation/${endpointData.operationId}`;
 
 // Save file
 const saveFileToOutputDir = (filename, content) => {

@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for show overview configuration.
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - React component for show overview configuration.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -46,19 +46,19 @@ const columns = [
 
 const helpLinks = [
   {
-    text: 'Wazuh administration documentation',
+    text: 'Portal9 administration documentation',
     href:
-      'https://documentation.wazuh.com/current/user-manual/manager/index.html'
+      'https://documentation.portal9.com/current/user-manual/manager/index.html'
   },
   {
-    text: 'Wazuh capabilities documentation',
+    text: 'Portal9 capabilities documentation',
     href:
-      'https://documentation.wazuh.com/current/user-manual/capabilities/index.html'
+      'https://documentation.portal9.com/current/user-manual/capabilities/index.html'
   },
   {
     text: 'Local configuration reference',
     href:
-      'https://documentation.wazuh.com/current/user-manual/reference/ossec-conf/index.html'
+      'https://documentation.portal9.com/current/user-manual/reference/ossec-conf/index.html'
   }
 ];
 

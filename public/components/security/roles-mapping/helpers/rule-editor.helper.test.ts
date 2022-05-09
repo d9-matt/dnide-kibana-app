@@ -126,7 +126,7 @@ describe('Rule Editor Helper', () => {
         const json = JSON.stringify({
           OR: [
             {
-              AND: [{ find: { user_name: 'wazuh' } }, { find: { user_email: 'wazuh@wauzh' } }],
+              AND: [{ find: { user_name: 'portal9' } }, { find: { user_email: 'portal9@wauzh' } }],
             },
           ],
         });
@@ -143,7 +143,7 @@ describe('Rule Editor Helper', () => {
               OR: [{ foo: { bar: 10 } }],
             },
             {
-              AND: [{ find: { user_name: 'wazuh' } }, { find: { user_email: 'wazuh@wauzh' } }],
+              AND: [{ find: { user_name: 'portal9' } }, { find: { user_email: 'portal9@wauzh' } }],
             },
           ],
         });
@@ -213,13 +213,13 @@ describe('Rule Editor Helper', () => {
         const rules = [{
           searchOperation: "FIND",
           user_field: "user_field",
-          value: "wazuh",
+          value: "portal9",
         }];
 
         const expectedValues = {
           "OR": [
             {"OR": [{"FIND": {"user_field": "Test_User"}}]},
-            {"AND": [{"FIND": {"user_field": "wazuh"}}]}
+            {"AND": [{"FIND": {"user_field": "portal9"}}]}
           ]
         };
 
@@ -254,12 +254,12 @@ describe('Rule Editor Helper', () => {
         const rules = [{
           searchOperation: "FIND",
           user_field: "user_field",
-          value: "wazuh",
+          value: "portal9",
         }];
 
         const expectedValues = {
           "FIND": {
-            "user_field": "wazuh"
+            "user_field": "portal9"
           }
         }
 
@@ -275,19 +275,19 @@ describe('Rule Editor Helper', () => {
           {
             searchOperation: "FIND",
             user_field: "user_name",
-            value: "wazuh",
+            value: "portal9",
           },
           {
             searchOperation: "FIND",
             user_field: "user_name2",
-            value: "wazuh",
+            value: "portal9",
           },
         ];
 
         const expectedValues = {
           "AND": [
-            {"FIND": {"user_name": "wazuh"}},
-            {"FIND": {"user_name2": "wazuh"}}
+            {"FIND": {"user_name": "portal9"}},
+            {"FIND": {"user_name2": "portal9"}}
           ]
         }
 
@@ -303,19 +303,19 @@ describe('Rule Editor Helper', () => {
           {
             searchOperation: "FIND",
             user_field: "user_name",
-            value: "wazuh",
+            value: "portal9",
           },
           {
             searchOperation: "FIND",
             user_field: "user_name2",
-            value: "wazuh",
+            value: "portal9",
           },
         ];
 
         const expectedValues = {
           "OR": [
-            {"FIND": {"user_name": "wazuh"}},
-            {"FIND": {"user_name2": "wazuh"}}
+            {"FIND": {"user_name": "portal9"}},
+            {"FIND": {"user_name2": "portal9"}}
           ]
         }
 

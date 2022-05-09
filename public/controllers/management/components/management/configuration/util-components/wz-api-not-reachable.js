@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for render api isn't reachable.
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - React component for render api isn't reachable.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,7 +27,7 @@ import { updateRefreshTime } from '../../../../../../redux/actions/configuration
 import { getToasts }  from '../../../../../../kibana-services';
 import { connect } from 'react-redux';
 
-class WzWazuhAPINotReachable extends Component {
+class WzPortal9APINotReachable extends Component {
   constructor(props) {
     super(props);
   }
@@ -58,7 +58,7 @@ class WzWazuhAPINotReachable extends Component {
           <EuiFlexItem>
             <div style={{ textAlign: 'center' }}>
               <EuiIcon type="alert" style={{ marginRight: '4px' }} />
-              <span>Wazuh API not reachable</span>
+              <span>Portal9 API not reachable</span>
               <EuiHorizontalRule margin="s" />
               <EuiButton iconType="refresh" onClick={this.onClickRefresh}>
                 Refresh
@@ -80,4 +80,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
     null,
     mapDispatchToProps
-)(WzWazuhAPINotReachable);
+)(WzPortal9APINotReachable);

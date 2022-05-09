@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for show Client-Buffer configuration.
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - React component for show Client-Buffer configuration.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -28,12 +28,12 @@ const helpLinks = [
   {
     text: 'Anti-flooding mechanism',
     href:
-      'https://documentation.wazuh.com/current/user-manual/capabilities/antiflooding.html'
+      'https://documentation.portal9.com/current/user-manual/capabilities/antiflooding.html'
   },
   {
     text: 'Client buffer reference',
     href:
-      'https://documentation.wazuh.com/current/user-manual/reference/ossec-conf/agent_buffer.html'
+      'https://documentation.portal9.com/current/user-manual/reference/ossec-conf/agent_buffer.html'
   }
 ];
 

@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Agents preview controller
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Agents preview controller
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -14,7 +14,7 @@ import { DataFactory } from '../../services/data-factory';
 import { version } from '../../../package.json';
 import { clickAction } from '../../services/click-action';
 import { AppState } from '../../react-services/app-state';
-import { WazuhConfig } from '../../react-services/wazuh-config';
+import { Portal9Config } from '../../react-services/portal9-config';
 import { GenericRequest } from '../../react-services/generic-request';
 import { WzRequest } from '../../react-services/wz-request';
 import { ShareAgent } from '../../factories/share-agent';
@@ -49,7 +49,7 @@ export class AgentsPreviewController {
     this.csvReq = csvReq;
     this.shareAgent = new ShareAgent();
     this.commonData = commonData;
-    this.wazuhConfig = new WazuhConfig();
+    this.portal9Config = new Portal9Config();
     this.errorInit = false;
     this.$window = $window;
   }
@@ -101,7 +101,7 @@ export class AgentsPreviewController {
       this.$location.search('tab', this.submenuNavItem);
     });
 
-    this.$scope.$on('wazuhFetched', evt => {
+    this.$scope.$on('portal9Fetched', evt => {
       evt.stopPropagation();
     });
 
@@ -109,7 +109,7 @@ export class AgentsPreviewController {
       addNewAgent: flag => this.addNewAgent(flag),
       hasAgents: this.hasAgents,
       reload: () => this.$route.reload(),
-      getWazuhVersion: () => this.getWazuhVersion(),
+      getPortal9Version: () => this.getPortal9Version(),
       getCurrentApiAddress: () => this.getCurrentApiAddress()
     };
     this.hasAgents = true;
@@ -157,7 +157,7 @@ export class AgentsPreviewController {
    * @param {String} search
    */
   query(query, search) {
-    this.$scope.$broadcast('wazuhQuery', { query, search });
+    this.$scope.$broadcast('portal9Query', { query, search });
     this.prevSearch = search || false;
   }
 
@@ -238,7 +238,7 @@ export class AgentsPreviewController {
 
   openRegistrationDocs() {
     this.$window.open(
-      'https://documentation.wazuh.com/current/user-manual/registering/index.html',
+      'https://documentation.portal9.com/current/user-manual/registering/index.html',
       '_blank'
     );
   }
@@ -262,9 +262,9 @@ export class AgentsPreviewController {
   }
 
   /**
-   * Returns the Wazuh version as x.y.z
+   * Returns the Portal9 version as x.y.z
    */
-  async getWazuhVersion() {
+  async getPortal9Version() {
     try {
       const data = await WzRequest.apiReq('GET', '//', {});
       const result = ((data || {}).data || {}).data || {};

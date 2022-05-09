@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Help links of integrity monitoring.
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Help links of integrity monitoring.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -14,11 +14,11 @@ export default [
   {
     text: 'Integrity monitoring documentation',
     href:
-      'https://documentation.wazuh.com/current/user-manual/capabilities/file-integrity/index.html'
+      'https://documentation.portal9.com/current/user-manual/capabilities/file-integrity/index.html'
   },
   {
     text: 'Syscheck reference',
     href:
-      'https://documentation.wazuh.com/current/user-manual/reference/ossec-conf/syscheck.html'
+      'https://documentation.portal9.com/current/user-manual/reference/ossec-conf/syscheck.html'
   }
 ];

@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Order object by filter module
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Order object by filter module
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * Copyright (C) 2015 Fabricio Quagliariello.
  * Source code available under the MIT License.

@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Generic request
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Generic request
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -12,7 +12,7 @@
 
 import axios from 'axios';
 import { AppState } from './app-state';
-import { WazuhConfig } from './wazuh-config';
+import { Portal9Config } from './portal9-config';
 import { ApiCheck } from './wz-api-check';
 import { WzMisc } from '../factories/misc';
 import { OdfeUtils } from '../utils';
@@ -24,8 +24,8 @@ export class GenericRequest {
       if (!method || !path) {
         throw new Error('Missing parameters');
       }
-      const wazuhConfig = new WazuhConfig();
-      const { timeout } = wazuhConfig.getConfig();
+      const portal9Config = new Portal9Config();
+      const { timeout } = portal9Config.getConfig();
       const requestHeaders = {
         'Content-Type': 'application/json',
         'kbn-xsrf': 'kibana'

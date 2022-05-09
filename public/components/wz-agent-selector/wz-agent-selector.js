@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for build q queries.
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - React component for build q queries.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,7 +22,7 @@ import { connect } from 'react-redux';
 import { showExploreAgentModalGlobal } from '../../redux/actions/appStateActions';
 import store from '../../redux/store';
 import { AgentSelectionTable } from '../../controllers/overview/components/overview-actions/agents-selection-table';
-import { WAZUH_ALERTS_PATTERN } from '../../../common/constants';
+import { PORTAL9_ALERTS_PATTERN } from '../../../common/constants';
 import { AppState } from '../../react-services/app-state';
 import { getAngularModule, getDataPlugin } from '../../kibana-services';
 
@@ -69,7 +69,7 @@ class WzAgentSelector extends Component {
             "negate": false,
             "params": { "query": agentIdList[0] },
             "type": "phrase",
-            "index": AppState.getCurrentPattern() || WAZUH_ALERTS_PATTERN
+            "index": AppState.getCurrentPattern() || PORTAL9_ALERTS_PATTERN
           },
           "query": {
             "match": {

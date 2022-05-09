@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Tools to check the version of the plugin
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Tools to check the version of the plugin
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -44,12 +44,12 @@ export const checkPluginVersion = async () => {
 const checkClientAppVersion = (appInfo: TAppInfo) => {
   if (appInfo['app-version'] !== appVersion || appInfo.revision !== appRevision) {
     const toastOptions: ErrorToastOptions = {
-      title: 'Conflict with the Wazuh app version',
+      title: 'Conflict with the Portal9 app version',
       toastLifeTimeMs: 50000,
-      toastMessage: `The version of the Wazuh app in your browser does not correspond with the app version installed in Kibana. Please, clear your browser cache. For more info check the full error.`,
+      toastMessage: `The version of the Portal9 app in your browser does not correspond with the app version installed in Kibana. Please, clear your browser cache. For more info check the full error.`,
     };
 
-    const troubleshootingUrl = `https://documentation.wazuh.com/${appInfo['app-version']
+    const troubleshootingUrl = `https://documentation.portal9.com/${appInfo['app-version']
       .split('.')
       .slice(0, 2)
       .join('.')}/user-manual/kibana-app/troubleshooting.html`;
@@ -57,7 +57,7 @@ const checkClientAppVersion = (appInfo: TAppInfo) => {
     const message: ReactNode = (
       <>
         <p>
-          The version of the Wazuh app in your browser{' '}
+          The version of the Portal9 app in your browser{' '}
           <b>
             {appVersion} - {appRevision}
           </b>{' '}
@@ -118,7 +118,7 @@ This message should not be displayed again.`;
     clearBrowserInfo(appInfo);
   } else {
     if (window.history.state == 'refreshed') {
-      window.history.replaceState('', 'wazuh');
+      window.history.replaceState('', 'portal9');
     }
     const storeAppInfo = localStorage.getItem('appInfo');
     !storeAppInfo && updateAppInfo(appInfo);

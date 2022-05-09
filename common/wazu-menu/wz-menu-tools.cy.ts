@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Wazuh Constants file for Cypress
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Portal9 Constants file for Cypress
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -10,7 +10,7 @@
  * Find more information about this on the LICENSE file.
  */
 
-export enum WAZUH_MENU_TOOLS_SECTIONS_CY_TEST_ID {
+export enum PORTAL9_MENU_TOOLS_SECTIONS_CY_TEST_ID {
   API_CONSOLE = 'menuToolsDevToolsLink',
   RULESET_TEST = 'menuToolsLogtestLink',
 }

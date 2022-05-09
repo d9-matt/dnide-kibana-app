@@ -1,7 +1,7 @@
 /*
- * Wazuh app - React component for building the Sample Data Wrapper
+ * Portal9 app - React component for building the Sample Data Wrapper
  *
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,7 +27,7 @@ import WzReduxProvider from '../../redux/wz-redux-provider';
 import { withUserAuthorizationPrompt } from '../../components/common/hocs/withUserAuthorization';
 import store from '../../redux/store';
 import { updateSelectedSettingsSection } from '../../redux/actions/appStateActions';
-import { WAZUH_ROLE_ADMINISTRATOR_NAME } from '../../../common/constants';
+import { PORTAL9_ROLE_ADMINISTRATOR_NAME } from '../../../common/constants';
 
 export class WzSampleDataProvider extends Component {
   constructor(props) {
@@ -69,7 +69,7 @@ export class WzSampleDataProvider extends Component {
   }
 }
 
-const WzSampleDataWrapperWithAdministrator = withUserAuthorizationPrompt(null, [WAZUH_ROLE_ADMINISTRATOR_NAME])(WzSampleDataProvider);
+const WzSampleDataWrapperWithAdministrator = withUserAuthorizationPrompt(null, [PORTAL9_ROLE_ADMINISTRATOR_NAME])(WzSampleDataProvider);
 export function WzSampleDataWrapper() {
   return (
   <WzReduxProvider>

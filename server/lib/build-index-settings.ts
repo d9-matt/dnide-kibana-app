@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Elastic wrapper helper
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Elastic wrapper helper
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -12,7 +12,7 @@
 
 /**
  * Returns well formatted object to set shards and replicas when creating/updating indices.
- * @param {*} file Parsed content from wazuh.yml file
+ * @param {*} file Parsed content from portal9.yml file
  * @param {string} indexName Target index name
  * @param {number} defaultShards Default shards value if missing in configuration
  * @param {number} defaulReplicas Default replicas value if missing in configuration

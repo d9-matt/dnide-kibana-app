@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Resolve function to parse configuration file
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Resolve function to parse configuration file
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -11,18 +11,18 @@
  */
 
 import {
-  WAZUH_ALERTS_PATTERN,
-  WAZUH_INDEX_REPLICAS,
-  WAZUH_INDEX_SHARDS,
-  WAZUH_MONITORING_DEFAULT_INDICES_SHARDS,
-  WAZUH_MONITORING_PATTERN,
-  WAZUH_SAMPLE_ALERT_PREFIX
+  PORTAL9_ALERTS_PATTERN,
+  PORTAL9_INDEX_REPLICAS,
+  PORTAL9_INDEX_SHARDS,
+  PORTAL9_MONITORING_DEFAULT_INDICES_SHARDS,
+  PORTAL9_MONITORING_PATTERN,
+  PORTAL9_SAMPLE_ALERT_PREFIX
 } from "../../../common/constants";
 
-export async function getWzConfig($q, genericReq, wazuhConfig) {
-  // Remember to keep this values equal to default wazuh.yml values
+export async function getWzConfig($q, genericReq, portal9Config) {
+  // Remember to keep this values equal to default portal9.yml values
   const defaultConfig = {
-    pattern: WAZUH_ALERTS_PATTERN,
+    pattern: PORTAL9_ALERTS_PATTERN,
     'checks.pattern': true,
     'checks.template': true,
     'checks.api': true,
@@ -49,21 +49,21 @@ export async function getWzConfig($q, genericReq, wazuhConfig) {
     'ip.selector': true,
     'ip.ignore': [],
     'xpack.rbac.enabled': true,
-    'wazuh.monitoring.enabled': true,
-    'wazuh.monitoring.frequency': 900,
-    'wazuh.monitoring.shards': WAZUH_MONITORING_DEFAULT_INDICES_SHARDS,
-    'wazuh.monitoring.replicas': WAZUH_INDEX_REPLICAS,
-    'wazuh.monitoring.creation': 'w',
-    'wazuh.monitoring.pattern': WAZUH_MONITORING_PATTERN,
-    'cron.prefix': 'wazuh',
+    'portal9.monitoring.enabled': true,
+    'portal9.monitoring.frequency': 900,
+    'portal9.monitoring.shards': PORTAL9_MONITORING_DEFAULT_INDICES_SHARDS,
+    'portal9.monitoring.replicas': PORTAL9_INDEX_REPLICAS,
+    'portal9.monitoring.creation': 'w',
+    'portal9.monitoring.pattern': PORTAL9_MONITORING_PATTERN,
+    'cron.prefix': 'portal9',
     'cron.statistics.status': true,
     'cron.statistics.apis': [],
     'cron.statistics.interval': '0 */5 * * * *',
     'cron.statistics.index.name': 'statistics',
     'cron.statistics.index.creation': 'w',
-    'cron.statistics.index.shards': WAZUH_INDEX_SHARDS,
-    'cron.statistics.index.replicas': WAZUH_INDEX_REPLICAS,
-    'alerts.sample.prefix': WAZUH_SAMPLE_ALERT_PREFIX,
+    'cron.statistics.index.shards': PORTAL9_INDEX_SHARDS,
+    'cron.statistics.index.replicas': PORTAL9_INDEX_REPLICAS,
+    'alerts.sample.prefix': PORTAL9_SAMPLE_ALERT_PREFIX,
     hideManagerAlerts: false,
     'logs.level': 'info',
     'enrollment.dns': '',
@@ -86,16 +86,16 @@ export async function getWzConfig($q, genericReq, wazuhConfig) {
       typeof ymlContent === 'object' &&
       (Object.keys(ymlContent) || []).length
     ) {
-      // Replace default values with custom values from wazuh.yml file
+      // Replace default values with custom values from portal9.yml file
       for (const key in ymlContent) {
         defaultConfig[key] = ymlContent[key];
       }
     }
 
-    wazuhConfig.setConfig(defaultConfig);
+    portal9Config.setConfig(defaultConfig);
   } catch (error) {
-    wazuhConfig.setConfig(defaultConfig);
-    console.log('Error parsing wazuh.yml, using default values.'); // eslint-disable-line
+    portal9Config.setConfig(defaultConfig);
+    console.log('Error parsing portal9.yml, using default values.'); // eslint-disable-line
     console.log(error.message || error); // eslint-disable-line
   }
   return $q.resolve(defaultConfig);

@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for show configuration of Docker listener.
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - React component for show configuration of Docker listener.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -28,7 +28,7 @@ const helpLinks = [
   {
     text: 'Docker listener module reference',
     href:
-      'https://documentation.wazuh.com/current/user-manual/reference/ossec-conf/wodle-docker.html'
+      'https://documentation.portal9.com/current/user-manual/reference/ossec-conf/wodle-docker.html'
   }
 ];
 

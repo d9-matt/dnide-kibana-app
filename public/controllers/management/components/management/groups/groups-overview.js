@@ -1,7 +1,7 @@
 /*
- * Wazuh app - React component for building the groups table.
+ * Portal9 app - React component for building the groups table.
  *
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,7 +20,7 @@ import {
   EuiPage
 } from '@elastic/eui';
 
-// Wazuh components
+// Portal9 components
 import WzGroupsTable from './groups-table';
 import WzGroupsActionButtons from './actions-buttons-main';
 

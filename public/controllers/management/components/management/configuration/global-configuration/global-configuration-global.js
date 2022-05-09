@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for show configuration of global configuration - global tab.
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - React component for show configuration of global configuration - global tab.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,12 +23,12 @@ const helpLinks = [
   {
     text: 'Global reference',
     href:
-      'https://documentation.wazuh.com/current/user-manual/reference/ossec-conf/global.html'
+      'https://documentation.portal9.com/current/user-manual/reference/ossec-conf/global.html'
   },
   {
     text: 'Logging reference',
     href:
-      'https://documentation.wazuh.com/current/user-manual/reference/ossec-conf/logging.html'
+      'https://documentation.portal9.com/current/user-manual/reference/ossec-conf/logging.html'
   }
 ];
 
@@ -99,7 +99,7 @@ class WzConfigurationGlobalConfigurationGlobal extends Component {
     this.helpLinks = buildHelpLinks(this.props.agent);
   }
   render() {
-    const { currentConfig, agent, wazuhNotReadyYet } = this.props;
+    const { currentConfig, agent, portal9NotReadyYet } = this.props;
     const mainSettingsConfig =
       agent.id === '000' &&
       currentConfig['analysis-global'] &&
@@ -147,9 +147,9 @@ class WzConfigurationGlobalConfigurationGlobal extends Component {
           !currentConfig['analysis-global'].global && (
             <WzNoConfig error="not-present" help={this.helpLinks} />
           )}
-        {wazuhNotReadyYet &&
+        {portal9NotReadyYet &&
           (!currentConfig || !currentConfig['analysis-global']) && (
-            <WzNoConfig error="Wazuh not ready yet" help={this.helpLinks} />
+            <WzNoConfig error="Portal9 not ready yet" help={this.helpLinks} />
           )}
         {((currentConfig['analysis-global'] &&
           currentConfig['analysis-global'].global) ||
@@ -197,7 +197,7 @@ class WzConfigurationGlobalConfigurationGlobal extends Component {
 WzConfigurationGlobalConfigurationGlobal.propTypes = {
   // currentConfig: PropTypes.object.isRequired,
   agent: PropTypes.object,
-  wazuhNotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
+  portal9NotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
 };
 
 export default WzConfigurationGlobalConfigurationGlobal;

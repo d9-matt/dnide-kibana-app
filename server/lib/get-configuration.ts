@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Module to parse the configuration file
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Module to parse the configuration file
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -11,7 +11,7 @@
  */
 import fs from 'fs';
 import yml from 'js-yaml';
-import { WAZUH_DATA_CONFIG_APP_PATH, WAZUH_CONFIGURATION_CACHE_TIME } from '../../common/constants';
+import { PORTAL9_DATA_CONFIG_APP_PATH, PORTAL9_CONFIGURATION_CACHE_TIME } from '../../common/constants';
 
 let cachedConfiguration: any = null;
 let lastAssign: number = new Date().getTime();
@@ -20,8 +20,8 @@ export function getConfiguration(isUpdating: boolean = false) {
   try {
     const now = new Date().getTime();
     const dateDiffer = now - lastAssign;
-    if (!cachedConfiguration || dateDiffer >= WAZUH_CONFIGURATION_CACHE_TIME || isUpdating) {
-      const raw = fs.readFileSync(WAZUH_DATA_CONFIG_APP_PATH, { encoding: 'utf-8' });
+    if (!cachedConfiguration || dateDiffer >= PORTAL9_CONFIGURATION_CACHE_TIME || isUpdating) {
+      const raw = fs.readFileSync(PORTAL9_DATA_CONFIG_APP_PATH, { encoding: 'utf-8' });
       const file = yml.load(raw);
 
       for (const host of file.hosts) {

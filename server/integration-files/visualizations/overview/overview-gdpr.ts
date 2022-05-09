@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Module for Overview/GDPR visualizations
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Module for Overview/GDPR visualizations
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -11,7 +11,7 @@
  */
 export default [
   {
-    _id: 'Wazuh-App-Overview-GDPR-Requirements-heatmap',
+    _id: 'Portal9-App-Overview-GDPR-Requirements-heatmap',
     _source: {
       title: 'GDPR requirements over time',
       visState: JSON.stringify({
@@ -105,7 +105,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [],
           query: { language: 'lucene', query: '' },
         }),
@@ -114,7 +114,7 @@ export default [
     _type: 'visualization',
   },
   {
-    _id: 'Wazuh-App-Overview-GDPR-Requirements-Agents-heatmap',
+    _id: 'Portal9-App-Overview-GDPR-Requirements-Agents-heatmap',
     _type: 'visualization',
     _source: {
       title: 'Last alerts',
@@ -202,7 +202,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           query: { query: '', language: 'lucene' },
           filter: [],
         }),
@@ -210,7 +210,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Overview-GDPR-requirements',
+    _id: 'Portal9-App-Overview-GDPR-requirements',
     _source: {
       title: 'GDPR requirements',
       visState: JSON.stringify({
@@ -328,7 +328,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [],
           query: { query: '', language: 'lucene' },
         }),
@@ -337,7 +337,7 @@ export default [
     _type: 'visualization',
   },
   {
-    _id: 'Wazuh-App-Overview-GDPR-Agents',
+    _id: 'Portal9-App-Overview-GDPR-Agents',
     _source: {
       title: 'GDPR Agents',
       visState: JSON.stringify({
@@ -366,7 +366,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [],
           query: { query: '', language: 'lucene' },
         }),
@@ -375,7 +375,7 @@ export default [
     _type: 'visualization',
   },
   {
-    _id: 'Wazuh-App-Overview-GDPR-Requirements-by-agent',
+    _id: 'Portal9-App-Overview-GDPR-Requirements-by-agent',
     _source: {
       title: 'GDPR Requirements by agent',
       visState: JSON.stringify({
@@ -456,7 +456,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [],
           query: { query: '', language: 'lucene' },
         }),
@@ -465,7 +465,7 @@ export default [
     _type: 'visualization',
   },
   {
-    _id: 'Wazuh-App-Overview-GDPR-Last-alerts',
+    _id: 'Portal9-App-Overview-GDPR-Last-alerts',
     _type: 'visualization',
     _source: {
       title: 'GDPR Last alerts',
@@ -541,7 +541,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [],
           query: { query: '', language: 'lucene' },
         }),
@@ -549,7 +549,7 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Overview-GDPR-Alerts-summary',
+    _id: 'Portal9-App-Overview-GDPR-Alerts-summary',
     _type: 'visualization',
     _source: {
       title: 'Alerts summary',
@@ -625,7 +625,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [],
           query: { query: '', language: 'lucene' },
         }),

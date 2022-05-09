@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Specific methods to fetch Wazuh Audit data from Elasticsearch
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Specific methods to fetch Portal9 Audit data from Elasticsearch
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -11,7 +11,7 @@
  */
 import { Base } from './base-query';
 import AuditMap from './audit-map';
-import { WAZUH_ALERTS_PATTERN } from '../../../common/constants';
+import { PORTAL9_ALERTS_PATTERN } from '../../../common/constants';
 
 /**
    * Returns top 3 agents that execute sudo commands without success
@@ -26,7 +26,7 @@ export const getTop3AgentsSudoNonSuccessful = async (
   gte,
   lte,
   filters,
-  pattern = WAZUH_ALERTS_PATTERN
+  pattern = PORTAL9_ALERTS_PATTERN
 ) => {
   try {
     const base = {};
@@ -93,7 +93,7 @@ export const getTop3AgentsFailedSyscalls = async (
   gte,
   lte,
   filters,
-  pattern = WAZUH_ALERTS_PATTERN
+  pattern = PORTAL9_ALERTS_PATTERN
 ) => {
   try {
     const base = {};
@@ -172,7 +172,7 @@ export const getTopFailedSyscalls = async (
   gte,
   lte,
   filters,
-  pattern = WAZUH_ALERTS_PATTERN
+  pattern = PORTAL9_ALERTS_PATTERN
 ) => {
   try {
     const base = {};

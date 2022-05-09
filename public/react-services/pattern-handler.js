@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Pattern Handler service
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Pattern Handler service
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -12,7 +12,7 @@
 import { AppState } from './app-state';
 import { SavedObject } from './saved-objects';
 import { getDataPlugin, getToasts, getHttp } from '../kibana-services';
-import { WazuhConfig } from '../react-services/wazuh-config';
+import { Portal9Config } from '../react-services/portal9-config';
 import { HEALTH_CHECK } from '../../common/constants';
 import { satisfyKibanaVersion } from '../../common/semver';
 
@@ -22,13 +22,13 @@ export class PatternHandler {
    */
   static async getPatternList(origin) {
     try {
-      const wazuhConfig = new WazuhConfig();
-      const { pattern } = wazuhConfig.getConfig();
+      const portal9Config = new Portal9Config();
+      const { pattern } = portal9Config.getConfig();
 
       const defaultPatterns = [pattern];
       const selectedPattern = AppState.getCurrentPattern();
       if (selectedPattern && selectedPattern !== pattern) defaultPatterns.push(selectedPattern);
-      let patternList = await SavedObject.getListOfWazuhValidIndexPatterns(defaultPatterns, origin);
+      let patternList = await SavedObject.getListOfPortal9ValidIndexPatterns(defaultPatterns, origin);
 
       return patternList;
     } catch (error) {

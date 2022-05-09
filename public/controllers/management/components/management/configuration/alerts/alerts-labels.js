@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for show configuration of alerts - labels tab.
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - React component for show configuration of alerts - labels tab.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -33,12 +33,12 @@ const helpLinks = [
   {
     text: 'Labels documentation',
     href:
-      'https://documentation.wazuh.com/current/user-manual/capabilities/labels.html'
+      'https://documentation.portal9.com/current/user-manual/capabilities/labels.html'
   },
   {
     text: 'Labels reference',
     href:
-      'https://documentation.wazuh.com/current/user-manual/reference/ossec-conf/labels.html'
+      'https://documentation.portal9.com/current/user-manual/reference/ossec-conf/labels.html'
   }
 ];
 
@@ -47,7 +47,7 @@ class WzConfigurationAlertsLabels extends Component {
     super(props);
   }
   render() {
-    const { currentConfig, agent, wazuhNotReadyYet } = this.props;
+    const { currentConfig, agent, portal9NotReadyYet } = this.props;
     return (
       <Fragment>
         {currentConfig[
@@ -82,11 +82,11 @@ class WzConfigurationAlertsLabels extends Component {
               agent && agent.id !== '000' ? 'agent-labels' : 'analysis-labels'
             ].labels
           ) && <WzNoConfig error="not-present" help={helpLinks} />}
-        {wazuhNotReadyYet &&
+        {portal9NotReadyYet &&
           (!currentConfig ||
             !currentConfig[
               agent && agent.id !== '000' ? 'agent-labels' : 'analysis-labels'
-            ]) && <WzNoConfig error="Wazuh not ready yet" />}
+            ]) && <WzNoConfig error="Portal9 not ready yet" />}
         {currentConfig[
           agent && agent.id !== '000' ? 'agent-labels' : 'analysis-labels'
         ] &&
@@ -124,7 +124,7 @@ class WzConfigurationAlertsLabels extends Component {
 }
 
 const mapStateToProps = state => ({
-  wazuhNotReadyYet: state.appStateReducers.wazuhNotReadyYet
+  portal9NotReadyYet: state.appStateReducers.portal9NotReadyYet
 });
 
 export default connect(mapStateToProps)(WzConfigurationAlertsLabels);
@@ -138,10 +138,10 @@ export const WzConfigurationAlertsLabelsAgent = compose(
 
 WzConfigurationAlertsLabels.propTypes = {
   // currentConfig: PropTypes.object.isRequired,
-  wazuhNotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
+  portal9NotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
 };
 
 WzConfigurationAlertsLabelsAgent.propTypes = {
   // currentConfig: PropTypes.object.isRequired,
-  wazuhNotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
+  portal9NotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
 };

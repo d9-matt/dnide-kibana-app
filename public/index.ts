@@ -1,12 +1,12 @@
 import { PluginInitializer, PluginInitializerContext } from 'kibana/public';
-import { WazuhPlugin } from './plugin';
-import { WazuhSetup, WazuhSetupPlugins, WazuhStart, WazuhStartPlugins } from './types';
+import { Portal9Plugin } from './plugin';
+import { Portal9Setup, Portal9SetupPlugins, Portal9Start, Portal9StartPlugins } from './types';
 
-export const plugin: PluginInitializer<WazuhSetup, WazuhStart, WazuhSetupPlugins, WazuhStartPlugins> = (
+export const plugin: PluginInitializer<Portal9Setup, Portal9Start, Portal9SetupPlugins, Portal9StartPlugins> = (
   initializerContext: PluginInitializerContext
 ) => {
-  return new WazuhPlugin(initializerContext);
+  return new Portal9Plugin(initializerContext);
 };
 
 // These are your public types & static code
-export { WazuhSetup, WazuhStart };
+export { Portal9Setup, Portal9Start };

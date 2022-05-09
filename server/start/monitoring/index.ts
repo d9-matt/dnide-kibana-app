@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Module for agent info fetching functions
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Module for agent info fetching functions
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,21 +16,21 @@ import { getConfiguration } from '../../lib/get-configuration';
 import { parseCron } from '../../lib/parse-cron';
 import { indexDate } from '../../lib/index-date';
 import { buildIndexSettings } from '../../lib/build-index-settings';
-import { WazuhHostsCtrl } from '../../controllers/wazuh-hosts';
+import { Portal9HostsCtrl } from '../../controllers/portal9-hosts';
 import { 
-  WAZUH_MONITORING_PATTERN,
-  WAZUH_INDEX_REPLICAS,
-  WAZUH_MONITORING_TEMPLATE_NAME,
-  WAZUH_MONITORING_DEFAULT_INDICES_SHARDS,
-  WAZUH_MONITORING_DEFAULT_CREATION,
-  WAZUH_MONITORING_DEFAULT_ENABLED,
-  WAZUH_MONITORING_DEFAULT_FREQUENCY,
+  PORTAL9_MONITORING_PATTERN,
+  PORTAL9_INDEX_REPLICAS,
+  PORTAL9_MONITORING_TEMPLATE_NAME,
+  PORTAL9_MONITORING_DEFAULT_INDICES_SHARDS,
+  PORTAL9_MONITORING_DEFAULT_CREATION,
+  PORTAL9_MONITORING_DEFAULT_ENABLED,
+  PORTAL9_MONITORING_DEFAULT_FREQUENCY,
 } from '../../../common/constants';
 import { tryCatchForIndexPermissionError } from '../tryCatchForIndexPermissionError';
 
-const blueWazuh = '\u001b[34mwazuh\u001b[39m';
-const monitoringErrorLogColors = [blueWazuh, 'monitoring', 'error'];
-const wazuhHostController = new WazuhHostsCtrl();
+const bluePortal9 = '\u001b[34mportal9\u001b[39m';
+const monitoringErrorLogColors = [bluePortal9, 'monitoring', 'error'];
+const portal9HostController = new Portal9HostsCtrl();
 
 let MONITORING_ENABLED, MONITORING_FREQUENCY, MONITORING_CRON_FREQ, MONITORING_CREATION, MONITORING_INDEX_PATTERN, MONITORING_INDEX_PREFIX;
 
@@ -63,15 +63,15 @@ function getAppConfigurationSetting(setting: string, configuration: any, default
 function initMonitoringConfiguration(context){
   try{
     const appConfig = getConfiguration();
-    MONITORING_ENABLED = appConfig && typeof appConfig['wazuh.monitoring.enabled'] !== 'undefined'
-      ? appConfig['wazuh.monitoring.enabled'] &&
-        appConfig['wazuh.monitoring.enabled'] !== 'worker'
-      : WAZUH_MONITORING_DEFAULT_ENABLED;
-    MONITORING_FREQUENCY = getAppConfigurationSetting('wazuh.monitoring.frequency', appConfig, WAZUH_MONITORING_DEFAULT_FREQUENCY);
+    MONITORING_ENABLED = appConfig && typeof appConfig['portal9.monitoring.enabled'] !== 'undefined'
+      ? appConfig['portal9.monitoring.enabled'] &&
+        appConfig['portal9.monitoring.enabled'] !== 'worker'
+      : PORTAL9_MONITORING_DEFAULT_ENABLED;
+    MONITORING_FREQUENCY = getAppConfigurationSetting('portal9.monitoring.frequency', appConfig, PORTAL9_MONITORING_DEFAULT_FREQUENCY);
     MONITORING_CRON_FREQ = parseCron(MONITORING_FREQUENCY);
-    MONITORING_CREATION = getAppConfigurationSetting('wazuh.monitoring.creation', appConfig, WAZUH_MONITORING_DEFAULT_CREATION);
+    MONITORING_CREATION = getAppConfigurationSetting('portal9.monitoring.creation', appConfig, PORTAL9_MONITORING_DEFAULT_CREATION);
 
-    MONITORING_INDEX_PATTERN = getAppConfigurationSetting('wazuh.monitoring.pattern', appConfig, WAZUH_MONITORING_PATTERN);
+    MONITORING_INDEX_PATTERN = getAppConfigurationSetting('portal9.monitoring.pattern', appConfig, PORTAL9_MONITORING_PATTERN);
     const lastCharIndexPattern = MONITORING_INDEX_PATTERN[MONITORING_INDEX_PATTERN.length - 1];
     if (lastCharIndexPattern !== '*') {
       MONITORING_INDEX_PATTERN += '*';
@@ -80,19 +80,19 @@ function initMonitoringConfiguration(context){
 
     log(
       'monitoring:initMonitoringConfiguration',
-      `wazuh.monitoring.enabled: ${MONITORING_ENABLED}`,
+      `portal9.monitoring.enabled: ${MONITORING_ENABLED}`,
       'debug'
     );
 
     log(
       'monitoring:initMonitoringConfiguration',
-      `wazuh.monitoring.frequency: ${MONITORING_FREQUENCY} (${MONITORING_CRON_FREQ})`,
+      `portal9.monitoring.frequency: ${MONITORING_FREQUENCY} (${MONITORING_CRON_FREQ})`,
       'debug'
     );
 
     log(
       'monitoring:initMonitoringConfiguration',
-      `wazuh.monitoring.pattern: ${MONITORING_INDEX_PATTERN} (index prefix: ${MONITORING_INDEX_PREFIX})`,
+      `portal9.monitoring.pattern: ${MONITORING_INDEX_PATTERN} (index prefix: ${MONITORING_INDEX_PREFIX})`,
       'debug'
     );
   }catch(error){
@@ -101,7 +101,7 @@ function initMonitoringConfiguration(context){
       'monitoring:initMonitoringConfiguration',
       errorMessage
     );
-    context.wazuh.logger.error(errorMessage)
+    context.portal9.logger.error(errorMessage)
   }
 };
 
@@ -117,12 +117,12 @@ async function init(context) {
   } catch (error) {
     const errorMessage = error.message || error;
     log('monitoring:init', error.message || error);
-    context.wazuh.logger.error(errorMessage);
+    context.portal9.logger.error(errorMessage);
   }
 }
 
 /**
- * Verify wazuh-agent template
+ * Verify portal9-agent template
  */
 async function checkTemplate(context) {
   try {
@@ -135,13 +135,13 @@ async function checkTemplate(context) {
     try {
       // Check if the template already exists
       const currentTemplate = await context.core.elasticsearch.client.asInternalUser.indices.getTemplate({
-        name: WAZUH_MONITORING_TEMPLATE_NAME
+        name: PORTAL9_MONITORING_TEMPLATE_NAME
       });
       // Copy already created index patterns
-      monitoringTemplate.index_patterns = currentTemplate.body[WAZUH_MONITORING_TEMPLATE_NAME].index_patterns;
+      monitoringTemplate.index_patterns = currentTemplate.body[PORTAL9_MONITORING_TEMPLATE_NAME].index_patterns;
     }catch (error) {
       // Init with the default index pattern
-      monitoringTemplate.index_patterns = [WAZUH_MONITORING_PATTERN];
+      monitoringTemplate.index_patterns = [PORTAL9_MONITORING_PATTERN];
     }
 
     // Check if the user is using a custom pattern and add it to the template if it does
@@ -151,7 +151,7 @@ async function checkTemplate(context) {
 
     // Update the monitoring template
     await context.core.elasticsearch.client.asInternalUser.indices.putTemplate({
-      name: WAZUH_MONITORING_TEMPLATE_NAME,
+      name: PORTAL9_MONITORING_TEMPLATE_NAME,
       body: monitoringTemplate
     });
     log(
@@ -165,7 +165,7 @@ async function checkTemplate(context) {
       'monitoring:checkTemplate',
       errorMessage
     );
-    context.wazuh.logger.error(monitoringErrorLogColors, errorMessage);
+    context.portal9.logger.error(monitoringErrorLogColors, errorMessage);
     throw error;
   }
 }
@@ -191,8 +191,8 @@ async function insertMonitoringDataElasticsearch(context, data) {
         const appConfig = getConfiguration();
         const indexConfiguration = buildIndexSettings(
           appConfig,
-          'wazuh.monitoring',
-          WAZUH_MONITORING_DEFAULT_INDICES_SHARDS
+          'portal9.monitoring',
+          PORTAL9_MONITORING_DEFAULT_INDICES_SHARDS
         );
 
         // To update the index settings with this client is required close the index, update the settings and open it
@@ -208,14 +208,14 @@ async function insertMonitoringDataElasticsearch(context, data) {
       })();
     }catch(error){
       log('monitoring:insertMonitoringDataElasticsearch', error.message || error);
-      context.wazuh.logger.error(error.message);
+      context.portal9.logger.error(error.message);
     }
 }
 
 /**
  * Inserting one document per agent into Elastic. Bulk.
  * @param {*} context Endpoint
- * @param {String} indexName The name for the index (e.g. daily: wazuh-monitoring-YYYY.MM.DD)
+ * @param {String} indexName The name for the index (e.g. daily: portal9-monitoring-YYYY.MM.DD)
  * @param {*} data
  */
 async function insertDataToIndex(context, indexName: string, data: {agents: any[], apiHost}) {
@@ -256,9 +256,9 @@ async function insertDataToIndex(context, indexName: string, data: {agents: any[
 }
 
 /**
- * Create the wazuh-monitoring index
+ * Create the portal9-monitoring index
  * @param {*} context context
- * @param {String} indexName The name for the index (e.g. daily: wazuh-monitoring-YYYY.MM.DD)
+ * @param {String} indexName The name for the index (e.g. daily: portal9-monitoring-YYYY.MM.DD)
  */
 async function createIndex(context, indexName: string) {
   try {
@@ -268,8 +268,8 @@ async function createIndex(context, indexName: string) {
     const IndexConfiguration = {
       settings: {
         index: {
-          number_of_shards: getAppConfigurationSetting('wazuh.monitoring.shards', appConfig, WAZUH_MONITORING_DEFAULT_INDICES_SHARDS),
-          number_of_replicas: getAppConfigurationSetting('wazuh.monitoring.replicas', appConfig, WAZUH_INDEX_REPLICAS)
+          number_of_shards: getAppConfigurationSetting('portal9.monitoring.shards', appConfig, PORTAL9_MONITORING_DEFAULT_INDICES_SHARDS),
+          number_of_replicas: getAppConfigurationSetting('portal9.monitoring.replicas', appConfig, PORTAL9_INDEX_REPLICAS)
         }
       }
     };
@@ -290,7 +290,7 @@ async function createIndex(context, indexName: string) {
       'monitoring:createIndex',
       errorMessage
     );
-    context.wazuh.logger.error(errorMessage);
+    context.portal9.logger.error(errorMessage);
   }
 }
 
@@ -352,14 +352,14 @@ const fakeResponseEndpoint = {
  */
 async function getHostsConfiguration() {
   try {
-    const hosts = await wazuhHostController.getHostsEntries(false, false, fakeResponseEndpoint);
+    const hosts = await portal9HostController.getHostsEntries(false, false, fakeResponseEndpoint);
     if (hosts.body.length) {
       return hosts.body;
     };
 
     log(
       'monitoring:getConfig',
-      'There are no Wazuh API entries yet',
+      'There are no Portal9 API entries yet',
       'debug'
     );
     return Promise.reject({
@@ -369,7 +369,7 @@ async function getHostsConfiguration() {
   } catch (error) {
     log('monitoring:getHostsConfiguration', error.message || error);
     return Promise.reject({
-      error: 'no wazuh hosts',
+      error: 'no portal9 hosts',
       error_code: 2
     });
   }
@@ -380,7 +380,7 @@ async function getHostsConfiguration() {
    */
 async function cronTask(context) {
   try {
-    const templateMonitoring = await context.core.elasticsearch.client.asInternalUser.indices.getTemplate({name: WAZUH_MONITORING_TEMPLATE_NAME});
+    const templateMonitoring = await context.core.elasticsearch.client.asInternalUser.indices.getTemplate({name: PORTAL9_MONITORING_TEMPLATE_NAME});
 
     const apiHosts = await getHostsConfiguration();
     const apiHostsUnique = (apiHosts || []).filter(
@@ -416,7 +416,7 @@ async function cronTask(context) {
     // } catch (error) {} //eslint-disable-line
 
     log('monitoring:cronTask', error.message || error);
-    context.wazuh.logger.error(error.message || error);
+    context.portal9.logger.error(error.message || error);
   }
 }
 
@@ -428,10 +428,10 @@ async function cronTask(context) {
 async function getApiInfo(context, apiHost){
   try{
     log('monitoring:getApiInfo', `Getting API info for ${apiHost.id}`, 'debug');
-    const responseIsCluster = await context.wazuh.api.client.asInternalUser.request('GET', '/cluster/status', {}, { apiHostID: apiHost.id });
+    const responseIsCluster = await context.portal9.api.client.asInternalUser.request('GET', '/cluster/status', {}, { apiHostID: apiHost.id });
     const isCluster = (((responseIsCluster || {}).data || {}).data || {}).enabled === 'yes';
     if(isCluster){
-      const responseClusterInfo = await context.wazuh.api.client.asInternalUser.request('GET', `/cluster/local/info`, {},  { apiHostID: apiHost.id });
+      const responseClusterInfo = await context.portal9.api.client.asInternalUser.request('GET', `/cluster/local/info`, {},  { apiHostID: apiHost.id });
       apiHost.clusterName = responseClusterInfo.data.data.affected_items[0].cluster;
     };
     const agents = await fetchAllAgentsFromApiHost(context, apiHost);
@@ -451,7 +451,7 @@ async function fetchAllAgentsFromApiHost(context, apiHost){
   let agents = [];
   try{
     log('monitoring:fetchAllAgentsFromApiHost', `Getting all agents from ApiID: ${apiHost.id}`, 'debug');
-    const responseAgentsCount = await context.wazuh.api.client.asInternalUser.request(
+    const responseAgentsCount = await context.portal9.api.client.asInternalUser.request(
       'GET',
       '/agents',
       {
@@ -473,7 +473,7 @@ async function fetchAllAgentsFromApiHost(context, apiHost){
 
     while (agents.length < agentsCount && payload.offset < agentsCount) {
       try{
-        const responseAgents = await context.wazuh.api.client.asInternalUser.request(
+        const responseAgents = await context.portal9.api.client.asInternalUser.request(
           'GET',
           `/agents`,
           {params: payload},
@@ -498,7 +498,7 @@ async function fetchAllAgentsFromApiHost(context, apiHost){
 export async function jobMonitoringRun(context) {
   // Init the monitoring variables
   initMonitoringConfiguration(context);
-  // Check Kibana index and if it is prepared, start the initialization of Wazuh App.
+  // Check Kibana index and if it is prepared, start the initialization of Portal9 App.
   await checkKibanaStatus(context);
   // // Run the cron job only it it's enabled
   if (MONITORING_ENABLED) {

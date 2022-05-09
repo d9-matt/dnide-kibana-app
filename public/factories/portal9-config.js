@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Pattern Handler service
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Factory to store values from configuration file
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -9,19 +9,12 @@
  *
  * Find more information about this on the LICENSE file.
  */
-
-import store from "../redux/store";
-import { updateAppConfig } from "../redux/actions/appConfigActions";
-
-export class WazuhConfig {
+export class Portal9Config {
+  /**
+   * Class constructor
+   */
   constructor() {
-    if (!!WazuhConfig.instance) {
-      return WazuhConfig.instance;
-    }
-    WazuhConfig.instance = this;
-
-
-    return this;
+    this.config = {};
   }
 
   /**
@@ -29,20 +22,20 @@ export class WazuhConfig {
    * @param {Object} cfg
    */
   setConfig(cfg) {
-    store.dispatch(updateAppConfig({...cfg}));
+    this.config = { ...cfg };
   }
 
   /**
    * Get configuration
    */
   getConfig() {
-    return store.getState().appConfig.data;
+    return this.config;
   }
 
   /**
    * Returns true if debug level is enabled, otherwise it returns false.
    */
   isDebug() {
-    return ((this.getConfig() || {})['logs.level'] || false) === 'debug';
+    return ((this.config || {})['logs.level'] || false) === 'debug';
   }
 }

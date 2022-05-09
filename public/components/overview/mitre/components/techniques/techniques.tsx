@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Mitre alerts components
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Mitre alerts components
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -33,7 +33,7 @@ import { mitreTechniques, getElasticAlerts, IFilterParams } from '../../lib'
 import { ITactic } from '../../';
 import { withWindowSize } from '../../../../../components/common/hocs/withWindowSize';
 import { WzRequest } from '../../../../../react-services/wz-request';
-import {WAZUH_ALERTS_PATTERN} from '../../../../../../common/constants';
+import {PORTAL9_ALERTS_PATTERN} from '../../../../../../common/constants';
 import { AppState } from '../../../../../react-services/app-state';
 import { WzFieldSearchDelay } from '../../../../common/search'
 import { getDataPlugin } from '../../../../../kibana-services';
@@ -295,7 +295,7 @@ export const Techniques = withWindowSize(class Techniques extends Component {
         "params": { "query": filter.value },
         "type": "phrase",
         "negate": filter.negate || false,
-        "index": AppState.getCurrentPattern() || WAZUH_ALERTS_PATTERN
+        "index": AppState.getCurrentPattern() || PORTAL9_ALERTS_PATTERN
       },
       "query": { "match_phrase": matchPhrase },
       "$state": { "store": "appState" }

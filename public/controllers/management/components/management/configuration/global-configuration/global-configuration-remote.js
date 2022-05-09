@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for show configuration of global configuration - remote tab.
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - React component for show configuration of global configuration - remote tab.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -40,12 +40,12 @@ const helpLinks = [
   {
     text: 'Remote daemon reference',
     href:
-      'https://documentation.wazuh.com/current/user-manual/reference/daemons/wazuh-remoted.html'
+      'https://documentation.portal9.com/current/user-manual/reference/daemons/portal9-remoted.html'
   },
   {
     text: 'Remote configuration reference',
     href:
-      'https://documentation.wazuh.com/current/user-manual/reference/ossec-conf/remote.html'
+      'https://documentation.portal9.com/current/user-manual/reference/ossec-conf/remote.html'
   }
 ];
 

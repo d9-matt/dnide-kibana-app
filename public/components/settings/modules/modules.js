@@ -11,13 +11,13 @@ import {
   EuiSwitch,
   EuiSpacer
 } from '@elastic/eui';
-import { WAZUH_MODULES } from '../../../../common/wazuh-modules';
+import { PORTAL9_MODULES } from '../../../../common/portal9-modules';
 import { AppState } from '../../../react-services/app-state';
 import WzReduxProvider from '../../../redux/wz-redux-provider';
 import store from '../../../redux/store';
 import { updateSelectedSettingsSection } from '../../../redux/actions/appStateActions';
 import { withUserAuthorizationPrompt } from '../../common/hocs/withUserAuthorization';
-import { WAZUH_ROLE_ADMINISTRATOR_NAME } from '../../../../common/constants';
+import { PORTAL9_ROLE_ADMINISTRATOR_NAME } from '../../../../common/constants';
 
 export class EnableModulesWrapper extends Component {
   constructor(props) {
@@ -122,11 +122,11 @@ export class EnableModulesWrapper extends Component {
                           &nbsp;&nbsp;
                         </span>
                       )}
-                      {WAZUH_MODULES[extension.name].title}
+                      {PORTAL9_MODULES[extension.name].title}
                     </span>
                   ),
                   description: (
-                    <span>{WAZUH_MODULES[extension.name].description}</span>
+                    <span>{PORTAL9_MODULES[extension.name].description}</span>
                   )
                 }
               ]}
@@ -165,7 +165,7 @@ export class EnableModulesWrapper extends Component {
   }
 }
 
-const WzEnableModulesWithAdministrator = withUserAuthorizationPrompt(null, [WAZUH_ROLE_ADMINISTRATOR_NAME])(EnableModulesWrapper);
+const WzEnableModulesWithAdministrator = withUserAuthorizationPrompt(null, [PORTAL9_ROLE_ADMINISTRATOR_NAME])(EnableModulesWrapper);
 export function EnableModules() {
   return(
     <WzReduxProvider>

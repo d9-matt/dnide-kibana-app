@@ -1,12 +1,12 @@
 
 import { IRouter } from 'kibana/server';
-import { WazuhApiCtrl } from '../controllers';
+import { Portal9ApiCtrl } from '../controllers';
 import { schema } from '@kbn/config-schema';
 
-export function WazuhApiRoutes(router: IRouter) {
-  const ctrl = new WazuhApiCtrl();
+export function Portal9ApiRoutes(router: IRouter) {
+  const ctrl = new Portal9ApiCtrl();
 
-  // Returns if the wazuh-api configuration is working
+  // Returns if the portal9-api configuration is working
   router.post({
     path: '/api/check-stored-api',
     validate: {
@@ -19,8 +19,8 @@ export function WazuhApiRoutes(router: IRouter) {
     async (context, request, response) => ctrl.checkStoredAPI(context, request, response)
   );
 
-  // Check if credentials on POST connect to Wazuh API. Not storing them!
-  // Returns if the wazuh-api configuration received in the POST body will work
+  // Check if credentials on POST connect to Portal9 API. Not storing them!
+  // Returns if the portal9-api configuration received in the POST body will work
   router.post({
     path: '/api/check-api',
     validate: {
@@ -72,7 +72,7 @@ export function WazuhApiRoutes(router: IRouter) {
     async (context, request, response) => ctrl.requestApi(context, request, response)
   );
 
-  // Returns data from the Wazuh API on CSV readable format
+  // Returns data from the Portal9 API on CSV readable format
   router.post({
     path: '/api/csv',
     validate: {
@@ -126,7 +126,7 @@ export function WazuhApiRoutes(router: IRouter) {
     async (context, request, response) => ctrl.getExtensions(context, request, response)
   );
 
-  // Return Wazuh Appsetup info
+  // Return Portal9 Appsetup info
   router.get({
     path: '/api/setup',
     validate: false,
@@ -146,11 +146,11 @@ export function WazuhApiRoutes(router: IRouter) {
     async (context, request, response) => ctrl.getSyscollector(context, request, response)
   );
 
-  // Return logged in user has wazuh disabled by role
+  // Return logged in user has portal9 disabled by role
   router.get({
-    path: '/api/check-wazuh',
+    path: '/api/check-portal9',
     validate: false
   },
-    async (context, request, response) => ctrl.isWazuhDisabled(context, request, response)
+    async (context, request, response) => ctrl.isPortal9Disabled(context, request, response)
   );
 }

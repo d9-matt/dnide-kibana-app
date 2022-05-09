@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for show configuration of log collection - sockets tab.
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - React component for show configuration of log collection - sockets tab.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,12 +27,12 @@ const helpLinks = [
   {
     text: 'Using multiple outputs',
     href:
-      'https://documentation.wazuh.com/current/user-manual/capabilities/log-data-collection/log-data-configuration.html#using-multiple-outputs'
+      'https://documentation.portal9.com/current/user-manual/capabilities/log-data-collection/log-data-configuration.html#using-multiple-outputs'
   },
   {
     text: 'Socket reference',
     href:
-      'https://documentation.wazuh.com/current/user-manual/reference/ossec-conf/socket.html'
+      'https://documentation.portal9.com/current/user-manual/reference/ossec-conf/socket.html'
   }
 ];
 

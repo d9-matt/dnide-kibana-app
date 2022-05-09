@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Authentication service for Wazuh
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Authentication service for Portal9
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,12 +20,12 @@ import {
   updateWithUserLogged,
   updateAllowedAgents,
 } from '../redux/actions/appStateActions';
-import { WAZUH_ROLE_ADMINISTRATOR_ID, WAZUH_ROLE_ADMINISTRATOR_NAME } from '../../common/constants';
+import { PORTAL9_ROLE_ADMINISTRATOR_ID, PORTAL9_ROLE_ADMINISTRATOR_NAME } from '../../common/constants';
 import { getToasts } from '../kibana-services';
 import { getAuthorizedAgents } from '../react-services/wz-agents';
 
 /**
- * Wazuh user authentication class
+ * Portal9 user authentication class
  */
 export class WzAuthentication {
   /**
@@ -130,12 +130,12 @@ export class WzAuthentication {
    */
   private static mapUserRolesIDToAdministratorRole(roles) {
     return roles.map((role: number) =>
-      role === WAZUH_ROLE_ADMINISTRATOR_ID ? WAZUH_ROLE_ADMINISTRATOR_NAME : role
+      role === PORTAL9_ROLE_ADMINISTRATOR_ID ? PORTAL9_ROLE_ADMINISTRATOR_NAME : role
     );
   }
 
   /**
-   * Sends a request to the Wazuh's API to delete the user's token.
+   * Sends a request to the Portal9's API to delete the user's token.
    *
    * @returns {Object}
    */

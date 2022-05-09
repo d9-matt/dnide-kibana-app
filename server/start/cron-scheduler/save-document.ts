@@ -2,7 +2,7 @@ import { BulkIndexDocumentsParams } from 'elasticsearch';
 import { getConfiguration } from '../../lib/get-configuration';
 import { log } from '../../lib/logger';
 import { indexDate } from '../../lib/index-date';
-import { WAZUH_INDEX_SHARDS, WAZUH_INDEX_REPLICAS } from '../../../common/constants'
+import { PORTAL9_INDEX_SHARDS, PORTAL9_INDEX_REPLICAS } from '../../../common/constants'
 import { tryCatchForIndexPermissionError } from '../tryCatchForIndexPermissionError'
 
 export interface IIndexConfiguration {
@@ -53,8 +53,8 @@ export class SaveDocument {
             body: {
               settings: {
                 index: {
-                  number_of_shards: shards || WAZUH_INDEX_SHARDS,
-                  number_of_replicas: replicas || WAZUH_INDEX_REPLICAS
+                  number_of_shards: shards || PORTAL9_INDEX_SHARDS,
+                  number_of_replicas: replicas || PORTAL9_INDEX_REPLICAS
                 }
               }
             }
@@ -125,7 +125,7 @@ export class SaveDocument {
 
   private addIndexPrefix(index): string {
     const configFile = getConfiguration();
-    const prefix = configFile['cron.prefix'] || 'wazuh';
+    const prefix = configFile['cron.prefix'] || 'portal9';
     return `${prefix}-${index}`;
   }
 

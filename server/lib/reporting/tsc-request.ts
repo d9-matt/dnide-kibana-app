@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Specific methods to fetch Wazuh TSC data from Elasticsearch
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Specific methods to fetch Portal9 TSC data from Elasticsearch
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -10,14 +10,14 @@
  * Find more information about this on the LICENSE file.
  */
 import { Base } from './base-query';
-import { WAZUH_ALERTS_PATTERN } from '../../../common/constants';
+import { PORTAL9_ALERTS_PATTERN } from '../../../common/constants';
 
   /**
    * Returns top 5 TSC requirements
    * @param {Number} context Endpoint context
    * @param {Number} gte Timestamp (ms) from
    * @param {Number} lte Timestamp (ms) to
-   * @param {String} filters E.g: cluster.name: wazuh AND rule.groups: vulnerability
+   * @param {String} filters E.g: cluster.name: portal9 AND rule.groups: vulnerability
    * @returns {Array<String>}
    */
 export const topTSCRequirements = async (
@@ -25,7 +25,7 @@ export const topTSCRequirements = async (
   gte,
   lte,
   filters,
-  pattern = WAZUH_ALERTS_PATTERN
+  pattern = PORTAL9_ALERTS_PATTERN
 ) => {
   if (filters.includes('rule.tsc: exists')) {
     filters = filters.replace('AND rule.tsc: exists', '');
@@ -87,7 +87,7 @@ export const topTSCRequirements = async (
  * @param {Number} gte Timestamp (ms) from
  * @param {Number} lte Timestamp (ms) to
  * @param {String} requirement TSCrequirement. E.g: 'CC7.2'
- * @param {String} filters E.g: cluster.name: wazuh AND rule.groups: vulnerability
+ * @param {String} filters E.g: cluster.name: portal9 AND rule.groups: vulnerability
  * @returns {Array<String>}
  */
 export const getRulesByRequirement = async (
@@ -96,7 +96,7 @@ export const getRulesByRequirement = async (
   lte,
   filters,
   requirement,
-  pattern = WAZUH_ALERTS_PATTERN
+  pattern = PORTAL9_ALERTS_PATTERN
 ) => {
   if (filters.includes('rule.tsc: exists')) {
     filters = filters.replace('AND rule.tsc: exists', '');

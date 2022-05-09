@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Mitre alerts components
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Mitre alerts components
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -14,7 +14,7 @@ import { AppState } from '../../../../react-services/app-state';
 import { GenericRequest } from '../../../../react-services/generic-request';
 import { Query, TimeRange, buildRangeFilter, buildEsQuery, getEsQueryConfig, Filter } from '../../../../../../../src/plugins/data/common';
 import { SearchParams, SearchResponse } from 'elasticsearch';
-import { WazuhConfig } from '../../../../react-services/wazuh-config';
+import { Portal9Config } from '../../../../react-services/portal9-config';
 import { getDataPlugin, getUiSettings } from '../../../../kibana-services';
 
 export interface IFilterParams {
@@ -34,9 +34,9 @@ export async function getIndexPattern() {
 }
 
 export async function getElasticAlerts(indexPattern, filterParams:IFilterParams, aggs:any=null, kargs={}) {
-  const wazuhConfig = new WazuhConfig();
+  const portal9Config = new Portal9Config();
   const extraFilters = [];
-  const { hideManagerAlerts } = wazuhConfig.getConfig();
+  const { hideManagerAlerts } = portal9Config.getConfig();
   if(hideManagerAlerts) extraFilters.push({
       meta: {
         alias: null,

@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Overview controller
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Overview controller
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -11,10 +11,10 @@
  */
 import { FilterHandler } from '../../utils/filter-handler';
 import { TabNames } from '../../utils/tab-names';
-import { WAZUH_MODULES } from '../../../common/wazuh-modules';
+import { PORTAL9_MODULES } from '../../../common/portal9-modules';
 
 import { AppState } from '../../react-services/app-state';
-import { WazuhConfig } from '../../react-services/wazuh-config';
+import { Portal9Config } from '../../react-services/portal9-config';
 import { WzRequest } from '../../react-services/wz-request';
 import { ErrorHandler } from '../../react-services/error-handler';
 import { TabVisualizations } from '../../factories/tab-visualizations';
@@ -22,7 +22,7 @@ import { updateCurrentTab, updateCurrentAgentData } from '../../redux/actions/ap
 import { VisFactoryHandler } from '../../react-services/vis-factory-handler';
 import { RawVisualizations } from '../../factories/raw-visualizations';
 import store from '../../redux/store';
-import { WAZUH_ALERTS_PATTERN } from '../../../common/constants';
+import { PORTAL9_ALERTS_PATTERN } from '../../../common/constants';
 import { getDataPlugin } from '../../kibana-services';
 
 export class OverviewController {
@@ -55,7 +55,7 @@ export class OverviewController {
     this.commonData = commonData;
     this.reportingService = reportingService;
     this.visFactoryService = visFactoryService;
-    this.wazuhConfig = new WazuhConfig();
+    this.portal9Config = new Portal9Config();
     this.visFactoryService = VisFactoryHandler;
     this.rawVisualizations = new RawVisualizations();
     this.wzReq = (...args) => WzRequest.apiReq(...args);
@@ -67,7 +67,7 @@ export class OverviewController {
   async $onInit() {
     this.rawVisualizations.setType("");
     this.wodlesConfiguration = false;
-    this.TabDescription = WAZUH_MODULES;
+    this.TabDescription = PORTAL9_MODULES;
     this.$rootScope.reportStatus = false;
 
     this.$location.search('_a', null);
@@ -309,7 +309,7 @@ export class OverviewController {
         this.welcomeCardsProps.agentsCountTotal = total;
         this.agentsCoverity = total ? (active / total) * 100 : 0;
       } else {
-        throw new Error('Error fetching /agents/summary from Wazuh API');
+        throw new Error('Error fetching /agents/summary from Portal9 API');
       }
       return;
     } catch (error) {
@@ -322,9 +322,9 @@ export class OverviewController {
    */
   async loadConfiguration() {
     try {
-      const configuration = this.wazuhConfig.getConfig();
+      const configuration = this.portal9Config.getConfig();
 
-      this.wzMonitoringEnabled = !!configuration['wazuh.monitoring.enabled'];
+      this.wzMonitoringEnabled = !!configuration['portal9.monitoring.enabled'];
 
       return;
     } catch (error) {
@@ -338,7 +338,7 @@ export class OverviewController {
    * @param {*} id
    */
   addMitrefilter(id) {
-    const filter = `{"meta":{ "index": ${AppState.getCurrentPattern() || WAZUH_ALERTS_PATTERN}},"query":{"match":{"rule.mitre.id":{"query":"${id}","type":"phrase"}}}}`;
+    const filter = `{"meta":{ "index": ${AppState.getCurrentPattern() || PORTAL9_ALERTS_PATTERN}},"query":{"match":{"rule.mitre.id":{"query":"${id}","type":"phrase"}}}}`;
     this.$rootScope.$emit('addNewKibanaFilter', { filter: JSON.parse(filter) });
   }
 

@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Module to export all the controllers
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Module to export all the controllers
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -9,8 +9,8 @@
  *
  * Find more information about this on the LICENSE file.
  */
-export { WazuhElasticCtrl } from './wazuh-elastic';
-export { WazuhApiCtrl } from './wazuh-api';
-export { WazuhUtilsCtrl } from './wazuh-utils';
-export { WazuhReportingCtrl } from './wazuh-reporting';
-export { WazuhHostsCtrl } from './wazuh-hosts'
+export { Portal9ElasticCtrl } from './portal9-elastic';
+export { Portal9ApiCtrl } from './portal9-api';
+export { Portal9UtilsCtrl } from './portal9-utils';
+export { Portal9ReportingCtrl } from './portal9-reporting';
+export { Portal9HostsCtrl } from './portal9-hosts'

@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Module to update the configuration file
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Module to update the configuration file
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -13,16 +13,16 @@ import fs from 'fs';
 import yml from 'js-yaml';
 import { log } from './logger';
 import { UpdateRegistry } from './update-registry';
-import { initialWazuhConfig } from './initial-wazuh-config';
-import { WAZUH_DATA_CONFIG_APP_PATH } from '../../common/constants';
+import { initialPortal9Config } from './initial-portal9-config';
+import { PORTAL9_DATA_CONFIG_APP_PATH } from '../../common/constants';
 import { createDataDirectoryIfNotExists } from '../lib/filesystem';
 
 export class ManageHosts {
   constructor() {
     this.busy = false;
-    this.file = WAZUH_DATA_CONFIG_APP_PATH;
+    this.file = PORTAL9_DATA_CONFIG_APP_PATH;
     this.updateRegistry = new UpdateRegistry();
-    this.initialConfig = initialWazuhConfig;
+    this.initialConfig = initialPortal9Config;
   }
 
   /**
@@ -61,7 +61,7 @@ export class ManageHosts {
   }
 
   /**
-   * Returns the hosts in the wazuh.yml
+   * Returns the hosts in the portal9.yml
    */
   async getHosts() {
     try {
@@ -69,7 +69,7 @@ export class ManageHosts {
       this.busy = true;
       createDataDirectoryIfNotExists();
       createDataDirectoryIfNotExists('config');
-      if (!fs.existsSync(WAZUH_DATA_CONFIG_APP_PATH)) {
+      if (!fs.existsSync(PORTAL9_DATA_CONFIG_APP_PATH)) {
         await fs.writeFileSync(this.file, this.initialConfig, { encoding: 'utf8', mode: 0o600 });
       }
       const raw = fs.readFileSync(this.file, { encoding: 'utf-8' });
@@ -86,7 +86,7 @@ export class ManageHosts {
   }
 
   /**
-   * This function checks if the hosts: key exists in the wazuh.yml for preventing duplicate in case of there's not any host defined
+   * This function checks if the hosts: key exists in the portal9.yml for preventing duplicate in case of there's not any host defined
    */
   async checkIfHostsKeyExists() {
     try {
@@ -104,7 +104,7 @@ export class ManageHosts {
   }
 
   /**
-   * Returns the IDs of the current hosts in the wazuh.yml
+   * Returns the IDs of the current hosts in the portal9.yml
    */
   async getCurrentHostsIds() {
     try {
@@ -132,7 +132,7 @@ export class ManageHosts {
         return Object.keys(h)[0] == id;
       });
       if(host && !host.length){
-        throw new Error('Selected API is no longer available in wazuh.yml');
+        throw new Error('Selected API is no longer available in portal9.yml');
       }
       const key = Object.keys(host[0])[0];
       const result = Object.assign(host[0][key], { id: key }) || {};
@@ -152,7 +152,7 @@ export class ManageHosts {
   }
 
   /**
-   *  Iterate the array with the API entries in given from the .wazuh index in order to create a valid array
+   *  Iterate the array with the API entries in given from the .portal9 index in order to create a valid array
    * @param {Object} apiEntries
    */
   transformIndexedApis(apiEntries) {
@@ -174,7 +174,7 @@ export class ManageHosts {
       });
       log(
         'manage-hosts:transformIndexedApis',
-        'Transforming index API schedule to wazuh.yml',
+        'Transforming index API schedule to portal9.yml',
         'debug'
       );
     } catch (error) {
@@ -199,7 +199,7 @@ export class ManageHosts {
   }
 
   /**
-   * Receives an array of hosts and checks if any host is already in the wazuh.yml, in this case is removed from the received array and returns the resulting array
+   * Receives an array of hosts and checks if any host is already in the portal9.yml, in this case is removed from the received array and returns the resulting array
    * @param {Array} hosts
    */
   async cleanExistingHosts(hosts) {
@@ -221,7 +221,7 @@ export class ManageHosts {
   }
 
   /**
-   * Throws an error is the wazuh.yml is busy
+   * Throws an error is the portal9.yml is busy
    */
   checkBusy() {
     if (this.busy)
@@ -241,7 +241,7 @@ export class ManageHosts {
         const entry = hostsToAdd[idx];
         await this.addHost(entry);
       }
-      return 'All APIs entries were migrated to the wazuh.yml';
+      return 'All APIs entries were migrated to the portal9.yml';
     } catch (error) {
       log('manage-hosts:addSeveralHosts', error.message || error);
       return Promise.reject(error);
@@ -297,7 +297,7 @@ export class ManageHosts {
   }
 
   /**
-   * Delete a host from the wazuh.yml
+   * Delete a host from the portal9.yml
    * @param {Object} req
    */
   async deleteHost(req) {

@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Wazuh API utils service
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Portal9 API utils service
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -10,10 +10,10 @@
  * Find more information about this on the LICENSE file.
  */
 
-import { WAZUH_API_RESERVED_ID_LOWER_THAN } from '../../common/constants';
+import { PORTAL9_API_RESERVED_ID_LOWER_THAN } from '../../common/constants';
 
 export class WzAPIUtils{
   static isReservedID(id: number): boolean{
-    return id < WAZUH_API_RESERVED_ID_LOWER_THAN
+    return id < PORTAL9_API_RESERVED_ID_LOWER_THAN
   }
 }

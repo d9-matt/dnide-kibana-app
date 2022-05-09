@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Module for Agents/MITRE visualizations
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Module for Agents/MITRE visualizations
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -11,7 +11,7 @@
  */
 export default [
   {
-    _id: 'Wazuh-App-Agents-MITRE',
+    _id: 'Portal9-App-Agents-MITRE',
     _source: {
       title: 'Mitre attack count',
       visState: JSON.stringify({
@@ -57,7 +57,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [],
           query: { language: 'lucene', query: '' },
         }),
@@ -66,7 +66,7 @@ export default [
     _type: 'visualization',
   },
   {
-    _id: 'Wazuh-App-Agents-MITRE-Alerts-Evolution',
+    _id: 'Portal9-App-Agents-MITRE-Alerts-Evolution',
     _source: {
       title: 'Mitre alerts evolution',
       visState: JSON.stringify({
@@ -190,7 +190,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [],
           query: { language: 'lucene', query: '' },
         }),
@@ -199,7 +199,7 @@ export default [
     _type: 'visualization',
   },
   {
-    _id: 'Wazuh-App-Agents-MITRE-Attacks-By-Agent',
+    _id: 'Portal9-App-Agents-MITRE-Attacks-By-Agent',
     _source: {
       title: 'Attacks count by agent',
       visState: JSON.stringify({
@@ -287,7 +287,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [],
           query: { language: 'lucene', query: '' },
         }),
@@ -296,7 +296,7 @@ export default [
     _type: 'visualization',
   },
   {
-    _id: 'Wazuh-App-Agents-MITRE-Level-By-Tactic',
+    _id: 'Portal9-App-Agents-MITRE-Level-By-Tactic',
     _source: {
       title: 'Alerts level by tactic',
       visState: JSON.stringify({
@@ -384,7 +384,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [],
           query: { language: 'lucene', query: '' },
         }),
@@ -393,7 +393,7 @@ export default [
     _type: 'visualization',
   },
   {
-    _id: 'Wazuh-App-Agents-MITRE-Level-By-Attack',
+    _id: 'Portal9-App-Agents-MITRE-Level-By-Attack',
     _source: {
       title: 'Alerts level by attack',
       visState: JSON.stringify({
@@ -494,7 +494,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [],
           query: { language: 'lucene', query: '' },
         }),
@@ -503,7 +503,7 @@ export default [
     _type: 'visualization',
   },
   {
-    _id: 'Wazuh-App-Agents-MITRE-Attacks-By-Tactic',
+    _id: 'Portal9-App-Agents-MITRE-Attacks-By-Tactic',
     _source: {
       title: 'Top tactics',
       visState: JSON.stringify({
@@ -616,7 +616,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [],
           query: { language: 'lucene', query: '' },
         }),
@@ -625,7 +625,7 @@ export default [
     _type: 'visualization',
   },
   {
-    _id: 'Wazuh-App-Agents-MITRE-Top-Tactics',
+    _id: 'Portal9-App-Agents-MITRE-Top-Tactics',
     _source: {
       title: 'Top tactics pie',
       visState: JSON.stringify({
@@ -682,7 +682,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [],
           query: { language: 'lucene', query: '' },
         }),
@@ -691,7 +691,7 @@ export default [
     _type: 'visualization',
   },
   {
-    _id: 'Wazuh-App-Agents-MITRE-Alerts-summary',
+    _id: 'Portal9-App-Agents-MITRE-Alerts-summary',
     _type: 'visualization',
     _source: {
       title: 'Alerts summary',
@@ -769,7 +769,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [],
           query: { query: '', language: 'lucene' },
         }),

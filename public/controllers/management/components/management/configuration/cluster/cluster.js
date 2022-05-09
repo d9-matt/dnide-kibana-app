@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for show configuration of cluster.
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - React component for show configuration of cluster.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -39,14 +39,14 @@ const mainSettings = [
 
 const helpLinks = [
   {
-    text: 'How to configure the Wazuh cluster',
+    text: 'How to configure the Portal9 cluster',
     href:
-      'https://documentation.wazuh.com/current/user-manual/configuring-cluster/index.html'
+      'https://documentation.portal9.com/current/user-manual/configuring-cluster/index.html'
   },
   {
-    text: 'Wazuh cluster reference',
+    text: 'Portal9 cluster reference',
     href:
-      'https://documentation.wazuh.com/current/user-manual/reference/ossec-conf/cluster.html'
+      'https://documentation.portal9.com/current/user-manual/reference/ossec-conf/cluster.html'
   }
 ];
 
@@ -55,7 +55,7 @@ class WzCluster extends Component {
     super(props);
   }
   render() {
-    const { currentConfig, wazuhNotReadyYet } = this.props;
+    const { currentConfig, portal9NotReadyYet } = this.props;
     let mainSettingsConfig = {
       ...currentConfig['com-cluster'],
       disabled:
@@ -67,9 +67,9 @@ class WzCluster extends Component {
           isString(currentConfig['com-cluster']) && (
             <WzNoConfig error={currentConfig['com-cluster']} help={helpLinks} />
           )}
-        {wazuhNotReadyYet &&
+        {portal9NotReadyYet &&
           (!currentConfig || !currentConfig['com-cluster']) && (
-            <WzNoConfig error="Wazuh not ready yet" help={helpLinks} />
+            <WzNoConfig error="Portal9 not ready yet" help={helpLinks} />
           )}
         {currentConfig['com-cluster'] &&
           !isString(currentConfig['com-cluster']) && (
@@ -93,12 +93,12 @@ class WzCluster extends Component {
 const sections = [{ component: 'com', configuration: 'cluster' }];
 
 const mapStateToProps = state => ({
-  wazuhNotReadyYet: state.appStateReducers.wazuhNotReadyYet
+  portal9NotReadyYet: state.appStateReducers.portal9NotReadyYet
 });
 
 WzCluster.propTypes = {
   // currentConfig: PropTypes.object.isRequired
-  wazuhNotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
+  portal9NotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
 };
 
 export default compose(

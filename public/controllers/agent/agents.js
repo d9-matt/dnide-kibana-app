@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Agents controller
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Agents controller
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -12,12 +12,12 @@
 import { FilterHandler } from '../../utils/filter-handler';
 import { TabNames } from '../../utils/tab-names';
 import * as FileSaver from '../../services/file-saver';
-import { WAZUH_MODULES } from '../../../common/wazuh-modules';
+import { PORTAL9_MODULES } from '../../../common/portal9-modules';
 import { visualizations } from '../../templates/agents/visualizations';
 
 import { ConfigurationHandler } from '../../utils/config-handler';
 import { AppState } from '../../react-services/app-state';
-import { WazuhConfig } from '../../react-services/wazuh-config';
+import { Portal9Config } from '../../react-services/portal9-config';
 import { GenericRequest } from '../../react-services/generic-request';
 import { WzRequest } from '../../react-services/wz-request';
 import { getToasts }  from '../../kibana-services';
@@ -28,7 +28,7 @@ import { ErrorHandler } from '../../react-services/error-handler';
 import { GroupHandler } from '../../react-services/group-handler';
 import store from '../../redux/store';
 import { updateGlobalBreadcrumb } from '../../redux/actions/globalBreadcrumbActions';
-import { WAZUH_ALERTS_PATTERN } from '../../../common/constants';
+import { PORTAL9_ALERTS_PATTERN } from '../../../common/constants';
 import { getDataPlugin } from '../../kibana-services';
 import { hasAgentSupportModule } from '../../react-services/wz-agents';
 export class AgentsController {
@@ -66,7 +66,7 @@ export class AgentsController {
     this.visFactoryService = visFactoryService;
     this.csvReq = csvReq;
     this.groupHandler = GroupHandler;
-    this.wazuhConfig = new WazuhConfig();
+    this.portal9Config = new Portal9Config();
     this.genericReq = GenericRequest;
 
     // Config on-demand
@@ -118,7 +118,7 @@ export class AgentsController {
       this.commonData.removeTimefilter();
     }
 
-    this.$scope.TabDescription = WAZUH_MODULES;
+    this.$scope.TabDescription = PORTAL9_MODULES;
 
     this.$rootScope.reportStatus = false;
 
@@ -181,19 +181,19 @@ export class AgentsController {
       this.downloadCsv(path, fileName, filters);
 
     this.$scope.search = (term, specificPath) =>
-      this.$scope.$broadcast('wazuhSearch', {
+      this.$scope.$broadcast('portal9Search', {
         term,
         specificPath
       });
 
     this.$scope.searchSyscheckFile = (term, specificFilter) =>
-      this.$scope.$broadcast('wazuhSearch', {
+      this.$scope.$broadcast('portal9Search', {
         term,
         specificFilter
       });
 
     this.$scope.searchRootcheck = (term, specificFilter) =>
-      this.$scope.$broadcast('wazuhSearch', {
+      this.$scope.$broadcast('portal9Search', {
         term,
         specificFilter
       });
@@ -627,7 +627,7 @@ export class AgentsController {
    * @param {*} id
    */
   addMitrefilter(id) {
-    const filter = `{"meta":{"index": ${AppState.getCurrentPattern() || WAZUH_ALERTS_PATTERN}},"query":{"match":{"rule.mitre.id":{"query":"${id}","type":"phrase"}}}}`;
+    const filter = `{"meta":{"index": ${AppState.getCurrentPattern() || PORTAL9_ALERTS_PATTERN}},"query":{"match":{"rule.mitre.id":{"query":"${id}","type":"phrase"}}}}`;
     this.$rootScope.$emit('addNewKibanaFilter', {
       filter: JSON.parse(filter)
     });
@@ -838,7 +838,7 @@ export class AgentsController {
     } catch (error) {
       if (!this.$scope.agent) {
         if ((error || {}).status === -1) {
-          this.$scope.emptyAgent = 'Wazuh API timeout.';
+          this.$scope.emptyAgent = 'Portal9 API timeout.';
         }
       }
       if (

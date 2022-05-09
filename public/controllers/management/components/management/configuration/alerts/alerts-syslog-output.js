@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for show alerts - syslog output tab.
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - React component for show alerts - syslog output tab.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -30,12 +30,12 @@ const helpLinks = [
   {
     text: 'How to configure the syslog output',
     href:
-      'https://documentation.wazuh.com/current/user-manual/manager/manual-syslog-output.html'
+      'https://documentation.portal9.com/current/user-manual/manager/manual-syslog-output.html'
   },
   {
     text: 'Syslog output reference',
     href:
-      'https://documentation.wazuh.com/current/user-manual/reference/ossec-conf/syslog-output.html'
+      'https://documentation.portal9.com/current/user-manual/reference/ossec-conf/syslog-output.html'
   }
 ];
 
@@ -54,7 +54,7 @@ class WzConfigurationAlertsReports extends Component {
     super(props);
   }
   render() {
-    const { currentConfig, wazuhNotReadyYet } = this.props;
+    const { currentConfig, portal9NotReadyYet } = this.props;
     return (
       <Fragment>
         {currentConfig['csyslog-csyslog'] &&
@@ -70,9 +70,9 @@ class WzConfigurationAlertsReports extends Component {
             !currentConfig['csyslog-csyslog'].syslog_output.length) && (
             <WzNoConfig error="not-present" help={helpLinks} />
           )}
-        {wazuhNotReadyYet &&
+        {portal9NotReadyYet &&
           (!currentConfig || !currentConfig['csyslog-csyslog']) && (
-            <WzNoConfig error="Wazuh not ready yet" help={helpLinks} />
+            <WzNoConfig error="Portal9 not ready yet" help={helpLinks} />
           )}
         {currentConfig['csyslog-csyslog'] &&
           !isString(currentConfig['csyslog-csyslog']) &&
@@ -97,12 +97,12 @@ class WzConfigurationAlertsReports extends Component {
 }
 
 const mapStateToProps = state => ({
-  wazuhNotReadyYet: state.appStateReducers.wazuhNotReadyYet
+  portal9NotReadyYet: state.appStateReducers.portal9NotReadyYet
 });
 
 WzConfigurationAlertsReports.propTypes = {
   // currentConfig: PropTypes.object.isRequired,
-  wazuhNotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
+  portal9NotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
 };
 
 export default connect(mapStateToProps)(WzConfigurationAlertsReports);

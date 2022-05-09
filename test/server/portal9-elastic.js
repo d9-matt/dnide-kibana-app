@@ -1,6 +1,6 @@
 const chai = require('chai');
 const needle = require('needle');
-const { WAZUH_ALERTS_PATTERN } = require('../../common/constants');
+const { PORTAL9_ALERTS_PATTERN } = require('../../common/constants');
 
 const kibanaServer = process.env.KIBANA_IP || 'localhost';
 
@@ -10,12 +10,12 @@ const headers = {
   headers: { 'kbn-xsrf': 'kibana', 'Content-Type': 'application/json' }
 };
 
-describe('wazuh-elastic', () => {
+describe('portal9-elastic', () => {
   describe('Checking index patterns', () => {
     it('GET /elastic/known-fields/{pattern}', async () => {
       const res = await needle(
         'get',
-        `${kibanaServer}:5601/elastic/known-fields/${WAZUH_ALERTS_PATTERN}`,
+        `${kibanaServer}:5601/elastic/known-fields/${PORTAL9_ALERTS_PATTERN}`,
         {},
         headers
       );
@@ -23,7 +23,7 @@ describe('wazuh-elastic', () => {
       res.body.output.should.be.a('object');
       //res.body.output._index.should.be.eql('.kibana');
       res.body.output._type.should.be.eql('doc');
-      res.body.output._id.should.be.eql(`index-pattern:${WAZUH_ALERTS_PATTERN}`);
+      res.body.output._id.should.be.eql(`index-pattern:${PORTAL9_ALERTS_PATTERN}`);
     });
   });
 
@@ -31,7 +31,7 @@ describe('wazuh-elastic', () => {
     it('GET /elastic/visualizations/{tab}/{pattern}', async () => {
       const res = await needle(
         'get',
-        `${kibanaServer}:5601/elastic/visualizations/overview-general/${WAZUH_ALERTS_PATTERN}`,
+        `${kibanaServer}:5601/elastic/visualizations/overview-general/${PORTAL9_ALERTS_PATTERN}`,
         {},
         headers
       );
@@ -46,7 +46,7 @@ describe('wazuh-elastic', () => {
     it('POST /elastic/visualizations/{tab}/{pattern}', async () => {
       const res = await needle(
         'post',
-        `${kibanaServer}:5601/elastic/visualizations/cluster-monitoring/${WAZUH_ALERTS_PATTERN}`,
+        `${kibanaServer}:5601/elastic/visualizations/cluster-monitoring/${PORTAL9_ALERTS_PATTERN}`,
         { nodes: { items: [], name: 'node01' } },
         headers
       );
@@ -63,19 +63,19 @@ describe('wazuh-elastic', () => {
     it('GET /elastic/template/{pattern}', async () => {
       const res = await needle(
         'get',
-        `${kibanaServer}:5601/elastic/template/${WAZUH_ALERTS_PATTERN}`,
+        `${kibanaServer}:5601/elastic/template/${PORTAL9_ALERTS_PATTERN}`,
         {},
         headers
       );
       res.body.statusCode.should.be.eql(200);
       res.body.status.should.be.eql(true);
-      res.body.data.should.be.eql(`Template found for ${WAZUH_ALERTS_PATTERN}`);
+      res.body.data.should.be.eql(`Template found for ${PORTAL9_ALERTS_PATTERN}`);
     });
 
     it('GET /elastic/index-patterns/{pattern}', async () => {
       const res = await needle(
         'get',
-        `${kibanaServer}:5601/elastic/index-patterns/${WAZUH_ALERTS_PATTERN}`,
+        `${kibanaServer}:5601/elastic/index-patterns/${PORTAL9_ALERTS_PATTERN}`,
         {},
         headers
       );

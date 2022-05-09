@@ -1,5 +1,5 @@
 // To launch this file
-// yarn test:jest --testEnvironment node --verbose server/routes/wazuh-api
+// yarn test:jest --testEnvironment node --verbose server/routes/portal9-api
 import axios from 'axios';
 
 function buildAxiosOptions(method: string, path: string, data: any = {}, headers: any = {}){
@@ -11,7 +11,7 @@ function buildAxiosOptions(method: string, path: string, data: any = {}, headers
   };
 };
 
-describe('Wazuh API - /api/login', () => {
+describe('Portal9 API - /api/login', () => {
   test('[200] Returns a token in the response and set cookies', () => {
     const options = buildAxiosOptions('post', '/api/login', {
       idHost: 'default'
@@ -29,7 +29,7 @@ describe('Wazuh API - /api/login', () => {
   });
 });
 
-describe('Wazuh API - /api/check-api', () => {
+describe('Portal9 API - /api/check-api', () => {
   test('[200] Check default api returns manager, node, cluster, status and allow_run_as params', () => {
     const options = buildAxiosOptions('post', '/api/check-api', {
       id: 'default'
@@ -53,12 +53,12 @@ describe('Wazuh API - /api/check-api', () => {
       expect(typeof error.response.data).toBe('object');
       expect(error.response.data.statusCode).toBe(500);
       expect(error.response.data.error).toBe('Internal Server Error');
-      expect(error.response.data.message.includes('Selected API is no longer available in wazuh.yml')).toBe(true);
+      expect(error.response.data.message.includes('Selected API is no longer available in portal9.yml')).toBe(true);
     });
   });
 });
 
-describe('Wazuh API - /api/check-stored-api', () => {
+describe('Portal9 API - /api/check-stored-api', () => {
   test('[200] Check default api returns manager, node, cluster, status and allow_run_as params', () => {
     const options = buildAxiosOptions('post', '/api/check-stored-api', {
       id: 'default'
@@ -89,12 +89,12 @@ describe('Wazuh API - /api/check-stored-api', () => {
       expect(typeof error.response.data).toBe('object');
       expect(error.response.data.statusCode).toBe(500);
       expect(error.response.data.error).toBe('Internal Server Error');
-      expect(error.response.data.message.includes('Selected API is no longer available in wazuh.yml')).toBe(true);
+      expect(error.response.data.message.includes('Selected API is no longer available in portal9.yml')).toBe(true);
     })
   });
 });
 
-describe('Wazuh API - /api/request', () => {
+describe('Portal9 API - /api/request', () => {
   let userToken = null;
   beforeAll(() => {
     const optionsAuthenticate = buildAxiosOptions('post', '/api/login', {
@@ -145,7 +145,7 @@ describe('Wazuh API - /api/request', () => {
   
 });
 
-describe('Wazuh API - /api/routes', () => {
+describe('Portal9 API - /api/routes', () => {
 
   test('[200] Returns the routes', () => {
     const options = buildAxiosOptions('get', '/api/routes', {
@@ -164,7 +164,7 @@ describe('Wazuh API - /api/routes', () => {
   
 });
 
-describe('Wazuh API - /api/extensions', () => {
+describe('Portal9 API - /api/extensions', () => {
 
   test('[200] Returns the extensions of a host by id', () => {
     const options = buildAxiosOptions('get', '/api/extensions/default');
@@ -190,7 +190,7 @@ describe('Wazuh API - /api/extensions', () => {
 });
 
 
-describe('Wazuh API - /api/setup', () => {
+describe('Portal9 API - /api/setup', () => {
 
   test('[200] Returns the app setup', () => {
     const options = buildAxiosOptions('get', '/api/setup');
@@ -205,7 +205,7 @@ describe('Wazuh API - /api/setup', () => {
   
 });
 
-describe('Wazuh API - /api/syscollector', () => {
+describe('Portal9 API - /api/syscollector', () => {
 
   test('[200] Returns the syscollector info for an agent. Sure the hardware and os keys are returned', () => {
     const options = buildAxiosOptions('get', '/api/syscollector/001',{}, {

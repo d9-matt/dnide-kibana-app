@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Component what renders Management/Logs
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Component what renders Management/Logs
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -202,7 +202,7 @@ export default compose(
   }
 
   /**
-   * Returns an object with the path to request Wazuh logs, the list of nodes and the current selected node.
+   * Returns an object with the path to request Portal9 logs, the list of nodes and the current selected node.
    */
   async getLogsPath() {
     try {
@@ -366,7 +366,7 @@ export default compose(
       await exportCsv(
         this.state.selectedNode ? `/cluster/${this.state.selectedNode}/logs` : '/manager/logs',
         Object.keys(filters).map(filter => ({name: filter, value: filters[filter]})),
-        `wazuh-${this.state.selectedNode ? `${this.state.selectedNode}-` : ''}ossec-log`
+        `portal9-${this.state.selectedNode ? `${this.state.selectedNode}-` : ''}ossec-log`
         );
         return;
     } catch (error) {
@@ -400,7 +400,7 @@ export default compose(
         <EuiFlexGroup>
           <EuiFlexItem>
             <EuiTextColor color="subdued">
-              <p>List and filter Wazuh logs.</p>
+              <p>List and filter Portal9 logs.</p>
             </EuiTextColor>
           </EuiFlexItem>
         </EuiFlexGroup>

@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for build q queries.
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - React component for build q queries.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -39,8 +39,8 @@ export class WzBlankScreen extends Component {
                     https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html
                   </a>
                   <br />
-                  <a href="https://documentation.wazuh.com/current/installation-guide/">
-                    https://documentation.wazuh.com/current/installation-guide/
+                  <a href="https://documentation.portal9.com/current/installation-guide/">
+                    https://documentation.portal9.com/current/installation-guide/
                   </a>
                 </p>
                 <EuiHorizontalRule margin="s" />

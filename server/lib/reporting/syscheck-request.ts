@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Specific methods to fetch Wazuh syscheck data from Elasticsearch
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Specific methods to fetch Portal9 syscheck data from Elasticsearch
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -10,7 +10,7 @@
  * Find more information about this on the LICENSE file.
  */
 import { Base } from './base-query';
-import { WAZUH_ALERTS_PATTERN } from '../../../common/constants';
+import { PORTAL9_ALERTS_PATTERN } from '../../../common/constants';
 
 
   /**
@@ -18,7 +18,7 @@ import { WAZUH_ALERTS_PATTERN } from '../../../common/constants';
    * @param {*} context Endpoint context
    * @param {Number} gte Timestamp (ms) from
    * @param {Number} lte Timestamp (ms) to
-   * @param {String} filters E.g: cluster.name: wazuh AND rule.groups: vulnerability
+   * @param {String} filters E.g: cluster.name: portal9 AND rule.groups: vulnerability
    * @returns {Array<String>}
    */
 export const top3agents = async (
@@ -26,7 +26,7 @@ export const top3agents = async (
   gte, 
   lte, 
   filters,
-  pattern = WAZUH_ALERTS_PATTERN
+  pattern = PORTAL9_ALERTS_PATTERN
 ) => {
   try {
     const base = {};
@@ -70,7 +70,7 @@ export const top3agents = async (
    * Returns top 3 rules
    * @param {Number} gte Timestamp (ms) from
    * @param {Number} lte Timestamp (ms) to
-   * @param {String} filters E.g: cluster.name: wazuh AND rule.groups: vulnerability
+   * @param {String} filters E.g: cluster.name: portal9 AND rule.groups: vulnerability
    * @returns {Array<String>}
    */
 export const top3Rules = async (
@@ -78,7 +78,7 @@ export const top3Rules = async (
   gte,
   lte,
   filters,
-  pattern = WAZUH_ALERTS_PATTERN
+  pattern = PORTAL9_ALERTS_PATTERN
 ) => {
   try {
     const base = {};
@@ -137,7 +137,7 @@ export const lastTenDeletedFiles = async (
   gte,
   lte,
   filters,
-  pattern = WAZUH_ALERTS_PATTERN
+  pattern = PORTAL9_ALERTS_PATTERN
 ) => {
   try {
     const base = {};
@@ -190,7 +190,7 @@ export const lastTenModifiedFiles = async (
   gte,
   lte,
   filters,
-  pattern = WAZUH_ALERTS_PATTERN
+  pattern = PORTAL9_ALERTS_PATTERN
 ) => {
   try {
     const base = {};

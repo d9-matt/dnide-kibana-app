@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Cluster monitoring visualizations
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Cluster monitoring visualizations
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -11,12 +11,12 @@
  */
 export default [
   {
-    _id: 'Wazuh-App-Cluster-monitoring-Overview',
+    _id: 'Portal9-App-Cluster-monitoring-Overview',
     _type: 'visualization',
     _source: {
-      title: 'Wazuh App Cluster Overview',
+      title: 'Portal9 App Cluster Overview',
       visState: JSON.stringify({
-        title: 'Wazuh App Cluster Overview',
+        title: 'Portal9 App Cluster Overview',
         type: 'timelion',
         params: { expression: '.es(*)', interval: 'auto' },
         aggs: [],
@@ -26,7 +26,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [],
           query: { query: '', language: 'lucene' },
         }),
@@ -34,12 +34,12 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Cluster-monitoring-Overview-Manager',
+    _id: 'Portal9-App-Cluster-monitoring-Overview-Manager',
     _type: 'visualization',
     _source: {
-      title: 'Wazuh App Cluster Overview Manager',
+      title: 'Portal9 App Cluster Overview Manager',
       visState: JSON.stringify({
-        title: 'Wazuh App Cluster Overview Manager',
+        title: 'Portal9 App Cluster Overview Manager',
         type: 'timelion',
         params: { expression: '.es(q=agent.id:000)', interval: 'auto' },
         aggs: [],
@@ -49,7 +49,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [],
           query: { query: '', language: 'lucene' },
         }),
@@ -57,11 +57,11 @@ export default [
     },
   },
   {
-    _id: 'Wazuh-App-Cluster-monitoring-Overview-Node',
+    _id: 'Portal9-App-Cluster-monitoring-Overview-Node',
     _source: {
-      title: 'Wazuh App Cluster Overview Node',
+      title: 'Portal9 App Cluster Overview Node',
       visState: JSON.stringify({
-        title: 'Wazuh App Cluster Overview Node',
+        title: 'Portal9 App Cluster Overview Node',
         type: 'histogram',
         params: {
           type: 'histogram',
@@ -133,7 +133,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [],
           query: { query: '', language: 'lucene' },
         }),
@@ -142,12 +142,12 @@ export default [
     _type: 'visualization',
   },
   {
-    _id: 'Wazuh-App-Cluster-monitoring-Overview-Node-Pie',
+    _id: 'Portal9-App-Cluster-monitoring-Overview-Node-Pie',
     _type: 'visualization',
     _source: {
-      title: 'Wazuh App Cluster Overview Node Pie',
+      title: 'Portal9 App Cluster Overview Node Pie',
       visState: JSON.stringify({
-        title: 'Wazuh App Cluster Overview Node Pie',
+        title: 'Portal9 App Cluster Overview Node Pie',
         type: 'pie',
         params: {
           type: 'pie',
@@ -182,7 +182,7 @@ export default [
       version: 1,
       kibanaSavedObjectMeta: {
         searchSourceJSON: JSON.stringify({
-          index: 'wazuh-alerts',
+          index: 'portal9-alerts',
           filter: [],
           query: { query: '', language: 'lucene' },
         }),

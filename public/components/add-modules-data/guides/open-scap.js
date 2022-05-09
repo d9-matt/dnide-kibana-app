@@ -1,6 +1,6 @@
 /*
-* Wazuh app - OpenSCAP interactive extension guide
-* Copyright (C) 2015-2021 Wazuh, Inc.
+* Portal9 app - OpenSCAP interactive extension guide
+* Copyright (C) 2015-2021 Portal9, Inc.
 *
 * This program is free software; you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -15,7 +15,7 @@ export default {
   wodle_name: 'open-scap',
   description: 'Configuration options of the OpenSCAP wodle.',
   category: 'Auditing and policy monitoring',
-  documentation_link: 'https://documentation.wazuh.com/current/user-manual/reference/ossec-conf/wodle-openscap.html',
+  documentation_link: 'https://documentation.portal9.com/current/user-manual/reference/ossec-conf/wodle-openscap.html',
   icon: 'securityApp',
   avaliable_for_manager: true,
   avaliable_for_agent: true,

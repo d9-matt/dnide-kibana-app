@@ -1,8 +1,8 @@
 /*
- * Wazuh app - React component building the welcome screen of an agent.
+ * Portal9 app - React component building the welcome screen of an agent.
  * version, OS, registration date, last keep alive.
  *
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -25,22 +25,22 @@ function createFilters(agentId, indexPattern) {
     "$state": { "store": "appState" }
   }
 }
-  const wazuhFilter = getWazuhFilter();
+  const portal9Filter = getPortal9Filter();
   const filters = [
-    wazuhFilter,
+    portal9Filter,
     { name: 'agent.id', value: agentId },
     { name: 'rule.groups', value: 'syscheck' },
   ]
   return filters.map(filter);
 }
 
-export function getWazuhFilter() {
+export function getPortal9Filter() {
   const clusterInfo = AppState.getClusterInfo();
-  const wazuhFilter = {
+  const portal9Filter = {
     name: clusterInfo.status === 'enabled' ? 'cluster.name' : 'manager.name',
     value: clusterInfo.status === 'enabled' ? clusterInfo.cluster : clusterInfo.manager
   }
-  return wazuhFilter;
+  return portal9Filter;
 }
 
 export async function getFimAlerts(agentId, time, sortObj) {

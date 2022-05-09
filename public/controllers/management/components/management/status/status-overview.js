@@ -1,7 +1,7 @@
 /*
- * Wazuh app - React component for building the status view
+ * Portal9 app - React component for building the status view
  *
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -37,7 +37,7 @@ import {
 } from '../../../../../redux/actions/statusActions';
 import StatusHandler from './utils/status-handler';
 
-// Wazuh components
+// Portal9 components
 import WzStatusActionButtons from './actions-buttons-main';
 import WzStatusDaemons from './status-daemons';
 import WzStatusStats from './status-stats';
@@ -103,7 +103,7 @@ export class WzStatusOverview extends Component {
       );
       const [stats, clusterStatus, managerInfo, agentsCount] = parsedData;
 
-      // Once Wazuh core fixes agent 000 issues, this should be adjusted
+      // Once Portal9 core fixes agent 000 issues, this should be adjusted
       const active = stats.active;
       const total = stats.total;
 

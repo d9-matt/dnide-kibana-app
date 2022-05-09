@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Integrity monitoring components
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Integrity monitoring components
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -29,7 +29,7 @@ import { updateGlobalBreadcrumb } from '../../../redux/actions/globalBreadcrumbA
 import store from '../../../redux/store';
 import { ReportingService } from '../../../react-services/reporting';
 import { AppNavigate } from '../../../react-services/app-navigate';
-import { WAZUH_MODULES } from '../../../../common/wazuh-modules';
+import { PORTAL9_MODULES } from '../../../../common/portal9-modules';
 import { Events, Dashboard, Loader, Settings } from '../../common/modules';
 import OverviewActions from '../../../controllers/overview/components/overview-actions/overview-actions';
 import { MainFim } from '../../agents/fim';
@@ -67,7 +67,7 @@ export class MainModuleOverview extends Component {
 
   setGlobalBreadcrumb() {
     const currentAgent = store.getState().appStateReducers.currentAgentData;
-    if (WAZUH_MODULES[this.props.section]) {
+    if (PORTAL9_MODULES[this.props.section]) {
       let breadcrumb:any[] = [
         {
           text: '',
@@ -95,10 +95,10 @@ export class MainModuleOverview extends Component {
           <EuiFlexGroup gutterSize="none" alignItems="center" responsive={false}>
             <EuiToolTip position="top">
               <>
-                {WAZUH_MODULES[this.props.section].title}
+                {PORTAL9_MODULES[this.props.section].title}
               </>
             </EuiToolTip>
-            <EuiToolTip content={WAZUH_MODULES[this.props.section].description}>
+            <EuiToolTip content={PORTAL9_MODULES[this.props.section].description}>
               <EuiIcon style={{ margin: '0px 0px 1px 5px' }} type='iInCircle' />
             </EuiToolTip>
           </EuiFlexGroup>

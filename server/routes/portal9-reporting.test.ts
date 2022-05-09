@@ -1,5 +1,5 @@
 // To launch this file
-// yarn test:jest --testEnvironment node --verbose server/routes/wazuh-reporting
+// yarn test:jest --testEnvironment node --verbose server/routes/portal9-reporting
 import axios from 'axios';
 
 function buildAxiosOptions(method: string, path: string, data: any = {}, headers: any = {}){
@@ -11,7 +11,7 @@ function buildAxiosOptions(method: string, path: string, data: any = {}, headers
   };
 };
 
-describe('Wazuh API - /reports', () => {
+describe('Portal9 API - /reports', () => {
   test('[200] Returns the available reports for user', () => {
     const options = buildAxiosOptions('get', '/reports', {}, {
       cookie: 'wz-user=elastic'
@@ -24,9 +24,9 @@ describe('Wazuh API - /reports', () => {
 });
 
 //TODO: do the test for these endpoints
-// describe('Wazuh API - /reports/{name}', () => {
+// describe('Portal9 API - /reports/{name}', () => {
 //   test('[200] Returns the available reports for user and name', () => {
-//     const options = buildAxiosOptions('get', '/reports/wazuh-report.pdf', {}, {
+//     const options = buildAxiosOptions('get', '/reports/portal9-report.pdf', {}, {
 //       cookie: 'wz-user=elastic'
 //     });
 //     return axios(options).then(response => {
@@ -36,7 +36,7 @@ describe('Wazuh API - /reports', () => {
 //   });
 
 //   test('[200] Returns the available reports for user and name', () => {
-//     const options = buildAxiosOptions('delete', '/reports/wazuh-report.pdf', {}, {
+//     const options = buildAxiosOptions('delete', '/reports/portal9-report.pdf', {}, {
 //       cookie: 'wz-user=elastic'
 //     });
 //     return axios(options).then(response => {
@@ -44,7 +44,7 @@ describe('Wazuh API - /reports', () => {
 //   });
 // });
 
-// describe('Wazuh API - /reports/modules/{moduleID}', () => {
+// describe('Portal9 API - /reports/modules/{moduleID}', () => {
 //   test('[200] Generates a modules reports the available reports for user and name', () => {
 //     const options = buildAxiosOptions('post', '/reports/modules/{moduleID}', {}, {
 //       cookie: 'wz-user=elastic'
@@ -56,7 +56,7 @@ describe('Wazuh API - /reports', () => {
 //   });
 // });
 
-// describe('Wazuh API - /reports/groups/{groupID}', () => {
+// describe('Portal9 API - /reports/groups/{groupID}', () => {
 //   test('[200] Generates a modules reports the available reports for user and name', () => {
 //     const options = buildAxiosOptions('post', '/reports/groups/{groupID}', {}, {
 //       cookie: 'wz-user=elastic'
@@ -68,7 +68,7 @@ describe('Wazuh API - /reports', () => {
 //   });
 // });
 
-// describe('Wazuh API - /reports/agents/{agentID}', () => {
+// describe('Portal9 API - /reports/agents/{agentID}', () => {
 //   test('[200] Generates a modules reports the available reports for user and name', () => {
 //     const options = buildAxiosOptions('post', '/reports/agents/{agentID}', {}, {
 //       cookie: 'wz-user=elastic'
@@ -80,7 +80,7 @@ describe('Wazuh API - /reports', () => {
 //   });
 // });
 
-// describe('Wazuh API - /reports/agents/{agentID}/inventory', () => {
+// describe('Portal9 API - /reports/agents/{agentID}/inventory', () => {
 //   test('[200] Generates a modules reports the available reports for user and name', () => {
 //     const options = buildAxiosOptions('post', '/reports/agents/{agentID}/inventory', {}, {
 //       cookie: 'wz-user=elastic'

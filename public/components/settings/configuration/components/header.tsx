@@ -1,7 +1,7 @@
 /*
- * Wazuh app - React component building the configuration component.
+ * Portal9 app - React component building the configuration component.
  *
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -58,7 +58,7 @@ const Title = () => {
               iconSize="l"
               aria-label="Help"
               target="_blank"
-              href="https://documentation.wazuh.com/current/user-manual/kibana-app/reference/config-file.html"
+              href="https://documentation.portal9.com/current/user-manual/kibana-app/reference/config-file.html"
             ></EuiButtonIcon>
           </EuiToolTip>
         </h2>
@@ -72,7 +72,7 @@ const SubTitle = () => {
     <EuiFlexItem >
       <EuiText color="subdued" style={{ paddingBottom: '15px' }}>
         Configuration file located at
-        /usr/share/kibana/data/wazuh/config/wazuh.yml
+        /usr/share/kibana/data/portal9/config/portal9.yml
           </EuiText>
     </EuiFlexItem>
   )

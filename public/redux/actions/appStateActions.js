@@ -1,6 +1,6 @@
 /*
- * Wazuh app - App State Actions
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - App State Actions
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -33,13 +33,13 @@ export const updateShowMenu = showMenu => {
 };
 
 /**
- * Updates WazuhNotReadyYet in the appState store
- * @param wazuhNotReadyYet
+ * Updates Portal9NotReadyYet in the appState store
+ * @param portal9NotReadyYet
  */
-export const updateWazuhNotReadyYet = wazuhNotReadyYet => {
+export const updatePortal9NotReadyYet = portal9NotReadyYet => {
   return {
-    type: 'UPDATE_WAZUH_NOT_READY_YET',
-    wazuhNotReadyYet: wazuhNotReadyYet
+    type: 'UPDATE_PORTAL9_NOT_READY_YET',
+    portal9NotReadyYet: portal9NotReadyYet
   };
 };
 
@@ -49,7 +49,7 @@ export const updateWazuhNotReadyYet = wazuhNotReadyYet => {
  */
 export const updateCurrentTab = currentTab => {
   return {
-    type: 'UPDATE_WAZUH_CURRENT_TAB',
+    type: 'UPDATE_PORTAL9_CURRENT_TAB',
     currentTab: currentTab
   };
 };

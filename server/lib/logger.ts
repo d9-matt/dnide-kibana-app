@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Module for logging functions
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Module for logging functions
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -12,12 +12,12 @@
 import winston from 'winston';
 import fs from 'fs';
 import { getConfiguration } from './get-configuration';
-import { WAZUH_DATA_LOGS_DIRECTORY_PATH, WAZUH_DATA_LOGS_PLAIN_PATH, WAZUH_DATA_LOGS_RAW_PATH } from '../../common/constants';
+import { PORTAL9_DATA_LOGS_DIRECTORY_PATH, PORTAL9_DATA_LOGS_PLAIN_PATH, PORTAL9_DATA_LOGS_RAW_PATH } from '../../common/constants';
 import { createDataDirectoryIfNotExists } from './filesystem';
 
 let allowed = false;
-let wazuhlogger = undefined;
-let wazuhPlainLogger = undefined;
+let portal9logger = undefined;
+let portal9PlainLogger = undefined;
 
 /**
  * Here we create the loggers
@@ -31,44 +31,44 @@ const initLogger = () => {
       : 'info';
 
   // JSON logger
-  wazuhlogger = winston.createLogger({
+  portal9logger = winston.createLogger({
     level,
     format: winston.format.json(),
     transports: [
       new winston.transports.File({
-        filename: WAZUH_DATA_LOGS_RAW_PATH
+        filename: PORTAL9_DATA_LOGS_RAW_PATH
       })
     ]
   });
 
   // Prevents from exit on error related to the logger.
-  wazuhlogger.exitOnError = false;
+  portal9logger.exitOnError = false;
 
   // Plain text logger
-  wazuhPlainLogger = winston.createLogger({
+  portal9PlainLogger = winston.createLogger({
     level,
     format: winston.format.simple(),
     transports: [
       new winston.transports.File({
-        filename: WAZUH_DATA_LOGS_PLAIN_PATH
+        filename: PORTAL9_DATA_LOGS_PLAIN_PATH
       })
     ]
   });
 
   // Prevents from exit on error related to the logger.
-  wazuhPlainLogger.exitOnError = false;
+  portal9PlainLogger.exitOnError = false;
 };
 
 /**
- * Checks if wazuh/logs exists. If it doesn't exist, it will be created.
+ * Checks if portal9/logs exists. If it doesn't exist, it will be created.
  */
 const initDirectory = async () => {
   try {
     createDataDirectoryIfNotExists();
     createDataDirectoryIfNotExists('logs');
     if (
-      typeof wazuhlogger === 'undefined' ||
-      typeof wazuhPlainLogger === 'undefined'
+      typeof portal9logger === 'undefined' ||
+      typeof portal9PlainLogger === 'undefined'
     ) {
       initLogger();
     }
@@ -97,17 +97,17 @@ const getFilesizeInMegaBytes = filename => {
 };
 
 /**
- * Checks if the wazuhapp.log file size is greater than 100MB, if so it rotates the file.
+ * Checks if the portal9app.log file size is greater than 100MB, if so it rotates the file.
  */
 const checkFiles = () => {
   if (allowed) {
-    if (getFilesizeInMegaBytes(WAZUH_DATA_LOGS_RAW_PATH) >= 100) {
+    if (getFilesizeInMegaBytes(PORTAL9_DATA_LOGS_RAW_PATH) >= 100) {
       fs.renameSync(
-        WAZUH_DATA_LOGS_RAW_PATH,
-        `${WAZUH_DATA_LOGS_DIRECTORY_PATH}/wazuhapp.${new Date().getTime()}.log`
+        PORTAL9_DATA_LOGS_RAW_PATH,
+        `${PORTAL9_DATA_LOGS_DIRECTORY_PATH}/portal9app.${new Date().getTime()}.log`
       );
       fs.writeFileSync(
-        WAZUH_DATA_LOGS_RAW_PATH,
+        PORTAL9_DATA_LOGS_RAW_PATH,
         JSON.stringify({
           date: new Date(),
           level: 'info',
@@ -116,10 +116,10 @@ const checkFiles = () => {
         }) + '\n'
       );
     }
-    if (getFilesizeInMegaBytes(WAZUH_DATA_LOGS_PLAIN_PATH) >= 100) {
+    if (getFilesizeInMegaBytes(PORTAL9_DATA_LOGS_PLAIN_PATH) >= 100) {
       fs.renameSync(
-        WAZUH_DATA_LOGS_PLAIN_PATH,
-        `${WAZUH_DATA_LOGS_DIRECTORY_PATH}/wazuhapp-plain.${new Date().getTime()}.log`
+        PORTAL9_DATA_LOGS_PLAIN_PATH,
+        `${PORTAL9_DATA_LOGS_DIRECTORY_PATH}/portal9app-plain.${new Date().getTime()}.log`
       );
     }
   }
@@ -191,9 +191,9 @@ export function log(location, data, level) {
           options.message = parsedData;
           delete options.data;
         }
-        wazuhlogger.log(options);
+        portal9logger.log(options);
         
-        wazuhPlainLogger.log({
+        portal9PlainLogger.log({
           level: level || 'error',
           message: `${yyyymmdd()}: ${location ||
             'Unknown origin'}: ${parsedData.toString() || 'An error occurred'}`

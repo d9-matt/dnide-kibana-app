@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for Settings submenu.
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - React component for Settings submenu.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -15,8 +15,8 @@ import { WzRequest } from '../../react-services/wz-request';
 import { connect } from 'react-redux';
 import { AppNavigate } from '../../react-services/app-navigate';
 import { getAngularModule } from '../../kibana-services';
-import { WAZUH_MENU_SETTINGS_SECTIONS_ID } from '../../../common/constants';
-import { WAZUH_MENU_SETTINGS_SECTIONS_CY_TEST_ID } from '../../../common/wazu-menu/wz-menu-settings.cy';
+import { PORTAL9_MENU_SETTINGS_SECTIONS_ID } from '../../../common/constants';
+import { PORTAL9_MENU_SETTINGS_SECTIONS_CY_TEST_ID } from '../../../common/wazu-menu/wz-menu-settings.cy';
 
 class WzMenuSettings extends Component {
   constructor(props) {
@@ -38,42 +38,42 @@ class WzMenuSettings extends Component {
   availableSettings() {
     let auxSettings = {
       settings: {
-        id: WAZUH_MENU_SETTINGS_SECTIONS_ID.SETTINGS,
-        cyTestId: WAZUH_MENU_SETTINGS_SECTIONS_CY_TEST_ID.SETTINGS,
+        id: PORTAL9_MENU_SETTINGS_SECTIONS_ID.SETTINGS,
+        cyTestId: PORTAL9_MENU_SETTINGS_SECTIONS_CY_TEST_ID.SETTINGS,
         text: 'Settings',
       },
       api: {
-        id: WAZUH_MENU_SETTINGS_SECTIONS_ID.API_CONFIGURATION,
-        cyTestId: WAZUH_MENU_SETTINGS_SECTIONS_CY_TEST_ID.API_CONFIGURATION,
+        id: PORTAL9_MENU_SETTINGS_SECTIONS_ID.API_CONFIGURATION,
+        cyTestId: PORTAL9_MENU_SETTINGS_SECTIONS_CY_TEST_ID.API_CONFIGURATION,
         text: 'API configuration',
       },
       modules: {
-        id: WAZUH_MENU_SETTINGS_SECTIONS_ID.MODULES,
-        cyTestId: WAZUH_MENU_SETTINGS_SECTIONS_CY_TEST_ID.MODULES,
+        id: PORTAL9_MENU_SETTINGS_SECTIONS_ID.MODULES,
+        cyTestId: PORTAL9_MENU_SETTINGS_SECTIONS_CY_TEST_ID.MODULES,
         text: 'Modules',
       },
       sample_data: {
-        id: WAZUH_MENU_SETTINGS_SECTIONS_ID.SAMPLE_DATA,
-        cyTestId: WAZUH_MENU_SETTINGS_SECTIONS_CY_TEST_ID.SAMPLE_DATA,
+        id: PORTAL9_MENU_SETTINGS_SECTIONS_ID.SAMPLE_DATA,
+        cyTestId: PORTAL9_MENU_SETTINGS_SECTIONS_CY_TEST_ID.SAMPLE_DATA,
         text: 'Sample data',
       },
       configuration: {
-        id: WAZUH_MENU_SETTINGS_SECTIONS_ID.CONFIGURATION,
-        cyTestId: WAZUH_MENU_SETTINGS_SECTIONS_CY_TEST_ID.CONFIGURATION,
+        id: PORTAL9_MENU_SETTINGS_SECTIONS_ID.CONFIGURATION,
+        cyTestId: PORTAL9_MENU_SETTINGS_SECTIONS_CY_TEST_ID.CONFIGURATION,
         text: 'Configuration',
       },
       logs: {
-        id: WAZUH_MENU_SETTINGS_SECTIONS_ID.LOGS,
-        cyTestId: WAZUH_MENU_SETTINGS_SECTIONS_CY_TEST_ID.LOGS,
+        id: PORTAL9_MENU_SETTINGS_SECTIONS_ID.LOGS,
+        cyTestId: PORTAL9_MENU_SETTINGS_SECTIONS_CY_TEST_ID.LOGS,
         text: 'Logs' },
       miscellaneous: {
-        id: WAZUH_MENU_SETTINGS_SECTIONS_ID.MISCELLANEOUS,
-        cyTestId: WAZUH_MENU_SETTINGS_SECTIONS_CY_TEST_ID.MISCELLANEOUS,
+        id: PORTAL9_MENU_SETTINGS_SECTIONS_ID.MISCELLANEOUS,
+        cyTestId: PORTAL9_MENU_SETTINGS_SECTIONS_CY_TEST_ID.MISCELLANEOUS,
         text: 'Miscellaneous',
       },
       about: {
-        id: WAZUH_MENU_SETTINGS_SECTIONS_ID.ABOUT,
-        cyTestId: WAZUH_MENU_SETTINGS_SECTIONS_CY_TEST_ID.ABOUT,
+        id: PORTAL9_MENU_SETTINGS_SECTIONS_ID.ABOUT,
+        cyTestId: PORTAL9_MENU_SETTINGS_SECTIONS_CY_TEST_ID.ABOUT,
         text: 'About',
       },
     };

@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for show configuration of active response - active response tab.
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - React component for show configuration of active response - active response tab.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -41,12 +41,12 @@ const helpLinks = [
   {
     text: 'Active response documentation',
     href:
-      'https://documentation.wazuh.com/current/user-manual/capabilities/active-response/index.html'
+      'https://documentation.portal9.com/current/user-manual/capabilities/active-response/index.html'
   },
   {
     text: 'Active response reference',
     href:
-      'https://documentation.wazuh.com/current/user-manual/reference/ossec-conf/active-response.html'
+      'https://documentation.portal9.com/current/user-manual/reference/ossec-conf/active-response.html'
   }
 ];
 
@@ -55,7 +55,7 @@ class WzConfigurationActiveResponseActiveResponse extends Component {
     super(props);
   }
   render() {
-    const { currentConfig, wazuhNotReadyYet } = this.props;
+    const { currentConfig, portal9NotReadyYet } = this.props;
     const items =
       !isString(currentConfig['analysis-active_response']) &&
       currentConfig['analysis-active_response']['active-response'] &&
@@ -79,9 +79,9 @@ class WzConfigurationActiveResponseActiveResponse extends Component {
           currentConfig['analysis-active_response']['active-response'] &&
           !currentConfig['analysis-active_response']['active-response']
             .length && <WzNoConfig error="not-present" help={helpLinks} />}
-        {wazuhNotReadyYet &&
+        {portal9NotReadyYet &&
           (!currentConfig || !currentConfig['analysis-active_response']) && (
-            <WzNoConfig error="Wazuh not ready yet" help={helpLinks} />
+            <WzNoConfig error="Portal9 not ready yet" help={helpLinks} />
           )}
         {currentConfig['analysis-active_response'] &&
         !isString(currentConfig['analysis-active_response']) &&
@@ -106,11 +106,11 @@ class WzConfigurationActiveResponseActiveResponse extends Component {
 
 WzConfigurationActiveResponseActiveResponse.propTypes = {
   // currentConfig: PropTypes.object.isRequired,
-  wazuhNotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
+  portal9NotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
 };
 
 const mapStateToProps = state => ({
-  wazuhNotReadyYet: state.appStateReducers.wazuhNotReadyYet
+  portal9NotReadyYet: state.appStateReducers.portal9NotReadyYet
 });
 
 export default connect(mapStateToProps)(
@@ -126,5 +126,5 @@ export const WzConfigurationActiveResponseActiveResponseAgent = compose(
 
 WzConfigurationActiveResponseActiveResponseAgent.propTypes = {
   // currentConfig: PropTypes.object.isRequired,
-  wazuhNotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
+  portal9NotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
 };

@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for exporting the configuration of a group.
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - React component for exporting the configuration of a group.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,7 +21,7 @@ import {
 
 import PropTypes from 'prop-types';
 import { UnsupportedComponents } from '../../../utils/components-os-support';
-import { WAZUH_AGENTS_OS_TYPE } from '../../../../common/constants';
+import { PORTAL9_AGENTS_OS_TYPE } from '../../../../common/constants';
 
 export class ExportConfiguration extends Component {
   constructor(props) {
@@ -58,7 +58,7 @@ export class ExportConfiguration extends Component {
         (x.name &&
           !(
             UnsupportedComponents[this.props.agentPlatform] ||
-            UnsupportedComponents[WAZUH_AGENTS_OS_TYPE.OTHERS]
+            UnsupportedComponents[PORTAL9_AGENTS_OS_TYPE.OTHERS]
           ).includes(x.name))
       ) {
         this.options.push({ id: `${idx}`, label: x.desc || x });

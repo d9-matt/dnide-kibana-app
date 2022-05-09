@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Module to update the configuration file
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Module to update the configuration file
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -12,16 +12,16 @@
 import fs from 'fs';
 import { log } from './logger';
 import { getConfiguration } from './get-configuration';
-import { WAZUH_DATA_CONFIG_APP_PATH, WAZUH_CONFIGURATION_SETTINGS_NEED_RESTART, WAZUH_CONFIGURATION_SETTINGS_NEED_RELOAD, WAZUH_CONFIGURATION_SETTINGS_NEED_HEALTH_CHECK } from '../../common/constants';
+import { PORTAL9_DATA_CONFIG_APP_PATH, PORTAL9_CONFIGURATION_SETTINGS_NEED_RESTART, PORTAL9_CONFIGURATION_SETTINGS_NEED_RELOAD, PORTAL9_CONFIGURATION_SETTINGS_NEED_HEALTH_CHECK } from '../../common/constants';
 
 export class UpdateConfigurationFile {
   constructor() {
     this.busy = false;
-    this.file = WAZUH_DATA_CONFIG_APP_PATH;
+    this.file = PORTAL9_DATA_CONFIG_APP_PATH;
   }
 
   /**
-   * Add or replace specific setting from wazuh.yml
+   * Add or replace specific setting from portal9.yml
    * @param {String} key The setting name.
    * @param {String} value New value for the setting.
    * @param {Boolean} exists If true, it just replaces the value for that key.
@@ -53,7 +53,7 @@ export class UpdateConfigurationFile {
     ? isNaN(Number(value)) ? value : Number(value)
     : value;
   /**
-   * Updates wazuh.yml file. If it fails, it throws the error to the next function.
+   * Updates portal9.yml file. If it fails, it throws the error to the next function.
    * @param {Object} input
    */
   updateConfiguration(input) {
@@ -78,9 +78,9 @@ export class UpdateConfigurationFile {
         'debug'
       );
       return {
-        needRestart: WAZUH_CONFIGURATION_SETTINGS_NEED_RESTART.includes(key),
-        needReload: WAZUH_CONFIGURATION_SETTINGS_NEED_RELOAD.includes(key),
-        needHealtCheck: WAZUH_CONFIGURATION_SETTINGS_NEED_HEALTH_CHECK.includes(key)
+        needRestart: PORTAL9_CONFIGURATION_SETTINGS_NEED_RESTART.includes(key),
+        needReload: PORTAL9_CONFIGURATION_SETTINGS_NEED_RELOAD.includes(key),
+        needHealtCheck: PORTAL9_CONFIGURATION_SETTINGS_NEED_HEALTH_CHECK.includes(key)
       };
     } catch (error) {
       log('update-configuration:updateConfiguration', error.message || error);

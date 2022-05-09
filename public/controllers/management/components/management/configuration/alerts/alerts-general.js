@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for show configuration of alerts - General tab.
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - React component for show configuration of alerts - General tab.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -33,12 +33,12 @@ const helpLinks = [
   {
     text: 'Use cases about alerts generation',
     href:
-      'https://documentation.wazuh.com/current/getting-started/use-cases.html'
+      'https://documentation.portal9.com/current/getting-started/use-cases.html'
   },
   {
     text: 'Alerts reference',
     href:
-      'https://documentation.wazuh.com/current/user-manual/reference/ossec-conf/alerts.html'
+      'https://documentation.portal9.com/current/user-manual/reference/ossec-conf/alerts.html'
   }
 ];
 
@@ -47,7 +47,7 @@ class WzConfigurationAlertsGeneral extends Component {
     super(props);
   }
   render() {
-    const { currentConfig, wazuhNotReadyYet } = this.props;
+    const { currentConfig, portal9NotReadyYet } = this.props;
     return (
       <Fragment>
         {currentConfig['analysis-alerts'] &&
@@ -62,9 +62,9 @@ class WzConfigurationAlertsGeneral extends Component {
           !currentConfig['analysis-alerts'].alerts && (
             <WzNoConfig error="not-present" help={helpLinks} />
           )}
-        {wazuhNotReadyYet &&
+        {portal9NotReadyYet &&
           (!currentConfig || !currentConfig['analysis-alerts']) && (
-            <WzNoConfig error="Wazuh not ready yet" help={helpLinks} />
+            <WzNoConfig error="Portal9 not ready yet" help={helpLinks} />
           )}
         {currentConfig['analysis-alerts'] &&
           !isString(currentConfig['analysis-alerts']) &&
@@ -89,7 +89,7 @@ class WzConfigurationAlertsGeneral extends Component {
 
 WzConfigurationAlertsGeneral.propTypes = {
   // currentConfig: PropTypes.object.isRequired,
-  wazuhNotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
+  portal9NotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
 };
 
 export default WzConfigurationAlertsGeneral;

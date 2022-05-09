@@ -1,7 +1,7 @@
 /*
- * Wazuh app - React component building the configuration component.
+ * Portal9 app - React component building the configuration component.
  *
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,7 +24,7 @@ import {
   EuiButtonEmpty,
   EuiButton
 } from '@elastic/eui';
-import { WazuhConfig } from '../../../../react-services/wazuh-config';
+import { Portal9Config } from '../../../../react-services/portal9-config';
 
 
 interface IBottomBarProps {
@@ -108,7 +108,7 @@ const saveSetting = async (setting, updatedConfig, config: ISetting[]) => {
     const result = await ConfigurationHandler.editKey(setting, updatedConfig[setting]);
 
     // Update the app configuration frontend-cached setting in memory with the new value
-    const wzConfig = new WazuhConfig();
+    const wzConfig = new Portal9Config();
     wzConfig.setConfig({ ...wzConfig.getConfig(), ...{ [setting]: formatValueCachedConfiguration(updatedConfig[setting]) } });
 
     // Show restart and/or reload message in toast

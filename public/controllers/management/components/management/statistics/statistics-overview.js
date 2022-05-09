@@ -1,7 +1,7 @@
 /*
- * Wazuh app - React component for building the reporting view
+ * Portal9 app - React component for building the reporting view
  *
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -36,10 +36,10 @@ import { compose } from 'redux';
 import { withGuard, withGlobalBreadcrumb } from "../../../../../components/common/hocs";
 import { PromptStatisticsDisabled } from './prompt-statistics-disabled';
 import { PromptStatisticsNoIndices } from './prompt-statistics-no-indices';
-import { WazuhConfig } from "../../../../../react-services/wazuh-config";
+import { Portal9Config } from "../../../../../react-services/portal9-config";
 import { WzRequest } from '../../../../../react-services/wz-request';
 
-const wzConfig = new WazuhConfig();
+const wzConfig = new Portal9Config();
 
 export class WzStatisticsOverview extends Component {
   _isMounted = false;

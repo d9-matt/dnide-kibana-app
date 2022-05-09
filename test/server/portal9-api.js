@@ -12,7 +12,7 @@ let API_PORT = null;
 let API_URL = null;
 let API_USERNAME = null;
 
-describe('wazuh-api', () => {
+describe('portal9-api', () => {
   before(async () => {
     const res = await needle('get', `localhost:5601/elastic/apis`, {}, {});
 

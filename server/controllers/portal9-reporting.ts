@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Class for Wazuh reporting controller
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Class for Portal9 reporting controller
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -11,7 +11,7 @@
  */
 import path from 'path';
 import fs from 'fs';
-import { WAZUH_MODULES } from '../../common/wazuh-modules';
+import { PORTAL9_MODULES } from '../../common/portal9-modules';
 import * as TimSort from 'timsort';
 import { ErrorResponse } from '../lib/error-response';
 import * as VulnerabilityRequest from '../lib/reporting/vulnerability-request';
@@ -32,20 +32,20 @@ import { KibanaRequest, RequestHandlerContext, KibanaResponseFactory } from 'src
 import { ReportPrinter } from '../lib/reporting/printer';
 import { log } from '../lib/logger';
 import {
-  WAZUH_ALERTS_PATTERN,
-  WAZUH_DATA_DOWNLOADS_DIRECTORY_PATH,
-  WAZUH_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH,
+  PORTAL9_ALERTS_PATTERN,
+  PORTAL9_DATA_DOWNLOADS_DIRECTORY_PATH,
+  PORTAL9_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH,
   AUTHORIZED_AGENTS,
 } from '../../common/constants';
 import { createDirectoryIfNotExists, createDataDirectoryIfNotExists } from '../lib/filesystem';
 import moment from 'moment';
 
-export class WazuhReportingCtrl {
+export class Portal9ReportingCtrl {
   constructor() {}
 
   /**
    * This do format to filters
-   * @param {String} filters E.g: cluster.name: wazuh AND rule.groups: vulnerability
+   * @param {String} filters E.g: cluster.name: portal9 AND rule.groups: vulnerability
    * @param {String} searchBar search term
    */
   private sanitizeKibanaFilters(filters: any, searchBar?: string): [string, string] {
@@ -121,7 +121,7 @@ export class WazuhReportingCtrl {
       if (section && typeof section === 'string') {
         if (!['agentConfig', 'groupConfig'].includes(section)) {
           printer.addContent({
-            text: WAZUH_MODULES[tab].title + ' report',
+            text: PORTAL9_MODULES[tab].title + ' report',
             style: 'h1',
           });
         } else if (section === 'agentConfig') {
@@ -157,7 +157,7 @@ export class WazuhReportingCtrl {
       }
 
       if (isAgents && typeof isAgents === 'string') {
-        const agentResponse = await context.wazuh.api.client.asCurrentUser.request(
+        const agentResponse = await context.portal9.api.client.asCurrentUser.request(
           'GET',
           `/agents`,
           { params: { agents_list: isAgents } },
@@ -180,9 +180,9 @@ export class WazuhReportingCtrl {
           });
         }
       }
-      if (WAZUH_MODULES[tab] && WAZUH_MODULES[tab].description) {
+      if (PORTAL9_MODULES[tab] && PORTAL9_MODULES[tab].description) {
         printer.addContentWithNewLine({
-          text: WAZUH_MODULES[tab].description,
+          text: PORTAL9_MODULES[tab].description,
           style: 'standard',
         });
       }
@@ -207,7 +207,7 @@ export class WazuhReportingCtrl {
       let agentRows = [];
       if (multi) {
         try {
-          const agentsResponse = await context.wazuh.api.client.asCurrentUser.request(
+          const agentsResponse = await context.portal9.api.client.asCurrentUser.request(
             'GET',
             `/groups/${multi}/agents`,
             {},
@@ -236,7 +236,7 @@ export class WazuhReportingCtrl {
       } else {
         for (const agentID of agentIDs) {
           try {
-            const agentResponse = await context.wazuh.api.client.asCurrentUser.request(
+            const agentResponse = await context.portal9.api.client.asCurrentUser.request(
               'GET',
               `/agents`,
               { params: { q: `id=${agentID}` } },
@@ -287,7 +287,7 @@ export class WazuhReportingCtrl {
    * @param {String} apiId ID of API
    * @param {Number} from Timestamp (ms) from
    * @param {Number} to Timestamp (ms) to
-   * @param {String} filters E.g: cluster.name: wazuh AND rule.groups: vulnerability
+   * @param {String} filters E.g: cluster.name: portal9 AND rule.groups: vulnerability
    * @param {String} pattern
    * @param {Object} agent agent target
    * @returns {Object} Extended information
@@ -301,7 +301,7 @@ export class WazuhReportingCtrl {
     from,
     to,
     filters,
-    pattern = WAZUH_ALERTS_PATTERN,
+    pattern = PORTAL9_ALERTS_PATTERN,
     agent = null
   ) {
     try {
@@ -314,7 +314,7 @@ export class WazuhReportingCtrl {
         throw new Error('Reporting for specific agent needs an agent ID in order to work properly');
       }
 
-      const agents = await context.wazuh.api.client.asCurrentUser.request(
+      const agents = await context.portal9.api.client.asCurrentUser.request(
         'GET',
         '/agents',
         { params: { limit: 1 } },
@@ -782,7 +782,7 @@ export class WazuhReportingCtrl {
           'debug'
         );
 
-        const lastScanResponse = await context.wazuh.api.client.asCurrentUser.request(
+        const lastScanResponse = await context.portal9.api.client.asCurrentUser.request(
           'GET',
           `/syscheck/${agent}/last_scan`,
           {},
@@ -892,7 +892,7 @@ export class WazuhReportingCtrl {
           requestsSyscollectorLists.map(async (requestSyscollector) => {
             try {
               log('reporting:extendedInformation', requestSyscollector.loggerMessage, 'debug');
-              const responseSyscollector = await context.wazuh.api.client.asCurrentUser.request(
+              const responseSyscollector = await context.portal9.api.client.asCurrentUser.request(
                 'GET',
                 requestSyscollector.endpoint,
                 {},
@@ -1150,11 +1150,11 @@ export class WazuhReportingCtrl {
       const { from, to } = time || {};
       // Init
       const printer = new ReportPrinter();
-      const { username: userID } = await context.wazuh.security.getCurrentUser(request, context);
+      const { username: userID } = await context.portal9.security.getCurrentUser(request, context);
       createDataDirectoryIfNotExists();
-      createDirectoryIfNotExists(WAZUH_DATA_DOWNLOADS_DIRECTORY_PATH);
-      createDirectoryIfNotExists(WAZUH_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH);
-      createDirectoryIfNotExists(path.join(WAZUH_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH, userID));
+      createDirectoryIfNotExists(PORTAL9_DATA_DOWNLOADS_DIRECTORY_PATH);
+      createDirectoryIfNotExists(PORTAL9_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH);
+      createDirectoryIfNotExists(path.join(PORTAL9_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH, userID));
 
       await this.renderHeader(context, printer, section, moduleID, agents, apiId);
 
@@ -1192,7 +1192,7 @@ export class WazuhReportingCtrl {
         printer.addAgentsFilters(agentsFilter);
       }
 
-      await printer.print(path.join(WAZUH_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH, userID, name));
+      await printer.print(path.join(PORTAL9_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH, userID, name));
 
       return response.ok({
         body: {
@@ -1226,11 +1226,11 @@ export class WazuhReportingCtrl {
       // Init
       const printer = new ReportPrinter();
 
-      const { username: userID } = await context.wazuh.security.getCurrentUser(request, context);
+      const { username: userID } = await context.portal9.security.getCurrentUser(request, context);
       createDataDirectoryIfNotExists();
-      createDirectoryIfNotExists(WAZUH_DATA_DOWNLOADS_DIRECTORY_PATH);
-      createDirectoryIfNotExists(WAZUH_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH);
-      createDirectoryIfNotExists(path.join(WAZUH_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH, userID));
+      createDirectoryIfNotExists(PORTAL9_DATA_DOWNLOADS_DIRECTORY_PATH);
+      createDirectoryIfNotExists(PORTAL9_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH);
+      createDirectoryIfNotExists(path.join(PORTAL9_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH, userID));
 
       let tables = [];
       const equivalences = {
@@ -1253,7 +1253,7 @@ export class WazuhReportingCtrl {
       if (components['0']) {
         let configuration = {};
         try {
-          const configurationResponse = await context.wazuh.api.client.asCurrentUser.request(
+          const configurationResponse = await context.portal9.api.client.asCurrentUser.request(
             'GET',
             `/groups/${groupID}/configuration`,
             {},
@@ -1445,7 +1445,7 @@ export class WazuhReportingCtrl {
       if (components['1']) {
         let agentsInGroup = [];
         try {
-          const agentsInGroupResponse = await context.wazuh.api.client.asCurrentUser.request(
+          const agentsInGroupResponse = await context.portal9.api.client.asCurrentUser.request(
             'GET',
             `/groups/${groupID}/agents`,
             {},
@@ -1465,7 +1465,7 @@ export class WazuhReportingCtrl {
         );
       }
 
-      await printer.print(path.join(WAZUH_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH, userID, name));
+      await printer.print(path.join(PORTAL9_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH, userID, name));
 
       return response.ok({
         body: {
@@ -1500,16 +1500,16 @@ export class WazuhReportingCtrl {
 
       const printer = new ReportPrinter();
 
-      const { username: userID } = await context.wazuh.security.getCurrentUser(request, context);
+      const { username: userID } = await context.portal9.security.getCurrentUser(request, context);
       createDataDirectoryIfNotExists();
-      createDirectoryIfNotExists(WAZUH_DATA_DOWNLOADS_DIRECTORY_PATH);
-      createDirectoryIfNotExists(WAZUH_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH);
-      createDirectoryIfNotExists(path.join(WAZUH_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH, userID));
+      createDirectoryIfNotExists(PORTAL9_DATA_DOWNLOADS_DIRECTORY_PATH);
+      createDirectoryIfNotExists(PORTAL9_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH);
+      createDirectoryIfNotExists(path.join(PORTAL9_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH, userID));
 
       let wmodulesResponse = {};
       let tables = [];
       try {
-        wmodulesResponse = await context.wazuh.api.client.asCurrentUser.request(
+        wmodulesResponse = await context.portal9.api.client.asCurrentUser.request(
           'GET',
           `/agents/${agentID}/config/wmodules/wmodules`,
           {},
@@ -1546,7 +1546,7 @@ export class WazuhReportingCtrl {
               let agentConfigResponse = {};
               try {
                 if (!conf['name']) {
-                  agentConfigResponse = await context.wazuh.api.client.asCurrentUser.request(
+                  agentConfigResponse = await context.portal9.api.client.asCurrentUser.request(
                     'GET',
                     `/agents/${agentID}/config/${conf.component}/${conf.configuration}`,
                     {},
@@ -1716,7 +1716,7 @@ export class WazuhReportingCtrl {
         }
       }
 
-      await printer.print(path.join(WAZUH_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH, userID, name));
+      await printer.print(path.join(PORTAL9_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH, userID, name));
 
       return response.ok({
         body: {
@@ -1751,11 +1751,11 @@ export class WazuhReportingCtrl {
       // Init
       const printer = new ReportPrinter();
 
-      const { username: userID } = await context.wazuh.security.getCurrentUser(request, context);
+      const { username: userID } = await context.portal9.security.getCurrentUser(request, context);
       createDataDirectoryIfNotExists();
-      createDirectoryIfNotExists(WAZUH_DATA_DOWNLOADS_DIRECTORY_PATH);
-      createDirectoryIfNotExists(WAZUH_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH);
-      createDirectoryIfNotExists(path.join(WAZUH_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH, userID));
+      createDirectoryIfNotExists(PORTAL9_DATA_DOWNLOADS_DIRECTORY_PATH);
+      createDirectoryIfNotExists(PORTAL9_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH);
+      createDirectoryIfNotExists(path.join(PORTAL9_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH, userID));
 
       log('reporting:createReportsAgentsInventory', `Syscollector report`, 'debug');
       const sanitizedFilters = filters ? this.sanitizeKibanaFilters(filters, searchBar) : false;
@@ -1763,7 +1763,7 @@ export class WazuhReportingCtrl {
       // Get the agent OS
       let agentOs = '';
       try {
-        const agentResponse = await context.wazuh.api.client.asCurrentUser.request(
+        const agentResponse = await context.portal9.api.client.asCurrentUser.request(
           'GET',
           '/agents',
           { params: { q: `id=${agentID}` } },
@@ -1905,7 +1905,7 @@ export class WazuhReportingCtrl {
             'debug'
           );
 
-          const inventoryResponse = await context.wazuh.api.client.asCurrentUser.request(
+          const inventoryResponse = await context.portal9.api.client.asCurrentUser.request(
             'GET',
             agentRequestInventory.endpoint,
             {},
@@ -1951,7 +1951,7 @@ export class WazuhReportingCtrl {
         .forEach((table) => printer.addSimpleTable(table));
 
       // Print the document
-      await printer.print(path.join(WAZUH_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH, userID, name));
+      await printer.print(path.join(PORTAL9_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH, userID, name));
 
       return response.ok({
         body: {
@@ -1979,11 +1979,11 @@ export class WazuhReportingCtrl {
   ) {
     try {
       log('reporting:getReports', `Fetching created reports`, 'info');
-      const { username: userID } = await context.wazuh.security.getCurrentUser(request, context);
+      const { username: userID } = await context.portal9.security.getCurrentUser(request, context);
       createDataDirectoryIfNotExists();
-      createDirectoryIfNotExists(WAZUH_DATA_DOWNLOADS_DIRECTORY_PATH);
-      createDirectoryIfNotExists(WAZUH_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH);
-      const userReportsDirectory = path.join(WAZUH_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH, userID);
+      createDirectoryIfNotExists(PORTAL9_DATA_DOWNLOADS_DIRECTORY_PATH);
+      createDirectoryIfNotExists(PORTAL9_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH);
+      const userReportsDirectory = path.join(PORTAL9_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH, userID);
       createDirectoryIfNotExists(userReportsDirectory);
       log('reporting:getReports', `Directory: ${userReportsDirectory}`, 'debug');
 
@@ -2028,9 +2028,9 @@ export class WazuhReportingCtrl {
   ) {
     try {
       log('reporting:getReportByName', `Getting ${request.params.name} report`, 'debug');
-      const { username: userID } = await context.wazuh.security.getCurrentUser(request, context);
+      const { username: userID } = await context.portal9.security.getCurrentUser(request, context);
       const reportFileBuffer = fs.readFileSync(
-        path.join(WAZUH_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH, userID, request.params.name)
+        path.join(PORTAL9_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH, userID, request.params.name)
       );
       return response.ok({
         headers: { 'Content-Type': 'application/pdf' },
@@ -2056,9 +2056,9 @@ export class WazuhReportingCtrl {
   ) {
     try {
       log('reporting:deleteReportByName', `Deleting ${request.params.name} report`, 'debug');
-      const { username: userID } = await context.wazuh.security.getCurrentUser(request, context);
+      const { username: userID } = await context.portal9.security.getCurrentUser(request, context);
       fs.unlinkSync(
-        path.join(WAZUH_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH, userID, request.params.name)
+        path.join(PORTAL9_DATA_DOWNLOADS_REPORTS_DIRECTORY_PATH, userID, request.params.name)
       );
       log('reporting:deleteReportByName', `${request.params.name} report was deleted`, 'info');
       return response.ok({

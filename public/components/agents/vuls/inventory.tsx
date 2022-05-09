@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Agent vulnerabilities components
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Agent vulnerabilities components
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -80,13 +80,13 @@ export class Inventory extends Component {
 
   getStoreFilters(props) {
     const { section, selectView, agent } = props;
-    const filters = JSON.parse(window.localStorage.getItem(`wazuh-${section}-${selectView}-vulnerability-${agent['id']}`) || '{}');
+    const filters = JSON.parse(window.localStorage.getItem(`portal9-${section}-${selectView}-vulnerability-${agent['id']}`) || '{}');
     return filters;
   }
 
   setStoreFilters(filters) {
     const { section, selectView, agent } = this.props;
-    window.localStorage.setItem(`wazuh-${section}-${selectView}-vulnerability-${agent['id']}`, JSON.stringify(filters))
+    window.localStorage.setItem(`portal9-${section}-${selectView}-vulnerability-${agent['id']}`, JSON.stringify(filters))
   }
 
   onFiltersChange = (filters) => {

@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for show configuration of Azure logs.
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - React component for show configuration of Azure logs.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,13 +21,13 @@ import { wodleBuilder } from '../utils/builders';
 
 const helpLinks = [
   {
-    text: 'Using Wazuh to monitor Azure',
-    href: 'https://documentation.wazuh.com/current/azure/index.html'
+    text: 'Using Portal9 to monitor Azure',
+    href: 'https://documentation.portal9.com/current/azure/index.html'
   },
   {
     text: 'Azure reference',
     href:
-      'https://documentation.wazuh.com/current/user-manual/reference/ossec-conf/wodle-azure-logs.html'
+      'https://documentation.portal9.com/current/user-manual/reference/ossec-conf/wodle-azure-logs.html'
   }
 ];
 

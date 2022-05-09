@@ -1,9 +1,9 @@
 import { ISecurityFactory } from '../'
 import { KibanaRequest, RequestHandlerContext } from 'src/core/server';
-import { WAZUH_SECURITY_PLUGIN_OPEN_DISTRO_FOR_ELASTICSEARCH } from '../../../../common/constants';
+import { PORTAL9_SECURITY_PLUGIN_OPEN_DISTRO_FOR_ELASTICSEARCH } from '../../../../common/constants';
 
 export class OpendistroFactory implements ISecurityFactory {
-  platform: string = WAZUH_SECURITY_PLUGIN_OPEN_DISTRO_FOR_ELASTICSEARCH;
+  platform: string = PORTAL9_SECURITY_PLUGIN_OPEN_DISTRO_FOR_ELASTICSEARCH;
 
   constructor(private opendistroSecurityKibana: any) {
   }

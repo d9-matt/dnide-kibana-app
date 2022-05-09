@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Initial basic configuration file
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Initial basic configuration file
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -10,10 +10,10 @@
  * Find more information about this on the LICENSE file.
  */
 
-export const initialWazuhConfig: string = `---
+export const initialPortal9Config: string = `---
 #
-# Wazuh app - App configuration file
-# Copyright (C) 2015-2021 Wazuh, Inc.
+# Portal9 app - App configuration file
+# Copyright (C) 2015-2021 Portal9, Inc.
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -22,29 +22,29 @@ export const initialWazuhConfig: string = `---
 #
 # Find more information about this on the LICENSE file.
 #
-# ======================== Wazuh app configuration file ========================
+# ======================== Portal9 app configuration file ========================
 #
 # Please check the documentation for more information on configuration options:
-# https://documentation.wazuh.com/current/installation-guide/index.html
+# https://documentation.portal9.com/current/installation-guide/index.html
 #
 # Also, you can check our repository:
-# https://github.com/wazuh/wazuh-kibana-app
+# https://github.com/portal9/portal9-kibana-app
 #
 # ------------------------------- Disable roles -------------------------------
 #
-# Defines which Elasticsearch roles disable Wazuh
+# Defines which Elasticsearch roles disable Portal9
 # disabled_roles: 
-#      - wazuh_disabled
+#      - portal9_disabled
 #
 # ------------------------------- Index patterns -------------------------------
 #
 # Default index pattern to use.
-#pattern: wazuh-alerts-*
+#pattern: portal9-alerts-*
 #
 # ----------------------------------- Checks -----------------------------------
 #
 # Defines which checks must to be consider by the healthcheck
-# step once the Wazuh app starts. Values must to be true or false.
+# step once the Portal9 app starts. Values must to be true or false.
 #checks.pattern : true
 #checks.template: true
 #checks.api     : true
@@ -56,7 +56,7 @@ export const initialWazuhConfig: string = `---
 # --------------------------------- Extensions ---------------------------------
 #
 # Defines which extensions should be activated when you add a new API entry.
-# You can change them after Wazuh app starts.
+# You can change them after Portal9 app starts.
 # Values must to be true or false.
 #extensions.pci       : true
 #extensions.gdpr      : true
@@ -74,7 +74,7 @@ export const initialWazuhConfig: string = `---
 #
 # ---------------------------------- Timeout ----------------------------------
 #
-# Defines maximum timeout to be used on the Wazuh app requests.
+# Defines maximum timeout to be used on the Portal9 app requests.
 # It will be ignored if it is bellow 1500.
 # It means milliseconds before we consider a request as failed.
 # Default: 20000
@@ -83,14 +83,14 @@ export const initialWazuhConfig: string = `---
 # -------------------------------- API selector --------------------------------
 #
 # Defines if the user is allowed to change the selected
-# API directly from the Wazuh app top menu.
+# API directly from the Portal9 app top menu.
 # Default: true
 #api.selector: true
 #
 # --------------------------- Index pattern selector ---------------------------
 #
 # Defines if the user is allowed to change the selected
-# index pattern directly from the Wazuh app top menu.
+# index pattern directly from the Portal9 app top menu.
 # Default: true
 #ip.selector: true
 #
@@ -103,46 +103,46 @@ export const initialWazuhConfig: string = `---
 # Default: enabled
 #xpack.rbac.enabled: true
 #
-# ------------------------------ wazuh-monitoring ------------------------------
+# ------------------------------ portal9-monitoring ------------------------------
 #
-# Custom setting to enable/disable wazuh-monitoring indices.
+# Custom setting to enable/disable portal9-monitoring indices.
 # Values: true, false, worker
 # If worker is given as value, the app will show the Agents status
-# visualization but won't insert data on wazuh-monitoring indices.
+# visualization but won't insert data on portal9-monitoring indices.
 # Default: true
-#wazuh.monitoring.enabled: true
+#portal9.monitoring.enabled: true
 #
-# Custom setting to set the frequency for wazuh-monitoring indices cron task.
+# Custom setting to set the frequency for portal9-monitoring indices cron task.
 # Default: 900 (s)
-#wazuh.monitoring.frequency: 900
+#portal9.monitoring.frequency: 900
 #
-# Configure wazuh-monitoring-* indices shards and replicas.
-#wazuh.monitoring.shards: 1
-#wazuh.monitoring.replicas: 0
+# Configure portal9-monitoring-* indices shards and replicas.
+#portal9.monitoring.shards: 1
+#portal9.monitoring.replicas: 0
 #
-# Configure wazuh-monitoring-* indices custom creation interval.
+# Configure portal9-monitoring-* indices custom creation interval.
 # Values: h (hourly), d (daily), w (weekly), m (monthly)
 # Default: w
-#wazuh.monitoring.creation: w
+#portal9.monitoring.creation: w
 #
-# Default index pattern to use for Wazuh monitoring
-#wazuh.monitoring.pattern: wazuh-monitoring-*
+# Default index pattern to use for Portal9 monitoring
+#portal9.monitoring.pattern: portal9-monitoring-*
 #
-# --------------------------------- wazuh-cron ----------------------------------
+# --------------------------------- portal9-cron ----------------------------------
 #
 # Customize the index prefix of predefined jobs
 # This change is not retroactive, if you change it new indexes will be created
-# cron.prefix: wazuh
+# cron.prefix: portal9
 #
-# --------------------------------- wazuh-sample-alerts -------------------------
+# --------------------------------- portal9-sample-alerts -------------------------
 #
 # Customize the index name prefix of sample alerts
 # This change is not retroactive, if you change it new indexes will be created
 # It should match with a valid index template to avoid unknown fields on
 # dashboards
-#alerts.sample.prefix: wazuh-alerts-4.x-
+#alerts.sample.prefix: portal9-alerts-4.x-
 #
-# ------------------------------ wazuh-statistics -------------------------------
+# ------------------------------ portal9-statistics -------------------------------
 #
 # Custom setting to enable/disable statistics tasks.
 #cron.statistics.status: true
@@ -164,19 +164,19 @@ export const initialWazuhConfig: string = `---
 #cron.statistics.shards: 2
 #cron.statistics.replicas: 0
 #
-# ------------------------------ wazuh-logo-customization -------------------------------
+# ------------------------------ portal9-logo-customization -------------------------------
 #
-#Define the name of the app logo saved in the path /plugins/wazuh/assets/
+#Define the name of the app logo saved in the path /plugins/portal9/assets/
 #customization.logo.app: logotype.svg
 #
-#Define the name of the sideba logo saved in the path /plugins/wazuh/assets/
+#Define the name of the sideba logo saved in the path /plugins/portal9/assets/
 #customization.logo.sidebar: icon_blue.png
 #
-#Define the name of the health-check logo saved in the path /plugins/wazuh/assets/
+#Define the name of the health-check logo saved in the path /plugins/portal9/assets/
 #customization.logo.healthcheck: icon_blue.svg
 #
 #
-#Define the name of the reports logo (.png) saved in the path /plugins/wazuh/assets/
+#Define the name of the reports logo (.png) saved in the path /plugins/portal9/assets/
 #customization.logo.reports: logo.png
 #
 # ---------------------------- Hide manager alerts ------------------------------
@@ -184,17 +184,17 @@ export const initialWazuhConfig: string = `---
 #hideManagerAlerts: false
 #
 # ------------------------------- App logging level -----------------------------
-# Set the logging level for the Wazuh App log files.
+# Set the logging level for the Portal9 App log files.
 # Default value: info
 # Allowed values: info, debug
 #logs.level: info
 #
 # -------------------------------- Enrollment DNS -------------------------------
-# Set the variable WAZUH_REGISTRATION_SERVER in agents deployment.
+# Set the variable PORTAL9_REGISTRATION_SERVER in agents deployment.
 # Default value: ''
 #enrollment.dns: ''
 #
-# Wazuh registration password
+# Portal9 registration password
 # Default value: ''
 #enrollment.password: ''
 #-------------------------------- API entries -----------------------------------
@@ -221,14 +221,14 @@ export const initialWazuhConfig: string = `---
       # Run as
       # Define how the app user gets his/her app permissions.
       # Values:
-      #   - true: use his/her authentication context. Require Wazuh API user allows run_as.
-      #   - false or not defined: get same permissions of Wazuh API user.
+      #   - true: use his/her authentication context. Require Portal9 API user allows run_as.
+      #   - false or not defined: get same permissions of Portal9 API user.
       # run_as: <true|false>
 hosts:
   - default:
      url: https://localhost
      port: 55000
-     username: wazuh-wui
-     password: wazuh-wui
+     username: portal9-wui
+     password: portal9-wui
      run_as: false
 `

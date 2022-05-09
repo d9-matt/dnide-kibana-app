@@ -1,7 +1,7 @@
 /*
- * Wazuh app - Health Check Component
+ * Portal9 app - Health Check Component
  *
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -40,11 +40,11 @@ import {
   KIBANA_SETTING_NAME_MAX_BUCKETS,
   KIBANA_SETTING_NAME_METAFIELDS,
   KIBANA_SETTING_NAME_TIME_FILTER,
-  WAZUH_INDEX_TYPE_MONITORING,
-  WAZUH_INDEX_TYPE_STATISTICS,
-  WAZUH_KIBANA_SETTING_MAX_BUCKETS,
-  WAZUH_KIBANA_SETTING_METAFIELDS,
-  WAZUH_KIBANA_SETTING_TIME_FILTER,
+  PORTAL9_INDEX_TYPE_MONITORING,
+  PORTAL9_INDEX_TYPE_STATISTICS,
+  PORTAL9_KIBANA_SETTING_MAX_BUCKETS,
+  PORTAL9_KIBANA_SETTING_METAFIELDS,
+  PORTAL9_KIBANA_SETTING_TIME_FILTER,
 } from '../../../../common/constants';
 
 import { getDataPlugin } from '../../../kibana-services';
@@ -52,14 +52,14 @@ import { CheckLogger } from '../types/check_logger';
 
 const checks = {
   api: {    
-    title: 'Check Wazuh API connection',
+    title: 'Check Portal9 API connection',
     label: 'API connection',
     validator: checkApiService,
     awaitFor: [],
     canRetry: true,
   },
   setup: {
-    title: 'Check Wazuh API version',
+    title: 'Check Portal9 API version',
     label: 'API version',
     validator: checkSetupService,
     awaitFor: ["api"],
@@ -75,7 +75,7 @@ const checks = {
   patternMonitoring: {
     title: 'Check monitoring index pattern',
     label: 'Monitoring index pattern',
-    validator: (appConfig) => checkPatternSupportService(appConfig.data['wazuh.monitoring.pattern'], WAZUH_INDEX_TYPE_MONITORING),
+    validator: (appConfig) => checkPatternSupportService(appConfig.data['portal9.monitoring.pattern'], PORTAL9_INDEX_TYPE_MONITORING),
     awaitFor: [],
     shouldCheck: true,
     canRetry: true,
@@ -83,7 +83,7 @@ const checks = {
   patternStatistics: {
     title: 'Check statistics index pattern',
     label: 'Statistics index pattern',
-    validator: (appConfig) => checkPatternSupportService(`${appConfig.data['cron.prefix']}-${appConfig.data['cron.statistics.index.name']}-*`, WAZUH_INDEX_TYPE_STATISTICS),
+    validator: (appConfig) => checkPatternSupportService(`${appConfig.data['cron.prefix']}-${appConfig.data['cron.statistics.index.name']}-*`, PORTAL9_INDEX_TYPE_STATISTICS),
     awaitFor: [],
     shouldCheck: true,
     canRetry: true,
@@ -91,22 +91,22 @@ const checks = {
   maxBuckets: {
     title: `Check ${KIBANA_SETTING_NAME_MAX_BUCKETS} setting`,
     label: `${KIBANA_SETTING_NAME_MAX_BUCKETS} setting`,
-    validator: checkKibanaSettings(KIBANA_SETTING_NAME_MAX_BUCKETS, WAZUH_KIBANA_SETTING_MAX_BUCKETS),
+    validator: checkKibanaSettings(KIBANA_SETTING_NAME_MAX_BUCKETS, PORTAL9_KIBANA_SETTING_MAX_BUCKETS),
     awaitFor: [],
     canRetry: true,
   },
   metaFields: {
     title: `Check ${KIBANA_SETTING_NAME_METAFIELDS} setting`,
     label: `${KIBANA_SETTING_NAME_METAFIELDS} setting`,
-    validator: checkKibanaSettings(KIBANA_SETTING_NAME_METAFIELDS, WAZUH_KIBANA_SETTING_METAFIELDS),
+    validator: checkKibanaSettings(KIBANA_SETTING_NAME_METAFIELDS, PORTAL9_KIBANA_SETTING_METAFIELDS),
     awaitFor: [],
     canRetry: true,
   },
   timeFilter: {
     title: `Check ${KIBANA_SETTING_NAME_TIME_FILTER} setting`,
     label: `${KIBANA_SETTING_NAME_TIME_FILTER} setting`,
-    validator: checkKibanaSettings(KIBANA_SETTING_NAME_TIME_FILTER, JSON.stringify(WAZUH_KIBANA_SETTING_TIME_FILTER), (checkLogger: CheckLogger, options: {defaultAppValue: any}) => {
-      getDataPlugin().query.timefilter.timefilter.setTime(WAZUH_KIBANA_SETTING_TIME_FILTER)
+    validator: checkKibanaSettings(KIBANA_SETTING_NAME_TIME_FILTER, JSON.stringify(PORTAL9_KIBANA_SETTING_TIME_FILTER), (checkLogger: CheckLogger, options: {defaultAppValue: any}) => {
+      getDataPlugin().query.timefilter.timefilter.setTime(PORTAL9_KIBANA_SETTING_TIME_FILTER)
         && checkLogger.action(`Timefilter set to ${JSON.stringify(options.defaultAppValue)}`);
     }),
     awaitFor: [],

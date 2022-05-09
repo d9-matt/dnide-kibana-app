@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Specific methods to fetch Wazuh GDPR data from Elasticsearch
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Specific methods to fetch Portal9 GDPR data from Elasticsearch
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -10,14 +10,14 @@
  * Find more information about this on the LICENSE file.
  */
 import { Base } from './base-query';
-import { WAZUH_ALERTS_PATTERN } from '../../../common/constants';
+import { PORTAL9_ALERTS_PATTERN } from '../../../common/constants';
 
 /**
  * Returns top 5 GDPR requirements
  * @param {*} context Endpoint context
  * @param {Number} gte Timestamp (ms) from
  * @param {Number} lte Timestamp (ms) to
- * @param {String} filters E.g: cluster.name: wazuh AND rule.groups: vulnerability
+ * @param {String} filters E.g: cluster.name: portal9 AND rule.groups: vulnerability
  * @returns {Array<String>}
  */
 export const topGDPRRequirements = async (
@@ -25,7 +25,7 @@ export const topGDPRRequirements = async (
   gte, 
   lte, 
   filters, 
-  pattern = WAZUH_ALERTS_PATTERN
+  pattern = PORTAL9_ALERTS_PATTERN
 ) => {
   if (filters.includes('rule.gdpr: exists')) {
     const [head, tail] = filters.split('AND rule.gdpr: exists');
@@ -73,7 +73,7 @@ export const topGDPRRequirements = async (
  * @param {Number} gte Timestamp (ms) from
  * @param {Number} lte Timestamp (ms) to
  * @param {String} requirement GDPR requirement. E.g: 'II_5.1.F'
- * @param {String} filters E.g: cluster.name: wazuh AND rule.groups: vulnerability
+ * @param {String} filters E.g: cluster.name: portal9 AND rule.groups: vulnerability
  * @returns {Array<String>}
  */
 export const getRulesByRequirement= async (
@@ -82,7 +82,7 @@ export const getRulesByRequirement= async (
   lte,
   filters,
   requirement,
-  pattern = WAZUH_ALERTS_PATTERN
+  pattern = PORTAL9_ALERTS_PATTERN
 ) => {
   if (filters.includes('rule.gdpr: exists')) {
     const [head, tail] = filters.split('AND rule.gdpr: exists');

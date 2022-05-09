@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for show configuration of active response - command tab.
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - React component for show configuration of active response - command tab.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -25,12 +25,12 @@ const helpLinks = [
   {
     text: 'Active response documentation',
     href:
-      'https://documentation.wazuh.com/current/user-manual/capabilities/active-response/index.html'
+      'https://documentation.portal9.com/current/user-manual/capabilities/active-response/index.html'
   },
   {
     text: 'Commands reference',
     href:
-      'https://documentation.wazuh.com/current/user-manual/reference/ossec-conf/commands.html'
+      'https://documentation.portal9.com/current/user-manual/reference/ossec-conf/commands.html'
   }
 ];
 
@@ -51,7 +51,7 @@ class WzConfigurationActiveResponseCommands extends Component {
     super(props);
   }
   render() {
-    const { currentConfig, wazuhNotReadyYet } = this.props;
+    const { currentConfig, portal9NotReadyYet } = this.props;
     const items =
       currentConfig &&
       currentConfig['analysis-command'] &&
@@ -73,9 +73,9 @@ class WzConfigurationActiveResponseCommands extends Component {
           !currentConfig['analysis-command'].command.length && (
             <WzNoConfig error="not-present" help={helpLinks} />
           )}
-        {wazuhNotReadyYet &&
+        {portal9NotReadyYet &&
           (!currentConfig || !currentConfig['analysis-command']) && (
-            <WzNoConfig error="Wazuh not ready yet" help={helpLinks} />
+            <WzNoConfig error="Portal9 not ready yet" help={helpLinks} />
           )}
         {currentConfig['analysis-command'] &&
         !isString(currentConfig['analysis-command']) &&
@@ -100,12 +100,12 @@ class WzConfigurationActiveResponseCommands extends Component {
 }
 
 const mapStateToProps = state => ({
-  wazuhNotReadyYet: state.appStateReducers.wazuhNotReadyYet
+  portal9NotReadyYet: state.appStateReducers.portal9NotReadyYet
 });
 
 WzConfigurationActiveResponseCommands.propTypes = {
   // currentConfig: PropTypes.object.isRequired,
-  wazuhNotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
+  portal9NotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
 };
 
 export default connect(mapStateToProps)(WzConfigurationActiveResponseCommands);

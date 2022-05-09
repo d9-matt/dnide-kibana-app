@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for show configuration of Osquery.
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - React component for show configuration of Osquery.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -39,12 +39,12 @@ const helpLinks = [
   {
     text: 'Osquery module documentation',
     href:
-      'https://documentation.wazuh.com/current/user-manual/capabilities/osquery.html'
+      'https://documentation.portal9.com/current/user-manual/capabilities/osquery.html'
   },
   {
     text: 'Osquery module reference',
     href:
-      'https://documentation.wazuh.com/current/user-manual/reference/ossec-conf/wodle-osquery.html'
+      'https://documentation.portal9.com/current/user-manual/reference/ossec-conf/wodle-osquery.html'
   }
 ];
 

@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Integrity monitoring components
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Integrity monitoring components
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -15,7 +15,7 @@ import { FlyoutTechnique } from '../../overview/mitre/components/techniques/comp
 import { AppNavigate } from '../../../react-services/app-navigate';
 
 // Field to add to elements enchanced
-const CUSTOM_ATTRIBUTE_ENHANCED_DISCOVER_FIELD = 'data-wazuh-discover-field-enhanced';
+const CUSTOM_ATTRIBUTE_ENHANCED_DISCOVER_FIELD = 'data-portal9-discover-field-enhanced';
 
 type TGetFlyoutProps = (content: string, rowData, options) => any;
 

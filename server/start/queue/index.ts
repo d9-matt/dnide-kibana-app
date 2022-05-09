@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Add delayed jobs to a queue.
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Add delayed jobs to a queue.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -11,7 +11,7 @@
  */
 import cron from 'node-cron';
 import { log } from '../../lib/logger';
-import { WAZUH_QUEUE_CRON_FREQ } from '../../../common/constants';
+import { PORTAL9_QUEUE_CRON_FREQ } from '../../../common/constants';
 
 export let queue = [];
 
@@ -66,7 +66,7 @@ async function executePendingJobs() {
  */
 export function jobQueueRun(context) {
   cron.schedule(
-    WAZUH_QUEUE_CRON_FREQ,
+    PORTAL9_QUEUE_CRON_FREQ,
     async () => {
       try {
         await executePendingJobs();

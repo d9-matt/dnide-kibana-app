@@ -17,13 +17,13 @@ import {
 
 const helpLinks = [
   {
-    text: 'Using Wazuh to monitor Google Cloud Pub/Sub',
-    href: 'https://documentation.wazuh.com/current/gcp/index.html'
+    text: 'Using Portal9 to monitor Google Cloud Pub/Sub',
+    href: 'https://documentation.portal9.com/current/gcp/index.html'
   },
   {
     text: 'Google Cloud Pub/Sub module reference',
     href:
-      'https://documentation.wazuh.com/current/user-manual/reference/ossec-conf/gcp-pubsub.html'
+      'https://documentation.portal9.com/current/user-manual/reference/ossec-conf/gcp-pubsub.html'
   }
 ];
 

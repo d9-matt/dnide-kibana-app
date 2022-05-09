@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Load App config service
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Load App config service
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,7 +20,7 @@ import {
 
 
 /**
- * Retunrs the wazuh app config
+ * Retunrs the portal9 app config
  */
 export const loadAppConfig = async () => {
   try {
@@ -35,7 +35,7 @@ export const loadAppConfig = async () => {
     store.dispatch(updateAppConfig(ymlContent))
   } catch (error) {
     store.dispatch(setAppConfigHasError());
-    console.error('Error parsing wazuh.yml, using default values.'); // eslint-disable-line
+    console.error('Error parsing portal9.yml, using default values.'); // eslint-disable-line
     console.error(error.message || error); // eslint-disable-line
   }
 };

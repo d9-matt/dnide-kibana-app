@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Acntion Agents Service
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Acntion Agents Service
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -34,7 +34,7 @@ export class ActionAgents {
         console.log('Upgrading');
       })
       .catch(error => {
-        error !== 'Wazuh API error: 3021 - Timeout executing API request'
+        error !== 'Portal9 API error: 3021 - Timeout executing API request'
           ? this.showToast('danger', 'Error upgrading agent', error, 5000)
           : false;
       });

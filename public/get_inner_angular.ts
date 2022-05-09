@@ -61,7 +61,7 @@ export function getInnerAngularModule(
 
 let initialized = false;
 
-export function initializeInnerAngularModule(name = 'app/wazuh', navigation: NavigationStart) {
+export function initializeInnerAngularModule(name = 'app/portal9', navigation: NavigationStart) {
   if (!initialized) {
     createLocalI18nModule();
     createLocalPrivateModule();

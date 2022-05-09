@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for show configuration of agentless.
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - React component for show configuration of agentless.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -34,12 +34,12 @@ const helpLinks = [
   {
     text: 'How to monitor agentless devices',
     href:
-      'https://documentation.wazuh.com/current/user-manual/capabilities/agentless-monitoring/index.html'
+      'https://documentation.portal9.com/current/user-manual/capabilities/agentless-monitoring/index.html'
   },
   {
     text: 'Agentless reference',
     href:
-      'https://documentation.wazuh.com/current/user-manual/reference/ossec-conf/agentless.html'
+      'https://documentation.portal9.com/current/user-manual/reference/ossec-conf/agentless.html'
   }
 ];
 
@@ -48,7 +48,7 @@ class WzConfigurationAgentless extends Component {
     super(props);
   }
   render() {
-    const { currentConfig, wazuhNotReadyYet } = this.props;
+    const { currentConfig, portal9NotReadyYet } = this.props;
     const items =
       currentConfig &&
       currentConfig['agentless-agentless'] &&
@@ -67,9 +67,9 @@ class WzConfigurationAgentless extends Component {
               help={helpLinks}
             />
           )}
-        {wazuhNotReadyYet &&
+        {portal9NotReadyYet &&
           (!currentConfig || !currentConfig['agentless-agentless']) && (
-            <WzNoConfig error="Wazuh not ready yet" help={helpLinks} />
+            <WzNoConfig error="Portal9 not ready yet" help={helpLinks} />
           )}
         {currentConfig['agentless-agentless'] &&
           !isString(currentConfig['agentless-agentless']) && (
@@ -94,12 +94,12 @@ class WzConfigurationAgentless extends Component {
 const sections = [{ component: 'agentless', configuration: 'agentless' }];
 
 const mapStateToProps = state => ({
-  wazuhNotReadyYet: state.appStateReducers.wazuhNotReadyYet
+  portal9NotReadyYet: state.appStateReducers.portal9NotReadyYet
 });
 
 WzConfigurationAgentless.propTypes = {
   // currentConfig: PropTypes.object.isRequired,
-  wazuhNotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
+  portal9NotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
 };
 
 export default compose(

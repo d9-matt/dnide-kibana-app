@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Generic error response constructor
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Generic error response constructor
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -12,10 +12,10 @@
 
 /**
  * Error codes:
- * wazuh-api-elastic 20XX
- * wazuh-api         30XX
- * wazuh-elastic     40XX
- * wazuh-reporting   50XX
+ * portal9-api-elastic 20XX
+ * portal9-api         30XX
+ * portal9-elastic     40XX
+ * portal9-reporting   50XX
  * unknown           1000
  */
 /**
@@ -36,7 +36,7 @@ export function ErrorResponse(
   if (code) {
     const isString = typeof message === 'string';
     if (isString && message === 'socket hang up' && code === 3005) {
-      filteredMessage = 'Wrong protocol being used to connect to the Wazuh API';
+      filteredMessage = 'Wrong protocol being used to connect to the Portal9 API';
     } else if (
       isString &&
       (message.includes('ENOTFOUND') ||
@@ -46,10 +46,10 @@ export function ErrorResponse(
       code === 3005
     ) {
       filteredMessage =
-        'Wazuh API is not reachable. Please check your url and port.';
+        'Portal9 API is not reachable. Please check your url and port.';
     } else if (isString && message.includes('ECONNREFUSED') && code === 3005) {
       filteredMessage =
-        'Wazuh API is not reachable. Please check your url and port.';
+        'Portal9 API is not reachable. Please check your url and port.';
     } else if (
       isString &&
       message.toLowerCase().includes('not found') &&

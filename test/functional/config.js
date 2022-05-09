@@ -24,7 +24,7 @@ export default async function({ readConfigFile }) {
 
     apps: {
       ...kibanaConfig.get('apps'),
-      wazuh: {
+      portal9: {
         pathname: '/app/portal9'
       }
     },

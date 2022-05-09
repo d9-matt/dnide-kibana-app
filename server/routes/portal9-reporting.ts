@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Module for Wazuh reporting routes
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Module for Portal9 reporting routes
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -9,12 +9,12 @@
  *
  * Find more information about this on the LICENSE file.
  */
-import { WazuhReportingCtrl } from '../controllers';
+import { Portal9ReportingCtrl } from '../controllers';
 import { IRouter } from 'kibana/server';
 import { schema } from '@kbn/config-schema';
 
-export function WazuhReportingRoutes(router: IRouter) {
-  const ctrl = new WazuhReportingCtrl();
+export function Portal9ReportingRoutes(router: IRouter) {
+  const ctrl = new Portal9ReportingCtrl();
 
   router.post({
       path: '/reports/modules/{moduleID}',

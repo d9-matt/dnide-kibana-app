@@ -1,8 +1,8 @@
 /*
- * Wazuh app - React component building the welcome screen of an agent.
+ * Portal9 app - React component building the welcome screen of an agent.
  * version, OS, registration date, last keep alive.
  *
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -37,7 +37,7 @@ import {
 } from '@elastic/eui';
 import { FimEventsTable, ScaScan, MitreTopTactics, RequirementVis } from './components';
 import { AgentInfo } from './agents-info';
-import { WAZUH_MODULES } from '../../../../common/wazuh-modules';
+import { PORTAL9_MODULES } from '../../../../common/portal9-modules';
 import store from '../../../redux/store';
 import { updateGlobalBreadcrumb } from '../../../redux/actions/globalBreadcrumbActions';
 import { ActionAgents } from '../../../react-services/action-agents';
@@ -341,9 +341,9 @@ export class AgentsWelcome extends Component {
           layout="horizontal"
           icon={<EuiIcon size="xl" type={icon} color="primary" />}
           className="homSynopsis__card"
-          title={WAZUH_MODULES[tab].title}
+          title={PORTAL9_MODULES[tab].title}
           onClick={() => this.props.switchTab(tab)}
-          description={WAZUH_MODULES[tab].description}
+          description={PORTAL9_MODULES[tab].description}
         />
       </EuiFlexItem>
     );
@@ -399,24 +399,24 @@ export class AgentsWelcome extends Component {
 
   getRequirementVis() {
     if (this.state.selectedRequirement === 'pci') {
-      return 'Wazuh-App-Agents-Welcome-Top-PCI';
+      return 'Portal9-App-Agents-Welcome-Top-PCI';
     }
     if (this.state.selectedRequirement === 'gdpr') {
-      return 'Wazuh-App-Agents-Welcome-Top-GDPR';
+      return 'Portal9-App-Agents-Welcome-Top-GDPR';
     }
     if (this.state.selectedRequirement === 'hipaa') {
-      return 'Wazuh-App-Agents-Welcome-Top-HIPAA';
+      return 'Portal9-App-Agents-Welcome-Top-HIPAA';
     }
     if (this.state.selectedRequirement === 'nist') {
-      return 'Wazuh-App-Agents-Welcome-Top-NIST-800-53';
+      return 'Portal9-App-Agents-Welcome-Top-NIST-800-53';
     }
     if (this.state.selectedRequirement === 'gpg13') {
-      return 'Wazuh-App-Agents-Welcome-Top-GPG-13';
+      return 'Portal9-App-Agents-Welcome-Top-GPG-13';
     }
     if (this.state.selectedRequirement === 'tsc') {
-      return 'Wazuh-App-Agents-Welcome-Top-TSC';
+      return 'Portal9-App-Agents-Welcome-Top-TSC';
     }
-    return 'Wazuh-App-Agents-Welcome-Top-PCI'
+    return 'Portal9-App-Agents-Welcome-Top-PCI'
   }
 
   renderMitrePanel() {
@@ -483,7 +483,7 @@ export class AgentsWelcome extends Component {
           <div style={{ height: this.props.resultState !== 'loading' ? '225px' : 0 }}>
             <WzReduxProvider>
               <KibanaVis
-                visID={'Wazuh-App-Agents-Welcome-Events-Evolution'}
+                visID={'Portal9-App-Agents-Welcome-Events-Evolution'}
                 tab={'welcome'}
               ></KibanaVis>
             </WzReduxProvider>
@@ -518,8 +518,8 @@ export class AgentsWelcome extends Component {
               <p>
                 The agent has been registered but has not yet connected to the manager.
             </p>
-              <a href="https://documentation.wazuh.com/current/user-manual/agents/agent-connection.html" target="_blank">
-                https://documentation.wazuh.com/current/user-manual/agents/agent-connection.html
+              <a href="https://documentation.portal9.com/current/user-manual/agents/agent-connection.html" target="_blank">
+                https://documentation.portal9.com/current/user-manual/agents/agent-connection.html
             </a>
             </Fragment>
           }
@@ -561,7 +561,7 @@ export class AgentsWelcome extends Component {
               {this.state.widthWindow < 1150 && (
                 <Fragment>
                   <EuiFlexGrid columns={2}>
-                    <EuiFlexItem key={'Wazuh-App-Agents-Welcome-MITRE-Top-Tactics'} >
+                    <EuiFlexItem key={'Portal9-App-Agents-Welcome-MITRE-Top-Tactics'} >
                       {this.renderMitrePanel()}
                     </EuiFlexItem>
                     {this.renderCompliancePanel()}
@@ -572,7 +572,7 @@ export class AgentsWelcome extends Component {
                   </EuiFlexGroup>
                   <EuiSpacer size='m' />
                   <EuiFlexGroup>
-                    <EuiFlexItem key={'Wazuh-App-Agents-Welcome-Events-Evolution'} > {/* Events count evolution */}
+                    <EuiFlexItem key={'Portal9-App-Agents-Welcome-Events-Evolution'} > {/* Events count evolution */}
                       {this.renderEventCountVisualization()}
                     </EuiFlexItem>
                   </EuiFlexGroup>
@@ -588,7 +588,7 @@ export class AgentsWelcome extends Component {
                     <EuiFlexGrid columns={2}>
                       <EuiFlexItem>
                         <EuiFlexGroup>
-                          <EuiFlexItem key={'Wazuh-App-Agents-Welcome-MITRE-Top-Tactics'} >
+                          <EuiFlexItem key={'Portal9-App-Agents-Welcome-MITRE-Top-Tactics'} >
                             {this.renderMitrePanel()}
                           </EuiFlexItem>
                           {this.renderCompliancePanel()}
@@ -598,7 +598,7 @@ export class AgentsWelcome extends Component {
                     </EuiFlexGrid>
                     <EuiSpacer size="l" />
                     <EuiFlexGroup>
-                      <EuiFlexItem key={'Wazuh-App-Agents-Welcome-Events-Evolution'} > {/* Events count evolution */}
+                      <EuiFlexItem key={'Portal9-App-Agents-Welcome-Events-Evolution'} > {/* Events count evolution */}
                         {this.renderEventCountVisualization()}
                       </EuiFlexItem>
                       <EuiFlexItem>

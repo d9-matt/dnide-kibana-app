@@ -1,6 +1,6 @@
 /*
- * Wazuh app - App Config Reducer
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - App Config Reducer
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -11,14 +11,14 @@
  */
 
 import { Reducer } from 'redux';
-import { WAZUH_DEFAULT_APP_CONFIG } from '../../../common/constants';
+import { PORTAL9_DEFAULT_APP_CONFIG } from '../../../common/constants';
 import { AppConfigState, ResolverAction } from '../types';
 
 const initialState: AppConfigState = {
   isLoading: false,
   isReady: false,
   hasError: false,
-  data: WAZUH_DEFAULT_APP_CONFIG,
+  data: PORTAL9_DEFAULT_APP_CONFIG,
 };
 
 const appConfigReducer: Reducer<AppConfigState, ResolverAction> = (

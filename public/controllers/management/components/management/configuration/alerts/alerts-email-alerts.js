@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for show configuration of alerts - email alerts tab.
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - React component for show configuration of alerts - email alerts tab.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -54,17 +54,17 @@ const helpLinks = [
   {
     text: 'How to configure email alerts',
     href:
-      'https://documentation.wazuh.com/current/user-manual/manager/manual-email-report/index.html'
+      'https://documentation.portal9.com/current/user-manual/manager/manual-email-report/index.html'
   },
   {
     text: 'How to configure authenticated SMTP server',
     href:
-      'https://documentation.wazuh.com/current/user-manual/manager/manual-email-report/smtp_authentication.html'
+      'https://documentation.portal9.com/current/user-manual/manager/manual-email-report/smtp_authentication.html'
   },
   {
     text: 'Email alerts reference',
     href:
-      'https://documentation.wazuh.com/current/user-manual/reference/ossec-conf/email_alerts.html'
+      'https://documentation.portal9.com/current/user-manual/reference/ossec-conf/email_alerts.html'
   }
 ];
 
@@ -73,7 +73,7 @@ class WzConfigurationAlertsEmailAlerts extends Component {
     super(props);
   }
   render() {
-    const { currentConfig, wazuhNotReadyYet } = this.props;
+    const { currentConfig, portal9NotReadyYet } = this.props;
     const items =
       currentConfig &&
       currentConfig['mail-alerts'] &&
@@ -95,9 +95,9 @@ class WzConfigurationAlertsEmailAlerts extends Component {
           !currentConfig['mail-alerts'].email_alerts.length) ? (
           <WzNoConfig error="not-present" help={helpLinks} />
         ) : null}
-        {wazuhNotReadyYet &&
+        {portal9NotReadyYet &&
           (!currentConfig || !currentConfig['mail-alerts']) && (
-            <WzNoConfig error="Wazuh not ready yet" help={helpLinks} />
+            <WzNoConfig error="Portal9 not ready yet" help={helpLinks} />
           )}
         {currentConfig['mail-alerts'] &&
         isArray(currentConfig['mail-alerts'].email_alerts) &&
@@ -121,12 +121,12 @@ class WzConfigurationAlertsEmailAlerts extends Component {
 }
 
 const mapStateToProps = state => ({
-  wazuhNotReadyYet: state.appStateReducers.wazuhNotReadyYet
+  portal9NotReadyYet: state.appStateReducers.portal9NotReadyYet
 });
 
 WzConfigurationAlertsEmailAlerts.propTypes = {
   // currentConfig: PropTypes.object.isRequired,
-  wazuhNotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
+  portal9NotReadyYet: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
 };
 
 export default connect(mapStateToProps)(WzConfigurationAlertsEmailAlerts);

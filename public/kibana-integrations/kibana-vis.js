@@ -1,6 +1,6 @@
 /*
- * Wazuh app - React component for custom kibana visualizations.
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - React component for custom kibana visualizations.
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -209,7 +209,7 @@ class KibanaVis extends Component {
     const timefilter = getDataPlugin().query.timefilter.timefilter;
     try {
       const discoverList = this.discoverPendingUpdates.getList();
-      const isAgentStatus = this.visID === 'Wazuh-App-Overview-General-Agents-status';
+      const isAgentStatus = this.visID === 'Portal9-App-Overview-General-Agents-status';
       const timeFilterSeconds = this.calculateTimeFilterSeconds(timefilter.getTime());
       const timeRange =
         isAgentStatus && timeFilterSeconds < 900
@@ -219,7 +219,7 @@ class KibanaVis extends Component {
         ? [
             {
               meta: {
-                index: 'wazuh-monitoring-*',
+                index: 'portal9-monitoring-*',
                 alias: null,
                 negate: false,
                 disabled: false,
@@ -379,7 +379,7 @@ class KibanaVis extends Component {
             }
           }, 1000);
         }
-      } else if (this.visID !== 'Wazuh-App-Overview-General-Agents-status') {
+      } else if (this.visID !== 'Portal9-App-Overview-General-Agents-status') {
         this.$rootScope.rendered = 'false';
       }
     }

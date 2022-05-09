@@ -1,6 +1,6 @@
 /*
- * Wazuh app - Stylesheets loader
- * Copyright (C) 2015-2021 Wazuh, Inc.
+ * Portal9 app - Stylesheets loader
+ * Copyright (C) 2015-2021 Portal9, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -11,7 +11,7 @@
  */
 
 /* -------------------------------------------------------------------------- */
-/* ------------------------ Wazuh stylesheets loader ------------------------ */
+/* ------------------------ Portal9 stylesheets loader ------------------------ */
 /* -------------------------------------------------------------------------- */
 import { getUiSettings } from '../kibana-services';
 
