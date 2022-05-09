@@ -67,7 +67,7 @@ export class Portal9Plugin implements Plugin<Portal9Setup, Portal9Start, Portal9
         const response = await core.http.get(`/api/check-portal9`);
 =======
         //Check if user has Wazuh disabled
-        const response = await core.http.get(`/api/check-wazuh`);
+        const response = await core.http.get(`/api/check-portal9`);
 >>>>>>> e5960b47d186ce9f0cc6406d887ea06b76140aa4
 
         params.element.classList.add('dscAppWrapper');
