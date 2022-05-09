@@ -39,7 +39,7 @@ export const initialPortal9Config: string = `---
 # ------------------------------- Index patterns -------------------------------
 #
 # Default index pattern to use.
-#pattern: portal9-alerts-*
+#pattern: wazuh-alerts-*
 #
 # ----------------------------------- Checks -----------------------------------
 #
@@ -140,7 +140,7 @@ export const initialPortal9Config: string = `---
 # This change is not retroactive, if you change it new indexes will be created
 # It should match with a valid index template to avoid unknown fields on
 # dashboards
-#alerts.sample.prefix: portal9-alerts-4.x-
+#alerts.sample.prefix: wazuh-alerts-4.x-
 #
 # ------------------------------ portal9-statistics -------------------------------
 #

@@ -13,8 +13,8 @@ import path  from 'path';
 
 // Index patterns - Portal9 alerts
 export const PORTAL9_INDEX_TYPE_ALERTS = "alerts";
-export const PORTAL9_ALERTS_PREFIX = "portal9-alerts-";
-export const PORTAL9_ALERTS_PATTERN = "portal9-alerts-*";
+export const PORTAL9_ALERTS_PREFIX = "wazuh-alerts-";
+export const PORTAL9_ALERTS_PATTERN = "wazuh-alerts-*";
 
 // Default number of shards and replicas for indices
 export const PORTAL9_INDEX_SHARDS = 2;
@@ -53,7 +53,7 @@ export const PORTAL9_ROLE_ADMINISTRATOR_ID = 1;
 export const PORTAL9_ROLE_ADMINISTRATOR_NAME = 'administrator';
 
 // Sample data
-export const PORTAL9_SAMPLE_ALERT_PREFIX = "portal9-alerts-4.x-";
+export const PORTAL9_SAMPLE_ALERT_PREFIX = "wazuh-alerts-4.x-";
 export const PORTAL9_SAMPLE_ALERTS_INDEX_SHARDS = 1;
 export const PORTAL9_SAMPLE_ALERTS_INDEX_REPLICAS = 0;
 export const PORTAL9_SAMPLE_ALERTS_CATEGORY_SECURITY = "security";
