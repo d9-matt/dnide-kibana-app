@@ -89,7 +89,7 @@ export const apiRequestList =
                 "value": "manager/restart",
                 "score": 1,
                 "meta": "endpoint",
-                "documentationLink": "https://documentation.portal9.com/current/user-manual/api/reference.html#restart-portal9-manager"
+                "documentationLink": "https://documentation.portal9.com/current/user-manual/api/reference.html#restart-wazuh-manager"
             },
             {
                 "name": "rootcheck",

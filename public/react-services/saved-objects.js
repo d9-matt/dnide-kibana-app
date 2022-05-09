@@ -254,7 +254,7 @@ export class SavedObject {
   }
 
   /**
-   * Creates the 'portal9-alerts-*'  index pattern
+   * Creates the 'wazuh-alerts-*'  index pattern
    */
   static async createPortal9IndexPattern(pattern) {
     try {
