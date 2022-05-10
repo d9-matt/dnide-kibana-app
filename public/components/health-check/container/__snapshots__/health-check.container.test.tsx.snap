@@ -7,7 +7,7 @@ exports[`Health Check container should render a Health check screen 1`] = `
   <img
     alt=""
     className="health-check-logo"
-    src="/plugins/portal9/assets/Portal9_login.png"
+    src="/plugins/portal9/assets/Portal9_icon_larger.png"
   />
   <div
     className="margin-top-30"

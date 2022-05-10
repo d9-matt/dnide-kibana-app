@@ -174,7 +174,7 @@ export const PORTAL9_DEFAULT_APP_CONFIG = {
   'enrollment.dns': '',
   'customization.logo.app':'Portal9_logo.svg',
   'customization.logo.sidebar':'Portal9_icon.png',
-  'customization.logo.healthcheck':'Portal9_login.png',
+  'customization.logo.healthcheck':'Portal9_icon_larger.png',
   'customization.logo.reports':'Portal9_logo.png'
 };
 
