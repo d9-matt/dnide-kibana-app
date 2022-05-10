@@ -172,8 +172,8 @@ export const PORTAL9_DEFAULT_APP_CONFIG = {
   hideManagerAlerts: false,
   'logs.level': 'info',
   'enrollment.dns': '',
-  'customization.logo.app':'logotype.svg',
-  'customization.logo.sidebar':'icon_blue.png',
+  'customization.logo.app':'Portal9_logo.svg',
+  'customization.logo.sidebar':'Portal9_icon.png',
   'customization.logo.healthcheck':'icon_blue.svg',
   'customization.logo.reports':'logo.png'
 };

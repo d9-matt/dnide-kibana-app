@@ -167,10 +167,10 @@ export const initialPortal9Config: string = `---
 # ------------------------------ portal9-logo-customization -------------------------------
 #
 #Define the name of the app logo saved in the path /plugins/portal9/assets/
-#customization.logo.app: logotype.svg
+#customization.logo.app: Portal9_logo.svg
 #
 #Define the name of the sideba logo saved in the path /plugins/portal9/assets/
-#customization.logo.sidebar: icon_blue.png
+#customization.logo.sidebar: Portal9_icon.png
 #
 #Define the name of the health-check logo saved in the path /plugins/portal9/assets/
 #customization.logo.healthcheck: icon_blue.svg

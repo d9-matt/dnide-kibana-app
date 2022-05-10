@@ -39,7 +39,7 @@ export class Portal9Plugin implements Plugin<Portal9Setup, Portal9Start, Portal9
     core.application.register({
       id: `portal9`,
       title: 'Portal9',
-      icon: core.http.basePath.prepend('/plugins/portal9/assets/icon_blue.png'),
+      icon: core.http.basePath.prepend('/plugins/portal9/assets/Portal9_icon.png'),
       mount: async (params: AppMountParameters) => {
         if (!this.initializeInnerAngular) {
           throw Error('Portal9 plugin method initializeInnerAngular is undefined');
@@ -91,7 +91,7 @@ export class Portal9Plugin implements Plugin<Portal9Setup, Portal9Start, Portal9
         id: 'portal9',
         label: 'Portal9',
         order: 0,
-        euiIconType: core.http.basePath.prepend('/plugins/portal9/assets/icon_blue.png'),      
+        euiIconType: core.http.basePath.prepend('/plugins/portal9/assets/Portal9_icon.png'),      
       },
       updater$: this.stateUpdater
     });

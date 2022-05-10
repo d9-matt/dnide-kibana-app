@@ -1056,7 +1056,7 @@ export class Portal9ApiCtrl {
     try {
       
       const disabledRoles = ( await getConfiguration() )['disabled_roles'] || [];
-      const logoSidebar = ( await getConfiguration() )['customization.logo.sidebar'] || 'icon_blue.png';
+      const logoSidebar = ( await getConfiguration() )['customization.logo.sidebar'] || 'Portal9_icon.png';
       const portal9Security = SecurityObj(context.portal9.plugins);
       const data = (await portal9Security.getCurrentUser(request, context)).authContext;
 
