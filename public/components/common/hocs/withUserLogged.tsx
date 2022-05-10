@@ -21,7 +21,7 @@ export const withUserLogged = (WrappedComponent) => (props) => {
     const withUserLogged = useSelector((state)=> state.appStateReducers.withUserLogged);
     return withUserLogged ? <WrappedComponent {...props}/> : (
       <div className="withUserLogged">
-        <img src={getHttp().basePath.prepend('/plugins/portal9/assets/Portal9_tr_final-01.svg')} className="withUserLogged-logo" alt=""></img>
+        <img src={getHttp().basePath.prepend('/plugins/portal9/assets/Portal9_login.png')} className="withUserLogged-logo" alt=""></img>
         <EuiSpacer size="s" />
         <EuiText className="subdued-color">Loading ...</EuiText>
         <EuiSpacer size="s" />

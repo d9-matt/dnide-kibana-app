@@ -173,7 +173,7 @@ export const initialPortal9Config: string = `---
 #customization.logo.sidebar: Portal9_icon.png
 #
 #Define the name of the health-check logo saved in the path /plugins/portal9/assets/
-#customization.logo.healthcheck: Portal9_tr_final-01.svg
+#customization.logo.healthcheck: Portal9_login.png
 #
 #
 #Define the name of the reports logo (.png) saved in the path /plugins/portal9/assets/
