@@ -173,11 +173,11 @@ export const initialPortal9Config: string = `---
 #customization.logo.sidebar: Portal9_icon.png
 #
 #Define the name of the health-check logo saved in the path /plugins/portal9/assets/
-#customization.logo.healthcheck: icon_blue.svg
+#customization.logo.healthcheck: Portal9_tr_final-01.svg
 #
 #
 #Define the name of the reports logo (.png) saved in the path /plugins/portal9/assets/
-#customization.logo.reports: logo.png
+#customization.logo.reports: Portal9_logo.png
 #
 # ---------------------------- Hide manager alerts ------------------------------
 # Hide the alerts of the manager in all dashboards and discover

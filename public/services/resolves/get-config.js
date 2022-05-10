@@ -70,8 +70,8 @@ export async function getWzConfig($q, genericReq, portal9Config) {
     'enrollment.password': '',
     'customization.logo.app':'Portal9_logo.svg',
     'customization.logo.sidebar':'Portal9_icon.png',
-    'customization.logo.healthcheck':'icon_blue.svg',
-    'customization.logo.reports':'logo.png'
+    'customization.logo.healthcheck':'Portal9_tr_final-01.svg',
+    'customization.logo.reports':'Portal9_logo.png'
   };
 
   try {

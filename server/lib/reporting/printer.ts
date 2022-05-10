@@ -611,7 +611,7 @@ export class ReportPrinter{
   }
 
   async print(reportPath: string){
-    const nameLogo = ( await getConfiguration() )['customization.logo.reports'] || 'logo.png'
+    const nameLogo = ( await getConfiguration() )['customization.logo.reports'] || 'Portal9_logo.png'
 
     const document = this._printer.createPdfKitDocument({...pageConfiguration(nameLogo), content: this._content});
     await document.pipe(

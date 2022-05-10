@@ -32,7 +32,7 @@ export function addHelpMenuToAppChrome(){
       {
         linkType: 'custom',
         href: `${PORTAL9_LINK_DOCUMENTATION}/${appVersionMajorDotMinor}`,
-        content: <span><EuiIcon type={getHttp().basePath.prepend('/plugins/portal9/assets/icon_blue.svg')}></EuiIcon> Documentation</span>
+        content: <span><EuiIcon type={getHttp().basePath.prepend('/plugins/portal9/assets/Portal9_tr_final-01.svg')}></EuiIcon> Documentation</span>
       },
       {
         linkType: 'custom',
