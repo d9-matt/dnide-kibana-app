@@ -9,3 +9,7 @@ Files that where changed (on the development server) in order to get Wazuh link 
 - wazuh-packages/unattended_scripts/open-distro/kibana/7.x/kibana_unattended.yml
 - wazuh-packages/unattended_scripts/open-distro/unattended-installation/distributed/templates/kibana_unattended.yml
 - /etc/kibana/kibana.yml
+Changes made to get Portal9 logos instead of Wazuh logos:
+- Add logos to /public/assets (for this repository)
+- grep -R (wazuh logo file name) to find references of logo to be changed in files
+- Changed specified wazuh logo name (ex. icon_blue.svg) to Portal9 file name
