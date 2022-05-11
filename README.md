@@ -15,4 +15,4 @@
 - Changed specified wazuh logo name (ex. icon_blue.svg) to Portal9 file name
 ## Command to mass change instances of text (ex. wazuh to portal9)
 **BE CAREFUL USING THIS AS YOU MAY ACCIDENTALLY MODIFY .git BINARIES**
-find . -type f -exec sed -i 's/wazuh/portal9/g' {} +
+- find . -type f -exec sed -i 's/wazuh/portal9/g' {} +
