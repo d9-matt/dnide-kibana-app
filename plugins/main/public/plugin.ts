@@ -65,7 +65,7 @@ export class WazuhPlugin implements Plugin<WazuhSetup, WazuhStart, WazuhSetupPlu
     if (!response.isWazuhDisabled) {
       core.application.register({
         id: `wazuh`,
-        title: 'Wazuh',
+        title: 'D9 SIEM',
         icon: core.http.basePath.prepend(
           logosInitialState?.logos?.[SIDEBAR_LOGO] ?
             getAssetURL(logosInitialState?.logos?.[SIDEBAR_LOGO]) :
@@ -103,7 +103,7 @@ export class WazuhPlugin implements Plugin<WazuhSetup, WazuhStart, WazuhSetupPlu
                 status: response.isWazuhDisabled,
                 category: {
                   id: 'wazuh',
-                  label: 'Wazuh',
+                  label: 'D9SIEM',
                   order: 0,
                   euiIconType: core.http.basePath.prepend(logosInitialState?.logos?.[SIDEBAR_LOGO] ? getAssetURL(logosInitialState?.logos?.[SIDEBAR_LOGO]) : getThemeAssetURL('icon.svg', UI_THEME)),
                 }
@@ -119,7 +119,7 @@ export class WazuhPlugin implements Plugin<WazuhSetup, WazuhStart, WazuhSetupPlu
         },
         category: {
           id: 'wazuh',
-          label: 'Wazuh',
+          label: 'D9SIEM',
           order: 0,
           euiIconType: core.http.basePath.prepend(logosInitialState?.logos?.[SIDEBAR_LOGO] ? getAssetURL(logosInitialState?.logos?.[SIDEBAR_LOGO]) : getThemeAssetURL('icon.svg', UI_THEME)),
         },
